@@ -1,0 +1,13 @@
+web/node_modules
+web/.next
+web/.env*
+!web/.env.example
+.supabase-db-password.local
+assets/photos/_all-downloaded
+supabase/.temp
+
+# internal costing data: never ship
+assets/Ingredientes - Lucro, Stock e Preços.xlsx
+web/public/images
+web/src/data/editorial.json
+web/src/data/photo-map.json

@@ -1,0 +1,407 @@
+{
+  "products": {
+    "desodorizante-lavanda-palmarosa": {
+      "hero": "Desodorizantes/20230715_CuuQPSAtkbY_02.jpg",
+      "gallery": [
+        "Desodorizantes/20230715_CuuQPSAtkbY_03.jpg",
+        "Desodorizantes/20250430_DJFLnzgCjk2_03.jpg"
+      ],
+      "alt": {
+        "Desodorizantes/20230715_CuuQPSAtkbY_02.jpg": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral",
+        "Desodorizantes/20230715_CuuQPSAtkbY_03.jpg": "boião de vidro âmbar fechado de desodorizante em creme, com etiqueta lucrescente, pousado em tecido floral",
+        "Desodorizantes/20250430_DJFLnzgCjk2_03.jpg": "conjunto de produtos lucrescente sobre tecido floral: boião branco de desodorizante em creme, sais de banho, sabonete com sementes de papoila, inalador e bálsamo labial"
+      },
+      "notes": "post 20230715 não tem imagens distintas por variante (sem rótulo legível de aroma); a mesma foto do boião serve as duas variantes. _01 é uma imagem de texto e foi excluída."
+    },
+    "desodorizante-tea-tree-erva-principe": {
+      "hero": "Desodorizantes/20230715_CuuQPSAtkbY_02.jpg",
+      "gallery": [
+        "Desodorizantes/20230715_CuuQPSAtkbY_03.jpg",
+        "Desodorizantes/20250430_DJFLnzgCjk2_03.jpg"
+      ],
+      "alt": {
+        "Desodorizantes/20230715_CuuQPSAtkbY_02.jpg": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral",
+        "Desodorizantes/20230715_CuuQPSAtkbY_03.jpg": "boião de vidro âmbar fechado de desodorizante em creme, com etiqueta lucrescente, pousado em tecido floral",
+        "Desodorizantes/20250430_DJFLnzgCjk2_03.jpg": "conjunto de produtos lucrescente sobre tecido floral: boião branco de desodorizante em creme, sais de banho, sabonete com sementes de papoila, inalador e bálsamo labial"
+      },
+      "notes": "post 20230715 não tem imagens distintas por variante (sem rótulo legível de aroma); a mesma foto do boião serve as duas variantes. _01 é uma imagem de texto e foi excluída. imagem partilhada com a variante lavanda/palmarosa."
+    },
+    "champo-oleosos": {
+      "hero": "Champôs/20230928_CxvNWPmtztV_02.jpg",
+      "gallery": [
+        "Champôs/20230928_CxvNWPmtztV_03.jpg"
+      ],
+      "alt": {
+        "Champôs/20230928_CxvNWPmtztV_02.jpg": "quatro champôs sólidos redondos de cor verde-acinzentada, com textura granulada, sobre tecido floral rosa",
+        "Champôs/20230928_CxvNWPmtztV_03.jpg": "champôs sólidos verde-acinzentados empilhados sobre tecido floral"
+      },
+      "notes": "post dedicado ao champô para cabelo oleoso; _01 é texto."
+    },
+    "champo-secos": {
+      "hero": "Champôs/20230603_CtB6EsltWbE_02.jpg",
+      "gallery": [
+        "Champôs/20230603_CtB6EsltWbE_03.jpg"
+      ],
+      "alt": {
+        "Champôs/20230603_CtB6EsltWbE_02.jpg": "champôs sólidos redondos brancos em grande plano sobre tecido rosa claro",
+        "Champôs/20230603_CtB6EsltWbE_03.jpg": "champôs sólidos brancos sobre tecido floral"
+      },
+      "notes": "post dedicado ao champô para cabelo seco/couro cabeludo sensível; imagens de 1200px (as únicas do produto). _01 é texto."
+    },
+    "champos-para-cabelos-normais": {
+      "hero": "Champôs/20240301_C3-WLX7NKe1_02.jpg",
+      "gallery": [
+        "Champôs/20240301_C3-WLX7NKe1_03.jpg",
+        "Champôs/20240301_C3-WLX7NKe1_04.jpg"
+      ],
+      "alt": {
+        "Champôs/20240301_C3-WLX7NKe1_02.jpg": "quatro champôs sólidos redondos de cor creme, um deles de lado, sobre tecido floral rosa e azul",
+        "Champôs/20240301_C3-WLX7NKe1_03.jpg": "champôs sólidos cor de creme sobre tecido floral",
+        "Champôs/20240301_C3-WLX7NKe1_04.jpg": "champôs sólidos cor de creme em grande plano sobre tecido floral"
+      },
+      "notes": "post dedicado ao champô para cabelo normal; _01 é texto."
+    },
+    "champo-neutro-para-criancas": {
+      "hero": "Champôs/20240209_C3JIS1ctvEb_02.jpg",
+      "gallery": [
+        "Champôs/20240209_C3JIS1ctvEb_04.jpg",
+        "Champôs/20240209_C3JIS1ctvEb_03.jpg"
+      ],
+      "alt": {
+        "Champôs/20240209_C3JIS1ctvEb_02.jpg": "quatro champôs sólidos redondos brancos sobre tecido floral rosa",
+        "Champôs/20240209_C3JIS1ctvEb_04.jpg": "champôs sólidos brancos, um com textura mais rugosa, sobre tecido floral",
+        "Champôs/20240209_C3JIS1ctvEb_03.jpg": "champôs sólidos brancos sobre tecido floral"
+      },
+      "notes": "post dedicado ao champô para crianças/pele atópica; _01 é texto. sem rostos."
+    },
+    "champo-queda": {
+      "hero": null,
+      "gallery": [],
+      "alt": {},
+      "notes": "não existe post dedicado; as únicas barras sem identificação de tipo aparecem em fotos de saboneteiras (20240318) misturadas com sabonetes, pelo que não é seguro apresentá-las como champô anti-queda. usar placeholder."
+    },
+    "amaciador": {
+      "hero": "Cuidado Capilar/20260704_DaYIR1aDTEY_04.jpg",
+      "gallery": [
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_02.jpg",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_03.jpg"
+      ],
+      "alt": {
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_04.jpg": "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_02.jpg": "grande plano de amaciadores sólidos cor de creme com relevo de flores",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_03.jpg": "três amaciadores sólidos em forma de coração, cor de creme, sobre tecido floral"
+      },
+      "notes": "post 20260704 em alta resolução (3024x3780); _01 é texto. 20231004 tem imagens quadradas de 1440px mas menos nítidas."
+    },
+    "mascara-150ml": {
+      "hero": "Cuidado Capilar/20231021_CyqteYStm7T_03.jpg",
+      "gallery": [
+        "Cuidado Capilar/20231021_CyqteYStm7T_02.jpg",
+        "Cuidado Capilar/20241124_DCw6VjeuqFD_01.jpg"
+      ],
+      "alt": {
+        "Cuidado Capilar/20231021_CyqteYStm7T_03.jpg": "boiões brancos de máscara capilar com etiqueta azul lucrescente, um deles aberto a mostrar o creme, sobre tecido floral",
+        "Cuidado Capilar/20231021_CyqteYStm7T_02.jpg": "boião aberto de máscara capilar branca em grande plano",
+        "Cuidado Capilar/20241124_DCw6VjeuqFD_01.jpg": "boião de máscara capilar com tampa dourada ao lado de um bálsamo labial em stick e de uma vela acesa em copo de vidro"
+      },
+      "notes": "post dedicado 20231021; _01 é texto. a imagem 20241124 é horizontal (1439x1223) e mostra uma encomenda com vários produtos."
+    },
+    "sabonete-40g": {
+      "hero": "Sabonetes/20240118_C2QJsMnNmeX_02.jpg",
+      "gallery": [
+        "Sabonetes/20240118_C2QJsMnNmeX_03.jpg",
+        "Sabonetes/20240118_C2QJsMnNmeX_04.jpg"
+      ],
+      "alt": {
+        "Sabonetes/20240118_C2QJsMnNmeX_02.jpg": "sabonetes de rosto translúcidos em forma de flor, com sementes de papoila visíveis, em grande plano",
+        "Sabonetes/20240118_C2QJsMnNmeX_03.jpg": "sabonetes de rosto em forma de flor com sementes de papoila sobre tecido claro",
+        "Sabonetes/20240118_C2QJsMnNmeX_04.jpg": "vários sabonetes de rosto em forma de flor com sementes de papoila"
+      },
+      "notes": "post dedicado ao sabonete de rosto; _01 é texto. o conjunto 20251214 mostra o sabonete apenas dentro de uma bolsa de crochet."
+    },
+    "sabonete-grande": {
+      "hero": "Sabonetes/20250430_DJFLnzgCjk2_03.jpg",
+      "gallery": [
+        "Sabonetes/20260212_DUqCf0CjW9e_01.jpg"
+      ],
+      "alt": {
+        "Sabonetes/20250430_DJFLnzgCjk2_03.jpg": "conjunto sobre tecido floral com sabonete de corpo em forma de coração com sementes de papoila, boião de desodorizante, frasco de sais de banho, inalador e bálsamo labial",
+        "Sabonetes/20260212_DUqCf0CjW9e_01.jpg": "cesto com produtos lucrescente sobre toalha de natal: sabonete embrulhado em papel branco, boião de desodorizante, frasco de sais de banho e saco de organza"
+      },
+      "notes": "não há foto isolada do sabonete de corpo; ambas são fotos de kit em que a legenda identifica um sabonete de corpo de aloé vera. incerteza: no hero o sabonete é o coração com sementes de papoila."
+    },
+    "sabonete-corpo-aveia": {
+      "hero": null,
+      "gallery": [],
+      "alt": {},
+      "notes": "nenhuma legenda menciona sabonete de aveia e nenhuma imagem mostra claramente uma barra bege de aveia. usar placeholder."
+    },
+    "vela-citronela": {
+      "hero": "Velas/20260710_DanyepXDdTS_02.jpg",
+      "gallery": [
+        "Velas/20260710_DanyepXDdTS_05.jpg",
+        "Velas/20260710_DanyepXDdTS_04.jpg"
+      ],
+      "alt": {
+        "Velas/20260710_DanyepXDdTS_02.jpg": "três velas de citronela em copos de vidro com etiqueta preta, sobre tecido floral rosa e azul",
+        "Velas/20260710_DanyepXDdTS_05.jpg": "três velas em copos de vidro com etiqueta preta ao lado de flores secas",
+        "Velas/20260710_DanyepXDdTS_04.jpg": "mão a segurar uma vela de citronela em copo de vidro com etiqueta preta"
+      },
+      "notes": "post dedicado 20260710 em alta resolução (3024x3780); _01 é texto. mão adulta em _04."
+    },
+    "vela-massagem": {
+      "hero": "Velas/20241203_DDIC4DbOiOp_03.jpg",
+      "gallery": [],
+      "alt": {
+        "Velas/20241203_DDIC4DbOiOp_03.jpg": "cesto de vime com vela em lata metálica, vela em frasco de vidro com laço vermelho, frasco de sais de banho e roll-on, sobre toalha de natal com luzes"
+      },
+      "notes": "só aparece em fotos de kit; a vela de massagem é a lata metálica com pavio visível no kit 'relaxamento lucrescente'. foto escura e com vários produtos; considerar placeholder se se quiser foto isolada. nos kits 20250716 (640px) e 20250624 a lata surge fechada e não é identificável como vela."
+    },
+    "roll-on-relaxamento": {
+      "hero": "Roll-on/20240304_C4GntZ5NjJH_03.jpg",
+      "gallery": [
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg",
+        "Roll-on/20240304_C4GntZ5NjJH_02.jpg"
+      ],
+      "alt": {
+        "Roll-on/20240304_C4GntZ5NjJH_03.jpg": "três roll-ons de vidro âmbar de 10 ml, um deles aberto a mostrar a esfera de aço, com etiqueta redonda lucrescente, sobre tecido floral",
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg": "seis roll-ons de vidro âmbar com etiqueta lucrescente, um deitado, sobre tecido floral rosa",
+        "Roll-on/20240304_C4GntZ5NjJH_02.jpg": "três roll-ons de vidro âmbar sobre tecido floral rosa e azul"
+      },
+      "notes": "no post 20240304 as etiquetas redondas não têm texto legível que identifique o aroma (relax / dores de cabeça / respiratório), por isso a mesma imagem genérica é usada nos três roll-ons. _01 e _06 são cartões de texto."
+    },
+    "roll-on-cabeca": {
+      "hero": "Roll-on/20240304_C4GntZ5NjJH_03.jpg",
+      "gallery": [
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg",
+        "Roll-on/20240304_C4GntZ5NjJH_02.jpg"
+      ],
+      "alt": {
+        "Roll-on/20240304_C4GntZ5NjJH_03.jpg": "três roll-ons de vidro âmbar de 10 ml, um deles aberto a mostrar a esfera de aço, com etiqueta redonda lucrescente, sobre tecido floral",
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg": "seis roll-ons de vidro âmbar com etiqueta lucrescente, um deitado, sobre tecido floral rosa",
+        "Roll-on/20240304_C4GntZ5NjJH_02.jpg": "três roll-ons de vidro âmbar sobre tecido floral rosa e azul"
+      },
+      "notes": "no post 20240304 as etiquetas redondas não têm texto legível que identifique o aroma (relax / dores de cabeça / respiratório), por isso a mesma imagem genérica é usada nos três roll-ons. _01 e _06 são cartões de texto."
+    },
+    "roll-on-sinusite": {
+      "hero": "Roll-on/20240304_C4GntZ5NjJH_03.jpg",
+      "gallery": [
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg",
+        "Roll-on/20250428_DI_Ky4cC1ZG_01.jpg"
+      ],
+      "alt": {
+        "Roll-on/20240304_C4GntZ5NjJH_03.jpg": "três roll-ons de vidro âmbar de 10 ml, um deles aberto a mostrar a esfera de aço, com etiqueta redonda lucrescente, sobre tecido floral",
+        "Roll-on/20240304_C4GntZ5NjJH_05.jpg": "seis roll-ons de vidro âmbar com etiqueta lucrescente, um deitado, sobre tecido floral rosa",
+        "Roll-on/20250428_DI_Ky4cC1ZG_01.jpg": "bolsa branca de crochet com roll-on de vidro âmbar, inalador branco e pequena lata, sobre tecido floral"
+      },
+      "notes": "no post 20240304 as etiquetas redondas não têm texto legível que identifique o aroma (relax / dores de cabeça / respiratório), por isso a mesma imagem genérica é usada nos três roll-ons. _01 e _06 são cartões de texto. a galeria inclui o kit 'eu cuido do meu nariz', cuja legenda indica o roll-on respiratório."
+    },
+    "spray-relaxante": {
+      "hero": "Sprays/20260303_DVbQpBUgpoV_02.jpg",
+      "gallery": [
+        "Sprays/20260303_DVbQpBUgpoV_03.jpg",
+        "Sprays/20260303_DVbQpBUgpoV_04.jpg"
+      ],
+      "alt": {
+        "Sprays/20260303_DVbQpBUgpoV_02.jpg": "quatro frascos de vidro âmbar com pulverizador branco e etiqueta roxa lucrescente, em pé sobre tecido floral rosa e azul",
+        "Sprays/20260303_DVbQpBUgpoV_03.jpg": "mão a segurar um frasco de spray de vidro âmbar com etiqueta manuscrita 'noite tranquila'",
+        "Sprays/20260303_DVbQpBUgpoV_04.jpg": "quatro frascos de spray de vidro âmbar deitados sobre tecido floral, vistos de cima"
+      },
+      "notes": "post dedicado 20260303; _01 é texto."
+    },
+    "sais-de-banho-relaxante": {
+      "hero": "Sais de Banho/20260217_DU3n7RKDWF7_01.jpg",
+      "gallery": [
+        "Sais de Banho/20260217_DU3n7RKDWF7_02.jpg",
+        "Sais de Banho/20250428_DI_3RQ9C5vr_03.jpg"
+      ],
+      "alt": {
+        "Sais de Banho/20260217_DU3n7RKDWF7_01.jpg": "três frascos de vidro com sais de banho e rolha de cortiça, etiqueta roxa lucrescente, sobre tecido floral rosa e azul",
+        "Sais de Banho/20260217_DU3n7RKDWF7_02.jpg": "frasco de sais de banho tombado com cristais de sal grosso a sair e rolha de cortiça ao lado",
+        "Sais de Banho/20250428_DI_3RQ9C5vr_03.jpg": "vela em copo de vidro, frasco alto de sais de banho com flores secas, roll-on e saco de organza com ambientadores, sobre tecido floral"
+      },
+      "notes": "post dedicado 20260217. a galeria inclui o kit 'eu cuido de mim' onde o frasco grande com flores secas é visível."
+    },
+    "batom-tijolo": {
+      "hero": "Batons/20241202_DDFYJhHO5YL_01.jpg",
+      "gallery": [],
+      "alt": {
+        "Batons/20241202_DDFYJhHO5YL_01.jpg": "bálsamo labial em stick branco com a barra de cor vermelho-tijolo exposta, tampa ao lado e um segundo stick fechado, sobre saco de juta"
+      },
+      "notes": "única imagem que mostra a cor tijolo; a legenda confirma 'vermelho tijolo'."
+    },
+    "batom-herpes": {
+      "hero": null,
+      "gallery": [],
+      "alt": {},
+      "notes": "nenhuma legenda ou imagem identifica um bálsamo para herpes. usar placeholder."
+    },
+    "batom-laranja": {
+      "hero": "Batons/20241124_DCw6VjeuqFD_01.jpg",
+      "gallery": [],
+      "alt": {
+        "Batons/20241124_DCw6VjeuqFD_01.jpg": "bálsamo labial em stick branco ao lado de um boião de máscara capilar e de uma vela acesa em copo de vidro, sobre papel"
+      },
+      "notes": "a legenda do post identifica o bálsamo com óleo essencial de laranja; imagem horizontal (1439x1223) e de encomenda com vários produtos; a cor do bálsamo não é visível."
+    },
+    "batom-natural": {
+      "hero": "Batons/20231009_CyL9A9Kt26J_02.jpg",
+      "gallery": [
+        "Batons/20231009_CyL9A9Kt26J_03.jpg",
+        "Outros/20250428_DI_Ky4cC1ZG_02.jpg"
+      ],
+      "alt": {
+        "Batons/20231009_CyL9A9Kt26J_02.jpg": "dois bálsamos labiais em stick branco com etiqueta roxa e barra amarelo-clara exposta, sobre tecido floral rosa",
+        "Batons/20231009_CyL9A9Kt26J_03.jpg": "vários bálsamos labiais em stick branco sobre tecido floral",
+        "Outros/20250428_DI_Ky4cC1ZG_02.jpg": "lata metálica pequena aberta com bálsamo labial amarelo-claro e etiqueta roxa lucrescente"
+      },
+      "notes": "post dedicado ao bálsamo labial (sem cor); _01 é texto. a lata aberta vem do kit 'eu cuido do meu nariz'."
+    },
+    "batom-h-pimenta": {
+      "hero": "Batons/20241202_DDFYJhHO5YL_01.jpg",
+      "gallery": [
+        "Batons/20231009_CyL9A9Kt26J_02.jpg"
+      ],
+      "alt": {
+        "Batons/20241202_DDFYJhHO5YL_01.jpg": "bálsamo labial em stick branco com a barra de cor vermelho-tijolo exposta, tampa ao lado e um segundo stick fechado, sobre saco de juta",
+        "Batons/20231009_CyL9A9Kt26J_02.jpg": "dois bálsamos labiais em stick branco com etiqueta roxa e barra amarelo-clara exposta, sobre tecido floral rosa"
+      },
+      "notes": "a legenda de 20241202 identifica o stick fechado como o bálsamo sem cor com hortelã-pimenta; não há imagem isolada. incerteza alta; considerar usar a imagem genérica do stick (20231009) como hero."
+    },
+    "inalador": {
+      "hero": "Outros/20250410_DIR4IR1Cnsc_02.jpg",
+      "gallery": [
+        "Outros/20250410_DIR4IR1Cnsc_05.jpg",
+        "Outros/20250410_DIR4IR1Cnsc_03.jpg"
+      ],
+      "alt": {
+        "Outros/20250410_DIR4IR1Cnsc_02.jpg": "cinco inaladores nasais brancos com etiqueta redonda cinzenta, um deitado, sobre tecido floral rosa",
+        "Outros/20250410_DIR4IR1Cnsc_05.jpg": "inaladores nasais brancos, um deles aberto a mostrar o tubo interior, sobre tecido floral",
+        "Outros/20250410_DIR4IR1Cnsc_03.jpg": "quatro inaladores nasais brancos em pé e um deitado sobre tecido floral"
+      },
+      "notes": "post dedicado 20250410; _01 é texto."
+    },
+    "ambientador": {
+      "hero": "Outros/20241101_DB1oRHvujxB_05.jpg",
+      "gallery": [
+        "Outros/20241101_DB1oRHvujxB_02.jpg",
+        "Outros/20241101_DB1oRHvujxB_04.jpg"
+      ],
+      "alt": {
+        "Outros/20241101_DB1oRHvujxB_05.jpg": "ambientadores de cera de soja em forma de estrela, redondos e em forma de coração, agrupados sobre tecido floral rosa",
+        "Outros/20241101_DB1oRHvujxB_02.jpg": "ambientadores de cera cor de creme em forma de flor com ervas secas",
+        "Outros/20241101_DB1oRHvujxB_04.jpg": "ambientadores de cera em forma de coração com pétalas rosa"
+      },
+      "notes": "post dedicado 20241101; _01 é texto."
+    }
+  },
+  "editorial": {
+    "home-hero": {
+      "hero": "Velas/20260722_DbG5fRHgnnG_05.jpg",
+      "gallery": [
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_02.jpg",
+        "Velas/20260722_DbG5fRHgnnG_02.jpg"
+      ],
+      "alt": {
+        "Velas/20260722_DbG5fRHgnnG_05.jpg": "vela de cera de soja vista de cima, decorada com flores secas, em frasco de vidro",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_02.jpg": "grande plano de amaciadores sólidos cor de creme com relevo de flores",
+        "Velas/20260722_DbG5fRHgnnG_02.jpg": "mão a segurar uma vela de cera de soja em frasco de vidro com etiqueta redonda preta lucrescente"
+      },
+      "notes": "imagens 3024x3780 de 2026, luz natural, retrato. mão adulta em _02."
+    },
+    "sobre": {
+      "hero": "_por_rever/20250803_DM51x3zidU4_01.jpg",
+      "gallery": [
+        "_por_rever/20251204_DR2ce2CDWF__04.jpg",
+        "Outros/20240110_C175_VIt8Xh_09.jpg"
+      ],
+      "alt": {
+        "_por_rever/20250803_DM51x3zidU4_01.jpg": "duas mulheres em trajes de época atrás de uma banca de feira com produtos lucrescente sobre toalha laranja",
+        "_por_rever/20251204_DR2ce2CDWF__04.jpg": "duas mulheres abraçadas em capas académicas pretas, num espaço interior",
+        "Outros/20240110_C175_VIt8Xh_09.jpg": "mãos a arrumar embrulhos em sacos de tecido dentro de uma caixa"
+      },
+      "notes": "apenas adultos; a banca da feira quinhentista (20250803_01) mostra as duas produtoras. 20251204_04 é da cerimónia académica (legenda pessoal). sem rostos de crianças."
+    },
+    "cuidados-reuse": {
+      "hero": "Velas/20251021_DQFGjWygkKu_04.jpg",
+      "gallery": [
+        "Sabonetes/20240318_C4qmRYfNk7p_05.jpg",
+        "Velas/20240125_C2hZyv2tU7z_04.jpg"
+      ],
+      "alt": {
+        "Velas/20251021_DQFGjWygkKu_04.jpg": "vela de cera de soja feita dentro de uma caneca de cerâmica reutilizada, com flores secas, sobre tecido floral",
+        "Sabonetes/20240318_C4qmRYfNk7p_05.jpg": "duas saboneteiras artesanais em forma de folha, verde-água e amarela, sobre tecido floral",
+        "Velas/20240125_C2hZyv2tU7z_04.jpg": "vela em frasco de vidro reutilizado com pétalas vermelhas, sobre tecido floral"
+      },
+      "notes": "20251021 é a caneca reutilizada pela segunda vez; 20240318 são saboneteiras feitas à mão; 20240125 é o 'antes e depois' de um frasco reutilizado."
+    },
+    "cuidados-velas": {
+      "hero": "Velas/20251021_DQFGjWygkKu_05.jpg",
+      "gallery": [
+        "_por_rever/20250803_DM51x3zidU4_02.jpg",
+        "Velas/20240125_C2hZyv2tU7z_03.jpg"
+      ],
+      "alt": {
+        "Velas/20251021_DQFGjWygkKu_05.jpg": "grande plano de vela com três pavios numa caneca de cerâmica, decorada com flores secas coloridas",
+        "_por_rever/20250803_DM51x3zidU4_02.jpg": "velas em chávenas e frascos reutilizados, decoradas com flores secas, numa mesa de feira com toalha laranja",
+        "Velas/20240125_C2hZyv2tU7z_03.jpg": "vela em frasco de vidro vista de cima, com cera branca, pétalas vermelhas e pequenas contas douradas"
+      },
+      "notes": "velas em recipientes reutilizados (caneca, chávenas, frascos)."
+    },
+    "cuidados-solidos": {
+      "hero": "Champôs/20240318_C4qmRYfNk7p_02.jpg",
+      "gallery": [
+        "Champôs/20240318_C4qmRYfNk7p_06.jpg",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_04.jpg"
+      ],
+      "alt": {
+        "Champôs/20240318_C4qmRYfNk7p_02.jpg": "três barras sólidas sem embalagem (branca, verde e bege) em saboneteiras artesanais em forma de folha, sobre tecido floral",
+        "Champôs/20240318_C4qmRYfNk7p_06.jpg": "barras sólidas brancas, bege e verde em saboneteiras artesanais de cerâmica",
+        "Cuidado Capilar/20260704_DaYIR1aDTEY_04.jpg": "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul"
+      },
+      "notes": "barras sólidas sem embalagem, em saboneteiras."
+    }
+  },
+  "categories": {
+    "Desodorizantes": {
+      "file": "Desodorizantes/20230715_CuuQPSAtkbY_02.jpg",
+      "alt": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral"
+    },
+    "Champôs": {
+      "file": "Champôs/20240301_C3-WLX7NKe1_02.jpg",
+      "alt": "quatro champôs sólidos redondos de cor creme, um deles de lado, sobre tecido floral rosa e azul"
+    },
+    "Cuidado Capilar": {
+      "file": "Cuidado Capilar/20260704_DaYIR1aDTEY_04.jpg",
+      "alt": "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul"
+    },
+    "Sabonetes": {
+      "file": "Sabonetes/20240118_C2QJsMnNmeX_02.jpg",
+      "alt": "sabonetes de rosto translúcidos em forma de flor, com sementes de papoila visíveis, em grande plano"
+    },
+    "Velas": {
+      "file": "Velas/20260710_DanyepXDdTS_05.jpg",
+      "alt": "três velas em copos de vidro com etiqueta preta ao lado de flores secas"
+    },
+    "Roll-on": {
+      "file": "Roll-on/20240304_C4GntZ5NjJH_03.jpg",
+      "alt": "três roll-ons de vidro âmbar de 10 ml, um deles aberto a mostrar a esfera de aço, com etiqueta redonda lucrescente, sobre tecido floral"
+    },
+    "Sprays": {
+      "file": "Sprays/20260303_DVbQpBUgpoV_02.jpg",
+      "alt": "quatro frascos de vidro âmbar com pulverizador branco e etiqueta roxa lucrescente, em pé sobre tecido floral rosa e azul"
+    },
+    "Sais de Banho": {
+      "file": "Sais de Banho/20260217_DU3n7RKDWF7_01.jpg",
+      "alt": "três frascos de vidro com sais de banho e rolha de cortiça, etiqueta roxa lucrescente, sobre tecido floral rosa e azul"
+    },
+    "Batons": {
+      "file": "Batons/20231009_CyL9A9Kt26J_02.jpg",
+      "alt": "dois bálsamos labiais em stick branco com etiqueta roxa e barra amarelo-clara exposta, sobre tecido floral rosa"
+    },
+    "Outros": {
+      "file": "Outros/20250410_DIR4IR1Cnsc_02.jpg",
+      "alt": "cinco inaladores nasais brancos com etiqueta redonda cinzenta, um deitado, sobre tecido floral rosa"
+    }
+  }
+}
