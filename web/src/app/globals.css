@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   lucrescente design tokens
+   Source: Lucrescente_Brand_and_Website_Guidelines.docx, section 13.
+   Change tokens here only; never page by page.
+------------------------------------------------------------------- */
+:root {
+  --forest: #223925;
+  --moss: #48674d;
+  --earth: #847a69;
+  --clay: #6f554f;
+  --bark: #593d37;
+  --lavender: #beb2dd;
+  --violet: #8c79a8;
+  --ivory: #f4f0e8;
+  --paper: #fbf8f2;
+  --ink: #2b2926;
+
+  --radius-card: 20px;
+  --radius-control: 999px;
+  --shadow-soft: 0 18px 50px rgb(34 57 37 / 0.1);
+  --content-max: 80rem;
+}
+
+@theme inline {
+  --color-forest: var(--forest);
+  --color-moss: var(--moss);
+  --color-earth: var(--earth);
+  --color-clay: var(--clay);
+  --color-bark: var(--bark);
+  --color-lavender: var(--lavender);
+  --color-violet: var(--violet);
+  --color-ivory: var(--ivory);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-ui: var(--font-dm-sans), system-ui, sans-serif;
+
+  --radius-card: 20px;
+  --radius-control: 999px;
+  --shadow-soft: 0 18px 50px rgb(34 57 37 / 0.1);
+
+  /* type scale from the guidelines */
+  --text-display: clamp(3rem, 7vw, 6rem);
+  --text-display--line-height: 1;
+  --text-h1: clamp(2.5rem, 5vw, 4.5rem);
+  --text-h1--line-height: 1.05;
+  --text-h2: clamp(2rem, 3.5vw, 3.25rem);
+  --text-h2--line-height: 1.08;
+  --text-h3: 1.5rem;
+  --text-h3--line-height: 1.18;
+  --text-body-lg: 1.125rem;
+  --text-body-lg--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.65;
+  --text-label: 0.75rem;
+  --text-label--line-height: 1.2;
+
+  /* spacing scale 4 8 12 16 24 32 48 64 96 128 is covered by tailwind's default 4px unit */
+  --ease-calm: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--ivory);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: var(--lavender);
+  color: var(--ink);
+}
+
+/* focus: visible 2px violet or forest outline, 3px offset */
+:focus-visible {
+  outline: 2px solid var(--violet);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.on-dark :focus-visible,
+.on-dark:focus-visible {
+  outline-color: var(--lavender);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* utilities that map directly to the guidelines */
+@utility container-brand {
+  width: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: 1.25rem; /* 20px mobile */
+  @media (min-width: 768px) {
+    padding-inline: 2rem; /* 32px tablet */
+  }
+  @media (min-width: 1280px) {
+    padding-inline: 4rem; /* 64px desktop */
+  }
+}
+
+@utility section-gap {
+  padding-block: 4rem; /* 64 mobile */
+  @media (min-width: 1024px) {
+    padding-block: 6rem; /* 96 desktop */
+  }
+}
+
+@utility measure {
+  max-width: 62ch; /* keeps copy at 45-70 characters */
+}
+
+@utility card-brand {
+  background: var(--paper);
+  border: 1px solid color-mix(in srgb, var(--moss) 18%, transparent);
+  border-radius: var(--radius-card);
+}
+
+@utility label-brand {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.1em;
+  text-transform: lowercase;
+}
+
+@utility frame-brand {
+  border-radius: 20px;
+  border: 2px solid color-mix(in srgb, var(--clay) 35%, transparent);
+  overflow: hidden;
+}
+
+/* hairline orbit lines (decorative) */
+@utility orbit-line {
+  border: 1px solid color-mix(in srgb, var(--forest) 40%, transparent);
+  border-radius: 999px;
+}
+
+/* placeholder frame for products without a photo */
+.placeholder-frame {
+  background:
+    radial-gradient(circle at 70% 35%, color-mix(in srgb, var(--lavender) 55%, transparent) 0, transparent 38%),
+    linear-gradient(160deg, var(--paper), var(--ivory));
+}
+
+/* sr-only helper lives in tailwind already (sr-only) */

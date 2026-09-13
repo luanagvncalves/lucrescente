@@ -1,0 +1,602 @@
+[
+ {
+  "slug": "oleo-de-baunilha-macerado",
+  "name": "Óleo de Baunilha Macerado",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Vanilla planifolia.",
+  "origin": "Obtido pela maceração de vagens de baunilha num óleo vegetal base, processo tradicional que transfere lentamente o aroma e alguns compostos da baunilha para o óleo ao longo de semanas.",
+  "properties": "Aroma doce e envolvente, associado a uma sensação de conforto; o óleo base contribui com propriedades emolientes que ajudam a nutrir e suavizar a pele.",
+  "applications": "Usado como ingrediente aromático em bálsamos e óleos corporais, para um aroma quentinho e reconfortante.",
+  "sort_order": 0
+ },
+ {
+  "slug": "oleo-de-coco",
+  "name": "Óleo de Coco",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Cocos nucifera.",
+  "origin": "Extraído da polpa do coco, fruto de uma palmeira tropical cultivada em regiões costeiras de todo o mundo, incluindo o Sudeste Asiático e partes da América do Sul.",
+  "properties": "Rico em ácidos gordos saturados (sobretudo ácido láurico), funde à temperatura da pele e forma uma película protetora que ajuda a reter a hidratação e a reduzir a perda de água transepidérmica. Textura leve e absorção relativamente rápida em comparação com outras manteigas vegetais. Muito usado também em cuidados capilares, onde ajuda a reduzir a perda de proteína da fibra capilar.",
+  "applications": "Um dos óleos base mais usados por cá — entra em bálsamos corporais, sabonetes sólidos, amaciadores sólidos e no nosso Champô Oleosos, onde ajuda a limpar sem retirar todo o óleo natural do couro cabeludo.",
+  "sort_order": 1
+ },
+ {
+  "slug": "oleo-de-neem",
+  "name": "Óleo de Neem",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Azadirachta indica.",
+  "origin": "Extraído das sementes da árvore de neem, nativa do subcontinente indiano, onde é usada há séculos em remédios tradicionais.",
+  "properties": "Óleo denso de aroma marcante, tradicionalmente valorizado em cuidados do couro cabeludo e da pele, especialmente em fórmulas pensadas para peles ou couros cabeludos com tendência a desequilíbrios. Usado sempre em pequenas percentagens devido à sua concentração.",
+  "applications": "Usado em pequenas percentagens em produtos capilares e corporais pensados para couros cabeludos ou peles com necessidades mais específicas.",
+  "sort_order": 2
+ },
+ {
+  "slug": "oleo-de-ricino",
+  "name": "Óleo de Rícino",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Ricinus communis.",
+  "origin": "Extraído das sementes da mamoneira, uma planta de crescimento rápido cultivada em regiões tropicais e subtropicais, incluindo partes da Índia e do Brasil.",
+  "properties": "Textura densa, viscosa e muito emoliente, com boa capacidade de reter humidade e formar uma camada protetora na superfície da pele e do cabelo. Rico em ácido ricinoleico, um ácido gordo pouco comum que lhe confere essa consistência espessa característica. É frequentemente usado em produtos para lábios, cabelo, sobrancelhas e unhas, onde a sua viscosidade ajuda a fixar outros ingredientes.",
+  "applications": "Componente dos nossos bálsamos labiais, onde a sua viscosidade ajuda a criar aquela textura envolvente, e também presente no Champô Oleosos, onde ajuda a nutrir as pontas sem pesar nas raízes.",
+  "sort_order": 3
+ },
+ {
+  "slug": "oleo-vegetal-de-amendoas-doces",
+  "name": "Óleo Vegetal de Amêndoas Doces",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Prunus dulcis.",
+  "origin": "Extraído das amêndoas doces, fruto de uma árvore cultivada sobretudo na bacia do Mediterrâneo.",
+  "properties": "Textura leve e rapidamente absorvida, rico em vitamina E e ácidos gordos essenciais (oleico e linoleico), que ajudam a nutrir e amaciar a pele sem deixar sensação gordurosa. Muito usado como óleo de massagem pela sua boa deslizabilidade.",
+  "applications": "Usado como óleo base em óleos corporais e de massagem.",
+  "sort_order": 4
+ },
+ {
+  "slug": "oleo-vegetal-de-argao",
+  "name": "Óleo Vegetal de Argão",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Argania spinosa.",
+  "origin": "Extraído das amêndoas da argânia, árvore nativa do sudoeste de Marrocos, tradicionalmente produzido de forma artesanal por cooperativas locais.",
+  "properties": "Rico em ácidos gordos essenciais e vitamina E, é muito valorizado em cuidados capilares e faciais pela sua textura sedosa e capacidade de nutrir sem pesar, ajudando a controlar o frisado e a dar brilho ao cabelo.",
+  "applications": "Usado em óleos faciais e produtos capilares nutritivos, incluindo o Champô Oleosos, onde ajuda a nutrir o cabelo sem deixar sensação de peso.",
+  "sort_order": 5
+ },
+ {
+  "slug": "oleo-essencial-de-alecrim",
+  "name": "Óleo Essencial de Alecrim",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Rosmarinus officinalis.",
+  "origin": "Extraído por destilação a vapor das folhas de alecrim, arbusto aromático mediterrânico.",
+  "properties": "Aroma herbáceo e estimulante, tradicionalmente associado a cuidados capilares revitalizantes e a uma sensação de energia. Como todos os óleos essenciais, é usado em concentrações muito baixas e sempre diluído.",
+  "applications": "Usado em pequenas quantidades em produtos capilares, para um aroma que dá energia logo pela manhã.",
+  "sort_order": 6
+ },
+ {
+  "slug": "oleo-essencial-de-alecrim-qt-cineol",
+  "name": "Óleo Essencial de Alecrim QT Cineol",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Rosmarinus officinalis.",
+  "origin": "Óleo essencial de alecrim quimiotipado por cineol, extraído por destilação das folhas de alecrim.",
+  "properties": "Tem um aroma herbáceo, fresco e revigorante, valorizado em fórmulas de cuidado capilar pela sua sensação de limpeza e energia.",
+  "applications": "Usado em pequena quantidade na Máscara Capilar, onde contribui para o aroma fresco e revitalizante da fórmula.",
+  "sort_order": 7
+ },
+ {
+  "slug": "oleo-essencial-de-bergamota",
+  "name": "Óleo Essencial de Bergamota",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus bergamia.",
+  "origin": "Extraído da casca da bergamota, um citrino cultivado sobretudo no sul de Itália.",
+  "properties": "Aroma cítrico e floral, muito usado em perfumaria natural pelo seu perfil aromático equilibrado, que combina o frescor cítrico com uma nota floral mais suave. É tradicionalmente considerado relaxante e calmante, e associado a propriedades anti-inflamatórias e regeneradoras da pele.",
+  "applications": "Usado como nota aromática em produtos perfumados, sempre em pequenas quantidades para equilibrar aromas mais intensos.",
+  "sort_order": 8
+ },
+ {
+  "slug": "oleo-essencial-de-camomila-romana",
+  "name": "Óleo Essencial de Camomila Romana",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Chamaemelum nobile.",
+  "origin": "Extraído por destilação das flores de camomila-romana.",
+  "properties": "Aroma suave e adocicado, tradicionalmente associado a um efeito calmante, tanto pelo aroma como pelos compostos presentes no óleo. Usado sempre muito diluído dada a sua potência.",
+  "applications": "Usado em pequenas quantidades em produtos para peles sensíveis, sempre com muito cuidado na dosagem.",
+  "sort_order": 9
+ },
+ {
+  "slug": "oleo-essencial-de-erva-principe",
+  "name": "Óleo Essencial de Erva-Príncipe",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cymbopogon citratus.",
+  "origin": "Também conhecida como capim-limão, é extraída por destilação das folhas desta planta tropical.",
+  "properties": "Aroma cítrico intenso e fresco, muito usado em aromaterapia e perfumaria natural pela sua capacidade de refrescar e energizar um ambiente ou produto.",
+  "applications": "Usado como nota aromática refrescante em produtos corporais, ótimo para os dias de verão.",
+  "sort_order": 10
+ },
+ {
+  "slug": "oleo-essencial-de-erva-principe-citratus",
+  "name": "Óleo Essencial de Erva-príncipe (Citratus)",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cymbopogon citratus.",
+  "origin": "Extraído por destilação das folhas de erva-príncipe, uma gramínea aromática de origem tropical conhecida pelo seu aroma fresco e cítrico.",
+  "properties": "Tem um aroma limonado, fresco e revitalizante. Em cosmética, é usado sobretudo pela sua nota aromática e pela sensação de limpeza que acrescenta às fórmulas.",
+  "applications": "Usado em pequena quantidade no Champô Oleosos, onde dá à fórmula um aroma cítrico fresco e uma sensação revigorante durante a lavagem.",
+  "sort_order": 11
+ },
+ {
+  "slug": "oleo-essencial-de-eucalipto-radiata",
+  "name": "Óleo Essencial de Eucalipto Radiata",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Eucalyptus radiata.",
+  "origin": "Extraído por destilação das folhas de eucalipto, árvore originária da Austrália.",
+  "properties": "Aroma fresco e penetrante, tradicionalmente associado a uma sensação de respiração desobstruída e a ambientes revigorantes, sendo uma variedade de eucalipto considerada mais suave do que outras.",
+  "applications": "Usado em produtos de banho e difusores aromáticos.",
+  "sort_order": 12
+ },
+ {
+  "slug": "oleo-essencial-de-geranio-rosa",
+  "name": "Óleo Essencial de Gerânio Rosa",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Pelargonium graveolens.",
+  "origin": "Extraído das folhas e flores do gerânio-rosa, planta aromática cultivada sobretudo em África e no Mediterrâneo.",
+  "properties": "Aroma floral e ligeiramente adocicado, com notas que lembram a rosa, muito apreciado em perfumaria natural e associado a um efeito equilibrante em fórmulas para pele mista.",
+  "applications": "Usado como nota floral em produtos perfumados.",
+  "sort_order": 13
+ },
+ {
+  "slug": "oleo-essencial-de-hortela-pimenta",
+  "name": "Óleo Essencial de Hortelã-Pimenta",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Mentha piperita.",
+  "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
+  "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
+  "applications": "Usado em pequenas quantidades em produtos refrescantes para os pés e corpo, e no Champô Oleosos, onde dá aquele efeito imediato de frescura no couro cabeludo.",
+  "sort_order": 14
+ },
+ {
+  "slug": "oleo-essencial-de-laranja-doce",
+  "name": "Óleo Essencial de Laranja Doce",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus sinensis.",
+  "origin": "Extraído da casca da laranja doce, um dos óleos essenciais cítricos mais usados em cosmética natural.",
+  "properties": "Aroma cítrico doce e alegre, associado a uma sensação de bem-estar e frequentemente usado para equilibrar aromas mais intensos noutras misturas.",
+  "applications": "Usado como nota aromática em diversos produtos, para um cheirinho alegre que agrada quase toda a gente.",
+  "sort_order": 15
+ },
+ {
+  "slug": "oleo-essencial-de-lavanda",
+  "name": "Óleo Essencial de Lavanda",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Lavandula angustifolia.",
+  "origin": "Extraído por destilação das flores de lavanda, um dos óleos essenciais mais versáteis e conhecidos.",
+  "properties": "Aroma floral e herbáceo, tradicionalmente associado a um efeito calmante, anti-inflamatório e cicatrizante, sendo um dos óleos essenciais mais estudados e um dos poucos considerados relativamente seguros para uso mais frequente, sempre diluído.",
+  "applications": "Usado em produtos relaxantes e de cuidado noturno, um dos aromas mais pedidos pelos nossos clientes.",
+  "sort_order": 16
+ },
+ {
+  "slug": "oleo-essencial-de-lavanda-4042-blend",
+  "name": "Óleo Essencial de Lavanda 40/42 (blend)",
+  "category": "Óleos Essenciais",
+  "scientific_name": null,
+  "origin": "Mistura aromática baseada em óleo essencial de lavanda, selecionada pelo seu perfil floral equilibrado e consistente.",
+  "properties": "Tem um aroma floral, suave e reconhecível, associado a uma sensação de calma e conforto. O formato blend oferece uma fragrância estável e adequada a fórmulas de cuidado capilar.",
+  "applications": "Usado em pequena quantidade no Champô Secos, onde contribui para o aroma suave e reconfortante da fórmula.",
+  "sort_order": 17
+ },
+ {
+  "slug": "oleo-essencial-de-limao",
+  "name": "Óleo Essencial de Limão",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus limon.",
+  "origin": "Extraído a frio da casca do limão.",
+  "properties": "Aroma cítrico vivo e energizante, muito usado em produtos de limpeza natural e perfumaria pela sensação imediata de frescura que transmite.",
+  "applications": "Usado como nota aromática fresca em produtos corporais e no Champô Oleosos, para um efeito revigorante e uma sensação extra de limpeza.",
+  "sort_order": 18
+ },
+ {
+  "slug": "oleo-essencial-de-palmarosa",
+  "name": "Óleo Essencial de Palmarosa",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cymbopogon martini.",
+  "origin": "Extraído por destilação de uma erva aromática originária da Índia, aparentada com a citronela.",
+  "properties": "Aroma floral suave, com notas que lembram a rosa; muito usado em cuidados de pele natural, sendo por vezes usado como alternativa mais acessível a óleos de rosa verdadeira em perfumaria.",
+  "applications": "Usado como nota floral em produtos faciais e corporais, um aroma mais acessível para quem adora rosa.",
+  "sort_order": 19
+ },
+ {
+  "slug": "oleo-essencial-de-petitgrain",
+  "name": "Óleo Essencial de Petitgrain",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus aurantium (folhas e ramos).",
+  "origin": "Extraído por destilação das folhas e ramos da laranjeira-amarga, distinto do óleo extraído da flor (neroli) ou da casca.",
+  "properties": "Aroma verde, ligeiramente floral e amadeirado, muito usado em perfumaria natural como nota de fundo que dá profundidade a misturas mais complexas.",
+  "applications": "Usado como nota aromática de fundo em produtos perfumados, dando profundidade a misturas mais elaboradas.",
+  "sort_order": 20
+ },
+ {
+  "slug": "oleo-essencial-de-ravintsara",
+  "name": "Óleo Essencial de Ravintsara",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cinnamomum camphora.",
+  "origin": "Extraído das folhas de uma árvore cultivada principalmente em Madagáscar.",
+  "properties": "Aroma fresco e amadeirado, com notas que lembram o eucalipto, tradicionalmente associado a ambientes revigorantes e usado em difusores para criar uma atmosfera mais fresca.",
+  "applications": "Usado em difusores e produtos de banho aromáticos, para um ambiente mais fresco em casa.",
+  "sort_order": 21
+ },
+ {
+  "slug": "oleo-essencial-de-tea-tree",
+  "name": "Óleo Essencial de Tea Tree",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Melaleuca alternifolia.",
+  "origin": "Extraído por destilação das folhas da árvore-do-chá, nativa da Austrália, onde é tradicionalmente usada pelos povos aborígenes.",
+  "properties": "Aroma fresco e ligeiramente medicinal; um dos óleos essenciais mais estudados em cosmética natural, sendo tradicionalmente associado a peles com tendência oleosa ou a imperfeições, ajudando a transmitir uma sensação de limpeza.",
+  "applications": "Usado em pequenas quantidades em produtos purificantes, para uma sensação extra de limpeza.",
+  "sort_order": 22
+ },
+ {
+  "slug": "oleo-essencial-de-ylang-ylang",
+  "name": "Óleo Essencial de Ylang-Ylang",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cananga odorata.",
+  "origin": "Extraído das flores da cananga, árvore tropical cultivada sobretudo em Madagáscar e no Sudeste Asiático.",
+  "properties": "Aroma floral intenso e exótico, muito valorizado em perfumaria natural como nota central marcante, sendo tradicionalmente associado a uma sensação de relaxamento.",
+  "applications": "Usado como nota floral marcante em produtos perfumados, para quem gosta de um aroma mais intenso e envolvente.",
+  "sort_order": 23
+ },
+ {
+  "slug": "oleo-essencial-de-gengibre",
+  "name": "Óleo Essencial de Gengibre",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Zingiber officinale.",
+  "origin": "Extraído por destilação da raiz de gengibre, especiaria cultivada sobretudo na Ásia tropical.",
+  "properties": "Aroma quente, picante e amadeirado, tradicionalmente associado a uma sensação de energia e aquecimento, muito usado em fórmulas revigorantes.",
+  "applications": "Usado em pequena quantidade em produtos aromáticos, para acrescentar uma nota quente e envolvente.",
+  "sort_order": 24
+ },
+ {
+  "slug": "oleo-essencial-de-canela",
+  "name": "Óleo Essencial de Canela",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cinnamomum verum / Cinnamomum zeylanicum.",
+  "origin": "Extraído da casca ou das folhas da canela, especiaria de origem asiática cultivada sobretudo no Sri Lanka.",
+  "properties": "Aroma quente, doce e especiado, muito reconhecível, usado sempre em quantidades muito pequenas por ser um óleo intenso e potente.",
+  "applications": "Usado em quantidades mínimas em produtos aromáticos de inverno, para uma nota especiada e reconfortante.",
+  "sort_order": 25
+ },
+ {
+  "slug": "oleo-essencial-de-patchouli",
+  "name": "Óleo Essencial de Patchouli",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Pogostemon cablin.",
+  "origin": "Extraído por destilação das folhas de patchouli, planta aromática originária do Sudeste Asiático.",
+  "properties": "Aroma terroso, amadeirado e persistente, muito usado em perfumaria natural como fixador, ajudando outros aromas a durar mais tempo.",
+  "applications": "Usado em pequena quantidade como base aromática em produtos perfumados, para dar profundidade e fixar o aroma.",
+  "sort_order": 26
+ },
+ {
+  "slug": "oleo-essencial-de-ho-wood",
+  "name": "Óleo Essencial de Ho Wood",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Cinnamomum camphora ct. linalol.",
+  "origin": "Extraído por destilação da madeira de ho wood, árvore da China frequentemente usada como alternativa mais sustentável ao pau-rosa.",
+  "properties": "Aroma floral e ligeiramente amadeirado, rico em linalol, tradicionalmente associado a um efeito calmante e equilibrante.",
+  "applications": "Usado como alternativa suave e sustentável em produtos aromáticos calmantes.",
+  "sort_order": 27
+ },
+ {
+  "slug": "manteiga-de-cacau",
+  "name": "Manteiga de Cacau",
+  "category": "Manteigas",
+  "scientific_name": "Theobroma cacao.",
+  "origin": "Extraída das sementes do cacaueiro, árvore tropical cultivada sobretudo na América Central e do Sul e na África Ocidental.",
+  "properties": "Sólida e quebradiça à temperatura ambiente, rica em antioxidantes naturais (polifenóis) que ajudam a proteger a própria gordura da oxidação. Forma uma barreira protetora na pele, ajuda a reter humidade e é tradicionalmente associada à manutenção da elasticidade em zonas sujeitas a maior distensão.",
+  "applications": "Usada em bálsamos e cremes corporais mais densos, sobretudo em fórmulas pensadas para peles muito secas ou para os meses mais frios do ano.",
+  "sort_order": 28
+ },
+ {
+  "slug": "manteiga-de-karite",
+  "name": "Manteiga de Karité",
+  "category": "Manteigas",
+  "scientific_name": "Vitellaria paradoxa.",
+  "origin": "Extraída das sementes da árvore-do-karité, nativa da savana da África Ocidental, onde é produzida artesanalmente há gerações.",
+  "properties": "Textura densa e amanteigada, rica em ácidos gordos (esteárico e oleico) e em vitamina E, derretendo suavemente ao contacto com a pele. Nutre profundamente e ajuda a restaurar o conforto de peles muito secas, ásperas ou danificadas pelo frio e pelo vento. A sua fração insaponificável é frequentemente associada à manutenção da elasticidade da pele.",
+  "applications": "A nossa manteiga base preferida para bálsamos e batons hidratantes — combina-se muito bem com óleos de amêndoas doces e argão, uma trinca que usamos com frequência em produtos pensados para peles e cabelos mais secos.",
+  "sort_order": 29
+ },
+ {
+  "slug": "hidrolato-de-alecrim",
+  "name": "Hidrolato de Alecrim",
+  "category": "Hidrolatos",
+  "scientific_name": "Rosmarinus officinalis.",
+  "origin": "Água aromática obtida por destilação das folhas de alecrim, planta aromática mediterrânica.",
+  "properties": "Tonificante e refrescante, tradicionalmente associado a cuidados capilares e a uma sensação de revitalização do couro cabeludo. Também usado como tónico facial para peles mistas, pelo seu efeito ligeiramente adstringente.",
+  "applications": "Usado em produtos capilares e tónicos revitalizantes, uma escolha frequente para quem procura dar mais energia à rotina de cuidado do couro cabeludo.",
+  "sort_order": 30
+ },
+ {
+  "slug": "hidrolato-de-camomila-romana",
+  "name": "Hidrolato de Camomila Romana",
+  "category": "Hidrolatos",
+  "scientific_name": "Chamaemelum nobile.",
+  "origin": "Água aromática obtida por destilação das flores de camomila-romana, planta comum em toda a Europa.",
+  "properties": "Ajuda a acalmar a pele e a reduzir a sensação de desconforto em zonas mais reativas, sendo uma escolha comum para pele sensível e rotinas de cuidado mais suaves, incluindo cuidados noturnos ou pós-exposição solar.",
+  "applications": "Usado em fórmulas suaves pensadas para peles sensíveis, incluindo alguns dos nossos tónicos faciais de uso diário.",
+  "sort_order": 31
+ },
+ {
+  "slug": "hidrolato-de-hortela-pimenta",
+  "name": "Hidrolato de Hortelã-Pimenta",
+  "category": "Hidrolatos",
+  "scientific_name": "Mentha piperita.",
+  "origin": "Água aromática obtida por destilação das folhas de hortelã-pimenta.",
+  "properties": "Proporciona uma sensação refrescante imediata na pele graças ao efeito do mentol presente na planta, sendo associado a produtos revitalizantes e de uso em dias quentes ou após atividade física.",
+  "applications": "Usado em borrifos refrescantes e em produtos para os pés, e também no Champô Oleosos, onde reforça a sensação de frescura e limpeza no couro cabeludo.",
+  "sort_order": 32
+ },
+ {
+  "slug": "hidrolato-de-lavanda",
+  "name": "Hidrolato de Lavanda",
+  "category": "Hidrolatos",
+  "scientific_name": "Lavandula angustifolia.",
+  "origin": "Água aromática obtida por destilação a vapor das flores de lavanda, subproduto do mesmo processo que extrai o óleo essencial.",
+  "properties": "Refrescante e calmante, ajuda a equilibrar peles mistas a oleosas e é frequentemente associado à redução da sensação de tensão na pele. Contém uma concentração muito mais suave dos compostos ativos da lavanda do que o óleo essencial, o que o torna seguro para pulverização direta sobre a pele ou o rosto.",
+  "applications": "Usado como base aquosa no Champô Oleosos, ajudando a acalmar o couro cabeludo, e também em produtos faciais e borrifos relaxantes.",
+  "sort_order": 33
+ },
+ {
+  "slug": "acido-estearico",
+  "name": "Ácido Esteárico",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": null,
+  "origin": "Ácido gordo saturado presente em muitas gorduras vegetais, usado em cosmética como espessante e co-emulsionante.",
+  "properties": "Ajuda a estabilizar emulsões (misturas de água e óleo que de outra forma se separariam) e confere textura cremosa, corpo e uma sensação aveludada a produtos como cremes e loções. Contribui também para a estabilidade da fórmula ao longo do tempo.",
+  "applications": "Usado como espessante em cremes corporais e faciais, e também no Champô Oleosos, onde ajuda a dar corpo à fórmula e a estabilizá-la ao longo do tempo.",
+  "sort_order": 34
+ },
+ {
+  "slug": "alcool-cetilico",
+  "name": "Álcool Cetílico",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": null,
+  "origin": "Álcool gordo de origem vegetal (não confundir com álcool etílico), derivado tipicamente do óleo de coco ou de palma.",
+  "properties": "Espessante e emoliente suave, ajuda a estabilizar emulsões e deixa a pele com sensação macia e aveludada, sem o efeito secante do álcool etílico — na verdade, tem o efeito oposto, contribuindo para a sensação de hidratação do produto final.",
+  "applications": "Usado para dar corpo e estabilidade a cremes e loções.",
+  "sort_order": 35
+ },
+ {
+  "slug": "cera-autoemulsionante-olivem",
+  "name": "Cera Autoemulsionante OliveM",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": null,
+  "origin": "Emulsionante vegetal derivado do azeite de oliva, desenvolvido para criar emulsões estáveis sem recorrer a ingredientes sintéticos.",
+  "properties": "Permite misturar água e óleo de forma estável e duradoura, resultando em texturas leves, não gordurosas, e uma sensação sedosa na pele. É considerado um emulsionante de perfil suave, adequado também para peles mais sensíveis.",
+  "applications": "Usada como emulsionante principal em cremes e loções, sempre que queremos uma textura mais leve e uma absorção rápida.",
+  "sort_order": 36
+ },
+ {
+  "slug": "cera-de-abelha-amarela",
+  "name": "Cera de Abelha Amarela",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": null,
+  "origin": "Produzida pelas abelhas para construir os favos da colmeia; a variante amarela retém a cor e o aroma natural do mel e do pólen.",
+  "properties": "Confere estrutura e textura sólida a bálsamos e velas, além de ajudar a formar uma barreira protetora e ligeiramente oclusiva na pele, reduzindo a perda de água. Tem propriedades emolientes suaves e contribui para a estabilidade e o prazo de validade das fórmulas em que entra, ao criar uma textura mais resistente ao calor.",
+  "applications": "Ingrediente essencial nas nossas velas naturais, onde dá corpo e ajuda a queimar de forma mais uniforme, e também usada em bálsamos labiais e cremes sólidos para lhes dar estrutura.",
+  "sort_order": 37
+ },
+ {
+  "slug": "cera-de-soja",
+  "name": "Cera de Soja",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": "Glycine max (soja).",
+  "origin": "Cera vegetal obtida do óleo de soja, recurso renovável e ecologicamente sustentável — uma alternativa natural às ceras de parafina e outros derivados do petróleo.",
+  "properties": "Sólida à temperatura ambiente, derrete e solidifica de forma lenta e uniforme, sem criar 'poço' à volta do pavio nem desperdiçar cera — por isso é também uma escolha económica. Queima de forma mais limpa e mais lenta do que a parafina, com menos fuligem. É segura ao toque, biodegradável e, por ser hidratante, pode ser usada diretamente na pele.",
+  "applications": "Base das nossas velas, onde garante uma queima uniforme e duradoura e, graças aos óleos essenciais que lhe juntamos, liberta um aroma leve e terapêutico enquanto arde. Fora das velas, a mesma cera dá-nos ambientadores sólidos — para perfumar gavetas e armários ou derreter num queimador — e, derretida, pode ainda servir de óleo de massagem ou ser esfregada diretamente na pele como um 'perfume' sólido e reconfortante.",
+  "sort_order": 38
+ },
+ {
+  "slug": "cera-emulsionante-btms",
+  "name": "Cera Emulsionante BTMS",
+  "category": "Ceras e Emulsionantes",
+  "scientific_name": null,
+  "origin": "Emulsionante de origem vegetal usado principalmente em produtos capilares, composto por álcool cetearílico e um tensioativo suave de carga positiva.",
+  "properties": "Confere textura cremosa e ajuda os ingredientes condicionadores a aderir à fibra capilar, facilitando o desembaraçar e reduzindo a eletricidade estática. Deixa o cabelo com sensação macia e mais fácil de pentear.",
+  "applications": "Usada nos nossos condicionadores e máscaras capilares, para deixar o cabelo mais fácil de desembaraçar.",
+  "sort_order": 39
+ },
+ {
+  "slug": "argila-branca",
+  "name": "Argila Branca CosKAO",
+  "category": "Argilas",
+  "scientific_name": null,
+  "origin": "Também chamada caulino, é uma argila mineral de origem natural, uma das mais suaves entre as argilas cosméticas.",
+  "properties": "Absorve o excesso de oleosidade sem ressecar em excesso, graças à sua estrutura mineral que capta impurezas e sebo à superfície da pele sem penetrar profundamente. É a mais suave das argilas cosméticas, sendo adequada mesmo para peles sensíveis ou secas que precisam de uma limpeza mais delicada.",
+  "applications": "Usada nas nossas máscaras faciais mais suaves e no Champô Oleosos, onde a argila branca CosKAO ajuda a limpar sem agressividade.",
+  "sort_order": 40
+ },
+ {
+  "slug": "argila-verde-superfina",
+  "name": "Argila Verde Superfina",
+  "category": "Argilas",
+  "scientific_name": null,
+  "origin": "Argila mineral rica em óxido de ferro e outros minerais, responsáveis pela sua tonalidade esverdeada.",
+  "properties": "Maior poder absorvente do que a argila branca, capta com eficácia o excesso de sebo e impurezas, sendo indicada para peles mais oleosas ou com tendência a imperfeições. A sua textura fina ('superfina') permite uma aplicação mais uniforme e uma secagem mais controlada em máscaras faciais.",
+  "applications": "Usada nas nossas máscaras faciais purificantes, e também no Champô Oleosos, onde ajuda a absorver o excesso de oleosidade do couro cabeludo sem ressecar as pontas.",
+  "sort_order": 41
+ },
+ {
+  "slug": "coenzima-q10",
+  "name": "Coenzima Q10",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Composto naturalmente presente nas células do corpo humano, também sintetizado para uso em cosmética a partir de fontes vegetais.",
+  "properties": "Antioxidante reconhecido, ajuda a proteger a pele do stress oxidativo causado por fatores ambientais e é frequentemente associado a cuidados antienvelhecimento, sendo usado em concentrações baixas devido à sua elevada potência.",
+  "applications": "Adicionada em pequenas quantidades aos nossos séruns e cremes faciais mais completos.",
+  "sort_order": 42
+ },
+ {
+  "slug": "conservante-cosgard",
+  "name": "Conservante Cosgard",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Conservante de origem vegetal (à base de álcool benzílico e ácido desidroacético), amplamente usado em cosmética natural como alternativa aos parabenos.",
+  "properties": "Protege as fórmulas com conteúdo aquoso contra o desenvolvimento de bactérias, bolores e leveduras, prolongando o seu prazo de validade em segurança. É eficaz numa gama alargada de pH e amplamente aceite em cosmética certificada como natural.",
+  "applications": "Usado em pequenas percentagens em todos os produtos com água na composição — incluindo o Champô Oleosos — para garantir que chegam até ti em segurança.",
+  "sort_order": 43
+ },
+ {
+  "slug": "d-pantenol-provitamina-b5",
+  "name": "D-Pantenol (Provitamina B5)",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Forma precursora da vitamina B5, convertida em ácido pantoténico quando aplicada na pele ou cabelo.",
+  "properties": "Hidratante e calmante, ajuda a reter humidade na camada mais superficial da pele e é frequentemente usado em produtos capilares para dar brilho, maciez e reduzir a aspereza dos fios. Contribui também para a sensação de conforto em peles irritadas.",
+  "applications": "Adicionado a cremes, loções e ao Champô Oleosos, onde ajuda a compensar o efeito limpante mais intenso, deixando o cabelo macio em vez de áspero.",
+  "sort_order": 44
+ },
+ {
+  "slug": "tensioativo-sci",
+  "name": "Tensioativo SCI",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Sodium Cocoyl Isethionate — tensioativo suave derivado do óleo de coco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
+  "properties": "Produz espuma cremosa e densa, e limpa a pele e o cabelo sem ser tão agressivo para a barreira cutânea como outros tensioativos comuns, reduzindo a sensação de secura ou tensão após a lavagem.",
+  "applications": "Usado como base limpante em sabonetes sólidos e no Champô Oleosos, onde é o principal responsável por remover o excesso de oleosidade sem agredir o couro cabeludo.",
+  "sort_order": 45
+ },
+ {
+  "slug": "vitamina-e",
+  "name": "Vitamina E",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Também conhecida como tocoferol, é um antioxidante lipossolúvel naturalmente presente em óleos vegetais como o de girassol e de gérmen de trigo.",
+  "properties": "Ajuda a proteger os óleos vegetais da oxidação (prolongando o prazo de validade dos produtos e evitando o aparecimento de odor a ranço), e contribui para a sensação de conforto e maciez da pele. Como antioxidante, ajuda também a neutralizar radicais livres gerados pela exposição ambiental.",
+  "applications": "Adicionada a óleos, bálsamos e amaciadores sólidos como antioxidante natural, ajudando a prolongar o tempo de vida útil das nossas fórmulas com maior teor de óleos vegetais.",
+  "sort_order": 46
+ },
+ {
+  "slug": "vitamina-e-tocoferol-70",
+  "name": "Vitamina E (Tocopherol 70%)",
+  "category": "Ativos",
+  "scientific_name": null,
+  "origin": "Concentrado antioxidante rico em tocoferóis, fornecido numa base oleosa com 70% de vitamina E.",
+  "properties": "Ajuda a proteger os óleos vegetais da oxidação e contribui para uma sensação de maciez e conforto no cabelo.",
+  "applications": "Usada no Amaciador como antioxidante da fase oleosa, ajudando a proteger a fórmula e a prolongar a sua estabilidade.",
+  "sort_order": 47
+ },
+ {
+  "slug": "aloe-vera",
+  "name": "Aloé Vera",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Aloe barbadensis miller.",
+  "origin": "Planta suculenta originária da Península Arábica, hoje cultivada em regiões quentes e secas por todo o mundo. É conhecida há milénios pelo gel transparente guardado no interior das suas folhas.",
+  "properties": "Hidrata sem pesar, ajuda a acalmar a pele irritada ou exposta ao sol e contribui para a sensação de conforto em peles sensíveis. Nutre e suaviza, ajuda a atenuar cicatrizes e marcas, e é antioxidante — o que a torna útil na prevenção do aparecimento de borbulhas. O gel é composto maioritariamente por água, complementada por polissacáridos que ajudam a formar uma película protetora à superfície da pele, retendo humidade. Também contém pequenas quantidades de vitaminas (A, C, E) e minerais, e é geralmente bem tolerado mesmo em peles reativas ou com tendência a vermelhidão.",
+  "applications": "Usamos aloé vera como base hidratante em cremes corporais e em algumas das nossas máscaras faciais, normalmente combinado com hidrolatos calmantes como a camomila-romana ou a lavanda para reforçar o efeito de conforto na pele. Nos nossos sabonetes de rosto, mãos e corpo, é sempre aloé vera biológico, colhido e preparado por nós no momento — e não um gel processado comprado já pronto.",
+  "sort_order": 48
+ },
+ {
+  "slug": "amido-de-milho",
+  "name": "Amido de Milho",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Extraído do endosperma do milho, é um pó fino amplamente usado em cosmética natural como alternativa a talcos sintéticos.",
+  "properties": "Absorve o excesso de humidade e confere uma sensação sedosa e seca à pele, sem os riscos respiratórios associados a partículas minerais muito finas presentes no talco convencional. É também suave o suficiente para uso em zonas mais sensíveis do corpo.",
+  "applications": "Usado em pós corporais e como base em fórmulas de desodorizante natural, ajudando a manter a sensação de pele seca ao longo do dia.",
+  "sort_order": 49
+ },
+ {
+  "slug": "bicarbonato-de-sodio",
+  "name": "Bicarbonato de Sódio",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Composto mineral (NaHCO₃) amplamente disponível, usado há séculos em produtos de higiene e limpeza doméstica.",
+  "properties": "Ligeiramente abrasivo e neutralizador de odores — ajuda a equilibrar o pH da pele e a neutralizar compostos responsáveis pelo odor corporal, em vez de simplesmente os mascarar. É um ingrediente clássico em desodorizantes naturais e, em concentrações baixas, em esfoliantes suaves de textura fina.",
+  "applications": "Base da nossa linha de desodorizante natural, e usado em pequenas quantidades em alguns esfoliantes corporais para dar uma textura ligeiramente granulada.",
+  "sort_order": 50
+ },
+ {
+  "slug": "cacau-natural",
+  "name": "Cacau Natural",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Pó obtido a partir das sementes torradas e moídas do cacaueiro (Theobroma cacao), rico em antioxidantes naturais.",
+  "properties": "Confere aroma e cor característicos, além de propriedades antioxidantes (flavonoides) que ajudam a proteger as fórmulas da oxidação. É também usado pontualmente como corante natural em produtos de esfoliação ou coloração suave.",
+  "applications": "Usado como ingrediente aromático e corante natural em alguns dos nossos esfoliantes e sabonetes de edição limitada.",
+  "sort_order": 51
+ },
+ {
+  "slug": "cavalinha-em-po",
+  "name": "Cavalinha em Pó",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Equisetum arvense.",
+  "origin": "Planta rica em sílica, tradicionalmente usada em infusões e cosmética natural pela sua reputação fortalecedora.",
+  "properties": "Associada tradicionalmente ao fortalecimento de cabelo e unhas, graças ao seu teor natural de sílica e outros minerais que fazem parte da estrutura destes tecidos. Também usada em máscaras capilares pela sua textura fina.",
+  "applications": "Usada em pó em máscaras e tratamentos capilares, e também no Champô Oleosos, onde ajuda a fortalecer o cabelo enquanto o couro cabeludo é limpo em profundidade.",
+  "sort_order": 52
+ },
+ {
+  "slug": "farinha-de-aveia",
+  "name": "Farinha de Aveia",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Obtida a partir da moagem dos grãos de aveia (Avena sativa), um dos ingredientes mais antigos usados em cuidados de pele caseiros.",
+  "properties": "Ajuda a acalmar peles sensíveis ou irritadas, graças aos beta-glucanos e compostos naturais presentes no grão, e proporciona uma leve esfoliação física quando usada em pó ou flocos moídos.",
+  "applications": "Usada em esfoliantes suaves, máscaras faciais calmantes e no Champô Oleosos, onde ajuda a limpar e a acalmar o couro cabeludo.",
+  "sort_order": 53
+ },
+ {
+  "slug": "farinha-de-coco",
+  "name": "Farinha de Coco",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Subproduto da produção de leite de coco, obtido a partir da polpa seca e moída.",
+  "properties": "Textura fina e ligeiramente granulada, ajuda a absorver o excesso de oleosidade e proporciona uma esfoliação suave, adequada a uso regular sem ser demasiado agressiva para a pele.",
+  "applications": "Usada em esfoliantes corporais, máscaras e no Champô Oleosos, onde ajuda a dar corpo à fórmula e a limpar suavemente.",
+  "sort_order": 54
+ },
+ {
+  "slug": "glicerina-vegetal",
+  "name": "Glicerina Vegetal",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Obtida a partir de óleos vegetais (como coco ou palma), é um subproduto natural da produção de sabão.",
+  "properties": "Humectante — atrai água do ambiente e ajuda a retê-la na camada mais superficial da pele — o que a torna um dos ingredientes hidratantes mais usados em cosmética natural. Ajuda também a suavizar a textura de sabonetes e cremes, e é geralmente muito bem tolerada, mesmo por peles sensíveis.",
+  "applications": "Presente em quase todos os nossos sabonetes sólidos e em cremes e loções, como agente hidratante que ajuda a suavizar a textura final do produto.",
+  "sort_order": 55
+ },
+ {
+  "slug": "hibisco-flor-moida",
+  "name": "Hibisco (Flor Moída)",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Hibiscus sabdariffa.",
+  "origin": "Flor tropical de cor vermelha intensa, tradicionalmente usada em infusões e, mais recentemente, em cosmética natural.",
+  "properties": "Rica em antioxidantes naturais e ácidos orgânicos suaves; a sua cor vibrante é frequentemente aproveitada em fórmulas naturais tanto pelo efeito visual como pelas propriedades revitalizantes associadas à planta.",
+  "applications": "Usada moída em máscaras faciais e esfoliantes, pela cor bonita que dá aos nossos produtos e pela textura que proporciona.",
+  "sort_order": 56
+ },
+ {
+  "slug": "sal-de-epsom",
+  "name": "Sal de Epsom",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Sulfato de magnésio, um mineral natural que deve o nome à cidade inglesa de Epsom, onde foi descoberto numa nascente.",
+  "properties": "Tradicionalmente usado em banhos relaxantes, associado à sensação de alívio muscular e relaxamento após dias mais cansativos ou atividade física intensa. Dissolve-se facilmente em água quente.",
+  "applications": "Usado nos nossos sais de banho relaxantes, ideais para um fim de dia mais cansativo.",
+  "sort_order": 57
+ },
+ {
+  "slug": "sementes-de-papoila",
+  "name": "Sementes de Papoila",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Papaver somniferum (sementes).",
+  "origin": "Pequenas sementes de textura crocante, usadas há muito tempo tanto na culinária como em cosmética esfoliante.",
+  "properties": "Proporcionam uma esfoliação física suave e uniforme graças à sua forma arredondada, adequada para uso regular sem microlesões na pele, ao contrário de esfoliantes com partículas mais irregulares ou cortantes.",
+  "applications": "Usadas como agente esfoliante em sabonetes e esfoliantes corporais, para um efeito delicado mas eficaz.",
+  "sort_order": 58
+ },
+ {
+  "slug": "urtiga-verde",
+  "name": "Urtiga Verde",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Urtica dioica.",
+  "origin": "Planta selvagem comum em toda a Europa, tradicionalmente usada em infusões e em cuidados capilares.",
+  "properties": "Rica em minerais (ferro, sílica, potássio) e associada tradicionalmente ao fortalecimento e revitalização do couro cabeludo, ajudando a dar mais corpo e brilho aos fios quando usada regularmente.",
+  "applications": "Usada em produtos capilares revitalizantes, incluindo o Champô Oleosos, onde ajuda a equilibrar o couro cabeludo e a dar mais corpo ao cabelo.",
+  "sort_order": 59
+ }
+]
