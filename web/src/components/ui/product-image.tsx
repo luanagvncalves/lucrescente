@@ -13,7 +13,7 @@ type Props = {
   rounded?: boolean;
 };
 
-const ratios = { portrait: "aspect-[4/5]", square: "aspect-square", wide: "aspect-[16/10]" };
+const ratios = { portrait: "aspect-[3/4]", square: "aspect-square", wide: "aspect-[16/10]" };
 
 /**
  * Real photo with next/image, or an honest solid-color frame with the crescent motif

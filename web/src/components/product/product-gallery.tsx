@@ -9,7 +9,7 @@ export function ProductGallery({ images, name }: { images: Img[]; name: string }
   const current = images[index];
   return (
     <div>
-      <div className="frame-brand relative aspect-[4/5] max-h-[80vh] w-full bg-paper">
+      <div className="frame-brand relative aspect-[3/4] max-h-[80vh] w-full bg-paper">
         <Image key={current.path} src={current.path} alt={current.alt} fill priority={index === 0} sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
       </div>
       <ul className="mt-3 flex gap-3" aria-label={`fotografias de ${name}`}>
