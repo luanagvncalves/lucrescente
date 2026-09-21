@@ -29,17 +29,21 @@ export type ProductSeed = {
   variants: VariantSeed[];
 };
 
+// Ordered alphabetically by PT display name — this drives both the horizontal
+// category bar and the stacked sections/images on /produtos.
 export const categories: CategorySeed[] = [
-  { slug: "desodorizantes", name: "desodorizantes", sort_order: 0 },
-  { slug: "champos", name: "champôs", sort_order: 1 },
-  { slug: "cuidado-capilar", name: "cuidado capilar", sort_order: 2 },
-  { slug: "sabonetes", name: "sabonetes", sort_order: 3 },
-  { slug: "velas", name: "velas", sort_order: 4 },
-  { slug: "roll-on", name: "roll-on", sort_order: 5 },
-  { slug: "sprays", name: "sprays", sort_order: 6 },
-  { slug: "sais-de-banho", name: "sais de banho", sort_order: 7 },
-  { slug: "batons", name: "batons", sort_order: 8 },
-  { slug: "outros", name: "outros", sort_order: 9 },
+  { slug: "amaciadores", name: "amaciadores", sort_order: 0 },
+  { slug: "ambientadores", name: "ambientadores", sort_order: 1 },
+  { slug: "batons", name: "batons", sort_order: 2 },
+  { slug: "champos", name: "champôs", sort_order: 3 },
+  { slug: "desodorizantes", name: "desodorizantes", sort_order: 4 },
+  { slug: "inaladores", name: "inaladores", sort_order: 5 },
+  { slug: "mascaras-capilares", name: "máscaras capilares", sort_order: 6 },
+  { slug: "roll-on", name: "roll-on", sort_order: 7 },
+  { slug: "sabonetes", name: "sabonetes", sort_order: 8 },
+  { slug: "sais-de-banho", name: "sais de banho", sort_order: 9 },
+  { slug: "sprays", name: "sprays", sort_order: 10 },
+  { slug: "velas", name: "velas", sort_order: 11 },
 ];
 
 const one = (sku: string, price_cents: number | null, stock: number): VariantSeed[] => [
@@ -64,7 +68,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 0,
     why_it_works:
-      "A manteiga de karité e o óleo de coco dão uma base cremosa e confortável, enquanto o amido de milho ajuda a absorver a humidade. O bicarbonato de sódio ajuda a neutralizar odores e os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
+      "A manteiga de karité e o óleo de coco dão uma base cremosa e confortável. O bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. Os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -87,7 +91,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 1,
     why_it_works:
-      "O óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, enquanto a erva-príncipe acrescenta um aroma fresco e cítrico. Como todos os nossos desodorizantes, não é antitranspirante e não tem alumínio nem álcool — o desodorizante é aplicado muito perto do corpo, por isso preferimos que respeite a pele em vez de bloquear a transpiração. Também aceitamos embalagens antigas para reutilizar, com desconto, e podemos ajustar a fórmula à tua pele.",
+      "A manteiga de karité e o óleo de coco dão uma base cremosa e confortável. O bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. O óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -224,7 +228,7 @@ export const products: ProductSeed[] = [
   {
     slug: "amaciador",
     name: "amaciador",
-    category_slug: "cuidado-capilar",
+    category_slug: "amaciadores",
     sort_order: 0,
     why_it_works:
       "O BTMS e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. A manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. A vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
@@ -246,7 +250,7 @@ export const products: ProductSeed[] = [
   {
     slug: "mascara-150ml",
     name: "máscara 150ml",
-    category_slug: "cuidado-capilar",
+    category_slug: "mascaras-capilares",
     sort_order: 1,
     why_it_works:
       "O BTMS condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. A água dá leveza à fórmula; o alecrim QT cineol e o limão acrescentam um aroma fresco e revigorante. O Cosgard ajuda a proteger a fórmula à base de água.",
@@ -328,6 +332,30 @@ export const products: ProductSeed[] = [
     is_deodorant: false,
     variants: one("vela-massagem", null, 1),
   },
+  {
+    slug: "velas-decoradas",
+    name: "velas decoradas",
+    category_slug: "velas",
+    sort_order: 2,
+    why_it_works: null,
+    ingredient_slugs: [],
+    is_solid: false,
+    is_candle: true,
+    is_deodorant: false,
+    variants: one("velas-decoradas", null, 1),
+  },
+  {
+    slug: "velas-cor",
+    name: "velas com cor",
+    category_slug: "velas",
+    sort_order: 3,
+    why_it_works: null,
+    ingredient_slugs: [],
+    is_solid: false,
+    is_candle: true,
+    is_deodorant: false,
+    variants: one("velas-cor", null, 1),
+  },
 
   // ---------------- roll-on ----------------
   {
@@ -394,12 +422,15 @@ export const products: ProductSeed[] = [
     category_slug: "sais-de-banho",
     sort_order: 0,
     why_it_works:
-      "Preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. Verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
+      "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. Verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
     ingredient_slugs: ["sal-de-epsom", "oleo-essencial-de-lavanda-4042-blend"],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
-    variants: one("sais-relaxante", null, 2),
+    variants: [
+      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: null, stock: 2 },
+      { sku: "sais-relaxante-frasco", label: "frasco de vidro", price_cents: 800, stock: 5 },
+    ],
   },
 
   // ---------------- batons (boião / stick) ----------------
@@ -484,11 +515,11 @@ export const products: ProductSeed[] = [
     variants: balm("batom-h-pimenta", 3, 2, 450),
   },
 
-  // ---------------- outros ----------------
+  // ---------------- inaladores / ambientadores ----------------
   {
     slug: "inalador",
     name: "inalador",
-    category_slug: "outros",
+    category_slug: "inaladores",
     sort_order: 0,
     why_it_works:
       "A combinação de hortelã-pimenta, eucalipto radiata e ravintsara cria um aroma fresco e penetrante, associado a uma sensação de respiração desimpedida. A lavanda 40/42 e a camomila romana equilibram a mistura com notas mais suaves e reconfortantes.",
@@ -507,7 +538,7 @@ export const products: ProductSeed[] = [
   {
     slug: "ambientador",
     name: "ambientador",
-    category_slug: "outros",
+    category_slug: "ambientadores",
     sort_order: 1,
     why_it_works: null,
     ingredient_slugs: ["cera-de-soja"],
