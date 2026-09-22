@@ -1,0 +1,21 @@
+{
+  "servers": {
+    "apify": {
+      "command": "npx",
+      "args": [
+        "mcp-remote",
+        "https://mcp.apify.com/?tools=igview-owner/instagram-highlights-scraper",
+        "--header",
+        "Authorization: Bearer ${input:apify-token}"
+      ]
+    }
+  },
+  "inputs": [
+    {
+      "type": "promptString",
+      "id": "apify-token",
+      "description": "Apify API token",
+      "password": true
+    }
+  ]
+}
