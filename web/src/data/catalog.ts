@@ -81,9 +81,9 @@ export const products: ProductSeed[] = [
     is_candle: false,
     is_deodorant: true,
     variants: [
-      { sku: "deo-lav-60", label: "60ml", price_cents: 550, stock: 3 },
-      { sku: "deo-lav-150", label: "150ml", price_cents: 800, stock: 0 },
-      { sku: "deo-lav-proprio", label: "embalagem própria", price_cents: 917, stock: 100 },
+      { sku: "deo-lav-60", label: "60ml", price_cents: 600, stock: 3 },
+      { sku: "deo-lav-150", label: "150ml", price_cents: 1500, stock: 0 },
+      { sku: "deo-lav-proprio", label: "embalagem própria", price_cents: 1000, stock: 100 },
     ],
   },
   {
@@ -105,8 +105,8 @@ export const products: ProductSeed[] = [
     is_candle: false,
     is_deodorant: true,
     variants: [
-      { sku: "deo-tt-60", label: "60ml", price_cents: 550, stock: 4 },
-      { sku: "deo-tt-150", label: "150ml", price_cents: 800, stock: 0 },
+      { sku: "deo-tt-60", label: "60ml", price_cents: 600, stock: 4 },
+      { sku: "deo-tt-150", label: "150ml", price_cents: 1500, stock: 0 },
     ],
   },
 
