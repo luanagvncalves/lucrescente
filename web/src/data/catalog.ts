@@ -282,18 +282,6 @@ export const products: ProductSeed[] = [
     is_deodorant: false,
     variants: one("sabonete-40g", 400, 3),
   },
-  {
-    slug: "sabonete-grande",
-    name: "sabonete grande",
-    category_slug: "sabonetes",
-    sort_order: 2,
-    why_it_works: null,
-    ingredient_slugs: ["aloe-vera"],
-    is_solid: true,
-    is_candle: false,
-    is_deodorant: false,
-    variants: one("sabonete-grande", 600, 0),
-  },
 
   // ---------------- velas (no price supplied: "por encomenda") ----------------
   {
