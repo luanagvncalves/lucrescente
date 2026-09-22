@@ -111,10 +111,10 @@ export default async function ProductPage({ params }: Params) {
           {product.is_deodorant ? (
             <ProductFeatures
               features={[
-                { label: "não é antitranspirante", icon: "✓" },
-                { label: "sem alumínio", icon: "✓" },
-                { label: "sem álcool", icon: "✓" },
-                { label: "personalizável", icon: "✓" },
+                { label: "não é antitranspirante" },
+                { label: "sem alumínio" },
+                { label: "sem álcool" },
+                { label: "personalizável" },
               ]}
             />
           ) : null}
