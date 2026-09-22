@@ -10,6 +10,7 @@ import { ProductImage } from "@/components/ui/product-image";
 import { PurchasePanel } from "@/components/product/purchase-panel";
 import { ProductCard } from "@/components/product/product-card";
 import { ProductGallery } from "@/components/product/product-gallery";
+import { ProductFeatures } from "@/components/product/product-features";
 
 export const revalidate = 60;
 
@@ -106,6 +107,17 @@ export default async function ProductPage({ params }: Params) {
           <div className="mt-8">
             <PurchasePanel product={product} />
           </div>
+
+          {product.is_deodorant ? (
+            <ProductFeatures
+              features={[
+                { label: "não é antitranspirante", icon: "✓" },
+                { label: "sem alumínio", icon: "✓" },
+                { label: "sem álcool", icon: "✓" },
+                { label: "personalizável", icon: "✓" },
+              ]}
+            />
+          ) : null}
 
           {product.is_candle ? <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed">{t.products.candleNote}</p> : null}
         </div>
