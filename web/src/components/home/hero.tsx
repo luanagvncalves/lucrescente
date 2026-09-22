@@ -16,6 +16,45 @@ export function HomeHero({
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
+  const renderTextWithBreaks = (text: string) => {
+    const words = text.split(" ");
+    let line1: string[] = [];
+    let line2: string[] = [];
+    let line3: string[] = [];
+    let currentLine = 1;
+    let currentLength = 0;
+
+    for (const word of words) {
+      const wordLength = word.length;
+
+      if (currentLine === 1) {
+        if (currentLength + wordLength + line1.length > 20) {
+          currentLine = 2;
+          currentLength = 0;
+        } else {
+          line1.push(word);
+          currentLength += wordLength;
+        }
+      }
+
+      if (currentLine === 2) {
+        if (currentLength + wordLength + line2.length > 22) {
+          currentLine = 3;
+          currentLength = 0;
+        } else {
+          line2.push(word);
+          currentLength += wordLength;
+        }
+      }
+
+      if (currentLine === 3) {
+        line3.push(word);
+      }
+    }
+
+    return { line1: line1.join(" "), line2: line2.join(" "), line3: line3.join(" ") };
+  };
+
   useEffect(() => {
     if (!isTyping) return;
 
@@ -70,8 +109,27 @@ export function HomeHero({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            {displayedText}
-            {isTyping && <span className="animate-pulse">|</span>}
+            {(() => {
+              const { line1, line2, line3 } = renderTextWithBreaks(displayedText);
+              return (
+                <>
+                  {line1}
+                  {line2 && (
+                    <>
+                      <br />
+                      {line2}
+                    </>
+                  )}
+                  {line3 && (
+                    <>
+                      <br />
+                      {line3}
+                    </>
+                  )}
+                  {isTyping && <span className="animate-pulse">|</span>}
+                </>
+              );
+            })()}
           </motion.h1>
         </div>
       </div>
