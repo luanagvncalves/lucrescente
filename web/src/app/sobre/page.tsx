@@ -36,12 +36,43 @@ export default function AboutPage() {
               {t.about.lucieName.toLowerCase()}
             </h2>
             <p className="mt-4 text-body-lg measure">{t.about.lucieText}</p>
+            <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
+              <p>
+                <a href={`mailto:${t.brand.lucieEmail}`} className="hover:underline underline-offset-4">
+                  {t.brand.lucieEmail}
+                </a>
+              </p>
+              <p>
+                <a href={t.brand.luciePhonePTTel} className="hover:underline underline-offset-4">
+                  {t.brand.luciePhonePTDisplay}
+                </a>
+                <span className="text-ink/60"> (PT)</span>
+              </p>
+              <p>
+                <a href={t.brand.luciePhoneCHTel} className="hover:underline underline-offset-4">
+                  {t.brand.luciePhoneCHDisplay}
+                </a>
+                <span className="text-ink/60"> (CH)</span>
+              </p>
+            </div>
           </section>
           <section aria-labelledby="luana">
             <h2 id="luana" className="text-h2 text-forest lowercase">
               {t.about.luanaName.toLowerCase()}
             </h2>
             <p className="mt-4 text-body-lg measure">{t.about.luanaText}</p>
+            <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
+              <p>
+                <a href={`mailto:${t.brand.email}`} className="hover:underline underline-offset-4">
+                  {t.brand.email}
+                </a>
+              </p>
+              <p>
+                <a href={t.brand.phoneTel} className="hover:underline underline-offset-4">
+                  {t.brand.phoneDisplay}
+                </a>
+              </p>
+            </div>
           </section>
         </div>
       </div>
