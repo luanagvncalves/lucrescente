@@ -360,7 +360,7 @@ export const products: ProductSeed[] = [
   // ---------------- roll-on ----------------
   {
     slug: "roll-on-relaxamento",
-    name: "roll-on relaxamento",
+    name: "roll-on relax",
     category_slug: "roll-on",
     sort_order: 0,
     why_it_works: null,
@@ -372,7 +372,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "roll-on-cabeca",
-    name: "roll-on cabeça",
+    name: "roll-on dor de cabeça",
     category_slug: "roll-on",
     sort_order: 1,
     why_it_works: null,
@@ -384,7 +384,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "roll-on-sinusite",
-    name: "roll-on sinusite",
+    name: "roll-on para sinusite",
     category_slug: "roll-on",
     sort_order: 2,
     why_it_works:
