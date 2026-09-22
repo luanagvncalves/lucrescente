@@ -83,6 +83,7 @@ export const products: ProductSeed[] = [
     variants: [
       { sku: "deo-lav-60", label: "60ml", price_cents: 550, stock: 3 },
       { sku: "deo-lav-150", label: "150ml", price_cents: 800, stock: 0 },
+      { sku: "deo-lav-proprio", label: "embalagem própria", price_cents: 917, stock: 100 },
     ],
   },
   {

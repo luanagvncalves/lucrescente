@@ -26,6 +26,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const orderLabel = [selected.label, ownContainer ? t.products.ownContainerLabel : null, isOwnPackaging && dose ? `dose: ${dose}` : null].filter(Boolean).join(" · ") || null;
   const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
 
+  // Calculate price for own packaging based on dose
+  const doseAmount = isOwnPackaging && dose ? parseFloat(dose.match(/\d+(?:\.\d+)?/)?.[0] || "0") : 0;
+  const calculatedPrice = isOwnPackaging && avail.kind === "available" && doseAmount > 0
+    ? Math.round((avail.price_cents as number) * doseAmount / 100)
+    : avail.kind === "available" ? (avail.price_cents as number) : 0;
+
   function add() {
     if (avail.kind !== "available") return;
     cart.add({
@@ -33,7 +39,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       productSlug: product.slug,
       productName: localizedName,
       variantLabel: orderLabel,
-      unitPriceCents: avail.price_cents,
+      unitPriceCents: isOwnPackaging && doseAmount > 0 ? calculatedPrice : avail.price_cents,
       quantity: qty,
       maxStock: avail.stock,
       image: product.images[0] ? { path: product.images[0].path, alt: product.images[0].alt } : null,
@@ -123,7 +129,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       ) : (
         <div className="space-y-5">
           <div className="flex items-baseline justify-between">
-            <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(avail.price_cents)}</p>
+            <p className="font-display text-[2rem] leading-none text-forest">{isOwnPackaging && doseAmount > 0 ? formatPrice(calculatedPrice) : formatPrice(avail.price_cents)}</p>
             {avail.stock <= 3 ? <span className="label-brand text-clay">{t.products.stockLeft(avail.stock)}</span> : null}
           </div>
           <div className="flex flex-col gap-3">
