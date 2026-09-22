@@ -65,7 +65,7 @@ export function HomeHero({
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
         <div className="max-w-4xl text-ivory">
           <motion.h1
-            className="line-clamp-3 max-w-4xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory"
+            className="max-w-2xl font-display text-[clamp(3.2rem,7vw,5rem)] leading-[1.1] tracking-[-0.04em] lowercase text-ivory"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
