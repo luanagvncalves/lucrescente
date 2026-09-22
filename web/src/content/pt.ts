@@ -19,6 +19,11 @@ export const pt = {
     sms: "sms:+351913161464",
     whatsapp: "https://wa.me/351913161464",
     email: "luanagvncalves@gmail.com",
+    lucieEmail: "luciemota.bio@gmail.com",
+    luciePhonePTDisplay: "+351 911 120 753",
+    luciePhonePTTel: "tel:+351911120753",
+    luciePhoneCHDisplay: "+41 77 279 56 44",
+    luciePhoneCHTel: "tel:+41772795644",
   },
   nav: {
     home: "início",
@@ -33,46 +38,63 @@ export const pt = {
   },
   home: {
     heroLabel: "feito à mão, com carinho",
-    heroTitle: "cuidados simples, feitos com amor e ingredientes que confiamos.",
+    heroTitle: "cuidados simples, feitos com amor e com ingredientes em que confiamos.",
     heroSubtitle:
       "cá em casa, cada produto começa por um ingrediente que conhecemos bem — e adoramos partilhar essa história contigo antes de ele chegar à tua pele.",
-    heroPrimary: "vem conhecer os nossos ingredientes",
-    heroSecondary: "ver todos os produtos",
+    heroPrimary: "ver todos os produtos",
+    heroSecondary: "ver todos os ingredientes",
     featuredTitle: "os nossos preferidos do momento",
     cardLink: "vem espreitar →",
     productsTitle: "cuidados para os teus dias",
     productsSubtitle:
       "bálsamos, champôs, velas decoradas e muito mais, feitos à mão com ingredientes escolhidos com cuidado.",
     productsButton: "ver todos os produtos",
+    featuredMoreLink: "ver mais",
     valuesTitle: "o que nos guia",
     valuesSubtitle:
       "ingredientes escolhidos com atenção, menos desperdício e espaço para cada pessoa cuidar à sua maneira.",
     values: ["feito à mão", "ingredientes honestos", "menos desperdício"],
     storyTitle: "uma marca pequena, feita com intenção",
     storyText:
-      "A Lucrescente nasceu do desejo de tornar o cuidado diário mais simples e mais próximo. Conhecemos os ingredientes, explicamos o que fazem e fazemos cada produto em pequenas quantidades.",
+      "a lucrescente começou como um projeto completamente familiar — muito antes de ser sequer um projeto — e foi crescendo, aos poucos, até chegar a mais pessoas. conhecemos os ingredientes, contamos a história de cada um, e continuamos a fazer tudo em pequenas quantidades, com o mesmo carinho do primeiro dia.",
     storyLink: "conhecer a nossa história →",
     ingredientsTitle: "os ingredientes que usamos, um a um",
     ingredientsSubtitle:
       "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve 🌿",
     ingredientsLink: "ver todos os ingredientes →", // ui
-    contactTitle: "encomendas com calma",
-    contactText:
-      "Preparamos cada pedido com cuidado e reutilizamos sempre que podemos. Para dúvidas, ingredientes ou encomendas especiais, fala connosco.",
+    contactTitle: "encomenda os teus produtos",
+    contactText: "para dúvidas, personalizações ou encomendas especiais, contacta-nos.",
     contactButtons: {
-      call: "Chamada",
-      sms: "Mensagem normal",
-      whatsapp: "Mensagem WhatsApp",
-      email: "Email",
+      call: "chamada",
+      sms: "mensagem normal",
+      whatsapp: "mensagem whatsapp",
+      email: "email",
     },
+    candleCitronelaName: "citronela",
+    candleFlowers: "florais secos",
+    candleMassage: "massagem",
+    candleMessage: "com mensagens personalizadas",
+    candleAltCitronela1: "três velas de citronela em copos de vidro com etiqueta preta, sobre tecido floral rosa e azul",
+    candleAltCitronela2: "três velas em copos de vidro com etiqueta preta ao lado de flores secas",
+    candleAltMassagem: "cesto de vime com vela em lata metálica, vela em frasco de vidro com laço vermelho, frasco de sais de banho e roll-on, sobre toalha de natal com luzes",
+    categoryGroupHigiene: "higiene",
+    categoryGroupBeleza: "beleza",
+    categoryGroupBemEstar: "bem-estar",
     shortAbout:
-      "Tudo é feito à mão. Priorizamos a reutilização, por isso as nossas embalagens são feitas com objetos reaproveitados. Adaptamos cada produto a cada pessoa e podes trazer um recipiente que já tenhas em casa para fazermos o teu produto lá dentro.",
+      "produtos de higiene, beleza e bem-estar feitos à mão por mãe e filha, para um cuidado pessoal mais saudável e personalizado.",
+    testimonialsLabel: "quem já experimentou",
+    testimonialsTitle: "os vossos comentários",
+    testimonialsSubtitle: "recebidos na nossa caixa de mensagens ao longo dos anos, escritos por vocês.",
+    testimonialsPrev: "feedback anterior", // ui
+    testimonialsNext: "feedback seguinte", // ui
+    showMore: "ver mais",
+    showLess: "ver menos",
   },
   footer: {
     line: "lucrescente — feito à mão, com amor 🌱",
     contactsTitle: "contactos", // ui
     pagesTitle: "páginas", // ui
-    shipping: "Envios nacionais e internacionais por encomenda. Quantidades maiores por encomenda (ex.: máscara capilar de 600 g)",
+    shipping: "envios nacionais e internacionais por encomenda. quantidades maiores por encomenda.",
   },
   products: {
     label: "feitos à mão, um a um",
@@ -80,28 +102,28 @@ export const pt = {
     allCategories: "todos", // ui
     filterLabel: "categorias", // ui
     whyItWorks: "porque funciona",
+    hairTypeNote: "para que tipo de cabelo",
+    recommendedFor: "aconselhado para",
+    notRecommendedFor: "não aconselhado para",
     mainIngredients: "ingredientes principais",
+    allergenNoteLabel: "atenção",
     noIngredientsListed:
       "a lista de ingredientes deste produto ainda não está publicada. fala connosco para saber mais.", // ui
     noCopy: "a história deste produto ainda está a ser escrita cá em casa.", // ui
     price: "preço", // ui
     onRequest: "por encomenda",
     talkToUs: "fala connosco →",
-    soldOut:
-      "esgotado por agora. os produtos sólidos precisam de tempo de maturação, fala connosco para encomendar", // ui
+    soldOut: "esgotado por agora. fala connosco para encomendar", // ui
     soldOutShort: "esgotado por agora", // ui
     addToCart: "adicionar ao carrinho", // ui
     added: "adicionado ao carrinho", // ui
     quantity: "quantidade", // ui
     variant: "formato", // ui
     stockLeft: (n: number) => (n === 1 ? "só resta 1 unidade" : `restam ${n} unidades`), // ui
-    solidNote:
-      "Champôs, amaciadores e sabonetes são sólidos e feitos sem água; precisam de tempo de maturação, por isso podem esgotar",
-    reuseNote:
-      "trouxeste uma embalagem antiga? fala connosco para o desconto de reutilização", // brief text
+    orderMessage: (name: string) => `olá! gostava de encomendar: ${name}`, // ui
+    ownContainerLabel: "embalagem própria", // ui — bring-your-own-container option in the size choice
     candleNote:
-      "E se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
-    deodorantFact: "Os desodorizantes NÃO são antitranspirantes: sem alumínio, sem álcool",
+      "e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
     backToCatalog: "← voltar aos produtos", // ui
     relatedTitle: "da mesma família", // ui
     usedInTitle: "onde usamos este ingrediente", // ui
@@ -115,10 +137,10 @@ export const pt = {
       "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve 🌿",
     allCategories: "todos", // ui
     sections: {
-      scientificName: "Nome Científico",
-      origin: "Origem",
-      properties: "Propriedades",
-      applications: "Aplicações em Lucrescente",
+      scientificName: "nome científico",
+      origin: "origem",
+      properties: "propriedades",
+      applications: "aplicações em lucrescente",
     },
     backToIndex: "← voltar aos ingredientes", // ui
     productsUsing: "produtos com este ingrediente", // ui
@@ -130,61 +152,69 @@ export const pt = {
     label: "a nossa história",
     title: "duas formas de olhar para o cuidado",
     intro:
-      "A Lucrescente nasce do encontro entre o conhecimento científico das plantas e uma forma sensível e criativa de olhar para o quotidiano.",
-    lucieName: "Lucie",
+      "a lucrescente nasce do encontro entre o conhecimento científico das plantas e uma forma sensível e criativa de olhar para o quotidiano.",
+    promise: "",
+    values: [
+      "empresa familiar",
+      "ecológica e sustentável",
+      "segura para crianças e peles sensíveis",
+      "sem disruptores endócrinos",
+      "preços acessíveis para todxs",
+    ],
+    lucieName: "lucie",
     lucieText:
-      "Sou doutorada em Biologia e trago para a marca o conhecimento científico das plantas. O meu olhar atento, rigoroso e curioso orienta a escolha dos ingredientes e a criação das receitas da Lucrescente.",
-    luanaName: "Luana",
+      "sou doutorada em biociências, na área da agroecologia — os últimos anos foram passados mergulhada em girassóis, polinizadores e conservação da natureza. esse mesmo olhar atento, rigoroso e curioso orienta a escolha dos ingredientes e a criação de cada receita da lucrescente.",
+    luanaName: "luana",
     luanaText:
-      "Sou estudante de Artes Plásticas e trago para a marca o cuidado estético, a criatividade e a sensibilidade. Penso na forma como cada produto é apresentado, sentido e integrado nos pequenos rituais do dia a dia.",
-    close: "Entre nós, a ciência encontra a expressão e cada produto ganha uma história própria.",
+      "estou no terceiro ano da licenciatura em artes plásticas e trago para a marca o cuidado estético, a criatividade e a sensibilidade. penso na forma como cada produto é apresentado, descrito e integrado nos pequenos rituais de cuidado do dia a dia.",
+    close: "entre nós, a ciência encontra a expressão e cada produto ganha uma história própria.",
     backLink: "voltar à página inicial",
   },
   care: {
     label: "cuidados & sustentabilidade",
     title: "porque cada escolha pequena conta",
     intro:
-      "Para além dos ingredientes, há uma forma de pensar por trás de cada produto lucrescente — mais natural, mais lenta e com menos desperdício. Aqui explicamos porquê.",
+      "para além dos ingredientes, há uma forma de pensar por trás de cada produto lucrescente — mais natural, mais lenta e com menos desperdício. aqui explicamos porquê.",
     chapters: [
       {
         slug: "poupamos-agua",
         title: "poupamos água",
-        text: "Os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. Na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. E como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.",
+        text: "os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. e como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.",
       },
       {
         slug: "embalagens",
         title: "embalagens e embrulhos reutilizados",
-        text: "Todas as nossas embalagens são reutilizáveis. Se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. Os nossos embrulhos são cosidos à mão, com reutilização de tecidos — até o fio é feito de algodão e de outras fibras recicladas. Mais reutilização, menos desperdício.",
+        text: "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. os nossos embrulhos são cosidos à mão, com reutilização de tecidos — até o fio é feito de algodão e de outras fibras recicladas. mais reutilização, menos desperdício.",
       },
       {
         slug: "velas",
         title: "as nossas velas",
-        text: "As velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. Decoramos muitas com pétalas e flores secas, prensadas e preparadas por nós. E se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+        text: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
       },
       {
         slug: "feito-a-mao",
         title: "feito à mão, em pequenas quantidades",
-        text: "Os produtos lucrescente são inteiramente fabricados a partir de ingredientes naturais, de forma artesanal, em pouca quantidade de cada vez — para garantir a qualidade das matérias-primas e o cuidado no fabrico. Alguns produtos podem ser repostos facilmente a cada dia; outros, como os champôs, os amaciadores e os sabonetes, precisam de mais repouso e maturação. Se algum destes produtos mais 'lentos' esgotar, aceitamos encomendas e fazemos envios nacionais e internacionais — e também podemos preparar quantidades maiores sempre que precisares.",
+        text: "os produtos lucrescente são inteiramente fabricados a partir de ingredientes naturais, de forma artesanal, em pouca quantidade de cada vez — para garantir a qualidade das matérias-primas e o cuidado no fabrico. alguns produtos podem ser repostos facilmente a cada dia; outros, como os champôs, os amaciadores e os sabonetes, precisam de mais repouso e maturação. se algum destes produtos mais 'lentos' esgotar, aceitamos encomendas e fazemos envios nacionais e internacionais — e também podemos preparar quantidades maiores sempre que precisares.",
       },
       {
         slug: "desodorizantes",
         title: "os nossos desodorizantes",
-        text: "Os nossos desodorizantes não são antitranspirantes e não têm alumínio nem álcool. É muito importante escolhermos um desodorizante saudável para a nossa pele — aplicado tão perto do corpo, não deve bloquear a transpiração nem obstruir os poros. Preferimos que respeitem o funcionamento natural da pele, controlando as bactérias e os maus cheiros de forma suave.",
+        text: "os nossos desodorizantes não são antitranspirantes e não têm alumínio nem álcool. é muito importante escolhermos um desodorizante saudável para a nossa pele — aplicado tão perto do corpo, não deve bloquear a transpiração nem obstruir os poros. preferimos que respeitem o funcionamento natural da pele, controlando as bactérias e os maus cheiros de forma suave.",
       },
       {
         slug: "dicas",
         title: "dicas de uso",
-        text: "Os nossos champôs sólidos também podem ser usados no corpo, sem problema nenhum — pelos ingredientes naturais e sem químicos, alguns até ajudam a acalmar problemas de pele, como a pele atópica. A cera de soja das nossas velas é hidratante e pode ser usada diretamente na pele. E se fores viajar, os produtos de higiene sólidos não têm embalagens nem quantidades limitadas — muito mais práticos e sem preocupações com líquidos de cabine.",
+        text: "os nossos champôs sólidos também podem ser usados no corpo, sem problema nenhum — pelos ingredientes naturais e sem químicos, alguns até ajudam a acalmar problemas de pele, como a pele atópica. a cera de soja das nossas velas é hidratante e pode ser usada diretamente na pele. e se fores viajar, os produtos de higiene sólidos não têm embalagens nem quantidades limitadas — muito mais práticos e sem preocupações com líquidos de cabine.",
       },
       {
         slug: "biologicos",
         title: "ingredientes biológicos",
-        text: "Sempre que possível, escolhemos ingredientes biológicos — e assinalamo-los com * na descrição dos produtos, para que tenhas mais e melhor informação sobre o que estás a usar.",
+        text: "sempre que possível, escolhemos ingredientes biológicos — e assinalamo-los com * na descrição dos produtos, para que tenhas mais e melhor informação sobre o que estás a usar.",
       },
       {
-        slug: "cha",
-        title: "chá para dias de período",
-        text: "Em dias de período, o corpo precisa de mais cuidados — e como a saúde começa sempre por dentro, partilhamos esta receita para um chá relaxante e anti-inflamatório: hibisco, para combater a inflamação e reduzir o inchaço; uma colher de mel, para ajudar a relaxar e combater a presença de micróbios; um pau de canela, para combater a inflamação e relaxar os músculos uterinos; e cúrcuma em pó, também aliada no combate à inflamação. Podes ainda juntar gengibre, para reduzir as dores e a sensação de tontura ou enjoo.",
+        slug: "feiras-e-mercados",
+        title: "feiras e mercados",
+        text: "para além da loja online, também nos podes encontrar em feiras e mercados locais — a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
       },
     ],
   },
@@ -203,8 +233,6 @@ export const pt = {
     close: "fechar", // ui
     continue: "continuar a ver produtos", // ui
     viewCart: "ver carrinho", // ui
-    reuseNote:
-      "trouxeste uma embalagem antiga? fala connosco para o desconto de reutilização",
     cancelled: "o pagamento não foi concluído. o teu carrinho continua aqui, quando quiseres.", // ui
     stockAdjusted: (name: string, n: number) =>
       n === 0
@@ -241,11 +269,28 @@ export const pt = {
   },
   contact: {
     title: "fala connosco", // ui
-    call: "Chamada",
-    sms: "SMS",
-    whatsapp: "WhatsApp",
-    email: "Email",
+    call: "chamada",
+    sms: "sms",
+    whatsapp: "whatsapp",
+    email: "email",
   },
 } as const;
 
-export type Dictionary = typeof pt;
+/**
+ * `pt` is declared `as const` so editors/consumers get literal autocomplete,
+ * but that also makes every string an exact literal type — which would force
+ * en/fr to use the identical Portuguese text. `Widen` recursively relaxes
+ * every string leaf back to `string` (structure/keys are still checked),
+ * while leaving function-typed entries (e.g. `stockLeft`) untouched.
+ */
+type Widen<T> = T extends string
+  ? string
+  : T extends (...args: never[]) => unknown
+    ? T
+    : T extends readonly (infer U)[]
+      ? readonly Widen<U>[]
+      : T extends object
+        ? { [K in keyof T]: Widen<T[K]> }
+        : T;
+
+export type Dictionary = Omit<Widen<typeof pt>, "locale"> & { locale: string };
