@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 
 export function HomeHero({
   hero,
@@ -12,6 +13,21 @@ export function HomeHero({
 }) {
   const [fade, setFade] = useState(1);
   const [scale, setScale] = useState(1.08);
+  const [displayedText, setDisplayedText] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+
+  useEffect(() => {
+    if (!isTyping) return;
+
+    if (displayedText.length < title.length) {
+      const timer = setTimeout(() => {
+        setDisplayedText(title.slice(0, displayedText.length + 1));
+      }, 40);
+      return () => clearTimeout(timer);
+    } else {
+      setIsTyping(false);
+    }
+  }, [displayedText, isTyping, title]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -48,9 +64,15 @@ export function HomeHero({
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
         <div className="max-w-4xl text-ivory">
-          <h1 className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory">
-            {title}
-          </h1>
+          <motion.h1
+            className="line-clamp-3 max-w-4xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
+            {displayedText}
+            {isTyping && <span className="animate-pulse">|</span>}
+          </motion.h1>
         </div>
       </div>
     </section>
