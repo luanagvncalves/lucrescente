@@ -68,7 +68,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 0,
     why_it_works:
-      "A manteiga de karité e o óleo de coco dão uma base cremosa e confortável. O bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. Os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -91,7 +91,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 1,
     why_it_works:
-      "A manteiga de karité e o óleo de coco dão uma base cremosa e confortável. O bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. O óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -116,7 +116,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
-      "Este champô não leva água na sua composição — o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. O SCI limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. Juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. Os óleos de coco e argão, o ácido esteárico e o D-Pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
+      "este champô não leva água na sua composição — o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -143,7 +143,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 1,
     why_it_works:
-      "Este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. O SCI limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. O óleo de coco, a manteiga de karité e o D-Pantenol nutrem e ajudam a manter a hidratação do cabelo seco. O hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. Como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete — este em particular tem sido usado por quem tem pele atópica.",
+      "este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. o óleo de coco, a manteiga de karité e o d-pantenol nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete — este em particular tem sido usado por quem tem pele atópica.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -168,7 +168,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 2,
     why_it_works:
-      "A fórmula combina uma limpeza suave do SCI com a ação equilibrante da argila branca, das farinhas e do hidrolato de lavanda. O óleo de coco, o óleo de argão e o D-Pantenol ajudam a manter o cabelo normal macio e hidratado, enquanto o ácido esteárico dá corpo à barra sem tornar a lavagem agressiva.",
+      "a fórmula combina uma limpeza suave do sci com a ação equilibrante da argila branca, das farinhas e do hidrolato de lavanda. o óleo de coco, o óleo de argão e o d-pantenol ajudam a manter o cabelo normal macio e hidratado, enquanto o ácido esteárico dá corpo à barra sem tornar a lavagem agressiva.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -193,7 +193,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 3,
     why_it_works:
-      "O SCI proporciona uma limpeza suave, enquanto a argila branca CosKAO e as farinhas ajudam a limpar sem agredir. O óleo de coco, a manteiga de karité e o D-Pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. O ácido esteárico dá consistência à barra.",
+      "o sci proporciona uma limpeza suave, enquanto a argila branca coskao e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -231,7 +231,7 @@ export const products: ProductSeed[] = [
     category_slug: "amaciadores",
     sort_order: 0,
     why_it_works:
-      "O BTMS e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. A manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. A vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
+      "o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina e protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "alcool-cetilico",
@@ -253,7 +253,7 @@ export const products: ProductSeed[] = [
     category_slug: "mascaras-capilares",
     sort_order: 1,
     why_it_works:
-      "O BTMS condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. A água dá leveza à fórmula; o alecrim QT cineol e o limão acrescentam um aroma fresco e revigorante. O Cosgard ajuda a proteger a fórmula à base de água.",
+      "o btms condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. a água dá leveza à fórmula; o alecrim qt cineol e o limão acrescentam um aroma fresco e revigorante. o cosgard ajuda a proteger a fórmula à base de água.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "oleo-de-coco",
@@ -388,7 +388,7 @@ export const products: ProductSeed[] = [
     category_slug: "roll-on",
     sort_order: 2,
     why_it_works:
-      "O óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. A hortelã-pimenta e o eucalipto radiata acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula.",
+      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta e o eucalipto radiata acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula.",
     ingredient_slugs: [
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-hortela-pimenta",
@@ -422,7 +422,7 @@ export const products: ProductSeed[] = [
     category_slug: "sais-de-banho",
     sort_order: 0,
     why_it_works:
-      "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. Verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
+      "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
     ingredient_slugs: ["sal-de-epsom", "oleo-essencial-de-lavanda-4042-blend"],
     is_solid: false,
     is_candle: false,
@@ -464,7 +464,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 2,
     why_it_works:
-      "A cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. A manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
+      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "cera-de-soja",
@@ -483,7 +483,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 3,
     why_it_works:
-      "A cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a criar uma camada protetora nos lábios. A manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "cera-de-soja",
@@ -501,7 +501,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 4,
     why_it_works:
-      "A cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. A manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
+      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "cera-de-soja",
@@ -522,7 +522,7 @@ export const products: ProductSeed[] = [
     category_slug: "inaladores",
     sort_order: 0,
     why_it_works:
-      "A combinação de hortelã-pimenta, eucalipto radiata e ravintsara cria um aroma fresco e penetrante, associado a uma sensação de respiração desimpedida. A lavanda 40/42 e a camomila romana equilibram a mistura com notas mais suaves e reconfortantes.",
+      "a combinação de hortelã-pimenta, eucalipto radiata e ravintsara cria um aroma fresco e penetrante, associado a uma sensação de respiração desimpedida. a lavanda 40/42 e a camomila romana equilibram a mistura com notas mais suaves e reconfortantes.",
     ingredient_slugs: [
       "oleo-essencial-de-hortela-pimenta",
       "oleo-essencial-de-lavanda-4042-blend",
