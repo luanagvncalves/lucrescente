@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { t } from "@/lib/i18n";
@@ -13,7 +13,7 @@ const links = [
   { href: "/produtos", label: t.nav.products },
   { href: "/ingredientes", label: t.nav.ingredients },
   { href: "/sobre", label: t.nav.about },
-  { href: "/cuidados", label: t.nav.care },
+  { href: "/feiras-e-mercados", label: "feiras e mercados" },
 ];
 
 export function Header() {
@@ -59,6 +59,11 @@ export function Header() {
               </Link>
             );
           })}
+          <div className="ml-4 flex gap-2 border-l border-moss/15 pl-8">
+            <LanguageButton locale="pt" isMobile={false} />
+            <LanguageButton locale="en" isMobile={false} />
+            <LanguageButton locale="fr" isMobile={false} />
+          </div>
         </nav>
 
         <div className="flex items-center gap-1">
@@ -118,9 +123,16 @@ export function Header() {
                 </motion.div>
               ))}
             </nav>
-            <div className="container-brand flex items-center justify-between pb-10 text-ivory/70">
-              <span className="label-brand">{t.brand.tagline}</span>
-              <Crescent size={18} tone="var(--lavender)" />
+            <div className="container-brand flex flex-col gap-6 pb-10">
+              <div className="flex gap-2">
+                <LanguageButton locale="pt" isMobile={true} />
+                <LanguageButton locale="en" isMobile={true} />
+                <LanguageButton locale="fr" isMobile={true} />
+              </div>
+              <div className="flex items-center justify-between text-ivory/70">
+                <span className="label-brand">{t.brand.tagline}</span>
+                <Crescent size={18} tone="var(--lavender)" />
+              </div>
             </div>
           </motion.div>
         ) : null}
@@ -135,5 +147,46 @@ function BasketIcon() {
       <path d="M4 9h16l-1.2 9.2a2 2 0 0 1-2 1.8H7.2a2 2 0 0 1-2-1.8L4 9Z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
       <path d="M8.5 9V7.5a3.5 3.5 0 0 1 7 0V9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
+  );
+}
+
+function LanguageButton({ locale, isMobile }: { locale: "pt" | "en" | "fr"; isMobile: boolean }) {
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
+  const currentLocale = searchParams.get("idioma") ?? "pt";
+  const isActive = currentLocale === locale;
+
+  const params = new URLSearchParams(searchParams);
+  if (locale === "pt") {
+    params.delete("idioma");
+  } else {
+    params.set("idioma", locale);
+  }
+  const href = `${pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+
+  if (isMobile) {
+    return (
+      <Link
+        href={href}
+        className={`min-h-11 rounded-full border px-4 py-2 font-ui text-[0.9rem] font-medium uppercase transition-colors ${
+          isActive
+            ? "border-ivory bg-ivory text-forest"
+            : "border-ivory/40 bg-transparent text-ivory hover:border-ivory hover:bg-ivory/10"
+        }`}
+      >
+        {locale}
+      </Link>
+    );
+  }
+
+  return (
+    <Link
+      href={href}
+      className={`flex h-11 items-center font-ui text-[0.95rem] font-medium lowercase transition-colors ${
+        isActive ? "text-forest underline decoration-moss/60 underline-offset-8" : "text-ink/80 hover:text-forest"
+      }`}
+    >
+      {locale}
+    </Link>
   );
 }

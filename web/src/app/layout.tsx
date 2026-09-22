@@ -7,6 +7,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { Toaster } from "@/components/ui/toaster";
+import { LocaleRuntime } from "@/components/layout/locale-runtime";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -51,6 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Footer />
           <CartDrawer />
           <Toaster />
+          <LocaleRuntime />
         </CartProvider>
       </body>
     </html>
