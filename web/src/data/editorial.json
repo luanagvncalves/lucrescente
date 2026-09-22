@@ -1,0 +1,64 @@
+{
+  "home-hero": {
+    "path": "/images/editorial/hero-products.jpg",
+    "alt": "produtos lucrescente variados: frascos de vidro âmbar, desodorizante em boião branco, sabonetes, bastão de madeira, sobre tecido floral rosa e azul"
+  },
+  "sobre": {
+    "path": "/images/editorial/sobre.jpg",
+    "alt": "duas mulheres em trajes de época atrás de uma banca de feira com produtos lucrescente sobre toalha laranja"
+  },
+  "cuidados-reuse": {
+    "path": "/images/editorial/cuidados-reuse.jpg",
+    "alt": "vela de cera de soja feita dentro de uma caneca de cerâmica reutilizada, com flores secas, sobre tecido floral"
+  },
+  "cuidados-velas": {
+    "path": "/images/editorial/cuidados-velas.jpg",
+    "alt": "grande plano de vela com três pavios numa caneca de cerâmica, decorada com flores secas coloridas"
+  },
+  "cuidados-solidos": {
+    "path": "/images/editorial/cuidados-solidos.jpg",
+    "alt": "três barras sólidas sem embalagem (branca, verde e bege) em saboneteiras artesanais em forma de folha, sobre tecido floral"
+  },
+  "categories": {
+    "desodorizantes": {
+      "file": "/images/categories/desodorizantes.jpg",
+      "alt": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral"
+    },
+    "champos": {
+      "file": "/images/categories/champos.jpg",
+      "alt": "quatro champôs sólidos redondos de cor creme, um deles de lado, sobre tecido floral rosa e azul"
+    },
+    "cuidado-capilar": {
+      "file": "/images/categories/cuidado-capilar.jpg",
+      "alt": "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul"
+    },
+    "sabonetes": {
+      "file": "/images/categories/sabonetes.jpg",
+      "alt": "sabonetes de rosto translúcidos em forma de flor, com sementes de papoila visíveis, em grande plano"
+    },
+    "velas": {
+      "file": "/images/categories/velas.jpg",
+      "alt": "três velas em copos de vidro com etiqueta preta ao lado de flores secas"
+    },
+    "roll-on": {
+      "file": "/images/categories/roll-on.jpg",
+      "alt": "três roll-ons de vidro âmbar de 10 ml, um deles aberto a mostrar a esfera de aço, com etiqueta redonda lucrescente, sobre tecido floral"
+    },
+    "sprays": {
+      "file": "/images/categories/sprays.jpg",
+      "alt": "quatro frascos de vidro âmbar com pulverizador branco e etiqueta roxa lucrescente, em pé sobre tecido floral rosa e azul"
+    },
+    "sais-de-banho": {
+      "file": "/images/categories/sais-de-banho.jpg",
+      "alt": "três frascos de vidro com sais de banho e rolha de cortiça, etiqueta roxa lucrescente, sobre tecido floral rosa e azul"
+    },
+    "batons": {
+      "file": "/images/categories/batons.jpg",
+      "alt": "dois bálsamos labiais em stick branco com etiqueta roxa e barra amarelo-clara exposta, sobre tecido floral rosa"
+    },
+    "outros": {
+      "file": "/images/categories/outros.jpg",
+      "alt": "cinco inaladores nasais brancos com etiqueta redonda cinzenta, um deitado, sobre tecido floral rosa"
+    }
+  }
+}
