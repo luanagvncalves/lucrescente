@@ -271,22 +271,10 @@ export const products: ProductSeed[] = [
   // Ingredient lists for soaps were not supplied per product; the brand states all soaps use
   // organic aloe vera harvested fresh at home, so only that link is shown.
   {
-    slug: "sabonete-corpo-aveia",
-    name: "sabonete corpo aveia",
-    category_slug: "sabonetes",
-    sort_order: 0,
-    why_it_works: null,
-    ingredient_slugs: ["aloe-vera"],
-    is_solid: true,
-    is_candle: false,
-    is_deodorant: false,
-    variants: one("sabonete-corpo-aveia", 800, 1),
-  },
-  {
     slug: "sabonete-40g",
     name: "sabonete 40g",
     category_slug: "sabonetes",
-    sort_order: 1,
+    sort_order: 0,
     why_it_works: null,
     ingredient_slugs: ["aloe-vera"],
     is_solid: true,
