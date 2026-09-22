@@ -11,7 +11,7 @@ import { ProductCard } from "@/components/product/product-card";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { Reveal } from "@/components/ui/reveal";
 import { HomeHero } from "@/components/home/hero";
-import { Testimonials } from "@/components/home/testimonials";
+import { TestimonialsDropdown } from "@/components/home/testimonials-dropdown";
 import { IngredientTeaserGrid } from "@/components/home/ingredient-teaser";
 import { testimonials } from "@/data/testimonials";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
@@ -223,14 +223,12 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       </section>
 
       {/* feedbacks */}
-      <Testimonials
+      <TestimonialsDropdown
         label={t.home.testimonialsLabel}
         title={t.home.testimonialsTitle}
         subtitle={t.home.testimonialsSubtitle}
         items={testimonials}
         locale={locale}
-        prevLabel={t.home.testimonialsPrev}
-        nextLabel={t.home.testimonialsNext}
       />
 
       {/* contact */}
