@@ -231,7 +231,7 @@ export const products: ProductSeed[] = [
     category_slug: "amaciadores",
     sort_order: 0,
     why_it_works:
-      "o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina e protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
+      "o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "alcool-cetilico",
