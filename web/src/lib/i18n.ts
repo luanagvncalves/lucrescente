@@ -1,13 +1,10 @@
 import { pt, type Dictionary } from "@/content/pt";
+import { en } from "@/content/en";
+import { fr } from "@/content/fr";
 
-/**
- * Minimal i18n seam. Portuguese only for this build.
- * To add EN/FR later: create src/content/en.ts with the same `Dictionary` shape,
- * add it to `dictionaries`, and switch `getDictionary` on a locale param / route segment.
- */
-export type Locale = "pt";
+export type Locale = "pt" | "en" | "fr";
 export const defaultLocale: Locale = "pt";
-const dictionaries: Record<Locale, Dictionary> = { pt };
+const dictionaries: Record<Locale, Dictionary> = { pt, en, fr };
 
 export function getDictionary(locale: Locale = defaultLocale): Dictionary {
   return dictionaries[locale];

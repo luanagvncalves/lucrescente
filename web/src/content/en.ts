@@ -9,7 +9,7 @@ export const en: Dictionary = {
     description: "portuguese natural hygiene and beauty brand, handmade at home in small batches.",
   },
   nav: {
-    home: "home", products: "products", ingredients: "ingredients", about: "about us", care: "care & sustainability",
+    home: "home", products: "products", ingredients: "ingredients", about: "about us", care: "care & sustainability", fairs: "fairs and markets",
     cart: "cart", openMenu: "open menu", closeMenu: "close menu", skipToContent: "skip to content",
   },
   home: {

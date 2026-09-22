@@ -30,7 +30,7 @@ export const pt = {
     products: "produtos",
     ingredients: "ingredientes",
     about: "sobre nós",
-    care: "cuidados & sustentabilidade",
+    fairs: "feiras e mercados",
     cart: "carrinho", // ui
     openMenu: "abrir menu", // ui
     closeMenu: "fechar menu", // ui
@@ -210,11 +210,6 @@ export const pt = {
         slug: "biologicos",
         title: "ingredientes biológicos",
         text: "sempre que possível, escolhemos ingredientes biológicos — e assinalamo-los com * na descrição dos produtos, para que tenhas mais e melhor informação sobre o que estás a usar.",
-      },
-      {
-        slug: "feiras-e-mercados",
-        title: "feiras e mercados",
-        text: "para além da loja online, também nos podes encontrar em feiras e mercados locais — a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
       },
     ],
   },
