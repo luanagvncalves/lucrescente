@@ -82,7 +82,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                   );
                 })
               : null}
-            {!product.is_solid ? (
+            {!product.is_solid && !product.is_deodorant ? (
               <button
                 type="button"
                 aria-pressed={ownContainer}
