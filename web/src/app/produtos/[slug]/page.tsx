@@ -43,8 +43,6 @@ export default async function ProductPage({ params }: Params) {
   const { slug } = await params;
   const product = await getProductBySlug(slug);
   if (!product) notFound();
-  const all = await getProducts();
-  const related = all.filter((p) => p.category.slug === product.category.slug && p.slug !== product.slug).slice(0, 4);
   const avail = productAvailability(product);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -158,20 +156,6 @@ export default async function ProductPage({ params }: Params) {
         </section>
       </div>
 
-      {related.length ? (
-        <section className="mt-24" aria-labelledby="relacionados">
-          <h2 id="relacionados" className="text-h2 text-forest lowercase">
-            {t.products.relatedTitle}
-          </h2>
-          <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {related.map((p) => (
-              <li key={p.slug}>
-                <ProductCard product={p} />
-              </li>
-            ))}
-          </ul>
-        </section>
-      ) : null}
     </article>
   );
 }
