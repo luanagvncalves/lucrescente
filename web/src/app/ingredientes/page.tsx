@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
-import { t } from "@/lib/i18n";
+import { t, getDictionary } from "@/lib/i18n";
 import { getIngredients } from "@/lib/catalog";
+import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
+import type { ProductLocale } from "@/content/product-locales";
 import { H1, SectionHeader } from "@/components/ui/typography";
 import { IngredientIndex } from "@/components/ingredient/ingredient-index";
 
@@ -13,13 +15,29 @@ export const metadata: Metadata = {
   alternates: { canonical: "/ingredientes" },
 };
 
-export default async function IngredientsPage() {
+export default async function IngredientsPage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
+  const { idioma } = await searchParams;
+  const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const dict = getDictionary(locale);
   const ingredients = await getIngredients();
+
+  const items = ingredients.map((i) => {
+    const copy = getIngredientCopy(i.slug, locale, i);
+    return {
+      slug: i.slug,
+      name: copy.name,
+      origin: copy.origin,
+      scientific_name: i.scientific_name,
+      category: i.category,
+      categoryLabel: getIngredientCategoryName(i.category, locale, i.category),
+    };
+  });
+
   return (
     <div className="container-brand pt-10 pb-8 md:pt-16">
-      <SectionHeader as={H1} label={t.ingredients.label} title={t.ingredients.title} subtitle={t.ingredients.subtitle} tone="violet" />
+      <SectionHeader as={H1} label={dict.ingredients.label} title={dict.ingredients.title} subtitle={dict.ingredients.subtitle} tone="violet" />
       <Suspense fallback={null}>
-        <IngredientIndex ingredients={ingredients} />
+        <IngredientIndex items={items} locale={locale} />
       </Suspense>
     </div>
   );
