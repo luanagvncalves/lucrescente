@@ -7,6 +7,7 @@ import type { Category, Product } from "@/lib/types";
 import { ProductCard } from "./product-card";
 import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
+import { FilterBar } from "@/components/ui/filter-bar";
 
 export function Catalogue({ categories, products }: { categories: Category[]; products: Product[] }) {
   const params = useSearchParams();
@@ -25,7 +26,7 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  function select(slug: string | null) {
+  function select(slug: string) {
     if (slug) {
       const productsInCategory = products.filter((p) => p.category.slug === slug);
       if (productsInCategory.length === 1) {
@@ -40,31 +41,30 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     router.replace(next.size ? `${pathname}?${next}` : pathname, { scroll: false });
   }
 
+  const sorted = useMemo(() => [...categories].sort((a, b) => a.name.localeCompare(b.name, "pt")), [categories]);
+
   const visible = useMemo(() => (active ? products.filter((p) => p.category.slug === active) : products), [active, products]);
   const grouped = useMemo(() => {
-    const cats = active ? categories.filter((c) => c.slug === active) : categories;
+    const cats = active ? sorted.filter((c) => c.slug === active) : sorted;
     return cats.map((c) => ({ category: c, items: visible.filter((p) => p.category.slug === c.slug) })).filter((g) => g.items.length > 0 || Boolean(active));
-  }, [active, categories, visible]);
+  }, [active, sorted, visible]);
 
-  const chip = (isActive: boolean) =>
-    `inline-flex h-11 items-center rounded-full border px-4 font-ui text-[0.9rem] font-medium lowercase transition-colors ${
-      isActive ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
-    }`;
+  const options = useMemo(
+    () => [{ key: "", label: t.products.allCategories }, ...sorted.map((c) => ({ key: c.slug, label: c.name }))],
+    [sorted],
+  );
 
   return (
     <>
-      <nav aria-label={t.products.filterLabel} className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 lg:-mx-16 lg:px-16">
-        <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
-          <button type="button" className={chip(!active)} aria-pressed={!active} onClick={() => select(null)}>
-            {t.products.allCategories}
-          </button>
-          {categories.map((c) => (
-            <button key={c.slug} type="button" className={chip(active === c.slug)} aria-pressed={active === c.slug} onClick={() => select(c.slug)}>
-              {c.name}
-            </button>
-          ))}
-        </div>
-      </nav>
+      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 lg:-mx-16 lg:px-16">
+        <FilterBar
+          ariaLabel={t.products.filterLabel}
+          options={options}
+          activeKey={active ?? ""}
+          onSelect={select}
+          labels={{ previous: t.products.scrollLeft, next: t.products.scrollRight }}
+        />
+      </div>
 
       <div ref={gridRef} className="mt-6 space-y-16" aria-live="polite">
         {grouped.map(({ category, items }) => (

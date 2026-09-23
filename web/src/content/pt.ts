@@ -32,6 +32,7 @@ export const pt = {
     about: "sobre nós",
     fairs: "feiras e mercados",
     feedback: "feedbacks",
+    care: "cuidados & sustentabilidade",
     cart: "carrinho", // ui
     openMenu: "abrir menu", // ui
     closeMenu: "fechar menu", // ui
@@ -102,8 +103,12 @@ export const pt = {
     title: "os nossos produtos",
     allCategories: "todos", // ui
     filterLabel: "categorias", // ui
+    scrollLeft: "ver categorias anteriores", // ui
+    scrollRight: "ver categorias seguintes", // ui
     whyItWorks: "porque funciona",
     hairTypeNote: "para que tipo de cabelo",
+    deodorantFact: "aplica uma camada fina em pele limpa e seca — com o calor do corpo espalha-se melhor.",
+    solidNote: "produto sólido, sem água na fórmula. guarda-o num sítio seco entre utilizações para durar mais tempo.",
     recommendedFor: "aconselhado para",
     notRecommendedFor: "não aconselhado para",
     mainIngredients: "ingredientes principais",
@@ -148,8 +153,6 @@ export const pt = {
     noProducts: "ainda não ligámos este ingrediente a um produto do catálogo.", // ui
     searchPlaceholder: "procurar um ingrediente", // ui
     noResults: "não encontrámos nenhum ingrediente com esse nome.", // ui
-    scrollLeft: "ver categorias anteriores", // ui
-    scrollRight: "ver categorias seguintes", // ui
   },
   about: {
     label: "a nossa história",
@@ -223,6 +226,7 @@ export const pt = {
     browse: "ver produtos", // ui
     subtotal: "subtotal", // ui
     shippingNote: "os portes são calculados no passo seguinte, consoante o destino.", // ui
+    reuseNote: "se quiseres reutilizar as tuas embalagens, escreve-nos — combinamos contigo.",
     checkout: "finalizar encomenda", // ui
     checkingOut: "a preparar o pagamento…", // ui
     remove: "remover", // ui

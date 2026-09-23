@@ -106,7 +106,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.06}>
-              <ProductCard product={p} locale={locale} />
+              <ProductCard product={p} />
             </Reveal>
           ))}
         </div>
@@ -245,7 +245,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
             </div>
             <div className="md:col-span-6 md:pt-14">
-              <ContactLinks labels="home" locale={locale} />
+              <ContactLinks labels="home" />
               <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { t } from "@/lib/i18n";
@@ -45,7 +46,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="pt-PT" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="min-h-dvh flex flex-col">
         <CartProvider>
-          <Header />
+          <Suspense fallback={null}>
+            <Header />
+          </Suspense>
           <main id="conteudo" className="flex-1">
             {children}
           </main>
