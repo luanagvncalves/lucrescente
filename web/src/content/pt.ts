@@ -240,6 +240,25 @@ export const pt = {
     errorGeneric: "algo falhou ao preparar o pagamento. tenta de novo daqui a pouco ou fala connosco.", // ui
     ok: "está bem", // ui
   },
+  checkout: {
+    title: "confirmar encomenda", // ui
+    summary: "resumo da encomenda", // ui
+    shippingTo: "envio para", // ui
+    shippingMethod: "método de envio", // ui
+    paymentMethod: "método de pagamento", // ui
+    selectPayment: "escolhe como preferires pagar", // ui
+    creditCard: "cartão de crédito",
+    mbway: "mbway",
+    applePay: "apple pay",
+    cardDesc: "mastercard, visa, american express",
+    mbwayDesc: "pagamento imediato através da aplicação do banco",
+    appleDesc: "rápido e seguro com apple pay",
+    continuePayment: "continuar para o pagamento", // ui
+    subtotal: "subtotal", // ui
+    shipping: "portes", // ui
+    total: "total", // ui
+    backToCart: "voltar ao carrinho", // ui
+  },
   order: {
     title: "obrigada. recebemos a tua encomenda.", // ui
     message: "preparamos cada pedido com cuidado",

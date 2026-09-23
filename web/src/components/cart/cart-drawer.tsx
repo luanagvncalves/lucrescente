@@ -36,24 +36,7 @@ export function CartDrawer() {
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/checkout", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({ items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity })) }),
-      });
-      const data = (await res.json()) as
-        | { url: string }
-        | { error: string; adjustments?: { sku: string; name: string; available: number }[] };
-      if (!res.ok || "error" in data) {
-        if ("adjustments" in data && data.adjustments?.length) {
-          cart.reconcile(data.adjustments.map((a) => ({ sku: a.sku, available: a.available })));
-          for (const a of data.adjustments) cart.notify(t.cart.stockAdjusted(a.name, a.available), "warn");
-          return;
-        }
-        setError("error" in data ? data.error : t.cart.errorGeneric);
-        return;
-      }
-      window.location.assign(data.url);
+      window.location.assign("/encomenda/checkout");
     } catch {
       setError(t.cart.errorGeneric);
     } finally {
