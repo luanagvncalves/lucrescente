@@ -148,6 +148,8 @@ export const pt = {
     noProducts: "ainda não ligámos este ingrediente a um produto do catálogo.", // ui
     searchPlaceholder: "procurar um ingrediente", // ui
     noResults: "não encontrámos nenhum ingrediente com esse nome.", // ui
+    scrollLeft: "ver categorias anteriores", // ui
+    scrollRight: "ver categorias seguintes", // ui
   },
   about: {
     label: "a nossa história",

@@ -44,7 +44,7 @@ export const en: Dictionary = {
   },
   ingredients: {
     ...pt.ingredients, label: "plant and mineral origin", title: "the ingredients we use, one by one", subtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does 🌿", allCategories: "all",
-    sections: { scientificName: "scientific name", origin: "origin", properties: "properties", applications: "applications at lucrescente" }, backToIndex: "← back to ingredients", productsUsing: "products with this ingredient", noProducts: "we have not linked this ingredient to a catalogue product yet.", searchPlaceholder: "search for an ingredient", noResults: "we could not find an ingredient with that name.",
+    sections: { scientificName: "scientific name", origin: "origin", properties: "properties", applications: "applications at lucrescente" }, backToIndex: "← back to ingredients", productsUsing: "products with this ingredient", noProducts: "we have not linked this ingredient to a catalogue product yet.", searchPlaceholder: "search for an ingredient", noResults: "we could not find an ingredient with that name.", scrollLeft: "see previous categories", scrollRight: "see next categories",
   },
   about: {
     ...pt.about, label: "our story", title: "two ways of looking at care", intro: "lucrescente was born from the meeting of scientific knowledge about plants and a sensitive, creative way of looking at everyday life.",
