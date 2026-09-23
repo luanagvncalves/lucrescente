@@ -11,6 +11,10 @@ import { PurchasePanel } from "@/components/product/purchase-panel";
 import { ProductCard } from "@/components/product/product-card";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductFeatures } from "@/components/product/product-features";
+import { ProductContact } from "@/components/product/product-contact";
+import { WaterSavingInfo } from "@/components/product/water-saving-info";
+import { ReusablePackagingInfo } from "@/components/product/reusable-packaging-info";
+import { SkinSafeInfo } from "@/components/product/skin-safe-info";
 
 export const revalidate = 60;
 
@@ -156,6 +160,11 @@ export default async function ProductPage({ params }: Params) {
         </section>
       </div>
 
+      <WaterSavingInfo product={product} />
+      <ReusablePackagingInfo product={product} />
+      <SkinSafeInfo product={product} />
+
+      <ProductContact productName={product.name} />
     </article>
   );
 }

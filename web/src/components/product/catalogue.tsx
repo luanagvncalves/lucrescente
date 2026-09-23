@@ -26,6 +26,14 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
   }, []);
 
   function select(slug: string | null) {
+    if (slug) {
+      const productsInCategory = products.filter((p) => p.category.slug === slug);
+      if (productsInCategory.length === 1) {
+        router.push(`/produtos/${productsInCategory[0].slug}`);
+        return;
+      }
+    }
+
     const next = new URLSearchParams(params.toString());
     if (slug) next.set("categoria", slug);
     else next.delete("categoria");

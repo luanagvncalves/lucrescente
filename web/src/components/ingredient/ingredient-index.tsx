@@ -7,10 +7,7 @@ import { t } from "@/lib/i18n";
 import type { Ingredient } from "@/lib/types";
 import { Crescent } from "@/components/ui/motifs";
 
-const CATEGORY_ORDER = ["Óleos", "Manteigas", "Hidrolatos", "Ceras e Emulsionantes", "Argilas", "Ativos", "Outros Ingredientes"];
-const SUBCATEGORY_ORDER: Record<string, string[]> = {
-  "Óleos": ["Óleos Vegetais", "Óleos Essenciais"],
-};
+const CATEGORY_ORDER = ["Óleos Vegetais", "Óleos Essenciais", "Manteigas", "Hidrolatos", "Ceras e Emulsionantes", "Argilas", "Ativos", "Outros Ingredientes"];
 
 function slugifyCat(c: string) {
   return c
@@ -47,27 +44,7 @@ export function IngredientIndex({ ingredients }: { ingredients: Ingredient[] }) 
     [ingredients, active, q],
   );
 
-  // Group by category and subcategory
-  const groups = CATEGORY_ORDER.map((catName) => {
-    const catItems = visible.filter((i) => i.category === catName);
-    const subcats = SUBCATEGORY_ORDER[catName];
-
-    if (subcats) {
-      return {
-        name: catName,
-        subgroups: subcats.map((subName) => ({
-          name: subName,
-          items: catItems.filter((i) => (i as any).subcategory === subName),
-        })).filter((g) => g.items.length),
-      };
-    } else {
-      return { name: catName, items: catItems };
-    }
-  }).filter((g) => {
-    const hasSubgroups = (g as any).subgroups && (g as any).subgroups.length > 0;
-    const hasItems = (g as any).items && (g as any).items.length > 0;
-    return hasSubgroups || hasItems;
-  });
+  const groups = CATEGORY_ORDER.map((name) => ({ name, items: visible.filter((i) => i.category === name) })).filter((g) => g.items.length);
 
   const chip = (isActive: boolean) =>
     `inline-flex h-11 items-center gap-2 rounded-full border px-4 font-ui text-[0.9rem] font-medium lowercase transition-colors ${
@@ -108,52 +85,27 @@ export function IngredientIndex({ ingredients }: { ingredients: Ingredient[] }) 
             <p>{t.ingredients.noResults}</p>
           </div>
         ) : null}
-        {groups.map((g: any) => (
+        {groups.map((g) => (
           <section key={g.name} aria-labelledby={`ing-${slugifyCat(g.name)}`}>
             <div className="mb-6 flex items-baseline gap-4">
               <h2 id={`ing-${slugifyCat(g.name)}`} className="text-h3 text-forest lowercase md:text-[2rem]">
                 {g.name}
               </h2>
+              <span className="text-[0.85rem] text-ink/60">{g.items.length}</span>
             </div>
-            {g.subgroups ? (
-              <div className="space-y-12">
-                {g.subgroups.map((sub: any) => (
-                  <div key={sub.name}>
-                    <div className="mb-4 flex items-baseline gap-3">
-                      <h3 className="text-[1.3rem] text-moss lowercase">{sub.name}</h3>
-                      <span className="text-[0.8rem] text-ink/60">{sub.items.length}</span>
-                    </div>
-                    <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                      {sub.items.map((i: any) => (
-                        <li key={i.slug}>
-                          <Link href={`/ingredientes/${i.slug}`} className="card-brand group flex h-full flex-col p-6 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
-                            <p className="label-brand text-violet">{(i as any).subcategory || i.category}</p>
-                            <h3 className="mt-3 font-display text-[1.4rem] leading-tight text-forest lowercase">{i.name}</h3>
-                            {i.scientific_name ? <p className="mt-1 text-[0.88rem] italic text-ink/70">{i.scientific_name}</p> : null}
-                            <p className="mt-4 line-clamp-3 text-[0.9rem] leading-relaxed text-ink/80">{i.origin}</p>
-                            <span className="mt-auto pt-4 font-ui text-[0.88rem] font-medium text-moss">{t.home.cardLink}</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {g.items.map((i: any) => (
-                  <li key={i.slug}>
-                    <Link href={`/ingredientes/${i.slug}`} className="card-brand group flex h-full flex-col p-6 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
-                      <p className="label-brand text-violet">{i.category}</p>
-                      <h3 className="mt-3 font-display text-[1.4rem] leading-tight text-forest lowercase">{i.name}</h3>
-                      {i.scientific_name ? <p className="mt-1 text-[0.88rem] italic text-ink/70">{i.scientific_name}</p> : null}
-                      <p className="mt-4 line-clamp-3 text-[0.9rem] leading-relaxed text-ink/80">{i.origin}</p>
-                      <span className="mt-auto pt-4 font-ui text-[0.88rem] font-medium text-moss">{t.home.cardLink}</span>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            )}
+            <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {g.items.map((i) => (
+                <li key={i.slug}>
+                  <Link href={`/ingredientes/${i.slug}`} className="card-brand group flex h-full flex-col p-6 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
+                    <p className="label-brand text-violet">{i.category}</p>
+                    <h3 className="mt-3 font-display text-[1.4rem] leading-tight text-forest lowercase">{i.name}</h3>
+                    {i.scientific_name ? <p className="mt-1 text-[0.88rem] italic text-ink/70">{i.scientific_name}</p> : null}
+                    <p className="mt-4 line-clamp-3 text-[0.9rem] leading-relaxed text-ink/80">{i.origin}</p>
+                    <span className="mt-auto pt-4 font-ui text-[0.88rem] font-medium text-moss">{t.home.cardLink}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </section>
         ))}
       </div>
