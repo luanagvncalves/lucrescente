@@ -8,12 +8,14 @@ import { AnimatePresence, motion } from "framer-motion";
 import { t } from "@/lib/i18n";
 import { useCart } from "@/lib/cart-store";
 import { Crescent } from "@/components/ui/motifs";
+import { FeedbacksDropdown } from "./feedbacks-dropdown";
+import { testimonials } from "@/data/testimonials";
 
 const links = [
   { href: "/produtos", label: t.nav.products },
   { href: "/ingredientes", label: t.nav.ingredients },
   { href: "/sobre", label: t.nav.about },
-  { href: "/feiras-e-mercados", label: "feiras e mercados" },
+  { href: "/feiras-e-mercados", label: t.nav.fairs },
 ];
 
 export function Header() {
@@ -59,6 +61,7 @@ export function Header() {
               </Link>
             );
           })}
+          <FeedbacksDropdown items={testimonials} />
           <div className="ml-4 flex gap-2 border-l border-moss/15 pl-8">
             <LanguageButton locale="pt" isMobile={false} />
             <LanguageButton locale="en" isMobile={false} />

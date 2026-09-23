@@ -31,6 +31,7 @@ export const pt = {
     ingredients: "ingredientes",
     about: "sobre nós",
     fairs: "feiras e mercados",
+    feedback: "feedbacks",
     cart: "carrinho", // ui
     openMenu: "abrir menu", // ui
     closeMenu: "fechar menu", // ui
