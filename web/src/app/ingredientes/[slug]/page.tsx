@@ -49,7 +49,7 @@ export default async function IngredientPage({ params }: Params) {
           {t.nav.ingredients}
         </Link>
         <span className="mx-2">/</span>
-        <span>{ingredient.category}</span>
+        <span className="lowercase">{ingredient.category}</span>
       </nav>
 
       <header className="mt-6 max-w-3xl">
