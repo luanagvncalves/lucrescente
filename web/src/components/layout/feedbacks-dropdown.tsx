@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 import { t } from "@/lib/i18n";
 import { getTestimonialCopy, type Testimonial } from "@/data/testimonials";
 import type { ProductLocale } from "@/content/product-locales";
@@ -71,9 +72,13 @@ export function FeedbacksDropdown({ items, locale = "pt" }: FeedbacksDropdownPro
               );
             })}
           </div>
-          <div className="p-3 bg-ivory/50 text-center border-t border-moss/15">
-            <p className="text-[0.8rem] text-ink/60">e {items.length > 6 ? `+ ${items.length - 6} mais` : "vários"} outros feedbacks</p>
-          </div>
+          <Link
+            href="/feedbacks"
+            onClick={() => setIsOpen(false)}
+            className="block p-4 text-center border-t border-moss/15 text-[0.9rem] font-medium text-forest hover:bg-ivory/50 transition-colors lowercase"
+          >
+            ver todos os feedbacks →
+          </Link>
         </div>
       )}
     </div>
