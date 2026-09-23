@@ -11,7 +11,7 @@ export type Variant = {
 
 export type ProductImage = { path: string; alt: string; is_primary: boolean; sort_order: number };
 
-export type IngredientLite = { slug: string; name: string; category: string; scientific_name: string | null };
+export type IngredientLite = { slug: string; name: string; category: string; subcategory?: string; scientific_name: string | null };
 
 export type Product = {
   id: string;
