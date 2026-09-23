@@ -62,7 +62,7 @@
  {
   "slug": "oleo-essencial-de-alecrim",
   "name": "Óleo Essencial de Alecrim",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Rosmarinus officinalis.",
   "origin": "Extraído por destilação a vapor das folhas de alecrim, arbusto aromático mediterrânico.",
   "properties": "Aroma herbáceo e estimulante, tradicionalmente associado a cuidados capilares revitalizantes e a uma sensação de energia. Como todos os óleos essenciais, é usado em concentrações muito baixas e sempre diluído.",
@@ -72,7 +72,7 @@
  {
   "slug": "oleo-essencial-de-alecrim-qt-cineol",
   "name": "Óleo Essencial de Alecrim QT Cineol",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Rosmarinus officinalis.",
   "origin": "Óleo essencial de alecrim quimiotipado por cineol, extraído por destilação das folhas de alecrim.",
   "properties": "Tem um aroma herbáceo, fresco e revigorante, valorizado em fórmulas de cuidado capilar pela sua sensação de limpeza e energia.",
@@ -82,7 +82,7 @@
  {
   "slug": "oleo-essencial-de-bergamota",
   "name": "Óleo Essencial de Bergamota",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Citrus bergamia.",
   "origin": "Extraído da casca da bergamota, um citrino cultivado sobretudo no sul de Itália.",
   "properties": "Aroma cítrico e floral, muito usado em perfumaria natural pelo seu perfil aromático equilibrado, que combina o frescor cítrico com uma nota floral mais suave. É tradicionalmente considerado relaxante e calmante, e associado a propriedades anti-inflamatórias e regeneradoras da pele.",
@@ -92,7 +92,7 @@
  {
   "slug": "oleo-essencial-de-camomila-romana",
   "name": "Óleo Essencial de Camomila Romana",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Chamaemelum nobile.",
   "origin": "Extraído por destilação das flores de camomila-romana.",
   "properties": "Aroma suave e adocicado, tradicionalmente associado a um efeito calmante, tanto pelo aroma como pelos compostos presentes no óleo. Usado sempre muito diluído dada a sua potência.",
@@ -102,7 +102,7 @@
  {
   "slug": "oleo-essencial-de-erva-principe",
   "name": "Óleo Essencial de Erva-Príncipe",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cymbopogon citratus.",
   "origin": "Também conhecida como capim-limão, é extraída por destilação das folhas desta planta tropical.",
   "properties": "Aroma cítrico intenso e fresco, muito usado em aromaterapia e perfumaria natural pela sua capacidade de refrescar e energizar um ambiente ou produto.",
@@ -112,7 +112,7 @@
  {
   "slug": "oleo-essencial-de-erva-principe-citratus",
   "name": "Óleo Essencial de Erva-príncipe (Citratus)",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cymbopogon citratus.",
   "origin": "Extraído por destilação das folhas de erva-príncipe, uma gramínea aromática de origem tropical conhecida pelo seu aroma fresco e cítrico.",
   "properties": "Tem um aroma limonado, fresco e revitalizante. Em cosmética, é usado sobretudo pela sua nota aromática e pela sensação de limpeza que acrescenta às fórmulas.",
@@ -122,7 +122,7 @@
  {
   "slug": "oleo-essencial-de-eucalipto-radiata",
   "name": "Óleo Essencial de Eucalipto Radiata",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Eucalyptus radiata.",
   "origin": "Extraído por destilação das folhas de eucalipto, árvore originária da Austrália.",
   "properties": "Aroma fresco e penetrante, tradicionalmente associado a uma sensação de respiração desobstruída e a ambientes revigorantes, sendo uma variedade de eucalipto considerada mais suave do que outras.",
@@ -132,7 +132,7 @@
  {
   "slug": "oleo-essencial-de-geranio-rosa",
   "name": "Óleo Essencial de Gerânio Rosa",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Pelargonium graveolens.",
   "origin": "Extraído das folhas e flores do gerânio-rosa, planta aromática cultivada sobretudo em África e no Mediterrâneo.",
   "properties": "Aroma floral e ligeiramente adocicado, com notas que lembram a rosa, muito apreciado em perfumaria natural e associado a um efeito equilibrante em fórmulas para pele mista.",
@@ -142,7 +142,7 @@
  {
   "slug": "oleo-essencial-de-hortela-pimenta",
   "name": "Óleo Essencial de Hortelã-Pimenta",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Mentha piperita.",
   "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
   "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
@@ -152,7 +152,7 @@
  {
   "slug": "oleo-essencial-de-laranja-doce",
   "name": "Óleo Essencial de Laranja Doce",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Citrus sinensis.",
   "origin": "Extraído da casca da laranja doce, um dos óleos essenciais cítricos mais usados em cosmética natural.",
   "properties": "Aroma cítrico doce e alegre, associado a uma sensação de bem-estar e frequentemente usado para equilibrar aromas mais intensos noutras misturas.",
@@ -162,7 +162,7 @@
  {
   "slug": "oleo-essencial-de-lavanda",
   "name": "Óleo Essencial de Lavanda",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Lavandula angustifolia.",
   "origin": "Extraído por destilação das flores de lavanda, um dos óleos essenciais mais versáteis e conhecidos.",
   "properties": "Aroma floral e herbáceo, tradicionalmente associado a um efeito calmante, anti-inflamatório e cicatrizante, sendo um dos óleos essenciais mais estudados e um dos poucos considerados relativamente seguros para uso mais frequente, sempre diluído.",
@@ -172,7 +172,7 @@
  {
   "slug": "oleo-essencial-de-lavanda-4042-blend",
   "name": "Óleo Essencial de Lavanda 40/42 (blend)",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": null,
   "origin": "Mistura aromática baseada em óleo essencial de lavanda, selecionada pelo seu perfil floral equilibrado e consistente.",
   "properties": "Tem um aroma floral, suave e reconhecível, associado a uma sensação de calma e conforto. O formato blend oferece uma fragrância estável e adequada a fórmulas de cuidado capilar.",
@@ -182,7 +182,7 @@
  {
   "slug": "oleo-essencial-de-limao",
   "name": "Óleo Essencial de Limão",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Citrus limon.",
   "origin": "Extraído a frio da casca do limão.",
   "properties": "Aroma cítrico vivo e energizante, muito usado em produtos de limpeza natural e perfumaria pela sensação imediata de frescura que transmite.",
@@ -192,7 +192,7 @@
  {
   "slug": "oleo-essencial-de-palmarosa",
   "name": "Óleo Essencial de Palmarosa",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cymbopogon martini.",
   "origin": "Extraído por destilação de uma erva aromática originária da Índia, aparentada com a citronela.",
   "properties": "Aroma floral suave, com notas que lembram a rosa; muito usado em cuidados de pele natural, sendo por vezes usado como alternativa mais acessível a óleos de rosa verdadeira em perfumaria.",
@@ -202,7 +202,7 @@
  {
   "slug": "oleo-essencial-de-petitgrain",
   "name": "Óleo Essencial de Petitgrain",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Citrus aurantium (folhas e ramos).",
   "origin": "Extraído por destilação das folhas e ramos da laranjeira-amarga, distinto do óleo extraído da flor (neroli) ou da casca.",
   "properties": "Aroma verde, ligeiramente floral e amadeirado, muito usado em perfumaria natural como nota de fundo que dá profundidade a misturas mais complexas.",
@@ -212,7 +212,7 @@
  {
   "slug": "oleo-essencial-de-ravintsara",
   "name": "Óleo Essencial de Ravintsara",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cinnamomum camphora.",
   "origin": "Extraído das folhas de uma árvore cultivada principalmente em Madagáscar.",
   "properties": "Aroma fresco e amadeirado, com notas que lembram o eucalipto, tradicionalmente associado a ambientes revigorantes e usado em difusores para criar uma atmosfera mais fresca.",
@@ -222,7 +222,7 @@
  {
   "slug": "oleo-essencial-de-tea-tree",
   "name": "Óleo Essencial de Tea Tree",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Melaleuca alternifolia.",
   "origin": "Extraído por destilação das folhas da árvore-do-chá, nativa da Austrália, onde é tradicionalmente usada pelos povos aborígenes.",
   "properties": "Aroma fresco e ligeiramente medicinal; um dos óleos essenciais mais estudados em cosmética natural, sendo tradicionalmente associado a peles com tendência oleosa ou a imperfeições, ajudando a transmitir uma sensação de limpeza.",
@@ -232,7 +232,7 @@
  {
   "slug": "oleo-essencial-de-ylang-ylang",
   "name": "Óleo Essencial de Ylang-Ylang",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cananga odorata.",
   "origin": "Extraído das flores da cananga, árvore tropical cultivada sobretudo em Madagáscar e no Sudeste Asiático.",
   "properties": "Aroma floral intenso e exótico, muito valorizado em perfumaria natural como nota central marcante, sendo tradicionalmente associado a uma sensação de relaxamento.",
@@ -242,7 +242,7 @@
  {
   "slug": "oleo-essencial-de-gengibre",
   "name": "Óleo Essencial de Gengibre",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Zingiber officinale.",
   "origin": "Extraído por destilação da raiz de gengibre, especiaria cultivada sobretudo na Ásia tropical.",
   "properties": "Aroma quente, picante e amadeirado, tradicionalmente associado a uma sensação de energia e aquecimento, muito usado em fórmulas revigorantes.",
@@ -252,7 +252,7 @@
  {
   "slug": "oleo-essencial-de-canela",
   "name": "Óleo Essencial de Canela",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cinnamomum verum / Cinnamomum zeylanicum.",
   "origin": "Extraído da casca ou das folhas da canela, especiaria de origem asiática cultivada sobretudo no Sri Lanka.",
   "properties": "Aroma quente, doce e especiado, muito reconhecível, usado sempre em quantidades muito pequenas por ser um óleo intenso e potente.",
@@ -262,7 +262,7 @@
  {
   "slug": "oleo-essencial-de-patchouli",
   "name": "Óleo Essencial de Patchouli",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Pogostemon cablin.",
   "origin": "Extraído por destilação das folhas de patchouli, planta aromática originária do Sudeste Asiático.",
   "properties": "Aroma terroso, amadeirado e persistente, muito usado em perfumaria natural como fixador, ajudando outros aromas a durar mais tempo.",
@@ -272,7 +272,7 @@
  {
   "slug": "oleo-essencial-de-ho-wood",
   "name": "Óleo Essencial de Ho Wood",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cinnamomum camphora ct. linalol.",
   "origin": "Extraído por destilação da madeira de ho wood, árvore da China frequentemente usada como alternativa mais sustentável ao pau-rosa.",
   "properties": "Aroma floral e ligeiramente amadeirado, rico em linalol, tradicionalmente associado a um efeito calmante e equilibrante.",
@@ -602,7 +602,7 @@
  {
   "slug": "oleo-essencial-de-citronela",
   "name": "Óleo Essencial de Citronela",
-  "category": "Óleos Essenciais",
+  "category": "Óleos Vegetais",
   "scientific_name": "Cymbopogon nardus.",
   "origin": "Extraído por destilação de uma erva aromática tropical originária do Sudeste Asiático, aparentada com a palmarosa e a citronela-de-java.",
   "properties": "Aroma fresco, herbáceo e com notas cítricas, tradicionalmente usado em velas aromáticas e produtos de ambientação. Associado a propriedades refrescantes e revitalizantes.",

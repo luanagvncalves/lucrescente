@@ -32,7 +32,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   ]);
   const hero = editorial["home-hero"];
   const categoryImages = editorial.categories;
-  const ingredientTeaser = ingredients.filter((i) => ["Óleos Essenciais", "Manteigas", "Hidrolatos", "Argilas"].includes(i.category)).slice(0, 8);
+  const ingredientTeaser = ingredients.filter((i) => ["Óleos Vegetais", "Manteigas", "Hidrolatos", "Argilas"].includes(i.category)).slice(0, 8);
 
   type Tile = { key: string; href: string; imageSrc: string | null; imageAlt: string; name: string; count: number };
 

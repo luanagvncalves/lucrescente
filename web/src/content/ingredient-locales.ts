@@ -9,7 +9,6 @@ export type IngredientCopy = { name: string; origin: string; properties: string;
 
 const categoryNames: Record<string, Partial<Record<ProductLocale, string>>> = {
   "Óleos Vegetais": { en: "vegetable oils", fr: "huiles végétales" },
-  "Óleos Essenciais": { en: "essential oils", fr: "huiles essentielles" },
   Manteigas: { en: "butters", fr: "beurres" },
   Hidrolatos: { en: "hydrosols", fr: "hydrolats" },
   "Ceras e Emulsionantes": { en: "waxes & emulsifiers", fr: "cires et émulsifiants" },

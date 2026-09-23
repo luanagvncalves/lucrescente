@@ -7,7 +7,7 @@ import { t } from "@/lib/i18n";
 import type { Ingredient } from "@/lib/types";
 import { Crescent } from "@/components/ui/motifs";
 
-const CATEGORY_ORDER = ["Óleos Vegetais", "Óleos Essenciais", "Manteigas", "Hidrolatos", "Ceras e Emulsionantes", "Argilas", "Ativos", "Outros Ingredientes"];
+const CATEGORY_ORDER = ["Óleos Vegetais", "Manteigas", "Hidrolatos", "Ceras e Emulsionantes", "Argilas", "Ativos", "Outros Ingredientes"];
 
 function slugifyCat(c: string) {
   return c
