@@ -63,7 +63,11 @@ export function IngredientIndex({ ingredients }: { ingredients: Ingredient[] }) 
     } else {
       return { name: catName, items: catItems };
     }
-  }).filter((g) => (g as any).subgroups ? (g as any).subgroups.length : (g as any).items?.length);
+  }).filter((g) => {
+    const hasSubgroups = (g as any).subgroups && (g as any).subgroups.length > 0;
+    const hasItems = (g as any).items && (g as any).items.length > 0;
+    return hasSubgroups || hasItems;
+  });
 
   const chip = (isActive: boolean) =>
     `inline-flex h-11 items-center gap-2 rounded-full border px-4 font-ui text-[0.9rem] font-medium lowercase transition-colors ${
