@@ -138,6 +138,13 @@ export const pt = {
     emptyCategory: "ainda não há produtos nesta categoria. fala connosco para saber o que vem aí.", // ui
     organicNote: "* ingrediente biológico",
   },
+  fairs: {
+    title: "feiras e mercados",
+    intro:
+      "para além da loja online, também nos podes encontrar em feiras e mercados locais — a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
+    comingSoon: "em breve, mais informações sobre os próximos eventos e feiras onde nos podes encontrar!",
+    metaDescription: "encontra-nos em feiras e mercados locais",
+  },
   productInfo: {
     // deodorant feature chips
     notAntiperspirant: "não é antitranspirante",

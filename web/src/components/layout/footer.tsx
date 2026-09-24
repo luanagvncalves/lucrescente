@@ -34,7 +34,6 @@ export function Footer() {
               ["/produtos", t.nav.products],
               ["/ingredientes", t.nav.ingredients],
               ["/sobre", t.nav.about],
-              ["/cuidados", t.nav.care],
             ].map(([href, label]) => (
               <li key={href}>
                 <Link href={`${href}${query}`} className="inline-flex min-h-11 items-center text-ivory/90 hover:text-white hover:underline underline-offset-4">

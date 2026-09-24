@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { t } from "@/lib/i18n";
+import { getDictionary, t } from "@/lib/i18n";
+import type { ProductLocale } from "@/content/product-locales";
 import { editorial } from "@/data/editorial";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -12,14 +13,18 @@ export const metadata: Metadata = {
   alternates: { canonical: "/sobre" },
 };
 
-export default function AboutPage() {
+export default async function AboutPage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
+  const { idioma } = await searchParams;
+  const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const d = getDictionary(locale);
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
   const photo = editorial.sobre;
   return (
     <article className="container-brand pt-10 md:pt-16">
       <header className="max-w-3xl">
-        <Label>{t.about.label}</Label>
-        <h1 className="mt-4 text-h1 text-forest lowercase">{t.about.title}</h1>
-        <p className="mt-6 text-body-lg measure">{t.about.intro}</p>
+        <Label>{d.about.label}</Label>
+        <h1 className="mt-4 text-h1 text-forest lowercase">{d.about.title}</h1>
+        <p className="mt-6 text-body-lg measure">{d.about.intro}</p>
       </header>
 
       <div className="mt-14 grid items-start gap-10 md:grid-cols-12">
@@ -33,24 +38,24 @@ export default function AboutPage() {
         <div className="space-y-12 md:col-span-5 md:pt-6">
           <section aria-labelledby="lucie">
             <h2 id="lucie" className="text-h2 text-forest lowercase">
-              {t.about.lucieName.toLowerCase()}
+              {d.about.lucieName.toLowerCase()}
             </h2>
-            <p className="mt-4 text-body-lg measure">{t.about.lucieText}</p>
+            <p className="mt-4 text-body-lg measure">{d.about.lucieText}</p>
             <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
               <p>
-                <a href={`mailto:${t.brand.lucieEmail}`} className="hover:underline underline-offset-4">
-                  {t.brand.lucieEmail}
+                <a href={`mailto:${d.brand.lucieEmail}`} className="hover:underline underline-offset-4">
+                  {d.brand.lucieEmail}
                 </a>
               </p>
               <p>
-                <a href={t.brand.luciePhonePTTel} className="hover:underline underline-offset-4">
-                  {t.brand.luciePhonePTDisplay}
+                <a href={d.brand.luciePhonePTTel} className="hover:underline underline-offset-4">
+                  {d.brand.luciePhonePTDisplay}
                 </a>
                 <span className="text-ink/60"> (PT)</span>
               </p>
               <p>
-                <a href={t.brand.luciePhoneCHTel} className="hover:underline underline-offset-4">
-                  {t.brand.luciePhoneCHDisplay}
+                <a href={d.brand.luciePhoneCHTel} className="hover:underline underline-offset-4">
+                  {d.brand.luciePhoneCHDisplay}
                 </a>
                 <span className="text-ink/60"> (CH)</span>
               </p>
@@ -58,18 +63,18 @@ export default function AboutPage() {
           </section>
           <section aria-labelledby="luana">
             <h2 id="luana" className="text-h2 text-forest lowercase">
-              {t.about.luanaName.toLowerCase()}
+              {d.about.luanaName.toLowerCase()}
             </h2>
-            <p className="mt-4 text-body-lg measure">{t.about.luanaText}</p>
+            <p className="mt-4 text-body-lg measure">{d.about.luanaText}</p>
             <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
               <p>
-                <a href={`mailto:${t.brand.email}`} className="hover:underline underline-offset-4">
-                  {t.brand.email}
+                <a href={`mailto:${d.brand.email}`} className="hover:underline underline-offset-4">
+                  {d.brand.email}
                 </a>
               </p>
               <p>
-                <a href={t.brand.phoneTel} className="hover:underline underline-offset-4">
-                  {t.brand.phoneDisplay}
+                <a href={d.brand.phoneTel} className="hover:underline underline-offset-4">
+                  {d.brand.phoneDisplay}
                 </a>
               </p>
             </div>
@@ -80,9 +85,9 @@ export default function AboutPage() {
       <Pause className="my-16" />
 
       <section className="mx-auto max-w-2xl text-center">
-        <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{t.about.close}</p>
-        <Link href="/" className="mt-8 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
-          {t.about.backLink}
+        <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{d.about.close}</p>
+        <Link href={`/${query}`} className="mt-8 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
+          {d.about.backLink}
         </Link>
       </section>
     </article>

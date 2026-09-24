@@ -5,6 +5,13 @@ export const fr: Dictionary = {
   locale: "fr-FR",
   brand: { ...pt.brand, tagline: "fait main, avec amour 🌱", description: "marque portugaise d'hygiène et de beauté naturelle, fabriquée à la main à la maison en petites quantités." },
   nav: { home: "accueil", products: "produits", ingredients: "ingrédients", about: "à propos", care: "soins & durabilité", fairs: "foires et marchés", feedback: "avis", cart: "panier", openMenu: "ouvrir le menu", closeMenu: "fermer le menu", skipToContent: "aller au contenu", homeLink: "lucrescente, page d'accueil" },
+  fairs: {
+    title: "foires et marchés",
+    intro:
+      "en plus de la boutique en ligne, vous pouvez aussi nous retrouver dans des foires et marchés locaux — pour voir les produits en vrai, rencontrer les personnes qui vont les utiliser et, parfois, créer des pièces personnalisées sur place. suivez notre instagram pour savoir où nous serons ensuite.",
+    comingSoon: "bientôt, plus d'informations sur les prochains événements et foires où nous retrouver !",
+    metaDescription: "retrouvez-nous dans les foires et marchés locaux",
+  },
   productInfo: {
     notAntiperspirant: "n'est pas un antitranspirant",
     aluminiumFree: "sans aluminium",
