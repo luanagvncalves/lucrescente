@@ -5,23 +5,29 @@ import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
 import { useCart } from "@/lib/cart-store";
 import { Crescent } from "@/components/ui/motifs";
 import { FeedbacksDropdown } from "./feedbacks-dropdown";
 import { testimonials } from "@/data/testimonials";
 
-const links = [
-  { href: "/produtos", label: t.nav.products },
-  { href: "/ingredientes", label: t.nav.ingredients },
-  { href: "/sobre", label: t.nav.about },
-  { href: "/feiras-e-mercados", label: t.nav.fairs },
-];
-
 export function Header() {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const { count, open, hydrated } = useCart();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const idioma = searchParams.get("idioma");
+  const locale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const t = getDictionary(locale);
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
+
+  const links = [
+    { href: "/produtos", label: t.nav.products },
+    { href: "/ingredientes", label: t.nav.ingredients },
+    { href: "/sobre", label: t.nav.about },
+    { href: "/feiras-e-mercados", label: t.nav.fairs },
+  ];
 
   useEffect(() => setMenuOpen(false), [pathname]);
   useEffect(() => {
@@ -42,7 +48,7 @@ export function Header() {
       {/* blur lives on the bar, not on <header>: backdrop-filter would make the header the containing block for the fixed mobile menu */}
       <div className="relative z-10 border-b border-moss/15 bg-ivory/92 backdrop-blur-sm">
       <div className="container-brand flex h-[72px] items-center justify-between gap-6">
-        <Link href="/" className="flex items-center gap-3" aria-label="lucrescente, página inicial">
+        <Link href={`/${query}`} className="flex items-center gap-3" aria-label={t.nav.homeLink}>
           <Image src="/brand/logo.png" alt="" width={44} height={44} className="rounded-full" priority />
           <span className="font-display text-[1.7rem] leading-none text-forest">lucrescente</span>
         </Link>
@@ -53,7 +59,7 @@ export function Header() {
             return (
               <Link
                 key={l.href}
-                href={l.href}
+                href={`${l.href}${query}`}
                 aria-current={active ? "page" : undefined}
                 className={`flex h-11 items-center font-ui text-[0.95rem] font-medium lowercase transition-colors hover:text-forest ${active ? "text-forest underline decoration-moss/60 underline-offset-8" : "text-ink/80"}`}
               >
@@ -61,7 +67,7 @@ export function Header() {
               </Link>
             );
           })}
-          <FeedbacksDropdown items={testimonials} />
+          <FeedbacksDropdown items={testimonials} locale={locale} />
           <div className="ml-4 flex gap-2 border-l border-moss/15 pl-8">
             <LanguageButton locale="pt" isMobile={false} />
             <LanguageButton locale="en" isMobile={false} />
@@ -120,7 +126,7 @@ export function Header() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.05 * i, duration: 0.3 }}
                 >
-                  <Link href={l.href} className="block py-3 font-display text-[2.4rem] leading-tight lowercase text-ivory">
+                  <Link href={`${l.href}${query}`} className="block py-3 font-display text-[2.4rem] leading-tight lowercase text-ivory">
                     {l.label}
                   </Link>
                 </motion.div>

@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
 import { getTestimonialCopy, type Testimonial } from "@/data/testimonials";
 import type { ProductLocale } from "@/content/product-locales";
 
@@ -23,6 +23,7 @@ interface FeedbacksDropdownProps {
 export function FeedbacksDropdown({ items, locale = "pt" }: FeedbacksDropdownProps) {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const t = getDictionary(locale);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -73,7 +74,7 @@ export function FeedbacksDropdown({ items, locale = "pt" }: FeedbacksDropdownPro
             })}
           </div>
           <Link
-            href="/feedbacks"
+            href={locale === "pt" ? "/feedbacks" : `/feedbacks?idioma=${locale}`}
             onClick={() => setIsOpen(false)}
             className="block p-4 text-center border-t border-moss/15 text-[0.9rem] font-medium text-forest hover:bg-ivory/50 transition-colors lowercase"
           >

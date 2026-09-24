@@ -10,7 +10,7 @@ export const en: Dictionary = {
   },
   nav: {
     home: "home", products: "products", ingredients: "ingredients", about: "about us", care: "care & sustainability", fairs: "fairs and markets", feedback: "feedback",
-    cart: "cart", openMenu: "open menu", closeMenu: "close menu", skipToContent: "skip to content",
+    cart: "cart", openMenu: "open menu", closeMenu: "close menu", skipToContent: "skip to content", homeLink: "lucrescente, home page",
   },
   home: {
     ...pt.home,

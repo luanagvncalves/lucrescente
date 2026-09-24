@@ -37,6 +37,7 @@ export const pt = {
     openMenu: "abrir menu", // ui
     closeMenu: "fechar menu", // ui
     skipToContent: "saltar para o conteúdo", // ui
+    homeLink: "lucrescente, página inicial", // ui
   },
   home: {
     heroLabel: "feito à mão, com carinho",
