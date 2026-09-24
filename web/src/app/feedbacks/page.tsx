@@ -52,11 +52,15 @@ export default async function FeedbacksPage({ searchParams }: { searchParams: Pr
         </header>
       </Reveal>
 
-      <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* true masonry columns: the quotes vary wildly in length, and an even
+          grid left a dead gap under every short one */}
+      <div className="mt-16 columns-1 gap-6 sm:columns-2 lg:columns-3">
         {testimonials.map((item, i) => (
-          <Reveal key={item.id} delay={i * 0.05}>
-            <TestimonialCard item={item} locale={locale} />
-          </Reveal>
+          <div key={item.id} className="mb-6 break-inside-avoid">
+            <Reveal delay={Math.min(i, 8) * 0.04}>
+              <TestimonialCard item={item} locale={locale} />
+            </Reveal>
+          </div>
         ))}
       </div>
     </article>

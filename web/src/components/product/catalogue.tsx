@@ -54,11 +54,16 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     [categories, locale],
   );
 
-  const visible = useMemo(() => (active ? products.filter((p) => p.category.slug === active) : products), [active, products]);
-  const grouped = useMemo(() => {
-    const cats = active ? sorted.filter((c) => c.slug === active) : sorted;
-    return cats.map((c) => ({ category: c, items: visible.filter((p) => p.category.slug === c.slug) })).filter((g) => g.items.length > 0 || Boolean(active));
-  }, [active, sorted, visible]);
+  // One flat grid: grouping by category left seven single-product rows mostly empty.
+  // Products stay ordered by category so related items still sit together.
+  const visible = useMemo(() => {
+    const order = new Map(sorted.map((c, i) => [c.slug, i]));
+    const list = active ? products.filter((p) => p.category.slug === active) : [...products];
+    return list.sort(
+      (a, b) =>
+        (order.get(a.category.slug) ?? 0) - (order.get(b.category.slug) ?? 0) || a.sort_order - b.sort_order,
+    );
+  }, [active, products, sorted]);
 
   const options = useMemo(
     () => [
@@ -80,31 +85,21 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
         />
       </div>
 
-      <div ref={gridRef} className="mt-6 space-y-16" aria-live="polite">
-        {grouped.map(({ category, items }) => (
-          <section key={category.slug} aria-labelledby={`cat-${category.slug}`}>
-            <div className="mb-6 flex items-baseline gap-4">
-              <h2 id={`cat-${category.slug}`} className="text-h3 text-forest lowercase md:text-[2rem]">
-                {getCategoryName(category.slug, locale, category.name)}
-              </h2>
-              <span className="text-[0.85rem] text-ink/60">{items.length}</span>
-            </div>
-            {items.length === 0 ? (
-              <div className="card-brand flex items-center gap-4 p-6 text-ink/80">
-                <Crescent size={18} tone="var(--violet)" />
-                <p>{t.products.emptyCategory}</p>
-              </div>
-            ) : (
-              <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {items.map((p, i) => (
-                  <li key={p.slug}>
-                    <ProductCard product={p} priority={i < 2} locale={locale} />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </section>
-        ))}
+      <div ref={gridRef} className="mt-10" aria-live="polite">
+        {visible.length === 0 ? (
+          <div className="card-brand flex items-center gap-4 p-6 text-ink/80">
+            <Crescent size={18} tone="var(--violet)" />
+            <p>{t.products.emptyCategory}</p>
+          </div>
+        ) : (
+          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {visible.map((p, i) => (
+              <li key={p.slug}>
+                <ProductCard product={p} priority={i < 4} locale={locale} showStory={false} />
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <Modal open={cancelled} onClose={() => setCancelled(false)} title={t.cart.errorTitle} primaryLabel={t.cart.ok}>

@@ -74,7 +74,7 @@ export const en: Dictionary = {
     soldOut: "currently sold out. get in touch to place an order", soldOutShort: "currently sold out", priceFrom: "from ", addToCart: "add to cart", added: "added to cart", quantity: "quantity", variant: "size",
     stockLeft: (n: number) => (n === 1 ? "only 1 left" : `${n} left`), orderMessage: (name: string) => `hi! i'd like to order: ${name}`,
     ownContainerLabel: "own container", candleNote: "if you prefer, we can make your candles in your own jars, mugs or bowls — just bring us the containers.",
-    backToCatalog: "← back to products", relatedTitle: "from the same family", usedInTitle: "where we use this ingredient", emptyCategory: "there are no products in this category yet. get in touch to hear what is coming.", organicNote: "* organic ingredient",
+    backToCatalog: "← back to products", relatedTitle: "build your set", relatedPrev: "previous products", relatedNext: "next products", usedInTitle: "where we use this ingredient", emptyCategory: "there are no products in this category yet. get in touch to hear what is coming.", organicNote: "* organic ingredient",
   },
   ingredients: {
     ...pt.ingredients, label: "plant and mineral origin", title: "the ingredients we use, one by one", subtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does 🌿", allCategories: "all",

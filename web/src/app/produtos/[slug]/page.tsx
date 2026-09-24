@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
 import { ProductImage } from "@/components/ui/product-image";
 import { PurchasePanel } from "@/components/product/purchase-panel";
-import { ProductCard } from "@/components/product/product-card";
+import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductFeatures } from "@/components/product/product-features";
 import { ProductContact } from "@/components/product/product-contact";
@@ -59,6 +59,20 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // keep the Portuguese story when a translation is missing, rather than dropping the section
   const whyItWorks = copy.whyItWorks ?? product.why_it_works;
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
+
+  // "cria o teu conjunto": same category first, then the rest of the catalogue.
+  const all = await getProducts();
+  const related = all
+    .filter((p) => p.slug !== product.slug)
+    .sort((a, b) => {
+      const sameA = a.category.slug === product.category.slug ? 0 : 1;
+      const sameB = b.category.slug === product.category.slug ? 0 : 1;
+      // it is a carousel of photographs, so the ones without a photo go last
+      const photoA = a.images.length ? 0 : 1;
+      const photoB = b.images.length ? 0 : 1;
+      return sameA - sameB || photoA - photoB || a.sort_order - b.sort_order;
+    })
+    .slice(0, 12);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   // Product schema with real prices only. On-request products get no offer.
@@ -177,6 +191,8 @@ export default async function ProductPage({ params, searchParams }: Params) {
       <WaterSavingInfo product={product} locale={locale} />
       <ReusablePackagingInfo product={product} locale={locale} />
       <SkinSafeInfo product={product} locale={locale} />
+
+      <RelatedCarousel items={related} locale={locale} />
 
       <ProductContact productName={copy.name} locale={locale} />
     </article>

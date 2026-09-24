@@ -28,12 +28,30 @@ export function IngredientTeaserGrid({
       <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
         {visible.map((i) => (
           <li key={i.slug}>
-            <Link href={`/ingredientes/${i.slug}`} className="card-brand block h-full p-5 transition-transform duration-200 hover:-translate-y-0.5">
+            <Link
+              href={`/ingredientes/${i.slug}${locale === "pt" ? "" : `?idioma=${locale}`}`}
+              className="card-brand block h-full p-5 transition-transform duration-200 hover:-translate-y-0.5"
+            >
               {i.category !== "Óleos Vegetais" ? <p className="label-brand text-violet">{getIngredientCategoryName(i.category, locale, i.category)}</p> : null}
-              <p className={`font-display text-[1.3rem] leading-tight text-forest lowercase ${i.category !== "Óleos Vegetais" ? "mt-2" : ""}`}>
-                {getIngredientCopy(i.slug, locale, { name: i.name, origin: "", properties: "", applications: "" }).name}
-              </p>
-              {i.scientific_name ? <p className="mt-1 text-[0.85rem] italic text-ink/70">{i.scientific_name}</p> : null}
+              {(() => {
+                const copy = getIngredientCopy(i.slug, locale, {
+                  name: i.name,
+                  origin: i.origin,
+                  properties: i.properties,
+                  applications: i.applications,
+                });
+                return (
+                  <>
+                    <p className={`font-display text-[1.3rem] leading-tight text-forest lowercase ${i.category !== "Óleos Vegetais" ? "mt-2" : ""}`}>
+                      {copy.name}
+                    </p>
+                    {i.scientific_name ? <p className="mt-1 text-[0.85rem] italic text-ink/70">{i.scientific_name}</p> : null}
+                    {copy.properties ? (
+                      <p className="mt-3 line-clamp-2 text-[0.85rem] leading-relaxed text-ink/75">{copy.properties}</p>
+                    ) : null}
+                  </>
+                );
+              })()}
             </Link>
           </li>
         ))}

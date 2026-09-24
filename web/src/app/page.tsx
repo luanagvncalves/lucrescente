@@ -91,7 +91,13 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 
   return (
     <>
-      <HomeHero hero={hero} title={t.home.heroTitle} />
+      <HomeHero
+        hero={hero}
+        title={t.home.heroTitle}
+        primaryLabel={t.home.heroPrimary}
+        secondaryLabel={t.home.heroSecondary}
+        query={locale === "pt" ? "" : `?idioma=${locale}`}
+      />
 
       {/* featured */}
       <section className="container-brand section-gap" aria-labelledby="destaques">
@@ -122,7 +128,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             {categoryGroups.map((group, groupIndex) => (
               <Reveal key={group.label} delay={groupIndex * 0.08}>
                 <div>
-                  <h3 className="font-display text-[1.15rem] text-moss lowercase">{group.label}</h3>
+                  <h3 className="font-ui text-[1.05rem] font-medium tracking-[0.02em] text-moss lowercase">{group.label}</h3>
                   <ul className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
                     {group.tiles.map((tile) => (
                       <li key={tile.key}>

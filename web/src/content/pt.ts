@@ -133,7 +133,9 @@ export const pt = {
     candleNote:
       "e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
     backToCatalog: "← voltar aos produtos", // ui
-    relatedTitle: "da mesma família", // ui
+    relatedTitle: "cria o teu conjunto", // ui
+    relatedPrev: "produtos anteriores", // ui
+    relatedNext: "produtos seguintes", // ui
     usedInTitle: "onde usamos este ingrediente", // ui
     emptyCategory: "ainda não há produtos nesta categoria. fala connosco para saber o que vem aí.", // ui
     organicNote: "* ingrediente biológico",

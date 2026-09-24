@@ -1,15 +1,23 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export function HomeHero({
   hero,
   title,
+  primaryLabel,
+  secondaryLabel,
+  query = "",
 }: {
   hero: { path: string; alt: string } | null;
   title: string;
+  primaryLabel: string;
+  secondaryLabel: string;
+  /** "?idioma=en" etc., so the hero links keep the chosen language. */
+  query?: string;
 }) {
   const [fade, setFade] = useState(1);
   const [scale, setScale] = useState(1.08);
@@ -73,6 +81,26 @@ export function HomeHero({
             {displayedText}
             {isTyping && <span className="animate-pulse">|</span>}
           </motion.h1>
+
+          <motion.div
+            className="mt-8 flex flex-wrap gap-3"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+          >
+            <Link
+              href={`/produtos${query}`}
+              className="inline-flex h-12 items-center rounded-full bg-ivory px-6 font-ui text-[0.95rem] font-medium lowercase text-forest transition-colors hover:bg-white"
+            >
+              {primaryLabel}
+            </Link>
+            <Link
+              href={`/ingredientes${query}`}
+              className="inline-flex h-12 items-center rounded-full border border-ivory/60 px-6 font-ui text-[0.95rem] font-medium lowercase text-ivory transition-colors hover:border-ivory hover:bg-ivory/10"
+            >
+              {secondaryLabel}
+            </Link>
+          </motion.div>
         </div>
       </div>
     </section>

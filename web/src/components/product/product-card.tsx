@@ -16,10 +16,13 @@ export function ProductCard({
   product,
   priority = false,
   locale = "pt",
+  showStory = true,
 }: {
   product: Product;
   priority?: boolean;
   locale?: ProductLocale;
+  /** The catalogue hides the one-line story so its grid stays even. */
+  showStory?: boolean;
 }) {
   const t = getDictionary(locale);
   const avail = productAvailability(product);
@@ -52,7 +55,7 @@ export function ProductCard({
       <div className="flex flex-1 flex-col gap-2 p-6">
         <p className="label-brand text-moss">{categoryName}</p>
         <h3 className="font-display text-[1.45rem] leading-tight text-forest lowercase">{copy.name}</h3>
-        {story ? <p className="text-[0.92rem] leading-relaxed text-ink/80">{story}</p> : null}
+        {showStory && story ? <p className="text-[0.92rem] leading-relaxed text-ink/80">{story}</p> : null}
         <div className="mt-auto flex items-center justify-between pt-3">
           {avail.kind === "on-request" ? (
             <span className="font-ui text-[0.95rem] font-medium text-clay">{t.products.onRequest}</span>
