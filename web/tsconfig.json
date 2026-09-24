@@ -23,5 +23,8 @@
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  // scripts/ are one-off maintenance tools run with tsx, not part of the app, and
+  // seed.ts imports data files that are gitignored — type-checking them during the
+  // build breaks any deploy that builds from a fresh clone.
+  "exclude": ["node_modules", "scripts"]
 }
