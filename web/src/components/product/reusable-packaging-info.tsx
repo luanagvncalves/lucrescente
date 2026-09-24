@@ -1,19 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import { getDictionary } from "@/lib/i18n";
 import type { Product } from "@/lib/types";
+import type { ProductLocale } from "@/content/product-locales";
 
 // Categories that don't need reusable packaging button
 const EXCLUDED_CATEGORIES = ["batons", "inaladores"];
 
-const REUSABLE_TEXT =
-  "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!";
-
-const PAPER_WRAPPED_TEXT =
-  "embrulhamos todos os produtos em papel reutilizado, porque prioritizamos a sustentabilidade e a produção consciente face ao consumo desnecessário.";
-
-export function ReusablePackagingInfo({ product }: { product: Product }) {
+export function ReusablePackagingInfo({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
   const [open, setOpen] = useState(false);
+  const t = getDictionary(locale);
 
   // Don't show button for excluded categories
   if (EXCLUDED_CATEGORIES.includes(product.category.slug)) {
@@ -21,7 +18,7 @@ export function ReusablePackagingInfo({ product }: { product: Product }) {
   }
 
   // Determine which text to show based on whether product is solid
-  const text = product.is_solid ? PAPER_WRAPPED_TEXT : REUSABLE_TEXT;
+  const text = product.is_solid ? t.productInfo.paperWrappedText : t.productInfo.reusableText;
 
   return (
     <div className="mt-6">
@@ -29,7 +26,7 @@ export function ReusablePackagingInfo({ product }: { product: Product }) {
         onClick={() => setOpen(!open)}
         className="inline-flex items-center gap-2 rounded-full border border-moss/40 bg-paper px-5 py-2.5 font-ui text-[0.9rem] font-medium text-forest transition-colors hover:border-forest hover:bg-forest/5"
       >
-        <span>reutilizável</span>
+        <span>{t.productInfo.reusableLabel}</span>
       </button>
 
       {open && (

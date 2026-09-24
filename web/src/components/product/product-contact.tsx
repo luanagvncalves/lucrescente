@@ -1,9 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
+import type { ProductLocale } from "@/content/product-locales";
 
-export function ProductContact({ productName }: { productName: string }) {
+export function ProductContact({ productName, locale = "pt" }: { productName: string; locale?: ProductLocale }) {
+  const t = getDictionary(locale);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -49,18 +51,18 @@ export function ProductContact({ productName }: { productName: string }) {
         <svg className="w-6 h-6 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
         </svg>
-        <h2 className="text-h3 text-forest lowercase">fala connosco sobre este produto</h2>
+        <h2 className="text-h3 text-forest lowercase">{t.productInfo.contactTitle}</h2>
       </div>
 
       {submitted ? (
         <div className="rounded-lg bg-green-50 border border-green-200 p-4">
-          <p className="text-green-800 text-sm">✓ mensagem enviada com sucesso! agradecemos o contacto.</p>
+          <p className="text-green-800 text-sm">{t.productInfo.contactSuccess}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-forest mb-2">
-              nome
+              {t.productInfo.contactName}
             </label>
             <input
               type="text"
@@ -70,13 +72,13 @@ export function ProductContact({ productName }: { productName: string }) {
               onChange={handleChange}
               required
               className="w-full px-4 py-2.5 rounded-lg border border-moss/40 bg-white text-ink placeholder:text-ink/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/10"
-              placeholder="como te chamas?"
+              placeholder={t.productInfo.contactNamePlaceholder}
             />
           </div>
 
           <div>
             <label htmlFor="email" className="block text-sm font-medium text-forest mb-2">
-              email
+              {t.productInfo.contactEmail}
             </label>
             <input
               type="email"
@@ -86,13 +88,13 @@ export function ProductContact({ productName }: { productName: string }) {
               onChange={handleChange}
               required
               className="w-full px-4 py-2.5 rounded-lg border border-moss/40 bg-white text-ink placeholder:text-ink/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/10"
-              placeholder="o teu email"
+              placeholder={t.productInfo.contactEmailPlaceholder}
             />
           </div>
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-forest mb-2">
-              mensagem
+              {t.productInfo.contactMessage}
             </label>
             <textarea
               id="message"
@@ -102,7 +104,7 @@ export function ProductContact({ productName }: { productName: string }) {
               required
               rows={4}
               className="w-full px-4 py-2.5 rounded-lg border border-moss/40 bg-white text-ink placeholder:text-ink/40 focus:outline-none focus:border-forest focus:ring-2 focus:ring-forest/10 resize-none"
-              placeholder="deixa-nos saber o que achas, dúvidas, pedidos especiais..."
+              placeholder={t.productInfo.contactMessagePlaceholder}
             />
           </div>
 
@@ -114,7 +116,7 @@ export function ProductContact({ productName }: { productName: string }) {
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
             </svg>
-            {isSubmitting ? "a enviar..." : "enviar"}
+            {isSubmitting ? t.productInfo.contactSending : t.productInfo.contactSend}
           </button>
         </form>
       )}

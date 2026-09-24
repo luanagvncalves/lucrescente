@@ -275,3 +275,8 @@ export function getIngredientCategoryName(category: string, locale: ProductLocal
 export function getIngredientCopy(slug: string, locale: ProductLocale, fallback: IngredientCopy): IngredientCopy {
   return copy[slug]?.[locale] ?? fallback;
 }
+
+/** Name only — for the places that list ingredients without their full copy. */
+export function getIngredientName(slug: string, locale: ProductLocale, fallback: string): string {
+  return copy[slug]?.[locale]?.name ?? fallback;
+}

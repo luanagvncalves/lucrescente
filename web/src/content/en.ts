@@ -12,6 +12,33 @@ export const en: Dictionary = {
     home: "home", products: "products", ingredients: "ingredients", about: "about us", care: "care & sustainability", fairs: "fairs and markets", feedback: "feedback",
     cart: "cart", openMenu: "open menu", closeMenu: "close menu", skipToContent: "skip to content", homeLink: "lucrescente, home page",
   },
+  productInfo: {
+    notAntiperspirant: "not an antiperspirant",
+    aluminiumFree: "aluminium free",
+    alcoholFree: "alcohol free",
+    customisable: "customisable",
+    waterSavingLabel: "less water",
+    waterSavingText:
+      "we use no water to make this product. solid products leave far less residue and rinse out of hair and skin more easily, so you do not need to use as much water to feel clean — and because they need no packaging, we also save the water used to make plastic.",
+    reusableLabel: "reusable",
+    reusableText:
+      "all our packaging is reusable. if you have an old container of ours or from another brand, bring it to us and get our reuse discount on your next order!",
+    paperWrappedText:
+      "we wrap every product in reused paper, because we put sustainability and mindful making ahead of needless consumption.",
+    skinSafeLabel: "safe for skin",
+    skinSafeText:
+      "our solid shampoos can be used on the body too, with no worries: thanks to their natural ingredients and the absence of harsh chemicals, you can enjoy a multi-purpose shampoo every day!",
+    contactTitle: "talk to us about this product",
+    contactSuccess: "✓ message sent! thank you for getting in touch.",
+    contactName: "name",
+    contactNamePlaceholder: "what is your name?",
+    contactEmail: "email",
+    contactEmailPlaceholder: "your email",
+    contactMessage: "message",
+    contactMessagePlaceholder: "tell us what you think, any questions, special requests...",
+    contactSend: "send",
+    contactSending: "sending...",
+  },
   home: {
     ...pt.home,
     heroLabel: "handmade, with care",

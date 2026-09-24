@@ -5,6 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import { getProductBySlug, getProducts } from "@/lib/catalog";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
+import { getIngredientName } from "@/content/ingredient-locales";
 import { productAvailability } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -126,10 +127,10 @@ export default async function ProductPage({ params, searchParams }: Params) {
           {product.is_deodorant ? (
             <ProductFeatures
               features={[
-                { label: "não é antitranspirante" },
-                { label: "sem alumínio" },
-                { label: "sem álcool" },
-                { label: "personalizável" },
+                { label: t.productInfo.notAntiperspirant },
+                { label: t.productInfo.aluminiumFree },
+                { label: t.productInfo.alcoholFree },
+                { label: t.productInfo.customisable },
               ]}
             />
           ) : null}
@@ -160,7 +161,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
                     href={`/ingredientes/${i.slug}${query}`}
                     className="inline-flex min-h-11 items-center rounded-full border border-moss/40 bg-paper px-4 py-2 font-ui text-[0.9rem] font-medium text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white"
                   >
-                    {i.name}
+                    {getIngredientName(i.slug, locale, i.name)}
                   </Link>
                 </li>
               ))}
@@ -173,11 +174,11 @@ export default async function ProductPage({ params, searchParams }: Params) {
         </section>
       </div>
 
-      <WaterSavingInfo product={product} />
-      <ReusablePackagingInfo product={product} />
-      <SkinSafeInfo product={product} />
+      <WaterSavingInfo product={product} locale={locale} />
+      <ReusablePackagingInfo product={product} locale={locale} />
+      <SkinSafeInfo product={product} locale={locale} />
 
-      <ProductContact productName={copy.name} />
+      <ProductContact productName={copy.name} locale={locale} />
     </article>
   );
 }

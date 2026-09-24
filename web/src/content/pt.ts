@@ -138,6 +138,36 @@ export const pt = {
     emptyCategory: "ainda não há produtos nesta categoria. fala connosco para saber o que vem aí.", // ui
     organicNote: "* ingrediente biológico",
   },
+  productInfo: {
+    // deodorant feature chips
+    notAntiperspirant: "não é antitranspirante",
+    aluminiumFree: "sem alumínio",
+    alcoholFree: "sem álcool",
+    customisable: "personalizável",
+    // expandable info panels
+    waterSavingLabel: "menos água",
+    waterSavingText:
+      "não usamos água no fabrico deste produto. os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpx, e como não necessitam de embalagens, também poupamos a água usada no fabrico de plástico.",
+    reusableLabel: "reutilizável",
+    reusableText:
+      "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!",
+    paperWrappedText:
+      "embrulhamos todos os produtos em papel reutilizado, porque prioritizamos a sustentabilidade e a produção consciente face ao consumo desnecessário.",
+    skinSafeLabel: "seguros para a pele",
+    skinSafeText:
+      "os nossos champôs sólidos também podem ser usados no corpo, sem preocupações: pelos ingredientes naturais e por não terem químicos, podes disfrutar de um champô multifuncional todos os dias!",
+    // per-product contact form
+    contactTitle: "fala connosco sobre este produto",
+    contactSuccess: "✓ mensagem enviada com sucesso! agradecemos o contacto.",
+    contactName: "nome",
+    contactNamePlaceholder: "como te chamas?",
+    contactEmail: "email",
+    contactEmailPlaceholder: "o teu email",
+    contactMessage: "mensagem",
+    contactMessagePlaceholder: "deixa-nos saber o que achas, dúvidas, pedidos especiais...",
+    contactSend: "enviar",
+    contactSending: "a enviar...",
+  },
   ingredients: {
     label: "de origem vegetal e mineral",
     title: "os ingredientes que usamos, um a um",
