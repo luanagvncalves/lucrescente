@@ -106,7 +106,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {featured.map((p, i) => (
             <Reveal key={p.slug} delay={i * 0.06}>
-              <ProductCard product={p} />
+              <ProductCard product={p} locale={locale} />
             </Reveal>
           ))}
         </div>

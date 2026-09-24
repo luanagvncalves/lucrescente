@@ -113,7 +113,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
             <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {products.slice(0, 8).map((p) => (
                 <li key={p.slug}>
-                  <ProductCard product={p} />
+                  <ProductCard product={p} locale={locale} />
                 </li>
               ))}
             </ul>

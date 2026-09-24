@@ -122,6 +122,7 @@ export const pt = {
     talkToUs: "fala connosco →",
     soldOut: "esgotado por agora. fala connosco para encomendar", // ui
     soldOutShort: "esgotado por agora", // ui
+    priceFrom: "desde ", // ui
     addToCart: "adicionar ao carrinho", // ui
     added: "adicionado ao carrinho", // ui
     quantity: "quantidade", // ui

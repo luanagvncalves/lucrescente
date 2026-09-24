@@ -4,6 +4,8 @@ const names: Record<string, Partial<Record<ProductLocale, string>>> = {
   desodorizantes: { en: "deodorants", fr: "déodorants" },
   champos: { en: "shampoos", fr: "shampoings" },
   "cuidado-capilar": { en: "hair care", fr: "soin des cheveux" },
+  amaciadores: { en: "conditioners", fr: "après-shampoings" },
+  "mascaras-capilares": { en: "hair masks", fr: "masques capillaires" },
   sabonetes: { en: "soaps", fr: "savons" },
   velas: { en: "candles", fr: "bougies" },
   "roll-on": { pt: "roll-ons", en: "roll-ons", fr: "roll-ons" },

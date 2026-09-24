@@ -2,8 +2,10 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
 import type { Category, Product } from "@/lib/types";
+import { getCategoryName } from "@/content/category-locales";
+import type { ProductLocale } from "@/content/product-locales";
 import { ProductCard } from "./product-card";
 import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
@@ -14,6 +16,9 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
   const router = useRouter();
   const pathname = usePathname();
   const active = params.get("categoria");
+  const idioma = params.get("idioma");
+  const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const t = getDictionary(locale);
   const [cancelled, setCancelled] = useState(params.get("checkout") === "cancelado");
   const gridRef = useRef<HTMLDivElement>(null);
 
@@ -30,7 +35,7 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     if (slug) {
       const productsInCategory = products.filter((p) => p.category.slug === slug);
       if (productsInCategory.length === 1) {
-        router.push(`/produtos/${productsInCategory[0].slug}`);
+        router.push(`/produtos/${productsInCategory[0].slug}${locale === "pt" ? "" : `?idioma=${locale}`}`);
         return;
       }
     }
@@ -41,7 +46,13 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     router.replace(next.size ? `${pathname}?${next}` : pathname, { scroll: false });
   }
 
-  const sorted = useMemo(() => [...categories].sort((a, b) => a.name.localeCompare(b.name, "pt")), [categories]);
+  const sorted = useMemo(
+    () =>
+      [...categories].sort((a, b) =>
+        getCategoryName(a.slug, locale, a.name).localeCompare(getCategoryName(b.slug, locale, b.name), locale),
+      ),
+    [categories, locale],
+  );
 
   const visible = useMemo(() => (active ? products.filter((p) => p.category.slug === active) : products), [active, products]);
   const grouped = useMemo(() => {
@@ -50,8 +61,11 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
   }, [active, sorted, visible]);
 
   const options = useMemo(
-    () => [{ key: "", label: t.products.allCategories }, ...sorted.map((c) => ({ key: c.slug, label: c.name }))],
-    [sorted],
+    () => [
+      { key: "", label: t.products.allCategories },
+      ...sorted.map((c) => ({ key: c.slug, label: getCategoryName(c.slug, locale, c.name) })),
+    ],
+    [sorted, locale, t],
   );
 
   return (
@@ -71,7 +85,7 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
           <section key={category.slug} aria-labelledby={`cat-${category.slug}`}>
             <div className="mb-6 flex items-baseline gap-4">
               <h2 id={`cat-${category.slug}`} className="text-h3 text-forest lowercase md:text-[2rem]">
-                {category.name}
+                {getCategoryName(category.slug, locale, category.name)}
               </h2>
               <span className="text-[0.85rem] text-ink/60">{items.length}</span>
             </div>
@@ -84,7 +98,7 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
               <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {items.map((p, i) => (
                   <li key={p.slug}>
-                    <ProductCard product={p} priority={i < 2} />
+                    <ProductCard product={p} priority={i < 2} locale={locale} />
                   </li>
                 ))}
               </ul>
