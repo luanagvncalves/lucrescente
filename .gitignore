@@ -8,8 +8,11 @@ supabase/.temp
 
 # internal costing data: never ship
 assets/Ingredientes - Lucro, Stock e Preços.xlsx
-web/public/images
-web/src/data/editorial.json
 web/src/data/photo-map.json
+
+# web/public/images used to be ignored, which was fine while every deploy was
+# made by hand from this machine. Builds now run from a clone of this repo, so
+# anything left out of it simply does not exist on the site — the product
+# photographs have to be committed.
 assets/lucrescente-product-photos-categorized.zip
 web.zip
