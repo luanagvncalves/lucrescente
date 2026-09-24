@@ -1,14 +1,17 @@
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
+import type { ProductLocale } from "@/content/product-locales";
 
 type Props = {
   tone?: "light" | "dark";
   layout?: "pills" | "list";
   /** Use the homepage button labels ("Chamada · Mensagem normal · Mensagem WhatsApp · Email"). */
   labels?: "home" | "short";
+  locale?: ProductLocale;
 };
 
 /** The four contact choices: Chamada · SMS · WhatsApp · Email. */
-export function ContactLinks({ tone = "light", layout = "pills", labels = "short" }: Props) {
+export function ContactLinks({ tone = "light", layout = "pills", labels = "short", locale = "pt" }: Props) {
+  const t = getDictionary(locale);
   const items = [
     { href: t.brand.phoneTel, label: labels === "home" ? t.home.contactButtons.call : t.contact.call, icon: <PhoneIcon /> },
     { href: t.brand.sms, label: labels === "home" ? t.home.contactButtons.sms : t.contact.sms, icon: <SmsIcon /> },

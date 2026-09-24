@@ -1,9 +1,19 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { t } from "@/lib/i18n";
+import { useSearchParams } from "next/navigation";
+import { getDictionary } from "@/lib/i18n";
+import type { ProductLocale } from "@/content/product-locales";
 import { ContactLinks } from "@/components/contact/contact-links";
 
 export function Footer() {
+  const searchParams = useSearchParams();
+  const idioma = searchParams.get("idioma");
+  const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const t = getDictionary(locale);
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
+
   return (
     <footer className="mt-24 bg-forest text-ivory on-dark">
       <div className="container-brand grid gap-12 py-16 md:grid-cols-12 md:py-20">
@@ -27,7 +37,7 @@ export function Footer() {
               ["/cuidados", t.nav.care],
             ].map(([href, label]) => (
               <li key={href}>
-                <Link href={href} className="inline-flex min-h-11 items-center text-ivory/90 hover:text-white hover:underline underline-offset-4">
+                <Link href={`${href}${query}`} className="inline-flex min-h-11 items-center text-ivory/90 hover:text-white hover:underline underline-offset-4">
                   {label}
                 </Link>
               </li>
@@ -38,7 +48,7 @@ export function Footer() {
         <div className="md:col-span-4">
           <p className="label-brand text-lavender">{t.footer.contactsTitle}</p>
           <div className="mt-5">
-            <ContactLinks tone="dark" layout="list" />
+            <ContactLinks tone="dark" layout="list" locale={locale} />
           </div>
           <a
             href={t.brand.instagram}

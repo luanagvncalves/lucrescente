@@ -52,7 +52,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <main id="conteudo" className="flex-1">
             {children}
           </main>
-          <Footer />
+          <Suspense fallback={null}>
+            <Footer />
+          </Suspense>
           <CartDrawer />
           <Toaster />
           <LocaleRuntime />
