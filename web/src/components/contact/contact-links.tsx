@@ -9,57 +9,115 @@ type Props = {
   locale?: ProductLocale;
 };
 
-/** The four contact choices: Chamada · SMS · WhatsApp · Email. */
+type ContactItem = { person: string; display: string; href: string; external?: boolean };
+type ContactGroup = { key: string; label: string; icon: React.ReactNode; items: ContactItem[] };
+
+/** The four contact groups, each merging both Lucie's and Luana's details into one box: Chamada · SMS · WhatsApp · Email. */
 export function ContactLinks({ tone = "light", layout = "pills", labels = "short", locale = "pt" }: Props) {
   const t = getDictionary(locale);
-  const items = [
-    { href: t.brand.phoneTel, label: labels === "home" ? t.home.contactButtons.call : t.contact.call, icon: <PhoneIcon /> },
-    { href: t.brand.sms, label: labels === "home" ? t.home.contactButtons.sms : t.contact.sms, icon: <SmsIcon /> },
-    { href: t.brand.whatsapp, label: labels === "home" ? t.home.contactButtons.whatsapp : t.contact.whatsapp, icon: <WhatsappIcon />, external: true },
-    { href: `mailto:${t.brand.email}`, label: labels === "home" ? t.home.contactButtons.email : t.contact.email, icon: <MailIcon /> },
+  const label = (key: "call" | "sms" | "whatsapp" | "email") => (labels === "home" ? t.home.contactButtons[key] : t.contact[key]);
+
+  const lucieDigits = t.brand.luciePhonePTTel.replace("tel:", "");
+  const lucieSms = `sms:${lucieDigits}`;
+  const lucieWhatsapp = `https://wa.me/${lucieDigits.replace("+", "")}`;
+
+  const groups: ContactGroup[] = [
+    {
+      key: "call",
+      label: label("call"),
+      icon: <PhoneIcon />,
+      items: [
+        { person: "lucie", display: t.brand.luciePhonePTDisplay, href: t.brand.luciePhonePTTel },
+        { person: "lucie", display: t.brand.luciePhoneCHDisplay, href: t.brand.luciePhoneCHTel },
+        { person: "luana", display: t.brand.phoneDisplay, href: t.brand.phoneTel },
+      ],
+    },
+    {
+      key: "sms",
+      label: label("sms"),
+      icon: <SmsIcon />,
+      items: [
+        { person: "lucie", display: t.brand.luciePhonePTDisplay, href: lucieSms },
+        { person: "luana", display: t.brand.phoneDisplay, href: t.brand.sms },
+      ],
+    },
+    {
+      key: "whatsapp",
+      label: label("whatsapp"),
+      icon: <WhatsappIcon />,
+      items: [
+        { person: "lucie", display: t.brand.luciePhonePTDisplay, href: lucieWhatsapp, external: true },
+        { person: "luana", display: t.brand.phoneDisplay, href: t.brand.whatsapp, external: true },
+      ],
+    },
+    {
+      key: "email",
+      label: label("email"),
+      icon: <MailIcon />,
+      items: [
+        { person: "lucie", display: t.brand.lucieEmail, href: `mailto:${t.brand.lucieEmail}` },
+        { person: "luana", display: t.brand.email, href: `mailto:${t.brand.email}` },
+      ],
+    },
   ];
+
+  const linkTone = tone === "dark" ? "text-ivory/90 hover:text-white" : "text-forest hover:text-forest/70";
 
   if (layout === "list") {
     return (
-      <ul className="space-y-2 font-ui text-[0.95rem]">
-        {items.map((i) => (
-          <li key={i.href}>
-            <a
-              href={i.href}
-              target={i.external ? "_blank" : undefined}
-              rel={i.external ? "noreferrer" : undefined}
-              className={`inline-flex min-h-11 items-center gap-3 hover:underline underline-offset-4 ${tone === "dark" ? "text-ivory/90 hover:text-white" : "text-forest"}`}
-            >
-              <span className="opacity-80">{i.icon}</span>
-              <span>
-                {i.label}
-                {i.href.startsWith("tel:") ? <span className="opacity-70"> · {t.brand.phoneDisplay}</span> : null}
-                {i.href.startsWith("mailto:") ? <span className="opacity-70"> · {t.brand.email}</span> : null}
-              </span>
-            </a>
-          </li>
+      <div className="space-y-5 font-ui text-[0.95rem]">
+        {groups.map((g) => (
+          <div key={g.key}>
+            <p className={`flex items-center gap-2 label-brand ${tone === "dark" ? "text-lavender" : "text-moss"}`}>
+              <span className="opacity-80">{g.icon}</span>
+              {g.label}
+            </p>
+            <ul className="mt-2 space-y-1.5">
+              {g.items.map((i) => (
+                <li key={i.href}>
+                  <a
+                    href={i.href}
+                    target={i.external ? "_blank" : undefined}
+                    rel={i.external ? "noreferrer" : undefined}
+                    className={`inline-block min-h-11 py-1 hover:underline underline-offset-4 ${linkTone}`}
+                  >
+                    <span className="opacity-70">{i.person} · </span>
+                    {i.display}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     );
   }
 
-  const pill =
-    tone === "dark"
-      ? "border-ivory/40 text-ivory hover:bg-ivory/10"
-      : "border-forest/50 text-forest hover:bg-forest/5";
+  const card = tone === "dark" ? "border-ivory/30 bg-ivory/5" : "border-forest/20 bg-paper";
   return (
-    <div className="flex flex-wrap gap-3">
-      {items.map((i) => (
-        <a
-          key={i.href}
-          href={i.href}
-          target={i.external ? "_blank" : undefined}
-          rel={i.external ? "noreferrer" : undefined}
-          className={`inline-flex h-12 items-center gap-2 rounded-full border px-5 font-ui text-[0.95rem] font-medium transition-colors ${pill}`}
-        >
-          {i.icon}
-          {i.label}
-        </a>
+    <div className="grid gap-4 sm:grid-cols-2">
+      {groups.map((g) => (
+        <div key={g.key} className={`rounded-2xl border px-5 py-4 ${card}`}>
+          <p className={`flex items-center gap-2 label-brand ${tone === "dark" ? "text-lavender" : "text-moss"}`}>
+            <span className="opacity-80">{g.icon}</span>
+            {g.label}
+          </p>
+          <ul className="mt-2.5 space-y-1.5 font-ui text-[0.95rem]">
+            {g.items.map((i) => (
+              <li key={i.href}>
+                <a
+                  href={i.href}
+                  target={i.external ? "_blank" : undefined}
+                  rel={i.external ? "noreferrer" : undefined}
+                  className={`inline-block min-h-11 py-1 hover:underline underline-offset-4 ${linkTone}`}
+                >
+                  <span className="opacity-70">{i.person} · </span>
+                  {i.display}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
       ))}
     </div>
   );
