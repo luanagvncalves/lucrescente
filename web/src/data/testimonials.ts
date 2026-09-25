@@ -43,7 +43,12 @@ export function getTestimonialCopy(item: Testimonial, locale: ProductLocale): { 
   return { quote, product };
 }
 
-export const testimonials: Testimonial[] = [
+/**
+ * Authored grouped by product, because that is how they are collected and
+ * edited. What the site shows is `testimonials` below, which interleaves these
+ * so two feedbacks about the same product never sit side by side.
+ */
+const collected: Testimonial[] = [
   {
     id: "spray-relax-kit",
     quote: "amei cada produto! recomendo 5*",
@@ -363,25 +368,13 @@ export const testimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    id: "curiosidade-mercado",
-    quote: "estava à espera deste mercado para ver todos os outros produtos... estou muito curiosa com a máscara capilar e o sabonete de rosto.",
-    quoteLang: "pt",
-    translations: {
-      en: "I was waiting for this market to see all the other products... I'm very curious about the hair mask and the face soap.",
-      fr: "j'attendais ce marché pour voir tous les autres produits... je suis très curieuse à propos du masque capillaire et du savon pour le visage.",
-    },
-    product: "máscara capilar e sabonete de rosto",
-    productTranslations: { en: "hair mask and face soap", fr: "masque capillaire et savon pour le visage" },
-    stars: 5,
-  },
-  {
     id: "batom-herpes",
     quote:
-      "O meu pai já tinha colocado um creme de farmácia e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo aos primeiros sintomas e no dia seguinte já estava a sarar. Além disso, a minha mãe disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante.",
+      "O meu pai já tinha colocado um creme e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo e no dia seguinte já estava a sarar. Além disso, disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante.",
     quoteLang: "pt",
     translations: {
-      en: "My dad had already put on a pharmacy cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right at the first symptoms, and by the next day it was already healing. She also said her lips were starting to get chapped, and that it was a great moisturiser.",
-      fr: "Mon père avait déjà mis une crème de pharmacie, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis dès les premiers symptômes et dès le lendemain ça guérissait déjà. En plus, ma mère a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant.",
+      en: "My dad had already put on a cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right away, and by the next day it was already healing. She also said her lips were starting to get chapped, and that it was a great moisturiser.",
+      fr: "Mon père avait déjà mis une crème, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis tout de suite et dès le lendemain ça guérissait déjà. En plus, elle a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant.",
     },
     product: "batom para herpes",
     productTranslations: { en: "cold sore lip balm", fr: "baume à lèvres pour bouton de fièvre" },
@@ -389,3 +382,55 @@ export const testimonials: Testimonial[] = [
     year: 2026,
   },
 ];
+
+/**
+ * The family a feedback belongs to, for spreading purposes: the first word of
+ * the product, minus a plural. Grouping on the full product name is too strict
+ * to be useful — "velas" and "vela personalizada" are different strings but the
+ * same thing to someone reading the strip, as are five differently worded
+ * shampoos — and a reader notices the family, not the exact label.
+ */
+function productFamily(item: Testimonial): string {
+  return item.product.toLowerCase().split(/[\s,/]/)[0].replace(/s$/, "");
+}
+
+/**
+ * Interleave so no two neighbours are about the same kind of product: take from
+ * whichever family still has the most feedback left, skipping the one just
+ * placed. Doing it here rather than by hand-ordering the list above means it
+ * keeps holding as feedback is added — and it only fails to separate a family
+ * that on its own accounts for more than half the list, which would be a
+ * different problem.
+ *
+ * The longest quote is pinned last, so the strip does not open on the biggest
+ * wall of text; it is also what sets every card's height.
+ */
+function spreadByProduct(list: Testimonial[]): Testimonial[] {
+  if (list.length < 3) return [...list];
+
+  const longest = list.reduce((a, b) => (b.quote.length > a.quote.length ? b : a));
+  const byProduct = new Map<string, Testimonial[]>();
+  for (const item of list) {
+    if (item === longest) continue;
+    const family = productFamily(item);
+    const bucket = byProduct.get(family);
+    if (bucket) bucket.push(item);
+    else byProduct.set(family, [item]);
+  }
+
+  const spread: Testimonial[] = [];
+  for (;;) {
+    const available = [...byProduct.entries()]
+      .filter(([, items]) => items.length > 0)
+      .sort((a, b) => b[1].length - a[1].length);
+    if (!available.length) break;
+    const last = spread[spread.length - 1];
+    const previous = last ? productFamily(last) : undefined;
+    const pick = available.find(([family]) => family !== previous) ?? available[0];
+    spread.push(pick[1].shift()!);
+  }
+
+  return [...spread, longest];
+}
+
+export const testimonials: Testimonial[] = spreadByProduct(collected);
