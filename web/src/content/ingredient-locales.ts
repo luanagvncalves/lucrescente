@@ -1,4 +1,5 @@
 import type { ProductLocale } from "./product-locales";
+import { brandCase } from "@/lib/brand-case";
 
 /**
  * English/French overrides for the 60-ingredient catalogue. `scientific_name`
@@ -268,15 +269,24 @@ const copy: Record<string, Partial<Record<ProductLocale, IngredientCopy>>> = {
   },
 };
 
+/**
+ * Names and categories come back already in the brand's lowercase, with real
+ * abbreviations kept — see `brandCase`. Doing it here means every caller gets
+ * it, page titles included, rather than each one remembering a CSS class.
+ * The prose fields (origin, properties, applications) are left alone: they are
+ * sentences, and lowercasing them would strip capitals from things like INCI
+ * names and countries.
+ */
 export function getIngredientCategoryName(category: string, locale: ProductLocale, fallback: string): string {
-  return categoryNames[category]?.[locale] ?? fallback;
+  return brandCase(categoryNames[category]?.[locale] ?? fallback);
 }
 
 export function getIngredientCopy(slug: string, locale: ProductLocale, fallback: IngredientCopy): IngredientCopy {
-  return copy[slug]?.[locale] ?? fallback;
+  const entry = copy[slug]?.[locale] ?? fallback;
+  return { ...entry, name: brandCase(entry.name) };
 }
 
 /** Name only — for the places that list ingredients without their full copy. */
 export function getIngredientName(slug: string, locale: ProductLocale, fallback: string): string {
-  return copy[slug]?.[locale]?.name ?? fallback;
+  return brandCase(copy[slug]?.[locale]?.name ?? fallback);
 }

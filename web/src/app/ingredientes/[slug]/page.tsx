@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/i18n";
 import { getIngredientBySlug, getIngredients, getProductsForIngredient } from "@/lib/catalog";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
+import { brandCase } from "@/lib/brand-case";
 import type { ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -22,11 +23,15 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const i = await getIngredientBySlug(slug);
   if (!i) return {};
+  // The database stores these title-cased ("Óleo de Coco"). A tab title and a
+  // search result are the one place CSS cannot put them into the brand's
+  // lowercase, so it has to happen here.
+  const name = brandCase(i.name);
   return {
-    title: i.name,
+    title: name,
     description: i.origin,
     alternates: { canonical: `/ingredientes/${i.slug}` },
-    openGraph: { title: `${i.name} · lucrescente`, description: i.origin },
+    openGraph: { title: `${name} · lucrescente`, description: i.origin },
   };
 }
 
@@ -63,7 +68,8 @@ export default async function IngredientPage({ params, searchParams }: Params) {
 
       <header className="mt-6 max-w-3xl">
         <Label tone="violet">{categoryLabel}</Label>
-        <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
+        {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
+        <h1 className="mt-3 text-h1 text-forest">{copy.name}</h1>
         {ingredient.scientific_name ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{ingredient.scientific_name}</p> : null}
       </header>
 

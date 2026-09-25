@@ -42,7 +42,8 @@ export function IngredientTeaserGrid({
                 });
                 return (
                   <>
-                    <p className={`font-display text-[1.3rem] leading-tight text-forest lowercase ${i.category !== "Óleos Vegetais" ? "mt-2" : ""}`}>
+                    {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
+                    <p className={`font-display text-[1.3rem] leading-tight text-forest ${i.category !== "Óleos Vegetais" ? "mt-2" : ""}`}>
                       {copy.name}
                     </p>
                     {i.scientific_name ? <p className="mt-1 text-[0.85rem] italic text-ink/70">{i.scientific_name}</p> : null}
