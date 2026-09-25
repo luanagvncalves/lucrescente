@@ -1,6 +1,23 @@
 import { cache } from "react";
+import { unstable_cache } from "next/cache";
 import { supabasePublic } from "./supabase";
 import type { Category, Ingredient, Product } from "./types";
+
+/**
+ * Every page reads `searchParams` (for `?idioma=`), which forces Next to render it
+ * on each request — so the `export const revalidate` on those pages never applies
+ * and the catalogue was re-queried from Supabase on every single navigation.
+ *
+ * The pages still render per request (they have to), but the data behind them is
+ * cached here instead, which is what actually made clicking the header feel slow.
+ * Catalogue data is cached briefly so the client's price/stock edits in Supabase
+ * still show up quickly; ingredients change essentially never, so they last longer.
+ *
+ * Deliberately NOT cached: getVariantsBySkus, which validates stock at checkout and
+ * must always read live.
+ */
+const CATALOG_TTL = 60;
+const INGREDIENT_TTL = 600;
 
 const PRODUCT_SELECT = `
   id, slug, name, sort_order, why_it_works, is_solid, is_candle, is_deodorant,
@@ -46,45 +63,75 @@ function sortProducts(list: Product[]) {
   return list.sort((a, b) => a.category.sort_order - b.category.sort_order || a.sort_order - b.sort_order);
 }
 
-export const getCategories = cache(async (): Promise<Category[]> => {
-  const { data, error } = await supabasePublic.from("categories").select("*").order("sort_order");
-  if (error) throw error;
-  return data;
-});
+export const getCategories = cache(
+  unstable_cache(
+    async (): Promise<Category[]> => {
+      const { data, error } = await supabasePublic.from("categories").select("*").order("sort_order");
+      if (error) throw error;
+      return data;
+    },
+    ["categories"],
+    { revalidate: CATALOG_TTL, tags: ["catalog"] },
+  ),
+);
 
-export const getProducts = cache(async (): Promise<Product[]> => {
-  const { data, error } = await supabasePublic.from("products").select(PRODUCT_SELECT).eq("is_active", true);
-  if (error) throw error;
-  return sortProducts((data as unknown as Row[]).map(normalize));
-});
+export const getProducts = cache(
+  unstable_cache(
+    async (): Promise<Product[]> => {
+      const { data, error } = await supabasePublic.from("products").select(PRODUCT_SELECT).eq("is_active", true);
+      if (error) throw error;
+      return sortProducts((data as unknown as Row[]).map(normalize));
+    },
+    ["products"],
+    { revalidate: CATALOG_TTL, tags: ["catalog"] },
+  ),
+);
 
-export const getProductBySlug = cache(async (slug: string): Promise<Product | null> => {
-  const { data, error } = await supabasePublic
-    .from("products")
-    .select(PRODUCT_SELECT)
-    .eq("slug", slug)
-    .eq("is_active", true)
-    .maybeSingle();
-  if (error) throw error;
-  return data ? normalize(data as unknown as Row) : null;
-});
+export const getProductBySlug = cache(
+  unstable_cache(
+    async (slug: string): Promise<Product | null> => {
+      const { data, error } = await supabasePublic
+        .from("products")
+        .select(PRODUCT_SELECT)
+        .eq("slug", slug)
+        .eq("is_active", true)
+        .maybeSingle();
+      if (error) throw error;
+      return data ? normalize(data as unknown as Row) : null;
+    },
+    ["product-by-slug"],
+    { revalidate: CATALOG_TTL, tags: ["catalog"] },
+  ),
+);
 
 export const getProductsBySlugs = cache(async (slugs: string[]): Promise<Product[]> => {
   const all = await getProducts();
   return slugs.map((s) => all.find((p) => p.slug === s)).filter((p): p is Product => Boolean(p));
 });
 
-export const getIngredients = cache(async (): Promise<Ingredient[]> => {
-  const { data, error } = await supabasePublic.from("ingredients").select("*").order("sort_order");
-  if (error) throw error;
-  return data;
-});
+export const getIngredients = cache(
+  unstable_cache(
+    async (): Promise<Ingredient[]> => {
+      const { data, error } = await supabasePublic.from("ingredients").select("*").order("sort_order");
+      if (error) throw error;
+      return data;
+    },
+    ["ingredients"],
+    { revalidate: INGREDIENT_TTL, tags: ["ingredients"] },
+  ),
+);
 
-export const getIngredientBySlug = cache(async (slug: string): Promise<Ingredient | null> => {
-  const { data, error } = await supabasePublic.from("ingredients").select("*").eq("slug", slug).maybeSingle();
-  if (error) throw error;
-  return data;
-});
+export const getIngredientBySlug = cache(
+  unstable_cache(
+    async (slug: string): Promise<Ingredient | null> => {
+      const { data, error } = await supabasePublic.from("ingredients").select("*").eq("slug", slug).maybeSingle();
+      if (error) throw error;
+      return data;
+    },
+    ["ingredient-by-slug"],
+    { revalidate: INGREDIENT_TTL, tags: ["ingredients"] },
+  ),
+);
 
 /** Products that link to an ingredient (for the "onde usamos" section). */
 export const getProductsForIngredient = cache(async (ingredientSlug: string): Promise<Product[]> => {

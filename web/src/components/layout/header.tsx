@@ -8,8 +8,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { getDictionary } from "@/lib/i18n";
 import { useCart } from "@/lib/cart-store";
 import { Crescent } from "@/components/ui/motifs";
-import { FeedbacksDropdown } from "./feedbacks-dropdown";
-import { testimonials } from "@/data/testimonials";
 
 export function Header() {
   const pathname = usePathname();
@@ -67,7 +65,6 @@ export function Header() {
               </Link>
             );
           })}
-          <FeedbacksDropdown items={testimonials} locale={locale} />
           <div className="ml-4 flex gap-2 border-l border-moss/15 pl-8">
             <LanguageButton locale="pt" isMobile={false} />
             <LanguageButton locale="en" isMobile={false} />
