@@ -34,9 +34,11 @@ function Stars({ count }: { count: number }) {
 }
 
 /**
- * Testimonial cards clamp their quote to 10 lines (the `line-clamp-[10]`
- * class below) and expand on hover to show the rest — that 10-line ceiling
- * is a deliberate product rule (not just a visual default). Tailwind needs
+ * Testimonial cards clamp their quote to 6 lines (the `line-clamp-[6]` class
+ * below) and expand on hover to show the rest — that ceiling is a deliberate
+ * product rule (not just a visual default), and it is what sizes every card,
+ * since the strip stretches them all to the tallest. It was 10 until the brand
+ * asked for boxes the size of the longest quote that fits in 6. Tailwind needs
  * the literal class string in source to generate its CSS, so if this ever
  * changes, edit the class directly rather than making it a variable.
  *
@@ -177,7 +179,7 @@ export function Testimonials({
                       className="card-brand group flex w-[300px] shrink-0 flex-col gap-3 p-6 transition-shadow hover:z-10 hover:shadow-[0_18px_36px_rgba(49,61,53,0.14)] sm:w-[340px]"
                     >
                       <Stars count={item.stars} />
-                      <p className="line-clamp-[10] font-display text-[1.1rem] leading-snug text-forest group-hover:line-clamp-none">
+                      <p className="line-clamp-[6] font-display text-[1.1rem] leading-snug text-forest group-hover:line-clamp-none">
                         {item.verbatim === false ? copyText.quote : `“${copyText.quote}”`}
                       </p>
                       <div className="mt-auto pt-1 text-[0.82rem] text-ink/70">
