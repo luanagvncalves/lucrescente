@@ -171,6 +171,20 @@ h3,
   border-radius: 999px;
 }
 
+/* Scrim behind the labels on the homepage category tiles. The labels sit in
+   ivory over whatever the product photo happens to be, and several of those
+   photos are near-white, so the tint has to be dark enough to hold the text
+   on the lightest one. Forest carries the darkness (violet alone is far too
+   light to read against); a fifth of violet mixed in keeps the brand cast. */
+@utility tile-scrim {
+  --tile-scrim-tone: color-mix(in srgb, var(--forest) 80%, var(--violet));
+  background: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--tile-scrim-tone) 84%, transparent),
+    color-mix(in srgb, var(--tile-scrim-tone) 66%, transparent)
+  );
+}
+
 /* placeholder frame for products without a photo */
 .placeholder-frame {
   background:

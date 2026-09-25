@@ -1,10 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { SectionHeader } from "@/components/ui/typography";
 import { Reveal } from "@/components/ui/reveal";
 import { getTestimonialCopy, type Testimonial } from "@/data/testimonials";
 import type { ProductLocale } from "@/content/product-locales";
+
+/** Auto-scroll speed, in pixels per second. Slow enough to read a card as it drifts by. */
+const SCROLL_SPEED = 28;
 
 function Stars({ count }: { count: number }) {
   return (
@@ -21,6 +24,14 @@ function Stars({ count }: { count: number }) {
  * is a deliberate product rule (not just a visual default). Tailwind needs
  * the literal class string in source to generate its CSS, so if this ever
  * changes, edit the class directly rather than making it a variable.
+ *
+ * The strip drifts leftwards on its own. The list is rendered twice so the
+ * scroll can wrap from the end of the first copy back to its start without a
+ * visible jump; the second copy is `aria-hidden` so screen readers only ever
+ * meet each testimonial once. Motion stops while the pointer is over the
+ * section (so a card can be read, and so the hover-to-expand above works),
+ * while anything inside has keyboard focus, while the strip is being dragged
+ * or scrolled by hand, and entirely under `prefers-reduced-motion`.
  */
 export function Testimonials({
   label,
@@ -40,10 +51,64 @@ export function Testimonials({
   nextLabel?: string;
 }) {
   const scroller = useRef<HTMLUListElement>(null);
+  const paused = useRef(false);
 
   function scrollByCard(direction: 1 | -1) {
     scroller.current?.scrollBy({ left: direction * 340, behavior: "smooth" });
   }
+
+  useEffect(() => {
+    const el = scroller.current;
+    if (!el) return;
+
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reduced.matches) return;
+
+    let frame = 0;
+    let last = performance.now();
+    let pos = el.scrollLeft;
+
+    /**
+     * Length of one full cycle: the offset between a card and its copy in the
+     * duplicated half. Measured from the DOM rather than derived from
+     * `scrollWidth`, which also carries the list's padding and trailing gap.
+     */
+    function cycleLength(list: HTMLUListElement) {
+      const cards = list.children;
+      const twin = cards[items.length] as HTMLElement | undefined;
+      if (!twin) return 0;
+      return twin.offsetLeft - (cards[0] as HTMLElement).offsetLeft;
+    }
+
+    function step(now: number) {
+      frame = requestAnimationFrame(step);
+      // Clamp the delta so a backgrounded tab doesn't resume with one big jump.
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+
+      if (paused.current || document.hidden) {
+        pos = el!.scrollLeft; // resync after a manual scroll or an arrow click
+        return;
+      }
+
+      const cycle = cycleLength(el!);
+      if (cycle <= 0) return; // not laid out yet (still inside the reveal)
+
+      pos += SCROLL_SPEED * dt;
+      if (pos >= cycle) pos -= cycle;
+      el!.scrollLeft = pos;
+    }
+
+    frame = requestAnimationFrame(step);
+    return () => cancelAnimationFrame(frame);
+  }, [items.length]);
+
+  const pause = () => {
+    paused.current = true;
+  };
+  const resume = () => {
+    paused.current = false;
+  };
 
   return (
     <section className="bg-ivory" aria-labelledby="testemunhos">
@@ -51,7 +116,18 @@ export function Testimonials({
         <SectionHeader label={label} title={title} subtitle={subtitle} />
 
         <Reveal>
-          <div className="relative mt-10">
+          <div
+            className="relative mt-10"
+            onMouseEnter={pause}
+            onMouseLeave={resume}
+            onFocusCapture={pause}
+            onBlurCapture={resume}
+            onPointerDown={pause}
+            onPointerUp={resume}
+            onPointerCancel={resume}
+            onTouchStart={pause}
+            onTouchEnd={resume}
+          >
             <button
               type="button"
               aria-label={prevLabel}
@@ -63,26 +139,29 @@ export function Testimonials({
 
             <ul
               ref={scroller}
-              className="flex items-start gap-5 overflow-x-auto scroll-px-5 px-1 py-1 snap-x snap-mandatory [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              className="flex items-start gap-5 overflow-x-auto scroll-px-5 px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
-              {items.map((item) => {
-                const copy = getTestimonialCopy(item, locale);
-                return (
-                  <li
-                    key={item.id}
-                    className="card-brand group flex w-[300px] shrink-0 snap-start flex-col gap-3 p-6 transition-shadow hover:z-10 hover:shadow-[0_18px_36px_rgba(49,61,53,0.14)] sm:w-[340px]"
-                  >
-                    <Stars count={item.stars} />
-                    <p className="line-clamp-[10] font-display text-[1.1rem] leading-snug text-forest group-hover:line-clamp-none">
-                      {item.verbatim === false ? copy.quote : `“${copy.quote}”`}
-                    </p>
-                    <div className="mt-auto pt-1 text-[0.82rem] text-ink/70">
-                      <p className="lowercase">{copy.product}</p>
-                      {item.year ? <p className="mt-0.5 text-ink/50">{item.year}</p> : null}
-                    </div>
-                  </li>
-                );
-              })}
+              {[0, 1].flatMap((copy) =>
+                items.map((item) => {
+                  const copyText = getTestimonialCopy(item, locale);
+                  return (
+                    <li
+                      key={`${copy}-${item.id}`}
+                      aria-hidden={copy === 1 || undefined}
+                      className="card-brand group flex w-[300px] shrink-0 flex-col gap-3 p-6 transition-shadow hover:z-10 hover:shadow-[0_18px_36px_rgba(49,61,53,0.14)] sm:w-[340px]"
+                    >
+                      <Stars count={item.stars} />
+                      <p className="line-clamp-[10] font-display text-[1.1rem] leading-snug text-forest group-hover:line-clamp-none">
+                        {item.verbatim === false ? copyText.quote : `“${copyText.quote}”`}
+                      </p>
+                      <div className="mt-auto pt-1 text-[0.82rem] text-ink/70">
+                        <p className="lowercase">{copyText.product}</p>
+                        {item.year ? <p className="mt-0.5 text-ink/50">{item.year}</p> : null}
+                      </div>
+                    </li>
+                  );
+                }),
+              )}
             </ul>
 
             <button

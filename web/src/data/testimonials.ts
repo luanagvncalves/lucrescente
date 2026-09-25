@@ -52,18 +52,16 @@ export const testimonials: Testimonial[] = [
     year: 2026,
   },
   {
-    id: "batom-herpes",
-    quote:
-      "queria dar-te feedback acerca do batom para herpes. Os meus pais experimentaram ambos. O meu pai já tinha colocado um creme de farmácia e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo aos primeiros sintomas e no dia seguinte já estava a sarar. Mais uma vez nem deu para notar que tinha alguma coisa. Além disso, a minha mãe disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante. Por enquanto está aprovado.",
+    id: "sabonete-cheiro-natureza",
+    quote: "Aquele bom cheiro e bemfeitos da natureza. Muito obrigada à lucrescente.",
     quoteLang: "pt",
     translations: {
-      en: "I wanted to give you feedback about the cold sore lip balm. Both my parents tried it. My dad had already put on a pharmacy cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right at the first symptoms, and by the next day it was already healing. Again, you could barely tell there was anything there. She also said her lips were starting to get chapped, and that it was a great moisturiser. So far it's approved.",
-      fr: "je voulais te donner un retour sur le baume à lèvres pour bouton de fièvre. Mes parents l'ont essayé tous les deux. Mon père avait déjà mis une crème de pharmacie, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis dès les premiers symptômes et dès le lendemain ça guérissait déjà. Là aussi, on ne voyait presque rien. En plus, ma mère a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant. Pour l'instant c'est approuvé.",
+      en: "That lovely scent and the good things nature makes. Thank you so much, lucrescente.",
+      fr: "Cette belle odeur et les bienfaits de la nature. Merci beaucoup à lucrescente.",
     },
-    product: "batom para herpes",
-    productTranslations: { en: "cold sore lip balm", fr: "baume à lèvres pour bouton de fièvre" },
+    product: "sabonete",
+    productTranslations: { en: "soap", fr: "savon" },
     stars: 5,
-    year: 2026,
   },
   {
     id: "envio-franca",
@@ -375,15 +373,17 @@ export const testimonials: Testimonial[] = [
     stars: 5,
   },
   {
-    id: "sabonete-cheiro-natureza",
-    quote: "Aquele bom cheiro e bemfeitos da natureza. Muito obrigada à lucrescente.",
+    id: "batom-herpes",
+    quote:
+      "queria dar-te feedback acerca do batom para herpes. Os meus pais experimentaram ambos. O meu pai já tinha colocado um creme de farmácia e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo aos primeiros sintomas e no dia seguinte já estava a sarar. Mais uma vez nem deu para notar que tinha alguma coisa. Além disso, a minha mãe disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante. Por enquanto está aprovado.",
     quoteLang: "pt",
     translations: {
-      en: "That lovely scent and the good things nature makes. Thank you so much, lucrescente.",
-      fr: "Cette belle odeur et les bienfaits de la nature. Merci beaucoup à lucrescente.",
+      en: "I wanted to give you feedback about the cold sore lip balm. Both my parents tried it. My dad had already put on a pharmacy cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right at the first symptoms, and by the next day it was already healing. Again, you could barely tell there was anything there. She also said her lips were starting to get chapped, and that it was a great moisturiser. So far it's approved.",
+      fr: "je voulais te donner un retour sur le baume à lèvres pour bouton de fièvre. Mes parents l'ont essayé tous les deux. Mon père avait déjà mis une crème de pharmacie, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis dès les premiers symptômes et dès le lendemain ça guérissait déjà. Là aussi, on ne voyait presque rien. En plus, ma mère a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant. Pour l'instant c'est approuvé.",
     },
-    product: "sabonete",
-    productTranslations: { en: "soap", fr: "savon" },
+    product: "batom para herpes",
+    productTranslations: { en: "cold sore lip balm", fr: "baume à lèvres pour bouton de fièvre" },
     stars: 5,
+    year: 2026,
   },
 ];

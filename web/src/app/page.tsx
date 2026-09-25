@@ -141,8 +141,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                                 <Crescent size={28} tone="var(--violet)" />
                               </div>
                             )}
-                            <div className="absolute inset-0 flex items-center justify-center bg-violet/50 px-3 text-center">
-                              <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase sm:text-[1.5rem]">{tile.name}</span>
+                            <div className="tile-scrim absolute inset-0 flex items-center justify-center px-3 text-center">
+                              <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase [text-shadow:0_1px_3px_rgba(34,57,37,0.45)] sm:text-[1.5rem]">{tile.name}</span>
                             </div>
                           </div>
                         </Link>

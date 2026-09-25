@@ -64,6 +64,7 @@ async function main() {
           is_solid: p.is_solid,
           is_candle: p.is_candle,
           is_deodorant: p.is_deodorant,
+          is_active: p.is_active ?? true,
         },
         { onConflict: "slug" },
       )

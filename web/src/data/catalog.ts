@@ -26,6 +26,12 @@ export type ProductSeed = {
   is_solid: boolean; // solid / water-free products (maturation note)
   is_candle: boolean; // candles can be made in the customer's own containers
   is_deodorant: boolean;
+  /**
+   * Archived products stay in this file (and in the database, so past orders
+   * keep resolving) but drop out of every listing, product page and checkout.
+   * Omitted means active.
+   */
+  is_active?: boolean;
   variants: VariantSeed[];
 };
 
@@ -222,6 +228,7 @@ export const products: ProductSeed[] = [
     is_solid: true,
     is_candle: false,
     is_deodorant: false,
+    is_active: false, // archived: no photograph yet
     variants: one("champo-queda", 1200, 2),
   },
 
@@ -433,6 +440,7 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
+    is_active: false, // archived: no photograph yet
     variants: balm("batom-herpes", 0, 1, 450),
   },
   {
