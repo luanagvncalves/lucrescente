@@ -2,13 +2,21 @@ import Image from "next/image";
 import type { Dictionary } from "@/content/pt";
 import { Crescent } from "@/components/ui/motifs";
 
-/** Curated candle lookbook, shown inside the "velas" category on /produtos (moved off the homepage). */
+/**
+ * Curated candle lookbook, written for the "velas" category on /produtos after
+ * being moved off the homepage — but nothing imports it, so it is not currently
+ * on the site. Kept because the selection is still the one the brand wants.
+ */
 export function CandleModels({ t }: { t: Dictionary }) {
   const candles: { src: string | null; alt: string; name: string }[] = [
     { src: "/images/products/vela-citronela/0.jpg", alt: t.home.candleAltCitronela1, name: t.home.candleCitronelaName },
     { src: "/images/products/vela-citronela/1.jpg", alt: t.home.candleAltCitronela2, name: t.home.candleFlowers },
     { src: "/images/products/vela-massagem/0.jpg", alt: t.home.candleAltMassagem, name: t.home.candleMassage },
-    { src: "/galeria/24.jpg", alt: t.home.candleMessage, name: t.home.candleMessage },
+    // No photograph yet: this pointed at /galeria/24.jpg, which never existed
+    // at that path — the gallery photos lived under a year folder — and the
+    // gallery has since been removed. `null` renders the brand placeholder,
+    // until a photo of a message candle is supplied.
+    { src: null, alt: t.home.candleMessage, name: t.home.candleMessage },
   ];
   return (
     <div className="mx-auto mb-10 grid max-w-3xl grid-cols-2 gap-3 sm:grid-cols-4">
