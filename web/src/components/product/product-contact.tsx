@@ -10,6 +10,8 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
     name: "",
     email: "",
     message: "",
+    // Honeypot: stays empty for a real visitor, bots fill every field they find.
+    hp_website: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -37,7 +39,7 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
 
       if (response.ok) {
         setSubmitted(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", message: "", hp_website: "" });
         setTimeout(() => setSubmitted(false), 5000);
       } else {
         // Keep what they typed so the message is never lost.
@@ -76,6 +78,25 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
               </p>
             </div>
           ) : null}
+
+          {/*
+            Honeypot. Off-screen rather than display:none (which some bots skip),
+            out of the tab order and hidden from screen readers, so no real visitor
+            can reach it. The field name is deliberately not one a password manager
+            recognises, so autofill will not put anything in it either.
+          */}
+          <div aria-hidden="true" className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden">
+            <label htmlFor="hp_website">não preencher</label>
+            <input
+              type="text"
+              id="hp_website"
+              name="hp_website"
+              value={formData.hp_website}
+              onChange={handleChange}
+              tabIndex={-1}
+              autoComplete="off"
+            />
+          </div>
 
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-forest mb-2">

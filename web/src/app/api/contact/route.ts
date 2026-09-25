@@ -14,6 +14,34 @@ const MAX = { name: 120, email: 200, message: 5000, productName: 200 };
 
 const clean = (v: unknown, max: number) => String(v ?? "").trim().slice(0, max);
 
+/**
+ * Flood limit: at most RATE_MAX messages per sender per RATE_WINDOW.
+ *
+ * Deliberately in-memory. On Vercel each serverless instance keeps its own map and
+ * loses it when the instance recycles, so this is a speed bump for naive floods,
+ * not a guarantee. It costs nothing and needs no extra service; if real abuse ever
+ * shows up, this is the place to swap in a shared store.
+ */
+const RATE_WINDOW = 10 * 60 * 1000;
+const RATE_MAX = 5;
+const hits = new Map<string, number[]>();
+
+function rateLimited(ip: string): boolean {
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((t) => now - t < RATE_WINDOW);
+  if (recent.length >= RATE_MAX) {
+    hits.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  hits.set(ip, recent);
+  // Keep the map from growing without bound on a long-lived instance.
+  if (hits.size > 500) {
+    for (const [k, v] of hits) if (v.every((t) => now - t >= RATE_WINDOW)) hits.delete(k);
+  }
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   let body: Record<string, unknown>;
   try {
@@ -26,6 +54,20 @@ export async function POST(request: NextRequest) {
   const email = clean(body.email, MAX.email);
   const message = clean(body.message, MAX.message);
   const productName = clean(body.productName, MAX.productName);
+
+  // Honeypot: no real visitor can reach this field, so anything in it is a bot.
+  // Answer 200 so the bot records a success and moves on instead of retrying,
+  // but send nothing. Logged, so a false positive would be visible rather than silent.
+  if (clean(body.hp_website, 200)) {
+    console.warn("[contact] honeypot triggered — message discarded", { productName });
+    return NextResponse.json({ success: true });
+  }
+
+  const ip = (request.headers.get("x-forwarded-for") ?? "").split(",")[0].trim() || "unknown";
+  if (rateLimited(ip)) {
+    console.warn("[contact] rate limited", { ip, productName });
+    return NextResponse.json({ error: "demasiadas mensagens seguidas. tenta daqui a pouco." }, { status: 429 });
+  }
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "campos obrigatórios em falta" }, { status: 400 });

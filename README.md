@@ -71,6 +71,28 @@ The reply-to is set to the visitor's address, so replying in the inbox answers t
 Without the two required vars the route returns 503 and the form shows an error
 pointing at the brand's email — it never reports a message as sent that was not sent.
 
+Spam handling, both in `route.ts`:
+
+- **Honeypot** — the form carries an off-screen `hp_website` field that no real
+  visitor can tab to and no password manager recognises. Anything in it is a bot:
+  the route answers 200 so the bot moves on, sends nothing, and logs
+  `[contact] honeypot triggered`.
+- **Flood limit** — 5 messages per IP per 10 minutes, then 429. In-memory on
+  purpose, so it resets when a serverless instance recycles; a speed bump for naive
+  floods, not a guarantee. Swap in a shared store if real abuse appears.
+
+## Images
+
+`next/image` converts on the fly, so there are no per-format files in the repo.
+`next.config.ts` sets `formats: ["image/avif", "image/webp"]`: AVIF where the
+browser supports it, then WebP, then the original JPEG. Measured on the product
+photos, AVIF is roughly half the size of WebP.
+
+`npm run images:optimize` re-encodes the files in `public/` in place (1600px long
+edge, q82; 2000px editorial, 900px categories), only keeping a result that is
+meaningfully smaller. Unlike `npm run images` it does not rebuild `public/images`
+from the photo map, so hand-picked editorial images survive.
+
 ## Content rules baked in
 
 - All copy comes from `web/src/content/pt.ts` (verbatim from `lucrescente-conteudo.md`); UI strings marked `// ui`. i18n-ready via `web/src/lib/i18n.ts`.
