@@ -55,6 +55,22 @@ With `STRIPE_SECRET_KEY` empty and `CHECKOUT_MOCK=true`, `/api/checkout` creates
 
 Set in Vercel: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` (endpoint `https://<domain>/api/stripe/webhook`, event `checkout.session.completed`), `NEXT_PUBLIC_SITE_URL`, the three Supabase vars, and `CHECKOUT_MOCK=false`.
 
+## Contact form
+
+The per-product form posts to `POST /api/contact`, which sends the message through
+Resend's HTTP API. Env vars (`.env.local` locally, Vercel in production):
+
+| var | required | what it is |
+| --- | --- | --- |
+| `RESEND_API_KEY` | yes | from resend.com → API Keys |
+| `CONTACT_EMAIL` | yes | the inbox that receives the messages |
+| `CONTACT_FROM_EMAIL` | no | defaults to Resend's shared sender, which **only delivers to the address that owns the Resend account**. Once the lucrescente domain is verified in Resend, set this to e.g. `lucrescente <ola@lucrescente.pt>`. |
+
+The reply-to is set to the visitor's address, so replying in the inbox answers them directly.
+
+Without the two required vars the route returns 503 and the form shows an error
+pointing at the brand's email — it never reports a message as sent that was not sent.
+
 ## Content rules baked in
 
 - All copy comes from `web/src/content/pt.ts` (verbatim from `lucrescente-conteudo.md`); UI strings marked `// ui`. i18n-ready via `web/src/lib/i18n.ts`.
@@ -65,6 +81,14 @@ Set in Vercel: `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET` (endpoint `https://<
 ## Open items
 
 - Live Stripe keys + webhook secret.
+- `RESEND_API_KEY` + `CONTACT_EMAIL` so the contact form can actually send.
 - Final shipping rates.
 - Prices for vela citronela, vela massagem, sais de banho relaxante (currently "por encomenda").
-- Photos for the three placeholder products, and per-variant photos for deodorants / roll-ons / batons (currently shared generic photos, alt text stays truthful).
+- Photos for champô queda and batom herpes (no photo in the supplied set can be
+  honestly identified as either — see the `notes` in `assets/photo-map.json`).
+- "Porque funciona" copy, missing from `lucrescente-conteudo.md` for: ambientador,
+  batom tijolo, batom herpes, champô queda, roll-on relax, roll-on dor de cabeça,
+  sabonete 40g, spray relaxante. Now that the grid no longer shows descriptions,
+  these product pages have no body copy. Needs the client's own words — not invented,
+  since several are health-adjacent claims.
+- Per-variant photos for deodorants / roll-ons / batons (currently shared generic photos, alt text stays truthful).

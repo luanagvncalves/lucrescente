@@ -9,6 +9,7 @@
     "lint": "eslint",
     "seed": "tsx scripts/seed.ts",
     "images": "tsx scripts/prepare-images.ts",
+    "images:optimize": "tsx scripts/optimize-images.ts",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {

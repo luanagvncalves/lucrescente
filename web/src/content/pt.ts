@@ -168,6 +168,8 @@ export const pt = {
     // per-product contact form
     contactTitle: "fala connosco sobre este produto",
     contactSuccess: "✓ mensagem enviada com sucesso! agradecemos o contacto.",
+    contactError:
+      "não conseguimos enviar a tua mensagem. tenta outra vez, ou escreve-nos diretamente para",
     contactName: "nome",
     contactNamePlaceholder: "como te chamas?",
     contactEmail: "email",

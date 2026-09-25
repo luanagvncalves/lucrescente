@@ -30,6 +30,8 @@ export const fr: Dictionary = {
       "nos shampoings solides peuvent aussi être utilisés sur le corps, sans souci : grâce à leurs ingrédients naturels et à l'absence de produits chimiques agressifs, vous pouvez profiter d'un shampoing multifonction tous les jours !",
     contactTitle: "parlez-nous de ce produit",
     contactSuccess: "✓ message envoyé ! merci de nous avoir contactés.",
+    contactError:
+      "nous n'avons pas pu envoyer votre message. réessayez, ou écrivez-nous directement à",
     contactName: "nom",
     contactNamePlaceholder: "comment vous appelez-vous ?",
     contactEmail: "email",

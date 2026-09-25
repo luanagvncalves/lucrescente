@@ -13,6 +13,7 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [failed, setFailed] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -22,6 +23,7 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setFailed(false);
 
     try {
       const response = await fetch("/api/contact", {
@@ -37,9 +39,13 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
         setSubmitted(true);
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        // Keep what they typed so the message is never lost.
+        setFailed(true);
       }
     } catch (error) {
       console.error("Error sending message:", error);
+      setFailed(true);
     } finally {
       setIsSubmitting(false);
     }
@@ -60,6 +66,17 @@ export function ProductContact({ productName, locale = "pt" }: { productName: st
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
+          {failed ? (
+            <div role="alert" className="rounded-lg bg-red-50 border border-red-200 p-4">
+              <p className="text-red-800 text-sm">
+                {t.productInfo.contactError}{" "}
+                <a href={`mailto:${t.brand.email}`} className="underline underline-offset-2">
+                  {t.brand.email}
+                </a>
+              </p>
+            </div>
+          ) : null}
+
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-forest mb-2">
               {t.productInfo.contactName}
