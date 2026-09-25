@@ -160,7 +160,12 @@ export function Testimonials({
 
             <ul
               ref={scroller}
-              className="flex items-start gap-5 overflow-x-auto scroll-px-5 px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+              // `items-stretch` (rather than `items-start`) gives every card the
+              // height of the tallest one in the strip, so short feedbacks no
+              // longer leave a ragged gap beside long ones. It is the tallest
+              // card's own height, not a fixed number, so it keeps up when the
+              // quotes are edited.
+              className="flex items-stretch gap-5 overflow-x-auto scroll-px-5 px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
               {[0, 1].flatMap((copy) =>
                 items.map((item) => {
