@@ -8,6 +8,9 @@ import type { ProductLocale } from "@/content/product-locales";
  * excluded, which is also why no names/handles appear here: the initials
  * the brand sometimes adds in its own caption ("a mensagem da V...") aren't
  * part of the client's words, so they're simply not carried over.
+ * Some quotes are trimmed to their relevant part (the brand shortened five of
+ * them on 2026-09-25) — cut down, never reworded, and the `translations` below
+ * are cut to match so the three locales say the same thing.
  * `verbatim: false` entries are paraphrased — no exact wording was captured
  * for those, so they're rendered without quote marks instead of inventing a
  * fake first-person line.
@@ -130,11 +133,11 @@ export const testimonials: Testimonial[] = [
   {
     id: "champo-dermatite",
     quote:
-      "no festival Timilha comprei um shampo sólido para o couro cabeludo sensível que adorei, tinha imensa dermatite e desde que o uso não voltei a ter, gostaria de encomendar mais e também saber se o amaciador sólido e a máscara serão bons para o meu cabelo e cabeça. Tenho o cabelo encaracolado e a tendência é secar.",
+      "comprei um champô sólido para o couro cabeludo sensível que adorei, tinha imensa dermatite e desde que o uso não voltei a ter.",
     quoteLang: "pt",
     translations: {
-      en: "at the Timilha festival I bought a solid shampoo for sensitive scalp that I loved — I had a lot of dermatitis and since using it I haven't had it again. I'd like to order more, and also find out if the solid conditioner and the hair mask would be good for my hair and scalp. My hair is curly and tends to dry out.",
-      fr: "au festival Timilha j'ai acheté un shampoing solide pour cuir chevelu sensible que j'ai adoré, j'avais beaucoup de dermatite et depuis que je l'utilise je n'en ai plus eu. J'aimerais en recommander, et aussi savoir si l'après-shampoing solide et le masque conviendraient à mes cheveux et à mon cuir chevelu. J'ai les cheveux bouclés et ils ont tendance à sécher.",
+      en: "I bought a solid shampoo for sensitive scalp that I loved — I had a lot of dermatitis and since using it I haven't had it again.",
+      fr: "j'ai acheté un shampoing solide pour cuir chevelu sensible que j'ai adoré, j'avais beaucoup de dermatite et depuis que je l'utilise je n'en ai plus eu.",
     },
     product: "champô sólido (couro cabeludo sensível)",
     productTranslations: { en: "solid shampoo (sensitive scalp)", fr: "shampoing solide (cuir chevelu sensible)" },
@@ -166,11 +169,11 @@ export const testimonials: Testimonial[] = [
   {
     id: "roll-on-relax-presente",
     quote:
-      "Eu comprei convosco um roll-on terapêutico relax, de alfazema acho eu, eu queria comprar outro — é para uma pessoa muito querida minha que tem muitos problemas com ansiedade e stress, experimentou o meu e adorou, então decidi oferecer um.",
+      "Eu comprei convosco um roll-on terapêutico relax, e queria comprar outro — é para uma pessoa muito querida minha que tem muitos problemas com ansiedade e stress, experimentou o meu e adorou.",
     quoteLang: "pt",
     translations: {
-      en: "I bought a therapeutic relax roll-on from you, lavender I think, and I'd like to buy another one — it's for someone very dear to me who has a lot of problems with anxiety and stress. She tried mine and loved it, so I decided to give her one as a gift.",
-      fr: "J'ai acheté chez vous un roll-on thérapeutique relax, à la lavande je crois, et j'aimerais en racheter un autre — c'est pour quelqu'un de très cher à moi qui a beaucoup de soucis d'anxiété et de stress. Elle a essayé le mien et a adoré, alors j'ai décidé de lui en offrir un.",
+      en: "I bought a therapeutic relax roll-on from you, and I'd like to buy another one — it's for someone very dear to me who has a lot of problems with anxiety and stress. She tried mine and loved it.",
+      fr: "J'ai acheté chez vous un roll-on thérapeutique relax, et j'aimerais en racheter un autre — c'est pour quelqu'un de très cher à moi qui a beaucoup de soucis d'anxiété et de stress. Elle a essayé le mien et a adoré.",
     },
     product: "roll-on relax",
     stars: 5,
@@ -298,11 +301,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "champo-fortalecimento",
-    quote: "Já tenho usado! Gosto muito. Uso todos os dias da semana. Só ao fim de semana é que uso outro. Em breve irei adquirir mais, se tiver disponível!",
+    quote: "Já tenho usado! Gosto muito. Uso todos os dias da semana. Em breve irei adquirir mais, se tiver disponível!",
     quoteLang: "pt",
     translations: {
-      en: "I've been using it! I like it a lot. I use it every day of the week. Only on weekends do I use a different one. I'll be getting more soon, if it's available!",
-      fr: "Je l'utilise déjà ! J'aime beaucoup. Je l'utilise tous les jours de la semaine. C'est seulement le week-end que j'utilise un autre. Je vais bientôt en racheter, si c'est disponible !",
+      en: "I've been using it! I like it a lot. I use it every day of the week. I'll be getting more soon, if it's available!",
+      fr: "Je l'utilise déjà ! J'aime beaucoup. Je l'utilise tous les jours de la semaine. Je vais bientôt en racheter, si c'est disponible !",
     },
     product: "champô fortalecimento capilar / prevenção de queda (em estudo)",
     productTranslations: {
@@ -349,12 +352,11 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: "mascara-capilar-inspiracao",
-    quote:
-      "só temos motivos bons para recomeçar os produtos. Por falar nisso, breve já necessito de mais máscara. Adorei!! Adoro uma boa marca autêntica assim como a sua, é de facto uma inspiração para todos os projetos que tenho em mente atualmente.",
+    quote: "Em breve já necessito de mais máscara. Adorei!! Adoro uma boa marca autêntica assim como a sua.",
     quoteLang: "pt",
     translations: {
-      en: "we only have good reasons to keep coming back to the products. Speaking of which, I'll soon need more of the hair mask. I loved it!! I love a good, authentic brand like yours, it's truly an inspiration for all the projects I currently have in mind.",
-      fr: "on n'a que de bonnes raisons de revenir vers ces produits. D'ailleurs, je vais bientôt avoir besoin de plus de masque. J'ai adoré !! J'adore une marque aussi authentique que la vôtre, c'est vraiment une inspiration pour tous les projets que j'ai en tête en ce moment.",
+      en: "I'll soon need more of the hair mask. I loved it!! I love a good, authentic brand like yours.",
+      fr: "Je vais bientôt avoir besoin de plus de masque. J'ai adoré !! J'adore une marque aussi authentique que la vôtre.",
     },
     product: "máscara capilar",
     productTranslations: { en: "hair mask", fr: "masque capillaire" },
@@ -375,11 +377,11 @@ export const testimonials: Testimonial[] = [
   {
     id: "batom-herpes",
     quote:
-      "queria dar-te feedback acerca do batom para herpes. Os meus pais experimentaram ambos. O meu pai já tinha colocado um creme de farmácia e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo aos primeiros sintomas e no dia seguinte já estava a sarar. Mais uma vez nem deu para notar que tinha alguma coisa. Além disso, a minha mãe disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante. Por enquanto está aprovado.",
+      "O meu pai já tinha colocado um creme de farmácia e só depois é que colocou o batom, mas disse que no dia seguinte já estava com crosta. Nem deu para notar que tinha alguma coisa. A minha mãe colocou logo aos primeiros sintomas e no dia seguinte já estava a sarar. Além disso, a minha mãe disse que também estava a começar a ficar com os lábios gretados e que era um ótimo hidratante.",
     quoteLang: "pt",
     translations: {
-      en: "I wanted to give you feedback about the cold sore lip balm. Both my parents tried it. My dad had already put on a pharmacy cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right at the first symptoms, and by the next day it was already healing. Again, you could barely tell there was anything there. She also said her lips were starting to get chapped, and that it was a great moisturiser. So far it's approved.",
-      fr: "je voulais te donner un retour sur le baume à lèvres pour bouton de fièvre. Mes parents l'ont essayé tous les deux. Mon père avait déjà mis une crème de pharmacie, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis dès les premiers symptômes et dès le lendemain ça guérissait déjà. Là aussi, on ne voyait presque rien. En plus, ma mère a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant. Pour l'instant c'est approuvé.",
+      en: "My dad had already put on a pharmacy cream, and only used the balm afterwards, but he said that by the next day it had already scabbed over. You could barely tell there was anything there. My mom put it on right at the first symptoms, and by the next day it was already healing. She also said her lips were starting to get chapped, and that it was a great moisturiser.",
+      fr: "Mon père avait déjà mis une crème de pharmacie, et ce n'est qu'après qu'il a mis le baume, mais il a dit que dès le lendemain il avait déjà une croûte. On ne voyait presque plus rien. Ma mère l'a mis dès les premiers symptômes et dès le lendemain ça guérissait déjà. En plus, ma mère a dit qu'elle commençait aussi à avoir les lèvres gercées et que c'était un excellent hydratant.",
     },
     product: "batom para herpes",
     productTranslations: { en: "cold sore lip balm", fr: "baume à lèvres pour bouton de fièvre" },

@@ -8,6 +8,21 @@ import type { ProductLocale } from "@/content/product-locales";
 
 /** Auto-scroll speed, in pixels per second. Slow enough to read a card as it drifts by. */
 const SCROLL_SPEED = 28;
+/** One arrow click moves one card: the `sm` card width (340px) plus the gap (20px). */
+const CARD_STEP = 360;
+
+/**
+ * Length of one full cycle: the distance between a card and its copy in the
+ * duplicated half. Measured from the DOM rather than derived from `scrollWidth`,
+ * which also carries the list's padding and its trailing gap.
+ */
+function cycleLength(list: HTMLUListElement, itemCount: number) {
+  const cards = list.children;
+  const first = cards[0] as HTMLElement | undefined;
+  const twin = cards[itemCount] as HTMLElement | undefined;
+  if (!first || !twin) return 0;
+  return twin.offsetLeft - first.offsetLeft;
+}
 
 function Stars({ count }: { count: number }) {
   return (
@@ -30,8 +45,13 @@ function Stars({ count }: { count: number }) {
  * visible jump; the second copy is `aria-hidden` so screen readers only ever
  * meet each testimonial once. Motion stops while the pointer is over the
  * section (so a card can be read, and so the hover-to-expand above works),
- * while anything inside has keyboard focus, while the strip is being dragged
- * or scrolled by hand, and entirely under `prefers-reduced-motion`.
+ * while anything inside has keyboard focus, while the strip is being dragged,
+ * and entirely under `prefers-reduced-motion`.
+ *
+ * Hover, focus and drag are tracked separately rather than as one `paused`
+ * flag: releasing an arrow click would otherwise resume the drift while the
+ * pointer was still over the section, and the per-frame `scrollLeft` write
+ * below would then cancel that click's smooth scroll mid-animation.
  */
 export function Testimonials({
   label,
@@ -51,34 +71,31 @@ export function Testimonials({
   nextLabel?: string;
 }) {
   const scroller = useRef<HTMLUListElement>(null);
-  const paused = useRef(false);
+  const hovering = useRef(false);
+  const focused = useRef(false);
+  const dragging = useRef(false);
 
   function scrollByCard(direction: 1 | -1) {
-    scroller.current?.scrollBy({ left: direction * 340, behavior: "smooth" });
+    const el = scroller.current;
+    if (!el) return;
+    // Going left from the very start would hit the wall at scrollLeft 0. Hop
+    // forward one whole cycle first — the content there is identical, so the
+    // jump is invisible — and the click can then scroll left as normal.
+    const cycle = cycleLength(el, items.length);
+    if (direction === -1 && cycle > 0 && el.scrollLeft < CARD_STEP) {
+      el.scrollLeft += cycle;
+    }
+    el.scrollBy({ left: direction * CARD_STEP, behavior: "smooth" });
   }
 
   useEffect(() => {
     const el = scroller.current;
     if (!el) return;
-
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (reduced.matches) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     let frame = 0;
     let last = performance.now();
     let pos = el.scrollLeft;
-
-    /**
-     * Length of one full cycle: the offset between a card and its copy in the
-     * duplicated half. Measured from the DOM rather than derived from
-     * `scrollWidth`, which also carries the list's padding and trailing gap.
-     */
-    function cycleLength(list: HTMLUListElement) {
-      const cards = list.children;
-      const twin = cards[items.length] as HTMLElement | undefined;
-      if (!twin) return 0;
-      return twin.offsetLeft - (cards[0] as HTMLElement).offsetLeft;
-    }
 
     function step(now: number) {
       frame = requestAnimationFrame(step);
@@ -86,29 +103,29 @@ export function Testimonials({
       const dt = Math.min((now - last) / 1000, 0.05);
       last = now;
 
-      if (paused.current || document.hidden) {
-        pos = el!.scrollLeft; // resync after a manual scroll or an arrow click
+      const list = el!;
+      if (hovering.current || focused.current || dragging.current || document.hidden) {
+        // Track the element instead of driving it, so a smooth scroll from an
+        // arrow click (or a manual drag) plays out and we resume from its end.
+        pos = list.scrollLeft;
         return;
       }
 
-      const cycle = cycleLength(el!);
+      const cycle = cycleLength(list, items.length);
       if (cycle <= 0) return; // not laid out yet (still inside the reveal)
 
       pos += SCROLL_SPEED * dt;
-      if (pos >= cycle) pos -= cycle;
-      el!.scrollLeft = pos;
+      // An arrow click can leave the strip a cycle or more along; fold it back.
+      pos = ((pos % cycle) + cycle) % cycle;
+      list.scrollLeft = pos;
     }
 
     frame = requestAnimationFrame(step);
     return () => cancelAnimationFrame(frame);
   }, [items.length]);
 
-  const pause = () => {
-    paused.current = true;
-  };
-  const resume = () => {
-    paused.current = false;
-  };
+  const arrowClass =
+    "absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-forest/25 bg-ivory text-forest shadow-[0_6px_16px_rgba(49,61,53,0.12)] transition-colors hover:border-forest hover:bg-forest hover:text-white sm:flex";
 
   return (
     <section className="bg-ivory" aria-labelledby="testemunhos">
@@ -118,22 +135,26 @@ export function Testimonials({
         <Reveal>
           <div
             className="relative mt-10"
-            onMouseEnter={pause}
-            onMouseLeave={resume}
-            onFocusCapture={pause}
-            onBlurCapture={resume}
-            onPointerDown={pause}
-            onPointerUp={resume}
-            onPointerCancel={resume}
-            onTouchStart={pause}
-            onTouchEnd={resume}
+            onMouseEnter={() => (hovering.current = true)}
+            onMouseLeave={() => {
+              hovering.current = false;
+              dragging.current = false;
+            }}
+            // Keyboard focus should hold the strip still; a mouse click on an
+            // arrow should not, or the drift would never resume — the button
+            // keeps focus long after the pointer has left. `:focus-visible` is
+            // exactly that distinction.
+            onFocusCapture={(e) => {
+              focused.current = e.target instanceof HTMLElement && e.target.matches(":focus-visible");
+            }}
+            onBlurCapture={() => (focused.current = false)}
+            onPointerDown={() => (dragging.current = true)}
+            onPointerUp={() => (dragging.current = false)}
+            onPointerCancel={() => (dragging.current = false)}
+            onTouchStart={() => (dragging.current = true)}
+            onTouchEnd={() => (dragging.current = false)}
           >
-            <button
-              type="button"
-              aria-label={prevLabel}
-              onClick={() => scrollByCard(-1)}
-              className="absolute -left-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-forest/25 bg-ivory text-forest shadow-[0_6px_16px_rgba(49,61,53,0.12)] transition-colors hover:border-forest hover:bg-forest hover:text-white sm:flex"
-            >
+            <button type="button" aria-label={prevLabel} onClick={() => scrollByCard(-1)} className={`${arrowClass} -left-3`}>
               ←
             </button>
 
@@ -164,12 +185,7 @@ export function Testimonials({
               )}
             </ul>
 
-            <button
-              type="button"
-              aria-label={nextLabel}
-              onClick={() => scrollByCard(1)}
-              className="absolute -right-3 top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-forest/25 bg-ivory text-forest shadow-[0_6px_16px_rgba(49,61,53,0.12)] transition-colors hover:border-forest hover:bg-forest hover:text-white sm:flex"
-            >
+            <button type="button" aria-label={nextLabel} onClick={() => scrollByCard(1)} className={`${arrowClass} -right-3`}>
               →
             </button>
           </div>
