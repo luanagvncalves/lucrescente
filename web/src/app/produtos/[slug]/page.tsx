@@ -14,11 +14,8 @@ import { ProductImage } from "@/components/ui/product-image";
 import { PurchasePanel } from "@/components/product/purchase-panel";
 import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
-import { ProductFeatures } from "@/components/product/product-features";
 import { ProductContact } from "@/components/product/product-contact";
-import { WaterSavingInfo } from "@/components/product/water-saving-info";
-import { ReusablePackagingInfo } from "@/components/product/reusable-packaging-info";
-import { SkinSafeInfo } from "@/components/product/skin-safe-info";
+import { ProductExtraInfo } from "@/components/product/product-extra-info";
 
 export const revalidate = 60;
 
@@ -163,6 +160,9 @@ export default async function ProductPage({ params, searchParams }: Params) {
             )}
           </section>
 
+          {/* the extra claims sit straight under the ingredients, above the price */}
+          <ProductExtraInfo product={product} locale={locale} />
+
           <div className="mt-8">
             <PurchasePanel product={product} locale={locale} />
           </div>
@@ -171,7 +171,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
       <Pause className="my-16" />
 
-      {/* under the photographs: why the product works, and the extra boxes */}
+      {/* under the photographs: why the product works */}
       <div className="grid gap-12 md:grid-cols-12">
         <div className="md:col-span-7">
           {whyItWorks ? (
@@ -186,23 +186,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
           {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
           {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
           {product.is_candle ? <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">{t.products.candleNote}</p> : null}
-        </div>
-
-        <div className="md:col-span-5 md:col-start-8">
-          {product.is_deodorant ? (
-            <ProductFeatures
-              features={[
-                { label: t.productInfo.notAntiperspirant },
-                { label: t.productInfo.aluminiumFree },
-                { label: t.productInfo.alcoholFree },
-                { label: t.productInfo.customisable },
-              ]}
-            />
-          ) : null}
-
-          <WaterSavingInfo product={product} locale={locale} />
-          <ReusablePackagingInfo product={product} locale={locale} />
-          <SkinSafeInfo product={product} locale={locale} />
         </div>
       </div>
 

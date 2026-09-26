@@ -126,8 +126,8 @@ export const pt = {
     price: "preço", // ui
     onRequest: "por encomenda",
     talkToUs: "fala connosco →",
-    soldOut: "esgotado por agora. fala connosco para encomendar", // ui
-    soldOutShort: "esgotado por agora", // ui
+    soldOutTag: "esgotado", // ui — the marker inside a format pill, beside the size
+    soldOutShort: "esgotado por agora", // ui — the badge on a product card in the grid
     priceFrom: "desde ", // ui
     addToCart: "adicionar ao carrinho", // ui
     added: "adicionado ao carrinho", // ui
@@ -163,7 +163,7 @@ export const pt = {
     waterSavingLabel: "menos água",
     waterSavingText:
       "não usamos água no fabrico deste produto. os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpe, e como não necessitam de embalagens, também poupamos a água usada no fabrico de plástico.",
-    reusableLabel: "reutilizável",
+    reusableLabel: "embalagem reutilizável",
     reusableText:
       "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!",
     paperWrappedText:

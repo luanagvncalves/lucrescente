@@ -8,6 +8,14 @@
 :root {
   --forest: #223925;
   --moss: #48674d;
+  /*
+    The light green on the extra-information boxes. It is forest at 70% over
+    paper — the colour a sold-out format pill already had, which is how the
+    brand picked it, by pointing at one. Written out as a flat hex like the
+    rest of the palette so it no longer depends on an opacity someone may
+    change. White text on it measures 5.1:1.
+  */
+  --sage: #637263;
   --earth: #847a69;
   --clay: #6f554f;
   --bark: #593d37;
@@ -26,6 +34,7 @@
 @theme inline {
   --color-forest: var(--forest);
   --color-moss: var(--moss);
+  --color-sage: var(--sage);
   --color-earth: var(--earth);
   --color-clay: var(--clay);
   --color-bark: var(--bark);

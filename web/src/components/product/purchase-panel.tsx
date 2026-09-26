@@ -77,6 +77,10 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                         }}
                       />
                       {v.label}
+                      {/* the bare word, inside the pill beside the size, so a
+                          sold-out format reads as one without having to be
+                          selected first */}
+                      {va.kind === "sold-out" ? <span className="text-[0.75rem]">· {t.products.soldOutTag}</span> : null}
                     </label>
                   );
                 })

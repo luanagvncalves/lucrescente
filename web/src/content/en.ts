@@ -27,7 +27,7 @@ export const en: Dictionary = {
     waterSavingLabel: "less water",
     waterSavingText:
       "we use no water to make this product. solid products leave far less residue and rinse out of hair and skin more easily, so you do not need to use as much water to feel clean — and because they need no packaging, we also save the water used to make plastic.",
-    reusableLabel: "reusable",
+    reusableLabel: "reusable packaging",
     reusableText:
       "all our packaging is reusable. if you have an old container of ours or from another brand, bring it to us and get our reuse discount on your next order!",
     paperWrappedText:
@@ -72,7 +72,7 @@ export const en: Dictionary = {
   products: {
     ...pt.products, scrollLeft: "see previous categories", scrollRight: "see next categories", deodorantFact: "apply a thin layer to clean, dry skin — it spreads better with your body heat.", solidNote: "a solid product, with no water in the formula. keep it somewhere dry between uses so it lasts longer.", label: "handmade, one by one", title: "our products", allCategories: "all", filterLabel: "categories", whyItWorks: "why it works", hairTypeNote: "what hair type this is for", recommendedFor: "recommended for", notRecommendedFor: "not recommended for", mainIngredients: "main ingredients", allergenNoteLabel: "please note",
     noIngredientsListed: "this product's ingredient list has not been published yet. get in touch to find out more.", noCopy: "this product's story is still being written at home.", noPhoto: "no photograph yet", galleryPrevious: "previous image", galleryNext: "next image", galleryOf: (name: string) => `photographs of ${name}`, price: "price", onRequest: "made to order", talkToUs: "get in touch →",
-    soldOut: "currently sold out. get in touch to place an order", soldOutShort: "currently sold out", priceFrom: "from ", addToCart: "add to cart", added: "added to cart", quantity: "quantity", variant: "size",
+    soldOutTag: "sold out", soldOutShort: "currently sold out", priceFrom: "from ", addToCart: "add to cart", added: "added to cart", quantity: "quantity", variant: "size",
     stockLeft: (n: number) => (n === 1 ? "only 1 left" : `${n} left`), orderMessage: (name: string) => `hi! i'd like to order: ${name}`,
     ownContainerLabel: "own container", candleNote: "if you prefer, we can make your candles in your own jars, mugs or bowls — just bring us the containers.",
     backToCatalog: "← back to products", relatedTitle: "build your set", relatedPrev: "previous products", relatedNext: "next products", usedInTitle: "where we use this ingredient", emptyCategory: "there are no products in this category yet. get in touch to hear what is coming.", organicNote: "* organic ingredient",
