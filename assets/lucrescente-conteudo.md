@@ -133,19 +133,19 @@ Ingredientes principais: Manteiga de Karité, Óleo de Coco, Óleo Essencial de 
 
 **Champô Oleosos**
 Este champô não leva água na sua composição — o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. O SCI limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. Juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. Os óleos de coco e argão, o ácido esteárico e o D-Pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.
-Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca CosKAO, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Óleo Vegetal de Argão, Hidrolato de Hortelã-Pimenta, Urtiga Verde, Cavalinha em Pó, D-Pantenol (Provitamina B5), Óleo Essencial de Erva-príncipe, Conservante Cosgard
+Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Óleo Vegetal de Argão, Hidrolato de Hortelã-Pimenta, Urtiga Verde, Cavalinha em Pó, D-Pantenol (Provitamina B5), Óleo Essencial de Erva-príncipe, Conservante Cosgard
 
 **Champô Secos**
 Este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. O SCI limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. O óleo de coco, a manteiga de karité e o D-Pantenol nutrem e ajudam a manter a hidratação do cabelo seco. O hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. Como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete — este em particular tem sido usado por quem tem pele atópica.
-Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca CosKAO, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Manteiga de Karité, Hidrolato de Lavanda, D-Pantenol (Provitamina B5), Óleo Essencial de Lavanda 40/42, Conservante Cosgard
+Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Manteiga de Karité, Hidrolato de Lavanda, D-Pantenol (Provitamina B5), Óleo Essencial de Lavanda 40/42, Conservante Cosgard
 
 **Champôs para Cabelos Normais**
 A fórmula combina uma limpeza suave do SCI com a ação equilibrante da argila branca, das farinhas e do hidrolato de lavanda. O óleo de coco, o óleo de argão e o D-Pantenol ajudam a manter o cabelo normal macio e hidratado, enquanto o ácido esteárico dá corpo à barra sem tornar a lavagem agressiva.
-Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca CosKAO, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Óleo Vegetal de Argão, Hidrolato de Lavanda, D-Pantenol (Provitamina B5), Óleo Essencial de Erva-príncipe, Conservante Cosgard
+Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Óleo Vegetal de Argão, Hidrolato de Lavanda, D-Pantenol (Provitamina B5), Óleo Essencial de Erva-príncipe, Conservante Cosgard
 
 **Champô Neutro/para Crianças**
-O SCI proporciona uma limpeza suave, enquanto a argila branca CosKAO e as farinhas ajudam a limpar sem agredir. O óleo de coco, a manteiga de karité e o D-Pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. O ácido esteárico dá consistência à barra.
-Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca CosKAO, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Manteiga de Karité, Hidrolato de Camomila Romana, D-Pantenol (Provitamina B5), Conservante Cosgard
+O SCI proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. O óleo de coco, a manteiga de karité e o D-Pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. O ácido esteárico dá consistência à barra.
+Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Manteiga de Karité, Hidrolato de Camomila Romana, D-Pantenol (Provitamina B5), Conservante Cosgard
 
 **Amaciador**
 O BTMS e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. A manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. A vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.
@@ -189,6 +189,6 @@ Ingredientes principais: Óleo Essencial de Hortelã-Pimenta, Óleo Essencial de
 - Manteigas: Manteiga de Cacau · Manteiga de Karité
 - Hidrolatos: Hidrolato de Alecrim · Hidrolato de Camomila Romana · Hidrolato de Hortelã-Pimenta · Hidrolato de Lavanda
 - Ceras e Emulsionantes: Ácido Esteárico · Álcool Cetílico · Cera Autoemulsionante OliveM · Cera de Abelha Amarela · Cera de Soja · Cera Emulsionante BTMS
-- Argilas: Argila Branca CosKAO · Argila Verde Superfina
+- Argilas: Argila Branca · Argila Verde Superfina
 - Ativos: Coenzima Q10 · Conservante Cosgard · D-Pantenol (Provitamina B5) · Tensioativo SCI · Vitamina E · Vitamina E (Tocopherol 70%)
 - Outros Ingredientes: Aloé Vera · Amido de Milho · Bicarbonato de Sódio · Cacau Natural · Cavalinha em Pó · Farinha de Aveia · Farinha de Coco · Glicerina Vegetal · Hibisco (Flor Moída) · Sal de Epsom · Sementes de Papoila · Urtiga Verde

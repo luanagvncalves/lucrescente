@@ -19,7 +19,7 @@ Anexa este ficheiro ao prompt da página Ingredientes no Lovable. Cada ficha tem
 - Urtiga Verde
 
 ### Argilas
-- Argila Branca CosKAO
+- Argila Branca
 - Argila Verde Superfina
 
 ### Ceras e Emulsionantes
@@ -109,7 +109,7 @@ Absorve o excesso de humidade e confere uma sensação sedosa e seca à pele, se
 **Aplicações em Lucrescente**
 Usado em pós corporais e como base em fórmulas de desodorizante natural, ajudando a manter a sensação de pele seca ao longo do dia.
 
-### Argila Branca CosKAO
+### Argila Branca
 slug: argila-branca · categoria: Argilas
 
 **Origem**
@@ -119,7 +119,7 @@ Também chamada caulino, é uma argila mineral de origem natural, uma das mais s
 Absorve o excesso de oleosidade sem ressecar em excesso, graças à sua estrutura mineral que capta impurezas e sebo à superfície da pele sem penetrar profundamente. É a mais suave das argilas cosméticas, sendo adequada mesmo para peles sensíveis ou secas que precisam de uma limpeza mais delicada.
 
 **Aplicações em Lucrescente**
-Usada nas nossas máscaras faciais mais suaves e no Champô Oleosos, onde a argila branca CosKAO ajuda a limpar sem agressividade.
+Usada nas nossas máscaras faciais mais suaves e no Champô Oleosos, onde a argila branca ajuda a limpar sem agressividade.
 
 ### Argila Verde Superfina
 slug: argila-verde-superfina · categoria: Argilas

@@ -220,7 +220,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "champo-queda",
-    name: "champô queda",
+    name: "champô sólido para queda de cabelo",
     category_slug: "champos",
     sort_order: 4,
     why_it_works: null,
