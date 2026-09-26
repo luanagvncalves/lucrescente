@@ -21,28 +21,6 @@ export function HomeHero({
 }) {
   const [fade, setFade] = useState(1);
   const [scale, setScale] = useState(1.08);
-  const [displayedText, setDisplayedText] = useState("");
-  const [isTyping, setIsTyping] = useState(true);
-
-  // Someone who has asked their system to reduce motion gets the whole
-  // sentence at once instead of watching it appear letter by letter.
-  useEffect(() => {
-    const m = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (m.matches) { setDisplayedText(title); setIsTyping(false); }
-  }, [title]);
-
-  useEffect(() => {
-    if (!isTyping) return;
-
-    if (displayedText.length < title.length) {
-      const timer = setTimeout(() => {
-        setDisplayedText(title.slice(0, displayedText.length + 1));
-      }, 40);
-      return () => clearTimeout(timer);
-    } else {
-      setIsTyping(false);
-    }
-  }, [displayedText, isTyping, title]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -97,8 +75,11 @@ export function HomeHero({
             */}
             <span className="sr-only">{title}</span>
             <span aria-hidden="true">
-              {displayedText}
-              {isTyping && <span className="animate-pulse">|</span>}
+              {/*
+                Keyed by the sentence: switching language has to retype it, and
+                see Typewriter for why a key is what makes that happen.
+              */}
+              <Typewriter key={title} text={title} />
             </span>
           </motion.h1>
 
@@ -124,5 +105,52 @@ export function HomeHero({
         </div>
       </div>
     </section>
+  );
+}
+
+/**
+ * Types `text` out one letter at a time.
+ *
+ * Give it `key={text}`. Switching language re-renders this component in place
+ * with a new sentence, and React keeps the state that belongs to the old one —
+ * so the animation, long since finished, never ran again and the hero went on
+ * showing the previous language's words however many times the visitor switched.
+ * A key that changes with the sentence remounts it with empty state instead,
+ * which is also why the reset needs no effect of its own: on a language change
+ * this is a fresh mount, exactly as on first load.
+ *
+ * The caller renders the whole sentence separately for assistive technology and
+ * hides this copy, so nothing here is ever read out half-typed.
+ */
+function Typewriter({ text }: { text: string }) {
+  const [shown, setShown] = useState("");
+  const [typing, setTyping] = useState(true);
+
+  // Someone who has asked their system to reduce motion gets the whole
+  // sentence at once instead of watching it appear letter by letter.
+  useEffect(() => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      setShown(text);
+      setTyping(false);
+    }
+  }, [text]);
+
+  useEffect(() => {
+    if (!typing) return;
+
+    if (shown.length < text.length) {
+      const timer = setTimeout(() => {
+        setShown(text.slice(0, shown.length + 1));
+      }, 40);
+      return () => clearTimeout(timer);
+    }
+    setTyping(false);
+  }, [shown, typing, text]);
+
+  return (
+    <>
+      {shown}
+      {typing ? <span className="animate-pulse">|</span> : null}
+    </>
   );
 }

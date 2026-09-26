@@ -127,18 +127,68 @@ export default async function ProductPage({ params, searchParams }: Params) {
           )}
         </div>
 
-        {/* copy 5 cols */}
+        {/*
+          5 cols beside the photographs: what the product is made of, and then
+          how to buy it.
+
+          The ingredients come first, above the price and the format picker,
+          because they are what someone is deciding on — the brand's whole case
+          for a product is its ingredient list, and it used to sit far below the
+          fold, next to "porque funciona". Everything explaining the product
+          rather than choosing it now lives under the photographs instead.
+        */}
         <div className="md:col-span-5">
           <Label>{categoryName}</Label>
           <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
 
-          {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80">{t.products.deodorantFact}</p> : null}
-          {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80">{t.products.solidNote}</p> : null}
+          <section className="mt-8" aria-labelledby="ingredientes-principais">
+            <Label>{t.products.mainIngredients}</Label>
+            {product.ingredients.length ? (
+              <ul id="ingredientes-principais" className="mt-4 flex flex-wrap gap-2">
+                {product.ingredients.map((i) => (
+                  <li key={i.slug}>
+                    <Link
+                      href={`/ingredientes/${i.slug}${query}`}
+                      className="inline-flex min-h-11 items-center rounded-full border border-moss/40 bg-paper px-4 py-2 font-ui text-[0.9rem] font-medium text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white"
+                    >
+                      {getIngredientName(i.slug, locale, i.name)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p id="ingredientes-principais" className="mt-4 text-[0.95rem] text-ink/70">
+                {t.products.noIngredientsListed}
+              </p>
+            )}
+          </section>
 
           <div className="mt-8">
             <PurchasePanel product={product} locale={locale} />
           </div>
+        </div>
+      </div>
 
+      <Pause className="my-16" />
+
+      {/* under the photographs: why the product works, and the extra boxes */}
+      <div className="grid gap-12 md:grid-cols-12">
+        <div className="md:col-span-7">
+          {whyItWorks ? (
+            <section aria-labelledby="porque">
+              <Label>{t.products.whyItWorks}</Label>
+              <p id="porque" className="mt-5 text-body-lg measure">
+                {whyItWorks}
+              </p>
+            </section>
+          ) : null}
+
+          {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
+          {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
+          {product.is_candle ? <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">{t.products.candleNote}</p> : null}
+        </div>
+
+        <div className="md:col-span-5 md:col-start-8">
           {product.is_deodorant ? (
             <ProductFeatures
               features={[
@@ -150,48 +200,11 @@ export default async function ProductPage({ params, searchParams }: Params) {
             />
           ) : null}
 
-          {product.is_candle ? <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed">{t.products.candleNote}</p> : null}
+          <WaterSavingInfo product={product} locale={locale} />
+          <ReusablePackagingInfo product={product} locale={locale} />
+          <SkinSafeInfo product={product} locale={locale} />
         </div>
       </div>
-
-      <Pause className="my-16" />
-
-      <div className="grid gap-12 md:grid-cols-12">
-        {whyItWorks ? (
-          <section className="md:col-span-7" aria-labelledby="porque">
-            <Label>{t.products.whyItWorks}</Label>
-            <p id="porque" className="mt-5 text-body-lg measure">
-              {whyItWorks}
-            </p>
-          </section>
-        ) : null}
-
-        <section className={whyItWorks ? "md:col-span-4 md:col-start-9" : "md:col-span-7"} aria-labelledby="ingredientes-principais">
-          <Label>{t.products.mainIngredients}</Label>
-          {product.ingredients.length ? (
-            <ul id="ingredientes-principais" className="mt-5 flex flex-wrap gap-2">
-              {product.ingredients.map((i) => (
-                <li key={i.slug}>
-                  <Link
-                    href={`/ingredientes/${i.slug}${query}`}
-                    className="inline-flex min-h-11 items-center rounded-full border border-moss/40 bg-paper px-4 py-2 font-ui text-[0.9rem] font-medium text-forest transition-colors hover:border-forest hover:bg-forest hover:text-white"
-                  >
-                    {getIngredientName(i.slug, locale, i.name)}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p id="ingredientes-principais" className="mt-5 text-[0.95rem] text-ink/70">
-              {t.products.noIngredientsListed}
-            </p>
-          )}
-        </section>
-      </div>
-
-      <WaterSavingInfo product={product} locale={locale} />
-      <ReusablePackagingInfo product={product} locale={locale} />
-      <SkinSafeInfo product={product} locale={locale} />
 
       <RelatedCarousel items={related} locale={locale} />
 

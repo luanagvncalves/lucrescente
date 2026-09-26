@@ -145,9 +145,8 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                                 <Crescent size={28} tone="var(--violet)" />
                               </div>
                             )}
-                            {/* the name sits where the gradient is, so the photograph stays visible above it */}
-                            <div className="tile-scrim absolute inset-0 flex items-end justify-center px-3 pb-4 text-center">
-                              <span className="font-display text-[1.35rem] leading-tight text-forest lowercase sm:text-[1.5rem]">{tile.name}</span>
+                            <div className="tile-scrim absolute inset-0 flex items-center justify-center px-3 text-center">
+                              <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase [text-shadow:0_1px_3px_rgba(34,57,37,0.45)] sm:text-[1.5rem]">{tile.name}</span>
                             </div>
                           </div>
                         </Link>
@@ -255,7 +254,10 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
             </div>
             <div className="md:col-span-6 md:pt-14">
-              <ContactLinks labels="home" />
+              {/* without `locale` this falls back to Portuguese, so the four
+                  contact buttons stayed Portuguese on the English and French
+                  homepage while the heading above them translated */}
+              <ContactLinks labels="home" locale={locale} />
               <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
             </div>
           </div>

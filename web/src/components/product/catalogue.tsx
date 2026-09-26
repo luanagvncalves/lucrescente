@@ -10,6 +10,7 @@ import { ProductCard } from "./product-card";
 import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
 import { FilterBar } from "@/components/ui/filter-bar";
+import { CandleMessagesSection } from "./candle-messages-section";
 
 export function Catalogue({ categories, products }: { categories: Category[]; products: Product[] }) {
   const params = useSearchParams();
@@ -111,6 +112,13 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
           </>
         )}
       </div>
+
+      {/*
+        A candle with a message is not a catalogue entry — it is any of the four
+        candles, made to order — so it belongs under the candle grid rather than
+        inside it. Only shown when the candles filter is the active one.
+      */}
+      {active === "velas" ? <CandleMessagesSection locale={locale} /> : null}
 
       <Modal open={cancelled} onClose={() => setCancelled(false)} title={t.cart.errorTitle} primaryLabel={t.cart.ok}>
         {t.cart.cancelled}

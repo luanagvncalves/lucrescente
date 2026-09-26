@@ -77,7 +77,6 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                         }}
                       />
                       {v.label}
-                      {va.kind === "sold-out" ? <span className="text-[0.75rem] opacity-80">· {t.products.soldOutShort}</span> : null}
                     </label>
                   );
                 })
@@ -119,13 +118,17 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           </AnchorButton>
         </div>
       ) : avail.kind === "sold-out" ? (
-        <div className="space-y-4">
-          <p className="font-display text-[1.75rem] leading-none text-ink/50 line-through decoration-1">{formatPrice(avail.price_cents)}</p>
-          <p className="rounded-2xl bg-ivory px-4 py-3 text-[0.95rem] leading-relaxed text-ink">{t.products.soldOut}</p>
-          <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" variant="secondary" size="lg" className="w-full sm:w-auto">
-            {t.products.talkToUs}
-          </AnchorButton>
-        </div>
+        /*
+          A sold-out format cannot be ordered, so the panel offers no way to try:
+          no add-to-cart, and no "fala connosco" either, which used to invite an
+          order the brand could not fill. The crossed-out price is the whole
+          message. It is announced as well as shown, because a line through a
+          number is a purely visual cue.
+        */
+        <p className="font-display text-[1.75rem] leading-none text-ink/50 line-through decoration-1">
+          <span className="sr-only">{t.products.price}: </span>
+          {formatPrice(avail.price_cents)}
+        </p>
       ) : (
         <div className="space-y-5">
           <div className="flex items-baseline justify-between">
