@@ -1,7 +1,18 @@
 /**
  * SHIPPING RATES — the one place to change them.
- * These are configurable placeholders proposed for launch; the client confirms final values.
  * Amounts in cents (EUR). Stripe Checkout shows these as selectable shipping options.
+ *
+ * ⚠️ THESE NUMBERS ARE INVENTED. They were picked so checkout would have
+ * something to work with, never confirmed against a carrier's price list, and
+ * the brand has never stated a shipping price anywhere. They are here because
+ * Stripe needs a value to show, not because they are right.
+ *
+ * So: do not repeat them anywhere a customer reads — not in the FAQ, not in
+ * the footer, not in an email. They were once written into the FAQ in three
+ * languages as though they were settled, which is exactly the mistake this
+ * note exists to prevent. Say "calculated at checkout, according to the
+ * destination" and let Stripe show the number. Once the brand confirms real
+ * rates, replace these and delete this warning.
  */
 export type ShippingTier = {
   id: string;

@@ -7,9 +7,6 @@ import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Crescent, Pause } from "@/components/ui/motifs";
-import { PaymentMethodSelector } from "@/components/checkout/payment-method-selector";
-
-type PaymentMethod = "card" | "mbway" | "apple";
 
 /** `useLocale` reads the query string, which Next requires a boundary for. */
 export default function CheckoutPage() {
@@ -23,7 +20,6 @@ export default function CheckoutPage() {
 function Checkout() {
   const { locale, t, query } = useLocale();
   const cart = useCart();
-  const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("card");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -36,7 +32,6 @@ function Checkout() {
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
           items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity })),
-          paymentMethod,
           // so Stripe's own page, and the return trip, keep the visitor's language
           locale,
         }),
@@ -110,11 +105,16 @@ function Checkout() {
 
             <Pause className="my-8" />
 
-            {/* Payment Method Selection */}
+            {/*
+              This used to be a set of radio buttons for card / MB WAY / Apple Pay.
+              The choice was never sent to Stripe, and Stripe's own page asks the
+              same question properly a moment later — so the customer answered
+              twice, the first time for nothing. What is worth saying here is only
+              what they can pay with, so they know before committing.
+            */}
             <div>
               <h3 className="mb-4 font-display text-[1.2rem] text-forest lowercase">{t.checkout.paymentMethod}</h3>
-              <p className="mb-6 text-[0.95rem] text-ink/80">{t.checkout.selectPayment}</p>
-              <PaymentMethodSelector value={paymentMethod} onChange={setPaymentMethod} />
+              <p className="text-[0.95rem] text-ink/80">{t.checkout.paymentNote}</p>
             </div>
           </section>
 

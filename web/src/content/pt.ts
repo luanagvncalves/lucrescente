@@ -317,7 +317,7 @@ export const pt = {
         items: [
           {
             q: "fazem envios para fora de Portugal?",
-            a: "fazemos envios nacionais e internacionais. o custo é calculado no final da compra, conforme o destino: 4,50 € para Portugal, 12 € para a Europa e 22 € para o resto do mundo.",
+            a: "fazemos envios nacionais e internacionais. o custo do envio é calculado no final da compra, conforme o destino — vês o valor exacto antes de confirmares, sem surpresas.",
           },
           {
             q: "o produto que quero está esgotado. posso encomendar na mesma?",
@@ -394,6 +394,7 @@ export const pt = {
     shippingMethod: "método de envio", // ui
     paymentMethod: "método de pagamento", // ui
     selectPayment: "escolhe como preferires pagar", // ui
+    paymentNote: "podes pagar com cartão, MB WAY ou apple pay — escolhes no passo seguinte, na página segura do Stripe.", // ui
     creditCard: "cartão de crédito",
     mbway: "mbway",
     applePay: "apple pay",
