@@ -53,6 +53,22 @@ export function Footer() {
           <div className="mt-5">
             <ContactLinks tone="dark" layout="list" locale={locale} />
           </div>
+          {/*
+            Beside the contacts, because the two belong together: someone whose
+            jar arrived broken is looking for how to reach us and what happens
+            next at the same moment.
+          */}
+          <div className="mt-8 border-t border-ivory/20 pt-6">
+            <p className="label-brand text-lavender">{t.returns.label}</p>
+            <p className="mt-3 max-w-[42ch] text-[0.9rem] leading-relaxed text-ivory/85">{t.footer.returnsSummary}</p>
+            <Link
+              href={`/devolucoes${query}`}
+              className="mt-3 inline-flex min-h-11 items-center font-ui text-[0.9rem] text-ivory/90 hover:text-white hover:underline underline-offset-4"
+            >
+              {t.footer.returnsLink}
+            </Link>
+          </div>
+
           <a
             href={t.brand.instagram}
             target="_blank"

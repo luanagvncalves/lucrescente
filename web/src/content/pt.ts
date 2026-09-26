@@ -98,6 +98,8 @@ export const pt = {
     contactsTitle: "contactos", // ui
     pagesTitle: "páginas", // ui
     shipping: "envios nacionais e internacionais por encomenda. quantidades maiores por encomenda.",
+    returnsSummary: "produto errado ou danificado? tens 14 dias para nos dizer, e o envio de volta é por nossa conta.", // ui
+    returnsLink: "ler a política de devoluções →", // ui
   },
   products: {
     label: "feitos à mão, um a um",
@@ -273,12 +275,17 @@ export const pt = {
    * only the brand has, and a confident guess would be worse than no answer.
    */
   /**
-   * Written from the brand's own words, nothing added. The one thing worth
-   * knowing: under EU distance-selling rules a customer normally has 14 days to
-   * change their mind, and the exemption for sealed hygiene products only bites
-   * once the seal is broken — so "no returns unless damaged" may not hold for
-   * something that arrives and is never opened. Flagged to the brand; theirs to
-   * decide, and this is what they decided.
+   * The brand's own words, nothing added.
+   *
+   * The window is fourteen days, matching what EU distance selling gives a
+   * customer, and a return is accepted whether the product was opened or is
+   * still sealed. That answers the earlier worry — a flat "no returns" would
+   * not have held for something that arrived and was never opened.
+   *
+   * Still narrower than the law: this covers a product that arrived wrong or
+   * damaged, not someone who simply changed their mind. For an opened hygiene
+   * product that exemption is solid; for one still sealed it is thinner.
+   * Raised with the brand, and theirs to decide.
    */
   returns: {
     label: "devoluções",
@@ -288,11 +295,11 @@ export const pt = {
     groups: [
       {
         title: "quando aceitamos uma devolução",
-        text: "aceitamos devoluções unicamente se receberes o produto errado, ou o produto certo mas danificado: um frasco partido, uma embalagem suja, ou um produto derretido ou quebrado.",
+        text: "aceitamos devoluções se receberes o produto errado, ou o produto certo mas danificado: um frasco partido, uma embalagem suja, ou um produto derretido ou quebrado. tanto faz se já o abriste ou se ainda está fechado — o que precisamos é de prova de que não está bom.",
       },
       {
         title: "quanto tempo tens",
-        text: "depois de o produto chegar até ti, tens 10 dias para pedires a devolução.",
+        text: "depois de o produto chegar até ti, tens 14 dias para pedires a devolução.",
       },
       {
         title: "como pedir",
@@ -361,7 +368,7 @@ export const pt = {
           },
           {
             q: "posso devolver um produto?",
-            a: "só se receberes o produto errado, ou o produto certo mas danificado — um frasco partido, uma embalagem suja, um produto derretido ou quebrado. tens 10 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
+            a: "se receberes o produto errado, ou o produto certo mas danificado — um frasco partido, uma embalagem suja, um produto derretido ou quebrado. aberto ou ainda fechado, desde que haja prova de que não está bom. tens 14 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
           },
         ],
       },

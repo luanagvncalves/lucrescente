@@ -20,11 +20,15 @@ export function Header() {
   const t = getDictionary(locale);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
+  // "perguntas frequentes" is in the header rather than only the footer so it
+  // is reachable from any page without scrolling to the bottom — it answers
+  // what people ask before they buy, including how returns work.
   const links = [
     { href: "/produtos", label: t.nav.products },
     { href: "/ingredientes", label: t.nav.ingredients },
     { href: "/sobre", label: t.nav.about },
     { href: "/feiras-e-mercados", label: t.nav.fairs },
+    { href: "/perguntas-frequentes", label: t.faq.label },
   ];
 
   useEffect(() => setMenuOpen(false), [pathname]);

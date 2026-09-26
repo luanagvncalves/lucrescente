@@ -177,21 +177,14 @@ h3,
    on the lightest one. Forest carries the darkness (violet alone is far too
    light to read against); a fifth of violet mixed in keeps the brand cast. */
 /*
- * Darkens a category tile so its name can be read over the photograph.
- *
- * The tone is the same violet as the header, at the coverage the tiles have
- * always had — the whole square rather than a gradient at the foot. That does
- * hide most of the photograph underneath, and it is what the brand wants: the
- * five tiles read as one violet set rather than five different pictures.
+ * An even half-transparent veil of the brand's violet over a category tile, so
+ * the five read as one set while the photograph still shows through. Flat, not
+ * a gradient — nothing heavier at the foot.
  */
 @utility tile-scrim {
-  --tile-scrim-tone: var(--violet);
-  background: linear-gradient(
-    to top,
-    color-mix(in srgb, var(--tile-scrim-tone) 84%, transparent),
-    color-mix(in srgb, var(--tile-scrim-tone) 66%, transparent)
-  );
+  background: color-mix(in srgb, var(--violet) 50%, transparent);
 }
+
 
 
 /* placeholder frame for products without a photo */

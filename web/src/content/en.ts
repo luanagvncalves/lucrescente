@@ -68,7 +68,7 @@ export const en: Dictionary = {
     showMore: "show more",
     showLess: "show less",
   },
-  footer: { line: "lucrescente — handmade, with love 🌱", contactsTitle: "contact", pagesTitle: "pages", shipping: "national and international shipping by order. larger quantities available by request." },
+  footer: { line: "lucrescente — handmade, with love 🌱", contactsTitle: "contact", pagesTitle: "pages", shipping: "national and international shipping by order. larger quantities available by request.", returnsSummary: "wrong product, or damaged? you have 14 days to tell us, and the cost of sending it back is ours.", returnsLink: "read the returns policy →" },
   products: {
     ...pt.products, scrollLeft: "see previous categories", scrollRight: "see next categories", deodorantFact: "apply a thin layer to clean, dry skin — it spreads better with your body heat.", solidNote: "a solid product, with no water in the formula. keep it somewhere dry between uses so it lasts longer.", label: "handmade, one by one", title: "our products", allCategories: "all", filterLabel: "categories", whyItWorks: "why it works", hairTypeNote: "what hair type this is for", recommendedFor: "recommended for", notRecommendedFor: "not recommended for", mainIngredients: "main ingredients", allergenNoteLabel: "please note",
     noIngredientsListed: "this product's ingredient list has not been published yet. get in touch to find out more.", noCopy: "this product's story is still being written at home.", noPhoto: "no photograph yet", galleryPrevious: "previous image", galleryNext: "next image", galleryOf: (name: string) => `photographs of ${name}`, price: "price", onRequest: "made to order", talkToUs: "get in touch →",
@@ -95,8 +95,8 @@ export const en: Dictionary = {
     { slug: "biologicos", title: "organic ingredients", text: "whenever possible, we choose organic ingredients — marked with * in product descriptions so you have better information about what you are using." },
       ] },
   returns: { ...pt.returns, label: "returns", title: "if something arrives wrong", intro: "everything is made by hand and wrapped with care, but the journey to you does not always go well. if it goes wrong, we will sort it out.", contactTitle: "get in touch", groups: [
-    { title: "when we accept a return", text: "we accept returns only if you receive the wrong product, or the right one damaged: a broken jar, a dirty container, or a product that has melted or shattered." },
-    { title: "how long you have", text: "once the product reaches you, you have 10 days to ask for a return." },
+    { title: "when we accept a return", text: "we accept returns if you receive the wrong product, or the right one damaged: a broken jar, a dirty container, or a product that has melted or shattered. it makes no difference whether you have opened it or it is still sealed — what we need is proof that it is not right." },
+    { title: "how long you have", text: "once the product reaches you, you have 14 days to ask for a return." },
     { title: "how to ask", text: "get in touch by any of the ways listed on the site — whatsapp, message, phone call or email. all we ask for is proof: a photograph of the product as it arrived, or of the wrong product you received." },
     { title: "who pays for the return", text: "we do. if the return is accepted, the cost of sending it back is ours." },
   ] },
@@ -114,7 +114,7 @@ export const en: Dictionary = {
       { q: "do you ship outside Portugal?", a: "we ship nationally and internationally. shipping is calculated at checkout according to the destination — you see the exact amount before you confirm, with no surprises." },
       { q: "the product i want is sold out. can i still order it?", a: "you can. everything is made by hand in small batches, and some products — the shampoos, the conditioners and the soaps — need time to rest and mature before they can be sent. if one sells out we take the order and let you know as soon as it is ready. we can also prepare larger quantities whenever you need them." },
       { q: "can i ask for something made specifically for me?", a: "yes. we can adapt a formula to what you need — gentler, stronger, or with a different scent. talk to us before ordering." },
-      { q: "can i return a product?", a: "only if you receive the wrong product, or the right one damaged — a broken jar, a dirty container, a product that has melted or shattered. you have 10 days from receiving it to tell us, and the cost of sending it back is ours. the returns page explains it all." },
+      { q: "can i return a product?", a: "if you receive the wrong product, or the right one damaged — a broken jar, a dirty container, a product that has melted or shattered. opened or still sealed, as long as there is proof that it is not right. you have 14 days from receiving it to tell us, and the cost of sending it back is ours. the returns page explains it all." },
     ] },
     { title: "packaging and sustainability", items: [
       { q: "can i return the packaging?", a: "you can, and we are grateful when you do. all our packaging is reusable: bring us an old container — from a deodorant, a hair mask, a candle — and we will reuse it for your next product, with a reuse discount." },
