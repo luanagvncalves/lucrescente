@@ -1,6 +1,6 @@
 "use client";
 
-import { t } from "@/lib/i18n";
+import { useLocale } from "@/lib/use-locale";
 
 type PaymentMethod = "card" | "mbway" | "apple";
 
@@ -10,7 +10,7 @@ interface PaymentMethodSelectorProps {
 }
 
 export function PaymentMethodSelector({ value, onChange }: PaymentMethodSelectorProps) {
-  const isPT = t.locale.startsWith("pt");
+  const { t } = useLocale();
 
   const methods: Array<{ id: PaymentMethod; title: string; description: string; icon: React.ReactNode }> = [
     {
@@ -27,22 +27,23 @@ export function PaymentMethodSelector({ value, onChange }: PaymentMethodSelector
         </svg>
       ),
     },
-    ...(isPT
-      ? [
-          {
-            id: "mbway" as const,
-            title: t.checkout.mbway,
-            description: t.checkout.mbwayDesc,
-            icon: (
-              <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none">
-                <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" strokeWidth="1.5" />
-                <path d="M10 14h12M10 18h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-                <circle cx="16" cy="8" r="1" fill="currentColor" />
-              </svg>
-            ),
-          },
-        ]
-      : []),
+    // MB WAY is offered whatever the page language. It used to be gated on a
+    // check that was always true (the dictionary here was hardcoded to
+    // Portuguese), and reading the real language would have hidden it — but the
+    // language someone reads in says nothing about the phone they pay with, and
+    // plenty of customers in Portugal browse in English.
+    {
+      id: "mbway",
+      title: t.checkout.mbway,
+      description: t.checkout.mbwayDesc,
+      icon: (
+        <svg className="h-8 w-8" viewBox="0 0 32 32" fill="none">
+          <rect x="4" y="4" width="24" height="24" rx="4" stroke="currentColor" strokeWidth="1.5" />
+          <path d="M10 14h12M10 18h8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+          <circle cx="16" cy="8" r="1" fill="currentColor" />
+        </svg>
+      ),
+    },
     {
       id: "apple",
       title: t.checkout.applePay,

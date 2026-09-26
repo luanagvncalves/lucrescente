@@ -46,6 +46,7 @@ export function ProductCard({
           rounded={false}
           priority={priority}
           fallbackLabel={copy.name}
+          locale={locale}
           className="transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.02]"
         />
         {avail.kind === "sold-out" ? (

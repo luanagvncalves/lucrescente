@@ -16,7 +16,7 @@ async function siteUrl() {
 }
 
 export async function POST(req: Request) {
-  let body: { items?: CheckoutItemInput[] };
+  let body: { items?: CheckoutItemInput[]; locale?: string };
   try {
     body = await req.json();
   } catch {
@@ -27,6 +27,10 @@ export async function POST(req: Request) {
   if (!validated.ok) return NextResponse.json(validated, { status: 409 });
 
   const origin = await siteUrl();
+  // Stripe hosts the payment page itself, so it needs telling which language to
+  // render; `query` carries the language back to our own confirmation page.
+  const locale = body.locale === "en" || body.locale === "fr" ? body.locale : "pt";
+  const query = locale === "pt" ? "" : `&idioma=${locale}`;
 
   // ---------- mock mode (no Stripe keys yet) ----------
   if (!stripeEnabled) {
@@ -47,7 +51,7 @@ export async function POST(req: Request) {
     const session = await stripe().checkout.sessions.create({
       mode: "payment",
       currency: "eur",
-      locale: "pt",
+      locale,
       customer_creation: "if_required",
       billing_address_collection: "auto",
       shipping_address_collection: {
@@ -80,8 +84,8 @@ export async function POST(req: Request) {
         // compact item list for the webhook (sku:qty:unit_cents:name|label)
         items: JSON.stringify(validated.lines.map((l) => [l.sku, l.quantity, l.unitPriceCents, l.productName, l.variantLabel])),
       },
-      success_url: `${origin}/encomenda/confirmacao?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/produtos?checkout=cancelado`,
+      success_url: `${origin}/encomenda/confirmacao?session_id={CHECKOUT_SESSION_ID}${query}`,
+      cancel_url: `${origin}/produtos?checkout=cancelado${query}`,
     });
     return NextResponse.json({ url: session.url });
   } catch (e) {

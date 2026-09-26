@@ -1,11 +1,22 @@
 "use client";
 
-import { t } from "@/lib/i18n";
+import { Suspense } from "react";
+import { useLocale } from "@/lib/use-locale";
 import { Button } from "@/components/ui/button";
 import { Crescent } from "@/components/ui/motifs";
 import { ContactLinks } from "@/components/contact/contact-links";
 
+/** `useLocale` reads the query string, which Next requires a boundary for. */
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
+  return (
+    <Suspense fallback={null}>
+      <ErrorBody reset={reset} />
+    </Suspense>
+  );
+}
+
+function ErrorBody({ reset }: { reset: () => void }) {
+  const { t } = useLocale();
   return (
     <div className="container-brand section-gap">
       <div className="mx-auto max-w-xl text-center">

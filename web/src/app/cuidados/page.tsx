@@ -1,13 +1,17 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { t } from "@/lib/i18n";
+import { getDictionary, t as pt } from "@/lib/i18n";
 import { editorial, type EditorialKey } from "@/data/editorial";
+import { getImageAlt } from "@/content/image-alt-locales";
 import { Label } from "@/components/ui/typography";
 import { Crescent } from "@/components/ui/motifs";
 
+// Metadata is built once per route, before the query string is known, so the
+// tab title and the search-result snippet stay in Portuguese. The page itself
+// follows the visitor's language.
 export const metadata: Metadata = {
-  title: t.care.label,
-  description: t.care.intro,
+  title: pt.care.label,
+  description: pt.care.intro,
   alternates: { canonical: "/cuidados" },
 };
 
@@ -17,7 +21,10 @@ const imageFor: Record<string, EditorialKey | undefined> = {
   velas: "cuidados-velas",
 };
 
-export default function CarePage() {
+export default async function CarePage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
+  const { idioma } = await searchParams;
+  const locale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const t = getDictionary(locale);
   return (
     <article className="container-brand pt-10 md:pt-16">
       <header className="max-w-3xl">
@@ -54,7 +61,7 @@ export default function CarePage() {
               <div className={`md:col-span-6 ${flip ? "md:order-1" : "md:col-start-7"}`}>
                 {img ? (
                   <div className="frame-brand relative aspect-[5/4] bg-paper">
-                    <Image src={img.path} alt={img.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
+                    <Image src={img.path} alt={getImageAlt(img.alt, locale)} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover" />
                   </div>
                 ) : (
                   <div className={`hidden aspect-[5/4] rounded-[20px] md:block ${idx % 3 === 0 ? "bg-lavender/35" : idx % 3 === 1 ? "bg-moss/15" : "bg-paper border border-moss/18"}`} aria-hidden="true" />

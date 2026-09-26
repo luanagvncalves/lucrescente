@@ -121,9 +121,9 @@ export default async function ProductPage({ params, searchParams }: Params) {
         {/* image 7 cols */}
         <div className="md:col-span-7">
           {product.images.length > 1 ? (
-            <ProductGallery images={product.images} name={copy.name} />
+            <ProductGallery images={product.images} name={copy.name} locale={locale} />
           ) : (
-            <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} className="frame-brand max-h-[80vh]" />
+            <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-h-[80vh]" />
           )}
         </div>
 

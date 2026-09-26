@@ -16,6 +16,7 @@ import { IngredientTeaserGrid } from "@/components/home/ingredient-teaser";
 import { testimonials } from "@/data/testimonials";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
+import { getImageAlt } from "@/content/image-alt-locales";
 import { getHomeTileLabel } from "@/content/home-tile-labels";
 
 export const revalidate = 60;
@@ -24,6 +25,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   const { idioma } = await searchParams;
   const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
   const t = getDictionary(locale);
+  // every internal link needs this: without it one click drops the visitor
+  // back into Portuguese
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
   const [featured, categories, products, ingredients] = await Promise.all([
     getProductsBySlugs(featuredSlugs),
     getCategories(),
@@ -42,9 +46,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     const img = categoryImages[c.slug];
     return {
       key: c.slug,
-      href: `/produtos?categoria=${c.slug}`,
+      href: `/produtos?categoria=${c.slug}${locale === "pt" ? "" : `&idioma=${locale}`}`,
       imageSrc: img?.file ?? null,
-      imageAlt: img?.alt ?? "",
+      imageAlt: getImageAlt(img?.alt, locale),
       name: getCategoryName(c.slug, locale, c.name),
       count: products.filter((p) => p.category.slug === c.slug).length,
     };
@@ -58,9 +62,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
     const img = p.images[0];
     return {
       key: p.slug,
-      href: `/produtos/${p.slug}`,
+      href: `/produtos/${p.slug}${query}`,
       imageSrc: img?.path ?? null,
-      imageAlt: img?.alt ?? "",
+      imageAlt: getImageAlt(img?.alt, locale),
       name: getHomeTileLabel(p.slug, locale, getProductCopy(p.slug, locale, { name: p.name }).name),
       count: 1,
     };
@@ -106,7 +110,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             <h2 id="destaques" className="text-h2 text-forest lowercase">
               {t.home.featuredTitle}
             </h2>
-            <TextLink href="/produtos">{t.home.featuredMoreLink}</TextLink>
+            <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
           </div>
         </Reveal>
         <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -154,7 +158,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             ))}
           </div>
           <div className="mt-10">
-            <LinkButton href="/produtos" variant="secondary">
+            <LinkButton href={`/produtos${query}`} variant="secondary">
               {t.home.productsButton}
             </LinkButton>
           </div>
@@ -192,7 +196,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <Reveal className="md:col-span-7">
             {editorial.sobre ? (
               <div className="frame-brand relative aspect-[5/4] bg-paper">
-                <Image src={editorial.sobre.path} alt={editorial.sobre.alt} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+                <Image src={editorial.sobre.path} alt={getImageAlt(editorial.sobre.alt, locale)} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
               </div>
             ) : null}
           </Reveal>
@@ -203,7 +207,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 {t.home.storyTitle}
               </h2>
               <p className="mt-6 text-body-lg measure">{t.home.storyText}</p>
-              <TextLink href="/sobre" className="mt-6 inline-block">
+              <TextLink href={`/sobre${query}`} className="mt-6 inline-block">
                 {t.home.storyLink}
               </TextLink>
             </div>
@@ -221,7 +225,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 <H2 className="mt-4">{t.home.ingredientsTitle}</H2>
                 <p className="mt-4 text-body-lg measure">{t.home.ingredientsSubtitle}</p>
               </div>
-              <TextLink href="/ingredientes">{t.home.ingredientsLink}</TextLink>
+              <TextLink href={`/ingredientes${query}`}>{t.home.ingredientsLink}</TextLink>
             </div>
           </Reveal>
           <IngredientTeaserGrid items={ingredientTeaser} showMoreLabel={t.home.showMore} showLessLabel={t.home.showLess} locale={locale} />

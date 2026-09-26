@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { t } from "@/lib/i18n";
+import { getDictionary } from "@/lib/i18n";
 import { getOrderBySession } from "@/lib/orders";
 import { formatPrice } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
@@ -12,8 +12,13 @@ import { ClearCartOnMount } from "@/components/cart/clear-cart";
 export const metadata: Metadata = { title: "encomenda recebida", robots: { index: false } };
 export const dynamic = "force-dynamic";
 
-export default async function Confirmation({ searchParams }: { searchParams: Promise<{ session_id?: string }> }) {
-  const { session_id } = await searchParams;
+export default async function Confirmation({ searchParams }: { searchParams: Promise<{ session_id?: string; idioma?: string }> }) {
+  const { session_id, idioma } = await searchParams;
+  // Stripe sends the visitor back here, so the language has to ride along in
+  // the return URL — otherwise the last page of the purchase is in Portuguese.
+  const locale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const t = getDictionary(locale);
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
   const order = session_id ? await getOrderBySession(session_id) : null;
 
   if (!order) {
@@ -24,7 +29,7 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
           <h1 className="mt-6 text-h2 text-forest lowercase">{t.order.processing}</h1>
           <p className="mt-4 text-ink/80">{t.order.notFound}</p>
           <meta httpEquiv="refresh" content="4" />
-          <Link href="/" className={buttonClass("secondary", "md", "mt-8")}>
+          <Link href={`/${query}`} className={buttonClass("secondary", "md", "mt-8")}>
             {t.order.backHome}
           </Link>
         </div>

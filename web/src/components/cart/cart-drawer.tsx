@@ -4,7 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { t } from "@/lib/i18n";
+import { useLocale } from "@/lib/use-locale";
+import { getImageAlt } from "@/content/image-alt-locales";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/types";
 import { Button, LinkButton } from "@/components/ui/button";
@@ -12,6 +13,7 @@ import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
 
 export function CartDrawer() {
+  const { t, query, locale } = useLocale();
   const cart = useCart();
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -36,7 +38,7 @@ export function CartDrawer() {
     setBusy(true);
     setError(null);
     try {
-      window.location.assign("/encomenda/checkout");
+      window.location.assign(`/encomenda/checkout${query}`);
     } catch {
       setError(t.cart.errorGeneric);
     } finally {
@@ -90,7 +92,7 @@ export function CartDrawer() {
                   <Crescent size={36} tone="var(--lavender)" />
                   <p className="font-display text-[1.5rem] leading-tight text-forest lowercase">{t.cart.empty}</p>
                   <p className="text-[0.95rem] text-ink/80">{t.cart.emptyHint}</p>
-                  <LinkButton href="/produtos" onClick={cart.close} variant="secondary">
+                  <LinkButton href={`/produtos${query}`} onClick={cart.close} variant="secondary">
                     {t.cart.browse}
                   </LinkButton>
                 </div>
@@ -99,9 +101,9 @@ export function CartDrawer() {
                   <ul className="flex-1 space-y-5 overflow-y-auto px-6 py-6">
                     {cart.lines.map((l) => (
                       <li key={l.sku} className="flex gap-4">
-                        <Link href={`/produtos/${l.productSlug}`} onClick={cart.close} className="relative h-24 w-20 shrink-0 overflow-hidden rounded-2xl bg-ivory">
+                        <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="relative h-24 w-20 shrink-0 overflow-hidden rounded-2xl bg-ivory">
                           {l.image ? (
-                            <Image src={l.image.path} alt={l.image.alt} fill sizes="80px" className="object-cover" />
+                            <Image src={l.image.path} alt={getImageAlt(l.image.alt, locale)} fill sizes="80px" className="object-cover" />
                           ) : (
                             <span className="placeholder-frame flex h-full w-full items-center justify-center">
                               <Crescent size={18} tone="var(--violet)" />
@@ -111,7 +113,7 @@ export function CartDrawer() {
                         <div className="flex flex-1 flex-col">
                           <div className="flex items-start justify-between gap-3">
                             <div>
-                              <Link href={`/produtos/${l.productSlug}`} onClick={cart.close} className="font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
+                              <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
                                 {l.productName}
                               </Link>
                               {l.variantLabel ? <p className="text-[0.85rem] text-ink/70">{l.variantLabel}</p> : null}

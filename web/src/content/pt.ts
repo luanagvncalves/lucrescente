@@ -117,6 +117,10 @@ export const pt = {
     noIngredientsListed:
       "a lista de ingredientes deste produto ainda não está publicada. fala connosco para saber mais.", // ui
     noCopy: "a história deste produto ainda está a ser escrita cá em casa.", // ui
+    noPhoto: "ainda sem fotografia", // ui
+    galleryPrevious: "imagem anterior", // ui
+    galleryNext: "próxima imagem", // ui
+    galleryOf: (name: string) => `fotografias de ${name}`, // ui
     price: "preço", // ui
     onRequest: "por encomenda",
     talkToUs: "fala connosco →",
@@ -261,6 +265,99 @@ export const pt = {
         text: "sempre que possível, escolhemos ingredientes biológicos — e assinalamo-los com * na descrição dos produtos, para que tenhas mais e melhor informação sobre o que estás a usar.",
       },
     ],
+  },
+  /**
+   * Every answer here restates something the site already says — the product
+   * copy, the care chapters, the hair-type notes, the allergen notes, the
+   * shipping tiers in src/config/shipping.ts. Nothing about returns, about how
+   * long a bar lasts, or about which payment methods are live: those are facts
+   * only the brand has, and a confident guess would be worse than no answer.
+   */
+  faq: {
+    label: "perguntas frequentes",
+    title: "o que nos perguntam mais",
+    intro:
+      "as dúvidas que chegam mais vezes por mensagem, reunidas aqui. se a tua não estiver, escreve-nos — respondemos sempre.",
+    groups: [
+      {
+        title: "os produtos",
+        items: [
+          {
+            q: "qual dos champôs sólidos é para mim?",
+            a: "temos quatro: para cabelos oleosos, para cabelos secos, para cabelos normais e um neutro/para crianças. o de cabelos secos é o mais procurado por quem tem couro cabeludo sensível, e o neutro é o que aconselhamos a peles e couros cabeludos ultrassensíveis, por não levar óleos na fórmula. se tiveres dúvidas, diz-nos como é o teu cabelo e ajudamos a escolher.",
+          },
+          {
+            q: "posso usar um champô sólido se pinto ou aliso o cabelo?",
+            a: "sim, todos os nossos champôs sólidos podem ser usados em cabelo pintado e em cabelo com alisamento. em cabelo descolorado não os aconselhamos, porque não têm efeito anti-amarelamento.",
+          },
+          {
+            q: "o champô sólido também serve como sabonete?",
+            a: "serve. como não têm químicos agressivos, os nossos champôs sólidos podem ser usados no corpo — o de cabelos secos, em particular, tem sido usado por quem tem pele atópica.",
+          },
+          {
+            q: "como guardo os produtos sólidos?",
+            a: "num sítio seco entre utilizações. os produtos sólidos não levam água na fórmula, e mantê-los fora da água quando não estão a ser usados é o que mais os faz durar.",
+          },
+          {
+            q: "os vossos desodorizantes são antitranspirantes?",
+            a: "não. não levam alumínio nem álcool, e não bloqueiam a transpiração nem obstroem os poros — controlam as bactérias e os maus cheiros de forma suave, respeitando o funcionamento natural da pele.",
+          },
+          {
+            q: "tenho pele sensível. há alguma coisa a que deva estar atento?",
+            a: "vários produtos levam óleos essenciais, que podem causar irritação ou reação alérgica em peles mais sensíveis; os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita a zona das axilas, sobretudo depois de depilação recente. assinalamos isto na ficha de cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa pequena área da pele — e fala connosco, que podemos adaptar a fórmula.",
+          },
+          {
+            q: "o que quer dizer o asterisco na lista de ingredientes?",
+            a: "que esse ingrediente é biológico. sempre que possível escolhemos ingredientes biológicos e assinalamo-los com * na descrição, para saberes melhor o que estás a usar.",
+          },
+        ],
+      },
+      {
+        title: "encomendas e envios",
+        items: [
+          {
+            q: "fazem envios para fora de Portugal?",
+            a: "fazemos envios nacionais e internacionais. o custo é calculado no final da compra, conforme o destino: 4,50 € para Portugal, 12 € para a Europa e 22 € para o resto do mundo.",
+          },
+          {
+            q: "o produto que quero está esgotado. posso encomendar na mesma?",
+            a: "podes. fazemos tudo à mão e em pouca quantidade de cada vez, e alguns produtos — os champôs, os amaciadores e os sabonetes — precisam de tempo de repouso e maturação antes de seguirem. se esgotar, aceitamos a encomenda e avisamos-te assim que estiver pronta. também preparamos quantidades maiores sempre que precisares.",
+          },
+          {
+            q: "posso pedir um produto feito à minha medida?",
+            a: "sim. podemos adaptar uma fórmula ao que precisas — mais suave, mais forte, ou com outro aroma. fala connosco antes de encomendar.",
+          },
+        ],
+      },
+      {
+        title: "embalagens e sustentabilidade",
+        items: [
+          {
+            q: "posso devolver a embalagem?",
+            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga — de um desodorizante, de uma máscara capilar, de uma vela — e reutilizamo-la no teu próximo produto, com um desconto de reutilização.",
+          },
+          {
+            q: "podem fazer as velas nos meus próprios recipientes?",
+            a: "podemos. se preferires, fazemos as tuas velas nos teus frascos, canecas ou taças — basta entregares-nos os recipientes.",
+          },
+          {
+            q: "porque é que os produtos são sólidos?",
+            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem. no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+          },
+        ],
+      },
+      {
+        title: "encontrar-nos",
+        items: [
+          {
+            q: "onde vos posso encontrar pessoalmente?",
+            a: "estamos em feiras e mercados ao longo do ano — a página de feiras e mercados tem as datas mais próximas.",
+          },
+        ],
+      },
+    ],
+    stillAsking: "ficaste com uma dúvida que não está aqui?",
+    contactLink: "fala connosco →",
   },
   cart: {
     title: "o teu carrinho", // ui

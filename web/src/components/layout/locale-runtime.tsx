@@ -1,63 +1,31 @@
 "use client";
 
 import { useEffect } from "react";
-import { en } from "@/content/en";
-import { fr } from "@/content/fr";
-import { pt } from "@/content/pt";
 import type { ProductLocale } from "@/content/product-locales";
 
-// Product names are rendered server-side from @/content/product-locales — patching them
-// here as well raced React's hydration and made it discard the tree.
+const TAGS: Record<ProductLocale, string> = { pt: "pt-PT", en: "en-GB", fr: "fr-FR" };
 
-function collectStrings(value: unknown, output: Map<string, string>) {
-  if (typeof value === "string") {
-    if (value.trim()) output.set(value.trim(), value);
-    return;
-  }
-  if (Array.isArray(value)) {
-    value.forEach((item) => collectStrings(item, output));
-    return;
-  }
-  if (value && typeof value === "object") Object.values(value).forEach((item) => collectStrings(item, output));
-}
-
-function translations(locale: ProductLocale) {
-  const source = new Map<string, string>();
-  const target = new Map<string, string>();
-  collectStrings(pt, source);
-  collectStrings(locale === "en" ? en : fr, target);
-  const pairs = new Map<string, string>();
-  source.forEach((portuguese) => {
-    const translated = target.get(portuguese);
-    if (translated && translated !== portuguese) pairs.set(portuguese, translated);
-  });
-  return pairs;
-}
-
+/**
+ * Sets `<html lang>` to the language actually being shown. The root layout
+ * hardcodes `pt-PT` because a layout is never given the query string, and a
+ * screen reader trusts that attribute to pick its voice — an English page
+ * announced as Portuguese is read with Portuguese pronunciation.
+ *
+ * This used to do much more: it walked every text node in the document and
+ * swapped any string matching the Portuguese dictionary for its translation,
+ * with a MutationObserver re-running it forever. That was covering components
+ * that read the hardcoded Portuguese dictionary — the cart, the checkout, the
+ * 404 and the care page — which now read the visitor's language on the server
+ * instead. Translating in the DOM meant a visible flash of Portuguese before
+ * the JavaScript ran, a permanent observer over the whole page, and the risk of
+ * rewriting any text that merely happened to match a dictionary string, such as
+ * a product name or a line in a customer's testimonial.
+ */
 export function LocaleRuntime() {
   useEffect(() => {
     const selected = new URLSearchParams(window.location.search).get("idioma");
     const locale: ProductLocale = selected === "en" || selected === "fr" ? selected : "pt";
-    document.documentElement.lang = locale === "pt" ? "pt-PT" : locale === "en" ? "en-GB" : "fr-FR";
-    if (locale === "pt") return;
-
-    const pairs = translations(locale);
-    const translate = () => {
-      const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-      const nodes: Text[] = [];
-      let node: Node | null;
-      while ((node = walker.nextNode())) nodes.push(node as Text);
-      nodes.forEach((textNode) => {
-        const value = textNode.nodeValue ?? "";
-        const translated = pairs.get(value.trim());
-        if (translated) textNode.nodeValue = value.replace(value.trim(), translated);
-      });
-    };
-
-    translate();
-    const observer = new MutationObserver(translate);
-    observer.observe(document.body, { childList: true, subtree: true });
-    return () => observer.disconnect();
+    document.documentElement.lang = TAGS[locale];
   }, []);
 
   return null;

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { t } from "@/lib/i18n";
+import { Suspense, useState } from "react";
+import { useLocale } from "@/lib/use-locale";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -11,18 +11,21 @@ import { PaymentMethodSelector } from "@/components/checkout/payment-method-sele
 
 type PaymentMethod = "card" | "mbway" | "apple";
 
+/** `useLocale` reads the query string, which Next requires a boundary for. */
 export default function CheckoutPage() {
+  return (
+    <Suspense fallback={null}>
+      <Checkout />
+    </Suspense>
+  );
+}
+
+function Checkout() {
+  const { locale, t, query } = useLocale();
   const cart = useCart();
-  const isPT = t.locale.startsWith("pt");
   const [paymentMethod, setPaymentMethod] = useState<PaymentMethod>("card");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (cart.lines.length === 0) {
-      return;
-    }
-  }, []);
 
   async function handleCheckout() {
     setBusy(true);
@@ -34,6 +37,8 @@ export default function CheckoutPage() {
         body: JSON.stringify({
           items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity })),
           paymentMethod,
+          // so Stripe's own page, and the return trip, keep the visitor's language
+          locale,
         }),
       });
       const data = (await res.json()) as
@@ -63,7 +68,7 @@ export default function CheckoutPage() {
           <Crescent size={36} tone="var(--lavender)" className="mx-auto" />
           <h1 className="mt-6 text-h2 text-forest lowercase">{t.cart.empty}</h1>
           <p className="mt-4 text-ink/80">{t.cart.emptyHint}</p>
-          <Link href="/produtos" className="mt-8 inline-block rounded-full bg-forest px-8 py-3 font-ui text-[0.95rem] font-medium text-paper transition hover:bg-forest/90">
+          <Link href={`/produtos${query}`} className="mt-8 inline-block rounded-full bg-forest px-8 py-3 font-ui text-[0.95rem] font-medium text-paper transition hover:bg-forest/90">
             {t.cart.browse}
           </Link>
         </div>
@@ -75,7 +80,7 @@ export default function CheckoutPage() {
     <div className="container-brand section-gap">
       <div className="mx-auto max-w-4xl">
         <div className="mb-8">
-          <Link href="/" className="inline-flex items-center gap-2 text-moss hover:text-forest">
+          <Link href={`/${query}`} className="inline-flex items-center gap-2 text-moss hover:text-forest">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
               <path d="M15 19l-7-7 7-7" />
             </svg>

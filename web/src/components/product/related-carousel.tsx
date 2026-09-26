@@ -77,6 +77,7 @@ export function RelatedCarousel({ items, locale = "pt" }: { items: Product[]; lo
                   rounded={false}
                   sizes="250px"
                   fallbackLabel={copy.name}
+                  locale={locale}
                   className="transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.03]"
                 />
                 <div className="flex flex-1 flex-col gap-1 p-4">

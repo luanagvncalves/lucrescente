@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getDictionary, t } from "@/lib/i18n";
 import type { ProductLocale } from "@/content/product-locales";
+import { getImageAlt } from "@/content/image-alt-locales";
 import { editorial } from "@/data/editorial";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -31,7 +32,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         <div className="md:col-span-7">
           {photo ? (
             <div className="frame-brand relative aspect-[4/5] bg-paper md:aspect-[5/6]">
-              <Image src={photo.path} alt={photo.alt} fill priority sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+              <Image src={photo.path} alt={getImageAlt(photo.alt, locale)} fill priority sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
             </div>
           ) : null}
         </div>
