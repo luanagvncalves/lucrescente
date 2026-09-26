@@ -43,7 +43,7 @@ export function AnchorButton({ variant = "primary", size = "md", className = "",
 export function TextLink({ className = "", ...props }: ComponentProps<typeof Link>) {
   return (
     <Link
-      className={`font-ui font-medium lowercase text-moss underline-offset-4 hover:underline ${className}`}
+      className={`inline-flex min-h-11 items-center font-ui font-medium lowercase text-moss underline-offset-4 hover:underline ${className}`}
       {...props}
     />
   );

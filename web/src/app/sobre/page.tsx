@@ -44,18 +44,18 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             <p className="mt-4 text-body-lg measure">{d.about.lucieText}</p>
             <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
               <p>
-                <a href={`mailto:${d.brand.lucieEmail}`} className="hover:underline underline-offset-4">
+                <a href={`mailto:${d.brand.lucieEmail}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
                   {d.brand.lucieEmail}
                 </a>
               </p>
               <p>
-                <a href={d.brand.luciePhonePTTel} className="hover:underline underline-offset-4">
+                <a href={d.brand.luciePhonePTTel} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
                   {d.brand.luciePhonePTDisplay}
                 </a>
                 <span className="text-ink/60"> (PT)</span>
               </p>
               <p>
-                <a href={d.brand.luciePhoneCHTel} className="hover:underline underline-offset-4">
+                <a href={d.brand.luciePhoneCHTel} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
                   {d.brand.luciePhoneCHDisplay}
                 </a>
                 <span className="text-ink/60"> (CH)</span>
@@ -69,12 +69,12 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             <p className="mt-4 text-body-lg measure">{d.about.luanaText}</p>
             <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
               <p>
-                <a href={`mailto:${d.brand.email}`} className="hover:underline underline-offset-4">
+                <a href={`mailto:${d.brand.email}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
                   {d.brand.email}
                 </a>
               </p>
               <p>
-                <a href={d.brand.phoneTel} className="hover:underline underline-offset-4">
+                <a href={d.brand.phoneTel} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
                   {d.brand.phoneDisplay}
                 </a>
               </p>

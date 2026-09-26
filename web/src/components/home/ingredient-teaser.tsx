@@ -62,7 +62,7 @@ export function IngredientTeaserGrid({
           <button
             type="button"
             onClick={() => setExpanded((v) => !v)}
-            className="label-brand text-moss underline underline-offset-4 hover:text-forest"
+            className="inline-flex min-h-11 items-center label-brand text-moss underline underline-offset-4 hover:text-forest"
           >
             {expanded ? showLessLabel : `${showMoreLabel} →`}
           </button>

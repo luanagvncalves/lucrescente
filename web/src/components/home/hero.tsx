@@ -24,6 +24,13 @@ export function HomeHero({
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
 
+  // Someone who has asked their system to reduce motion gets the whole
+  // sentence at once instead of watching it appear letter by letter.
+  useEffect(() => {
+    const m = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (m.matches) { setDisplayedText(title); setIsTyping(false); }
+  }, [title]);
+
   useEffect(() => {
     if (!isTyping) return;
 
@@ -62,24 +69,45 @@ export function HomeHero({
             priority
             sizes="100vw"
             className="h-full w-full object-cover transition-opacity duration-300 ease-out"
-            style={{ opacity: fade, transform: `scale(${scale})`, filter: "saturate(0.9) brightness(0.75)" }}
+            style={{ opacity: fade, transform: `scale(${scale})`, filter: "saturate(1) brightness(0.92)" }}
           />
         </div>
       ) : null}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-violet/50 via-violet/40 to-violet/30" />
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ivory/5" />
+      {/* the violet wash carries the mood */}
+      <div className="absolute inset-0 bg-gradient-to-r from-violet/25 via-violet/15 to-transparent" />
+      {/*
+        …and this makes the words readable. The headline and buttons sit at the
+        bottom, over whatever the photograph happens to show there — pale soap
+        and a white jar, as it turns out. Measured over the real photo, the
+        worst patch behind the letters gave 1.83:1 against ivory, where large
+        text needs 3.0:1. There used to be an `ivory/5` gradient here that got
+        *lighter* towards the bottom, which pushed it the wrong way.
+        Dark at the bottom, clear at the top: the photo keeps its air.
+      */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,38,30,0.88)_0%,rgba(28,38,30,0.78)_34%,rgba(28,38,30,0.58)_58%,rgba(28,38,30,0.18)_80%,transparent_96%)]" />
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
         <div className="max-w-3xl text-ivory">
           <motion.h1
-            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory"
+            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory [text-shadow:0_2px_12px_rgba(34,57,37,0.55)]"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           >
-            {displayedText}
-            {isTyping && <span className="animate-pulse">|</span>}
+            {/*
+              The whole sentence lives here from the first render. It used to be
+              only the letters typed so far, which meant a screen reader
+              announced a half-finished headline — and anything reading the page
+              before the animation ended, a search engine included, saw the
+              brand's opening line cut off mid-word.
+              The visible half is hidden from assistive tech so it is not read twice.
+            */}
+            <span className="sr-only">{title}</span>
+            <span aria-hidden="true">
+              {displayedText}
+              {isTyping && <span className="animate-pulse">|</span>}
+            </span>
           </motion.h1>
 
           <motion.div

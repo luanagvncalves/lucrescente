@@ -87,7 +87,7 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
         <div className="mt-6">
           <ContactLinks locale={locale} />
         </div>
-        <TextLink href={`/cuidados${query}`} className="mt-8 inline-block">
+        <TextLink href={`/cuidados${query}`} className="mt-8">
           {t.nav.care}
         </TextLink>
       </section>

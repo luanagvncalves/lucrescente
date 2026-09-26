@@ -105,13 +105,13 @@ export default async function ProductPage({ params, searchParams }: Params) {
     <article className="container-brand pt-8 md:pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav aria-label="caminho" className="text-[0.85rem] text-ink/70">
-        <Link href={`/produtos${query}`} className="hover:underline underline-offset-4">
+        <Link href={`/produtos${query}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
           {t.nav.products}
         </Link>
         <span className="mx-2">/</span>
         <Link
           href={`/produtos?categoria=${product.category.slug}${locale === "pt" ? "" : `&idioma=${locale}`}`}
-          className="hover:underline underline-offset-4"
+          className="inline-flex min-h-11 items-center hover:underline underline-offset-4"
         >
           {categoryName}
         </Link>

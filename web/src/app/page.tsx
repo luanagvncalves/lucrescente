@@ -207,7 +207,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 {t.home.storyTitle}
               </h2>
               <p className="mt-6 text-body-lg measure">{t.home.storyText}</p>
-              <TextLink href={`/sobre${query}`} className="mt-6 inline-block">
+              <TextLink href={`/sobre${query}`} className="mt-6">
                 {t.home.storyLink}
               </TextLink>
             </div>

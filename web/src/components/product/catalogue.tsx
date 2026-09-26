@@ -92,13 +92,24 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
             <p>{t.products.emptyCategory}</p>
           </div>
         ) : (
-          <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-            {visible.map((p, i) => (
-              <li key={p.slug}>
-                <ProductCard product={p} priority={i < 4} locale={locale} showStory={false} />
-              </li>
-            ))}
-          </ul>
+          <>
+            {/*
+              Sighted visitors read the selected filter pill and know what this
+              grid is. Someone moving through the page by heading jumped from
+              "os nossos produtos" straight into product names, with nothing in
+              between to say which set they were in — so the filter, which is
+              the whole point of the page, was invisible to them. Off-screen, so
+              nothing changes visually.
+            */}
+            <h2 className="sr-only">{options.find((o) => o.key === (active ?? ""))?.label ?? t.products.allCategories}</h2>
+            <ul className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+              {visible.map((p, i) => (
+                <li key={p.slug}>
+                  <ProductCard product={p} priority={i < 4} locale={locale} showStory={false} />
+                </li>
+              ))}
+            </ul>
+          </>
         )}
       </div>
 
