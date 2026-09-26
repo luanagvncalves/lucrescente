@@ -206,7 +206,6 @@ export const pt = {
     title: "duas formas de olhar para o cuidado",
     intro:
       "a lucrescente nasce do encontro entre o conhecimento científico das plantas e uma forma sensível e criativa de olhar para o quotidiano.",
-    promise: "",
     values: [
       "empresa familiar",
       "ecológica e sustentável",

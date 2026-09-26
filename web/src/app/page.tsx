@@ -167,7 +167,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       </section>
 
 
-      {/* values: full-width solid colour field with the family's promise and a lunar mark */}
+      {/* values: full-width solid colour field with a lunar mark */}
       <section className="bg-forest text-ivory on-dark" aria-labelledby="valores">
         <div className="container-brand section-gap">
           <Reveal>
@@ -176,7 +176,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 <h2 id="valores" className="font-display text-h2 lowercase text-ivory">
                   {t.home.valuesSubtitle}
                 </h2>
-                <p className="mt-6 text-body-lg text-ivory/85 measure">{t.about.promise}</p>
               </div>
               <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
                 {t.about.values.map((v) => (

@@ -75,17 +75,20 @@ export function HomeHero({
       ) : null}
 
       {/* the violet wash carries the mood */}
-      <div className="absolute inset-0 bg-gradient-to-r from-violet/25 via-violet/15 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-violet/50 via-violet/40 to-violet/30" />
       {/*
-        …and this makes the words readable. The headline and buttons sit at the
-        bottom, over whatever the photograph happens to show there — pale soap
-        and a white jar, as it turns out. Measured over the real photo, the
-        worst patch behind the letters gave 1.83:1 against ivory, where large
-        text needs 3.0:1. There used to be an `ivory/5` gradient here that got
-        *lighter* towards the bottom, which pushed it the wrong way.
-        Dark at the bottom, clear at the top: the photo keeps its air.
+        …and this keeps the words readable, in the same violet rather than a
+        colour of its own. The headline and buttons sit at the bottom, over
+        whatever the photograph happens to show there — pale soap and a white
+        jar, as it turns out — and the violet alone is too light to carry ivory
+        text over that: measured at the pixels the letters occupy, 7% of the
+        headline fell below the 3.0:1 that large text needs.
+
+        So the violet deepens towards the ink at the bottom, where the words
+        are, and returns to its own tone two thirds of the way up, where the
+        flowers are. Same hue throughout. Worst case is now 4.27:1.
       */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,38,30,0.88)_0%,rgba(28,38,30,0.78)_34%,rgba(28,38,30,0.58)_58%,rgba(28,38,30,0.18)_80%,transparent_96%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(74,61,92,0.92)_0%,rgba(74,61,92,0.86)_34%,rgba(74,61,92,0.66)_58%,rgba(140,121,168,0.34)_78%,transparent_96%)]" />
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
         <div className="max-w-3xl text-ivory">
