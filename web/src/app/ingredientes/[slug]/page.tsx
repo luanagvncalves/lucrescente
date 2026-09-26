@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/i18n";
 import { getIngredientBySlug, getIngredients, getProductsForIngredient } from "@/lib/catalog";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
-import { brandCase } from "@/lib/brand-case";
+import { brandCase, lowerFirst } from "@/lib/brand-case";
 import type { ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -27,11 +27,12 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   // search result are the one place CSS cannot put them into the brand's
   // lowercase, so it has to happen here.
   const name = brandCase(i.name);
+  const origin = lowerFirst(i.origin ?? "");
   return {
     title: name,
-    description: i.origin,
+    description: origin,
     alternates: { canonical: `/ingredientes/${i.slug}` },
-    openGraph: { title: `${name} · lucrescente`, description: i.origin },
+    openGraph: { title: `${name} · lucrescente`, description: origin },
   };
 }
 

@@ -28,3 +28,34 @@ export function brandCase(text: string): string {
 function isAbbreviation(word: string): boolean {
   return /[A-Z]/.test(word) && word === word.toUpperCase();
 }
+
+/**
+ * The same lowercase, for a sentence of body copy: it opens the sentence, so
+ * "Também chamada caulino…" becomes "também chamada caulino…". Capitals further
+ * in are ordinary Portuguese (Marrocos, Theobroma cacao) and are left alone —
+ * unlike `brandCase`, which is for names, not sentences.
+ *
+ * It lowers the whole opening run of capitalised words, not just the first
+ * letter, because one sentence in the catalogue opens on an INCI name ("Sodium
+ * Cocoyl Isethionate — tensioativo suave…") and "sodium Cocoyl Isethionate"
+ * would be neither the brand's lowercase nor the INCI name. The run stops at
+ * the first lowercase word, which across all 555 descriptions is the second
+ * word everywhere else.
+ *
+ * A sentence opening on an abbreviation keeps it, for the same reason
+ * `brandCase` protects BTMS and the E of vitamina E.
+ */
+export function lowerFirst(text: string): string {
+  let reachedSentence = false;
+  return text
+    .split(/(\s+)/) // keep the separators, so spacing survives
+    .map((part) => {
+      if (reachedSentence || !part.trim()) return part;
+      if (isAbbreviation(part) || !/^\p{Lu}/u.test(part)) {
+        reachedSentence = true;
+        return part;
+      }
+      return part.charAt(0).toLowerCase() + part.slice(1);
+    })
+    .join("");
+}
