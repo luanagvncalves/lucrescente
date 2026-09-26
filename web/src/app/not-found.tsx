@@ -1,22 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense } from "react";
-import { useLocale } from "@/lib/use-locale";
+import { useLocaleAfterMount } from "@/lib/use-locale";
 import { buttonClass } from "@/components/ui/button";
 import { Crescent } from "@/components/ui/motifs";
 
-/** `useLocale` reads the query string, which Next requires a boundary for. */
+/** Prerendered as /404, so the language has to come from the browser — see useLocaleAfterMount. */
 export default function NotFound() {
-  return (
-    <Suspense fallback={null}>
-      <NotFoundBody />
-    </Suspense>
-  );
-}
-
-function NotFoundBody() {
-  const { t, query } = useLocale();
+  const { t, query } = useLocaleAfterMount();
   return (
     <div className="container-brand section-gap">
       <div className="mx-auto max-w-xl text-center">

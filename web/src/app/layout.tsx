@@ -55,7 +55,15 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Suspense fallback={null}>
             <Footer />
           </Suspense>
-          <CartDrawer />
+          {/*
+            The drawer reads the language from the query string, which Next
+            requires a boundary for. Without one the whole build fails while
+            prerendering /404 — and the message names that page, not this
+            component, which is a long way from where the problem is.
+          */}
+          <Suspense fallback={null}>
+            <CartDrawer />
+          </Suspense>
           <Toaster />
           <LocaleRuntime />
         </CartProvider>

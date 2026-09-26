@@ -1,22 +1,13 @@
 "use client";
 
-import { Suspense } from "react";
-import { useLocale } from "@/lib/use-locale";
+import { useLocaleAfterMount } from "@/lib/use-locale";
 import { Button } from "@/components/ui/button";
 import { Crescent } from "@/components/ui/motifs";
 import { ContactLinks } from "@/components/contact/contact-links";
 
-/** `useLocale` reads the query string, which Next requires a boundary for. */
+/** Prerendered as /500, so the language has to come from the browser — see useLocaleAfterMount. */
 export default function ErrorPage({ reset }: { error: Error & { digest?: string }; reset: () => void }) {
-  return (
-    <Suspense fallback={null}>
-      <ErrorBody reset={reset} />
-    </Suspense>
-  );
-}
-
-function ErrorBody({ reset }: { reset: () => void }) {
-  const { t } = useLocale();
+  const { t, locale } = useLocaleAfterMount();
   return (
     <div className="container-brand section-gap">
       <div className="mx-auto max-w-xl text-center">
@@ -27,7 +18,7 @@ function ErrorBody({ reset }: { reset: () => void }) {
           {t.errors.retry}
         </Button>
         <div className="mt-10 flex justify-center">
-          <ContactLinks />
+          <ContactLinks locale={locale} />
         </div>
       </div>
     </div>
