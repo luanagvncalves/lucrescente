@@ -69,28 +69,20 @@ export function HomeHero({
             priority
             sizes="100vw"
             className="h-full w-full object-cover transition-opacity duration-300 ease-out"
-            style={{ opacity: fade, transform: `scale(${scale})`, filter: "saturate(1) brightness(0.92)" }}
+            style={{ opacity: fade, transform: `scale(${scale})`, filter: "saturate(0.9) brightness(0.75)" }}
           />
         </div>
       ) : null}
 
-      {/*
-        One even wash of the brand's light violet over the whole photograph, as
-        the header was originally — no gradient, nothing heavier at the bottom.
-
-        The words had to change colour for it. #beb2dd is light: cream letters
-        on it measure 1.74:1, where large text needs 3.0:1, so the headline
-        would have been unreadable however thick the wash. Dark green on the
-        same violet measures 6.31:1, which is why the heading and the outlined
-        button are forest now rather than ivory.
-      */}
-      <div className="absolute inset-0 bg-lavender/[0.72]" />
+      {/* the light violet wash and the soft lift at the foot, as the header has always been */}
+      <div className="absolute inset-0 bg-gradient-to-r from-violet/50 via-violet/40 to-violet/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ivory/5" />
 
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
-        <div className="max-w-3xl text-forest">
+        <div className="max-w-3xl text-ivory">
           <motion.h1
-            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-forest"
+            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -118,13 +110,13 @@ export function HomeHero({
           >
             <Link
               href={`/produtos${query}`}
-              className="inline-flex h-12 items-center rounded-full bg-forest px-6 font-ui text-[0.95rem] font-medium lowercase text-ivory transition-colors hover:bg-forest/90"
+              className="inline-flex h-12 items-center rounded-full bg-ivory px-6 font-ui text-[0.95rem] font-medium lowercase text-forest transition-colors hover:bg-white"
             >
               {primaryLabel}
             </Link>
             <Link
               href={`/ingredientes${query}`}
-              className="inline-flex h-12 items-center rounded-full border border-forest/50 px-6 font-ui text-[0.95rem] font-medium lowercase text-forest transition-colors hover:border-forest hover:bg-forest/10"
+              className="inline-flex h-12 items-center rounded-full border border-ivory/60 px-6 font-ui text-[0.95rem] font-medium lowercase text-ivory transition-colors hover:border-ivory hover:bg-ivory/10"
             >
               {secondaryLabel}
             </Link>
