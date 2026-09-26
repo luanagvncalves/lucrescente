@@ -165,10 +165,10 @@ export const pt = {
     reusableText:
       "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!",
     paperWrappedText:
-      "embrulhamos todos os produtos em papel reutilizado, porque prioritizamos a sustentabilidade e a produção consciente face ao consumo desnecessário.",
+      "embrulhamos todos os produtos em papel reutilizado, porque priorizamos a sustentabilidade e a produção consciente face ao consumo desnecessário.",
     skinSafeLabel: "seguros para a pele",
     skinSafeText:
-      "os nossos champôs sólidos também podem ser usados no corpo, sem preocupações: pelos ingredientes naturais e por não terem químicos, podes disfrutar de um champô multifuncional todos os dias!",
+      "os nossos champôs sólidos também podem ser usados no corpo, sem preocupações: pelos ingredientes naturais e por não terem químicos, podes desfrutar de um champô multifuncional todos os dias!",
     // per-product contact form
     contactTitle: "fala connosco sobre este produto",
     contactSuccess: "✓ mensagem enviada com sucesso! agradecemos o contacto.",
@@ -391,16 +391,16 @@ export const pt = {
     title: "confirmar encomenda", // ui
     summary: "resumo da encomenda", // ui
     shippingTo: "envio para", // ui
-    shippingMethod: "método de envio", // ui
+     // ui
     paymentMethod: "método de pagamento", // ui
-    selectPayment: "escolhe como preferires pagar", // ui
+     // ui
     paymentNote: "podes pagar com cartão, MB WAY ou apple pay — escolhes no passo seguinte, na página segura do Stripe.", // ui
-    creditCard: "cartão de crédito",
-    mbway: "mbway",
-    applePay: "apple pay",
-    cardDesc: "mastercard, visa, american express",
-    mbwayDesc: "pagamento imediato através da aplicação do banco",
-    appleDesc: "rápido e seguro com apple pay",
+    
+    
+    
+    
+    
+    
     continuePayment: "continuar para o pagamento", // ui
     subtotal: "subtotal", // ui
     shipping: "portes", // ui

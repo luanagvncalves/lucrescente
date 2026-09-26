@@ -46,13 +46,12 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     router.replace(next.size ? `${pathname}?${next}` : pathname, { scroll: false });
   }
 
-  const sorted = useMemo(
-    () =>
-      [...categories].sort((a, b) =>
-        getCategoryName(a.slug, locale, a.name).localeCompare(getCategoryName(b.slug, locale, b.name), locale),
-      ),
-    [categories, locale],
-  );
+  // `sort_order` is the brand's own order, alphabetical by the Portuguese name.
+  // Sorting by the *translated* name instead put the filters — and therefore the
+  // products under them — in a different order in each language, so the English
+  // page was laid out differently from the Portuguese one for no reason a
+  // visitor could see.
+  const sorted = useMemo(() => [...categories].sort((a, b) => a.sort_order - b.sort_order), [categories]);
 
   // One flat grid: grouping by category left seven single-product rows mostly empty.
   // Products stay ordered by category so related items still sit together.

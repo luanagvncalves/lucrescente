@@ -44,8 +44,11 @@ export function IngredientIndex({ items, locale }: { items: IngredientListItem[]
     }
     return [...map.entries()]
       .map(([category, v]) => ({ category, slug: slugifyCat(category), label: v.label, count: v.count }))
-      .sort((a, b) => a.label.localeCompare(b.label, locale));
-  }, [items, locale]);
+      // by the Portuguese category name, not the translated label: sorting by
+      // the label reordered the filters in each language, which made the page
+      // look different in English and French for no reason a visitor could see
+      .sort((a, b) => a.category.localeCompare(b.category, "pt"));
+  }, [items]);
 
   const active = categories.find((c) => c.slug === activeSlug)?.category ?? null;
 
