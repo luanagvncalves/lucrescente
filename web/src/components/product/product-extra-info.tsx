@@ -44,9 +44,11 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
       { label: t.productInfo.notAntiperspirant, anchor: "desodorizantes-antitranspirantes" },
       { label: t.productInfo.aluminiumFree, anchor: "desodorizantes-antitranspirantes" },
       { label: t.productInfo.alcoholFree, anchor: "desodorizantes-antitranspirantes" },
-      { label: t.productInfo.customisable, anchor: "produto-personalizado" },
     );
   }
+  // every product can be adapted to what someone needs, not only the deodorants
+  claims.push({ label: t.productInfo.customisable, anchor: "produto-personalizado" });
+
   if (WATER_SAVING_CATEGORIES.includes(product.category.slug)) {
     claims.push({ label: t.productInfo.waterSavingLabel, anchor: "porque-solidos" });
   }
@@ -54,11 +56,9 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
     claims.push({ label: t.productInfo.reusableLabel, anchor: "devolver-embalagem" });
   }
   if (isSkinSafe(product.slug, product.category.slug)) {
-    // the shampoos have a question of their own, about doubling as a body wash
-    claims.push({
-      label: t.productInfo.skinSafeLabel,
-      anchor: product.category.slug === "champos" ? "champo-no-corpo" : "usar-na-pele",
-    });
+    // one answer for every product now: the shampoos' own question, about
+    // doubling as a body wash, was folded into it
+    claims.push({ label: t.productInfo.skinSafeLabel, anchor: "usar-na-pele" });
   }
 
   if (!claims.length) return null;

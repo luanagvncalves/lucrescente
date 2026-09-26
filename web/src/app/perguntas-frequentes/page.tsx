@@ -3,7 +3,6 @@ import { getDictionary, t as pt } from "@/lib/i18n";
 import type { ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { Crescent, Pause } from "@/components/ui/motifs";
-import { TextLink } from "@/components/ui/button";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { FaqOpenTarget } from "@/components/faq/faq-open-target";
 import { faqAnchorId } from "@/content/faq-anchors";
@@ -20,7 +19,6 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
   const { idioma } = await searchParams;
   const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
   const t = getDictionary(locale);
-  const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
   // Lets Google show these questions directly in the results, which is most of
   // the point of having the page at all.
@@ -63,9 +61,13 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
             <ul className="mt-8 space-y-3">
               {group.items.map((item, itemIndex) => (
                 <li key={item.q}>
-                  {/* the id is what a product page's extra-information box links to */}
+                  {/*
+                    The id is what a product page's extra-information box links
+                    to, and it comes from the Portuguese wording so that the
+                    same question has the same anchor in all three languages.
+                  */}
                   <details
-                    id={faqAnchorId(groupIndex, itemIndex)}
+                    id={faqAnchorId(pt.faq.groups[groupIndex].items[itemIndex].q)}
                     className="card-brand group scroll-mt-28 overflow-hidden px-6 py-1 [&_summary::-webkit-details-marker]:hidden"
                   >
                     <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[1.25rem] leading-snug text-forest lowercase">
@@ -94,9 +96,6 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
         <div className="mt-6">
           <ContactLinks locale={locale} />
         </div>
-        <TextLink href={`/cuidados${query}`} className="mt-8">
-          {t.nav.care}
-        </TextLink>
       </section>
     </article>
   );

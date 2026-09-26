@@ -32,7 +32,6 @@ export const pt = {
     about: "sobre nós",
     fairs: "feiras e mercados",
     feedback: "feedbacks",
-    care: "cuidados & sustentabilidade",
     cart: "carrinho", // ui
     openMenu: "abrir menu", // ui
     closeMenu: "fechar menu", // ui
@@ -225,55 +224,23 @@ export const pt = {
     close: "entre nós, a ciência encontra a expressão e cada produto ganha uma história própria.",
     backLink: "voltar à página inicial",
   },
-  care: {
-    label: "cuidados & sustentabilidade",
-    title: "porque cada escolha pequena conta",
-    intro:
-      "para além dos ingredientes, há uma forma de pensar por trás de cada produto lucrescente — mais natural, mais lenta e com menos desperdício. aqui explicamos porquê.",
-    chapters: [
-      {
-        slug: "poupamos-agua",
-        title: "poupamos água",
-        text: "os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpe. e como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.",
-      },
-      {
-        slug: "embalagens",
-        title: "embalagens e embrulhos reutilizados",
-        text: "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. os nossos embrulhos são cosidos à mão, com reutilização de tecidos — até o fio é feito de algodão e de outras fibras recicladas. mais reutilização, menos desperdício.",
-      },
-      {
-        slug: "velas",
-        title: "as nossas velas",
-        text: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
-      },
-      {
-        slug: "feito-a-mao",
-        title: "feito à mão, em pequenas quantidades",
-        text: "os produtos lucrescente são inteiramente fabricados a partir de ingredientes naturais, de forma artesanal, em pouca quantidade de cada vez — para garantir a qualidade das matérias-primas e o cuidado no fabrico. alguns produtos podem ser repostos facilmente a cada dia; outros, como os champôs, os amaciadores e os sabonetes, precisam de mais repouso e maturação. se algum destes produtos mais 'lentos' esgotar, aceitamos encomendas e fazemos envios nacionais e internacionais — e também podemos preparar quantidades maiores sempre que precisares.",
-      },
-      {
-        slug: "desodorizantes",
-        title: "os nossos desodorizantes",
-        text: "os nossos desodorizantes não são antitranspirantes e não têm alumínio nem álcool. é muito importante escolhermos um desodorizante saudável para a nossa pele — aplicado tão perto do corpo, não deve bloquear a transpiração nem obstruir os poros. preferimos que respeitem o funcionamento natural da pele, controlando as bactérias e os maus cheiros de forma suave.",
-      },
-      {
-        slug: "dicas",
-        title: "dicas de uso",
-        text: "os nossos champôs sólidos também podem ser usados no corpo, sem problema nenhum — pelos ingredientes naturais e sem químicos, alguns até ajudam a acalmar problemas de pele, como a pele atópica. a cera de soja das nossas velas é hidratante e pode ser usada diretamente na pele. e se fores viajar, os produtos de higiene sólidos não têm embalagens nem quantidades limitadas — muito mais práticos e sem preocupações com líquidos de cabine.",
-      },
-      {
-        slug: "biologicos",
-        title: "ingredientes biológicos",
-        text: "sempre que possível, escolhemos ingredientes biológicos — e assinalamo-los com * na descrição dos produtos, para que tenhas mais e melhor informação sobre o que estás a usar.",
-      },
-    ],
-  },
   /**
-   * Every answer here restates something the site already says — the product
-   * copy, the care chapters, the hair-type notes, the allergen notes, the
-   * shipping tiers in src/config/shipping.ts. Nothing about returns, about how
-   * long a bar lasts, or about which payment methods are live: those are facts
-   * only the brand has, and a confident guess would be worse than no answer.
+   * Most answers here restate something the site says elsewhere — the product
+   * copy, the hair-type notes, the allergen notes, the shipping tiers in
+   * src/config/shipping.ts. Nothing about how long a bar lasts or which payment
+   * methods are live: those are facts only the brand has, and a confident guess
+   * would be worse than no answer.
+   *
+   * Three answers are the last copy of what they say, since "cuidados &
+   * sustentabilidade" was folded in here and its page removed: the hand-sewn
+   * wraps under "posso devolver a embalagem?", the water that making plastic
+   * would have taken under "porque é que os produtos são sólidos?", and all of
+   * "de que são feitas as vossas velas?" bar the containers. Do not trim them
+   * as duplicates — nothing else on the site carries them.
+   *
+   * The questions the product pages link to are listed by their Portuguese
+   * wording in content/faq-anchors.ts. Rewording one there and not here breaks
+   * the link.
    */
   /**
    * The brand's own words, nothing added.
@@ -331,10 +298,6 @@ export const pt = {
             a: "sim, todos os nossos champôs sólidos podem ser usados em cabelo pintado e em cabelo com alisamento. em cabelo descolorado não os aconselhamos, porque não têm efeito anti-amarelamento.",
           },
           {
-            q: "o champô sólido também serve como sabonete?",
-            a: "serve. como não têm químicos agressivos, os nossos champôs sólidos podem ser usados no corpo — o de cabelos secos, em particular, tem sido usado por quem tem pele atópica.",
-          },
-          {
             q: "como guardo os produtos sólidos?",
             a: "num sítio seco entre utilizações. os produtos sólidos não levam água na fórmula, e mantê-los fora da água quando não estão a ser usados é o que mais os faz durar.",
           },
@@ -352,7 +315,7 @@ export const pt = {
           },
           {
             q: "que produtos posso usar diretamente na pele?",
-            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. escolhemos os ingredientes a pensar nisso, por isso o contacto direto não é preocupação — só a tua própria pele, como sempre: se for sensível, experimenta primeiro numa zona pequena.",
+            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, por não levarem químicos agressivos — o de cabelos secos tem sido usado por quem tem pele atópica. e a cera de soja das velas é hidratante, pelo que pode ir diretamente à pele. escolhemos os ingredientes a pensar nisto, mas a tua pele é tua: se for sensível, experimenta primeiro numa zona pequena.",
           },
         ],
       },
@@ -382,7 +345,7 @@ export const pt = {
         items: [
           {
             q: "posso devolver a embalagem?",
-            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga — de um desodorizante, de uma máscara capilar, de uma vela — e reutilizamo-la no teu próximo produto, com um desconto de reutilização.",
+            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga — de um desodorizante, de uma máscara capilar, de uma vela — e reutilizamo-la no teu próximo produto, com um desconto de reutilização. os embrulhos são cosidos à mão a partir de tecidos reaproveitados, e até a linha é de algodão e de outras fibras recicladas.",
           },
           {
             q: "podem fazer as velas nos meus próprios recipientes?",
@@ -390,7 +353,11 @@ export const pt = {
           },
           {
             q: "porque é que os produtos são sólidos?",
-            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem. no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem — o que poupa também a água que se gastaria a fazer esse plástico. no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+          },
+          {
+            q: "de que são feitas as vossas velas?",
+            a: "de cera vegetal de soja, que derrete devagar e por igual — duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. quase toda a decoração é natural: flores e folhas secas, conchas, pedrinhas — e há elementos vegetais que somos nós a prensar e a preparar.",
           },
         ],
       },
