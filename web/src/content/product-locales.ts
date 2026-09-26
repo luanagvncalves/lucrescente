@@ -1,3 +1,5 @@
+import { brandSentence } from "@/lib/brand-case";
+
 export type ProductLocale = "pt" | "en" | "fr";
 
 type ProductCopy = { name: string; whyItWorks?: string };
@@ -5,8 +7,8 @@ type ProductCopy = { name: string; whyItWorks?: string };
 const copy: Record<string, Partial<Record<ProductLocale, ProductCopy>>> = {
   "desodorizante-lavanda-palmarosa": { en: { name: "lavender/palmarosa deodorant", whyItWorks: "shea butter and coconut oil create a comfortable base. baking soda helps neutralise odour and corn starch helps absorb moisture. lavender and palmarosa essential oils add a soft floral scent." }, fr: { name: "déodorant lavande/palmarosa", whyItWorks: "le beurre de karité et l'huile de coco créent une base confortable. le bicarbonate de soude aide à neutraliser les odeurs et l'amidon de maïs aide à absorber l'humidité. les huiles essentielles de lavande et de palmarosa apportent un parfum floral doux." } },
   "desodorizante-tea-tree-erva-principe": { en: { name: "tea tree/lemon verbena deodorant", whyItWorks: "shea butter and coconut oil create a comfortable base. baking soda helps neutralise odour and corn starch helps absorb moisture. tea tree essential oil helps naturally control odour-causing bacteria, while lemon verbena adds a fresh, citrusy note." }, fr: { name: "déodorant tea tree/verveine citronnée", whyItWorks: "le beurre de karité et l'huile de coco créent une base confortable. le bicarbonate de soude aide à neutraliser les odeurs et l'amidon de maïs aide à absorber l'humidité. l'huile essentielle de tea tree aide à contrôler naturellement les bactéries responsables des mauvaises odeurs, tandis que la verveine citronnée apporte une note fraîche et citronnée." } },
-  "champo-oleosos": { en: { name: "oily hair shampoo", whyItWorks: "this shampoo contains no added water — the liquid is peppermint hydrosol, which helps create a feeling of freshness." }, fr: { name: "shampoing cheveux gras", whyItWorks: "ce shampoing ne contient pas d'eau ajoutée — le liquide est un hydrolat de menthe poivrée, qui apporte une sensation de fraîcheur." } },
-  "champo-secos": { en: { name: "dry hair shampoo", whyItWorks: "one of our most popular shampoos for sensitive scalps, helping to manage some cases of eczema: oat and clay help soothe the skin." }, fr: { name: "shampoing cheveux secs", whyItWorks: "l'un de nos shampoings les plus appréciés pour les cuirs chevelus sensibles, qui aide à apaiser certains cas d'eczéma : l'avoine et l'argile prennent soin de la peau." } },
+  "champo-oleosos": { en: { name: "solid shampoo for oily hair", whyItWorks: "this shampoo contains no added water — the liquid is peppermint hydrosol, which helps create a feeling of freshness." }, fr: { name: "shampoing solide pour cheveux gras", whyItWorks: "ce shampoing ne contient pas d'eau ajoutée — le liquide est un hydrolat de menthe poivrée, qui apporte une sensation de fraîcheur." } },
+  "champo-secos": { en: { name: "solid shampoo for dry hair", whyItWorks: "one of our most popular shampoos for sensitive scalps, helping to manage some cases of eczema: oat and clay help soothe the skin." }, fr: { name: "shampoing solide pour cheveux secs", whyItWorks: "l'un de nos shampoings les plus appréciés pour les cuirs chevelus sensibles, qui aide à apaiser certains cas d'eczéma : l'avoine et l'argile prennent soin de la peau." } },
   "champos-para-cabelos-normais": { en: { name: "shampoo for normal hair", whyItWorks: "the formula combines gentle cleansing from SCI with the balancing action of white clay, flours and lavender hydrosol." }, fr: { name: "shampoing cheveux normaux", whyItWorks: "la formule associe le nettoyage doux du SCI à l'action équilibrante de l'argile blanche, des farines et de l'hydrolat de lavande." } },
   "champo-neutro-para-criancas": { en: { name: "gentle shampoo for children", whyItWorks: "SCI provides gentle cleansing, while white clay and flours help clean without irritating." }, fr: { name: "shampoing doux pour enfants", whyItWorks: "le SCI nettoie en douceur, tandis que l'argile blanche et les farines aident à nettoyer sans agresser." } },
   "champo-queda": { en: { name: "hair-loss shampoo" }, fr: { name: "shampoing anti-chute" } },
@@ -34,5 +36,9 @@ const copy: Record<string, Partial<Record<ProductLocale, ProductCopy>>> = {
 };
 
 export function getProductCopy(slug: string, locale: ProductLocale, fallback: ProductCopy): ProductCopy {
-  return copy[slug]?.[locale] ?? fallback;
+  const entry = copy[slug]?.[locale] ?? fallback;
+  // The names are already lowercase here, and so is "porque funciona" today —
+  // but it is written in Supabase, so it is put into the brand's lowercase for
+  // the same reason the ingredient copy is. SCI and BTMS survive.
+  return { name: entry.name, whyItWorks: entry.whyItWorks ? brandSentence(entry.whyItWorks) : undefined };
 }

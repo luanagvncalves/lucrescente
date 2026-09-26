@@ -119,7 +119,7 @@ export const products: ProductSeed[] = [
   // ---------------- champôs ----------------
   {
     slug: "champo-oleosos",
-    name: "champô oleosos",
+    name: "champô sólido para cabelos oleosos",
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
@@ -146,7 +146,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "champo-secos",
-    name: "champô secos",
+    name: "champô sólido para cabelos secos",
     category_slug: "champos",
     sort_order: 1,
     why_it_works:
@@ -200,7 +200,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 3,
     why_it_works:
-      "o sci proporciona uma limpeza suave, enquanto a argila branca coskao e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
+      "o sci proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",

@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "lucrescente",
     title: "lucrescente",
     description: t.brand.description,
-    images: [{ url: "/brand/logo.png", width: 150, height: 150, alt: "lucrescente" }],
+    images: [{ url: "/brand/logo.png", width: 150, height: 150, alt: "lucrescente — higiene e bem-estar natural artesanal" }],
   },
   icons: { icon: "/brand/logo.png" },
 };

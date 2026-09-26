@@ -7,6 +7,7 @@ import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
 import { getIngredientName } from "@/content/ingredient-locales";
 import { productAvailability } from "@/lib/types";
+import { brandSentence } from "@/lib/brand-case";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
 import { ProductImage } from "@/components/ui/product-image";
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const p = await getProductBySlug(slug);
   if (!p) return {};
-  const description = p.why_it_works ? p.why_it_works.split(/(?<=\.)\s/)[0] : `${p.name} · ${p.category.name} · lucrescente`;
+  const description = p.why_it_works ? brandSentence(p.why_it_works.split(/(?<=\.)\s/)[0]) : `${p.name} · ${p.category.name} · lucrescente`;
   return {
     title: p.name,
     description,
@@ -80,7 +81,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
-    description: product.why_it_works ?? undefined,
+    description: product.why_it_works ? brandSentence(product.why_it_works) : undefined,
     image: product.images.map((i) => `${siteUrl}${i.path}`),
     brand: { "@type": "Brand", name: "lucrescente" },
     category: product.category.name,

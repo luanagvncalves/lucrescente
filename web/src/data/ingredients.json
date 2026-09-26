@@ -16,7 +16,7 @@
   "scientific_name": "Cocos nucifera.",
   "origin": "Extraído da polpa do coco, fruto de uma palmeira tropical cultivada em regiões costeiras de todo o mundo, incluindo o Sudeste Asiático e partes da América do Sul.",
   "properties": "Rico em ácidos gordos saturados (sobretudo ácido láurico), funde à temperatura da pele e forma uma película protetora que ajuda a reter a hidratação e a reduzir a perda de água transepidérmica. Textura leve e absorção relativamente rápida em comparação com outras manteigas vegetais. Muito usado também em cuidados capilares, onde ajuda a reduzir a perda de proteína da fibra capilar.",
-  "applications": "Um dos óleos base mais usados por cá — entra em bálsamos corporais, sabonetes sólidos, amaciadores sólidos e no nosso Champô Oleosos, onde ajuda a limpar sem retirar todo o óleo natural do couro cabeludo.",
+  "applications": "Um dos óleos base mais usados por cá — entra em bálsamos corporais, sabonetes sólidos, amaciadores sólidos e no nosso champô sólido para cabelos oleosos, onde ajuda a limpar sem retirar todo o óleo natural do couro cabeludo.",
   "sort_order": 1
  },
  {
@@ -36,7 +36,7 @@
   "scientific_name": "Ricinus communis.",
   "origin": "Extraído das sementes da mamoneira, uma planta de crescimento rápido cultivada em regiões tropicais e subtropicais, incluindo partes da Índia e do Brasil.",
   "properties": "Textura densa, viscosa e muito emoliente, com boa capacidade de reter humidade e formar uma camada protetora na superfície da pele e do cabelo. Rico em ácido ricinoleico, um ácido gordo pouco comum que lhe confere essa consistência espessa característica. É frequentemente usado em produtos para lábios, cabelo, sobrancelhas e unhas, onde a sua viscosidade ajuda a fixar outros ingredientes.",
-  "applications": "Componente dos nossos bálsamos labiais, onde a sua viscosidade ajuda a criar aquela textura envolvente, e também presente no Champô Oleosos, onde ajuda a nutrir as pontas sem pesar nas raízes.",
+  "applications": "Componente dos nossos bálsamos labiais, onde a sua viscosidade ajuda a criar aquela textura envolvente, e também presente no champô sólido para cabelos oleosos, onde ajuda a nutrir as pontas sem pesar nas raízes.",
   "sort_order": 3
  },
  {
@@ -56,7 +56,7 @@
   "scientific_name": "Argania spinosa.",
   "origin": "Extraído das amêndoas da argânia, árvore nativa do sudoeste de Marrocos, tradicionalmente produzido de forma artesanal por cooperativas locais.",
   "properties": "Rico em ácidos gordos essenciais e vitamina E, é muito valorizado em cuidados capilares e faciais pela sua textura sedosa e capacidade de nutrir sem pesar, ajudando a controlar o frisado e a dar brilho ao cabelo.",
-  "applications": "Usado em óleos faciais e produtos capilares nutritivos, incluindo o Champô Oleosos, onde ajuda a nutrir o cabelo sem deixar sensação de peso.",
+  "applications": "Usado em óleos faciais e produtos capilares nutritivos, incluindo o champô sólido para cabelos oleosos, onde ajuda a nutrir o cabelo sem deixar sensação de peso.",
   "sort_order": 5
  },
  {
@@ -116,7 +116,7 @@
   "scientific_name": "Cymbopogon citratus.",
   "origin": "Extraído por destilação das folhas de erva-príncipe, uma gramínea aromática de origem tropical conhecida pelo seu aroma fresco e cítrico.",
   "properties": "Tem um aroma limonado, fresco e revitalizante. Em cosmética, é usado sobretudo pela sua nota aromática e pela sensação de limpeza que acrescenta às fórmulas.",
-  "applications": "Usado em pequena quantidade no Champô Oleosos, onde dá à fórmula um aroma cítrico fresco e uma sensação revigorante durante a lavagem.",
+  "applications": "Usado em pequena quantidade no champô sólido para cabelos oleosos, onde dá à fórmula um aroma cítrico fresco e uma sensação revigorante durante a lavagem.",
   "sort_order": 11
  },
  {
@@ -146,7 +146,7 @@
   "scientific_name": "Mentha piperita.",
   "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
   "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
-  "applications": "Usado em pequenas quantidades em produtos refrescantes para os pés e corpo, e no Champô Oleosos, onde dá aquele efeito imediato de frescura no couro cabeludo.",
+  "applications": "Usado em pequenas quantidades em produtos refrescantes para os pés e corpo, e no champô sólido para cabelos oleosos, onde dá aquele efeito imediato de frescura no couro cabeludo.",
   "sort_order": 14
  },
  {
@@ -176,7 +176,7 @@
   "scientific_name": null,
   "origin": "Mistura aromática baseada em óleo essencial de lavanda, selecionada pelo seu perfil floral equilibrado e consistente.",
   "properties": "Tem um aroma floral, suave e reconhecível, associado a uma sensação de calma e conforto. O formato blend oferece uma fragrância estável e adequada a fórmulas de cuidado capilar.",
-  "applications": "Usado em pequena quantidade no Champô Secos, onde contribui para o aroma suave e reconfortante da fórmula.",
+  "applications": "Usado em pequena quantidade no champô sólido para cabelos secos, onde contribui para o aroma suave e reconfortante da fórmula.",
   "sort_order": 17
  },
  {
@@ -186,7 +186,7 @@
   "scientific_name": "Citrus limon.",
   "origin": "Extraído a frio da casca do limão.",
   "properties": "Aroma cítrico vivo e energizante, muito usado em produtos de limpeza natural e perfumaria pela sensação imediata de frescura que transmite.",
-  "applications": "Usado como nota aromática fresca em produtos corporais e no Champô Oleosos, para um efeito revigorante e uma sensação extra de limpeza.",
+  "applications": "Usado como nota aromática fresca em produtos corporais e no champô sólido para cabelos oleosos, para um efeito revigorante e uma sensação extra de limpeza.",
   "sort_order": 18
  },
  {
@@ -326,7 +326,7 @@
   "scientific_name": "Mentha piperita.",
   "origin": "Água aromática obtida por destilação das folhas de hortelã-pimenta.",
   "properties": "Proporciona uma sensação refrescante imediata na pele graças ao efeito do mentol presente na planta, sendo associado a produtos revitalizantes e de uso em dias quentes ou após atividade física.",
-  "applications": "Usado em borrifos refrescantes e em produtos para os pés, e também no Champô Oleosos, onde reforça a sensação de frescura e limpeza no couro cabeludo.",
+  "applications": "Usado em borrifos refrescantes e em produtos para os pés, e também no champô sólido para cabelos oleosos, onde reforça a sensação de frescura e limpeza no couro cabeludo.",
   "sort_order": 32
  },
  {
@@ -336,7 +336,7 @@
   "scientific_name": "Lavandula angustifolia.",
   "origin": "Água aromática obtida por destilação a vapor das flores de lavanda, subproduto do mesmo processo que extrai o óleo essencial.",
   "properties": "Refrescante e calmante, ajuda a equilibrar peles mistas a oleosas e é frequentemente associado à redução da sensação de tensão na pele. Contém uma concentração muito mais suave dos compostos ativos da lavanda do que o óleo essencial, o que o torna seguro para pulverização direta sobre a pele ou o rosto.",
-  "applications": "Usado como base aquosa no Champô Oleosos, ajudando a acalmar o couro cabeludo, e também em produtos faciais e borrifos relaxantes.",
+  "applications": "Usado como base aquosa no champô sólido para cabelos oleosos, ajudando a acalmar o couro cabeludo, e também em produtos faciais e borrifos relaxantes.",
   "sort_order": 33
  },
  {
@@ -346,7 +346,7 @@
   "scientific_name": null,
   "origin": "Ácido gordo saturado presente em muitas gorduras vegetais, usado em cosmética como espessante e co-emulsionante.",
   "properties": "Ajuda a estabilizar emulsões (misturas de água e óleo que de outra forma se separariam) e confere textura cremosa, corpo e uma sensação aveludada a produtos como cremes e loções. Contribui também para a estabilidade da fórmula ao longo do tempo.",
-  "applications": "Usado como espessante em cremes corporais e faciais, e também no Champô Oleosos, onde ajuda a dar corpo à fórmula e a estabilizá-la ao longo do tempo.",
+  "applications": "Usado como espessante em cremes corporais e faciais, e também no champô sólido para cabelos oleosos, onde ajuda a dar corpo à fórmula e a estabilizá-la ao longo do tempo.",
   "sort_order": 34
  },
  {
@@ -401,12 +401,12 @@
  },
  {
   "slug": "argila-branca",
-  "name": "Argila Branca CosKAO",
+  "name": "Argila Branca",
   "category": "Argilas",
   "scientific_name": null,
   "origin": "Também chamada caulino, é uma argila mineral de origem natural, uma das mais suaves entre as argilas cosméticas.",
   "properties": "Absorve o excesso de oleosidade sem ressecar em excesso, graças à sua estrutura mineral que capta impurezas e sebo à superfície da pele sem penetrar profundamente. É a mais suave das argilas cosméticas, sendo adequada mesmo para peles sensíveis ou secas que precisam de uma limpeza mais delicada.",
-  "applications": "Usada nas nossas máscaras faciais mais suaves e no Champô Oleosos, onde a argila branca CosKAO ajuda a limpar sem agressividade.",
+  "applications": "Usada nas nossas máscaras faciais mais suaves e no champô sólido para cabelos oleosos, onde a argila branca ajuda a limpar sem agressividade.",
   "sort_order": 40
  },
  {
@@ -416,7 +416,7 @@
   "scientific_name": null,
   "origin": "Argila mineral rica em óxido de ferro e outros minerais, responsáveis pela sua tonalidade esverdeada.",
   "properties": "Maior poder absorvente do que a argila branca, capta com eficácia o excesso de sebo e impurezas, sendo indicada para peles mais oleosas ou com tendência a imperfeições. A sua textura fina ('superfina') permite uma aplicação mais uniforme e uma secagem mais controlada em máscaras faciais.",
-  "applications": "Usada nas nossas máscaras faciais purificantes, e também no Champô Oleosos, onde ajuda a absorver o excesso de oleosidade do couro cabeludo sem ressecar as pontas.",
+  "applications": "Usada nas nossas máscaras faciais purificantes, e também no champô sólido para cabelos oleosos, onde ajuda a absorver o excesso de oleosidade do couro cabeludo sem ressecar as pontas.",
   "sort_order": 41
  },
  {
@@ -436,7 +436,7 @@
   "scientific_name": null,
   "origin": "Conservante de origem vegetal (à base de álcool benzílico e ácido desidroacético), amplamente usado em cosmética natural como alternativa aos parabenos.",
   "properties": "Protege as fórmulas com conteúdo aquoso contra o desenvolvimento de bactérias, bolores e leveduras, prolongando o seu prazo de validade em segurança. É eficaz numa gama alargada de pH e amplamente aceite em cosmética certificada como natural.",
-  "applications": "Usado em pequenas percentagens em todos os produtos com água na composição — incluindo o Champô Oleosos — para garantir que chegam até ti em segurança.",
+  "applications": "Usado em pequenas percentagens em todos os produtos com água na composição — incluindo o champô sólido para cabelos oleosos — para garantir que chegam até ti em segurança.",
   "sort_order": 43
  },
  {
@@ -446,7 +446,7 @@
   "scientific_name": null,
   "origin": "Forma precursora da vitamina B5, convertida em ácido pantoténico quando aplicada na pele ou cabelo.",
   "properties": "Hidratante e calmante, ajuda a reter humidade na camada mais superficial da pele e é frequentemente usado em produtos capilares para dar brilho, maciez e reduzir a aspereza dos fios. Contribui também para a sensação de conforto em peles irritadas.",
-  "applications": "Adicionado a cremes, loções e ao Champô Oleosos, onde ajuda a compensar o efeito limpante mais intenso, deixando o cabelo macio em vez de áspero.",
+  "applications": "Adicionado a cremes, loções e ao champô sólido para cabelos oleosos, onde ajuda a compensar o efeito limpante mais intenso, deixando o cabelo macio em vez de áspero.",
   "sort_order": 44
  },
  {
@@ -456,7 +456,7 @@
   "scientific_name": null,
   "origin": "sodium cocoyl isethionate — tensioativo suave derivado do óleo de coco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
   "properties": "Produz espuma cremosa e densa, e limpa a pele e o cabelo sem ser tão agressivo para a barreira cutânea como outros tensioativos comuns, reduzindo a sensação de secura ou tensão após a lavagem.",
-  "applications": "Usado como base limpante em sabonetes sólidos e no Champô Oleosos, onde é o principal responsável por remover o excesso de oleosidade sem agredir o couro cabeludo.",
+  "applications": "Usado como base limpante em sabonetes sólidos e no champô sólido para cabelos oleosos, onde é o principal responsável por remover o excesso de oleosidade sem agredir o couro cabeludo.",
   "sort_order": 45
  },
  {
@@ -526,7 +526,7 @@
   "scientific_name": "Equisetum arvense.",
   "origin": "Planta rica em sílica, tradicionalmente usada em infusões e cosmética natural pela sua reputação fortalecedora.",
   "properties": "Associada tradicionalmente ao fortalecimento de cabelo e unhas, graças ao seu teor natural de sílica e outros minerais que fazem parte da estrutura destes tecidos. Também usada em máscaras capilares pela sua textura fina.",
-  "applications": "Usada em pó em máscaras e tratamentos capilares, e também no Champô Oleosos, onde ajuda a fortalecer o cabelo enquanto o couro cabeludo é limpo em profundidade.",
+  "applications": "Usada em pó em máscaras e tratamentos capilares, e também no champô sólido para cabelos oleosos, onde ajuda a fortalecer o cabelo enquanto o couro cabeludo é limpo em profundidade.",
   "sort_order": 52
  },
  {
@@ -536,7 +536,7 @@
   "scientific_name": null,
   "origin": "Obtida a partir da moagem dos grãos de aveia (Avena sativa), um dos ingredientes mais antigos usados em cuidados de pele caseiros.",
   "properties": "Ajuda a acalmar peles sensíveis ou irritadas, graças aos beta-glucanos e compostos naturais presentes no grão, e proporciona uma leve esfoliação física quando usada em pó ou flocos moídos.",
-  "applications": "Usada em esfoliantes suaves, máscaras faciais calmantes e no Champô Oleosos, onde ajuda a limpar e a acalmar o couro cabeludo.",
+  "applications": "Usada em esfoliantes suaves, máscaras faciais calmantes e no champô sólido para cabelos oleosos, onde ajuda a limpar e a acalmar o couro cabeludo.",
   "sort_order": 53
  },
  {
@@ -546,7 +546,7 @@
   "scientific_name": null,
   "origin": "Subproduto da produção de leite de coco, obtido a partir da polpa seca e moída.",
   "properties": "Textura fina e ligeiramente granulada, ajuda a absorver o excesso de oleosidade e proporciona uma esfoliação suave, adequada a uso regular sem ser demasiado agressiva para a pele.",
-  "applications": "Usada em esfoliantes corporais, máscaras e no Champô Oleosos, onde ajuda a dar corpo à fórmula e a limpar suavemente.",
+  "applications": "Usada em esfoliantes corporais, máscaras e no champô sólido para cabelos oleosos, onde ajuda a dar corpo à fórmula e a limpar suavemente.",
   "sort_order": 54
  },
  {
@@ -596,7 +596,7 @@
   "scientific_name": "Urtica dioica.",
   "origin": "Planta selvagem comum em toda a Europa, tradicionalmente usada em infusões e em cuidados capilares.",
   "properties": "Rica em minerais (ferro, sílica, potássio) e associada tradicionalmente ao fortalecimento e revitalização do couro cabeludo, ajudando a dar mais corpo e brilho aos fios quando usada regularmente.",
-  "applications": "Usada em produtos capilares revitalizantes, incluindo o Champô Oleosos, onde ajuda a equilibrar o couro cabeludo e a dar mais corpo ao cabelo.",
+  "applications": "Usada em produtos capilares revitalizantes, incluindo o champô sólido para cabelos oleosos, onde ajuda a equilibrar o couro cabeludo e a dar mais corpo ao cabelo.",
   "sort_order": 59
  },
  {

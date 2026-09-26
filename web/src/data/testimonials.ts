@@ -327,8 +327,8 @@ const collected: Testimonial[] = [
       en: "I loved the shampoo! It lathers a lot, smells really good, and my hair really feels washed! I bought another one because the other is almost finished.",
       fr: "j'ai adoré le shampoing ! Il mousse beaucoup, sent très bon et on sent vraiment les cheveux lavés ! J'en ai racheté un car l'autre est presque fini.",
     },
-    product: "champô cabelo oleoso",
-    productTranslations: { en: "oily hair shampoo", fr: "shampoing cheveux gras" },
+    product: "champô sólido para cabelos oleosos",
+    productTranslations: { en: "solid shampoo for oily hair", fr: "shampoing solide pour cheveux gras" },
     stars: 5,
   },
   {
@@ -339,8 +339,8 @@ const collected: Testimonial[] = [
       en: "I loved the shampoo! My hair felt clean and with no heavy feeling!",
       fr: "J'ai adoré le shampoing ! Les cheveux étaient propres et sans sensation de lourdeur !",
     },
-    product: "champô sólido cabelos oleosos",
-    productTranslations: { en: "solid oily hair shampoo", fr: "shampoing solide cheveux gras" },
+    product: "champô sólido para cabelos oleosos",
+    productTranslations: { en: "solid shampoo for oily hair", fr: "shampoing solide pour cheveux gras" },
     stars: 5,
   },
   {

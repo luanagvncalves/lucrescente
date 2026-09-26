@@ -30,32 +30,35 @@ function isAbbreviation(word: string): boolean {
 }
 
 /**
- * The same lowercase, for a sentence of body copy: it opens the sentence, so
- * "Também chamada caulino…" becomes "também chamada caulino…". Capitals further
- * in are ordinary Portuguese (Marrocos, Theobroma cacao) and are left alone —
- * unlike `brandCase`, which is for names, not sentences.
- *
- * It lowers the whole opening run of capitalised words, not just the first
- * letter, because one sentence in the catalogue opens on an INCI name ("Sodium
- * Cocoyl Isethionate — tensioativo suave…") and "sodium Cocoyl Isethionate"
- * would be neither the brand's lowercase nor the INCI name. The run stops at
- * the first lowercase word, which across all 555 descriptions is the second
- * word everywhere else.
- *
- * A sentence opening on an abbreviation keeps it, for the same reason
- * `brandCase` protects BTMS and the E of vitamina E.
+ * A Latin binomial ("Theobroma cacao") and a chemical formula (NaHCO₃) carry
+ * meaning in their capitals the way BTMS does, but they are not written all in
+ * caps, so `isAbbreviation` cannot see them. Only the first word needs naming:
+ * "cacao" and "sativa" are lowercase in the binomial anyway.
  */
-export function lowerFirst(text: string): string {
-  let reachedSentence = false;
+const KEEPS_ITS_CAPITAL = new Set(["Theobroma", "Avena", "NaHCO₃"]);
+
+/**
+ * The same lowercase, for a sentence of body copy — the ingredient
+ * descriptions and the "porque funciona" of each product, which arrive from
+ * the database written as ordinary sentences.
+ *
+ * It lowercases every word, exactly like `brandCase`: the sentence opening
+ * ("Também chamada caulino…"), the sentence after a full stop ("…sem penetrar
+ * profundamente. É a mais suave…"), place names ("Sudeste Asiático") and any
+ * capital typed into Supabase later. What survives is what `brandCase` also
+ * protects — abbreviations written in caps, BTMS and SCI and the E of vitamina
+ * E — plus the binomials and formulas named above.
+ *
+ * It exists separately from `brandCase` only because a sentence keeps its
+ * brackets and slashes as punctuation, where a name splits on them.
+ */
+export function brandSentence(text: string): string {
   return text
     .split(/(\s+)/) // keep the separators, so spacing survives
     .map((part) => {
-      if (reachedSentence || !part.trim()) return part;
-      if (isAbbreviation(part) || !/^\p{Lu}/u.test(part)) {
-        reachedSentence = true;
-        return part;
-      }
-      return part.charAt(0).toLowerCase() + part.slice(1);
+      const word = part.replace(/^[("'«¿¡]+/, "").replace(/[.,;:)»"'!?…]+$/, "");
+      if (isAbbreviation(word) || KEEPS_ITS_CAPITAL.has(word)) return part;
+      return part.replace(/\p{L}/u, (letter) => letter.toLowerCase()); // the first letter, past any bracket
     })
     .join("");
 }
