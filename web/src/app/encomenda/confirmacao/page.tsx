@@ -111,7 +111,7 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
         <section className="mt-14">
           <h2 className="font-display text-[1.5rem] text-forest lowercase">{t.contact.title}</h2>
           <div className="mt-5">
-            <ContactLinks />
+            <ContactLinks locale={locale} />
           </div>
         </section>
       </div>

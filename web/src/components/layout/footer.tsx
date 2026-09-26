@@ -35,6 +35,7 @@ export function Footer() {
               ["/ingredientes", t.nav.ingredients],
               ["/sobre", t.nav.about],
               ["/perguntas-frequentes", t.faq.label],
+              ["/devolucoes", t.returns.label],
               ["/cuidados", t.nav.care],
               ["/feiras-e-mercados", t.nav.fairs],
             ].map(([href, label]) => (

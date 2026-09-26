@@ -57,6 +57,12 @@ export const fr: Dictionary = {
     { slug: "dicas", title: "conseils d'utilisation", text: "nos shampoings solides peuvent aussi être utilisés sur le corps. grâce à leurs ingrédients naturels, certains peuvent aider à apaiser les problèmes de peau. notre cire de soja est hydratante et peut être appliquée directement sur la peau. les produits solides sont aussi très pratiques en voyage, sans limites de liquides." },
     { slug: "biologicos", title: "ingrédients biologiques", text: "chaque fois que possible, nous choisissons des ingrédients biologiques — signalés par * dans les descriptions afin que vous sachiez mieux ce que vous utilisez." },
       ] },
+  returns: { ...pt.returns, label: "retours", title: "si quelque chose arrive abîmé", intro: "tout est fait à la main et emballé avec soin, mais le trajet jusqu'à vous ne se passe pas toujours bien. si cela arrive, nous nous en occupons.", contactTitle: "contactez-nous", groups: [
+    { title: "quand nous acceptons un retour", text: "nous acceptons les retours uniquement si vous recevez le mauvais produit, ou le bon produit abîmé : un flacon cassé, un contenant sale, ou un produit fondu ou brisé." },
+    { title: "de combien de temps vous disposez", text: "une fois le produit arrivé chez vous, vous avez 10 jours pour demander un retour." },
+    { title: "comment demander", text: "contactez-nous par l'un des moyens indiqués sur le site — whatsapp, message, appel ou email. nous vous demandons seulement un justificatif : une photographie du produit tel qu'il est arrivé, ou du mauvais produit reçu." },
+    { title: "qui paie le retour", text: "nous. si le retour est accepté, les frais de renvoi sont à notre charge." },
+  ] },
   faq: { ...pt.faq, label: "questions fréquentes", title: "ce qu'on nous demande le plus", intro: "les questions qui nous parviennent le plus souvent par message, réunies ici. si la vôtre n'y est pas, écrivez-nous — nous répondons toujours.", stillAsking: "une question qui ne figure pas ici ?", contactLink: "contactez-nous →", groups: [
     { title: "les produits", items: [
       { q: "quel shampoing solide est fait pour moi ?", a: "il y en a quatre : pour cheveux gras, pour cheveux secs, pour cheveux normaux, et un shampoing doux pour enfants. celui pour cheveux secs est le plus recherché par les personnes au cuir chevelu sensible, et le doux est celui que nous conseillons pour les peaux et cuirs chevelus ultrasensibles, car il ne contient pas d'huiles. en cas de doute, parlez-nous de vos cheveux et nous vous aiderons à choisir." },
@@ -71,6 +77,7 @@ export const fr: Dictionary = {
       { q: "livrez-vous hors du Portugal ?", a: "nous expédions au Portugal et à l'international. les frais de port sont calculés au moment du paiement selon la destination — vous voyez le montant exact avant de confirmer, sans surprise." },
       { q: "le produit que je veux est épuisé. puis-je le commander quand même ?", a: "oui. tout est fait à la main en petites quantités, et certains produits — les shampoings, les après-shampoings et les savons — ont besoin de temps de repos et de maturation avant de partir. si l'un est épuisé, nous prenons la commande et vous prévenons dès qu'il est prêt. nous préparons aussi de plus grandes quantités si besoin." },
       { q: "puis-je demander un produit fait sur mesure ?", a: "oui. nous pouvons adapter une formule à vos besoins — plus douce, plus forte, ou avec un autre parfum. parlez-nous-en avant de commander." },
+      { q: "puis-je retourner un produit ?", a: "uniquement si vous recevez le mauvais produit, ou le bon produit abîmé — un flacon cassé, un contenant sale, un produit fondu ou brisé. vous avez 10 jours après réception pour nous le dire, et les frais de renvoi sont à notre charge. la page des retours explique tout." },
     ] },
     { title: "emballages et durabilité", items: [
       { q: "puis-je rapporter l'emballage ?", a: "oui, et nous vous en remercions. tous nos emballages sont réutilisables : rapportez-nous un ancien contenant — d'un déodorant, d'un masque capillaire, d'une bougie — et nous le réutiliserons pour votre prochain produit, avec une remise de réutilisation." },

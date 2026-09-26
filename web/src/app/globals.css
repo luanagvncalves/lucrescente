@@ -177,25 +177,22 @@ h3,
    on the lightest one. Forest carries the darkness (violet alone is far too
    light to read against); a fifth of violet mixed in keeps the brand cast. */
 /*
- * Darkens the bottom of a category tile so its name can be read, and leaves the
- * rest of the photograph alone.
+ * Darkens a category tile so its name can be read over the photograph.
  *
- * It used to cover the whole tile at 66–84% opacity, which made the label
- * perfectly legible and the photograph underneath almost invisible: five tiles
- * of grey-green with words on them, while the product cards on the same page
- * showed the same photographs in full colour. The name now sits at the bottom,
- * where the gradient is, so the picture is still a picture.
+ * The tone is the same violet as the header, at the coverage the tiles have
+ * always had — the whole square rather than a gradient at the foot. That does
+ * hide most of the photograph underneath, and it is what the brand wants: the
+ * five tiles read as one violet set rather than five different pictures.
  */
 @utility tile-scrim {
-  --tile-scrim-tone: var(--lavender);
+  --tile-scrim-tone: var(--violet);
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--tile-scrim-tone) 94%, transparent) 0%,
-    color-mix(in srgb, var(--tile-scrim-tone) 86%, transparent) 26%,
-    color-mix(in srgb, var(--tile-scrim-tone) 40%, transparent) 60%,
-    transparent 88%
+    color-mix(in srgb, var(--tile-scrim-tone) 84%, transparent),
+    color-mix(in srgb, var(--tile-scrim-tone) 66%, transparent)
   );
 }
+
 
 /* placeholder frame for products without a photo */
 .placeholder-frame {

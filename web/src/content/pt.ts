@@ -272,6 +272,39 @@ export const pt = {
    * long a bar lasts, or about which payment methods are live: those are facts
    * only the brand has, and a confident guess would be worse than no answer.
    */
+  /**
+   * Written from the brand's own words, nothing added. The one thing worth
+   * knowing: under EU distance-selling rules a customer normally has 14 days to
+   * change their mind, and the exemption for sealed hygiene products only bites
+   * once the seal is broken — so "no returns unless damaged" may not hold for
+   * something that arrives and is never opened. Flagged to the brand; theirs to
+   * decide, and this is what they decided.
+   */
+  returns: {
+    label: "devoluções",
+    title: "se algo chegar mal",
+    intro:
+      "fazemos tudo à mão e embrulhamos com cuidado, mas o caminho até ti nem sempre corre bem. se correr mal, resolvemos.",
+    groups: [
+      {
+        title: "quando aceitamos uma devolução",
+        text: "aceitamos devoluções unicamente se receberes o produto errado, ou o produto certo mas danificado: um frasco partido, uma embalagem suja, ou um produto derretido ou quebrado.",
+      },
+      {
+        title: "quanto tempo tens",
+        text: "depois de o produto chegar até ti, tens 10 dias para pedires a devolução.",
+      },
+      {
+        title: "como pedir",
+        text: "fala connosco por qualquer meio indicado no site — whatsapp, mensagem, chamada ou email. pedimos-te apenas um comprovativo: uma fotografia do produto como chegou, ou do produto errado que recebeste.",
+      },
+      {
+        title: "quem paga o envio de volta",
+        text: "nós. se a devolução for aceite, os portes de retorno são por nossa conta.",
+      },
+    ],
+    contactTitle: "fala connosco",
+  },
   faq: {
     label: "perguntas frequentes",
     title: "o que nos perguntam mais",
@@ -325,6 +358,10 @@ export const pt = {
           {
             q: "posso pedir um produto feito à minha medida?",
             a: "sim. podemos adaptar uma fórmula ao que precisas — mais suave, mais forte, ou com outro aroma. fala connosco antes de encomendar.",
+          },
+          {
+            q: "posso devolver um produto?",
+            a: "só se receberes o produto errado, ou o produto certo mas danificado — um frasco partido, uma embalagem suja, um produto derretido ou quebrado. tens 10 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
           },
         ],
       },
