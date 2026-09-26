@@ -176,12 +176,24 @@ h3,
    photos are near-white, so the tint has to be dark enough to hold the text
    on the lightest one. Forest carries the darkness (violet alone is far too
    light to read against); a fifth of violet mixed in keeps the brand cast. */
+/*
+ * Darkens the bottom of a category tile so its name can be read, and leaves the
+ * rest of the photograph alone.
+ *
+ * It used to cover the whole tile at 66–84% opacity, which made the label
+ * perfectly legible and the photograph underneath almost invisible: five tiles
+ * of grey-green with words on them, while the product cards on the same page
+ * showed the same photographs in full colour. The name now sits at the bottom,
+ * where the gradient is, so the picture is still a picture.
+ */
 @utility tile-scrim {
   --tile-scrim-tone: color-mix(in srgb, var(--forest) 80%, var(--violet));
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--tile-scrim-tone) 84%, transparent),
-    color-mix(in srgb, var(--tile-scrim-tone) 66%, transparent)
+    color-mix(in srgb, var(--tile-scrim-tone) 88%, transparent) 0%,
+    color-mix(in srgb, var(--tile-scrim-tone) 70%, transparent) 30%,
+    color-mix(in srgb, var(--tile-scrim-tone) 30%, transparent) 62%,
+    transparent 88%
   );
 }
 
