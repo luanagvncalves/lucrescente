@@ -420,7 +420,7 @@ export const pt = {
     notFound: "não encontrámos esta encomenda. se acabaste de pagar, aguarda um momento e atualiza a página.", // ui
     processing: "estamos a confirmar o pagamento. isto pode demorar alguns segundos.", // ui
     backHome: "voltar à página inicial", // ui
-    emailNote: (email: string) => `enviámos a confirmação para ${email}.`, // ui
+    emailNote: (email: string) => `registámos o teu contacto: ${email}. falamos contigo por aqui sobre a tua encomenda.`, // ui
   },
   errors: {
     notFoundTitle: "não encontrámos esta página.", // ui
