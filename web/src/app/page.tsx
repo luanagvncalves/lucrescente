@@ -147,7 +147,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                             )}
                             {/* the name sits where the gradient is, so the photograph stays visible above it */}
                             <div className="tile-scrim absolute inset-0 flex items-end justify-center px-3 pb-4 text-center">
-                              <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase [text-shadow:0_2px_8px_rgba(34,57,37,0.7)] sm:text-[1.5rem]">{tile.name}</span>
+                              <span className="font-display text-[1.35rem] leading-tight text-forest lowercase sm:text-[1.5rem]">{tile.name}</span>
                             </div>
                           </div>
                         </Link>

@@ -187,14 +187,13 @@ h3,
  * where the gradient is, so the picture is still a picture.
  */
 @utility tile-scrim {
-  --tile-scrim-tone: var(--violet);
+  --tile-scrim-tone: var(--lavender);
   background: linear-gradient(
     to top,
-    color-mix(in srgb, var(--violet) 55%, var(--ink)) 0%,
-    color-mix(in srgb, color-mix(in srgb, var(--violet) 55%, var(--ink)) 78%, transparent) 22%,
-    color-mix(in srgb, var(--violet) 58%, transparent) 50%,
-    color-mix(in srgb, var(--violet) 26%, transparent) 72%,
-    transparent 92%
+    color-mix(in srgb, var(--tile-scrim-tone) 94%, transparent) 0%,
+    color-mix(in srgb, var(--tile-scrim-tone) 86%, transparent) 26%,
+    color-mix(in srgb, var(--tile-scrim-tone) 40%, transparent) 60%,
+    transparent 88%
   );
 }
 

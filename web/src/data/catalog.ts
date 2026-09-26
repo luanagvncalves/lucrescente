@@ -482,7 +482,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "batom-h-pimenta",
-    name: "batom h.pimenta",
+    name: "batom hortelã-pimenta",
     category_slug: "batons",
     sort_order: 4,
     why_it_works:

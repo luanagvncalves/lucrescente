@@ -160,7 +160,7 @@ export const pt = {
     // expandable info panels
     waterSavingLabel: "menos água",
     waterSavingText:
-      "não usamos água no fabrico deste produto. os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpx, e como não necessitam de embalagens, também poupamos a água usada no fabrico de plástico.",
+      "não usamos água no fabrico deste produto. os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpe, e como não necessitam de embalagens, também poupamos a água usada no fabrico de plástico.",
     reusableLabel: "reutilizável",
     reusableText:
       "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!",
@@ -211,7 +211,7 @@ export const pt = {
       "ecológica e sustentável",
       "segura para crianças e peles sensíveis",
       "sem disruptores endócrinos",
-      "preços acessíveis para todxs",
+      "preços acessíveis para todes",
     ],
     lucieName: "lucie",
     lucieText:
@@ -231,7 +231,7 @@ export const pt = {
       {
         slug: "poupamos-agua",
         title: "poupamos água",
-        text: "os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. e como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.",
+        text: "os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpe. e como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.",
       },
       {
         slug: "embalagens",

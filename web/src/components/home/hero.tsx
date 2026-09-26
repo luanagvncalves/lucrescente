@@ -74,26 +74,23 @@ export function HomeHero({
         </div>
       ) : null}
 
-      {/* the violet wash carries the mood */}
-      <div className="absolute inset-0 bg-gradient-to-r from-violet/50 via-violet/40 to-violet/30" />
       {/*
-        …and this keeps the words readable, in the same violet rather than a
-        colour of its own. The headline and buttons sit at the bottom, over
-        whatever the photograph happens to show there — pale soap and a white
-        jar, as it turns out — and the violet alone is too light to carry ivory
-        text over that: measured at the pixels the letters occupy, 7% of the
-        headline fell below the 3.0:1 that large text needs.
+        One even wash of the brand's light violet over the whole photograph, as
+        the header was originally — no gradient, nothing heavier at the bottom.
 
-        So the violet deepens towards the ink at the bottom, where the words
-        are, and returns to its own tone two thirds of the way up, where the
-        flowers are. Same hue throughout. Worst case is now 4.27:1.
+        The words had to change colour for it. #beb2dd is light: cream letters
+        on it measure 1.74:1, where large text needs 3.0:1, so the headline
+        would have been unreadable however thick the wash. Dark green on the
+        same violet measures 6.31:1, which is why the heading and the outlined
+        button are forest now rather than ivory.
       */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(74,61,92,0.92)_0%,rgba(74,61,92,0.86)_34%,rgba(74,61,92,0.66)_58%,rgba(140,121,168,0.34)_78%,transparent_96%)]" />
+      <div className="absolute inset-0 bg-lavender/[0.72]" />
+
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
-        <div className="max-w-3xl text-ivory">
+        <div className="max-w-3xl text-forest">
           <motion.h1
-            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory [text-shadow:0_2px_12px_rgba(34,57,37,0.55)]"
+            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-forest"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -121,13 +118,13 @@ export function HomeHero({
           >
             <Link
               href={`/produtos${query}`}
-              className="inline-flex h-12 items-center rounded-full bg-ivory px-6 font-ui text-[0.95rem] font-medium lowercase text-forest transition-colors hover:bg-white"
+              className="inline-flex h-12 items-center rounded-full bg-forest px-6 font-ui text-[0.95rem] font-medium lowercase text-ivory transition-colors hover:bg-forest/90"
             >
               {primaryLabel}
             </Link>
             <Link
               href={`/ingredientes${query}`}
-              className="inline-flex h-12 items-center rounded-full border border-ivory/60 px-6 font-ui text-[0.95rem] font-medium lowercase text-ivory transition-colors hover:border-ivory hover:bg-ivory/10"
+              className="inline-flex h-12 items-center rounded-full border border-forest/50 px-6 font-ui text-[0.95rem] font-medium lowercase text-forest transition-colors hover:border-forest hover:bg-forest/10"
             >
               {secondaryLabel}
             </Link>
