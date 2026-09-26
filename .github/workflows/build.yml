@@ -1,0 +1,54 @@
+# Builds the site on every change, so a change that breaks the build is caught
+# in minutes instead of silently freezing the published site.
+#
+# This exists because of 26 September 2026: a component in the root layout
+# started reading the query string, which meant Next could no longer prerender
+# the static pages. Every Vercel deployment failed from that commit onwards and
+# production stayed frozen on the last good build for most of an afternoon —
+# with no sign on the site that anything was wrong, since the old build kept
+# serving happily. `npm run build` locally would have caught it immediately.
+#
+# Typecheck and lint run first because they are quick and catch more per second
+# than the build does. The build runs last because it is the one that actually
+# reproduces what Vercel does.
+
+name: build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+
+      - name: typecheck
+        run: npx tsc --noEmit
+
+      - name: lint
+        run: npx eslint src
+
+      # src/lib/supabase.ts throws on import without these, so the build cannot
+      # even start. Both are public values — the anon key is served to every
+      # visitor's browser — but they live in repository secrets rather than in
+      # this file, so there is one place to change them.
+      - name: build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
