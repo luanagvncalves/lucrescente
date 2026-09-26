@@ -24,20 +24,41 @@ export function Footer() {
           </div>
           <p className="mt-6 max-w-[48ch] text-[0.95rem] leading-relaxed text-ivory/85">{t.home.shortAbout}</p>
           <p className="mt-6 text-[0.9rem] text-ivory/70">{t.footer.shipping}</p>
+
+          {/*
+            Under the description of the brand rather than beside the contacts,
+            where it used to be: it reads as part of what lucrescente promises,
+            which is what it is.
+          */}
+          <div className="mt-8 border-t border-ivory/20 pt-6">
+            <p className="label-brand text-lavender">{t.returns.label}</p>
+            <p className="mt-3 max-w-[42ch] text-[0.9rem] leading-relaxed text-ivory/85">{t.footer.returnsSummary}</p>
+            <Link
+              href={`/devolucoes${query}`}
+              className="mt-3 inline-flex min-h-11 items-center font-ui text-[0.9rem] text-ivory/90 hover:text-white hover:underline underline-offset-4"
+            >
+              {t.footer.returnsLink}
+            </Link>
+          </div>
         </div>
 
         <div className="md:col-span-3">
           <p className="label-brand text-lavender">{t.footer.pagesTitle}</p>
+          {/*
+            The same pages as the header, in the same order, so the two do not
+            disagree. "Cuidados" and "devoluções" are gone from the list — the
+            returns policy is linked from its own block on the left instead.
+            "Início" has no place in the header's row, the logotype being the
+            way home, so it leads here.
+          */}
           <ul className="mt-5 space-y-3 font-ui text-[0.95rem]">
             {[
               ["/", t.nav.home],
               ["/produtos", t.nav.products],
               ["/ingredientes", t.nav.ingredients],
               ["/sobre", t.nav.about],
-              ["/perguntas-frequentes", t.faq.label],
-              ["/devolucoes", t.returns.label],
-              ["/cuidados", t.nav.care],
               ["/feiras-e-mercados", t.nav.fairs],
+              ["/perguntas-frequentes", t.faq.label],
             ].map(([href, label]) => (
               <li key={href}>
                 <Link href={`${href}${query}`} className="inline-flex min-h-11 items-center text-ivory/90 hover:text-white hover:underline underline-offset-4">
@@ -53,22 +74,6 @@ export function Footer() {
           <div className="mt-5">
             <ContactLinks tone="dark" layout="list" locale={locale} />
           </div>
-          {/*
-            Beside the contacts, because the two belong together: someone whose
-            jar arrived broken is looking for how to reach us and what happens
-            next at the same moment.
-          */}
-          <div className="mt-8 border-t border-ivory/20 pt-6">
-            <p className="label-brand text-lavender">{t.returns.label}</p>
-            <p className="mt-3 max-w-[42ch] text-[0.9rem] leading-relaxed text-ivory/85">{t.footer.returnsSummary}</p>
-            <Link
-              href={`/devolucoes${query}`}
-              className="mt-3 inline-flex min-h-11 items-center font-ui text-[0.9rem] text-ivory/90 hover:text-white hover:underline underline-offset-4"
-            >
-              {t.footer.returnsLink}
-            </Link>
-          </div>
-
           <a
             href={t.brand.instagram}
             target="_blank"

@@ -50,7 +50,7 @@ export function ProductCard({
           className="transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.02]"
         />
         {avail.kind === "sold-out" ? (
-          <span className="absolute left-4 top-4 rounded-full bg-paper/95 px-3 py-1.5 label-brand text-clay">{t.products.soldOutShort}</span>
+          <span className="absolute left-4 top-4 rounded-full bg-paper/95 px-3 py-1.5 label-brand text-clay">{t.products.soldOutTag}</span>
         ) : null}
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">

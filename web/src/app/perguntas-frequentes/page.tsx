@@ -5,6 +5,8 @@ import { Label } from "@/components/ui/typography";
 import { Crescent, Pause } from "@/components/ui/motifs";
 import { TextLink } from "@/components/ui/button";
 import { ContactLinks } from "@/components/contact/contact-links";
+import { FaqOpenTarget } from "@/components/faq/faq-open-target";
+import { faqAnchorId } from "@/content/faq-anchors";
 
 // Metadata is built once per route, before the query string is known, so the
 // tab title and the search-result snippet stay in Portuguese.
@@ -37,6 +39,7 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
   return (
     <article className="container-brand pt-10 md:pt-16">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+      <FaqOpenTarget />
 
       <header className="max-w-3xl">
         <Label>{t.faq.label}</Label>
@@ -58,9 +61,13 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
             {/* <details> so every answer is readable, printable and findable with
                 ctrl+F even before any JavaScript has run */}
             <ul className="mt-8 space-y-3">
-              {group.items.map((item) => (
+              {group.items.map((item, itemIndex) => (
                 <li key={item.q}>
-                  <details className="card-brand group overflow-hidden px-6 py-1 [&_summary::-webkit-details-marker]:hidden">
+                  {/* the id is what a product page's extra-information box links to */}
+                  <details
+                    id={faqAnchorId(groupIndex, itemIndex)}
+                    className="card-brand group scroll-mt-28 overflow-hidden px-6 py-1 [&_summary::-webkit-details-marker]:hidden"
+                  >
                     <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 py-3 font-display text-[1.25rem] leading-snug text-forest lowercase">
                       {item.q}
                       <span className="shrink-0 text-moss transition-transform duration-200 ease-[var(--ease-calm)] group-open:rotate-45" aria-hidden="true">

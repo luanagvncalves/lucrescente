@@ -1,23 +1,25 @@
-"use client";
-
-import { useState } from "react";
+import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
 import type { Product } from "@/lib/types";
 import type { ProductLocale } from "@/content/product-locales";
-import { getSkinSafeNote, isSkinSafe } from "@/content/skin-safe-locales";
+import { isSkinSafe } from "@/content/skin-safe-locales";
+import { faqHref, type FaqAnchor } from "@/content/faq-anchors";
 
 /**
  * Every extra claim on a product page, in one row of boxes shaped exactly like
  * the format pills in the panel below: same height, same radius, same type.
  *
- * This replaces four components that each rendered their own differently shaped
- * control — deodorant chips, "menos água", "embalagem reutilizável", "seguros
- * para a pele" — and each sat in a different part of the page. They are one
- * kind of information, so they are now one list in one place.
+ * Each box is a link to the question that explains it on the FAQ page, which
+ * arrives with that answer already open. The claims used to carry their own
+ * text — some as panels that opened in place, most with nothing behind them at
+ * all — so the same explanation lived in two places and only one of them was
+ * findable by search or by someone who had not thought to click a green pill.
  *
- * Some of them have a paragraph behind them and some do not, which is why the
- * row mixes plain boxes with buttons. That difference is deliberate: a box you
- * can open is a button and says so, a bare claim is not.
+ * Which question each box points at is named in `faq-anchors.ts`; this file
+ * never spells out a position in the FAQ.
+ *
+ * `sage` is the brand's own green, sampled from the logotype. White on it
+ * measures 6.79:1, well past the 4.5:1 that text this size needs.
  */
 
 /** Only solid products save the water, so only they make the claim. */
@@ -26,94 +28,50 @@ const WATER_SAVING_CATEGORIES = ["champos", "amaciadores", "sabonetes"];
 /** A lipstick tube and an inhaler are not packaging we take back. */
 const REUSABLE_EXCLUDED_CATEGORIES = ["batons", "inaladores"];
 
-/**
- * `sage` is the light green the brand chose by pointing at where it already
- * appeared — a sold-out format pill, once selected — and it is defined with the
- * rest of the palette in globals.css. White on it measures 5.1:1, clearing the
- * 4.5:1 that text this size needs.
- */
 const BOX =
-  "inline-flex h-11 items-center rounded-full border border-sage bg-sage px-4 font-ui text-[0.92rem] font-medium text-white transition-colors";
-
-type Disclosure = { key: string; label: string; text: string; panel: string };
+  "inline-flex h-11 items-center rounded-full border border-sage bg-sage px-4 font-ui text-[0.92rem] font-medium text-white transition-colors hover:border-forest hover:bg-forest";
 
 export function ProductExtraInfo({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
   const t = getDictionary(locale);
-  const [open, setOpen] = useState<string | null>(null);
+  const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
-  // claims with nothing behind them to read
-  const claims = product.is_deodorant
-    ? [t.productInfo.notAntiperspirant, t.productInfo.aluminiumFree, t.productInfo.alcoholFree, t.productInfo.customisable]
-    : [];
+  const claims: { label: string; anchor: FaqAnchor }[] = [];
 
-  const disclosures: Disclosure[] = [];
+  if (product.is_deodorant) {
+    // all three are answered by the same question, which is the one that says
+    // the deodorants have neither aluminium nor alcohol
+    claims.push(
+      { label: t.productInfo.notAntiperspirant, anchor: "desodorizantes-antitranspirantes" },
+      { label: t.productInfo.aluminiumFree, anchor: "desodorizantes-antitranspirantes" },
+      { label: t.productInfo.alcoholFree, anchor: "desodorizantes-antitranspirantes" },
+      { label: t.productInfo.customisable, anchor: "produto-personalizado" },
+    );
+  }
   if (WATER_SAVING_CATEGORIES.includes(product.category.slug)) {
-    disclosures.push({
-      key: "water",
-      label: t.productInfo.waterSavingLabel,
-      text: t.productInfo.waterSavingText,
-      panel: "border-blue-200/40 bg-blue-50/50",
-    });
+    claims.push({ label: t.productInfo.waterSavingLabel, anchor: "porque-solidos" });
   }
   if (!REUSABLE_EXCLUDED_CATEGORIES.includes(product.category.slug)) {
-    disclosures.push({
-      key: "reusable",
-      label: t.productInfo.reusableLabel,
-      // a solid product travels in paper rather than a container we take back
-      text: product.is_solid ? t.productInfo.paperWrappedText : t.productInfo.reusableText,
-      panel: "border-green-200/40 bg-green-50/50",
-    });
+    claims.push({ label: t.productInfo.reusableLabel, anchor: "devolver-embalagem" });
   }
   if (isSkinSafe(product.slug, product.category.slug)) {
-    disclosures.push({
-      key: "skin",
+    // the shampoos have a question of their own, about doubling as a body wash
+    claims.push({
       label: t.productInfo.skinSafeLabel,
-      // the shampoos say something more specific than the rest
-      text: getSkinSafeNote(product.category.slug, locale) ?? t.productInfo.skinSafeText,
-      panel: "border-amber-200/40 bg-amber-50/50",
+      anchor: product.category.slug === "champos" ? "champo-no-corpo" : "usar-na-pele",
     });
   }
 
-  if (!claims.length && !disclosures.length) return null;
-
-  const openItem = disclosures.find((d) => d.key === open) ?? null;
+  if (!claims.length) return null;
 
   return (
-    <div className="mt-6">
-      <ul className="flex flex-wrap gap-2">
-        {claims.map((label) => (
-          <li key={label}>
-            <span className={BOX}>{label}</span>
-          </li>
-        ))}
-        {disclosures.map((d) => {
-          const isOpen = d.key === open;
-          return (
-            <li key={d.key}>
-              <button
-                type="button"
-                aria-expanded={isOpen}
-                aria-controls={`extra-${d.key}`}
-                onClick={() => setOpen(isOpen ? null : d.key)}
-                /*
-                  An open box goes to full-strength forest, the same way a chosen
-                  format pill does — with only one panel below the row, something
-                  has to say which box it belongs to.
-                */
-                className={`${BOX} cursor-pointer hover:opacity-90 ${isOpen ? "!border-forest !bg-forest" : ""}`}
-              >
-                {d.label}
-              </button>
-            </li>
-          );
-        })}
-      </ul>
-
-      {openItem ? (
-        <div id={`extra-${openItem.key}`} className={`mt-4 rounded-2xl border p-6 ${openItem.panel}`}>
-          <p className="text-sm leading-relaxed text-ink/80">{openItem.text}</p>
-        </div>
-      ) : null}
-    </div>
+    <ul className="mt-6 flex flex-wrap gap-2">
+      {claims.map((claim) => (
+        <li key={claim.label}>
+          <Link href={faqHref(claim.anchor, query)} className={BOX}>
+            {claim.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
   );
 }

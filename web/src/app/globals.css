@@ -9,13 +9,12 @@
   --forest: #223925;
   --moss: #48674d;
   /*
-    The light green on the extra-information boxes. It is forest at 70% over
-    paper — the colour a sold-out format pill already had, which is how the
-    brand picked it, by pointing at one. Written out as a flat hex like the
-    rest of the palette so it no longer depends on an opacity someone may
-    change. White text on it measures 5.1:1.
+    The green on the extra-information boxes: the brand's own, sampled from the
+    field inside the circle of the logotype (public/brand/logo.png), averaged
+    over the ~6000 pixels of flat colour around the wordmark. White text on it
+    measures 6.79:1.
   */
-  --sage: #637263;
+  --sage: #4a6148;
   --earth: #847a69;
   --clay: #6f554f;
   --bark: #593d37;

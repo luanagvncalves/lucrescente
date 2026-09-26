@@ -126,8 +126,9 @@ export const pt = {
     price: "preço", // ui
     onRequest: "por encomenda",
     talkToUs: "fala connosco →",
-    soldOutTag: "esgotado", // ui — the marker inside a format pill, beside the size
-    soldOutShort: "esgotado por agora", // ui — the badge on a product card in the grid
+    // one word, in both places it appears: beside the size inside a format
+    // pill, and as the badge on a product card in the grid
+    soldOutTag: "esgotado", // ui
     priceFrom: "desde ", // ui
     addToCart: "adicionar ao carrinho", // ui
     added: "adicionado ao carrinho", // ui
@@ -349,6 +350,10 @@ export const pt = {
             q: "o que quer dizer o asterisco na lista de ingredientes?",
             a: "que esse ingrediente é biológico. sempre que possível escolhemos ingredientes biológicos e assinalamo-los com * na descrição, para saberes melhor o que estás a usar.",
           },
+          {
+            q: "que produtos posso usar diretamente na pele?",
+            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. escolhemos os ingredientes a pensar nisso, por isso o contacto direto não é preocupação — só a tua própria pele, como sempre: se for sensível, experimenta primeiro numa zona pequena.",
+          },
         ],
       },
       {
@@ -478,6 +483,7 @@ export const pt = {
     sms: "sms",
     whatsapp: "whatsapp",
     email: "email",
+    otherMethods: "outros métodos", // ui
   },
 } as const;
 
