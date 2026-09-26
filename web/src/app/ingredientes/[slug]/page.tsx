@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import { getIngredientBySlug, getIngredients, getProductsForIngredient } from "@/lib/catalog";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
 import { brandCase, brandSentence } from "@/lib/brand-case";
-import type { ProductLocale } from "@/content/product-locales";
+import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
 import { ProductCard } from "@/components/product/product-card";
@@ -94,8 +94,11 @@ export default async function IngredientPage({ params, searchParams }: Params) {
               <ul className="mt-4 space-y-2">
                 {products.map((p) => (
                   <li key={p.slug}>
-                    <Link href={`/produtos/${p.slug}`} className="inline-flex min-h-11 items-center font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
-                      {p.name}
+                    {/* the same localised name the cards below use — this list was reading the
+                        Portuguese name straight from the database, so it stayed in Portuguese
+                        while the rest of the page was translated */}
+                    <Link href={`/produtos/${p.slug}${query}`} className="inline-flex min-h-11 items-center font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
+                      {getProductCopy(p.slug, locale, { name: p.name }).name}
                     </Link>
                   </li>
                 ))}

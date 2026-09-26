@@ -171,7 +171,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "champos-para-cabelos-normais",
-    name: "champôs para cabelos normais",
+    name: "champô sólido para cabelos normais",
     category_slug: "champos",
     sort_order: 2,
     why_it_works:

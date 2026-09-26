@@ -300,8 +300,8 @@ const collected: Testimonial[] = [
       en: "I'm here to give feedback on the shampoo and conditioner, I've been liking them a looot, the shampoo cleans really well, I don't even feel the need to wash twice like I sometimes did before, and the conditioner leaves my hair soft, I liked it!",
       fr: "je viens donner mon avis sur le shampoing et l'après-shampoing, j'aime beaucoup, le shampoing nettoie très bien, je ne ressens même plus le besoin de laver deux fois comme parfois avant, et l'après-shampoing laisse les cheveux doux, j'ai aimé !",
     },
-    product: "champô cabelos normais e amaciador",
-    productTranslations: { en: "normal hair shampoo and conditioner", fr: "shampoing cheveux normaux et après-shampoing" },
+    product: "champô sólido para cabelos normais e amaciador",
+    productTranslations: { en: "solid shampoo for normal hair and conditioner", fr: "shampoing solide pour cheveux normaux et après-shampoing" },
     stars: 5,
   },
   {
