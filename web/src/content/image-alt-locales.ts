@@ -254,6 +254,65 @@ const alt: Record<string, { en: string; fr: string }> = {
     fr: "bougie artisanale dans un verre avec un ruban jaune et des fleurs séchées, sur un tissu floral",
   },
 
+  // velas com mensagem
+  "vela em casca de coco com «parabéns» escrito à mão a verde, flores secas brancas e uma pétala amarela": {
+    en: "candle in a coconut shell with «parabéns» written by hand in green, white dried flowers and a yellow petal",
+    fr: "bougie dans une coque de noix de coco avec « parabéns » écrit à la main en vert, des fleurs séchées blanches et un pétale jaune",
+  },
+  "vela em casca de coco com «gosto de ti MS» escrito à mão a vermelho, um coração de cera branca e botões de rosa": {
+    en: "candle in a coconut shell with «gosto de ti MS» written by hand in red, a white wax heart and rosebuds",
+    fr: "bougie dans une coque de noix de coco avec « gosto de ti MS » écrit à la main en rouge, un cœur en cire blanche et des boutons de rose",
+  },
+  "vela em casca de coco com «adoro-te» escrito à mão a roxo, uma flor e um coração de cera cor-de-rosa": {
+    en: "candle in a coconut shell with «adoro-te» written by hand in purple, a pink wax flower and heart",
+    fr: "bougie dans une coque de noix de coco avec « adoro-te » écrit à la main en violet, une fleur et un cœur en cire rose",
+  },
+  "vela de três pavios em taça de barro com «obrigada» escrito à mão a vermelho e flores secas cor-de-rosa": {
+    en: "three-wick candle in a terracotta bowl with «obrigada» written by hand in red and pink dried flowers",
+    fr: "bougie à trois mèches dans un bol en terre cuite avec « obrigada » écrit à la main en rouge et des fleurs séchées roses",
+  },
+  "vela em taça de barro com «com carinho» escrito à mão e um coração de viana pintado a vermelho e amarelo": {
+    en: "candle in a terracotta bowl with «com carinho» written by hand and a viana heart painted in red and yellow",
+    fr: "bougie dans un bol en terre cuite avec « com carinho » écrit à la main et un cœur de viana peint en rouge et jaune",
+  },
+  "vela retangular em taça de vidro com «aceitas ser minha madrinha?» escrito à mão a azul, conchas e margaridas secas": {
+    en: "rectangular candle in a glass dish with «aceitas ser minha madrinha?» written by hand in blue, seashells and dried daisies",
+    fr: "bougie rectangulaire dans un plat en verre avec « aceitas ser minha madrinha ? » écrit à la main en bleu, des coquillages et des marguerites séchées",
+  },
+  "vela em casca de coco com «parabéns» escrito à mão a rosa, alfazema e uma flor azul secas": {
+    en: "candle in a coconut shell with «parabéns» written by hand in pink, dried lavender and a blue flower",
+    fr: "bougie dans une coque de noix de coco avec « parabéns » écrit à la main en rose, de la lavande et une fleur bleue séchées",
+  },
+  "vela em taça de barro com «parabéns» escrito à mão a rosa, um coração e uma flor de cera cor-de-rosa": {
+    en: "candle in a terracotta bowl with «parabéns» written by hand in pink, a pink wax heart and flower",
+    fr: "bougie dans un bol en terre cuite avec « parabéns » écrit à la main en rose, un cœur et une fleur en cire rose",
+  },
+  "vela em concha com «mamã» escrito à mão a azul, pedrinhas azuis e douradas e pequenos búzios": {
+    en: "candle in a seashell with «mamã» written by hand in blue, blue and gold pebbles and small shells",
+    fr: "bougie dans un coquillage avec « mamã » écrit à la main en bleu, des cailloux bleus et dorés et de petits coquillages",
+  },
+  "duas velas com «beijinhos» escrito à mão — uma em casca de coco com pedrinhas azuis, outra em concha com um coração de cera": {
+    en: "two candles with «beijinhos» written by hand — one in a coconut shell with blue pebbles, one in a seashell with a wax heart",
+    fr: "deux bougies avec « beijinhos » écrit à la main — l'une dans une coque de noix de coco avec des cailloux bleus, l'autre dans un coquillage avec un cœur en cire",
+  },
+  "vela em casca de coco segurada na mão, com «28 com amor» escrito à mão a verde e pétalas amarelas secas": {
+    en: "candle in a coconut shell held in a hand, with «28 com amor» written by hand in green and dried yellow petals",
+    fr: "bougie dans une coque de noix de coco tenue à la main, avec « 28 com amor » écrit à la main en vert et des pétales jaunes séchés",
+  },
+  "vela em casca de coco com «28 com amor» escrito à mão a laranja e uma flor branca em estrela": {
+    en: "candle in a coconut shell with «28 com amor» written by hand in orange and a white star-shaped flower",
+    fr: "bougie dans une coque de noix de coco avec « 28 com amor » écrit à la main en orange et une fleur blanche en étoile",
+  },
+  "vela em casca de coco com «love youuu» escrito à mão a rosa, um coração de cera e estrelas douradas": {
+    en: "candle in a coconut shell with «love youuu» written by hand in pink, a wax heart and gold stars",
+    fr: "bougie dans une coque de noix de coco avec « love youuu » écrit à la main en rose, un cœur en cire et des étoiles dorées",
+  },
+  "vela em taça de barro com «feliz 2025» escrito à mão a amarelo, laço amarelo e um búzio": {
+    en: "candle in a terracotta bowl with «feliz 2025» written by hand in yellow, a yellow ribbon and a shell",
+    fr: "bougie dans un bol en terre cuite avec « feliz 2025 » écrit à la main en jaune, un ruban jaune et un coquillage",
+  },
+  // end velas com mensagem
+
   // editorial photographs
   "produtos lucrescente variados: frascos de vidro âmbar, desodorizante em boião branco, sabonetes, bastão de madeira, sobre tecido floral rosa e azul": {
     en: "an assortment of lucrescente products: amber glass bottles, deodorant in a white jar, soaps and a wooden stick, on pink and blue floral fabric",

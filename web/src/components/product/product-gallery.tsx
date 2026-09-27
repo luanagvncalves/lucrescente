@@ -46,9 +46,15 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
           </>
         )}
       </div>
-      <ul className="mt-3 flex gap-3" aria-label={t.products.galleryOf(name)}>
+      {/*
+        Scrolls rather than overflowing. Every product used to have three photos
+        at most, so a plain flex row fitted; the candle with a message has
+        fourteen, and on a phone that row was a thousand pixels wide and gave the
+        whole page a sideways scroll.
+      */}
+      <ul className="mt-3 flex gap-3 overflow-x-auto pb-1" aria-label={t.products.galleryOf(name)}>
         {images.map((img, i) => (
-          <li key={img.path}>
+          <li key={img.path} className="shrink-0">
             <button
               type="button"
               onClick={() => setIndex(i)}

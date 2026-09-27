@@ -16,6 +16,7 @@ import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductContact } from "@/components/product/product-contact";
 import { ProductExtraInfo } from "@/components/product/product-extra-info";
+import { CandleMessageLink } from "@/components/product/candle-message-link";
 
 export const revalidate = 60;
 
@@ -115,8 +116,10 @@ export default async function ProductPage({ params, searchParams }: Params) {
       </nav>
 
       <div className="mt-6 grid gap-10 md:grid-cols-12 lg:gap-14">
-        {/* image 7 cols */}
-        <div className="md:col-span-7">
+        {/* image 7 cols. `min-w-0` because a grid item defaults to
+            min-width:auto: the gallery's scrolling thumbnail strip stretched
+            this column to its full content width, and the whole page with it. */}
+        <div className="md:col-span-7 min-w-0">
           {product.images.length > 1 ? (
             <ProductGallery images={product.images} name={copy.name} locale={locale} />
           ) : (
@@ -185,7 +188,12 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
           {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
           {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
-          {product.is_candle ? <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">{t.products.candleNote}</p> : null}
+          {product.is_candle ? (
+            <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">
+              {t.products.candleNote}
+              <CandleMessageLink slug={product.slug} locale={locale} />
+            </p>
+          ) : null}
         </div>
       </div>
 

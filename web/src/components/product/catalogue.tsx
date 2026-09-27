@@ -10,7 +10,6 @@ import { ProductCard } from "./product-card";
 import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
 import { FilterBar } from "@/components/ui/filter-bar";
-import { CandleMessagesSection } from "./candle-messages-section";
 
 export function Catalogue({ categories, products }: { categories: Category[]; products: Product[] }) {
   const params = useSearchParams();
@@ -75,7 +74,11 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
 
   return (
     <>
-      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 lg:-mx-16 lg:px-16">
+      {/* The negative margin has to undo exactly the gutter `container-brand`
+          is using, and that gutter steps to 4rem at 1280 — xl, not lg. With
+          `lg` the bar overshot by 32px a side between 1024 and 1279, which put
+          the chips off the page grid and gave the page a sideways scroll. */}
+      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 xl:-mx-16 xl:px-16">
         <FilterBar
           ariaLabel={t.products.filterLabel}
           options={options}
@@ -112,15 +115,6 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
           </>
         )}
       </div>
-
-      {/*
-        A candle with a message is not a catalogue entry — it is any of the four
-        candles, made to order — so it belongs under the grid rather than inside
-        it. Shown under the candles filter and under the unfiltered view, which
-        is where most visitors land: behind the filter alone, the section was on
-        the site without being on any page anyone reached.
-      */}
-      {active === "velas" || !active ? <CandleMessagesSection locale={locale} /> : null}
 
       <Modal open={cancelled} onClose={() => setCancelled(false)} title={t.cart.errorTitle} primaryLabel={t.cart.ok}>
         {t.cart.cancelled}

@@ -340,6 +340,19 @@ export const products: ProductSeed[] = [
     is_deodorant: false,
     variants: one("vela-colorida", null, 1),
   },
+  {
+    slug: "vela-com-mensagem",
+    name: "vela com mensagem",
+    category_slug: "velas",
+    sort_order: 4,
+    why_it_works:
+      "podemos escrever a tua mensagem na vela — um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem — funciona com qualquer uma das nossas velas. cada uma é feita depois de falares connosco, por isso pede com alguma antecedência. e se tiveres um frasco, uma caneca ou uma taça que gostasses de usar, basta entregares-nos o recipiente.",
+    ingredient_slugs: ["cera-de-soja"],
+    is_solid: false,
+    is_candle: true,
+    is_deodorant: false,
+    variants: one("vela-com-mensagem", null, 1),
+  },
 
   // ---------------- roll-on ----------------
   {
