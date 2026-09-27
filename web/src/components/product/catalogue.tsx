@@ -115,10 +115,12 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
 
       {/*
         A candle with a message is not a catalogue entry — it is any of the four
-        candles, made to order — so it belongs under the candle grid rather than
-        inside it. Only shown when the candles filter is the active one.
+        candles, made to order — so it belongs under the grid rather than inside
+        it. Shown under the candles filter and under the unfiltered view, which
+        is where most visitors land: behind the filter alone, the section was on
+        the site without being on any page anyone reached.
       */}
-      {active === "velas" ? <CandleMessagesSection locale={locale} /> : null}
+      {active === "velas" || !active ? <CandleMessagesSection locale={locale} /> : null}
 
       <Modal open={cancelled} onClose={() => setCancelled(false)} title={t.cart.errorTitle} primaryLabel={t.cart.ok}>
         {t.cart.cancelled}
