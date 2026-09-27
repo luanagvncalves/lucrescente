@@ -133,7 +133,7 @@ export function Testimonials({
     <section className="bg-ivory" aria-labelledby="testemunhos">
       <div className="container-brand section-gap !pb-10">
         <Reveal>
-          <SectionHeader label={label} title={title} subtitle={subtitle} />
+          <SectionHeader titleId="testemunhos" label={label} title={title} subtitle={subtitle} />
         </Reveal>
 
         <Reveal>

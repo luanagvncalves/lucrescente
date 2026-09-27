@@ -57,7 +57,9 @@ export function HomeHero({
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-ivory/5" />
 
 
-      <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
+      {/* the generous foot is what lifts the sentence off the bottom edge and
+          closes the gap that used to sit above it */}
+      <div className="container-brand relative z-10 flex h-full items-end pb-20 pt-24 sm:pb-28 lg:pb-44">
         <div className="max-w-6xl text-ivory">
           <motion.h1
             /*
@@ -66,8 +68,13 @@ export function HomeHero({
               where a line of thirty characters still fits. On a phone the
               breaks would leave half-empty lines, so there the text wraps by
               itself, as any paragraph would.
+
+              The ceiling is what the longest of those three lines — thirty
+              characters — can be without spilling past the container, which is
+              why it stops short of the old 7rem: at that size the sentence
+              only ever fitted in four lines.
             */
-            className="max-w-none whitespace-normal font-display text-[clamp(3rem,5.8vw,5.2rem)] leading-[0.98] tracking-[-0.04em] lowercase text-ivory md:whitespace-pre-line"
+            className="max-w-none whitespace-normal font-display text-[clamp(3.2rem,6.4vw,5.8rem)] leading-[0.98] tracking-[-0.04em] lowercase text-ivory md:whitespace-pre-line"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

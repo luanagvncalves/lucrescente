@@ -50,11 +50,15 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   const categoryLabel = getIngredientCategoryName(ingredient.category, locale, ingredient.category);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
-  const sections: { title: string; text: string | null }[] = [
-    { title: s.scientificName, text: ingredient.scientific_name },
-    { title: s.origin, text: copy.origin },
-    { title: s.properties, text: copy.properties },
-    { title: s.applications, text: copy.applications },
+  // `id` is fixed, not built from the title: the titles are translated and
+  // several contain a space, and `aria-labelledby` reads a space as the start
+  // of a second id — so every one of these sections was pointing at headings
+  // that do not exist and had no name at all for a screen reader.
+  const sections: { id: string; title: string; text: string | null }[] = [
+    { id: "sec-nome-cientifico", title: s.scientificName, text: ingredient.scientific_name },
+    { id: "sec-origem", title: s.origin, text: copy.origin },
+    { id: "sec-propriedades", title: s.properties, text: copy.properties },
+    { id: "sec-aplicacoes", title: s.applications, text: copy.applications },
   ];
 
   return (
@@ -79,8 +83,8 @@ export default async function IngredientPage({ params, searchParams }: Params) {
           {sections
             .filter((sec) => sec.text)
             .map((sec) => (
-              <section key={sec.title} aria-labelledby={`sec-${sec.title}`}>
-                <h2 id={`sec-${sec.title}`} className="text-h3 text-forest lowercase">
+              <section key={sec.id} aria-labelledby={sec.id}>
+                <h2 id={sec.id} className="text-h3 text-forest lowercase">
                   {sec.title}
                 </h2>
                 <p className="mt-3 text-body-lg measure">{sec.text}</p>

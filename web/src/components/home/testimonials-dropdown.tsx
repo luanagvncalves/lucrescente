@@ -33,7 +33,7 @@ export function TestimonialsDropdown({
   return (
     <section className="bg-ivory" aria-labelledby="testemunhos">
       <div className="container-brand section-gap">
-        <SectionHeader label={label} title={title} subtitle={subtitle} />
+        <SectionHeader titleId="testemunhos" label={label} title={title} subtitle={subtitle} />
 
         <Reveal>
           <div className="mt-10 max-w-3xl space-y-3">

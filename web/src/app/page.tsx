@@ -127,7 +127,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         <div className="container-brand section-gap">
           <Reveal>
             {/* short enough to hold on one line, so it is not broken in two */}
-            <SectionHeader title={t.home.productsTitle} subtitle={t.home.productsSubtitle} titleClassName="max-w-none sm:whitespace-nowrap" />
+            <SectionHeader titleId="categorias" title={t.home.productsTitle} subtitle={t.home.productsSubtitle} titleClassName="max-w-none sm:whitespace-nowrap" />
           </Reveal>
           <div className="mt-10 flex flex-col gap-10">
             {categoryGroups.map((group) => (
@@ -222,7 +222,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             <div className="flex flex-wrap items-end justify-between gap-6">
               <div className="max-w-2xl">
                 <Label tone="violet">{t.ingredients.label}</Label>
-                <H2 className="mt-4">{t.home.ingredientsTitle}</H2>
+                <H2 id="ingredientes" className="mt-4">
+                  {t.home.ingredientsTitle}
+                </H2>
                 <p className="mt-4 text-body-lg measure">{t.home.ingredientsSubtitle}</p>
               </div>
               <TextLink href={`/ingredientes${query}`}>{t.home.ingredientsLink}</TextLink>

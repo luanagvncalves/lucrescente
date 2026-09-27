@@ -51,7 +51,6 @@ export const en: Dictionary = {
     ...pt.home,
     heroLabel: "handmade, with care",
     heroTitle: "simple care,\nmade with love and with\ningredients we trust.",
-    heroSubtitle: "at home, every product begins with an ingredient we know well — and we love sharing its story with you before it reaches your skin.",
     heroPrimary: "see all products", heroSecondary: "see all ingredients", featuredTitle: "our current favourites", cardLink: "take a look →",
     productsTitle: "care for your days", productsSubtitle: "balms, shampoos, decorated candles and much more, handmade with carefully chosen ingredients.", productsButton: "see all products", featuredMoreLink: "see more",
     valuesTitle: "what guides us", valuesSubtitle: "thoughtfully chosen ingredients, less waste and room for everyone to care in their own way.", values: ["handmade", "honest ingredients", "less waste"],

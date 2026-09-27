@@ -43,8 +43,6 @@ export const pt = {
     // the three line breaks are deliberate: the hero sets this sentence in
     // three lines (see HomeHero), and types it out one line at a time
     heroTitle: "cuidados simples,\nfeitos com amor e com\ningredientes em que confiamos.",
-    heroSubtitle:
-      "cá em casa, cada produto começa por um ingrediente que conhecemos bem — e adoramos partilhar essa história contigo antes de ele chegar à tua pele.",
     heroPrimary: "ver todos os produtos",
     heroSecondary: "ver todos os ingredientes",
     featuredTitle: "os nossos preferidos do momento",

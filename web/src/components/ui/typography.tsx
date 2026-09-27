@@ -6,12 +6,20 @@ export function Label({ children, tone = "moss", className = "" }: { children: R
   return <p className={`label-brand ${color} ${className}`}>{children}</p>;
 }
 
-export function H1({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <h1 className={`text-h1 text-forest lowercase ${className}`}>{children}</h1>;
+export function H1({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
+  return (
+    <h1 id={id} className={`text-h1 text-forest lowercase ${className}`}>
+      {children}
+    </h1>
+  );
 }
 
-export function H2({ children, className = "" }: { children: ReactNode; className?: string }) {
-  return <h2 className={`text-h2 text-forest lowercase ${className}`}>{children}</h2>;
+export function H2({ children, className = "", id }: { children: ReactNode; className?: string; id?: string }) {
+  return (
+    <h2 id={id} className={`text-h2 text-forest lowercase ${className}`}>
+      {children}
+    </h2>
+  );
 }
 
 export function H3({ children, className = "" }: { children: ReactNode; className?: string }) {
@@ -36,6 +44,12 @@ export function SectionHeader({
   as: As = H2,
   /** Overrides the default 20ch measure — a short title can be held on one line. */
   titleClassName = "max-w-[20ch]",
+  /**
+   * Lands on the heading itself. A `<section aria-labelledby="…">` needs the id
+   * to exist or the section has no name at all, which is worse than having no
+   * `aria-labelledby` to begin with.
+   */
+  titleId,
 }: {
   label?: string;
   title: string;
@@ -44,11 +58,14 @@ export function SectionHeader({
   tone?: "moss" | "violet";
   as?: typeof H1 | typeof H2;
   titleClassName?: string;
+  titleId?: string;
 }) {
   return (
     <div className={`flex flex-col gap-4 ${align === "center" ? "items-center text-center" : ""}`}>
       {label ? <Label tone={tone}>{label}</Label> : null}
-      <As className={titleClassName}>{title}</As>
+      <As id={titleId} className={titleClassName}>
+        {title}
+      </As>
       {subtitle ? <p className="text-body-lg text-ink/90 measure">{subtitle}</p> : null}
     </div>
   );
