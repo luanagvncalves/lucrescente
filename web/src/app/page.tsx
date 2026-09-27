@@ -109,6 +109,11 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 id="destaques" className="text-h2 text-forest lowercase">
               {t.home.featuredTitle}
+              {/* favourites are starred — the same mark the feedback cards use.
+                  Decorative, so it is not read out after the heading. */}
+              <span aria-hidden="true" className="ml-3 align-middle text-[0.45em] text-clay">
+                ★
+              </span>
             </h2>
             <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
           </div>

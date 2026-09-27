@@ -95,7 +95,11 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       <Reveal>
         <section className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{d.about.close}</p>
-          <Link href={`/${query}`} className="mt-8 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
+          {/* a curl of growth to close the story on — decorative only */}
+          <p aria-hidden="true" className="mt-7 text-[2.4rem] leading-none text-clay/80">
+            ಄
+          </p>
+          <Link href={`/${query}`} className="mt-6 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
             {d.about.backLink}
           </Link>
         </section>

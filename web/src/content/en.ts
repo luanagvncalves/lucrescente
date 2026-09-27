@@ -5,7 +5,7 @@ export const en: Dictionary = {
   locale: "en-GB",
   brand: {
     ...pt.brand,
-    tagline: "handmade, with love 🌱",
+    tagline: "handmade, with love ♡",
     description: "portuguese natural hygiene and beauty brand, handmade at home in small batches.",
   },
   nav: {
@@ -55,7 +55,7 @@ export const en: Dictionary = {
     productsTitle: "care for your days", productsSubtitle: "balms, shampoos, decorated candles and much more, handmade with carefully chosen ingredients.", productsButton: "see all products", featuredMoreLink: "see more",
     valuesTitle: "what guides us", valuesSubtitle: "thoughtfully chosen ingredients, less waste and room for everyone to care in their own way.", values: ["handmade", "honest ingredients", "less waste"],
     storyTitle: "a small brand, made with intention", storyText: "lucrescente started as a completely family project — long before it was even a project — and grew, little by little, to reach more people. we know our ingredients, tell each one's story, and still make everything in small batches, with the same care as day one.", storyLink: "discover our story →",
-    ingredientsTitle: "the ingredients we use, one by one", ingredientsSubtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does 🌿", ingredientsLink: "see all ingredients →",
+    ingredientsTitle: "the ingredients we use, one by one", ingredientsSubtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does ✿", ingredientsLink: "see all ingredients →",
     contactTitle: "order your products", contactText: "for questions, customisations or special orders, get in touch.",
     contactButtons: { call: "call", sms: "text message", whatsapp: "whatsapp message", email: "email" }, candleCitronelaName: "citronella", candleFlowers: "dried flowers", candleMessage: "with personalised messages", candleMassage: "massage", candleAltCitronela1: "three citronella candles in glass jars with a black label, on pink and blue floral fabric", candleAltCitronela2: "three candles in glass jars with a black label next to dried flowers", candleAltMassagem: "a wicker basket with a candle in a metal tin, a candle in a glass jar with a red ribbon, a jar of bath salts and a roll-on, on a christmas cloth with lights", categoryGroupHigiene: "hygiene", categoryGroupBeleza: "beauty", categoryGroupBemEstar: "wellness",
     shortAbout: "handmade hygiene, beauty and wellness products, made by mother and daughter, for healthier, more personal self-care.",
@@ -67,7 +67,7 @@ export const en: Dictionary = {
     showMore: "show more",
     showLess: "show less",
   },
-  footer: { line: "lucrescente — handmade, with love 🌱", contactsTitle: "contact", pagesTitle: "pages", shipping: "national and international shipping by order. larger quantities available by request.", returnsSummary: "wrong product, or damaged? you have 14 days to tell us, and the cost of sending it back is ours.", returnsLink: "read the returns policy →" },
+  footer: { line: "lucrescente ☾ handmade, with love", contactsTitle: "contact", pagesTitle: "pages", shipping: "national and international shipping by order. larger quantities available by request.", returnsSummary: "wrong product, or damaged? you have 14 days to tell us, and the cost of sending it back is ours.", returnsLink: "read the returns policy →" },
   products: {
     ...pt.products, scrollLeft: "see previous categories", scrollRight: "see next categories", deodorantFact: "apply a thin layer to clean, dry skin — it spreads better with your body heat.", solidNote: "a solid product, with no water in the formula. keep it somewhere dry between uses so it lasts longer.", label: "handmade, one by one", title: "our products", allCategories: "all", filterLabel: "categories", whyItWorks: "why it works", hairTypeNote: "what hair type this is for", recommendedFor: "recommended for", notRecommendedFor: "not recommended for", mainIngredients: "main ingredients", allergenNoteLabel: "please note",
     noIngredientsListed: "this product's ingredient list has not been published yet. get in touch to find out more.", noCopy: "this product's story is still being written at home.", noPhoto: "no photograph yet", galleryPrevious: "previous image", galleryNext: "next image", galleryOf: (name: string) => `photographs of ${name}`, price: "price", onRequest: "made to order", talkToUs: "get in touch →",
@@ -77,7 +77,7 @@ export const en: Dictionary = {
     backToCatalog: "← back to products", relatedTitle: "build your set", relatedPrev: "previous products", relatedNext: "next products", usedInTitle: "where we use this ingredient", emptyCategory: "there are no products in this category yet. get in touch to hear what is coming.", organicNote: "* organic ingredient",
   },
   ingredients: {
-    ...pt.ingredients, label: "plant and mineral origin", title: "the ingredients we use, one by one", subtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does 🌿", allCategories: "all",
+    ...pt.ingredients, label: "plant and mineral origin", title: "the ingredients we use, one by one", subtitle: "each one has its own story and purpose. choose one to discover where it comes from and what it does ✿", allCategories: "all",
     sections: { scientificName: "scientific name", origin: "origin", properties: "properties", applications: "applications at lucrescente" }, backToIndex: "← back to ingredients", productsUsing: "products with this ingredient", noProducts: "we have not linked this ingredient to a catalogue product yet.", searchPlaceholder: "search for an ingredient", noResults: "we could not find an ingredient with that name.",  },
   about: {
     ...pt.about, label: "our story", title: "two ways of looking at care", intro: "lucrescente was born from the meeting of scientific knowledge about plants and a sensitive, creative way of looking at everyday life.",

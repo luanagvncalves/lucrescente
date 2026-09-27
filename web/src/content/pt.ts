@@ -9,7 +9,10 @@ export const pt = {
   locale: "pt-PT",
   brand: {
     name: "lucrescente",
-    tagline: "feito à mão, com amor 🌱",
+    // ♡, not the seedling emoji that used to sit here: emoji are drawn in
+    // their own fixed colours, which fought the palette. these marks take the
+    // colour of the text around them.
+    tagline: "feito à mão, com amor ♡",
     description:
       "marca portuguesa de higiene e beleza natural, feita à mão em casa, em pequenas quantidades.",
     instagram: "https://www.instagram.com/lu.crescente/",
@@ -42,7 +45,7 @@ export const pt = {
     heroLabel: "feito à mão, com carinho",
     // the three line breaks are deliberate: the hero sets this sentence in
     // three lines (see HomeHero), and types it out one line at a time
-    heroTitle: "cuidados simples,\nfeitos com amor e com\ningredientes em que confiamos.",
+    heroTitle: "cuidados simples,\nfeitos com amor e com\ningredientes de confiança.",
     heroPrimary: "ver todos os produtos",
     heroSecondary: "ver todos os ingredientes",
     featuredTitle: "os nossos preferidos do momento",
@@ -62,7 +65,7 @@ export const pt = {
     storyLink: "conhecer a nossa história →",
     ingredientsTitle: "os ingredientes que usamos, um a um",
     ingredientsSubtitle:
-      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve 🌿",
+      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve ✿",
     ingredientsLink: "ver todos os ingredientes →", // ui
     contactTitle: "encomenda os teus produtos",
     contactText: "para dúvidas, personalizações ou encomendas especiais, contacta-nos.",
@@ -93,7 +96,8 @@ export const pt = {
     showLess: "ver menos",
   },
   footer: {
-    line: "lucrescente — feito à mão, com amor 🌱",
+    // the waxing moon of the name, doing the work the dash used to do
+    line: "lucrescente ☾ feito à mão, com amor",
     contactsTitle: "contactos", // ui
     pagesTitle: "páginas", // ui
     shipping: "envios nacionais e internacionais por encomenda. quantidades maiores por encomenda.",
@@ -189,7 +193,7 @@ export const pt = {
     label: "de origem vegetal e mineral",
     title: "os ingredientes que usamos, um a um",
     subtitle:
-      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve 🌿",
+      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve ✿",
     allCategories: "todos", // ui
     sections: {
       scientificName: "nome científico",

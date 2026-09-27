@@ -81,7 +81,9 @@ export function IngredientIndex({ items, locale }: { items: IngredientListItem[]
 
   return (
     <>
-      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 lg:-mx-16 lg:px-16">
+      {/* matches `container-brand`'s own gutter step, which is xl, not lg —
+          see the same bar in catalogue.tsx */}
+      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 xl:-mx-16 xl:px-16">
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
           <FilterBar
             ariaLabel={t.products.filterLabel}

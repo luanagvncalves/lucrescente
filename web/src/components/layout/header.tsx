@@ -55,7 +55,13 @@ export function Header() {
           <span className="font-display text-[1.7rem] leading-none text-forest">lucrescente</span>
         </Link>
 
-        <nav aria-label="principal" className="hidden items-center gap-8 md:flex">
+        {/*
+          `lg`, not `md`: five links plus the three languages plus the basket
+          need about 900px, and at md (768px) the row ran 200px past the edge
+          and the whole site scrolled sideways on a tablet. The breakpoint moved
+          when "perguntas frequentes" became the fifth link.
+        */}
+        <nav aria-label="principal" className="hidden items-center gap-5 lg:flex xl:gap-8">
           {links.map((l) => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/");
             return (
@@ -69,7 +75,10 @@ export function Header() {
               </Link>
             );
           })}
-          <div className="ml-4 flex gap-2 border-l border-moss/15 pl-8">
+          {/* tighter between lg and xl: at 1024 the row is 32px too wide with
+              the roomier desktop spacing, and it is the spacing that gives, not
+              the nav — a laptop should still get the links rather than a menu */}
+          <div className="ml-2 flex gap-2 border-l border-moss/15 pl-5 xl:ml-4 xl:pl-8">
             <LanguageButton locale="pt" isMobile={false} />
             <LanguageButton locale="en" isMobile={false} />
             <LanguageButton locale="fr" isMobile={false} />
@@ -93,7 +102,7 @@ export function Header() {
           </button>
           <button
             type="button"
-            className="flex h-11 w-11 items-center justify-center rounded-full text-forest hover:bg-forest/5 md:hidden"
+            className="flex h-11 w-11 items-center justify-center rounded-full text-forest hover:bg-forest/5 lg:hidden"
             aria-expanded={menuOpen}
             aria-controls="menu-mobile"
             aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
@@ -117,7 +126,7 @@ export function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.22 }}
-            className="fixed inset-x-0 bottom-0 top-[72px] z-40 flex flex-col bg-forest text-ivory md:hidden on-dark"
+            className="fixed inset-x-0 bottom-0 top-[72px] z-40 flex flex-col bg-forest text-ivory lg:hidden on-dark"
           >
             <nav aria-label="principal (móvel)" className="container-brand flex flex-1 flex-col justify-center gap-2">
               {[{ href: "/", label: t.nav.home }, ...links].map((l, i) => (
