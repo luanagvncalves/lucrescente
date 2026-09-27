@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { Ingredient } from "@/lib/types";
+import { Reveal } from "@/components/ui/reveal";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
 import type { ProductLocale } from "@/content/product-locales";
 
@@ -26,8 +27,10 @@ export function IngredientTeaserGrid({
   return (
     <>
       <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
-        {visible.map((i) => (
-          <li key={i.slug}>
+        {visible.map((i, index) => (
+          // the delay restarts at the top of each row of four, so "ver mais"
+          // reveals the new cards in the same rhythm as the first four
+          <Reveal as="li" key={i.slug} delay={(index % 4) * 0.08}>
             <Link
               href={`/ingredientes/${i.slug}${locale === "pt" ? "" : `?idioma=${locale}`}`}
               className="card-brand block h-full p-5 transition-transform duration-200 hover:-translate-y-0.5"
@@ -54,7 +57,7 @@ export function IngredientTeaserGrid({
                 );
               })()}
             </Link>
-          </li>
+          </Reveal>
         ))}
       </ul>
       {hasMore ? (

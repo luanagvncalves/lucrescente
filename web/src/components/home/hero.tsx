@@ -58,9 +58,16 @@ export function HomeHero({
 
 
       <div className="container-brand relative z-10 flex h-full items-end pb-12 pt-24 sm:pb-16 lg:pb-20">
-        <div className="max-w-3xl text-ivory">
+        <div className="max-w-6xl text-ivory">
           <motion.h1
-            className="max-w-3xl font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.95] tracking-[-0.04em] lowercase text-ivory"
+            /*
+              The sentence carries its own line breaks (see `heroTitle`), and
+              `whitespace-pre-line` is what honours them — but only from md up,
+              where a line of thirty characters still fits. On a phone the
+              breaks would leave half-empty lines, so there the text wraps by
+              itself, as any paragraph would.
+            */
+            className="max-w-none whitespace-normal font-display text-[clamp(3rem,5.8vw,5.2rem)] leading-[0.98] tracking-[-0.04em] lowercase text-ivory md:whitespace-pre-line"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -87,7 +94,7 @@ export function HomeHero({
             className="mt-8 flex flex-wrap gap-3"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
           >
             <Link
               href={`/produtos${query}`}
@@ -122,6 +129,11 @@ export function HomeHero({
  * The caller renders the whole sentence separately for assistive technology and
  * hides this copy, so nothing here is ever read out half-typed.
  */
+/** Milliseconds between two letters. Unhurried, like the brand. */
+const LETTER_MS = 68;
+/** The extra breath taken at the end of a line, before the next one starts. */
+const LINE_BREAK_MS = 320;
+
 function Typewriter({ text }: { text: string }) {
   const [shown, setShown] = useState("");
   const [typing, setTyping] = useState(true);
@@ -139,9 +151,12 @@ function Typewriter({ text }: { text: string }) {
     if (!typing) return;
 
     if (shown.length < text.length) {
+      // A line break is a pause, not a letter: the sentence lands one line at
+      // a time instead of running on.
+      const delay = text[shown.length] === "\n" ? LINE_BREAK_MS : LETTER_MS;
       const timer = setTimeout(() => {
         setShown(text.slice(0, shown.length + 1));
-      }, 40);
+      }, delay);
       return () => clearTimeout(timer);
     }
     setTyping(false);

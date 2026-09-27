@@ -7,6 +7,7 @@ import { getImageAlt } from "@/content/image-alt-locales";
 import { editorial } from "@/data/editorial";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
+import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
   title: t.nav.about,
@@ -22,23 +23,26 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
   const photo = editorial.sobre;
   return (
     <article className="container-brand pt-10 md:pt-16">
-      <header className="max-w-3xl">
-        <Label>{d.about.label}</Label>
-        <h1 className="mt-4 text-h1 text-forest lowercase">{d.about.title}</h1>
-        <p className="mt-6 text-body-lg measure">{d.about.intro}</p>
-      </header>
+      <Reveal>
+        <header className="max-w-3xl">
+          <Label>{d.about.label}</Label>
+          <h1 className="mt-4 text-h1 text-forest lowercase">{d.about.title}</h1>
+          <p className="mt-6 text-body-lg measure">{d.about.intro}</p>
+        </header>
+      </Reveal>
 
       <div className="mt-14 grid items-start gap-10 md:grid-cols-12">
-        <div className="md:col-span-7">
+        <Reveal className="md:col-span-7">
           {photo ? (
             <div className="frame-brand relative aspect-[4/5] bg-paper md:aspect-[5/6]">
               <Image src={photo.path} alt={getImageAlt(photo.alt, locale)} fill priority sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
             </div>
           ) : null}
-        </div>
+        </Reveal>
         <div className="space-y-12 md:col-span-5 md:pt-6">
-          <section aria-labelledby="lucie">
-            <h2 id="lucie" className="text-h2 text-forest lowercase">
+          <Reveal delay={0.12}>
+            <section aria-labelledby="lucie">
+              <h2 id="lucie" className="text-h2 text-forest lowercase">
               {d.about.lucieName.toLowerCase()}
             </h2>
             <p className="mt-4 text-body-lg measure">{d.about.lucieText}</p>
@@ -61,36 +65,41 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
                 <span className="text-ink/60"> (CH)</span>
               </p>
             </div>
-          </section>
-          <section aria-labelledby="luana">
-            <h2 id="luana" className="text-h2 text-forest lowercase">
-              {d.about.luanaName.toLowerCase()}
-            </h2>
-            <p className="mt-4 text-body-lg measure">{d.about.luanaText}</p>
-            <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
-              <p>
-                <a href={`mailto:${d.brand.email}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
-                  {d.brand.email}
-                </a>
-              </p>
-              <p>
-                <a href={d.brand.phoneTel} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
-                  {d.brand.phoneDisplay}
-                </a>
-              </p>
-            </div>
-          </section>
+            </section>
+          </Reveal>
+          <Reveal delay={0.12}>
+            <section aria-labelledby="luana">
+              <h2 id="luana" className="text-h2 text-forest lowercase">
+                {d.about.luanaName.toLowerCase()}
+              </h2>
+              <p className="mt-4 text-body-lg measure">{d.about.luanaText}</p>
+              <div className="mt-6 space-y-2 text-[0.95rem] text-forest">
+                <p>
+                  <a href={`mailto:${d.brand.email}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
+                    {d.brand.email}
+                  </a>
+                </p>
+                <p>
+                  <a href={d.brand.phoneTel} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
+                    {d.brand.phoneDisplay}
+                  </a>
+                </p>
+              </div>
+            </section>
+          </Reveal>
         </div>
       </div>
 
       <Pause className="my-16" />
 
-      <section className="mx-auto max-w-2xl text-center">
-        <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{d.about.close}</p>
-        <Link href={`/${query}`} className="mt-8 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
-          {d.about.backLink}
-        </Link>
-      </section>
+      <Reveal>
+        <section className="mx-auto max-w-2xl text-center">
+          <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{d.about.close}</p>
+          <Link href={`/${query}`} className="mt-8 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
+            {d.about.backLink}
+          </Link>
+        </section>
+      </Reveal>
     </article>
   );
 }

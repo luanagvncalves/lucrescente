@@ -126,42 +126,43 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       <section className="bg-paper" aria-labelledby="categorias">
         <div className="container-brand section-gap">
           <Reveal>
-            <SectionHeader title={t.home.productsTitle} subtitle={t.home.productsSubtitle} />
+            {/* short enough to hold on one line, so it is not broken in two */}
+            <SectionHeader title={t.home.productsTitle} subtitle={t.home.productsSubtitle} titleClassName="max-w-none sm:whitespace-nowrap" />
           </Reveal>
           <div className="mt-10 flex flex-col gap-10">
-            {categoryGroups.map((group, groupIndex) => (
-              <Reveal key={group.label} delay={groupIndex * 0.08}>
-                <div>
+            {categoryGroups.map((group) => (
+              <div key={group.label}>
+                <Reveal>
                   <h3 className="font-ui text-[1.05rem] font-medium tracking-[0.02em] text-moss lowercase">{group.label}</h3>
-                  <ul className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
-                    {group.tiles.map((tile) => (
-                      <li key={tile.key}>
-                        <Link href={tile.href} className="group block">
-                          <div className="relative aspect-square overflow-hidden rounded-[20px] border border-moss/18 bg-ivory">
-                            {tile.imageSrc ? (
-                              <Image src={tile.imageSrc} alt={tile.imageAlt} fill sizes="(min-width: 768px) 20vw, 50vw" className="object-cover transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.02]" />
-                            ) : (
-                              <div className="placeholder-frame flex h-full items-center justify-center">
-                                <Crescent size={28} tone="var(--violet)" />
-                              </div>
-                            )}
-                            <div className="tile-scrim absolute inset-0 flex items-center justify-center px-3 text-center">
-                              <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase [text-shadow:0_1px_3px_rgba(34,57,37,0.45)] sm:text-[1.5rem]">{tile.name}</span>
+                </Reveal>
+                <ul className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-5">
+                  {group.tiles.map((tile, tileIndex) => (
+                    <Reveal as="li" key={tile.key} delay={tileIndex * 0.07}>
+                      <Link href={tile.href} className="group block">
+                        <div className="relative aspect-square overflow-hidden rounded-[20px] border border-moss/18 bg-ivory">
+                          {tile.imageSrc ? (
+                            <Image src={tile.imageSrc} alt={tile.imageAlt} fill sizes="(min-width: 768px) 20vw, 50vw" className="object-cover transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.02]" />
+                          ) : (
+                            <div className="placeholder-frame flex h-full items-center justify-center">
+                              <Crescent size={28} tone="var(--violet)" />
                             </div>
+                          )}
+                          <div className="tile-scrim absolute inset-0 flex items-center justify-center px-3 text-center">
+                            <span className="font-display text-[1.35rem] leading-tight text-ivory lowercase [text-shadow:0_1px_3px_rgba(34,57,37,0.45)] sm:text-[1.5rem]">{tile.name}</span>
                           </div>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
+                        </div>
+                      </Link>
+                    </Reveal>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
-          <div className="mt-10">
+          <Reveal className="mt-10">
             <LinkButton href={`/produtos${query}`} variant="secondary">
               {t.home.productsButton}
             </LinkButton>
-          </div>
+          </Reveal>
         </div>
       </section>
 
@@ -169,23 +170,21 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* values: full-width solid colour field with a lunar mark */}
       <section className="bg-forest text-ivory on-dark" aria-labelledby="valores">
         <div className="container-brand section-gap">
-          <Reveal>
-            <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
-              <div className="md:col-span-5 md:pr-4">
-                <h2 id="valores" className="font-display text-h2 lowercase text-ivory">
-                  {t.home.valuesSubtitle}
-                </h2>
-              </div>
-              <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
-                {t.about.values.map((v) => (
-                  <li key={v} className="border-t border-ivory/25 pt-5">
-                    <Crescent size={16} tone="var(--lavender)" />
-                    <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-ivory">{v}</p>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </Reveal>
+          <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
+            <Reveal className="md:col-span-5 md:pr-4">
+              <h2 id="valores" className="font-display text-h2 lowercase text-ivory">
+                {t.home.valuesSubtitle}
+              </h2>
+            </Reveal>
+            <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
+              {t.about.values.map((v, i) => (
+                <Reveal as="li" key={v} delay={0.12 + i * 0.12} className="border-t border-ivory/25 pt-5">
+                  <Crescent size={16} tone="var(--lavender)" />
+                  <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-ivory">{v}</p>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
@@ -199,18 +198,20 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               </div>
             ) : null}
           </Reveal>
-          <Reveal delay={0.1} className="md:col-span-5">
-            <div>
+          <div className="md:col-span-5">
+            <Reveal delay={0.1}>
               <Label>{t.about.label}</Label>
               <h2 id="historia" className="mt-4 text-h2 text-forest lowercase">
                 {t.home.storyTitle}
               </h2>
+            </Reveal>
+            <Reveal delay={0.24}>
               <p className="mt-6 text-body-lg measure">{t.home.storyText}</p>
               <TextLink href={`/sobre${query}`} className="mt-6">
                 {t.home.storyLink}
               </TextLink>
-            </div>
-          </Reveal>
+            </Reveal>
+          </div>
         </div>
       </section>
 
@@ -244,24 +245,22 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
 
       {/* contact */}
       <section className="container-brand section-gap" id="contacto" aria-labelledby="encomendas">
-        <Reveal>
-          <div className="grid gap-10 md:grid-cols-12">
-            <div className="md:col-span-6">
-              <Label>{t.contact.title}</Label>
-              <h2 id="encomendas" className="mt-4 text-h2 text-forest lowercase">
-                {t.home.contactTitle}
-              </h2>
-              <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
-            </div>
-            <div className="md:col-span-6 md:pt-14">
-              {/* without `locale` this falls back to Portuguese, so the four
-                  contact buttons stayed Portuguese on the English and French
-                  homepage while the heading above them translated */}
-              <ContactLinks labels="home" locale={locale} />
-              <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
-            </div>
-          </div>
-        </Reveal>
+        <div className="grid gap-10 md:grid-cols-12">
+          <Reveal className="md:col-span-6">
+            <Label>{t.contact.title}</Label>
+            <h2 id="encomendas" className="mt-4 text-h2 text-forest lowercase">
+              {t.home.contactTitle}
+            </h2>
+            <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
+          </Reveal>
+          <Reveal delay={0.16} className="md:col-span-6 md:pt-14">
+            {/* without `locale` this falls back to Portuguese, so the four
+                contact buttons stayed Portuguese on the English and French
+                homepage while the heading above them translated */}
+            <ContactLinks labels="home" locale={locale} />
+            <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
+          </Reveal>
+        </div>
       </section>
     </>
   );

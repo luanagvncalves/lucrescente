@@ -34,6 +34,8 @@ export function SectionHeader({
   align = "left",
   tone = "moss",
   as: As = H2,
+  /** Overrides the default 20ch measure — a short title can be held on one line. */
+  titleClassName = "max-w-[20ch]",
 }: {
   label?: string;
   title: string;
@@ -41,11 +43,12 @@ export function SectionHeader({
   align?: "left" | "center";
   tone?: "moss" | "violet";
   as?: typeof H1 | typeof H2;
+  titleClassName?: string;
 }) {
   return (
     <div className={`flex flex-col gap-4 ${align === "center" ? "items-center text-center" : ""}`}>
       {label ? <Label tone={tone}>{label}</Label> : null}
-      <As className="max-w-[20ch]">{title}</As>
+      <As className={titleClassName}>{title}</As>
       {subtitle ? <p className="text-body-lg text-ink/90 measure">{subtitle}</p> : null}
     </div>
   );

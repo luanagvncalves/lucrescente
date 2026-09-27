@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/typography";
 import { Crescent, Pause } from "@/components/ui/motifs";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { FaqOpenTarget } from "@/components/faq/faq-open-target";
+import { Reveal } from "@/components/ui/reveal";
 import { faqAnchorId } from "@/content/faq-anchors";
 
 // Metadata is built once per route, before the query string is known, so the
@@ -39,28 +40,32 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <FaqOpenTarget />
 
-      <header className="max-w-3xl">
-        <Label>{t.faq.label}</Label>
-        <h1 className="mt-4 text-h1 text-forest lowercase">{t.faq.title}</h1>
-        <p className="mt-6 text-body-lg measure">{t.faq.intro}</p>
-      </header>
+      <Reveal>
+        <header className="max-w-3xl">
+          <Label>{t.faq.label}</Label>
+          <h1 className="mt-4 text-h1 text-forest lowercase">{t.faq.title}</h1>
+          <p className="mt-6 text-body-lg measure">{t.faq.intro}</p>
+        </header>
+      </Reveal>
 
       <div className="mt-16 space-y-16">
         {t.faq.groups.map((group, groupIndex) => (
           <section key={group.title} aria-labelledby={`grupo-${groupIndex}`}>
-            <div className="flex items-center gap-3 text-clay">
-              <Crescent size={14} />
-              <span className="label-brand">{String(groupIndex + 1).padStart(2, "0")}</span>
-            </div>
-            <h2 id={`grupo-${groupIndex}`} className="mt-3 text-h2 text-forest lowercase">
-              {group.title}
-            </h2>
+            <Reveal>
+              <div className="flex items-center gap-3 text-clay">
+                <Crescent size={14} />
+                <span className="label-brand">{String(groupIndex + 1).padStart(2, "0")}</span>
+              </div>
+              <h2 id={`grupo-${groupIndex}`} className="mt-3 text-h2 text-forest lowercase">
+                {group.title}
+              </h2>
+            </Reveal>
 
             {/* <details> so every answer is readable, printable and findable with
                 ctrl+F even before any JavaScript has run */}
             <ul className="mt-8 space-y-3">
               {group.items.map((item, itemIndex) => (
-                <li key={item.q}>
+                <Reveal as="li" key={item.q} delay={Math.min(itemIndex, 5) * 0.06}>
                   {/*
                     The id is what a product page's extra-information box links
                     to, and it comes from the Portuguese wording so that the
@@ -80,7 +85,7 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
                     </summary>
                     <p className="measure pb-5 text-body-lg">{item.a}</p>
                   </details>
-                </li>
+                </Reveal>
               ))}
             </ul>
           </section>
@@ -89,14 +94,16 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
 
       <Pause className="my-16" />
 
-      <section className="pb-4" aria-labelledby="ainda-com-duvidas">
-        <h2 id="ainda-com-duvidas" className="text-h3 text-forest lowercase">
-          {t.faq.stillAsking}
-        </h2>
-        <div className="mt-6">
-          <ContactLinks locale={locale} />
-        </div>
-      </section>
+      <Reveal>
+        <section className="pb-4" aria-labelledby="ainda-com-duvidas">
+          <h2 id="ainda-com-duvidas" className="text-h3 text-forest lowercase">
+            {t.faq.stillAsking}
+          </h2>
+          <div className="mt-6">
+            <ContactLinks locale={locale} />
+          </div>
+        </section>
+      </Reveal>
     </article>
   );
 }
