@@ -50,10 +50,17 @@ export async function POST(req: Request) {
   try {
     const session = await stripe().checkout.sessions.create({
       mode: "payment",
+      ui_mode: "hosted_page",
       currency: "eur",
       locale,
       customer_creation: "if_required",
       billing_address_collection: "auto",
+      phone_number_collection: { enabled: false },
+      automatic_tax: { enabled: false },
+      allow_promotion_codes: false,
+      submit_type: "auto",
+      integration_identifier: "hosted_web_0002",
+      origin_context: "web",
       shipping_address_collection: {
         allowed_countries: ALLOWED_COUNTRIES as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
       },
