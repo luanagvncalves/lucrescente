@@ -4,6 +4,7 @@ import type Stripe from "stripe";
 import { randomUUID } from "node:crypto";
 import { stripe, stripeEnabled, mockEnabled } from "@/lib/stripe";
 import { validateCart, type CheckoutItemInput } from "@/lib/checkout";
+import { packItems, type CompactItem } from "@/lib/checkout-metadata";
 import { ALLOWED_COUNTRIES, SHIPPING_TIERS, shippingLabel } from "@/config/shipping";
 import { getProductCopy } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
@@ -79,6 +80,13 @@ export async function POST(req: Request) {
       shipping_address_collection: {
         allowed_countries: ALLOWED_COUNTRIES as Stripe.Checkout.SessionCreateParams.ShippingAddressCollection.AllowedCountry[],
       },
+      // Every tier is offered to every customer, and the customer picks. A
+      // hosted Checkout Session is created before the address is known, and
+      // Stripe will not re-price options against the address afterwards — so
+      // "madeira e açores" cannot be enforced from the postcode here. The
+      // labels are named plainly so the right one is the obvious one, and
+      // island orders are worth a glance before posting. Enforcing it properly
+      // would mean collecting the address first and creating the session after.
       shipping_options: SHIPPING_TIERS.map((tier) => ({
         shipping_rate_data: {
           type: "fixed_amount",
@@ -98,13 +106,22 @@ export async function POST(req: Request) {
           unit_amount: l.unitPriceCents,
           product_data: {
             name: `${l.displayName}${l.displayVariant ? ` · ${l.displayVariant}` : ""}`,
-            metadata: { sku: l.sku },
+            // The webhook reads the order back from here rather than from
+            // session metadata, which is capped at 500 characters per value.
+            // Name and variant are kept apart so it never has to split the
+            // display name on a separator that could appear inside a name.
+            metadata: {
+              sku: l.sku,
+              product_name: l.displayName,
+              variant_label: l.displayVariant ?? "",
+            },
           },
         },
       })),
       metadata: {
-        // compact item list for the webhook (sku:qty:unit_cents:name|label)
-        items: JSON.stringify(named.map((l) => [l.sku, l.quantity, l.unitPriceCents, l.displayName, l.displayVariant])),
+        // A compact [sku, qty, unit_cents] fallback, split across numbered keys
+        // so no single value can overflow. See lib/checkout-metadata.ts.
+        ...packItems(named.map((l) => [l.sku, l.quantity, l.unitPriceCents] as CompactItem)),
         locale,
       },
       success_url: `${origin}/encomenda/confirmacao?session_id={CHECKOUT_SESSION_ID}${query}`,

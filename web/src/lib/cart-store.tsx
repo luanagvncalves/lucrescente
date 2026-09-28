@@ -49,7 +49,10 @@ function reducer(state: State, action: Action): State {
     case "remove":
       return { ...state, lines: state.lines.filter((l) => l.sku !== action.sku) };
     case "clear":
-      return { ...state, lines: [] };
+      // Returning a fresh object when the cart is already empty is what made the
+      // confirmation page loop: the new state rebuilt the context value, which
+      // gave `clear` a new identity, which re-ran the effect that called it.
+      return state.lines.length === 0 ? state : { ...state, lines: [] };
     case "reconcile":
       return {
         ...state,
@@ -117,6 +120,22 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
     window.setTimeout(() => setToasts((t) => t.filter((x) => x.id !== id)), 3200);
   }, []);
 
+  // These are deliberately stable. They used to be rebuilt inside the `value`
+  // memo below, so every cart change handed each consumer a brand-new function;
+  // anything listing one in an effect's dependencies re-ran on every change,
+  // which is how the confirmation page ended up calling `clear` forever.
+  const open = useCallback(() => setOpen(true), []);
+  const close = useCallback(() => setOpen(false), []);
+  const add = useCallback((line: CartLine) => dispatch({ type: "add", line }), []);
+  const setQuantity = useCallback((sku: string, quantity: number) => dispatch({ type: "set-qty", sku, quantity }), []);
+  const remove = useCallback((sku: string) => dispatch({ type: "remove", sku }), []);
+  const clear = useCallback(() => dispatch({ type: "clear" }), []);
+  const reconcile = useCallback(
+    (adjustments: { sku: string; available: number }[]) => dispatch({ type: "reconcile", adjustments }),
+    [],
+  );
+  const dismissToast = useCallback((id: number) => setToasts((t) => t.filter((x) => x.id !== id)), []);
+
   const value = useMemo<CartContextValue>(
     () => ({
       lines: state.lines,
@@ -124,18 +143,18 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       count: state.lines.reduce((a, l) => a + l.quantity, 0),
       subtotalCents: state.lines.reduce((a, l) => a + l.quantity * l.unitPriceCents, 0),
       isOpen,
-      open: () => setOpen(true),
-      close: () => setOpen(false),
-      add: (line) => dispatch({ type: "add", line }),
-      setQuantity: (sku, quantity) => dispatch({ type: "set-qty", sku, quantity }),
-      remove: (sku) => dispatch({ type: "remove", sku }),
-      clear: () => dispatch({ type: "clear" }),
-      reconcile: (adjustments) => dispatch({ type: "reconcile", adjustments }),
+      open,
+      close,
+      add,
+      setQuantity,
+      remove,
+      clear,
+      reconcile,
       toasts,
       notify,
-      dismissToast: (id) => setToasts((t) => t.filter((x) => x.id !== id)),
+      dismissToast,
     }),
-    [state, isOpen, toasts, notify],
+    [state, isOpen, toasts, notify, open, close, add, setQuantity, remove, clear, reconcile, dismissToast],
   );
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;

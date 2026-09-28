@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale } from "@/lib/use-locale";
 import { getImageAlt } from "@/content/image-alt-locales";
+import { getVariantLabel } from "@/content/variant-locales";
 import { useCart } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/types";
 import { Button, LinkButton } from "@/components/ui/button";
@@ -116,7 +117,7 @@ export function CartDrawer() {
                               <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
                                 {l.productName}
                               </Link>
-                              {l.variantLabel ? <p className="text-[0.85rem] text-ink/70">{l.variantLabel}</p> : null}
+                              {l.variantLabel ? <p className="text-[0.85rem] text-ink/70">{getVariantLabel(l.variantLabel, locale)}</p> : null}
                             </div>
                             <span className="font-ui text-[0.95rem] font-medium text-forest">{formatPrice(l.unitPriceCents * l.quantity)}</span>
                           </div>

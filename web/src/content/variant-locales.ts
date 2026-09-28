@@ -16,9 +16,19 @@ const copy: Record<string, Partial<Record<VariantLocale, string>>> = {
   "embalagem própria": { en: "your own container", fr: "votre propre contenant" },
 };
 
-/** Translates a variant label, leaving anything untranslated exactly as it was. */
+/**
+ * Translates a variant label, leaving anything untranslated exactly as it was.
+ *
+ * The cart builds compound labels out of " · " — a variant, sometimes "o meu
+ * recipiente", sometimes a dose the customer typed. Each part is translated on
+ * its own, so the known variant is converted while a dose, or a part already
+ * translated when it was added, passes through untouched.
+ */
 export function getVariantLabel(label: string | null, locale: VariantLocale): string | null {
   if (!label) return null;
   if (locale === "pt") return label;
-  return copy[label]?.[locale] ?? label;
+  return label
+    .split(" · ")
+    .map((part) => copy[part.trim()]?.[locale] ?? part)
+    .join(" · ");
 }

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
 import { getOrderBySession } from "@/lib/orders";
+import { getVariantLabel } from "@/content/variant-locales";
 import { formatPrice } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
 import { buttonClass } from "@/components/ui/button";
@@ -60,7 +61,10 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
                 <li key={i.sku} className="flex justify-between gap-4">
                   <span>
                     {i.quantity} × {i.product_name}
-                    {i.variant_label ? ` (${i.variant_label})` : ""}
+                    {/* Orders placed now store the label already translated, so
+                        this changes nothing for them. Orders placed before that
+                        stored Portuguese, and this catches those. */}
+                    {i.variant_label ? ` (${getVariantLabel(i.variant_label, locale)})` : ""}
                   </span>
                   <span className="font-medium">{formatPrice(i.total_cents)}</span>
                 </li>

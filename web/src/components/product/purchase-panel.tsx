@@ -6,6 +6,7 @@ import { useCart } from "@/lib/cart-store";
 import { formatPrice, variantAvailability, type Product, type Variant } from "@/lib/types";
 import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
+import { getVariantLabel } from "@/content/variant-locales";
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
@@ -76,7 +77,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                           setQty(1);
                         }}
                       />
-                      {v.label}
+                      {/* display only — `selected.label` keeps the Portuguese
+                          original everywhere it is compared or stored */}
+                      {getVariantLabel(v.label, locale)}
                       {/* the bare word, inside the pill beside the size, so a
                           sold-out format reads as one without having to be
                           selected first */}
