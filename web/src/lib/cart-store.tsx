@@ -12,15 +12,37 @@ export type CartLine = {
   maxStock: number;
   image: { path: string; alt: string } | null;
   isCandle: boolean;
+  /**
+   * An optional extra made up when the order is packed — currently the flavour
+   * oil on the coloured lip balm. See content/product-addons.ts.
+   */
+  addOn?: string | null;
 };
+
+/**
+ * What makes a line its own line.
+ *
+ * The cart used to key on `sku` alone, which is right while a sku says
+ * everything about what is being bought. An add-on does not have a sku of its
+ * own — the balms are made to order out of one stock — so two brick balms, one
+ * with orange and one with peppermint, are the same sku and were silently
+ * merged into a single line of two. The customer paid for two and would have
+ * received two of whichever flavour was added first.
+ *
+ * Stock is still tracked per sku, so `reconcile` and the checkout keep using
+ * that; only identity within the cart is keyed on the pair.
+ */
+export function lineKey(line: Pick<CartLine, "sku" | "addOn">): string {
+  return line.addOn ? `${line.sku}::${line.addOn}` : line.sku;
+}
 
 type State = { lines: CartLine[]; hydrated: boolean };
 
 type Action =
   | { type: "hydrate"; lines: CartLine[] }
   | { type: "add"; line: CartLine }
-  | { type: "set-qty"; sku: string; quantity: number }
-  | { type: "remove"; sku: string }
+  | { type: "set-qty"; key: string; quantity: number }
+  | { type: "remove"; key: string }
   | { type: "clear" }
   | { type: "reconcile"; adjustments: { sku: string; available: number }[] };
 
@@ -31,23 +53,24 @@ function reducer(state: State, action: Action): State {
     case "hydrate":
       return { lines: action.lines, hydrated: true };
     case "add": {
-      const existing = state.lines.find((l) => l.sku === action.line.sku);
+      const key = lineKey(action.line);
+      const existing = state.lines.find((l) => lineKey(l) === key);
       if (!existing) return { ...state, lines: [...state.lines, action.line] };
       const quantity = Math.min(existing.quantity + action.line.quantity, action.line.maxStock);
       return {
         ...state,
-        lines: state.lines.map((l) => (l.sku === action.line.sku ? { ...l, ...action.line, quantity } : l)),
+        lines: state.lines.map((l) => (lineKey(l) === key ? { ...l, ...action.line, quantity } : l)),
       };
     }
     case "set-qty":
       return {
         ...state,
         lines: state.lines
-          .map((l) => (l.sku === action.sku ? { ...l, quantity: Math.max(0, Math.min(action.quantity, l.maxStock)) } : l))
+          .map((l) => (lineKey(l) === action.key ? { ...l, quantity: Math.max(0, Math.min(action.quantity, l.maxStock)) } : l))
           .filter((l) => l.quantity > 0),
       };
     case "remove":
-      return { ...state, lines: state.lines.filter((l) => l.sku !== action.sku) };
+      return { ...state, lines: state.lines.filter((l) => lineKey(l) !== action.key) };
     case "clear":
       // Returning a fresh object when the cart is already empty is what made the
       // confirmation page loop: the new state rebuilt the context value, which
@@ -78,8 +101,9 @@ type CartContextValue = {
   open: () => void;
   close: () => void;
   add: (line: CartLine) => void;
-  setQuantity: (sku: string, quantity: number) => void;
-  remove: (sku: string) => void;
+  /** Keyed by lineKey(line), not by sku — an add-on makes its own line. */
+  setQuantity: (key: string, quantity: number) => void;
+  remove: (key: string) => void;
   clear: () => void;
   reconcile: (adjustments: { sku: string; available: number }[]) => void;
   toasts: Toast[];
@@ -127,8 +151,8 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const open = useCallback(() => setOpen(true), []);
   const close = useCallback(() => setOpen(false), []);
   const add = useCallback((line: CartLine) => dispatch({ type: "add", line }), []);
-  const setQuantity = useCallback((sku: string, quantity: number) => dispatch({ type: "set-qty", sku, quantity }), []);
-  const remove = useCallback((sku: string) => dispatch({ type: "remove", sku }), []);
+  const setQuantity = useCallback((key: string, quantity: number) => dispatch({ type: "set-qty", key, quantity }), []);
+  const remove = useCallback((key: string) => dispatch({ type: "remove", key }), []);
   const clear = useCallback(() => dispatch({ type: "clear" }), []);
   const reconcile = useCallback(
     (adjustments: { sku: string; available: number }[]) => dispatch({ type: "reconcile", adjustments }),

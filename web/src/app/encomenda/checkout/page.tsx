@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Suspense, useState } from "react";
 import { useLocale } from "@/lib/use-locale";
-import { useCart } from "@/lib/cart-store";
+import { useCart, lineKey } from "@/lib/cart-store";
 import { getVariantLabel } from "@/content/variant-locales";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,9 @@ function Checkout() {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
-          items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity })),
+          // `addOn` is checked against the product's own list on the server and
+          // dropped if it is not one of them; it never touches the price.
+          items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity, addOn: l.addOn ?? null })),
           // so Stripe's own page, and the return trip, keep the visitor's language
           locale,
         }),
@@ -94,7 +96,7 @@ function Checkout() {
             </h2>
             <ul className="mt-5 space-y-3 text-[0.95rem]">
               {cart.lines.map((l) => (
-                <li key={l.sku} className="flex justify-between gap-4">
+                <li key={lineKey(l)} className="flex justify-between gap-4">
                   <span>
                     {l.quantity} × {l.productName}
                     {l.variantLabel ? ` (${getVariantLabel(l.variantLabel, locale)})` : ""}

@@ -7,6 +7,7 @@ import { validateCart, type CheckoutItemInput } from "@/lib/checkout";
 import { packItems, type CompactItem } from "@/lib/checkout-metadata";
 import { ALLOWED_COUNTRIES, SHIPPING_TIERS, shippingLabel } from "@/config/shipping";
 import { getProductCopy } from "@/content/product-locales";
+import { getAddOnLabel } from "@/content/product-addons";
 import { getVariantLabel } from "@/content/variant-locales";
 import { supabaseAdmin } from "@/lib/supabase";
 
@@ -42,11 +43,19 @@ export async function POST(req: Request) {
   // lands on afterwards says what the payment page said. `sku` is carried
   // alongside and stays language-neutral, so an order is still identifiable
   // whatever language it was bought in.
-  const named = validated.lines.map((l) => ({
-    ...l,
-    displayName: getProductCopy(l.productSlug, locale, { name: l.productName }).name,
-    displayVariant: getVariantLabel(l.variantLabel, locale),
-  }));
+  const named = validated.lines.map((l) => {
+    const variant = getVariantLabel(l.variantLabel, locale);
+    // The add-on has no sku of its own — the balms are made to order — so this
+    // is the only place it can reach the payment page, the order record and the
+    // packing list. It was checked against the product's own list in
+    // `validateCart`, so by here it is one of ours or it is null.
+    const addOn = l.addOn ? getAddOnLabel(l.productSlug, l.addOn, locale) : null;
+    return {
+      ...l,
+      displayName: getProductCopy(l.productSlug, locale, { name: l.productName }).name,
+      displayVariant: [variant, addOn].filter(Boolean).join(" · ") || null,
+    };
+  });
 
   // ---------- mock mode (no Stripe keys yet) ----------
   if (!stripeEnabled) {

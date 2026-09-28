@@ -7,7 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useLocale } from "@/lib/use-locale";
 import { getImageAlt } from "@/content/image-alt-locales";
 import { getVariantLabel } from "@/content/variant-locales";
-import { useCart } from "@/lib/cart-store";
+import { useCart, lineKey } from "@/lib/cart-store";
 import { formatPrice } from "@/lib/types";
 import { Button, LinkButton } from "@/components/ui/button";
 import { Modal } from "@/components/ui/modal";
@@ -101,7 +101,7 @@ export function CartDrawer() {
                 <>
                   <ul className="flex-1 space-y-5 overflow-y-auto px-6 py-6">
                     {cart.lines.map((l) => (
-                      <li key={l.sku} className="flex gap-4">
+                      <li key={lineKey(l)} className="flex gap-4">
                         <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="relative h-24 w-20 shrink-0 overflow-hidden rounded-2xl bg-ivory">
                           {l.image ? (
                             <Image src={l.image.path} alt={getImageAlt(l.image.alt, locale)} fill sizes="80px" className="object-cover" />
@@ -127,7 +127,7 @@ export function CartDrawer() {
                                 type="button"
                                 className="flex h-10 w-10 items-center justify-center rounded-full text-forest hover:bg-forest/5"
                                 aria-label={t.cart.decrease}
-                                onClick={() => cart.setQuantity(l.sku, l.quantity - 1)}
+                                onClick={() => cart.setQuantity(lineKey(l), l.quantity - 1)}
                               >
                                 −
                               </button>
@@ -139,7 +139,7 @@ export function CartDrawer() {
                                 className="flex h-10 w-10 items-center justify-center rounded-full text-forest hover:bg-forest/5 disabled:opacity-40"
                                 aria-label={t.cart.increase}
                                 disabled={l.quantity >= l.maxStock}
-                                onClick={() => (l.quantity >= l.maxStock ? cart.notify(t.cart.maxReached, "warn") : cart.setQuantity(l.sku, l.quantity + 1))}
+                                onClick={() => (l.quantity >= l.maxStock ? cart.notify(t.cart.maxReached, "warn") : cart.setQuantity(lineKey(l), l.quantity + 1))}
                               >
                                 +
                               </button>
@@ -147,7 +147,7 @@ export function CartDrawer() {
                             <button
                               type="button"
                               className="min-h-11 font-ui text-[0.85rem] text-clay underline-offset-4 hover:underline"
-                              onClick={() => cart.remove(l.sku)}
+                              onClick={() => cart.remove(lineKey(l))}
                             >
                               {t.cart.remove}
                             </button>

@@ -7,6 +7,7 @@ import { formatPrice, variantAvailability, type Product, type Variant } from "@/
 import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
+import { getAddOns } from "@/content/product-addons";
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
@@ -23,8 +24,33 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const [dose, setDose] = useState("");
   const avail = variantAvailability(selected);
   const localizedName = getProductCopy(product.slug, locale, { name: product.name }).name;
-  const isOwnPackaging = selected.label === "embalagem própria";
-  const orderLabel = [selected.label, ownContainer ? t.products.ownContainerLabel : null, isOwnPackaging && dose ? `dose: ${dose}` : null].filter(Boolean).join(" · ") || null;
+
+  /**
+   * Some products sell "embalagem própria" as a real variant, with its own
+   * price — on the bath salts it is "por encomenda" rather than the glass jar's
+   * 8,00 €. Those products were ALSO getting the hardcoded button below, which
+   * drew a second pill with exactly the same words and could not carry the
+   * variant's price. The variant wins: it is the one that can be bought.
+   *
+   * Compared against the Portuguese label because variant labels are stored in
+   * Portuguese; `t.products.ownContainerLabel` is whatever language is on screen.
+   */
+  const ownContainerLabelPt = getDictionary("pt").products.ownContainerLabel;
+  const hasOwnContainerVariant = variants.some((v) => v.label === ownContainerLabelPt);
+
+  const isOwnPackaging = selected.label === ownContainerLabelPt;
+  /*
+    The optional oil on the coloured lip balms. It is not a variant: the balms
+    are made to order out of one stock, with a few drops stirred in, so there
+    is no second sku and no second stock. Empty string is "sem sabor".
+
+    Held as the canonical Portuguese, like `selected.label`, because that is
+    what the server checks against the product's own list; the pill shows the
+    translated wording.
+  */
+  const addOns = getAddOns(product.slug);
+  const [addOn, setAddOn] = useState("");
+  const orderLabel = [selected.label, addOn || null, ownContainer ? t.products.ownContainerLabel : null, isOwnPackaging && dose ? `dose: ${dose}` : null].filter(Boolean).join(" · ") || null;
   const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
 
   // Calculate price for own packaging based on dose
@@ -43,6 +69,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       unitPriceCents: isOwnPackaging && doseAmount > 0 ? calculatedPrice : avail.price_cents,
       quantity: qty,
       maxStock: avail.stock,
+      addOn: addOn || null,
       image: product.images[0] ? { path: product.images[0].path, alt: product.images[0].alt } : null,
       isCandle: product.is_candle,
     });
@@ -88,7 +115,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                   );
                 })
               : null}
-            {!product.is_solid && !product.is_deodorant ? (
+            {!product.is_solid && !product.is_deodorant && !hasOwnContainerVariant ? (
               <button
                 type="button"
                 aria-pressed={ownContainer}
@@ -100,6 +127,28 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                 {t.products.ownContainerLabel}
               </button>
             ) : null}
+          </div>
+        </fieldset>
+      ) : null}
+
+      {addOns.length ? (
+        <fieldset className="mb-6">
+          <legend className="label-brand mb-3 text-moss">{t.products.flavourLabel}</legend>
+          <div className="flex flex-wrap gap-2">
+            {[{ value: "", label: t.products.flavourNone }, ...addOns.map((a) => ({ value: a.value, label: a.label[locale] }))].map((option) => {
+              const active = option.value === addOn;
+              return (
+                <label
+                  key={option.value || "none"}
+                  className={`inline-flex h-11 cursor-pointer items-center rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-violet ${
+                    active ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
+                  }`}
+                >
+                  <input type="radio" name="sabor" className="sr-only" checked={active} onChange={() => setAddOn(option.value)} />
+                  {option.label}
+                </label>
+              );
+            })}
           </div>
         </fieldset>
       ) : null}

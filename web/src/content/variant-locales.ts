@@ -14,6 +14,11 @@ const copy: Record<string, Partial<Record<VariantLocale, string>>> = {
   "boião": { en: "jar", fr: "pot" },
   "frasco de vidro": { en: "glass jar", fr: "flacon en verre" },
   "embalagem própria": { en: "your own container", fr: "votre propre contenant" },
+  // the optional oils on the coloured lip balms, which ride in the compound
+  // label as their own segment — see content/product-addons.ts, where the same
+  // wording is defined for the purchase panel and the Stripe line item
+  "+ óleo de laranja doce": { en: "+ sweet orange oil", fr: "+ huile d'orange douce" },
+  "+ óleo de hortelã-pimenta": { en: "+ peppermint oil", fr: "+ huile de menthe poivrée" },
 };
 
 /**

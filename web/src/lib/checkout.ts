@@ -1,6 +1,7 @@
 import { getVariantsBySkus } from "@/lib/catalog";
+import { sanitiseAddOn } from "@/content/product-addons";
 
-export type CheckoutItemInput = { sku: string; quantity: number };
+export type CheckoutItemInput = { sku: string; quantity: number; addOn?: string | null };
 
 export type ValidatedLine = {
   variantId: string;
@@ -10,6 +11,9 @@ export type ValidatedLine = {
   variantLabel: string | null;
   unitPriceCents: number;
   quantity: number;
+  /** An extra made up when the order is packed, already checked against the
+      product's own list. Never affects the price. */
+  addOn: string | null;
 };
 
 export type Adjustment = { sku: string; name: string; available: number };
@@ -30,14 +34,32 @@ export async function validateCart(items: CheckoutItemInput[]): Promise<
   const lines: ValidatedLine[] = [];
   const adjustments: Adjustment[] = [];
 
+  /*
+    Stock is per sku, but a sku can now appear on more than one line: the
+    coloured lip balms are made to order out of one stock, so "with orange" and
+    "with peppermint" are the same sku with different add-ons. Checking each
+    line against `v.stock` on its own would let two lines of two sell four
+    balms out of a stock of two, so the quantities are summed per sku first and
+    the whole sku is rejected together when the total does not fit.
+  */
+  const wantedBySku = new Map<string, number>();
+  for (const item of clean) wantedBySku.set(item.sku, (wantedBySku.get(item.sku) ?? 0) + item.quantity);
+
+  const rejected = new Set<string>();
   for (const item of clean) {
     const v = variants.find((x) => x.sku === item.sku);
     if (!v || !v.product.is_active || v.price_cents === null) {
-      adjustments.push({ sku: item.sku, name: v?.product.name ?? item.sku, available: 0 });
+      if (!rejected.has(item.sku)) {
+        rejected.add(item.sku);
+        adjustments.push({ sku: item.sku, name: v?.product.name ?? item.sku, available: 0 });
+      }
       continue;
     }
-    if (v.stock < item.quantity) {
-      adjustments.push({ sku: v.sku, name: `${v.product.name}${v.label ? ` (${v.label})` : ""}`, available: v.stock });
+    if (v.stock < (wantedBySku.get(v.sku) ?? 0)) {
+      if (!rejected.has(v.sku)) {
+        rejected.add(v.sku);
+        adjustments.push({ sku: v.sku, name: `${v.product.name}${v.label ? ` (${v.label})` : ""}`, available: v.stock });
+      }
       continue;
     }
     lines.push({
@@ -48,6 +70,7 @@ export async function validateCart(items: CheckoutItemInput[]): Promise<
       variantLabel: v.label,
       unitPriceCents: v.price_cents,
       quantity: item.quantity,
+      addOn: sanitiseAddOn(v.product.slug, item.addOn),
     });
   }
 
