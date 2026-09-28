@@ -15,6 +15,11 @@ const GENERIC_ESSENTIAL_OIL_NOTE: Record<ProductLocale, string> = {
 
 /** Specific ingredient-slug callouts, beyond the generic essential-oil note. */
 const INGREDIENT_NOTES: Record<string, Record<ProductLocale, string>> = {
+  "alcool-96": {
+    pt: "contém álcool a 96% — é inflamável, por isso guarda-o longe de chamas, e evita o contacto com os olhos e com pele ferida ou muito sensível, onde pode ressecar ou arder.",
+    en: "contains 96% alcohol — it is flammable, so keep it away from flame, and avoid contact with the eyes and with broken or very sensitive skin, where it can dry or sting.",
+    fr: "contient de l'alcool à 96 % — il est inflammable, gardez-le donc à l'écart des flammes, et évitez le contact avec les yeux et avec une peau lésée ou très sensible, où il peut dessécher ou picoter.",
+  },
   "bicarbonato-de-sodio": {
     pt: "contém bicarbonato de sódio, que nalgumas peles pode causar irritação na zona das axilas, especialmente depois de depilação recente.",
     en: "contains sodium bicarbonate, which on some skin can cause irritation around the underarms, especially shortly after hair removal.",
@@ -34,6 +39,16 @@ const INGREDIENT_NOTES: Record<string, Record<ProductLocale, string>> = {
     pt: "contém óleo essencial de laranja doce, um óleo cítrico que pode ser levemente fotossensibilizante — evita a exposição solar direta na zona de aplicação nas horas seguintes.",
     en: "contains sweet orange essential oil, a citrus oil that can be mildly photosensitising — avoid direct sun exposure on the applied area for the next few hours.",
     fr: "contient de l'huile essentielle d'orange douce, une huile d'agrume légèrement photosensibilisante — évitez l'exposition directe au soleil sur la zone d'application dans les heures qui suivent.",
+  },
+  "oleo-essencial-de-canfora": {
+    pt: "contém óleo essencial de cânfora — não o apliques em bebés e crianças pequenas, nem perto do nariz e dos olhos, e evita-o durante a gravidez e a amamentação.",
+    en: "contains camphor essential oil — do not apply it to babies or young children, or near the nose and eyes, and avoid it during pregnancy and breastfeeding.",
+    fr: "contient de l'huile essentielle de camphre — ne l'appliquez pas sur les bébés et les jeunes enfants, ni près du nez et des yeux, et évitez-la pendant la grossesse et l'allaitement.",
+  },
+  "oleo-vegetal-de-amendoas-doces": {
+    pt: "contém óleo de amêndoas doces — se tens alergia a frutos de casca rija, fala connosco e adaptamos a fórmula com outro óleo de base.",
+    en: "contains sweet almond oil — if you have a tree-nut allergy, talk to us and we will adapt the formula with a different base oil.",
+    fr: "contient de l'huile d'amande douce — en cas d'allergie aux fruits à coque, parlez-nous-en et nous adapterons la formule avec une autre huile de base.",
   },
   "oleo-essencial-de-limao": {
     pt: "contém óleo essencial de limão, um óleo cítrico que pode ser fotossensibilizante — evita a exposição solar direta na zona de aplicação nas horas seguintes.",

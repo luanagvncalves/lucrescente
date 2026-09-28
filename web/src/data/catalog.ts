@@ -196,7 +196,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "champo-neutro-para-criancas",
-    name: "champô neutro/para crianças",
+    name: "champô sólido neutro/para crianças",
     category_slug: "champos",
     sort_order: 3,
     why_it_works:
@@ -276,19 +276,42 @@ export const products: ProductSeed[] = [
   },
 
   // ---------------- sabonetes ----------------
-  // Ingredient lists for soaps were not supplied per product; the brand states all soaps use
-  // organic aloe vera harvested fresh at home, so only that link is shown.
+  // The 40 g soap is the face soap; the brand renamed it from "sabonete 40g" (2026-09-28), which is
+  // also what the photo captions in photo-map.json had been calling it all along. The aloe vera is
+  // organic and harvested fresh at home. The sku keeps its old spelling so past orders still resolve.
   {
-    slug: "sabonete-40g",
-    name: "sabonete 40g",
+    slug: "sabonete-de-rosto",
+    name: "sabonete de rosto",
     category_slug: "sabonetes",
     sort_order: 0,
     why_it_works: null,
-    ingredient_slugs: ["aloe-vera"],
+    ingredient_slugs: [
+      "glicerina-vegetal",
+      "aloe-vera",
+      "oleo-essencial-de-lavanda",
+      "oleo-essencial-de-bergamota",
+      "sementes-de-papoila",
+    ],
     is_solid: true,
     is_candle: false,
     is_deodorant: false,
     variants: one("sabonete-40g", 400, 3),
+  },
+  {
+    // The row this product used to be, kept only so re-seeding switches it off: Supabase still holds
+    // it under the old slug, and an upsert on the new slug writes a second row rather than moving the
+    // old one. It has no variants, because the sku above moves across to the renamed product.
+    slug: "sabonete-40g",
+    name: "sabonete de rosto",
+    category_slug: "sabonetes",
+    sort_order: 0,
+    why_it_works: null,
+    ingredient_slugs: [],
+    is_solid: true,
+    is_candle: false,
+    is_deodorant: false,
+    is_active: false, // archived: renamed to sabonete-de-rosto
+    variants: [],
   },
 
   // ---------------- velas (no price supplied: "por encomenda") ----------------
@@ -297,7 +320,10 @@ export const products: ProductSeed[] = [
     name: "vela citronela",
     category_slug: "velas",
     sort_order: 0,
-    why_it_works: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente: por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+    // the case for these candles over a supermarket one is the same for all of
+    // them, so it lives in the dictionary (products.candleCase) and is shown to
+    // every candle rather than repeated five times here
+    why_it_works: null,
     ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-citronela", "oleo-essencial-de-lavanda", "oleo-essencial-de-palmarosa"],
     is_solid: false,
     is_candle: true,
@@ -309,7 +335,10 @@ export const products: ProductSeed[] = [
     name: "vela massagem",
     category_slug: "velas",
     sort_order: 1,
-    why_it_works: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente: por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+    // the case for these candles over a supermarket one is the same for all of
+    // them, so it lives in the dictionary (products.candleCase) and is shown to
+    // every candle rather than repeated five times here
+    why_it_works: null,
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -321,7 +350,10 @@ export const products: ProductSeed[] = [
     name: "vela decorada",
     category_slug: "velas",
     sort_order: 2,
-    why_it_works: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente: por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+    // the case for these candles over a supermarket one is the same for all of
+    // them, so it lives in the dictionary (products.candleCase) and is shown to
+    // every candle rather than repeated five times here
+    why_it_works: null,
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -333,7 +365,10 @@ export const products: ProductSeed[] = [
     name: "vela colorida",
     category_slug: "velas",
     sort_order: 3,
-    why_it_works: "as velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente: por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. a grande maioria dos elementos decorativos que usamos são naturais: flores e folhas secas, conchas, pedrinhas... alguns elementos vegetais são até prensados e preparados por nós. e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+    // the case for these candles over a supermarket one is the same for all of
+    // them, so it lives in the dictionary (products.candleCase) and is shown to
+    // every candle rather than repeated five times here
+    why_it_works: null,
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -360,8 +395,16 @@ export const products: ProductSeed[] = [
     name: "roll-on relax",
     category_slug: "roll-on",
     sort_order: 0,
-    why_it_works: null,
-    ingredient_slugs: [],
+    why_it_works:
+      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a camomila romana e a lavanda são as duas notas mais calmantes da fórmula, o petitgrain dá-lhe profundidade e o ylang-ylang uma nota floral mais envolvente, enquanto a laranja doce acrescenta um toque cítrico e luminoso.",
+    ingredient_slugs: [
+      "oleo-vegetal-de-amendoas-doces",
+      "oleo-essencial-de-camomila-romana",
+      "oleo-essencial-de-laranja-doce",
+      "oleo-essencial-de-petitgrain",
+      "oleo-essencial-de-lavanda",
+      "oleo-essencial-de-ylang-ylang",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -372,8 +415,15 @@ export const products: ProductSeed[] = [
     name: "roll-on dor de cabeça",
     category_slug: "roll-on",
     sort_order: 1,
-    why_it_works: null,
-    ingredient_slugs: [],
+    why_it_works:
+      "o óleo de amêndoas doces serve de base suave para aplicar a mistura nas têmporas e na nuca. a hortelã-pimenta, o eucalipto radiata e a cânfora dão a sensação fresca e penetrante que se sente logo na pele, e a lavanda equilibra a mistura com uma nota mais suave e reconfortante.",
+    ingredient_slugs: [
+      "oleo-vegetal-de-amendoas-doces",
+      "oleo-essencial-de-hortela-pimenta",
+      "oleo-essencial-de-lavanda",
+      "oleo-essencial-de-eucalipto-radiata",
+      "oleo-essencial-de-canfora",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -385,12 +435,13 @@ export const products: ProductSeed[] = [
     category_slug: "roll-on",
     sort_order: 2,
     why_it_works:
-      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta e o eucalipto radiata acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula.",
+      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta, o eucalipto radiata e a cânfora acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula.",
     ingredient_slugs: [
       "oleo-vegetal-de-amendoas-doces",
-      "oleo-essencial-de-hortela-pimenta",
       "oleo-essencial-de-eucalipto-radiata",
       "oleo-essencial-de-tea-tree",
+      "oleo-essencial-de-hortela-pimenta",
+      "oleo-essencial-de-canfora",
     ],
     is_solid: false,
     is_candle: false,
@@ -404,8 +455,15 @@ export const products: ProductSeed[] = [
     name: "spray relaxante",
     category_slug: "sprays",
     sort_order: 0,
-    why_it_works: null,
-    ingredient_slugs: [],
+    why_it_works:
+      "quem faz o trabalho são os óleos essenciais. a lavanda é o aroma floral e herbáceo mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso, e a camomila romana junta-lhe uma nota doce e amaciada, daquelas que se associam a um momento de calma ao fim do dia. o álcool a 96º é o que permite que esses óleos se misturem mesmo com a água — coisa que a água sozinha não faz — e é por isso que o spray não se separa em duas camadas; como evapora depressa, também não deixa a superfície molhada. a água destilada, sem minerais nem resíduos, mantém a fórmula limpa durante mais tempo e não deixa marcas onde o spray assenta. as flores de lavanda ficam inteiras a flutuar no frasco e vão soltando o aroma devagar.",
+    ingredient_slugs: [
+      "alcool-96",
+      "agua-destilada",
+      "oleo-essencial-de-lavanda",
+      "oleo-essencial-de-camomila-romana",
+      "flores-de-lavanda",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -420,7 +478,13 @@ export const products: ProductSeed[] = [
     sort_order: 0,
     why_it_works:
       "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
-    ingredient_slugs: ["sal-de-epsom", "oleo-essencial-de-lavanda-4042-blend"],
+    ingredient_slugs: [
+      "sal-de-epsom",
+      "flores-de-camomila",
+      "flores-de-lavanda",
+      "flores-de-rosa",
+      "oleo-essencial-de-lavanda",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -436,8 +500,14 @@ export const products: ProductSeed[] = [
     name: "batom tijolo",
     category_slug: "batons",
     sort_order: 0,
-    why_it_works: null,
-    ingredient_slugs: [],
+    why_it_works:
+      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral — é o único dos nossos batons que leva cor.",
+    ingredient_slugs: [
+      "cera-de-abelha-amarela",
+      "manteiga-de-cacau",
+      "oleo-vegetal-de-amendoas-doces",
+      "oxido-de-ferro",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -448,8 +518,13 @@ export const products: ProductSeed[] = [
     name: "batom herpes",
     category_slug: "batons",
     sort_order: 1,
-    why_it_works: null,
-    ingredient_slugs: [],
+    why_it_works:
+      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+    ingredient_slugs: [
+      "cera-de-abelha-amarela",
+      "manteiga-de-cacau",
+      "oleo-vegetal-de-amendoas-doces",
+    ],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
@@ -462,10 +537,9 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 2,
     why_it_works:
-      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
+      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
-      "cera-de-soja",
       "manteiga-de-cacau",
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-laranja-doce",
@@ -481,10 +555,9 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 3,
     why_it_works:
-      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+      "a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
-      "cera-de-soja",
       "manteiga-de-cacau",
       "oleo-vegetal-de-amendoas-doces",
     ],
@@ -499,10 +572,9 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 4,
     why_it_works:
-      "a cera de abelha e a cera de soja dão consistência ao bálsamo e ajudam a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
+      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
-      "cera-de-soja",
       "manteiga-de-cacau",
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-hortela-pimenta",
@@ -538,7 +610,8 @@ export const products: ProductSeed[] = [
     name: "ambientador",
     category_slug: "ambientadores",
     sort_order: 1,
-    why_it_works: null,
+    why_it_works:
+      "funciona de duas maneiras, conforme o que preferires. derretido — num queimador ou numa lamparina — a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: false,

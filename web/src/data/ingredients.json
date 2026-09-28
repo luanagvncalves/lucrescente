@@ -608,5 +608,75 @@
   "properties": "Aroma fresco, herbáceo e com notas cítricas, tradicionalmente usado em velas aromáticas e produtos de ambientação. Associado a propriedades refrescantes e revitalizantes.",
   "applications": "Usado em velas aromáticas para criar um ambiente refrescante e natural, frequentemente combinado com outros óleos essenciais como lavanda e palmarosa.",
   "sort_order": 60
+ },
+ {
+  "slug": "oleo-essencial-de-canfora",
+  "name": "Óleo Essencial de Cânfora",
+  "category": "Óleos Vegetais",
+  "scientific_name": "Cinnamomum camphora.",
+  "origin": "Extraído por destilação da madeira da canforeira, uma árvore originária do Leste Asiático, da mesma espécie que dá o ravintsara.",
+  "properties": "Aroma intenso, penetrante e muito fresco, com a sensação de arrefecimento característica que se sente logo na pele. Tradicionalmente usado em bálsamos aplicados no peito, nas têmporas e na nuca, pela sensação de respiração desimpedida e de alívio que acompanha o aroma.",
+  "applications": "Usado nos nossos roll-on para a dor de cabeça e para a sinusite, sempre diluído em óleo de amêndoas doces, onde dá a nota fresca e penetrante da mistura.",
+  "sort_order": 61
+ },
+ {
+  "slug": "oxido-de-ferro",
+  "name": "Óxido de Ferro",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Pigmento mineral, o mesmo que dá a cor às argilas e aos barros — o que usamos é de origem mineral e de grau cosmético, aprovado para uso em produtos de maquilhagem.",
+  "properties": "Dá cor sem corantes sintéticos e sem aroma próprio, mantendo-se estável ao longo do tempo e à luz. Consoante a dose, vai do bege quente ao tom de tijolo, e não altera a textura nem a nutrição do bálsamo.",
+  "applications": "É o que dá a cor ao nosso batom tijolo — o único dos nossos batons que leva pigmento.",
+  "sort_order": 62
+ },
+ {
+  "slug": "flores-de-camomila",
+  "name": "Flores de Camomila",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Chamaemelum nobile.",
+  "origin": "Flores inteiras de camomila, colhidas e secas ao ar para que mantenham a cor e o aroma. É a mesma planta de que se extrai o hidrolato e o óleo essencial de camomila romana, mas aqui entra tal e qual, sem qualquer transformação.",
+  "properties": "Aroma doce e amaciado, tradicionalmente associado a um momento de calma ao fim do dia. Ao contacto com a água quente, as flores abrem e libertam lentamente o aroma e uma cor dourada muito ténue.",
+  "applications": "Usadas inteiras nos nossos sais de banho relaxantes, onde se veem no frasco e vão soltando o aroma à medida que o banho aquece.",
+  "sort_order": 63
+ },
+ {
+  "slug": "flores-de-lavanda",
+  "name": "Flores de Lavanda",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Lavandula angustifolia.",
+  "origin": "Botões de lavanda colhidos antes de abrirem por completo e secos à sombra, que é o que lhes guarda o tom violeta e o aroma. A mesma planta que nos dá o hidrolato e o óleo essencial de lavanda.",
+  "properties": "Aroma floral e herbáceo, o mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso. Secas, as flores mantêm o aroma durante muito tempo e vão-no libertando devagar.",
+  "applications": "Usadas inteiras nos nossos sais de banho relaxantes e no spray relaxante, onde ficam a flutuar no frasco.",
+  "sort_order": 64
+ },
+ {
+  "slug": "flores-de-rosa",
+  "name": "Flores de Rosa",
+  "category": "Outros Ingredientes",
+  "scientific_name": "Rosa damascena.",
+  "origin": "Pétalas de rosa damascena, a variedade tradicionalmente cultivada pelo aroma, colhidas de manhã e secas inteiras.",
+  "properties": "Aroma floral suave, mais discreto do que o da lavanda, e uma cor rosada que se mantém depois de secas. Nos sais, são sobretudo o elemento que dá ao banho o seu aspeto.",
+  "applications": "Usadas inteiras nos nossos sais de banho relaxantes, pela cor e pelo aroma leve que deixam na água.",
+  "sort_order": 65
+ },
+ {
+  "slug": "alcool-96",
+  "name": "Álcool 96%",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Álcool etílico a 96º, de origem vegetal, o mesmo tipo de álcool usado na preparação de tinturas e macerados.",
+  "properties": "Dissolve os óleos essenciais e permite misturá-los com a água, coisa que a água sozinha não faz — é o que evita que o spray se separe em duas camadas. Evapora depressa, por isso o spray não deixa a superfície molhada. É inflamável, e em contacto com os olhos ou com pele ferida pode arder.",
+  "applications": "Usado como base do nosso spray relaxante, onde leva o aroma dos óleos essenciais de lavanda e de camomila romana.",
+  "sort_order": 66
+ },
+ {
+  "slug": "agua-destilada",
+  "name": "Água Destilada",
+  "category": "Outros Ingredientes",
+  "scientific_name": null,
+  "origin": "Água purificada por destilação, um processo que lhe retira os minerais e as impurezas que a água da torneira traz.",
+  "properties": "Sem minerais nem resíduos, mantém a fórmula limpa e estável durante mais tempo do que a água comum, e não deixa marcas nas superfícies onde o spray assenta.",
+  "applications": "Usada como fase aquosa do nosso spray relaxante, a acompanhar o álcool e os óleos essenciais.",
+  "sort_order": 67
  }
 ]
