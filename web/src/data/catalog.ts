@@ -302,6 +302,29 @@ export const products: ProductSeed[] = [
     variants: one("sabonete-40g", 400, 3, "40g"),
   },
   {
+    // The same bar as the face soap, cast larger for the body — the brand makes one soap recipe,
+    // so the ingredient list is deliberately identical rather than a copy that could drift.
+    // It stands in for the old "sabonete-grande", which never existed beyond a stale locale key
+    // and a photo-map entry. No price has been supplied, so it seeds as "por encomenda".
+    slug: "sabonete-de-corpo",
+    name: "sabonete de corpo",
+    category_slug: "sabonetes",
+    sort_order: 1,
+    why_it_works:
+      "é o mesmo sabonete que fazemos para a cara, numa barra maior, para o corpo durar mais tempo. o aloé vera é o que hidrata mais a fundo, e é biológico, colhido fresco cá em casa. a glicerina vegetal ajuda a pele a segurar essa hidratação em vez de a ir perdendo ao longo do dia. o óleo essencial de lavanda ajuda a acalmar a pele e dá o aroma, com a bergamota a acrescentar uma nota cítrica mais fresca. e as sementes de papoila esfoliam delicadamente: são redondas e todas do mesmo tamanho, por isso limpam sem arranhar.",
+    ingredient_slugs: [
+      "glicerina-vegetal",
+      "aloe-vera",
+      "oleo-essencial-de-lavanda",
+      "oleo-essencial-de-bergamota",
+      "sementes-de-papoila",
+    ],
+    is_solid: true,
+    is_candle: false,
+    is_deodorant: false,
+    variants: one("sabonete-de-corpo", null, 0),
+  },
+  {
     // The row this product used to be, kept only so re-seeding switches it off: Supabase still holds
     // it under the old slug, and an upsert on the new slug writes a second row rather than moving the
     // old one. It has no variants, because the sku above moves across to the renamed product.
@@ -339,10 +362,11 @@ export const products: ProductSeed[] = [
     name: "vela massagem",
     category_slug: "velas",
     sort_order: 1,
-    // the case for these candles over a supermarket one is the same for all of
-    // them, so it lives in the dictionary (products.candleCase) and is shown to
-    // every candle rather than repeated five times here
-    why_it_works: null,
+    // The one candle with something of its own to say: it goes on the skin.
+    // The shared case for a soy candle over a supermarket one still shows below
+    // it, from the dictionary (products.candleCase).
+    why_it_works:
+      "esta é para usar na pele. a cera de soja derrete a uma temperatura muito mais baixa do que a parafina das velas de supermercado, e é isso que permite deitar a cera derretida diretamente na pele para uma massagem, sem queimar. por ser uma cera vegetal, hidrata a pele à medida que se espalha, e não deixa por cima aquela camada pegajosa que as outras deixam.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,

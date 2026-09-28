@@ -38,6 +38,14 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const ownContainerLabelPt = getDictionary("pt").products.ownContainerLabel;
   const hasOwnContainerVariant = variants.some((v) => v.label === ownContainerLabelPt);
 
+  /**
+   * A product sold in one format can still have a size worth printing — the
+   * soap is 40 g and nothing else. Without this the label was stored, seeded
+   * and then never shown, because the picker only ever rendered a list of two
+   * or more. Null for the single unlabelled variants, which stay as they were.
+   */
+  const soleLabel = variants.length === 1 ? getVariantLabel(variants[0].label, locale) : null;
+
   const isOwnPackaging = selected.label === ownContainerLabelPt;
   /*
     The optional oil on the coloured lip balms. It is not a variant: the balms
@@ -79,7 +87,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
 
   return (
     <div className="card-brand p-6 sm:p-8">
-      {variants.length > 1 || !product.is_solid ? (
+      {variants.length > 1 || !product.is_solid || soleLabel ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.variant}</legend>
           <div className="flex flex-wrap gap-2">
@@ -114,7 +122,16 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                     </label>
                   );
                 })
-              : null}
+              : soleLabel ? (
+                  /*
+                    One variant that still names a size — the 40 g soap. There is
+                    nothing to choose between, so this is a plain pill and not a
+                    radio: making it selectable would offer a choice of one.
+                  */
+                  <span className="inline-flex h-11 items-center rounded-full border border-moss/40 px-4 font-ui text-[0.92rem] font-medium text-forest">
+                    {soleLabel}
+                  </span>
+                ) : null}
             {!product.is_solid && !product.is_deodorant && !hasOwnContainerVariant ? (
               <button
                 type="button"
