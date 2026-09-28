@@ -526,7 +526,7 @@ export const products: ProductSeed[] = [
     variants: [
       // Priced per 100 units, the way doseUnitPriceCents reads it and the way the
       // deodorant's own-container row already works: 5,00 € buys a 100 ml jar.
-      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: 500, stock: 2 },
+      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: 500, stock: 100 },
       { sku: "sais-relaxante-frasco", label: "frasco de vidro", price_cents: 800, stock: 5 },
     ],
   },
