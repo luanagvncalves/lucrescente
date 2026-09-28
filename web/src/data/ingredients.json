@@ -570,13 +570,13 @@
   "sort_order": 56
  },
  {
-  "slug": "sal-de-epsom",
-  "name": "Sal de Epsom",
+  "slug": "sal-marinho-integral",
+  "name": "Sal Marinho Integral",
   "category": "Outros Ingredientes",
   "scientific_name": null,
-  "origin": "Sulfato de magnésio, um mineral natural que deve o nome à cidade inglesa de Epsom, onde foi descoberto numa nascente.",
-  "properties": "Tradicionalmente usado em banhos relaxantes, associado à sensação de alívio muscular e relaxamento após dias mais cansativos ou atividade física intensa. Dissolve-se facilmente em água quente.",
-  "applications": "Usado nos nossos sais de banho relaxantes, ideais para um fim de dia mais cansativo.",
+  "origin": "Sal colhido à superfície das salinas e seco ao sol e ao vento, sem refinação, sem branqueamento e sem antiaglomerantes — sai da salina e vem direito para nós, tal e qual.",
+  "properties": "Por não ser refinado, guarda os minerais que a água do mar traz consigo, sobretudo magnésio, potássio e cálcio, que o sal branco de mesa perde no processamento. Daí a cor acinzentada e o grão irregular. Dissolve-se devagar em água quente, o que faz com que o banho se mantenha salgado do princípio ao fim.",
+  "applications": "É a base dos nossos sais de banho relaxantes, para um banho de imersão ou um escalda-pés.",
   "sort_order": 57
  },
  {

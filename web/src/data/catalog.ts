@@ -52,8 +52,10 @@ export const categories: CategorySeed[] = [
   { slug: "velas", name: "velas", sort_order: 11 },
 ];
 
-const one = (sku: string, price_cents: number | null, stock: number): VariantSeed[] => [
-  { sku, label: null, price_cents, stock },
+// `label` is for a product sold in one format that still has a size worth naming
+// ("40g"); left out, the format picker shows no pill at all.
+const one = (sku: string, price_cents: number | null, stock: number, label: string | null = null): VariantSeed[] => [
+  { sku, label, price_cents, stock },
 ];
 
 const balm = (
@@ -284,7 +286,8 @@ export const products: ProductSeed[] = [
     name: "sabonete de rosto",
     category_slug: "sabonetes",
     sort_order: 0,
-    why_it_works: null,
+    why_it_works:
+      "o aloé vera é o que hidrata mais a fundo, e é biológico, colhido fresco cá em casa. a glicerina vegetal ajuda a pele a segurar essa hidratação em vez de a ir perdendo ao longo do dia. o óleo essencial de lavanda ajuda a acalmar a pele e dá o aroma, com a bergamota a acrescentar uma nota cítrica mais fresca. e as sementes de papoila esfoliam delicadamente: são redondas e todas do mesmo tamanho, por isso limpam sem arranhar, mesmo num sítio tão sensível como a cara.",
     ingredient_slugs: [
       "glicerina-vegetal",
       "aloe-vera",
@@ -295,7 +298,8 @@ export const products: ProductSeed[] = [
     is_solid: true,
     is_candle: false,
     is_deodorant: false,
-    variants: one("sabonete-40g", 400, 3),
+    // the photographed soap is the 40 g one, and the size belongs on the format picker
+    variants: one("sabonete-40g", 400, 3, "40g"),
   },
   {
     // The row this product used to be, kept only so re-seeding switches it off: Supabase still holds
@@ -456,7 +460,7 @@ export const products: ProductSeed[] = [
     category_slug: "sprays",
     sort_order: 0,
     why_it_works:
-      "quem faz o trabalho são os óleos essenciais. a lavanda é o aroma floral e herbáceo mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso, e a camomila romana junta-lhe uma nota doce e amaciada, daquelas que se associam a um momento de calma ao fim do dia. o álcool a 96º é o que permite que esses óleos se misturem mesmo com a água — coisa que a água sozinha não faz — e é por isso que o spray não se separa em duas camadas; como evapora depressa, também não deixa a superfície molhada. a água destilada, sem minerais nem resíduos, mantém a fórmula limpa durante mais tempo e não deixa marcas onde o spray assenta. as flores de lavanda ficam inteiras a flutuar no frasco e vão soltando o aroma devagar.",
+      "serve para as duas coisas: borrifa-se no ar, na almofada ou na roupa da cama, e também na pele, como perfume. quem faz o trabalho são os óleos essenciais. a lavanda é o aroma floral e herbáceo mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso, e a camomila romana junta-lhe uma nota doce e amaciada, daquelas que se associam a um momento de calma ao fim do dia. o álcool a 96º é o que permite que esses óleos se misturem mesmo com a água — coisa que a água sozinha não faz — e é por isso que o spray não se separa em duas camadas; como evapora depressa, também não deixa a superfície molhada. a água destilada, sem minerais nem resíduos, mantém a fórmula limpa durante mais tempo e não deixa marcas onde o spray assenta. as flores de lavanda ficam inteiras a flutuar no frasco e vão soltando o aroma devagar.",
     ingredient_slugs: [
       "alcool-96",
       "agua-destilada",
@@ -479,7 +483,7 @@ export const products: ProductSeed[] = [
     why_it_works:
       "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
     ingredient_slugs: [
-      "sal-de-epsom",
+      "sal-marinho-integral",
       "flores-de-camomila",
       "flores-de-lavanda",
       "flores-de-rosa",
