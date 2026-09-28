@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { mockEnabled } from "@/lib/stripe";
 import { supabaseAdmin } from "@/lib/supabase";
 import { finalizeOrder } from "@/lib/orders";
-import { SHIPPING_TIERS, tierForCountry } from "@/config/shipping";
+import { SHIPPING_TIERS, tierForCountry, shippingLabel } from "@/config/shipping";
 import { formatPrice } from "@/lib/types";
 import type { ValidatedLine } from "@/lib/checkout";
 import { Label } from "@/components/ui/typography";
@@ -45,7 +45,8 @@ export default async function MockCheckout({ searchParams }: { searchParams: Pro
         city: String(formData.get("city") ?? ""),
         country,
       },
-      shippingOption: tier.label,
+      // This stand-in page is Portuguese-only, so it asks for the Portuguese name.
+      shippingOption: shippingLabel(tier, "pt"),
       subtotalCents: subtotal,
       shippingCents: shipping,
       totalCents: subtotal + shipping,
@@ -105,7 +106,7 @@ export default async function MockCheckout({ searchParams }: { searchParams: Pro
               </select>
             </label>
             <p className="text-[0.85rem] text-ink/70">
-              portes: {SHIPPING_TIERS.map((s) => `${s.label} ${formatPrice(s.amount_cents)}`).join(" · ")}
+              portes: {SHIPPING_TIERS.map((s) => `${shippingLabel(s, "pt")} ${formatPrice(s.amount_cents)}`).join(" · ")}
             </p>
             <button type="submit" className={buttonClass("primary", "lg", "w-full")}>
               pagar (simulado)

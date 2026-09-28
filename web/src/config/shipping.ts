@@ -14,9 +14,17 @@
  * destination" and let Stripe show the number. Once the brand confirms real
  * rates, replace these and delete this warning.
  */
+export type ShippingLocale = "pt" | "en" | "fr";
+
 export type ShippingTier = {
   id: string;
-  label: string; // shown in Stripe Checkout and on the confirmation page
+  /**
+   * Shown in Stripe Checkout and on the confirmation page, in the language the
+   * customer is buying in — Stripe prints this string as given, so a Portuguese
+   * one left an English or French customer reading the only untranslated line
+   * on an otherwise translated payment page.
+   */
+  label: Record<ShippingLocale, string>;
   amount_cents: number;
   countries: string[]; // ISO-3166 alpha-2 codes allowed for this tier
   min_days: number;
@@ -26,7 +34,11 @@ export type ShippingTier = {
 export const SHIPPING_TIERS: ShippingTier[] = [
   {
     id: "pt",
-    label: "portugal continental e ilhas",
+    label: {
+      pt: "portugal continental e ilhas",
+      en: "mainland portugal and islands",
+      fr: "portugal continental et îles",
+    },
     amount_cents: 450,
     countries: ["PT"],
     min_days: 2,
@@ -34,7 +46,11 @@ export const SHIPPING_TIERS: ShippingTier[] = [
   },
   {
     id: "eu",
-    label: "europa",
+    label: {
+      pt: "europa",
+      en: "europe",
+      fr: "europe",
+    },
     amount_cents: 1200,
     countries: [
       "ES", "FR", "DE", "IT", "NL", "BE", "LU", "IE", "AT", "DK", "SE", "FI", "PL", "CZ", "SK",
@@ -45,13 +61,22 @@ export const SHIPPING_TIERS: ShippingTier[] = [
   },
   {
     id: "world",
-    label: "resto do mundo",
+    label: {
+      pt: "resto do mundo",
+      en: "rest of the world",
+      fr: "reste du monde",
+    },
     amount_cents: 2200,
     countries: ["US", "CA", "BR", "AU", "NZ", "JP", "QA", "AE", "CO", "MX", "AR", "CL", "ZA"],
     min_days: 10,
     max_days: 25,
   },
 ];
+
+/** The tier's name in one language, falling back to Portuguese. */
+export function shippingLabel(tier: ShippingTier, locale: ShippingLocale): string {
+  return tier.label[locale] ?? tier.label.pt;
+}
 
 /** Every country the shop ships to (union of tiers). Used for Stripe `shipping_address_collection`. */
 export const ALLOWED_COUNTRIES = Array.from(new Set(SHIPPING_TIERS.flatMap((t) => t.countries)));

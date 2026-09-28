@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Suspense, useState } from "react";
 import { useLocale } from "@/lib/use-locale";
 import { useCart } from "@/lib/cart-store";
+import { getVariantLabel } from "@/content/variant-locales";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Crescent, Pause } from "@/components/ui/motifs";
@@ -96,7 +97,7 @@ function Checkout() {
                 <li key={l.sku} className="flex justify-between gap-4">
                   <span>
                     {l.quantity} × {l.productName}
-                    {l.variantLabel ? ` (${l.variantLabel})` : ""}
+                    {l.variantLabel ? ` (${getVariantLabel(l.variantLabel, locale)})` : ""}
                   </span>
                   <span className="font-medium">{formatPrice(l.unitPriceCents * l.quantity)}</span>
                 </li>

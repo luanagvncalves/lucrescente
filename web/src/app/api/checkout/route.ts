@@ -4,7 +4,9 @@ import type Stripe from "stripe";
 import { randomUUID } from "node:crypto";
 import { stripe, stripeEnabled, mockEnabled } from "@/lib/stripe";
 import { validateCart, type CheckoutItemInput } from "@/lib/checkout";
-import { ALLOWED_COUNTRIES, SHIPPING_TIERS } from "@/config/shipping";
+import { ALLOWED_COUNTRIES, SHIPPING_TIERS, shippingLabel } from "@/config/shipping";
+import { getProductCopy } from "@/content/product-locales";
+import { getVariantLabel } from "@/content/variant-locales";
 import { supabaseAdmin } from "@/lib/supabase";
 
 export const runtime = "nodejs";
@@ -31,6 +33,19 @@ export async function POST(req: Request) {
   // render; `query` carries the language back to our own confirmation page.
   const locale = body.locale === "en" || body.locale === "fr" ? body.locale : "pt";
   const query = locale === "pt" ? "" : `&idioma=${locale}`;
+
+  // The catalogue holds names in Portuguese only, so `validateCart` — which
+  // re-reads them from the database on purpose, never trusting the browser —
+  // hands back Portuguese. Translate here, once, and use the same names for the
+  // Stripe page and for the order record, so the confirmation page the customer
+  // lands on afterwards says what the payment page said. `sku` is carried
+  // alongside and stays language-neutral, so an order is still identifiable
+  // whatever language it was bought in.
+  const named = validated.lines.map((l) => ({
+    ...l,
+    displayName: getProductCopy(l.productSlug, locale, { name: l.productName }).name,
+    displayVariant: getVariantLabel(l.variantLabel, locale),
+  }));
 
   // ---------- mock mode (no Stripe keys yet) ----------
   if (!stripeEnabled) {
@@ -67,7 +82,7 @@ export async function POST(req: Request) {
       shipping_options: SHIPPING_TIERS.map((tier) => ({
         shipping_rate_data: {
           type: "fixed_amount",
-          display_name: tier.label,
+          display_name: shippingLabel(tier, locale),
           fixed_amount: { amount: tier.amount_cents, currency: "eur" },
           delivery_estimate: {
             minimum: { unit: "business_day", value: tier.min_days },
@@ -76,20 +91,21 @@ export async function POST(req: Request) {
           metadata: { tier: tier.id },
         },
       })),
-      line_items: validated.lines.map((l) => ({
+      line_items: named.map((l) => ({
         quantity: l.quantity,
         price_data: {
           currency: "eur",
           unit_amount: l.unitPriceCents,
           product_data: {
-            name: `${l.productName}${l.variantLabel ? ` · ${l.variantLabel}` : ""}`,
+            name: `${l.displayName}${l.displayVariant ? ` · ${l.displayVariant}` : ""}`,
             metadata: { sku: l.sku },
           },
         },
       })),
       metadata: {
         // compact item list for the webhook (sku:qty:unit_cents:name|label)
-        items: JSON.stringify(validated.lines.map((l) => [l.sku, l.quantity, l.unitPriceCents, l.productName, l.variantLabel])),
+        items: JSON.stringify(named.map((l) => [l.sku, l.quantity, l.unitPriceCents, l.displayName, l.displayVariant])),
+        locale,
       },
       success_url: `${origin}/encomenda/confirmacao?session_id={CHECKOUT_SESSION_ID}${query}`,
       cancel_url: `${origin}/produtos?checkout=cancelado${query}`,
