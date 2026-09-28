@@ -516,10 +516,17 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
-    // "embalagem própria" is not a variant here. The panel already offers a
-    // bring-your-own-container button on every non-solid product, and its label is
-    // the same string, so seeding it as a variant too printed the format twice.
-    variants: one("sais-relaxante-frasco", 800, 5, "frasco de vidro"),
+    // "embalagem própria" MUST stay a variant, even though the panel also has a
+    // hardcoded bring-your-own-container button with the same label. The button
+    // carries no price, so with the variant gone, choosing it left the glass jar
+    // selected and charged 8,00 € for a container the customer was bringing, and
+    // the dose field — keyed on the selected variant's label — never appeared.
+    // The duplicate pill that prompted this is handled the other way round, by the
+    // panel's hasOwnContainerVariant guard hiding the button when this row exists.
+    variants: [
+      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: null, stock: 2 },
+      { sku: "sais-relaxante-frasco", label: "frasco de vidro", price_cents: 800, stock: 5 },
+    ],
   },
 
   // ---------------- batons (boião / stick) ----------------
