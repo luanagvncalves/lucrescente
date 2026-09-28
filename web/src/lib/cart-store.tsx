@@ -17,6 +17,9 @@ export type CartLine = {
    * oil on the coloured lip balm. See content/product-addons.ts.
    */
   addOn?: string | null;
+  /** The customer brings the container, and says how much to put in it. */
+  ownContainer?: boolean;
+  dose?: string | null;
 };
 
 /**
@@ -32,8 +35,12 @@ export type CartLine = {
  * Stock is still tracked per sku, so `reconcile` and the checkout keep using
  * that; only identity within the cart is keyed on the pair.
  */
-export function lineKey(line: Pick<CartLine, "sku" | "addOn">): string {
-  return line.addOn ? `${line.sku}::${line.addOn}` : line.sku;
+export function lineKey(line: Pick<CartLine, "sku" | "addOn" | "ownContainer" | "dose">): string {
+  // A dose belongs in here for the same reason an add-on does: 500 g and 1 L of
+  // the same product are the same sku at different prices, and keying on sku
+  // alone would merge them into one line at whichever price came first.
+  const parts = [line.sku, line.addOn ?? "", line.ownContainer ? "próprio" : "", line.dose ?? ""];
+  return parts.some((p, i) => i > 0 && p) ? parts.join("::") : line.sku;
 }
 
 type State = { lines: CartLine[]; hydrated: boolean };

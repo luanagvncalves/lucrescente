@@ -8,6 +8,7 @@ import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
+import { doseUnitPriceCents, sanitiseDose, DOSE_MAX_LENGTH } from "@/lib/dose-price";
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
@@ -61,11 +62,18 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const orderLabel = [selected.label, addOn || null, ownContainer ? t.products.ownContainerLabel : null, isOwnPackaging && dose ? `dose: ${dose}` : null].filter(Boolean).join(" · ") || null;
   const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
 
-  // Calculate price for own packaging based on dose
-  const doseAmount = isOwnPackaging && dose ? parseFloat(dose.match(/\d+(?:\.\d+)?/)?.[0] || "0") : 0;
-  const calculatedPrice = isOwnPackaging && avail.kind === "available" && doseAmount > 0
-    ? Math.round((avail.price_cents as number) * doseAmount / 100)
-    : avail.kind === "available" ? (avail.price_cents as number) : 0;
+  /*
+    The price for a custom dose, worked out by the SAME function the server
+    uses, over the same database price — see lib/dose-price.ts. This panel used
+    to carry its own copy of the sum, so it showed a number that `validateCart`
+    then re-priced away; the customer decided on one figure and was charged
+    another. Now the figure on screen is the one that will be charged, because
+    both come from doseUnitPriceCents.
+  */
+  const cleanDose = isOwnPackaging ? sanitiseDose(dose) : null;
+  const calculatedPrice = avail.kind === "available"
+    ? doseUnitPriceCents(avail.price_cents as number, cleanDose)
+    : 0;
 
   function add() {
     if (avail.kind !== "available") return;
@@ -74,10 +82,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       productSlug: product.slug,
       productName: localizedName,
       variantLabel: orderLabel,
-      unitPriceCents: isOwnPackaging && doseAmount > 0 ? calculatedPrice : avail.price_cents,
+      unitPriceCents: calculatedPrice,
       quantity: qty,
       maxStock: avail.stock,
       addOn: addOn || null,
+      ownContainer,
+      dose: cleanDose,
       image: product.images[0] ? { path: product.images[0].path, alt: product.images[0].alt } : null,
       isCandle: product.is_candle,
     });
@@ -176,6 +186,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           <input
             type="text"
             placeholder="ex: 500g, 1L, etc"
+            // the same ceiling the server trims to, so nobody types a dose that
+            // silently loses its tail on the way to the order
+            maxLength={DOSE_MAX_LENGTH}
             value={dose}
             onChange={(e) => setDose(e.target.value)}
             className="w-full rounded-2xl border border-moss/40 px-4 py-3 text-[0.95rem] placeholder-moss/50 focus:border-forest focus:outline-none"
@@ -205,7 +218,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       ) : (
         <div className="space-y-5">
           <div className="flex items-baseline justify-between">
-            <p className="font-display text-[2rem] leading-none text-forest">{isOwnPackaging && doseAmount > 0 ? formatPrice(calculatedPrice) : formatPrice(avail.price_cents)}</p>
+            <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(calculatedPrice)}</p>
             {avail.stock <= 3 ? <span className="label-brand text-clay">{t.products.stockLeft(avail.stock)}</span> : null}
           </div>
           <div className="flex flex-col gap-3">

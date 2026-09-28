@@ -119,6 +119,8 @@ export const pt = {
       "as velas de supermercado são quase sempre de parafina, que é um resto da refinação do petróleo. ao arder, a parafina liberta fuligem — aquelas marcas pretas no frasco e no teto — e compostos que ficam no ar que se respira dentro de casa, ainda por cima com fragrâncias sintéticas por cima. as nossas são de cera de soja, que é vegetal: arde mais devagar e a uma temperatura mais baixa, não deixa fuligem e não traz derivados de petróleo. por arder devagar, a vela dura bastante mais tempo do que uma de parafina do mesmo tamanho, e a cera aproveita-se até ao fim. o aroma vem só de óleos essenciais, nunca de fragrâncias sintéticas, e a decoração é natural — flores e folhas secas, conchas, pedrinhas, muitas delas prensadas e preparadas por nós.",
     hairTypeNote: "para que tipo de cabelo",
     // the optional flavour oil on the coloured lip balms
+    // the customer's own container, and how much to put in it
+    doseLabel: "dose",
     flavourLabel: "sabor",
     flavourNone: "sem sabor",
     deodorantFact: "aplica uma camada fina em pele limpa e seca — com o calor do corpo espalha-se melhor.",

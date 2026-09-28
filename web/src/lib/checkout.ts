@@ -1,7 +1,19 @@
 import { getVariantsBySkus } from "@/lib/catalog";
 import { sanitiseAddOn } from "@/content/product-addons";
+import { doseUnitPriceCents, sanitiseDose } from "@/lib/dose-price";
+import { getDictionary } from "@/lib/i18n";
 
-export type CheckoutItemInput = { sku: string; quantity: number; addOn?: string | null };
+/** Variant labels are stored in Portuguese; this is the one the dose belongs to. */
+const OWN_CONTAINER_LABEL_PT = getDictionary("pt").products.ownContainerLabel;
+
+export type CheckoutItemInput = {
+  sku: string;
+  quantity: number;
+  addOn?: string | null;
+  /** The customer's own container, and how much to put in it. */
+  ownContainer?: boolean;
+  dose?: string | null;
+};
 
 export type ValidatedLine = {
   variantId: string;
@@ -14,6 +26,10 @@ export type ValidatedLine = {
   /** An extra made up when the order is packed, already checked against the
       product's own list. Never affects the price. */
   addOn: string | null;
+  /** The customer brings the container. */
+  ownContainer: boolean;
+  /** How much to put in it, sanitised. Priced by doseUnitPriceCents, above. */
+  dose: string | null;
 };
 
 export type Adjustment = { sku: string; name: string; available: number };
@@ -62,15 +78,28 @@ export async function validateCart(items: CheckoutItemInput[]): Promise<
       }
       continue;
     }
+    /*
+      A dose only means something on the "embalagem própria" variant, and the
+      price it implies is worked out HERE, from the database price, not taken
+      from the browser. The panel shows the same number because it calls the
+      same function over the same price — before this, it computed one price,
+      showed it, and the server silently charged another.
+    */
+    const dose = v.label === OWN_CONTAINER_LABEL_PT ? sanitiseDose(item.dose) : null;
+
     lines.push({
       variantId: v.id,
       sku: v.sku,
       productSlug: v.product.slug,
       productName: v.product.name,
       variantLabel: v.label,
-      unitPriceCents: v.price_cents,
+      unitPriceCents: dose ? doseUnitPriceCents(v.price_cents, dose) : v.price_cents,
       quantity: item.quantity,
       addOn: sanitiseAddOn(v.product.slug, item.addOn),
+      // Not repeated when "embalagem própria" is already the variant itself,
+      // or the line reads "embalagem própria · embalagem própria".
+      ownContainer: item.ownContainer === true && v.label !== OWN_CONTAINER_LABEL_PT,
+      dose,
     });
   }
 

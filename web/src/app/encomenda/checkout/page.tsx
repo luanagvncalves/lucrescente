@@ -34,7 +34,13 @@ function Checkout() {
         body: JSON.stringify({
           // `addOn` is checked against the product's own list on the server and
           // dropped if it is not one of them; it never touches the price.
-          items: cart.lines.map((l) => ({ sku: l.sku, quantity: l.quantity, addOn: l.addOn ?? null })),
+          items: cart.lines.map((l) => ({
+            sku: l.sku,
+            quantity: l.quantity,
+            addOn: l.addOn ?? null,
+            ownContainer: l.ownContainer === true,
+            dose: l.dose ?? null,
+          })),
           // so Stripe's own page, and the return trip, keep the visitor's language
           locale,
         }),
