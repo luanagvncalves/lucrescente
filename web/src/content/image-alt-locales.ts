@@ -14,6 +14,11 @@ import type { ProductLocale } from "./product-locales";
  * that is re-cropped or moved keeps its description.
  */
 const alt: Record<string, { en: string; fr: string }> = {
+  // the order block on the home page
+  "cabaz de palha com um sabonete embrulhado, um frasco e uma esponja de crochet, sobre tecido floral rosa e azul": {
+    en: "a straw hamper holding a wrapped soap, a jar and a crocheted soap pouch, on pink and blue floral fabric",
+    fr: "un panier en paille contenant un savon emballé, un pot et une pochette à savon au crochet, sur un tissu floral rose et bleu",
+  },
   // amaciadores
   "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul": {
     en: "three round cream-coloured solid conditioners with a raised floral pattern, on pink and blue floral fabric",
