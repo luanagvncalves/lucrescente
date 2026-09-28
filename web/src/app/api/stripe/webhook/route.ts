@@ -4,6 +4,7 @@ import { stripe, stripeEnabled } from "@/lib/stripe";
 import { finalizeOrder, type OrderLineInput } from "@/lib/orders";
 import { unpackItems } from "@/lib/checkout-metadata";
 import { getVariantsBySkus } from "@/lib/catalog";
+import { alertOrderNotRecorded } from "@/lib/order-alert";
 
 export const runtime = "nodejs";
 
@@ -72,8 +73,13 @@ export async function POST(req: Request) {
   const session = event.data.object;
   if (session.payment_status !== "paid") return NextResponse.json({ received: true, skipped: "unpaid" });
 
+  // Held outside the try so the alert below can name what was bought, even when
+  // it is finalizing — not reading — that failed.
+  let items: OrderLineInput[] = [];
+  let full: Stripe.Checkout.Session | null = null;
+
   try {
-    const full = await stripe().checkout.sessions.retrieve(session.id, {
+    full = await stripe().checkout.sessions.retrieve(session.id, {
       expand: ["line_items.data.price.product", "shipping_cost.shipping_rate"],
     });
 
@@ -81,7 +87,7 @@ export async function POST(req: Request) {
     // and the variant on each product, so nothing has to survive the 500-char
     // metadata cap. Metadata is only the fallback, and carries no names — see
     // lib/checkout-metadata.ts for why.
-    const items = await itemsFromLineItems(full);
+    items = await itemsFromLineItems(full);
     if (items.length === 0) throw new Error(`no items could be read for session ${full.id}`);
     const rate = full.shipping_cost?.shipping_rate;
     const shippingOption = rate && typeof rate !== "string" ? rate.display_name : null;
@@ -103,7 +109,20 @@ export async function POST(req: Request) {
     return NextResponse.json({ received: true, order_id: result.order_id, duplicate: result.duplicate });
   } catch (e) {
     console.error("[webhook] finalize failed", e);
-    // 500 makes Stripe retry; finalize_order is idempotent so retries are safe.
+    // The customer has paid by this point, so this must never be a silent
+    // failure. Stripe will retry (500, and finalize_order is idempotent), but a
+    // fault that survives the retries would otherwise leave a paid order that
+    // nobody knows about — so the shop is told now, not when a customer asks
+    // where their parcel is.
+    await alertOrderNotRecorded({
+      sessionId: session.id,
+      paymentIntent: typeof session.payment_intent === "string" ? session.payment_intent : (session.payment_intent?.id ?? null),
+      email: full?.customer_details?.email ?? session.customer_details?.email ?? null,
+      customerName: full?.customer_details?.name ?? session.customer_details?.name ?? null,
+      totalCents: full?.amount_total ?? session.amount_total ?? 0,
+      items,
+      error: e,
+    });
     return NextResponse.json({ error: "finalize failed" }, { status: 500 });
   }
 }
