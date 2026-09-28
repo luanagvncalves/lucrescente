@@ -65,8 +65,8 @@ export const pt = {
     storyLink: "conhecer a nossa história →",
     ingredientsTitle: "os ingredientes que usamos, um a um",
     ingredientsSubtitle:
-      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve ✿",
-    ingredientsLink: "ver todos os ingredientes →", // ui
+      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve.",
+    ingredientsLink: "ver todos os ingredientes", // ui
     contactTitle: "encomenda os teus produtos",
     contactText: "para dúvidas, personalizações ou encomendas especiais, contacta-nos.",
     contactButtons: {

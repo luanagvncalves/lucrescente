@@ -201,15 +201,20 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         nextLabel={t.home.testimonialsNext}
       />
 
-      {/* the spiral sits close to the sections it divides: the room it takes is
-          the rest, and too much of it reads as a hole in the page */}
+      {/*
+        The spiral is centred in the ivory it sits on: 48px below the colour
+        change above it, and 48px of the story's own padding below — which is
+        why that padding is overridden here rather than left at the section
+        default. Measured from the colour change, not from the feedback cards:
+        the eye reads the gap as starting where the paper ends.
+      */}
       <Reveal>
-        <Pause className="my-4" />
+        <Pause className="mt-12" />
       </Reveal>
 
       {/* story teaser: story split 7/5 */}
       <section className="bg-ivory" aria-labelledby="historia">
-        <div className="container-brand section-gap">
+        <div className="container-brand section-gap !pt-12">
           <div className="grid items-center gap-10 md:grid-cols-12">
             <Reveal className="md:col-span-7">
               {editorial.sobre ? (
@@ -253,7 +258,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               <TextLink href={`/ingredientes${query}`}>{t.home.ingredientsLink}</TextLink>
             </div>
           </Reveal>
-          <IngredientTeaserGrid items={ingredientTeaser} showMoreLabel={t.home.showMore} showLessLabel={t.home.showLess} locale={locale} />
+          <IngredientTeaserGrid items={ingredientTeaser} locale={locale} />
         </div>
       </section>
 
@@ -281,6 +286,24 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                   {t.home.contactTitle}
                 </h2>
                 <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
+                {/* the values, back on the home page as one line rather than a
+                    section of their own: the short set, which every language
+                    has three of */}
+                <ul className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.85rem] lowercase text-moss">
+                  {t.home.values.map((v, i) => (
+                    <li key={v}>
+                      {v}
+                      {/* the separator trails its own value rather than leading
+                          the next one: wrapped onto a narrow screen, a line
+                          would otherwise open on a stray dot */}
+                      {i < t.home.values.length - 1 ? (
+                        <span aria-hidden="true" className="ml-3 text-clay/50">
+                          ·
+                        </span>
+                      ) : null}
+                    </li>
+                  ))}
+                </ul>
               </Reveal>
               <Reveal delay={0.16} className="mt-8">
                 {/* without `locale` this falls back to Portuguese, so the four
