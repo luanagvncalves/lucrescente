@@ -130,8 +130,13 @@ export function Testimonials({
     "absolute top-1/2 z-10 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-forest/25 bg-ivory text-forest shadow-[0_6px_16px_rgba(49,61,53,0.12)] transition-colors hover:border-forest hover:bg-forest hover:text-white sm:flex";
 
   return (
-    <section className="bg-ivory" aria-labelledby="testemunhos">
-      <div className="container-brand section-gap !pb-10">
+    // a pale wash of the brand green: the strip now sits high on the home page,
+    // straight after the featured products, and needs a field of its own to
+    // stand on without the weight the forest band would bring there
+    <section className="bg-sage/25" aria-labelledby="testemunhos">
+      {/* even padding: the strip is a colour field of its own now, so the short
+          bottom it used to end on left the green cut off under the cards */}
+      <div className="container-brand section-gap">
         <Reveal>
           <SectionHeader titleId="testemunhos" label={label} title={title} subtitle={subtitle} />
         </Reveal>

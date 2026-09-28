@@ -127,15 +127,42 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         </div>
       </section>
 
-      {/* A pause sits only where two sections meet without a change of colour:
-          elsewhere on this page the forest band and the lavender field are the
-          break. Here ivory gives way to paper, which is almost the same tone,
-          so the seam needs the crescent to be read as one. */}
-      <Reveal>
-        {/* the margin keeps the crescent off the colour change itself: sitting
-            on the line it read as an accident of the edge, not as a rest */}
-        <Pause className="mb-14" />
-      </Reveal>
+      {/* feedbacks: high on the page, straight after the featured products —
+          what other people say about them is the first thing a visitor wants
+          once something has caught their eye */}
+      <Testimonials
+        label={t.home.testimonialsLabel}
+        title={t.home.testimonialsTitle}
+        subtitle={t.home.testimonialsSubtitle}
+        items={testimonials}
+        locale={locale}
+        prevLabel={t.home.testimonialsPrev}
+        nextLabel={t.home.testimonialsNext}
+      />
+
+      {/* values: a full-width colour field, cream — it carries the page's
+          weight through tone and spacing now, not through a dark band */}
+      <section className="bg-earth/15" aria-labelledby="valores">
+        <div className="container-brand section-gap">
+          <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
+            <Reveal className="md:col-span-5 md:pr-4">
+              <h2 id="valores" className="font-display text-h2 lowercase text-forest">
+                {t.home.valuesSubtitle}
+              </h2>
+            </Reveal>
+            <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
+              {t.about.values.map((v, i) => (
+                <Reveal as="li" key={v} delay={0.12 + i * 0.12} className="border-t border-moss/25 pt-5">
+                  {/* violet, not the lavender it was: on cream the pale tone
+                      all but vanished */}
+                  <Crescent size={16} tone="var(--violet)" />
+                  <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-forest">{v}</p>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* categories */}
       <section className="bg-paper" aria-labelledby="categorias">
@@ -182,26 +209,15 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       </section>
 
 
-      {/* values: full-width solid colour field with a lunar mark */}
-      <section className="bg-forest text-ivory on-dark" aria-labelledby="valores">
-        <div className="container-brand section-gap">
-          <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
-            <Reveal className="md:col-span-5 md:pr-4">
-              <h2 id="valores" className="font-display text-h2 lowercase text-ivory">
-                {t.home.valuesSubtitle}
-              </h2>
-            </Reveal>
-            <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
-              {t.about.values.map((v, i) => (
-                <Reveal as="li" key={v} delay={0.12 + i * 0.12} className="border-t border-ivory/25 pt-5">
-                  <Crescent size={16} tone="var(--lavender)" />
-                  <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-ivory">{v}</p>
-                </Reveal>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
+      {/* A pause sits only where two sections meet without a real change of
+          colour: everywhere else the green wash, the cream field and the
+          lavender are the break. Paper giving way to ivory is the one seam on
+          this page too faint to be read on its own. */}
+      <Reveal>
+        {/* the margin keeps the spiral off the colour change itself: sitting on
+            the line it read as an accident of the edge, not as a rest */}
+        <Pause className="mt-14" />
+      </Reveal>
 
       {/* story teaser: story split 7/5 */}
       <section className="container-brand section-gap" aria-labelledby="historia">
@@ -248,25 +264,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           <IngredientTeaserGrid items={ingredientTeaser} showMoreLabel={t.home.showMore} showLessLabel={t.home.showLess} locale={locale} />
         </div>
       </section>
-
-      {/* feedbacks */}
-      <Testimonials
-        label={t.home.testimonialsLabel}
-        title={t.home.testimonialsTitle}
-        subtitle={t.home.testimonialsSubtitle}
-        items={testimonials}
-        locale={locale}
-        prevLabel={t.home.testimonialsPrev}
-        nextLabel={t.home.testimonialsNext}
-      />
-
-      {/* the feedbacks and the contact block are both ivory: without this mark
-          the two run together as one long stretch */}
-      <Reveal>
-        {/* the feedback strip ends on a short padding of its own, so the mark
-            needs this to sit clear of the cards */}
-        <Pause className="mt-10" />
-      </Reveal>
 
       {/* contact */}
       <section className="container-brand section-gap" id="contacto" aria-labelledby="encomendas">
