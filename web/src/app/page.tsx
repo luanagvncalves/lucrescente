@@ -103,69 +103,48 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         query={locale === "pt" ? "" : `?idioma=${locale}`}
       />
 
+      {/*
+        The page holds four colours and no more: this near-white, the ivory it
+        alternates with, the lavender of the ingredients, and the forest of the
+        footer at the very end. Because the two light tones sit so close
+        together, a spiral marks every seam between them; the lavender needs no
+        mark, since the colour is the break.
+      */}
+
       {/* featured */}
-      <section className="container-brand section-gap" aria-labelledby="destaques">
-        <Reveal>
-          <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 id="destaques" className="text-h2 text-forest lowercase">
-              {t.home.featuredTitle}
-              {/* favourites are starred — the same mark the feedback cards use.
-                  Decorative, so it is not read out after the heading. */}
-              <span aria-hidden="true" className="ml-3 align-middle text-[0.45em] text-clay">
-                ★
-              </span>
-            </h2>
-            <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
-          </div>
-        </Reveal>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {featured.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 0.06}>
-              <ProductCard product={p} locale={locale} />
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      {/* feedbacks: high on the page, straight after the featured products —
-          what other people say about them is the first thing a visitor wants
-          once something has caught their eye */}
-      <Testimonials
-        label={t.home.testimonialsLabel}
-        title={t.home.testimonialsTitle}
-        subtitle={t.home.testimonialsSubtitle}
-        items={testimonials}
-        locale={locale}
-        prevLabel={t.home.testimonialsPrev}
-        nextLabel={t.home.testimonialsNext}
-      />
-
-      {/* values: a full-width colour field, cream — it carries the page's
-          weight through tone and spacing now, not through a dark band */}
-      <section className="bg-earth/15" aria-labelledby="valores">
+      <section className="bg-paper" aria-labelledby="destaques">
         <div className="container-brand section-gap">
-          <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
-            <Reveal className="md:col-span-5 md:pr-4">
-              <h2 id="valores" className="font-display text-h2 lowercase text-forest">
-                {t.home.valuesSubtitle}
+          <Reveal>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <h2 id="destaques" className="text-h2 text-forest lowercase">
+                {t.home.featuredTitle}
+                {/* favourites are starred — the same mark the feedback cards
+                    use. Decorative, so it is not read out after the heading. */}
+                <span aria-hidden="true" className="ml-3 align-middle text-[0.45em] text-clay">
+                  ★
+                </span>
               </h2>
-            </Reveal>
-            <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
-              {t.about.values.map((v, i) => (
-                <Reveal as="li" key={v} delay={0.12 + i * 0.12} className="border-t border-moss/25 pt-5">
-                  {/* violet, not the lavender it was: on cream the pale tone
-                      all but vanished */}
-                  <Crescent size={16} tone="var(--violet)" />
-                  <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-forest">{v}</p>
-                </Reveal>
-              ))}
-            </ul>
+              <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
+            </div>
+          </Reveal>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {featured.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 0.06}>
+                <ProductCard product={p} locale={locale} />
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* the margin keeps the spiral off the colour change itself: sitting on
+          the line it read as an accident of the edge, not as a rest */}
+      <Reveal>
+        <Pause className="my-14" />
+      </Reveal>
 
       {/* categories */}
-      <section className="bg-paper" aria-labelledby="categorias">
+      <section className="bg-ivory" aria-labelledby="categorias">
         <div className="container-brand section-gap">
           <Reveal>
             {/* short enough to hold on one line, so it is not broken in two */}
@@ -209,39 +188,50 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       </section>
 
 
-      {/* A pause sits only where two sections meet without a real change of
-          colour: everywhere else the green wash, the cream field and the
-          lavender are the break. Paper giving way to ivory is the one seam on
-          this page too faint to be read on its own. */}
       <Reveal>
-        {/* the margin keeps the spiral off the colour change itself: sitting on
-            the line it read as an accident of the edge, not as a rest */}
-        <Pause className="mt-14" />
+        <Pause className="my-14" />
+      </Reveal>
+
+      {/* feedbacks */}
+      <Testimonials
+        label={t.home.testimonialsLabel}
+        title={t.home.testimonialsTitle}
+        subtitle={t.home.testimonialsSubtitle}
+        items={testimonials}
+        locale={locale}
+        prevLabel={t.home.testimonialsPrev}
+        nextLabel={t.home.testimonialsNext}
+      />
+
+      <Reveal>
+        <Pause className="my-14" />
       </Reveal>
 
       {/* story teaser: story split 7/5 */}
-      <section className="container-brand section-gap" aria-labelledby="historia">
-        <div className="grid items-center gap-10 md:grid-cols-12">
-          <Reveal className="md:col-span-7">
-            {editorial.sobre ? (
-              <div className="frame-brand relative aspect-[5/4] bg-paper">
-                <Image src={editorial.sobre.path} alt={getImageAlt(editorial.sobre.alt, locale)} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
-              </div>
-            ) : null}
-          </Reveal>
-          <div className="md:col-span-5">
-            <Reveal delay={0.1}>
-              <Label>{t.about.label}</Label>
-              <h2 id="historia" className="mt-4 text-h2 text-forest lowercase">
-                {t.home.storyTitle}
-              </h2>
+      <section className="bg-ivory" aria-labelledby="historia">
+        <div className="container-brand section-gap">
+          <div className="grid items-center gap-10 md:grid-cols-12">
+            <Reveal className="md:col-span-7">
+              {editorial.sobre ? (
+                <div className="frame-brand relative aspect-[5/4] bg-paper">
+                  <Image src={editorial.sobre.path} alt={getImageAlt(editorial.sobre.alt, locale)} fill sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+                </div>
+              ) : null}
             </Reveal>
-            <Reveal delay={0.24}>
-              <p className="mt-6 text-body-lg measure">{t.home.storyText}</p>
-              <TextLink href={`/sobre${query}`} className="mt-6">
-                {t.home.storyLink}
-              </TextLink>
-            </Reveal>
+            <div className="md:col-span-5">
+              <Reveal delay={0.1}>
+                <Label>{t.about.label}</Label>
+                <h2 id="historia" className="mt-4 text-h2 text-forest lowercase">
+                  {t.home.storyTitle}
+                </h2>
+              </Reveal>
+              <Reveal delay={0.24}>
+                <p className="mt-6 text-body-lg measure">{t.home.storyText}</p>
+                <TextLink href={`/sobre${query}`} className="mt-6">
+                  {t.home.storyLink}
+                </TextLink>
+              </Reveal>
+            </div>
           </div>
         </div>
       </section>
@@ -265,23 +255,53 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         </div>
       </section>
 
+      {/* values: what the brand stands by, read just before the visitor is
+          asked to order */}
+      <section className="bg-paper" aria-labelledby="valores">
+        <div className="container-brand section-gap">
+          <div className="grid items-start gap-10 md:grid-cols-12 md:gap-x-8 md:gap-y-12">
+            <Reveal className="md:col-span-5 md:pr-4">
+              <h2 id="valores" className="font-display text-h2 lowercase text-forest">
+                {t.home.valuesSubtitle}
+              </h2>
+            </Reveal>
+            <ul className="grid gap-6 md:col-span-6 md:col-start-7 md:grid-cols-2 md:gap-x-6 md:gap-y-8">
+              {t.about.values.map((v, i) => (
+                <Reveal as="li" key={v} delay={0.12 + i * 0.12} className="border-t border-moss/25 pt-5">
+                  {/* violet, not the lavender it was: off the dark band the
+                      pale tone all but vanished */}
+                  <Crescent size={16} tone="var(--violet)" />
+                  <p className="mt-4 font-display text-[1.2rem] leading-tight lowercase text-forest">{v}</p>
+                </Reveal>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <Reveal>
+        <Pause className="my-14" />
+      </Reveal>
+
       {/* contact */}
-      <section className="container-brand section-gap" id="contacto" aria-labelledby="encomendas">
-        <div className="grid gap-10 md:grid-cols-12">
-          <Reveal className="md:col-span-6">
-            <Label>{t.contact.title}</Label>
-            <h2 id="encomendas" className="mt-4 text-h2 text-forest lowercase">
-              {t.home.contactTitle}
-            </h2>
-            <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
-          </Reveal>
-          <Reveal delay={0.16} className="md:col-span-6 md:pt-14">
-            {/* without `locale` this falls back to Portuguese, so the four
-                contact buttons stayed Portuguese on the English and French
-                homepage while the heading above them translated */}
-            <ContactLinks labels="home" locale={locale} />
-            <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
-          </Reveal>
+      <section className="bg-ivory" id="contacto" aria-labelledby="encomendas">
+        <div className="container-brand section-gap">
+          <div className="grid gap-10 md:grid-cols-12">
+            <Reveal className="md:col-span-6">
+              <Label>{t.contact.title}</Label>
+              <h2 id="encomendas" className="mt-4 text-h2 text-forest lowercase">
+                {t.home.contactTitle}
+              </h2>
+              <p className="mt-6 text-body-lg measure">{t.home.contactText}</p>
+            </Reveal>
+            <Reveal delay={0.16} className="md:col-span-6 md:pt-14">
+              {/* without `locale` this falls back to Portuguese, so the four
+                  contact buttons stayed Portuguese on the English and French
+                  homepage while the heading above them translated */}
+              <ContactLinks labels="home" locale={locale} />
+              <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
+            </Reveal>
+          </div>
         </div>
       </section>
     </>
