@@ -6,7 +6,7 @@ import { featuredSlugs } from "@/data/catalog";
 import { editorial } from "@/data/editorial";
 import { LinkButton, TextLink } from "@/components/ui/button";
 import { H2, Label, SectionHeader } from "@/components/ui/typography";
-import { Crescent } from "@/components/ui/motifs";
+import { Crescent, Pause } from "@/components/ui/motifs";
 import { ProductCard } from "@/components/product/product-card";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { Reveal } from "@/components/ui/reveal";
@@ -126,6 +126,16 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
           ))}
         </div>
       </section>
+
+      {/* A pause sits only where two sections meet without a change of colour:
+          elsewhere on this page the forest band and the lavender field are the
+          break. Here ivory gives way to paper, which is almost the same tone,
+          so the seam needs the crescent to be read as one. */}
+      <Reveal>
+        {/* the margin keeps the crescent off the colour change itself: sitting
+            on the line it read as an accident of the edge, not as a rest */}
+        <Pause className="mb-14" />
+      </Reveal>
 
       {/* categories */}
       <section className="bg-paper" aria-labelledby="categorias">
@@ -249,6 +259,14 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
         prevLabel={t.home.testimonialsPrev}
         nextLabel={t.home.testimonialsNext}
       />
+
+      {/* the feedbacks and the contact block are both ivory: without this mark
+          the two run together as one long stretch */}
+      <Reveal>
+        {/* the feedback strip ends on a short padding of its own, so the mark
+            needs this to sit clear of the cards */}
+        <Pause className="mt-10" />
+      </Reveal>
 
       {/* contact */}
       <section className="container-brand section-gap" id="contacto" aria-labelledby="encomendas">
