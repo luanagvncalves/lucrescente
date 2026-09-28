@@ -54,11 +54,32 @@ export type OrderView = {
   items: { sku: string; product_name: string; variant_label: string | null; quantity: number; unit_price_cents: number; total_cents: number }[];
 };
 
+/** The columns both order views read. Kept in one place so they cannot drift apart. */
+const ORDER_SELECT =
+  "id, stripe_session_id, email, customer_name, shipping_address, shipping_option, subtotal_cents, shipping_cents, total_cents, created_at, items:order_items ( sku, product_name, variant_label, quantity, unit_price_cents, total_cents )";
+
+/**
+ * Every order, newest first, for the packing list behind /admin/encomendas.
+ *
+ * Reads through the service role, so this must only ever be called from a
+ * route the middleware protects — see src/middleware.ts.
+ */
+export async function getAllOrders(limit = 200): Promise<OrderView[]> {
+  const db = supabaseAdmin();
+  const { data, error } = await db
+    .from("orders")
+    .select(ORDER_SELECT)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error) throw error;
+  return (data as unknown as OrderView[]) ?? [];
+}
+
 export async function getOrderBySession(sessionId: string): Promise<OrderView | null> {
   const db = supabaseAdmin();
   const { data, error } = await db
     .from("orders")
-    .select("id, stripe_session_id, email, customer_name, shipping_address, shipping_option, subtotal_cents, shipping_cents, total_cents, created_at, items:order_items ( sku, product_name, variant_label, quantity, unit_price_cents, total_cents )")
+    .select(ORDER_SELECT)
     .eq("stripe_session_id", sessionId)
     .maybeSingle();
   if (error) throw error;

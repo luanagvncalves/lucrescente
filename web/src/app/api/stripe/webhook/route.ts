@@ -5,6 +5,8 @@ import { finalizeOrder, type OrderLineInput } from "@/lib/orders";
 import { unpackItems } from "@/lib/checkout-metadata";
 import { getVariantsBySkus } from "@/lib/catalog";
 import { alertOrderNotRecorded } from "@/lib/order-alert";
+import { sendOrderConfirmation, type OrderConfirmationAddress } from "@/lib/order-email";
+import type { Locale } from "@/lib/i18n";
 
 export const runtime = "nodejs";
 
@@ -106,6 +108,27 @@ export async function POST(req: Request) {
       items,
     });
     if (result.shortfall?.length) console.warn("[webhook] stock shortfall on order", result.order_id, result.shortfall);
+
+    // Only on the delivery that recorded the order. `duplicate` means Stripe is
+    // retrying one it already recorded, and mailing the customer again for that
+    // would be our fault, not theirs.
+    const email = full.customer_details?.email;
+    if (email && !result.duplicate) {
+      const metaLocale = full.metadata?.locale;
+      await sendOrderConfirmation({
+        to: email,
+        locale: (metaLocale === "en" || metaLocale === "fr" ? metaLocale : "pt") as Locale,
+        orderId: result.order_id,
+        customerName: details?.name ?? full.customer_details?.name ?? null,
+        shippingOption,
+        shippingAddress: (details?.address as OrderConfirmationAddress | undefined) ?? null,
+        subtotalCents: full.amount_subtotal ?? 0,
+        shippingCents: full.shipping_cost?.amount_total ?? 0,
+        totalCents: full.amount_total ?? 0,
+        items,
+      });
+    }
+
     return NextResponse.json({ received: true, order_id: result.order_id, duplicate: result.duplicate });
   } catch (e) {
     console.error("[webhook] finalize failed", e);
