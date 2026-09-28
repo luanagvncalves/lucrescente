@@ -6,6 +6,8 @@ import { getProductBySlug, getProducts } from "@/lib/catalog";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
 import { getIngredientName } from "@/content/ingredient-locales";
+import { getAllergenNote } from "@/content/allergen-notes";
+import { getShampooNote } from "@/content/shampoo-notes";
 import { productAvailability } from "@/lib/types";
 import { brandSentence } from "@/lib/brand-case";
 import { Label } from "@/components/ui/typography";
@@ -58,6 +60,8 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // keep the Portuguese story when a translation is missing, rather than dropping the section
   const whyItWorks = copy.whyItWorks ?? product.why_it_works;
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
+  const allergenNote = getAllergenNote(product.ingredients.map((i) => i.slug), locale);
+  const hairNote = getShampooNote(product.slug, locale);
 
   // "cria o teu conjunto": same category first, then the rest of the catalogue.
   const all = await getProducts();
@@ -115,16 +119,64 @@ export default async function ProductPage({ params, searchParams }: Params) {
         </Link>
       </nav>
 
-      <div className="mt-6 grid gap-10 md:grid-cols-12 lg:gap-14">
-        {/* image 7 cols. `min-w-0` because a grid item defaults to
-            min-width:auto: the gallery's scrolling thumbnail strip stretched
-            this column to its full content width, and the whole page with it. */}
-        <div className="md:col-span-7 min-w-0">
+      {/*
+        Two columns, and the left one is only as wide as the photograph really
+        is. It used to be a fixed 7 of 12, which is fine while the frame fills
+        its track — but the frame is 3:4 and may not exceed 80vh, so on a wide,
+        short window it stops short of the column's edge and left a band of
+        empty page between the photograph and the words beside it. Sizing the
+        column at min(58%, 60vh) — 60vh being the width a 3:4 frame has when it
+        is 80vh tall — means the column ends where the picture ends, whichever
+        of the two limits is doing the work.
+      */}
+      <div className="mt-6 flex flex-col gap-10 md:flex-row md:items-start lg:gap-14">
+        {/* `min-w-0` because a flex item defaults to min-width:auto: the
+            gallery's scrolling thumbnail strip stretched this column to its
+            full content width, and the whole page with it. */}
+        <div className="min-w-0 md:w-[min(58%,60vh)] md:shrink-0">
           {product.images.length > 1 ? (
             <ProductGallery images={product.images} name={copy.name} locale={locale} />
           ) : (
-            <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-h-[80vh]" />
+            // the same 60vh width ceiling the gallery uses, so a single
+            // photograph is held to 80vh too without the ratio being bent
+            <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-w-[60vh]" />
           )}
+
+          {/*
+            Why the product works, directly under the photograph it belongs to.
+            It used to sit past the spiral, a full screen further down, which
+            put the brand's case for a product somewhere most people never
+            scrolled to.
+          */}
+          <div className="mt-8">
+            {product.is_candle ? (
+              <section aria-labelledby="porque">
+                {/* a candle is not answering "does this work" but "why this
+                    rather than the one in the supermarket" */}
+                {whyItWorks ? <p className="text-body-lg measure">{whyItWorks}</p> : null}
+                <Label className={whyItWorks ? "mt-8" : ""}>{t.products.candleCaseLabel}</Label>
+                <p id="porque" className="mt-5 text-body-lg measure">
+                  {t.products.candleCase}
+                </p>
+              </section>
+            ) : whyItWorks ? (
+              <section aria-labelledby="porque">
+                <Label>{t.products.whyItWorks}</Label>
+                <p id="porque" className="mt-5 text-body-lg measure">
+                  {whyItWorks}
+                </p>
+              </section>
+            ) : null}
+
+            {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
+            {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
+            {product.is_candle ? (
+              <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">
+                {t.products.candleNote}
+                <CandleMessageLink slug={product.slug} locale={locale} />
+              </p>
+            ) : null}
+          </div>
         </div>
 
         {/*
@@ -137,7 +189,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
           fold, next to "porque funciona". Everything explaining the product
           rather than choosing it now lives under the photographs instead.
         */}
-        <div className="md:col-span-5">
+        <div className="min-w-0 md:flex-1">
           <Label>{categoryName}</Label>
           <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
 
@@ -161,7 +213,40 @@ export default async function ProductPage({ params, searchParams }: Params) {
                 {t.products.noIngredientsListed}
               </p>
             )}
+            {/*
+              The caution that comes out of the ingredient list itself —
+              essential oils, bicarbonate, a citrus oil in the sun, a tree nut.
+              It is written per ingredient in `allergen-notes.ts`, which until
+              now was never rendered anywhere: the notes and their translations
+              existed, and no page asked for them.
+            */}
+            {allergenNote ? (
+              <p className="mt-4 rounded-2xl bg-clay/10 px-4 py-3 text-[0.88rem] leading-relaxed text-ink/85">
+                <span className="label-brand mr-2 text-clay">{t.products.allergenNoteLabel}</span>
+                {allergenNote}
+              </p>
+            ) : null}
           </section>
+
+          {/* which hair and scalp each solid shampoo suits — also written and
+              translated long ago, and likewise never shown */}
+          {hairNote ? (
+            <section className="mt-8" aria-labelledby="tipo-de-cabelo">
+              <Label>{t.products.hairTypeNote}</Label>
+              <div id="tipo-de-cabelo" className="mt-4 space-y-3 text-[0.92rem]">
+                <div>
+                  <span className="font-ui font-medium text-forest">{t.products.recommendedFor}: </span>
+                  <span className="text-ink/85">{hairNote.good.join(", ")}</span>
+                </div>
+                {hairNote.bad.length ? (
+                  <div>
+                    <span className="font-ui font-medium text-clay">{t.products.notRecommendedFor}: </span>
+                    <span className="text-ink/85">{hairNote.bad.join(", ")}</span>
+                  </div>
+                ) : null}
+              </div>
+            </section>
+          ) : null}
 
           {/* the extra claims sit straight under the ingredients, above the price */}
           <ProductExtraInfo product={product} locale={locale} />
@@ -172,30 +257,10 @@ export default async function ProductPage({ params, searchParams }: Params) {
         </div>
       </div>
 
-      <Pause className="my-16" />
-
-      {/* under the photographs: why the product works */}
-      <div className="grid gap-12 md:grid-cols-12">
-        <div className="md:col-span-7">
-          {whyItWorks ? (
-            <section aria-labelledby="porque">
-              <Label>{t.products.whyItWorks}</Label>
-              <p id="porque" className="mt-5 text-body-lg measure">
-                {whyItWorks}
-              </p>
-            </section>
-          ) : null}
-
-          {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
-          {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
-          {product.is_candle ? (
-            <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">
-              {t.products.candleNote}
-              <CandleMessageLink slug={product.slug} locale={locale} />
-            </p>
-          ) : null}
-        </div>
-      </div>
+      {/* the spiral now marks the end of the product itself, before the
+          carousel of everything else, rather than splitting the photograph
+          from the paragraph explaining it */}
+      <Pause className="my-12" />
 
       <RelatedCarousel items={related} locale={locale} />
 
