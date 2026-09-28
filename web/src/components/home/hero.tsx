@@ -134,8 +134,12 @@ export function HomeHero({
  */
 /** Milliseconds between two letters. Unhurried, like the brand. */
 const LETTER_MS = 68;
-/** The extra breath taken at the end of a line, before the next one starts. */
-const LINE_BREAK_MS = 320;
+/**
+ * The breath taken at the end of a line. Barely longer than a letter: at 320ms
+ * the sentence stalled three times on its way in and read as three sentences
+ * rather than one, so the hand lifts off the line and comes straight back down.
+ */
+const LINE_BREAK_MS = 110;
 
 function Typewriter({ text }: { text: string }) {
   const [shown, setShown] = useState("");

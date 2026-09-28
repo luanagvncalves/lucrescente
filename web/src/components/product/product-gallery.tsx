@@ -17,7 +17,16 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
 
   return (
     <div>
-      <div className="frame-brand relative aspect-[3/4] max-h-[80vh] w-full bg-paper group">
+      {/*
+        The ceiling is on the WIDTH, not the height. `max-h-[80vh]` used to cap
+        the frame directly, and a capped height with a full width is no longer
+        three by four — the box went nearly square and `object-cover` answered
+        by cutting the top and bottom off every photograph, including the ones
+        already shot at 3:4. Capping the width at 60vh leaves the frame exactly
+        80vh tall at that ratio, so the frame stays 3:4 at every screen size and
+        a 3:4 photograph fills it edge to edge with nothing cropped away.
+      */}
+      <div className="frame-brand relative aspect-[3/4] w-full max-w-[60vh] bg-paper group">
         <Image key={current.path} src={current.path} alt={getImageAlt(current.alt, locale)} fill priority={index === 0} sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
 
         {images.length > 1 && (
