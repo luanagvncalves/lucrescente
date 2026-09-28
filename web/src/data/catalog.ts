@@ -305,7 +305,7 @@ export const products: ProductSeed[] = [
     // The same bar as the face soap, cast larger for the body — the brand makes one soap recipe,
     // so the ingredient list is deliberately identical rather than a copy that could drift.
     // It stands in for the old "sabonete-grande", which never existed beyond a stale locale key
-    // and a photo-map entry. No price has been supplied, so it seeds as "por encomenda".
+    // and a photo-map entry. 7,00 €, and none in stock at the moment.
     slug: "sabonete-de-corpo",
     name: "sabonete de corpo",
     category_slug: "sabonetes",
@@ -322,7 +322,7 @@ export const products: ProductSeed[] = [
     is_solid: true,
     is_candle: false,
     is_deodorant: false,
-    variants: one("sabonete-de-corpo", null, 0),
+    variants: one("sabonete-de-corpo", 700, 0),
   },
   {
     // The row this product used to be, kept only so re-seeding switches it off: Supabase still holds
@@ -516,10 +516,10 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
-    variants: [
-      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: null, stock: 2 },
-      { sku: "sais-relaxante-frasco", label: "frasco de vidro", price_cents: 800, stock: 5 },
-    ],
+    // "embalagem própria" is not a variant here. The panel already offers a
+    // bring-your-own-container button on every non-solid product, and its label is
+    // the same string, so seeding it as a variant too printed the format twice.
+    variants: one("sais-relaxante-frasco", 800, 5, "frasco de vidro"),
   },
 
   // ---------------- batons (boião / stick) ----------------
