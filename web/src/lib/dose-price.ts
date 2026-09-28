@@ -45,7 +45,13 @@ export function parseDoseAmount(dose: string | null): number {
 
 /**
  * What one unit costs at this dose. `basePriceCents` is the variant's price per
- * 100 units — 100 g, 100 ml — which is how the panel has always read it.
+ * 100 units — 100 g, 100 ml. So the deodorant's "embalagem própria" at 10,00 €
+ * means 10,00 € per 100 g, and a 500 g dose costs 50,00 €.
+ *
+ * That reading was inherited from the purchase panel rather than written down
+ * anywhere, and it only ever showed on screen — the server charged the plain
+ * variant price. Confirmed by the brand on 2026-09-28, and now it is what is
+ * actually charged, so a change to it changes what customers pay.
  *
  * Returns the plain price when the dose carries no readable number, so a line
  * can never come out free or NaN.
