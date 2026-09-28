@@ -137,14 +137,54 @@ Copy the `whsec_...` it prints into `STRIPE_WEBHOOK_SECRET`.
 
 ---
 
+## Done
+
+- **End-to-end test order placed and verified.** Stripe CLI forwarding webhooks
+  locally, paid with `4242 4242 4242 4242`: order row written, stock
+  decremented, confirmation page correct. Test orders deleted and stock restored
+  afterwards, so the `orders` table is empty.
+- **The Stripe page reads in all three languages.** Product names, variant
+  labels and shipping options were Portuguese for everyone; they are now
+  translated, and the same names are written into the order record so the
+  confirmation page agrees with the payment page.
+- **Shipping tiers replaced with real CTT rates**, and Madeira/Azores split into
+  their own tier — they used to share the mainland rate while costing about
+  three times as much. See the comment at the top of `web/src/config/shipping.ts`
+  for what the numbers assume.
+
 ## Next steps
 
-- Fill in the test keys and place one end-to-end test order.
-- Confirm the order row appears and stock decrements after the webhook fires.
-- Check the Stripe page renders correctly in all three languages (pt, en, fr).
-- Review the shipping tiers in `web/src/config/shipping.ts` against real postage costs.
+- **Set the live account's public details.** The account these tests ran against
+  is a sandbox, with Stripe's seed data in it (the individual is "Scott Fisher",
+  the website is `accessible.stripe.com`). Before going live, set the public
+  business name to `lucrescente` under Settings → Business → Public details, and
+  the statement descriptor under Settings → Payments. It cannot be done through
+  the API: Stripe refuses account updates to your own account.
+- **Sign the CTT Lojas Online contract, or change the rates back.** Every rate
+  in `shipping.ts` assumes it. Without it, walk-in counter prices apply and each
+  one is sold at a loss.
 - Swap test keys for live keys, and register the production webhook endpoint, when going live.
 - Decide whether to keep or remove the six parameters listed under **Parameters kept on purpose**.
+
+## Two failure modes that have been closed, and are worth not reopening
+
+Both shared a shape: checkout succeeded, the customer was charged, and the order
+was then lost after the money had moved. Neither was visible to a typecheck, and
+neither showed up in testing that stopped at the Stripe page.
+
+1. **The cart used to be serialised into one Stripe metadata value.** Stripe caps
+   those at 500 characters; fifteen lines came to 867, and it broke at about
+   nine. The webhook now reads the order from the line items, where Stripe keeps
+   the sku, name and variant on each product, and metadata carries only compact
+   numeric triples split across numbered keys. See `web/src/lib/checkout-metadata.ts`.
+2. **`finalize_order` rejected an order if two lines shared a sku.** That became
+   reachable when add-ons arrived (one balm, two oils, one stock). Fixed in
+   `supabase/migrations/20260928000100_allow_repeated_sku_lines.sql`, which sums
+   quantities per sku for the stock check and still writes one row per line, so
+   both flavours reach the person packing the parcel.
+
+If you change how the cart is shaped, test that **the order row appears**, not
+just that Stripe accepted the payment. That is the step where both of these hid.
 
 ## Resources
 
