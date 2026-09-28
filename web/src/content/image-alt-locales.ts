@@ -339,6 +339,19 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "three unpackaged solid bars (white, green and beige) on handmade leaf-shaped soap dishes, on floral fabric",
     fr: "trois pains solides sans emballage (blanc, vert et beige) sur des porte-savons artisanaux en forme de feuille, sur un tissu floral",
   },
+  // sabonete de corpo — the brand's own photographs of the bar, replacing the kit shots
+  "quatro sabonetes de corpo ovais, cinzentos e translúcidos, com sementes de papoila, empilhados sobre tecido floral rosa e azul junto a flores secas brancas e roxas": {
+    en: "four oval body soaps, grey and translucent, flecked with poppy seeds, stacked on pink and blue floral fabric beside white and purple dried flowers",
+    fr: "quatre savons pour le corps ovales, gris et translucides, parsemés de graines de pavot, empilés sur un tissu floral rose et bleu à côté de fleurs séchées blanches et violettes",
+  },
+  "uma mão a segurar um sabonete de corpo oval, cinzento e translúcido, com sementes de papoila, que lhe enche a palma": {
+    en: "a hand holding an oval body soap, grey and translucent, flecked with poppy seeds, filling the palm",
+    fr: "une main tenant un savon pour le corps ovale, gris et translucide, parsemé de graines de pavot, qui lui remplit la paume",
+  },
+  "quatro sabonetes de corpo ovais vistos de perto, com as sementes de papoila espalhadas por toda a barra": {
+    en: "four oval body soaps seen close up, the poppy seeds scattered right across the bar",
+    fr: "quatre savons pour le corps ovales vus de près, les graines de pavot réparties sur toute la surface du pain",
+  },
 };
 
 /** Falls back to the Portuguese description, which is better than none at all. */
