@@ -245,12 +245,14 @@ export const pt = {
    * methods are live: those are facts only the brand has, and a confident guess
    * would be worse than no answer.
    *
-   * Three answers are the last copy of what they say, since "cuidados &
-   * sustentabilidade" was folded in here and its page removed: the hand-sewn
-   * wraps under "posso devolver a embalagem?", the water that making plastic
-   * would have taken under "porque é que os produtos são sólidos?", and all of
-   * "de que são feitas as vossas velas?" bar the containers. Do not trim them
-   * as duplicates — nothing else on the site carries them.
+   * Two answers are the last copy of what they say, since "cuidados &
+   * sustentabilidade" was folded in here and its page removed: the water that
+   * making plastic would have taken under "porque é que os produtos são
+   * sólidos?", and all of "de que são feitas as vossas velas?" bar the
+   * containers. Do not trim them as duplicates — nothing else on the site
+   * carries them. The hand-sewn-wraps sentence that used to sit under "posso
+   * devolver a embalagem?" was removed for good, everywhere, at the brand's
+   * request — do not reintroduce it.
    *
    * The questions the product pages link to are listed by their Portuguese
    * wording in content/faq-anchors.ts. Rewording one there and not here breaks
@@ -317,19 +319,15 @@ export const pt = {
           },
           {
             q: "os vossos desodorizantes são antitranspirantes?",
-            a: "não. não levam alumínio nem álcool, e não bloqueiam a transpiração nem obstroem os poros — controlam as bactérias e os maus cheiros de forma suave, respeitando o funcionamento natural da pele.",
+            a: "não. não levam alumínio nem álcool, e não bloqueiam a transpiração nem obstroem os poros: controlam as bactérias e os maus cheiros de forma suave, respeitando o funcionamento natural da pele.",
           },
           {
-            q: "tenho pele sensível. há alguma coisa a que deva estar atento?",
-            a: "vários produtos levam óleos essenciais, que podem causar irritação ou reação alérgica em peles mais sensíveis; os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita a zona das axilas, sobretudo depois de depilação recente. assinalamos isto na ficha de cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa pequena área da pele — e fala connosco, que podemos adaptar a fórmula.",
-          },
-          {
-            q: "o que quer dizer o asterisco na lista de ingredientes?",
-            a: "que esse ingrediente é biológico. sempre que possível escolhemos ingredientes biológicos e assinalamo-los com * na descrição, para saberes melhor o que estás a usar.",
+            q: "tenho pele sensível. há alguma coisa a que deva estar atente?",
+            a: "vários produtos levam óleos essenciais, que podem causar irritação ou reação alérgica em peles mais sensíveis; os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita a zona das axilas, sobretudo depois de depilação recente. assinalamos isto na ficha de cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa pequena área da pele, e fala connosco, que podemos adaptar a fórmula.",
           },
           {
             q: "que produtos posso usar diretamente na pele?",
-            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, por não levarem químicos agressivos — o de cabelos secos tem sido usado por quem tem pele atópica. e a cera de soja das velas é hidratante, pelo que pode ir diretamente à pele. escolhemos os ingredientes a pensar nisto, mas a tua pele é tua: se for sensível, experimenta primeiro numa zona pequena.",
+            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, por não levarem químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica). e a cera de soja das velas é hidratante, pelo que pode ir diretamente à pele. escolhemos os ingredientes a pensar nisto, mas a tua pele é tua: se for sensível, experimenta primeiro numa zona pequena.",
           },
         ],
       },
@@ -338,11 +336,11 @@ export const pt = {
         items: [
           {
             q: "fazem envios para fora de Portugal?",
-            a: "fazemos envios nacionais e internacionais. o custo do envio é calculado no final da compra, conforme o destino — vês o valor exacto antes de confirmares, sem surpresas.",
+            a: "fazemos envios nacionais e internacionais. o custo do envio é calculado no final da compra, conforme o destino: vês o valor exacto antes de confirmares, sem surpresas.",
           },
           {
             q: "o produto que quero está esgotado. posso encomendar na mesma?",
-            a: "podes. fazemos tudo à mão e em pouca quantidade de cada vez, e alguns produtos — os champôs, os amaciadores e os sabonetes — precisam de tempo de repouso e maturação antes de seguirem. se esgotar, aceitamos a encomenda e avisamos-te assim que estiver pronta. também preparamos quantidades maiores sempre que precisares.",
+            a: "podes. fazemos tudo à mão e em pouca quantidade de cada vez, e alguns produtos (os champôs, os amaciadores e os sabonetes) precisam de tempo de repouso e maturação antes de seguirem. se esgotar, aceitamos a encomenda e avisamos-te assim que estiver pronta. também preparamos quantidades maiores sempre que precisares.",
           },
           {
             q: "posso pedir um produto feito à minha medida?",
@@ -350,7 +348,7 @@ export const pt = {
           },
           {
             q: "posso devolver um produto?",
-            a: "se receberes o produto errado, ou o produto certo mas danificado — um frasco partido, uma embalagem suja, um produto derretido ou quebrado. aberto ou ainda fechado, desde que haja prova de que não está bom. tens 14 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
+            a: "se receberes o produto errado, ou o produto certo mas danificado (um frasco partido, uma embalagem suja, um produto derretido ou quebrado). aberto ou ainda fechado, desde que haja prova de que não está bom. tens 14 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
           },
         ],
       },
@@ -359,7 +357,7 @@ export const pt = {
         items: [
           {
             q: "posso devolver a embalagem?",
-            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga — de um desodorizante, de uma máscara capilar, de uma vela — e reutilizamo-la no teu próximo produto, com um desconto de reutilização. os embrulhos são cosidos à mão a partir de tecidos reaproveitados, e até a linha é de algodão e de outras fibras recicladas.",
+            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela) e reutilizamo-la no teu próximo produto, com um desconto de reutilização.",
           },
           {
             q: "podem fazer as velas nos meus próprios recipientes?",
@@ -371,16 +369,7 @@ export const pt = {
           },
           {
             q: "de que são feitas as vossas velas?",
-            a: "de cera vegetal de soja, que derrete devagar e por igual — duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. quase toda a decoração é natural: flores e folhas secas, conchas, pedrinhas — e há elementos vegetais que somos nós a prensar e a preparar.",
-          },
-        ],
-      },
-      {
-        title: "encontrar-nos",
-        items: [
-          {
-            q: "onde vos posso encontrar pessoalmente?",
-            a: "estamos em feiras e mercados ao longo do ano — a página de feiras e mercados tem as datas mais próximas.",
+            a: "de cera vegetal de soja, que derrete devagar e por igual: duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. quase toda a decoração é natural (flores e folhas secas, conchas, pedrinhas), e há elementos vegetais que somos nós a prensar e a preparar.",
           },
         ],
       },

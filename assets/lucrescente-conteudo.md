@@ -32,7 +32,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 - Champôs, amaciadores e sabonetes são sólidos e feitos sem água; precisam de tempo de maturação, por isso podem esgotar
 - Os champôs sólidos podem ser usados no corpo (bons para pele atópica). O "Champô Secos" (aveia + argila branca) é procurado para eczema e comichão. O "Champô Oleosos" leva hidrolato de hortelã-pimenta e urtiga e cavalinha moídas à mão
 - Os sabonetes usam aloé vera biológico colhido fresco em casa. Ingredientes biológicos assinalados com * nas descrições
-- Embalagens reutilizáveis: quem trouxer uma embalagem antiga (desodorizante, máscara capilar, vela) tem desconto de reutilização. As velas podem ser feitas nos frascos ou canecas do cliente. Os embrulhos são cosidos à mão com tecidos reutilizados
+- Embalagens reutilizáveis: quem trouxer uma embalagem antiga (desodorizante, máscara capilar, vela) tem desconto de reutilização. As velas podem ser feitas nos frascos ou canecas do cliente
 - Velas de cera de soja, sem derivados de petróleo nem fragrâncias sintéticas, decoradas com flores prensadas
 - Sem preços, sem carrinho, sem checkout, sem login, sem avaliações
 - Nunca inventar produtos, ingredientes, testemunhos, prémios ou alegações de saúde. Nunca usar fotos de banco de imagens
@@ -84,7 +84,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 Os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. Na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. E como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.
 
 **embalagens e embrulhos reutilizados**
-Todas as nossas embalagens são reutilizáveis. Se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. Os nossos embrulhos são cosidos à mão, com reutilização de tecidos — até o fio é feito de algodão e de outras fibras recicladas. Mais reutilização, menos desperdício.
+Todas as nossas embalagens são reutilizáveis. Se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. Mais reutilização, menos desperdício.
 
 **as nossas velas**
 As velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. Decoramos muitas com pétalas e flores secas, prensadas e preparadas por nós. E se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.

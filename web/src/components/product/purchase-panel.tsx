@@ -12,7 +12,7 @@ import { doseUnitPriceCents, sanitiseDose, DOSE_MAX_LENGTH } from "@/lib/dose-pr
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
- * States: on-request (no price) → "por encomenda" + WhatsApp; sold-out → honest message + WhatsApp; available → add.
+ * States: on-request (no price) → "por encomenda" + WhatsApp; sold-out → crossed-out price + WhatsApp; available → add.
  */
 export function PurchasePanel({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
   const t = getDictionary(locale);
@@ -205,16 +205,21 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
         </div>
       ) : avail.kind === "sold-out" ? (
         /*
-          A sold-out format cannot be ordered, so the panel offers no way to try:
-          no add-to-cart, and no "fala connosco" either, which used to invite an
-          order the brand could not fill. The crossed-out price is the whole
-          message. It is announced as well as shown, because a line through a
-          number is a purely visual cue.
+          A sold-out format still cannot be added to the cart, but the brand
+          does take orders for it — see "o produto que quero está esgotado.
+          posso encomendar na mesma?" in the FAQ. So the crossed-out price
+          stays, and a "fala connosco" WhatsApp link sits under it, same as
+          the on-request state above.
         */
-        <p className="font-display text-[1.75rem] leading-none text-ink/50 line-through decoration-1">
-          <span className="sr-only">{t.products.price}: </span>
-          {formatPrice(avail.price_cents)}
-        </p>
+        <div className="space-y-4">
+          <p className="font-display text-[1.75rem] leading-none text-ink/50 line-through decoration-1">
+            <span className="sr-only">{t.products.price}: </span>
+            {formatPrice(avail.price_cents)}
+          </p>
+          <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className="w-full sm:w-auto">
+            {t.products.talkToUs}
+          </AnchorButton>
+        </div>
       ) : (
         <div className="space-y-5">
           <div className="flex items-baseline justify-between">
