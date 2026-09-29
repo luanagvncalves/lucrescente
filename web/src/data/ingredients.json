@@ -16,7 +16,7 @@
   "scientific_name": "Cocos nucifera.",
   "origin": "Extraído da polpa do coco, fruto de uma palmeira tropical cultivada em regiões costeiras de todo o mundo, incluindo o Sudeste Asiático e partes da América do Sul.",
   "properties": "Rico em ácidos gordos saturados (sobretudo ácido láurico), funde à temperatura da pele e forma uma película protetora que ajuda a reter a hidratação e a reduzir a perda de água transepidérmica. Textura leve e absorção relativamente rápida em comparação com outras manteigas vegetais. Muito usado também em cuidados capilares, onde ajuda a reduzir a perda de proteína da fibra capilar.",
-  "applications": "Um dos óleos base mais usados por cá — entra em bálsamos corporais, sabonetes sólidos, amaciadores sólidos e no nosso champô sólido para cabelos oleosos, onde ajuda a limpar sem retirar todo o óleo natural do couro cabeludo.",
+  "applications": "Um dos óleos base mais usados por cá: entra em bálsamos corporais, sabonetes sólidos, amaciadores sólidos e no nosso champô sólido para cabelos oleosos, onde ajuda a limpar sem retirar todo o óleo natural do couro cabeludo.",
   "sort_order": 1
  },
  {
@@ -296,7 +296,7 @@
   "scientific_name": "Vitellaria paradoxa.",
   "origin": "Extraída das sementes da árvore-do-karité, nativa da savana da África Ocidental, onde é produzida artesanalmente há gerações.",
   "properties": "Textura densa e amanteigada, rica em ácidos gordos (esteárico e oleico) e em vitamina E, derretendo suavemente ao contacto com a pele. Nutre profundamente e ajuda a restaurar o conforto de peles muito secas, ásperas ou danificadas pelo frio e pelo vento. A sua fração insaponificável é frequentemente associada à manutenção da elasticidade da pele.",
-  "applications": "A nossa manteiga base preferida para bálsamos e batons hidratantes — combina-se muito bem com óleos de amêndoas doces e argão, uma trinca que usamos com frequência em produtos pensados para peles e cabelos mais secos.",
+  "applications": "A nossa manteiga base preferida para bálsamos e batons hidratantes: combina-se muito bem com óleos de amêndoas doces e argão, uma trinca que usamos com frequência em produtos pensados para peles e cabelos mais secos.",
   "sort_order": 29
  },
  {
@@ -355,7 +355,7 @@
   "category": "Ceras e Emulsionantes",
   "scientific_name": null,
   "origin": "Álcool gordo de origem vegetal (não confundir com álcool etílico), derivado tipicamente do óleo de coco ou de palma.",
-  "properties": "Espessante e emoliente suave, ajuda a estabilizar emulsões e deixa a pele com sensação macia e aveludada, sem o efeito secante do álcool etílico — na verdade, tem o efeito oposto, contribuindo para a sensação de hidratação do produto final.",
+  "properties": "Espessante e emoliente suave, ajuda a estabilizar emulsões e deixa a pele com sensação macia e aveludada, sem o efeito secante do álcool etílico (na verdade, tem o efeito oposto, contribuindo para a sensação de hidratação do produto final).",
   "applications": "Usado para dar corpo e estabilidade a cremes e loções.",
   "sort_order": 35
  },
@@ -384,9 +384,9 @@
   "name": "Cera de Soja",
   "category": "Ceras e Emulsionantes",
   "scientific_name": "Glycine max (soja).",
-  "origin": "Cera vegetal obtida do óleo de soja, recurso renovável e ecologicamente sustentável — uma alternativa natural às ceras de parafina e outros derivados do petróleo.",
-  "properties": "Sólida à temperatura ambiente, derrete e solidifica de forma lenta e uniforme, sem criar 'poço' à volta do pavio nem desperdiçar cera — por isso é também uma escolha económica. Queima de forma mais limpa e mais lenta do que a parafina, com menos fuligem. É segura ao toque, biodegradável e, por ser hidratante, pode ser usada diretamente na pele.",
-  "applications": "Base das nossas velas, onde garante uma queima uniforme e duradoura e, graças aos óleos essenciais que lhe juntamos, liberta um aroma leve e terapêutico enquanto arde. Fora das velas, a mesma cera dá-nos ambientadores sólidos — para perfumar gavetas e armários ou derreter num queimador — e, derretida, pode ainda servir de óleo de massagem ou ser esfregada diretamente na pele como um 'perfume' sólido e reconfortante.",
+  "origin": "Cera vegetal obtida do óleo de soja, recurso renovável e ecologicamente sustentável: uma alternativa natural às ceras de parafina e outros derivados do petróleo.",
+  "properties": "Sólida à temperatura ambiente, derrete e solidifica de forma lenta e uniforme, sem criar 'poço' à volta do pavio nem desperdiçar cera: por isso é também uma escolha económica. Queima de forma mais limpa e mais lenta do que a parafina, com menos fuligem. É segura ao toque, biodegradável e, por ser hidratante, pode ser usada diretamente na pele.",
+  "applications": "Base das nossas velas, onde garante uma queima uniforme e duradoura e, graças aos óleos essenciais que lhe juntamos, liberta um aroma leve e terapêutico enquanto arde. Fora das velas, a mesma cera dá-nos ambientadores sólidos (para perfumar gavetas e armários ou derreter num queimador) e, derretida, pode ainda servir de óleo de massagem ou ser esfregada diretamente na pele como um 'perfume' sólido e reconfortante.",
   "sort_order": 38
  },
  {
@@ -436,7 +436,7 @@
   "scientific_name": null,
   "origin": "Conservante de origem vegetal (à base de álcool benzílico e ácido desidroacético), amplamente usado em cosmética natural como alternativa aos parabenos.",
   "properties": "Protege as fórmulas com conteúdo aquoso contra o desenvolvimento de bactérias, bolores e leveduras, prolongando o seu prazo de validade em segurança. É eficaz numa gama alargada de pH e amplamente aceite em cosmética certificada como natural.",
-  "applications": "Usado em pequenas percentagens em todos os produtos com água na composição — incluindo o champô sólido para cabelos oleosos — para garantir que chegam até ti em segurança.",
+  "applications": "Usado em pequenas percentagens em todos os produtos com água na composição (incluindo o champô sólido para cabelos oleosos), para garantir que chegam até ti em segurança.",
   "sort_order": 43
  },
  {
@@ -454,7 +454,7 @@
   "name": "Tensioativo SCI",
   "category": "Ativos",
   "scientific_name": null,
-  "origin": "sodium cocoyl isethionate — tensioativo suave derivado do óleo de coco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
+  "origin": "sodium cocoyl isethionate: tensioativo suave derivado do óleo de coco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
   "properties": "Produz espuma cremosa e densa, e limpa a pele e o cabelo sem ser tão agressivo para a barreira cutânea como outros tensioativos comuns, reduzindo a sensação de secura ou tensão após a lavagem.",
   "applications": "Usado como base limpante em sabonetes sólidos e no champô sólido para cabelos oleosos, onde é o principal responsável por remover o excesso de oleosidade sem agredir o couro cabeludo.",
   "sort_order": 45
@@ -485,8 +485,8 @@
   "category": "Outros Ingredientes",
   "scientific_name": "Aloe barbadensis miller.",
   "origin": "Planta suculenta originária da Península Arábica, hoje cultivada em regiões quentes e secas por todo o mundo. É conhecida há milénios pelo gel transparente guardado no interior das suas folhas.",
-  "properties": "Hidrata sem pesar, ajuda a acalmar a pele irritada ou exposta ao sol e contribui para a sensação de conforto em peles sensíveis. Nutre e suaviza, ajuda a atenuar cicatrizes e marcas, e é antioxidante — o que a torna útil na prevenção do aparecimento de borbulhas. O gel é composto maioritariamente por água, complementada por polissacáridos que ajudam a formar uma película protetora à superfície da pele, retendo humidade. Também contém pequenas quantidades de vitaminas (A, C, E) e minerais, e é geralmente bem tolerado mesmo em peles reativas ou com tendência a vermelhidão.",
-  "applications": "Usamos aloé vera como base hidratante em cremes corporais e em algumas das nossas máscaras faciais, normalmente combinado com hidrolatos calmantes como a camomila-romana ou a lavanda para reforçar o efeito de conforto na pele. Nos nossos sabonetes de rosto, mãos e corpo, é sempre aloé vera biológico, colhido e preparado por nós no momento — e não um gel processado comprado já pronto.",
+  "properties": "Hidrata sem pesar, ajuda a acalmar a pele irritada ou exposta ao sol e contribui para a sensação de conforto em peles sensíveis. Nutre e suaviza, ajuda a atenuar cicatrizes e marcas, e é antioxidante, o que a torna útil na prevenção do aparecimento de borbulhas. O gel é composto maioritariamente por água, complementada por polissacáridos que ajudam a formar uma película protetora à superfície da pele, retendo humidade. Também contém pequenas quantidades de vitaminas (A, C, E) e minerais, e é geralmente bem tolerado mesmo em peles reativas ou com tendência a vermelhidão.",
+  "applications": "Usamos aloé vera como base hidratante em cremes corporais e em algumas das nossas máscaras faciais, normalmente combinado com hidrolatos calmantes como a camomila-romana ou a lavanda para reforçar o efeito de conforto na pele. Nos nossos sabonetes de rosto, mãos e corpo, é sempre aloé vera biológico, colhido e preparado por nós no momento, e não um gel processado comprado já pronto.",
   "sort_order": 48
  },
  {
@@ -505,7 +505,7 @@
   "category": "Outros Ingredientes",
   "scientific_name": null,
   "origin": "Composto mineral (NaHCO₃) amplamente disponível, usado há séculos em produtos de higiene e limpeza doméstica.",
-  "properties": "Ligeiramente abrasivo e neutralizador de odores — ajuda a equilibrar o pH da pele e a neutralizar compostos responsáveis pelo odor corporal, em vez de simplesmente os mascarar. É um ingrediente clássico em desodorizantes naturais e, em concentrações baixas, em esfoliantes suaves de textura fina.",
+  "properties": "Ligeiramente abrasivo e neutralizador de odores: ajuda a equilibrar o pH da pele e a neutralizar compostos responsáveis pelo odor corporal, em vez de simplesmente os mascarar. É um ingrediente clássico em desodorizantes naturais e, em concentrações baixas, em esfoliantes suaves de textura fina.",
   "applications": "Base da nossa linha de desodorizante natural, e usado em pequenas quantidades em alguns esfoliantes corporais para dar uma textura ligeiramente granulada.",
   "sort_order": 50
  },
@@ -555,7 +555,7 @@
   "category": "Outros Ingredientes",
   "scientific_name": null,
   "origin": "Obtida a partir de óleos vegetais (como coco ou palma), é um subproduto natural da produção de sabão.",
-  "properties": "Humectante — atrai água do ambiente e ajuda a retê-la na camada mais superficial da pele — o que a torna um dos ingredientes hidratantes mais usados em cosmética natural. Ajuda também a suavizar a textura de sabonetes e cremes, e é geralmente muito bem tolerada, mesmo por peles sensíveis.",
+  "properties": "Humectante: atrai água do ambiente e ajuda a retê-la na camada mais superficial da pele, o que a torna um dos ingredientes hidratantes mais usados em cosmética natural. Ajuda também a suavizar a textura de sabonetes e cremes, e é geralmente muito bem tolerada, mesmo por peles sensíveis.",
   "applications": "Presente em quase todos os nossos sabonetes sólidos e em cremes e loções, como agente hidratante que ajuda a suavizar a textura final do produto.",
   "sort_order": 55
  },
@@ -574,7 +574,7 @@
   "name": "Sal Marinho Integral",
   "category": "Outros Ingredientes",
   "scientific_name": null,
-  "origin": "Sal colhido à superfície das salinas e seco ao sol e ao vento, sem refinação, sem branqueamento e sem antiaglomerantes — sai da salina e vem direito para nós, tal e qual.",
+  "origin": "Sal colhido à superfície das salinas e seco ao sol e ao vento, sem refinação, sem branqueamento e sem antiaglomerantes: sai da salina e vem direito para nós, tal e qual.",
   "properties": "Por não ser refinado, guarda os minerais que a água do mar traz consigo, sobretudo magnésio, potássio e cálcio, que o sal branco de mesa perde no processamento. Daí a cor acinzentada e o grão irregular. Dissolve-se devagar em água quente, o que faz com que o banho se mantenha salgado do princípio ao fim.",
   "applications": "É a base dos nossos sais de banho relaxantes, para um banho de imersão ou um escalda-pés.",
   "sort_order": 57
@@ -624,9 +624,9 @@
   "name": "Óxido de Ferro",
   "category": "Outros Ingredientes",
   "scientific_name": null,
-  "origin": "Pigmento mineral, o mesmo que dá a cor às argilas e aos barros — o que usamos é de origem mineral e de grau cosmético, aprovado para uso em produtos de maquilhagem.",
+  "origin": "Pigmento mineral, o mesmo que dá a cor às argilas e aos barros: o que usamos é de origem mineral e de grau cosmético, aprovado para uso em produtos de maquilhagem.",
   "properties": "Dá cor sem corantes sintéticos e sem aroma próprio, mantendo-se estável ao longo do tempo e à luz. Consoante a dose, vai do bege quente ao tom de tijolo, e não altera a textura nem a nutrição do bálsamo.",
-  "applications": "É o que dá a cor ao nosso batom tijolo — o único dos nossos batons que leva pigmento.",
+  "applications": "É o que dá a cor ao nosso batom tijolo: o único dos nossos batons que leva pigmento.",
   "sort_order": 62
  },
  {
@@ -665,7 +665,7 @@
   "category": "Outros Ingredientes",
   "scientific_name": null,
   "origin": "Álcool etílico a 96º, de origem vegetal, o mesmo tipo de álcool usado na preparação de tinturas e macerados.",
-  "properties": "Dissolve os óleos essenciais e permite misturá-los com a água, coisa que a água sozinha não faz — é o que evita que o spray se separe em duas camadas. Evapora depressa, por isso o spray não deixa a superfície molhada. É inflamável, e em contacto com os olhos ou com pele ferida pode arder.",
+  "properties": "Dissolve os óleos essenciais e permite misturá-los com a água, coisa que a água sozinha não faz: é o que evita que o spray se separe em duas camadas. Evapora depressa, por isso o spray não deixa a superfície molhada. É inflamável, e em contacto com os olhos ou com pele ferida pode arder.",
   "applications": "Usado como base do nosso spray relaxante, onde leva o aroma dos óleos essenciais de lavanda e de camomila romana.",
   "sort_order": 66
  },

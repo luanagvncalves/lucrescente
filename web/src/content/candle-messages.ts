@@ -21,15 +21,15 @@ type CrossSellCopy = {
 
 export const candleMessageCrossSell: Record<ProductLocale, CrossSellCopy> = {
   pt: {
-    text: "e podemos escrever nela a mensagem que quiseres — um nome, uma data, uma dedicatória.",
+    text: "e podemos escrever nela a mensagem que quiseres: um nome, uma data, uma dedicatória.",
     link: "vê as velas com mensagem",
   },
   en: {
-    text: "and we can write whatever message you like on it — a name, a date, a dedication.",
+    text: "and we can write whatever message you like on it: a name, a date, a dedication.",
     link: "see the candles with messages",
   },
   fr: {
-    text: "et nous pouvons y écrire le message de votre choix — un prénom, une date, une dédicace.",
+    text: "et nous pouvons y écrire le message de votre choix : un prénom, une date, une dédicace.",
     link: "voir les bougies avec messages",
   },
 };

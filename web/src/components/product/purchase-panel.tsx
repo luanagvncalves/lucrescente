@@ -23,6 +23,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const [qty, setQty] = useState(1);
   const [ownContainer, setOwnContainer] = useState(false);
   const [dose, setDose] = useState("");
+  const [howMany, setHowMany] = useState("");
   const avail = variantAvailability(selected);
   const localizedName = getProductCopy(product.slug, locale, { name: product.name }).name;
 
@@ -48,6 +49,14 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const soleLabel = variants.length === 1 ? getVariantLabel(variants[0].label, locale) : null;
 
   const isOwnPackaging = selected.label === ownContainerLabelPt;
+
+  /**
+   * The air freshener has one format, so a "formato" picker had nothing to
+   * offer beyond the own-container toggle. What varies is how many the
+   * customer wants, so this product gets a free-text "quantidade" field
+   * instead of the format picker below.
+   */
+  const isAirFreshener = product.slug === "ambientador";
   /*
     The optional oil on the coloured lip balms. It is not a variant: the balms
     are made to order out of one stock, with a few drops stirred in, so there
@@ -59,7 +68,13 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   */
   const addOns = getAddOns(product.slug);
   const [addOn, setAddOn] = useState("");
-  const orderLabel = [selected.label, addOn || null, ownContainer ? t.products.ownContainerLabel : null, isOwnPackaging && dose ? `dose: ${dose}` : null].filter(Boolean).join(" · ") || null;
+  const orderLabel = [
+    isAirFreshener ? null : selected.label,
+    addOn || null,
+    ownContainer ? t.products.ownContainerLabel : null,
+    isOwnPackaging && dose ? `dose: ${dose}` : null,
+    isAirFreshener && howMany ? `quantidade: ${howMany}` : null,
+  ].filter(Boolean).join(" · ") || null;
   const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
 
   /*
@@ -97,7 +112,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
 
   return (
     <div className="card-brand p-6 sm:p-8">
-      {variants.length > 1 || !product.is_solid || soleLabel ? (
+      {!isAirFreshener && (variants.length > 1 || !product.is_solid || soleLabel) ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.variant}</legend>
           <div className="flex flex-wrap gap-2">
@@ -177,6 +192,20 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
               );
             })}
           </div>
+        </fieldset>
+      ) : null}
+
+      {isAirFreshener ? (
+        <fieldset className="mb-6">
+          <legend className="label-brand mb-3 text-moss">{t.products.quantity}</legend>
+          <input
+            type="text"
+            placeholder="quantos ambientadores queres?"
+            maxLength={DOSE_MAX_LENGTH}
+            value={howMany}
+            onChange={(e) => setHowMany(e.target.value)}
+            className="w-full rounded-2xl border border-moss/40 px-4 py-3 text-[0.95rem] placeholder-moss/50 focus:border-forest focus:outline-none"
+          />
         </fieldset>
       ) : null}
 

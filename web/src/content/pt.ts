@@ -61,7 +61,7 @@ export const pt = {
     values: ["feito à mão", "ingredientes honestos", "menos desperdício"],
     storyTitle: "uma marca pequena, feita com intenção",
     storyText:
-      "a lucrescente começou como um projeto completamente familiar — muito antes de ser sequer um projeto — e foi crescendo, aos poucos, até chegar a mais pessoas. conhecemos os ingredientes, contamos a história de cada um, e continuamos a fazer tudo em pequenas quantidades, com o mesmo carinho do primeiro dia.",
+      "a lucrescente começou como um projeto completamente familiar (muito antes de ser sequer um projeto) e foi crescendo, aos poucos, até chegar a mais pessoas. conhecemos os ingredientes, contamos a história de cada um, e continuamos a fazer tudo em pequenas quantidades, com o mesmo carinho do primeiro dia.",
     storyLink: "conhecer a nossa história →",
     ingredientsTitle: "os ingredientes que usamos, um a um",
     ingredientsSubtitle:
@@ -116,14 +116,14 @@ export const pt = {
     // "porque funciona" but "porquê estas e não as do supermercado"
     candleCaseLabel: "porque não são velas de supermercado",
     candleCase:
-      "as velas de supermercado são quase sempre de parafina, que é um resto da refinação do petróleo. ao arder, a parafina liberta fuligem — aquelas marcas pretas no frasco e no teto — e compostos que ficam no ar que se respira dentro de casa, ainda por cima com fragrâncias sintéticas por cima. as nossas são de cera de soja, que é vegetal: arde mais devagar e a uma temperatura mais baixa, não deixa fuligem e não traz derivados de petróleo. por arder devagar, a vela dura bastante mais tempo do que uma de parafina do mesmo tamanho, e a cera aproveita-se até ao fim. o aroma vem só de óleos essenciais, nunca de fragrâncias sintéticas, e a decoração é natural — flores e folhas secas, conchas, pedrinhas, muitas delas prensadas e preparadas por nós.",
+      "as velas de supermercado são quase sempre de parafina, que é um resto da refinação do petróleo. ao arder, a parafina liberta fuligem (aquelas marcas pretas no frasco e no teto) e compostos que ficam no ar que se respira dentro de casa, ainda por cima com fragrâncias sintéticas por cima. as nossas são de cera de soja, que é vegetal: arde mais devagar e a uma temperatura mais baixa, não deixa fuligem e não traz derivados de petróleo. por arder devagar, a vela dura bastante mais tempo do que uma de parafina do mesmo tamanho, e a cera aproveita-se até ao fim. o aroma vem só de óleos essenciais, nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas, pedrinhas, muitas delas prensadas e preparadas por nós.",
     hairTypeNote: "para que tipo de cabelo",
     // the optional flavour oil on the coloured lip balms
     // the customer's own container, and how much to put in it
     doseLabel: "dose",
     flavourLabel: "sabor",
     flavourNone: "sem sabor",
-    deodorantFact: "aplica uma camada fina em pele limpa e seca — com o calor do corpo espalha-se melhor.",
+    deodorantFact: "aplica uma camada fina em pele limpa e seca: com o calor do corpo espalha-se melhor.",
     solidNote: "produto sólido, sem água na fórmula. guarda-o num sítio seco entre utilizações para durar mais tempo.",
     recommendedFor: "aconselhado para",
     notRecommendedFor: "não aconselhado para",
@@ -138,7 +138,7 @@ export const pt = {
     galleryOf: (name: string) => `fotografias de ${name}`, // ui
     price: "preço", // ui
     onRequest: "por encomenda",
-    talkToUs: "fala connosco →",
+    talkToUs: "encomendar →",
     // one word, in both places it appears: beside the size inside a format
     // pill, and as the badge on a product card in the grid
     soldOutTag: "esgotado", // ui
@@ -151,7 +151,7 @@ export const pt = {
     orderMessage: (name: string) => `olá! gostava de encomendar: ${name}`, // ui
     ownContainerLabel: "embalagem própria", // ui — bring-your-own-container option in the size choice
     candleNote:
-      "e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.",
+      "e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças: só precisas de nos entregar os recipientes.",
     backToCatalog: "← voltar aos produtos", // ui
     relatedTitle: "cria o teu conjunto", // ui
     relatedPrev: "produtos anteriores", // ui
@@ -163,7 +163,7 @@ export const pt = {
   fairs: {
     title: "feiras e mercados",
     intro:
-      "para além da loja online, também nos podes encontrar em feiras e mercados locais — a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
+      "para além da loja online, também nos podes encontrar em feiras e mercados locais: a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
     comingSoon: "em breve, mais informações sobre os próximos eventos e feiras onde nos podes encontrar!",
     metaDescription: "encontra-nos em feiras e mercados locais",
   },
@@ -231,7 +231,7 @@ export const pt = {
     ],
     lucieName: "lucie",
     lucieText:
-      "sou doutorada em biociências, na área da agroecologia — os últimos anos foram passados mergulhada em girassóis, polinizadores e conservação da natureza. esse mesmo olhar atento, rigoroso e curioso orienta a escolha dos ingredientes e a criação de cada receita da lucrescente.",
+      "sou doutorada em biociências, na área da agroecologia: os últimos anos foram passados mergulhada em girassóis, polinizadores e conservação da natureza. esse mesmo olhar atento, rigoroso e curioso orienta a escolha dos ingredientes e a criação de cada receita da lucrescente.",
     luanaName: "luana",
     luanaText:
       "estou no terceiro ano da licenciatura em artes plásticas e trago para a marca o cuidado estético, a criatividade e a sensibilidade. penso na forma como cada produto é apresentado, descrito e integrado nos pequenos rituais de cuidado do dia a dia.",
@@ -279,7 +279,7 @@ export const pt = {
     groups: [
       {
         title: "quando aceitamos uma devolução",
-        text: "aceitamos devoluções se receberes o produto errado, ou o produto certo mas danificado: um frasco partido, uma embalagem suja, ou um produto derretido ou quebrado. tanto faz se já o abriste ou se ainda está fechado — o que precisamos é de prova de que não está bom.",
+        text: "aceitamos devoluções se receberes o produto errado, ou o produto certo mas danificado: um frasco partido, uma embalagem suja, ou um produto derretido ou quebrado. tanto faz se já o abriste ou se ainda está fechado: o que precisamos é de prova de que não está bom.",
       },
       {
         title: "quanto tempo tens",
@@ -287,7 +287,7 @@ export const pt = {
       },
       {
         title: "como pedir",
-        text: "fala connosco por qualquer meio indicado no site — whatsapp, mensagem, chamada ou email. pedimos-te apenas um comprovativo: uma fotografia do produto como chegou, ou do produto errado que recebeste.",
+        text: "fala connosco por qualquer meio indicado no site: whatsapp, mensagem, chamada ou email. pedimos-te apenas um comprovativo: uma fotografia do produto como chegou, ou do produto errado que recebeste.",
       },
       {
         title: "quem paga o envio de volta",
@@ -300,7 +300,7 @@ export const pt = {
     label: "perguntas frequentes",
     title: "o que nos perguntam mais",
     intro:
-      "as dúvidas que chegam mais vezes por mensagem, reunidas aqui. se a tua não estiver, escreve-nos — respondemos sempre.",
+      "as dúvidas que chegam mais vezes por mensagem, reunidas aqui. se a tua não estiver, escreve-nos: respondemos sempre.",
     groups: [
       {
         title: "os produtos",
@@ -344,7 +344,7 @@ export const pt = {
           },
           {
             q: "posso pedir um produto feito à minha medida?",
-            a: "sim. podemos adaptar uma fórmula ao que precisas — mais suave, mais forte, ou com outro aroma. fala connosco antes de encomendar.",
+            a: "sim. podemos adaptar uma fórmula ao que precisas: mais suave, mais forte, ou com outro aroma. fala connosco antes de encomendar.",
           },
           {
             q: "posso devolver um produto?",
@@ -361,11 +361,11 @@ export const pt = {
           },
           {
             q: "podem fazer as velas nos meus próprios recipientes?",
-            a: "podemos. se preferires, fazemos as tuas velas nos teus frascos, canecas ou taças — basta entregares-nos os recipientes.",
+            a: "podemos. se preferires, fazemos as tuas velas nos teus frascos, canecas ou taças: basta entregares-nos os recipientes.",
           },
           {
             q: "porque é que os produtos são sólidos?",
-            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem — o que poupa também a água que se gastaria a fazer esse plástico. no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem (o que poupa também a água que se gastaria a fazer esse plástico). no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
           },
           {
             q: "de que são feitas as vossas velas?",
@@ -384,7 +384,7 @@ export const pt = {
     browse: "ver produtos", // ui
     subtotal: "subtotal", // ui
     shippingNote: "os portes são calculados no passo seguinte, consoante o destino.", // ui
-    reuseNote: "se quiseres reutilizar as tuas embalagens, escreve-nos — combinamos contigo.",
+    reuseNote: "se quiseres reutilizar as tuas embalagens, escreve-nos: combinamos contigo.",
     checkout: "finalizar encomenda", // ui
     checkingOut: "a preparar o pagamento…", // ui
     remove: "remover", // ui
@@ -412,7 +412,7 @@ export const pt = {
      // ui
     paymentMethod: "método de pagamento", // ui
      // ui
-    paymentNote: "podes pagar com cartão, MB WAY ou apple pay — escolhes no passo seguinte, na página segura do Stripe.", // ui
+    paymentNote: "podes pagar com cartão, MB WAY ou apple pay: escolhes no passo seguinte, na página segura do Stripe.", // ui
     
     
     

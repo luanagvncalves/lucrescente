@@ -100,7 +100,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 1,
     why_it_works:
-      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -125,7 +125,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
-      "este champô não leva água na sua composição — o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
+      "este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -152,7 +152,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 1,
     why_it_works:
-      "este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. o óleo de coco, a manteiga de karité e o d-pantenol nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete — este em particular tem sido usado por quem tem pele atópica.",
+      "este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. o óleo de coco, a manteiga de karité e o d-pantenol nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete (este em particular tem sido usado por quem tem pele atópica).",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -409,7 +409,7 @@ export const products: ProductSeed[] = [
     category_slug: "velas",
     sort_order: 4,
     why_it_works:
-      "podemos escrever a tua mensagem na vela — um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem — funciona com qualquer uma das nossas velas. cada uma é feita depois de falares connosco, por isso pede com alguma antecedência. e se tiveres um frasco, uma caneca ou uma taça que gostasses de usar, basta entregares-nos o recipiente.",
+      "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). cada uma é feita depois de falares connosco, por isso pede com alguma antecedência. e se tiveres um frasco, uma caneca ou uma taça que gostasses de usar, basta entregares-nos o recipiente.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -484,7 +484,7 @@ export const products: ProductSeed[] = [
     category_slug: "sprays",
     sort_order: 0,
     why_it_works:
-      "serve para as duas coisas: borrifa-se no ar, na almofada ou na roupa da cama, e também na pele, como perfume. quem faz o trabalho são os óleos essenciais. a lavanda é o aroma floral e herbáceo mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso, e a camomila romana junta-lhe uma nota doce e amaciada, daquelas que se associam a um momento de calma ao fim do dia. o álcool a 96º é o que permite que esses óleos se misturem mesmo com a água — coisa que a água sozinha não faz — e é por isso que o spray não se separa em duas camadas; como evapora depressa, também não deixa a superfície molhada. a água destilada, sem minerais nem resíduos, mantém a fórmula limpa durante mais tempo e não deixa marcas onde o spray assenta. as flores de lavanda ficam inteiras a flutuar no frasco e vão soltando o aroma devagar.",
+      "serve para as duas coisas: borrifa-se no ar, na almofada ou na roupa da cama, e também na pele, como perfume. quem faz o trabalho são os óleos essenciais. a lavanda é o aroma floral e herbáceo mais reconhecível de todos os que usamos, tradicionalmente associado a uma sensação de descanso, e a camomila romana junta-lhe uma nota doce e amaciada, daquelas que se associam a um momento de calma ao fim do dia. o álcool a 96º é o que permite que esses óleos se misturem mesmo com a água (coisa que a água sozinha não faz), e é por isso que o spray não se separa em duas camadas; como evapora depressa, também não deixa a superfície molhada. a água destilada, sem minerais nem resíduos, mantém a fórmula limpa durante mais tempo e não deixa marcas onde o spray assenta. as flores de lavanda ficam inteiras a flutuar no frasco e vão soltando o aroma devagar.",
     ingredient_slugs: [
       "alcool-96",
       "agua-destilada",
@@ -538,7 +538,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 0,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral — é o único dos nossos batons que leva cor.",
+      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -648,7 +648,7 @@ export const products: ProductSeed[] = [
     category_slug: "ambientadores",
     sort_order: 1,
     why_it_works:
-      "funciona de duas maneiras, conforme o que preferires. derretido — num queimador ou numa lamparina — a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas.",
+      "funciona de duas maneiras, conforme o que preferires. derretido (num queimador ou numa lamparina) a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: false,

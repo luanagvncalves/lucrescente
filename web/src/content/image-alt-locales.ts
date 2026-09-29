@@ -34,9 +34,9 @@ const alt: Record<string, { en: string; fr: string }> = {
   },
 
   // ambientadores
-  "três caixas de metal em forma de coração — vermelha, prateada e dourada — com ambientadores de cera branca, flores secas e botões de rosa, sobre tecido floral": {
-    en: "three heart-shaped metal tins — red, silver and gold — holding white wax air fresheners, dried flowers and rosebuds, on floral fabric",
-    fr: "trois boîtes métalliques en forme de cœur — rouge, argentée et dorée — contenant des parfums d'ambiance en cire blanche, des fleurs séchées et des boutons de rose, sur un tissu floral",
+  "três caixas de metal em forma de coração (vermelha, prateada e dourada) com ambientadores de cera branca, flores secas e botões de rosa, sobre tecido floral": {
+    en: "three heart-shaped metal tins (red, silver and gold) holding white wax air fresheners, dried flowers and rosebuds, on floral fabric",
+    fr: "trois boîtes métalliques en forme de cœur (rouge, argentée et dorée) contenant des parfums d'ambiance en cire blanche, des fleurs séchées et des boutons de rose, sur un tissu floral",
   },
   "grande plano da caixa vermelha em forma de coração cheia de ambientadores de cera em forma de coração com lavanda e botões de rosa secos": {
     en: "close-up of the red heart-shaped tin filled with heart-shaped wax air fresheners with dried lavender and rosebuds",
@@ -296,9 +296,9 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "candle in a seashell with «mamã» written by hand in blue, blue and gold pebbles and small shells",
     fr: "bougie dans un coquillage avec « mamã » écrit à la main en bleu, des cailloux bleus et dorés et de petits coquillages",
   },
-  "duas velas com «beijinhos» escrito à mão — uma em casca de coco com pedrinhas azuis, outra em concha com um coração de cera": {
-    en: "two candles with «beijinhos» written by hand — one in a coconut shell with blue pebbles, one in a seashell with a wax heart",
-    fr: "deux bougies avec « beijinhos » écrit à la main — l'une dans une coque de noix de coco avec des cailloux bleus, l'autre dans un coquillage avec un cœur en cire",
+  "duas velas com «beijinhos» escrito à mão: uma em casca de coco com pedrinhas azuis, outra em concha com um coração de cera": {
+    en: "two candles with «beijinhos» written by hand: one in a coconut shell with blue pebbles, one in a seashell with a wax heart",
+    fr: "deux bougies avec « beijinhos » écrit à la main : l'une dans une coque de noix de coco avec des cailloux bleus, l'autre dans un coquillage avec un cœur en cire",
   },
   "vela em casca de coco segurada na mão, com «28 com amor» escrito à mão a verde e pétalas amarelas secas": {
     en: "candle in a coconut shell held in a hand, with «28 com amor» written by hand in green and dried yellow petals",

@@ -17,14 +17,14 @@ const sharedGood: Record<ProductLocale, string[]> = {
   fr: ["cheveux colorés", "cheveux lissés"],
 };
 const sharedBad: Record<ProductLocale, string[]> = {
-  pt: ["cabelo descolorado — não tem efeito anti-amarelamento"],
-  en: ["bleached hair — no anti-yellowing (purple-toning) effect"],
-  fr: ["cheveux décolorés — pas d'effet anti-jaunissement"],
+  pt: ["cabelo descolorado (não tem efeito anti-amarelamento)"],
+  en: ["bleached hair (no anti-yellowing, purple-toning, effect)"],
+  fr: ["cheveux décolorés (pas d'effet anti-jaunissement)"],
 };
 const neutroExtraGood: Record<ProductLocale, string> = {
-  pt: "peles e couro cabeludo ultrassensíveis — não leva óleos na fórmula",
-  en: "ultra-sensitive skin and scalps — no oils in the formula",
-  fr: "peaux et cuirs chevelus ultrasensibles — sans huiles dans la formule",
+  pt: "peles e couro cabeludo ultrassensíveis: não leva óleos na fórmula",
+  en: "ultra-sensitive skin and scalps: no oils in the formula",
+  fr: "peaux et cuirs chevelus ultrasensibles : sans huiles dans la formule",
 };
 
 const shared: Record<ProductLocale, ShampooNote> = {
