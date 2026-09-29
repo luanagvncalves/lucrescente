@@ -203,7 +203,7 @@ export const pt = {
     label: "de origem vegetal e mineral",
     title: "os ingredientes que usamos, um a um",
     subtitle:
-      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve ✿",
+      "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve",
     allCategories: "todos", // ui
     sections: {
       scientificName: "nome científico",

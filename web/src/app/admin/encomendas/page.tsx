@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllOrders } from "@/lib/orders";
 import { formatPrice } from "@/lib/types";
 import { Label, H1 } from "@/components/ui/typography";
+import { markShipped } from "./actions";
 
 /**
  * The packing list: every order, newest first, with everything needed to fill
@@ -50,7 +51,21 @@ export default async function Encomendas() {
                   </h2>
                   <p className="font-display text-[1.3rem] text-forest">{formatPrice(o.total_cents)}</p>
                 </header>
-                <p className="mt-1 text-[0.9rem] text-ink/60">{when.format(new Date(o.created_at))}</p>
+                <div className="mt-1 flex flex-wrap items-center justify-between gap-x-4 gap-y-1">
+                  <p className="text-[0.9rem] text-ink/60">{when.format(new Date(o.created_at))}</p>
+                  {o.status === "fulfilled" ? (
+                    <p className="text-[0.85rem] font-medium text-moss">enviada ✓</p>
+                  ) : (
+                    <form action={markShipped.bind(null, o.id)}>
+                      <button
+                        type="submit"
+                        className="rounded-full border border-moss/30 px-3 py-1 text-[0.8rem] text-moss transition hover:bg-moss/10"
+                      >
+                        marcar como enviada
+                      </button>
+                    </form>
+                  )}
+                </div>
 
                 <div className="mt-5 grid gap-6 sm:grid-cols-5">
                   <section className="sm:col-span-3">

@@ -5,6 +5,7 @@ import { finalizeOrder, type OrderLineInput } from "@/lib/orders";
 import { unpackItems } from "@/lib/checkout-metadata";
 import { getVariantsBySkus } from "@/lib/catalog";
 import { alertOrderNotRecorded } from "@/lib/order-alert";
+import { alertLowStock, LOW_STOCK_THRESHOLD } from "@/lib/stock-alert";
 import { sendOrderConfirmation, type OrderConfirmationAddress } from "@/lib/order-email";
 import type { Locale } from "@/lib/i18n";
 
@@ -108,6 +109,16 @@ export async function POST(req: Request) {
       items,
     });
     if (result.shortfall?.length) console.warn("[webhook] stock shortfall on order", result.order_id, result.shortfall);
+
+    // Only on the delivery that actually decremented stock — a retried
+    // duplicate would otherwise warn about levels that never moved.
+    if (!result.duplicate) {
+      const sold = await getVariantsBySkus([...new Set(items.map((i) => i.sku))]);
+      const low = sold
+        .filter((v) => v.stock <= LOW_STOCK_THRESHOLD)
+        .map((v) => ({ sku: v.sku, label: v.label ?? v.sku, stock: v.stock }));
+      await alertLowStock(low);
+    }
 
     // Only on the delivery that recorded the order. `duplicate` means Stripe is
     // retrying one it already recorded, and mailing the customer again for that

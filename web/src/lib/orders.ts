@@ -40,9 +40,12 @@ export async function finalizeOrder(input: FinalizeInput) {
   return data as { order_id: string; duplicate: boolean; shortfall?: { sku: string; requested: number; available: number }[] };
 }
 
+export type OrderStatus = "paid" | "fulfilled" | "cancelled" | "refunded";
+
 export type OrderView = {
   id: string;
   stripe_session_id: string;
+  status: OrderStatus;
   email: string | null;
   customer_name: string | null;
   shipping_address: { line1?: string; line2?: string; postal_code?: string; city?: string; country?: string } | null;
@@ -56,7 +59,14 @@ export type OrderView = {
 
 /** The columns both order views read. Kept in one place so they cannot drift apart. */
 const ORDER_SELECT =
-  "id, stripe_session_id, email, customer_name, shipping_address, shipping_option, subtotal_cents, shipping_cents, total_cents, created_at, items:order_items ( sku, product_name, variant_label, quantity, unit_price_cents, total_cents )";
+  "id, stripe_session_id, status, email, customer_name, shipping_address, shipping_option, subtotal_cents, shipping_cents, total_cents, created_at, items:order_items ( sku, product_name, variant_label, quantity, unit_price_cents, total_cents )";
+
+/** Marks an order as sent. Called from the packing list at /admin/encomendas. */
+export async function markOrderFulfilled(id: string): Promise<void> {
+  const db = supabaseAdmin();
+  const { error } = await db.from("orders").update({ status: "fulfilled" }).eq("id", id);
+  if (error) throw error;
+}
 
 /**
  * Every order, newest first, for the packing list behind /admin/encomendas.
