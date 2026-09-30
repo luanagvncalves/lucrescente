@@ -410,16 +410,6 @@
   "sort_order": 40
  },
  {
-  "slug": "argila-verde-superfina",
-  "name": "Argila Verde Superfina",
-  "category": "Argilas",
-  "scientific_name": null,
-  "origin": "Argila mineral rica em óxido de ferro e outros minerais, responsáveis pela sua tonalidade esverdeada.",
-  "properties": "Maior poder absorvente do que a argila branca, capta com eficácia o excesso de sebo e impurezas, sendo indicada para peles mais oleosas ou com tendência a imperfeições. A sua textura fina ('superfina') permite uma aplicação mais uniforme e uma secagem mais controlada em máscaras faciais.",
-  "applications": "Usada nas nossas máscaras faciais purificantes, e também no champô sólido para cabelos oleosos, onde ajuda a absorver o excesso de oleosidade do couro cabeludo sem ressecar as pontas.",
-  "sort_order": 41
- },
- {
   "slug": "coenzima-q10",
   "name": "Coenzima Q10",
   "category": "Ativos",
@@ -485,7 +475,7 @@
   "category": "Outros Ingredientes",
   "scientific_name": "Aloe barbadensis miller.",
   "origin": "Planta suculenta originária da Península Arábica, hoje cultivada em regiões quentes e secas por todo o mundo. É conhecida há milénios pelo gel transparente guardado no interior das suas folhas.",
-  "properties": "Hidrata sem pesar, ajuda a acalmar a pele irritada ou exposta ao sol e contribui para a sensação de conforto em peles sensíveis. Nutre e suaviza, ajuda a atenuar cicatrizes e marcas, e é antioxidante, o que a torna útil na prevenção do aparecimento de borbulhas. O gel é composto maioritariamente por água, complementada por polissacáridos que ajudam a formar uma película protetora à superfície da pele, retendo humidade. Também contém pequenas quantidades de vitaminas (A, C, E) e minerais, e é geralmente bem tolerado mesmo em peles reativas ou com tendência a vermelhidão.",
+  "properties": "Hidrata sem pesar, ajuda a acalmar a pele irritada ou exposta ao sol e contribui para a sensação de conforto em peles sensíveis. Nutre, suaviza e ajuda a acalmar a pele. O gel é composto maioritariamente por água, complementada por polissacáridos que ajudam a formar uma película protetora à superfície da pele, retendo humidade. Também contém pequenas quantidades de vitaminas (A, C, E) e minerais, e é geralmente bem tolerado mesmo em peles reativas ou com tendência a vermelhidão.",
   "applications": "Usamos aloé vera como base hidratante em cremes corporais e em algumas das nossas máscaras faciais, normalmente combinado com hidrolatos calmantes como a camomila-romana ou a lavanda para reforçar o efeito de conforto na pele. Nos nossos sabonetes de rosto, mãos e corpo, é sempre aloé vera biológico, colhido e preparado por nós no momento, e não um gel processado comprado já pronto.",
   "sort_order": 48
  },
