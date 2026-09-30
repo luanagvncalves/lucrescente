@@ -300,27 +300,27 @@ export const pt = {
         items: [
           {
             q: "qual dos champôs sólidos é para mim?",
-            a: "temos quatro: para cabelos oleosos, para cabelos secos, para cabelos normais e um neutro/para crianças. o de cabelos secos é o mais procurado por quem tem couro cabeludo sensível, e o neutro é o que aconselhamos a peles e couros cabeludos ultrassensíveis, por não levar óleos na fórmula. se tiveres dúvidas, diz-nos como é o teu cabelo e ajudamos a escolher.",
+            a: "temos quatro: para cabelos oleosos, secos e normais, e um neutro que serve também para crianças. o de cabelos secos é o que mais nos pedem as pessoas com o couro cabeludo sensível, e o neutro é o que aconselhamos a peles e couros cabeludos ultrassensíveis, porque não leva óleos na fórmula. se ficares na dúvida, diz-nos como é o teu cabelo e ajudamos a escolher!",
           },
           {
             q: "posso usar um champô sólido se pinto ou aliso o cabelo?",
-            a: "sim, todos os nossos champôs sólidos podem ser usados em cabelo pintado e em cabelo com alisamento. em cabelo descolorado não os aconselhamos, porque não têm efeito anti-amarelamento.",
+            a: "podes, sim! todos os nossos champôs sólidos dão-se bem com cabelo pintado e com cabelo alisado. em cabelo descolorado não os aconselhamos, porque não têm efeito anti-amarelamento.",
           },
           {
             q: "como guardo os produtos sólidos?",
-            a: "num sítio seco entre utilizações. os produtos sólidos não levam água na fórmula, e mantê-los fora da água quando não estão a ser usados é o que mais os faz durar.",
+            a: "num sítio seco entre utilizações. não levam água na fórmula, e mantê-los longe da água quando não os estás a usar é o que mais os faz durar.",
           },
           {
             q: "os vossos desodorizantes são antitranspirantes?",
-            a: "não. não levam alumínio nem álcool, e não bloqueiam a transpiração nem obstroem os poros: controlam as bactérias e os maus cheiros de forma suave, respeitando o funcionamento natural da pele.",
+            a: "não, e fazemos questão de o dizer. não levam alumínio nem álcool, por isso não bloqueiam a transpiração nem entopem os poros: controlam as bactérias e os maus cheiros de forma suave, e deixam a pele fazer aquilo que ela já sabe fazer.",
           },
           {
             q: "tenho pele sensível. há alguma coisa a que deva estar atente?",
-            a: "vários produtos levam óleos essenciais, que podem causar irritação ou reação alérgica em peles mais sensíveis; os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita a zona das axilas, sobretudo depois de depilação recente. assinalamos isto na ficha de cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa pequena área da pele, e fala connosco, que podemos adaptar a fórmula.",
+            a: "vários produtos levam óleos essenciais, que podem irritar ou causar reação alérgica em peles mais sensíveis, e os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita as axilas, sobretudo depois de uma depilação recente. assinalamos isto em cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa zona pequena da pele e fala connosco: podemos adaptar a fórmula.",
           },
           {
             q: "que produtos posso usar diretamente na pele?",
-            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, por não levarem químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica). e a cera de soja das velas é hidratante, pelo que pode ir diretamente à pele. escolhemos os ingredientes a pensar nisto, mas a tua pele é tua: se for sensível, experimenta primeiro numa zona pequena.",
+            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, porque não levam químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica), e a cera de soja das velas é hidratante, por isso também pode ir à pele. escolhemos os ingredientes a pensar nisso, mas a pele é tua e és tu quem a conhece melhor: se for sensível, experimenta primeiro numa zona pequena.",
           },
         ],
       },
@@ -329,19 +329,19 @@ export const pt = {
         items: [
           {
             q: "fazem envios para fora de Portugal?",
-            a: "fazemos envios nacionais e internacionais. o custo do envio é calculado no final da compra, conforme o destino: vês o valor exacto antes de confirmares, sem surpresas.",
+            a: "fazemos! enviamos para todo o país e para o estrangeiro. o custo depende do destino, e vês o valor certo no final da compra, antes de confirmares.",
           },
           {
             q: "o produto que quero está esgotado. posso encomendar na mesma?",
-            a: "podes. fazemos tudo à mão e em pouca quantidade de cada vez, e alguns produtos (os champôs, os amaciadores e os sabonetes) precisam de tempo de repouso e maturação antes de seguirem. se esgotar, aceitamos a encomenda e avisamos-te assim que estiver pronta. também preparamos quantidades maiores sempre que precisares.",
+            a: "podes, sim. fazemos tudo à mão e em pouca quantidade de cada vez, e alguns produtos (os champôs, os amaciadores e os sabonetes) precisam de tempo de repouso e maturação antes de seguirem. se esgotar, aceitamos a encomenda e avisamos-te assim que estiver pronta. e se precisares de uma quantidade maior, também preparamos!",
           },
           {
             q: "posso pedir um produto feito à minha medida?",
-            a: "sim. podemos adaptar uma fórmula ao que precisas: mais suave, mais forte, ou com outro aroma. fala connosco antes de encomendar.",
+            a: "claro! adaptamos uma fórmula ao que precisas: mais suave, mais forte, ou com outro aroma. diz-nos o que tens em mente antes de encomendares e pensamos nisso contigo.",
           },
           {
             q: "posso devolver um produto?",
-            a: "se receberes o produto errado, ou o produto certo mas danificado (um frasco partido, uma embalagem suja, um produto derretido ou quebrado). aberto ou ainda fechado, desde que haja prova de que não está bom. tens 14 dias depois de o receberes para nos dizeres, e os portes de volta são por nossa conta. a página de devoluções explica tudo.",
+            a: "claro. se te chegar o produto errado, ou o certo mas estragado (um frasco partido, uma embalagem suja, um produto derretido ou quebrado), diz-nos: tanto faz se já o abriste ou não, só precisamos de uma fotografia para perceber o que aconteceu. tens 14 dias depois de o receberes e os portes de volta são por nossa conta. na página de devoluções está tudo explicado.",
           },
         ],
       },
@@ -350,11 +350,11 @@ export const pt = {
         items: [
           {
             q: "porque é que os produtos são sólidos?",
-            a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem (o que poupa também a água que se gastaria a fazer esse plástico). no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+            a: "porque cá por casa não usamos água no fabrico, e um produto sólido dispensa embalagem (o que poupa também a água que se gastaria a fazer esse plástico). no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
           },
           {
             q: "de que são feitas as vossas velas?",
-            a: "de cera vegetal de soja, que derrete devagar e por igual: duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. quase toda a decoração é natural (flores e folhas secas, conchas, pedrinhas), e há elementos vegetais que somos nós a prensar e a preparar.",
+            a: "de cera de soja, que é vegetal e derrete devagar e por igual: duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. o aroma vem só de óleos essenciais. quase toda a decoração é natural (flores e folhas secas, conchas, pedrinhas), e há elementos vegetais que somos nós a prensar e a preparar.",
           },
         ],
       },
