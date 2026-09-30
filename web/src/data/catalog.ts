@@ -151,7 +151,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 1,
     why_it_works:
-      "este é dos nossos champôs mais procurados por quem tem couro cabeludo sensível, ajudando a controlar alguns casos de eczema: a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais, e as farinhas ajudam a limpar suavemente. o óleo de coco, a manteiga de karité e o d-pantenol nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 acrescentam um perfil aromático suave e reconfortante. como os nossos champôs sólidos não têm químicos agressivos, também podem ser usados no corpo como sabonete (este em particular tem sido usado por quem tem pele atópica).",
+      "este é um dos champôs que mais nos procuram as pessoas com couro cabeludo sensível, e tem ajudado a controlar alguns casos de eczema. a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais e as farinhas ajudam a limpar suavemente, enquanto o óleo de coco, a manteiga de karité e a provitamina b5 (d-pantenol) nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 trazem um aroma suave e reconfortante. podes usá-lo em cabelo liso, encaracolado, pintado ou alisado. e como os nossos champôs sólidos não levam químicos agressivos, também podes usá-lo no corpo, como sabonete (este em particular tem sido usado por quem tem pele atópica).",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -423,7 +423,7 @@ export const products: ProductSeed[] = [
     category_slug: "roll-on",
     sort_order: 0,
     why_it_works:
-      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a camomila romana e a lavanda são as duas notas mais calmantes da fórmula, o petitgrain dá-lhe profundidade e o ylang-ylang uma nota floral mais envolvente, enquanto a laranja doce acrescenta um toque cítrico e luminoso.",
+      "para um momento de relaxamento: aplica nos pulsos e faz inalações profundas. o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a camomila romana e a lavanda são as duas notas mais calmantes da fórmula, o petitgrain dá-lhe profundidade e o ylang-ylang uma nota floral mais envolvente, enquanto a laranja doce acrescenta um toque cítrico e luminoso. a mistura de óleos pode ser adaptada ao que precisares: fala connosco.",
     ingredient_slugs: [
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-camomila-romana",
@@ -443,7 +443,7 @@ export const products: ProductSeed[] = [
     category_slug: "roll-on",
     sort_order: 1,
     why_it_works:
-      "o óleo de amêndoas doces serve de base suave para aplicar a mistura nas têmporas e na nuca. a hortelã-pimenta, o eucalipto radiata e a cânfora dão a sensação fresca e penetrante que se sente logo na pele, e a lavanda equilibra a mistura com uma nota mais suave e reconfortante.",
+      "para quando a cabeça pesa: aplica nas têmporas e na testa e massaja. o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta, o eucalipto radiata e a cânfora dão a sensação fresca e penetrante que se sente logo na pele, e a lavanda equilibra a mistura com uma nota mais suave e reconfortante. a mistura de óleos pode ser adaptada ao que precisares: fala connosco.",
     ingredient_slugs: [
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-hortela-pimenta",
@@ -462,7 +462,7 @@ export const products: ProductSeed[] = [
     category_slug: "roll-on",
     sort_order: 2,
     why_it_works:
-      "o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta, o eucalipto radiata e a cânfora acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula.",
+      "para quando o nariz está entupido: aplica na testa e por baixo dos olhos, de cada lado do nariz, e massaja. o óleo de amêndoas doces serve de base suave para aplicar a mistura na pele. a hortelã-pimenta, o eucalipto radiata e a cânfora acrescentam uma sensação fresca e ajudam a criar um aroma que facilita a sensação de respiração desimpedida, enquanto o tea tree reforça o perfil purificante da fórmula. a mistura de óleos pode ser adaptada ao que precisares: fala connosco.",
     ingredient_slugs: [
       "oleo-vegetal-de-amendoas-doces",
       "oleo-essencial-de-eucalipto-radiata",
