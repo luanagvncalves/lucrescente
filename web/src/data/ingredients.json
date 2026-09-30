@@ -36,7 +36,7 @@
   "scientific_name": "Ricinus communis.",
   "origin": "Extraído das sementes da mamoneira, uma planta de crescimento rápido cultivada em regiões tropicais e subtropicais, incluindo partes da Índia e do Brasil.",
   "properties": "Textura densa, viscosa e muito emoliente, com boa capacidade de reter humidade e formar uma camada protetora na superfície da pele e do cabelo. Rico em ácido ricinoleico, um ácido gordo pouco comum que lhe confere essa consistência espessa característica. É frequentemente usado em produtos para lábios, cabelo, sobrancelhas e unhas, onde a sua viscosidade ajuda a fixar outros ingredientes.",
-  "applications": "",
+  "applications": "Usado no amaciador, onde ajuda a nutrir o comprimento do cabelo.",
   "sort_order": 3
  },
  {
@@ -86,7 +86,7 @@
   "scientific_name": "Citrus bergamia.",
   "origin": "Extraído da casca da bergamota, um citrino cultivado sobretudo no sul de Itália.",
   "properties": "Aroma cítrico e floral, muito usado em perfumaria natural pelo seu perfil aromático equilibrado, que combina o frescor cítrico com uma nota floral mais suave. É tradicionalmente considerado relaxante e calmante, e associado a propriedades anti-inflamatórias e regeneradoras da pele.",
-  "applications": "Usado como nota aromática cítrica nos sabonetes de rosto e de corpo, em pequena quantidade, para equilibrar o aroma da lavanda.",
+  "applications": "Usado como nota aromática cítrica nos sabonetes de rosto e de corpo, em pequena quantidade, para equilibrar o aroma da lavanda. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 8
  },
  {
@@ -96,7 +96,7 @@
   "scientific_name": "Chamaemelum nobile.",
   "origin": "Extraído por destilação das flores de camomila-romana.",
   "properties": "Aroma suave e adocicado, tradicionalmente associado a um efeito calmante, tanto pelo aroma como pelos compostos presentes no óleo. Usado sempre muito diluído dada a sua potência.",
-  "applications": "Usado em pequenas quantidades no roll-on de relaxamento, no spray relaxante e no inalador, sempre com muito cuidado na dosagem.",
+  "applications": "Usado em pequenas quantidades no roll-on de relaxamento, no spray relaxante e no inalador, sempre com muito cuidado na dosagem. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 9
  },
  {
@@ -106,7 +106,7 @@
   "scientific_name": "Cymbopogon citratus.",
   "origin": "Também conhecida como capim-limão, é extraída por destilação das folhas desta planta tropical.",
   "properties": "Aroma cítrico intenso e fresco, muito usado em aromaterapia e perfumaria natural pela sua capacidade de refrescar e energizar um ambiente ou produto.",
-  "applications": "Usado como nota aromática fresca no desodorizante de tea-tree/erva-príncipe e nos champôs sólidos para cabelos oleosos e normais.",
+  "applications": "Usado como nota aromática fresca no desodorizante de tea-tree/erva-príncipe e nos champôs sólidos para cabelos oleosos e normais. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 10
  },
  {
@@ -126,7 +126,7 @@
   "scientific_name": "Eucalyptus radiata.",
   "origin": "Extraído por destilação das folhas de eucalipto, árvore originária da Austrália.",
   "properties": "Aroma fresco e penetrante, tradicionalmente associado a uma sensação de respiração desobstruída e a ambientes revigorantes, sendo uma variedade de eucalipto considerada mais suave do que outras.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e na vela de citronela.",
+  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e na vela de citronela. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 12
  },
  {
@@ -146,7 +146,7 @@
   "scientific_name": "Mentha piperita.",
   "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
   "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e no batom de hortelã-pimenta, onde dá uma sensação fresca e refrescante.",
+  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e no batom de hortelã-pimenta, onde dá uma sensação fresca e refrescante. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 14
  },
  {
@@ -156,7 +156,7 @@
   "scientific_name": "Citrus sinensis.",
   "origin": "Extraído da casca da laranja doce, um dos óleos essenciais cítricos mais usados em cosmética natural.",
   "properties": "Aroma cítrico doce e alegre, associado a uma sensação de bem-estar e frequentemente usado para equilibrar aromas mais intensos noutras misturas.",
-  "applications": "Usado como nota aromática no roll-on de relaxamento e no batom de laranja, para um cheirinho alegre que agrada quase toda a gente.",
+  "applications": "Usado como nota aromática no roll-on de relaxamento e no batom de laranja, para um cheirinho alegre que agrada quase toda a gente. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 15
  },
  {
@@ -166,7 +166,7 @@
   "scientific_name": "Lavandula angustifolia.",
   "origin": "Extraído por destilação das flores de lavanda, um dos óleos essenciais mais versáteis e conhecidos.",
   "properties": "Aroma floral e herbáceo, tradicionalmente associado a um efeito calmante, anti-inflamatório e cicatrizante, sendo um dos óleos essenciais mais estudados e um dos poucos considerados relativamente seguros para uso mais frequente, sempre diluído.",
-  "applications": "Usado nos sabonetes, na vela de citronela, nos roll-ons de relaxamento e de dores de cabeça, no spray relaxante e nos sais de banho, um dos aromas mais pedidos pelos nossos clientes.",
+  "applications": "Usado nos sabonetes, na vela de citronela, nos roll-ons de relaxamento e de dores de cabeça, no spray relaxante e nos sais de banho, um dos aromas mais pedidos pelos nossos clientes. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 16
  },
  {
@@ -186,7 +186,7 @@
   "scientific_name": "Citrus limon.",
   "origin": "Extraído a frio da casca do limão.",
   "properties": "Aroma cítrico vivo e energizante, muito usado em produtos de limpeza natural e perfumaria pela sensação imediata de frescura que transmite.",
-  "applications": "Usado como nota aromática fresca na máscara capilar, para um efeito revigorante.",
+  "applications": "Usado como nota aromática fresca na máscara capilar, para um efeito revigorante. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 18
  },
  {
@@ -196,7 +196,7 @@
   "scientific_name": "Cymbopogon martini.",
   "origin": "Extraído por destilação de uma erva aromática originária da Índia, aparentada com a citronela.",
   "properties": "Aroma floral suave, com notas que lembram a rosa; muito usado em cuidados de pele natural, sendo por vezes usado como alternativa mais acessível a óleos de rosa verdadeira em perfumaria.",
-  "applications": "Usado como nota floral no desodorizante de lavanda/palmarosa, um aroma mais acessível para quem adora rosa.",
+  "applications": "Usado como nota floral no desodorizante de lavanda/palmarosa, um aroma mais acessível para quem adora rosa. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 19
  },
  {
@@ -206,7 +206,7 @@
   "scientific_name": "Citrus aurantium (folhas e ramos).",
   "origin": "Extraído por destilação das folhas e ramos da laranjeira-amarga, distinto do óleo extraído da flor (neroli) ou da casca.",
   "properties": "Aroma verde, ligeiramente floral e amadeirado, muito usado em perfumaria natural como nota de fundo que dá profundidade a misturas mais complexas.",
-  "applications": "Usado como nota aromática de fundo no roll-on de relaxamento, dando profundidade à mistura.",
+  "applications": "Usado como nota aromática de fundo no roll-on de relaxamento, dando profundidade à mistura. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 20
  },
  {
@@ -216,7 +216,7 @@
   "scientific_name": "Cinnamomum camphora.",
   "origin": "Extraído das folhas de uma árvore cultivada principalmente em Madagáscar.",
   "properties": "Aroma fresco e amadeirado, com notas que lembram o eucalipto, tradicionalmente associado a ambientes revigorantes e usado em difusores para criar uma atmosfera mais fresca.",
-  "applications": "Usado no inalador, para um aroma fresco e penetrante.",
+  "applications": "Usado no inalador, para um aroma fresco e penetrante. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 21
  },
  {
@@ -226,7 +226,7 @@
   "scientific_name": "Melaleuca alternifolia.",
   "origin": "Extraído por destilação das folhas da árvore-do-chá, nativa da Austrália, onde é tradicionalmente usada pelos povos aborígenes.",
   "properties": "Aroma fresco e ligeiramente medicinal; um dos óleos essenciais mais estudados em cosmética natural, sendo tradicionalmente associado a peles com tendência oleosa ou a imperfeições, ajudando a transmitir uma sensação de limpeza.",
-  "applications": "Usado em pequenas quantidades no desodorizante de tea-tree/erva-príncipe e no roll-on para sinusite, para uma sensação extra de limpeza.",
+  "applications": "Usado em pequenas quantidades no desodorizante de tea-tree/erva-príncipe e no roll-on para sinusite, para uma sensação extra de limpeza. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 22
  },
  {
@@ -236,7 +236,7 @@
   "scientific_name": "Cananga odorata.",
   "origin": "Extraído das flores da cananga, árvore tropical cultivada sobretudo em Madagáscar e no Sudeste Asiático.",
   "properties": "Aroma floral intenso e exótico, muito valorizado em perfumaria natural como nota central marcante, sendo tradicionalmente associado a uma sensação de relaxamento.",
-  "applications": "Usado como nota floral marcante no roll-on de relaxamento, para um aroma mais envolvente.",
+  "applications": "Usado como nota floral marcante no roll-on de relaxamento, para um aroma mais envolvente. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 23
  },
  {
@@ -300,16 +300,6 @@
   "sort_order": 29
  },
  {
-  "slug": "hidrolato-de-alecrim",
-  "name": "Hidrolato de Alecrim",
-  "category": "Hidrolatos",
-  "scientific_name": "Rosmarinus officinalis.",
-  "origin": "Água aromática obtida por destilação das folhas de alecrim, planta aromática mediterrânica.",
-  "properties": "Tonificante e refrescante, tradicionalmente associado a cuidados capilares e a uma sensação de revitalização do couro cabeludo. Também usado como tónico facial para peles mistas, pelo seu efeito ligeiramente adstringente.",
-  "applications": "",
-  "sort_order": 30
- },
- {
   "slug": "hidrolato-de-camomila-romana",
   "name": "Hidrolato de Camomila Romana",
   "category": "Hidrolatos",
@@ -360,16 +350,6 @@
   "sort_order": 35
  },
  {
-  "slug": "cera-autoemulsionante-olivem",
-  "name": "Cera Autoemulsionante OliveM",
-  "category": "Ceras e Emulsionantes",
-  "scientific_name": null,
-  "origin": "Emulsionante vegetal derivado do azeite de oliva, desenvolvido para criar emulsões estáveis sem recorrer a ingredientes sintéticos.",
-  "properties": "Permite misturar água e óleo de forma estável e duradoura, resultando em texturas leves, não gordurosas, e uma sensação sedosa na pele. É considerado um emulsionante de perfil suave, adequado também para peles mais sensíveis.",
-  "applications": "",
-  "sort_order": 36
- },
- {
   "slug": "cera-de-abelha-amarela",
   "name": "Cera de Abelha Amarela",
   "category": "Ceras e Emulsionantes",
@@ -408,16 +388,6 @@
   "properties": "Absorve o excesso de oleosidade sem ressecar em excesso, graças à sua estrutura mineral que capta impurezas e sebo à superfície da pele sem penetrar profundamente. É a mais suave das argilas cosméticas, sendo adequada mesmo para peles sensíveis ou secas que precisam de uma limpeza mais delicada.",
   "applications": "Usada nos champôs sólidos, onde ajuda a limpar sem agressividade.",
   "sort_order": 40
- },
- {
-  "slug": "coenzima-q10",
-  "name": "Coenzima Q10",
-  "category": "Ativos",
-  "scientific_name": null,
-  "origin": "Composto naturalmente presente nas células do corpo humano, também sintetizado para uso em cosmética a partir de fontes vegetais.",
-  "properties": "Antioxidante reconhecido, ajuda a proteger a pele do stress oxidativo causado por fatores ambientais e é frequentemente associado a cuidados antienvelhecimento, sendo usado em concentrações baixas devido à sua elevada potência.",
-  "applications": "",
-  "sort_order": 42
  },
  {
   "slug": "conservante-cosgard",
@@ -488,16 +458,6 @@
   "properties": "Ligeiramente abrasivo e neutralizador de odores: ajuda a equilibrar o pH da pele e a neutralizar compostos responsáveis pelo odor corporal, em vez de simplesmente os mascarar. É um ingrediente clássico em desodorizantes naturais e, em concentrações baixas, em esfoliantes suaves de textura fina.",
   "applications": "Base dos nossos desodorizantes naturais.",
   "sort_order": 50
- },
- {
-  "slug": "cacau-natural",
-  "name": "Cacau Natural",
-  "category": "Outros Ingredientes",
-  "scientific_name": null,
-  "origin": "Pó obtido a partir das sementes torradas e moídas do cacaueiro (Theobroma cacao), rico em antioxidantes naturais.",
-  "properties": "Confere aroma e cor característicos, além de propriedades antioxidantes (flavonoides) que ajudam a proteger as fórmulas da oxidação. É também usado pontualmente como corante natural em produtos de esfoliação ou coloração suave.",
-  "applications": "",
-  "sort_order": 51
  },
  {
   "slug": "cavalinha-em-po",
@@ -586,7 +546,7 @@
   "scientific_name": "Cymbopogon nardus.",
   "origin": "Extraído por destilação de uma erva aromática tropical originária do Sudeste Asiático, aparentada com a palmarosa e a citronela-de-java.",
   "properties": "Aroma fresco, herbáceo e com notas cítricas, tradicionalmente usado em velas aromáticas e produtos de ambientação. Associado a propriedades refrescantes e revitalizantes.",
-  "applications": "Usado em velas aromáticas para criar um ambiente refrescante e natural, frequentemente combinado com outros óleos essenciais como lavanda e palmarosa.",
+  "applications": "Usado em velas aromáticas para criar um ambiente refrescante e natural, frequentemente combinado com outros óleos essenciais como lavanda e palmarosa. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 60
  },
  {

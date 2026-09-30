@@ -1,4 +1,5 @@
 import type { ProductLocale } from "./product-locales";
+import { getScentLabel, isScentProduct, sanitiseScent } from "./scent-choices";
 
 /**
  * Optional extras a customer can ask for on a product, chosen in the purchase
@@ -54,11 +55,13 @@ export function getAddOns(slug: string): AddOn[] {
  * and the line is simply packed without an extra.
  */
 export function sanitiseAddOn(slug: string, value: unknown): string | null {
+  if (isScentProduct(slug)) return sanitiseScent(value);
   if (typeof value !== "string") return null;
   return getAddOns(slug).find((a) => a.value === value)?.value ?? null;
 }
 
 /** For display only — falls through unchanged if it is not one we know. */
 export function getAddOnLabel(slug: string, value: string, locale: ProductLocale): string {
+  if (isScentProduct(slug)) return getScentLabel(value, locale);
   return getAddOns(slug).find((a) => a.value === value)?.label[locale] ?? value;
 }

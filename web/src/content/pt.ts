@@ -154,6 +154,14 @@ export const pt = {
     usedInTitle: "onde usamos este ingrediente", // ui
     emptyCategory: "ainda não há produtos nesta categoria. fala connosco para saber o que vem aí.", // ui
     organicNote: "* ingrediente biológico",
+    // the scent picker on the air freshener and the made-to-order candles
+    scentLabel: "aroma",
+    scentHint: "escolhe até 2 óleos essenciais.",
+    scentCombosLabel: "combinações que já fazemos",
+    scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
+    scentHarsh:
+      "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
+    scentIntro: "o aroma é à tua escolha: até 2 óleos essenciais, na caixa abaixo.",
   },
   fairs: {
     title: "feiras e mercados",

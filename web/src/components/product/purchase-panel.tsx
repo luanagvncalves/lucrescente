@@ -8,6 +8,7 @@ import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
+import { HARSH_SCENT, MAX_SCENTS, SCENTS, SCENT_COMBOS, isScentProduct, scentValue } from "@/content/scent-choices";
 
 /** The longest answer to "quantos ambientadores" we keep. */
 const HOW_MANY_MAX_LENGTH = 40;
@@ -52,7 +53,15 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
     translated wording.
   */
   const addOns = getAddOns(product.slug);
-  const [addOn, setAddOn] = useState("");
+  const [pickedAddOn, setAddOn] = useState("");
+  /*
+    The air freshener and the made-to-order candles take up to two essential
+    oils, chosen here. Held as the canonical Portuguese names, like the add-on,
+    because that is what the server checks and what is read when packing.
+  */
+  const hasScentPicker = isScentProduct(product.slug);
+  const [scents, setScents] = useState<string[]>([]);
+  const addOn = hasScentPicker ? scentValue(scents) : pickedAddOn;
   const orderLabel = [
     isAirFreshener ? null : selected.label,
     addOn || null,
@@ -148,6 +157,64 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
               );
             })}
           </div>
+        </fieldset>
+      ) : null}
+
+      {hasScentPicker ? (
+        <fieldset className="mb-6">
+          <legend className="label-brand mb-1 text-moss">{t.products.scentLabel}</legend>
+          <p className="mb-3 text-[0.88rem] text-ink/70">{t.products.scentHint}</p>
+
+          <p className="mb-2 text-[0.85rem] text-ink/70">{t.products.scentCombosLabel}</p>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {SCENT_COMBOS.map((combo) => {
+              const active = combo.length === scents.length && combo.every((c) => scents.includes(c));
+              return (
+                <button
+                  key={combo.join("+")}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setScents(active ? [] : combo)}
+                  className={`inline-flex h-11 items-center rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors ${
+                    active ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
+                  }`}
+                >
+                  {combo.map((c) => SCENTS.find((x) => x.value === c)?.label[locale] ?? c).join(" + ")}
+                </button>
+              );
+            })}
+          </div>
+
+          <div className="flex flex-wrap gap-2">
+            {SCENTS.map((scent) => {
+              const active = scents.includes(scent.value);
+              const full = !active && scents.length >= MAX_SCENTS;
+              return (
+                <label
+                  key={scent.value}
+                  className={`inline-flex h-11 items-center rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors has-[:focus-visible]:outline has-[:focus-visible]:outline-2 has-[:focus-visible]:outline-offset-3 has-[:focus-visible]:outline-violet ${
+                    active ? "cursor-pointer border-forest bg-forest text-white" : full ? "cursor-not-allowed border-moss/20 text-forest/40" : "cursor-pointer border-moss/40 text-forest hover:border-forest"
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    className="sr-only"
+                    checked={active}
+                    disabled={full}
+                    onChange={() => setScents((cur) => (cur.includes(scent.value) ? cur.filter((c) => c !== scent.value) : [...cur, scent.value]))}
+                  />
+                  {scent.label[locale]}
+                </label>
+              );
+            })}
+          </div>
+          {scents.length >= MAX_SCENTS ? <p className="mt-3 text-[0.85rem] text-ink/70">{t.products.scentMaxReached}</p> : null}
+          {scents.includes(HARSH_SCENT) ? (
+            <p role="alert" className="mt-3 rounded-2xl bg-clay/10 px-4 py-3 text-[0.88rem] leading-relaxed text-ink/85">
+              <span className="label-brand mr-2 text-clay">{t.products.allergenNoteLabel}</span>
+              {t.products.scentHarsh}
+            </p>
+          ) : null}
         </fieldset>
       ) : null}
 

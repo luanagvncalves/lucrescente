@@ -7,6 +7,7 @@ import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
 import { getIngredientName } from "@/content/ingredient-locales";
 import { getAllergenNote } from "@/content/allergen-notes";
+import { SCENT_INGREDIENT_SLUGS, isScentProduct } from "@/content/scent-choices";
 import { getShampooNote } from "@/content/shampoo-notes";
 import { productAvailability } from "@/lib/types";
 import { brandSentence } from "@/lib/brand-case";
@@ -60,7 +61,18 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // keep the Portuguese story when a translation is missing, rather than dropping the section
   const whyItWorks = copy.whyItWorks ?? product.why_it_works;
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
-  const allergenNote = getAllergenNote(product.ingredients.map((i) => i.slug), locale, product.slug);
+  // the air freshener and the made-to-order candles take whichever oils the customer picks,
+  // so the oils are chosen in the purchase panel rather than listed here
+  const scentProduct = isScentProduct(product.slug);
+  const shownIngredients = scentProduct ? product.ingredients.filter((i) => !SCENT_INGREDIENT_SLUGS.has(i.slug)) : product.ingredients;
+  // with a scent picker the cautions are not listed oil by oil (the product holds whichever two
+  // are chosen): one line about essential oils in general, and the one about cinnamon
+  const baseNote = getAllergenNote(
+    scentProduct ? ["oleo-essencial-de-lavanda"] : product.ingredients.map((i) => i.slug),
+    locale,
+    product.slug,
+  );
+  const allergenNote = scentProduct ? [baseNote, t.products.scentHarsh].filter(Boolean).join(" ") : baseNote;
   const hairNote = getShampooNote(product.slug, locale);
 
   // "cria o teu conjunto": same category first, then the rest of the catalogue.
@@ -194,9 +206,9 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
           <section className="mt-8" aria-labelledby="ingredientes-principais">
             <Label>{t.products.mainIngredients}</Label>
-            {product.ingredients.length ? (
+            {shownIngredients.length ? (
               <ul id="ingredientes-principais" className="mt-4 flex flex-wrap gap-2">
-                {product.ingredients.map((i) => (
+                {shownIngredients.map((i) => (
                   <li key={i.slug}>
                     <Link
                       href={`/ingredientes/${i.slug}${query}`}
@@ -212,6 +224,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
                 {t.products.noIngredientsListed}
               </p>
             )}
+            {scentProduct ? <p className="mt-4 text-[0.95rem] text-ink/80 measure">{t.products.scentIntro}</p> : null}
             {/*
               The caution that comes out of the ingredient list itself —
               essential oils, bicarbonate, a citrus oil in the sun, a tree nut.

@@ -250,6 +250,7 @@ export const products: ProductSeed[] = [
       "oleo-essencial-de-lavanda-4042-blend",
       "vitamina-e",
       "conservante-cosgard",
+      "oleo-de-ricino",
     ],
     is_solid: true,
     is_candle: false,
@@ -367,7 +368,7 @@ export const products: ProductSeed[] = [
     // it, from the dictionary (products.candleCase).
     why_it_works:
       "esta é para usar na pele. a cera de soja derrete a uma temperatura muito mais baixa do que a parafina das velas de supermercado, e é isso que permite deitar a cera derretida diretamente na pele para uma massagem, sem queimar. por ser uma cera vegetal, hidrata a pele à medida que se espalha, e não deixa por cima aquela camada pegajosa que as outras deixam.",
-    ingredient_slugs: ["cera-de-soja"],
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
@@ -383,7 +384,7 @@ export const products: ProductSeed[] = [
     // every candle rather than repeated five times here
     why_it_works:
       "esta vela não tem propriamente uma função: é apenas decorativa, feita para ser bonita. leva flores e folhas secas, conchas e pedrinhas, muitas delas prensadas e preparadas por nós.",
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-canela", "oleo-essencial-de-gengibre", "oleo-essencial-de-ho-wood", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-alecrim", "oleo-essencial-de-erva-principe-citratus"],
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
@@ -398,7 +399,7 @@ export const products: ProductSeed[] = [
     // them, so it lives in the dictionary (products.candleCase) and is shown to
     // every candle rather than repeated five times here
     why_it_works: null,
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-canela", "oleo-essencial-de-gengibre", "oleo-essencial-de-ho-wood", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-alecrim", "oleo-essencial-de-erva-principe-citratus"],
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
@@ -411,7 +412,7 @@ export const products: ProductSeed[] = [
     sort_order: 4,
     why_it_works:
       "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). também podes escolher o formato, o óleo essencial e o estilo de decoração que preferires. cada uma é feita depois de falares connosco, por isso pede com alguma antecedência.",
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-canela", "oleo-essencial-de-gengibre", "oleo-essencial-de-ho-wood", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-alecrim", "oleo-essencial-de-erva-principe-citratus"],
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
@@ -640,7 +641,7 @@ export const products: ProductSeed[] = [
     sort_order: 1,
     why_it_works:
       "funciona de duas maneiras, conforme o que preferires. derretido (num queimador ou numa lamparina) a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas. depois de derretida, também podes aproveitar a cera para massagens, porque a cera de soja hidrata a pele. escolhe o óleo essencial de que mais gostas e diz-nos qual é quando encomendares!",
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-canela", "oleo-essencial-de-gengibre", "oleo-essencial-de-ho-wood", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-alecrim", "oleo-essencial-de-erva-principe-citratus"],
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
