@@ -66,7 +66,7 @@
   "scientific_name": "Rosmarinus officinalis.",
   "origin": "Extraído por destilação a vapor das folhas de alecrim, arbusto aromático mediterrânico.",
   "properties": "Aroma herbáceo e estimulante, tradicionalmente associado a cuidados capilares revitalizantes e a uma sensação de energia. Como todos os óleos essenciais, é usado em concentrações muito baixas e sempre diluído.",
-  "applications": "",
+  "applications": "Usado nos ambientadores e nas velas, para um aroma que dá energia logo pela manhã.",
   "sort_order": 6
  },
  {
@@ -116,7 +116,7 @@
   "scientific_name": "Cymbopogon citratus.",
   "origin": "Extraído por destilação das folhas de erva-príncipe, uma gramínea aromática de origem tropical conhecida pelo seu aroma fresco e cítrico.",
   "properties": "Tem um aroma limonado, fresco e revitalizante. Em cosmética, é usado sobretudo pela sua nota aromática e pela sensação de limpeza que acrescenta às fórmulas.",
-  "applications": "",
+  "applications": "Usado nos ambientadores e nas velas, para um aroma cítrico fresco e uma sensação revigorante.",
   "sort_order": 11
  },
  {
@@ -136,7 +136,7 @@
   "scientific_name": "Pelargonium graveolens.",
   "origin": "Extraído das folhas e flores do gerânio-rosa, planta aromática cultivada sobretudo em África e no Mediterrâneo.",
   "properties": "Aroma floral e ligeiramente adocicado, com notas que lembram a rosa, muito apreciado em perfumaria natural e associado a um efeito equilibrante em fórmulas para pele mista.",
-  "applications": "Usado como nota floral em produtos perfumados.",
+  "applications": "Usado como nota floral nos ambientadores e nas velas.",
   "sort_order": 13
  },
  {
@@ -246,7 +246,7 @@
   "scientific_name": "Zingiber officinale.",
   "origin": "Extraído por destilação da raiz de gengibre, especiaria cultivada sobretudo na Ásia tropical.",
   "properties": "Aroma quente, picante e amadeirado, tradicionalmente associado a uma sensação de energia e aquecimento, muito usado em fórmulas revigorantes.",
-  "applications": "Usado em pequena quantidade em produtos aromáticos, para acrescentar uma nota quente e envolvente.",
+  "applications": "Usado em pequena quantidade nos ambientadores e nas velas, para acrescentar uma nota quente e envolvente.",
   "sort_order": 24
  },
  {
@@ -256,7 +256,7 @@
   "scientific_name": "Cinnamomum verum / Cinnamomum zeylanicum.",
   "origin": "Extraído da casca ou das folhas da canela, especiaria de origem asiática cultivada sobretudo no Sri Lanka.",
   "properties": "Aroma quente, doce e especiado, muito reconhecível, usado sempre em quantidades muito pequenas por ser um óleo intenso e potente.",
-  "applications": "Usado em quantidades mínimas em produtos aromáticos de inverno, para uma nota especiada e reconfortante.",
+  "applications": "Usado em quantidades mínimas nos ambientadores e nas velas, em aromas de inverno, para uma nota especiada e reconfortante.",
   "sort_order": 25
  },
  {
@@ -266,7 +266,7 @@
   "scientific_name": "Pogostemon cablin.",
   "origin": "Extraído por destilação das folhas de patchouli, planta aromática originária do Sudeste Asiático.",
   "properties": "Aroma terroso, amadeirado e persistente, muito usado em perfumaria natural como fixador, ajudando outros aromas a durar mais tempo.",
-  "applications": "Usado em pequena quantidade como base aromática em produtos perfumados, para dar profundidade e fixar o aroma.",
+  "applications": "Usado em pequena quantidade nos ambientadores e nas velas, como base aromática que dá profundidade e ajuda a fixar o aroma.",
   "sort_order": 26
  },
  {
@@ -276,7 +276,7 @@
   "scientific_name": "Cinnamomum camphora ct. linalol.",
   "origin": "Extraído por destilação da madeira de ho wood, árvore da China frequentemente usada como alternativa mais sustentável ao pau-rosa.",
   "properties": "Aroma floral e ligeiramente amadeirado, rico em linalol, tradicionalmente associado a um efeito calmante e equilibrante.",
-  "applications": "Usado como alternativa suave e sustentável em produtos aromáticos calmantes.",
+  "applications": "Usado nos ambientadores e nas velas como alternativa suave e sustentável, em aromas calmantes.",
   "sort_order": 27
  },
  {
@@ -458,16 +458,6 @@
   "properties": "Ajuda a proteger os óleos vegetais da oxidação (prolongando o prazo de validade dos produtos e evitando o aparecimento de odor a ranço), e contribui para a sensação de conforto e maciez da pele. Como antioxidante, ajuda também a neutralizar radicais livres gerados pela exposição ambiental.",
   "applications": "Adicionada ao amaciador como antioxidante natural, ajudando a prolongar o tempo de vida útil da fórmula.",
   "sort_order": 46
- },
- {
-  "slug": "vitamina-e-tocoferol-70",
-  "name": "Vitamina E (Tocopherol 70%)",
-  "category": "Ativos",
-  "scientific_name": null,
-  "origin": "Concentrado antioxidante rico em tocoferóis, fornecido numa base oleosa com 70% de vitamina E.",
-  "properties": "Ajuda a proteger os óleos vegetais da oxidação e contribui para uma sensação de maciez e conforto no cabelo.",
-  "applications": "Usada no Amaciador como antioxidante da fase oleosa, ajudando a proteger a fórmula e a prolongar a sua estabilidade.",
-  "sort_order": 47
  },
  {
   "slug": "aloe-vera",
