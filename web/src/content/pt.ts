@@ -156,12 +156,12 @@ export const pt = {
     organicNote: "* ingrediente biológico",
     // the scent picker on the air freshener and the made-to-order candles
     scentLabel: "aroma",
-    scentHint: "escolhe até 2 óleos essenciais.",
+    scentHint: "escolhe até 2 óleos.",
     scentCombosLabel: "combinações que já fazemos",
     scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
     scentHarsh:
-      "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
-    scentHintFixed: "a citronela está sempre incluída. podes juntar até 2 óleos essenciais.",
+      "a canela é dos óleos mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
+    scentHintFixed: "a citronela está sempre incluída. podes juntar até 2 óleos.",
   },
   fairs: {
     title: "feiras e mercados",
