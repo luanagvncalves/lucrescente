@@ -55,7 +55,7 @@ export function getAddOns(slug: string): AddOn[] {
  * and the line is simply packed without an extra.
  */
 export function sanitiseAddOn(slug: string, value: unknown): string | null {
-  if (isScentProduct(slug)) return sanitiseScent(value);
+  if (isScentProduct(slug)) return sanitiseScent(value, slug);
   if (typeof value !== "string") return null;
   return getAddOns(slug).find((a) => a.value === value)?.value ?? null;
 }

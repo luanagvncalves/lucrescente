@@ -22,11 +22,32 @@ export type Scent = {
   ingredient: string;
 };
 
+/** Oils the customer adds, on top of any oil the product always carries. */
 export const MAX_SCENTS = 2;
 
-/** The products that offer the picker. The citronella candle is a fixed recipe and does not. */
+/** An oil that is always in the product and cannot be taken out: the citronella candle is a citronella candle. */
+export const FIXED_SCENTS: Record<string, string[]> = { "vela-citronela": ["citronela"] };
+
+/** What the picker starts on: the citronella candle's usual recipe, with lavender and eucalyptus. */
+export const DEFAULT_SCENTS: Record<string, string[]> = { "vela-citronela": ["lavanda", "eucalipto"] };
+
+/** Oils a product does not offer. Cinnamon is rough on skin, so the massage candle leaves it out. */
+export const EXCLUDED_SCENTS: Record<string, string[]> = { "vela-massagem": ["canela"] };
+
+/** The oils a product offers to choose from, and the pairs it offers. */
+export function scentsFor(slug: string): Scent[] {
+  const skip = new Set([...(EXCLUDED_SCENTS[slug] ?? []), ...(FIXED_SCENTS[slug] ?? [])]);
+  return SCENTS.filter((s) => !skip.has(s.value));
+}
+export function combosFor(slug: string): string[][] {
+  const skip = new Set(EXCLUDED_SCENTS[slug] ?? []);
+  return SCENT_COMBOS.filter((c) => !c.some((n) => skip.has(n)));
+}
+
+/** The products that offer the picker. */
 const SCENT_PRODUCTS = new Set([
   "ambientador",
+  "vela-citronela",
   "vela-decorada",
   "vela-colorida",
   "vela-com-mensagem",
@@ -82,19 +103,21 @@ export function scentValue(names: string[]): string {
 }
 
 /** The value as the server will accept it: real oils, no repeats, at most two. Null otherwise. */
-export function sanitiseScent(value: unknown): string | null {
+export function sanitiseScent(value: unknown, slug = ""): string | null {
   if (typeof value !== "string" || !value.startsWith("aroma: ")) return null;
   const names = value.slice("aroma: ".length).split(SEPARATOR);
-  const known = new Set(SCENTS.map((s) => s.value));
-  if (names.length < 1 || names.length > MAX_SCENTS) return null;
+  const fixed = FIXED_SCENTS[slug] ?? [];
+  const offered = new Set([...fixed, ...scentsFor(slug).map((s) => s.value)]);
+  if (names.length < 1 || names.length > fixed.length + MAX_SCENTS) return null;
   if (new Set(names).size !== names.length) return null;
-  if (!names.every((n) => known.has(n))) return null;
+  if (!names.every((n) => offered.has(n))) return null;
+  if (!fixed.every((f, i) => names[i] === f)) return null; // the permanent oil is always there, and first
   return scentValue(names);
 }
 
 /** For display only — the oils in the language on screen. Unchanged if it is not one we know. */
 export function getScentLabel(value: string, locale: ProductLocale): string {
-  const clean = sanitiseScent(value);
+  const clean = value.startsWith("aroma: ") ? value : null;
   if (!clean) return value;
   const names = clean.slice("aroma: ".length).split(SEPARATOR);
   const label = names.map((n) => SCENTS.find((s) => s.value === n)?.label[locale] ?? n);

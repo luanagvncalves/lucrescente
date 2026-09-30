@@ -116,7 +116,7 @@ export const pt = {
     // "porque funciona" but "porquê estas e não as do supermercado"
     candleCaseLabel: "porque não são velas de supermercado",
     candleCase:
-      "as velas de supermercado são quase sempre de parafina, que é um resto da refinação do petróleo. ao arder, a parafina liberta fuligem (aquelas marcas pretas no frasco e no teto) e compostos que ficam no ar que se respira dentro de casa, ainda por cima com fragrâncias sintéticas por cima. as nossas são de cera de soja, que é vegetal: arde mais devagar e a uma temperatura mais baixa, não deixa fuligem e não traz derivados de petróleo. por arder devagar, a vela dura bastante mais tempo do que uma de parafina do mesmo tamanho, e a cera aproveita-se até ao fim. o aroma vem só de óleos essenciais, nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas, pedrinhas, muitas delas prensadas e preparadas por nós.",
+      "a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos que ficam no ar e que danificam os nossos pulmões. as velas de cera de soja ardem mais devagar e uniformemente (sem criar túneis) e nunca alcançam temperaturas tão elevadas quanto as de parafina. também não libertam fuligem, e não contêm qualquer tipo de componente tóxico ou sintético! o aroma vem dos óleos vegetais e nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas e pedrinhas.",
     hairTypeNote: "para que tipo de cabelo",
     // the optional flavour oil on the coloured lip balms
     flavourLabel: "sabor",
@@ -161,7 +161,7 @@ export const pt = {
     scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
     scentHarsh:
       "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
-    scentIntro: "o aroma é à tua escolha: até 2 óleos essenciais, na caixa abaixo.",
+    scentHintFixed: "a citronela está sempre incluída. podes juntar até 2 óleos essenciais.",
   },
   fairs: {
     title: "feiras e mercados",

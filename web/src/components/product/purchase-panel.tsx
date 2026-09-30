@@ -8,7 +8,7 @@ import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
-import { HARSH_SCENT, MAX_SCENTS, SCENTS, SCENT_COMBOS, isScentProduct, scentValue } from "@/content/scent-choices";
+import { DEFAULT_SCENTS, FIXED_SCENTS, HARSH_SCENT, MAX_SCENTS, SCENTS, combosFor, isScentProduct, scentValue, scentsFor } from "@/content/scent-choices";
 
 /** The longest answer to "quantos ambientadores" we keep. */
 const HOW_MANY_MAX_LENGTH = 40;
@@ -60,8 +60,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
     because that is what the server checks and what is read when packing.
   */
   const hasScentPicker = isScentProduct(product.slug);
-  const [scents, setScents] = useState<string[]>([]);
-  const addOn = hasScentPicker ? scentValue(scents) : pickedAddOn;
+  const fixedScents = FIXED_SCENTS[product.slug] ?? [];
+  const [scents, setScents] = useState<string[]>(DEFAULT_SCENTS[product.slug] ?? []);
+  const addOn = hasScentPicker ? scentValue([...fixedScents, ...scents]) : pickedAddOn;
   const orderLabel = [
     isAirFreshener ? null : selected.label,
     addOn || null,
@@ -163,11 +164,11 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       {hasScentPicker ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-1 text-moss">{t.products.scentLabel}</legend>
-          <p className="mb-3 text-[0.88rem] text-ink/70">{t.products.scentHint}</p>
+          <p className="mb-3 text-[0.88rem] text-ink/70">{fixedScents.length ? t.products.scentHintFixed : t.products.scentHint}</p>
 
           <p className="mb-2 text-[0.85rem] text-ink/70">{t.products.scentCombosLabel}</p>
           <div className="mb-4 flex flex-wrap gap-2">
-            {SCENT_COMBOS.map((combo) => {
+            {combosFor(product.slug).map((combo) => {
               const active = combo.length === scents.length && combo.every((c) => scents.includes(c));
               return (
                 <button
@@ -186,7 +187,15 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           </div>
 
           <div className="flex flex-wrap gap-2">
-            {SCENTS.map((scent) => {
+            {fixedScents.map((name) => (
+              <span
+                key={name}
+                className="inline-flex h-11 items-center rounded-full border border-forest bg-forest px-4 font-ui text-[0.92rem] font-medium text-white"
+              >
+                {SCENTS.find((x) => x.value === name)?.label[locale] ?? name}
+              </span>
+            ))}
+            {scentsFor(product.slug).map((scent) => {
               const active = scents.includes(scent.value);
               const full = !active && scents.length >= MAX_SCENTS;
               return (

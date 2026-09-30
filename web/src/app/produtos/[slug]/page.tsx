@@ -19,7 +19,6 @@ import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductContact } from "@/components/product/product-contact";
 import { ProductExtraInfo } from "@/components/product/product-extra-info";
-import { CandleMessageLink } from "@/components/product/candle-message-link";
 
 export const revalidate = 60;
 
@@ -65,14 +64,9 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // so the oils are chosen in the purchase panel rather than listed here
   const scentProduct = isScentProduct(product.slug);
   const shownIngredients = scentProduct ? product.ingredients.filter((i) => !SCENT_INGREDIENT_SLUGS.has(i.slug)) : product.ingredients;
-  // with a scent picker the cautions are not listed oil by oil (the product holds whichever two
-  // are chosen): one line about essential oils in general, and the one about cinnamon
-  const baseNote = getAllergenNote(
-    scentProduct ? ["oleo-essencial-de-lavanda"] : product.ingredients.map((i) => i.slug),
-    locale,
-    product.slug,
-  );
-  const allergenNote = scentProduct ? [baseNote, t.products.scentHarsh].filter(Boolean).join(" ") : baseNote;
+  // with a scent picker the cautions are not listed oil by oil (the product holds whichever oils
+  // are chosen); the one about cinnamon appears in the picker itself, when it is chosen
+  const allergenNote = getAllergenNote(scentProduct ? [] : product.ingredients.map((i) => i.slug), locale, product.slug);
   const hairNote = getShampooNote(product.slug, locale);
 
   // "cria o teu conjunto": same category first, then the rest of the catalogue.
@@ -182,11 +176,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
             {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
             {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
-            {product.is_candle ? (
-              <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">
-                <CandleMessageLink slug={product.slug} locale={locale} />
-              </p>
-            ) : null}
           </div>
         </div>
 
@@ -224,7 +213,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
                 {t.products.noIngredientsListed}
               </p>
             )}
-            {scentProduct ? <p className="mt-4 text-[0.95rem] text-ink/80 measure">{t.products.scentIntro}</p> : null}
             {/*
               The caution that comes out of the ingredient list itself —
               essential oils, bicarbonate, a citrus oil in the sun, a tree nut.
