@@ -300,7 +300,7 @@ export const pt = {
         items: [
           {
             q: "qual dos champôs sólidos é para mim?",
-            a: "temos quatro: para cabelos oleosos, secos e normais, e um neutro que serve também para crianças. o de cabelos secos é o que mais nos pedem as pessoas com o couro cabeludo sensível, e o neutro é o que aconselhamos a peles e couros cabeludos ultrassensíveis, porque não leva óleos na fórmula. se ficares na dúvida, diz-nos como é o teu cabelo e ajudamos a escolher!",
+            a: "temos quatro: para cabelos oleosos, secos e normais, e um neutro que serve também para crianças. o de cabelos secos é o que mais nos pedem as pessoas com o couro cabeludo sensível, e o neutro é o que aconselhamos a peles e couros cabeludos ultrassensíveis, porque não leva óleos essenciais na fórmula. se ficares na dúvida, diz-nos como é o teu cabelo e ajudamos a escolher!",
           },
           {
             q: "posso usar um champô sólido se pinto ou aliso o cabelo?",

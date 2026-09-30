@@ -240,7 +240,7 @@ export const products: ProductSeed[] = [
     category_slug: "amaciadores",
     sort_order: 0,
     why_it_works:
-      "para todos os tipos de cabelo: seco, oleoso, normal, liso ou encaracolado. o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
+      "para todos os tipos de cabelo: seco, oleoso, normal, liso ou encaracolado. o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura, e o óleo de abacate acrescenta hidratação extra. a vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "alcool-cetilico",
@@ -262,7 +262,7 @@ export const products: ProductSeed[] = [
     category_slug: "mascaras-capilares",
     sort_order: 1,
     why_it_works:
-      "o btms condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. a água dá leveza à fórmula; o alecrim qt cineol e o limão acrescentam um aroma fresco e revigorante. o cosgard ajuda a proteger a fórmula à base de água.",
+      "hidratante e nutritiva, para usar uma vez por semana. o btms condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. a água dá leveza à fórmula; o alecrim qt cineol e o limão acrescentam um aroma fresco e revigorante. o cosgard ajuda a proteger a fórmula à base de água. se precisares de outra quantidade, fala connosco.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "oleo-de-coco",
@@ -408,7 +408,7 @@ export const products: ProductSeed[] = [
     category_slug: "velas",
     sort_order: 4,
     why_it_works:
-      "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). cada uma é feita depois de falares connosco, por isso pede com alguma antecedência.",
+      "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). também podes escolher o formato, o óleo essencial e o estilo de decoração que preferires. cada uma é feita depois de falares connosco, por isso pede com alguma antecedência.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -504,7 +504,7 @@ export const products: ProductSeed[] = [
     category_slug: "sais-de-banho",
     sort_order: 0,
     why_it_works:
-      "preparados com sal marinho 100% natural, vindo diretamente da salina e sem qualquer tratamento, com óleos essenciais e flores secas. verdadeiramente lucrescentes, para um banho de imersão ou um escalda-pés bem relaxante e revigorante.",
+      "feitos à mão com sal marinho integral, vindo diretamente da salina, sem qualquer tratamento de purificação, limpeza ou branqueamento, por isso mantém todas as suas propriedades energizantes. juntamos-lhe óleo essencial de lavanda para um efeito calmante e uma mistura de flores secas para intensificar o relaxamento. perfeitos para um banho de imersão ou para um escalda-pés. verdadeiramente lucrescentes.",
     ingredient_slugs: [
       "sal-marinho-integral",
       "flores-de-camomila",
@@ -637,7 +637,7 @@ export const products: ProductSeed[] = [
     category_slug: "ambientadores",
     sort_order: 1,
     why_it_works:
-      "funciona de duas maneiras, conforme o que preferires. derretido (num queimador ou numa lamparina) a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas.",
+      "funciona de duas maneiras, conforme o que preferires. derretido (num queimador ou numa lamparina) a cera de soja liberta o aroma dos óleos essenciais com o calor, e o cheiro espalha-se por toda a divisão. sem derreter, pousado numa gaveta, num armário ou dentro do carro, os óleos continuam a soltar o aroma na mesma, só que devagar e num espaço mais pequeno à volta dele. é a mesma cera vegetal das nossas velas, por isso não leva parafina nem fragrâncias sintéticas. depois de derretida, também podes aproveitar a cera para massagens, porque a cera de soja hidrata a pele. escolhe o óleo essencial de que mais gostas e diz-nos qual é quando encomendares!",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: false,
