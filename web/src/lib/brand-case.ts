@@ -19,14 +19,30 @@
  * are what search results show.
  */
 export function brandCase(text: string): string {
+  let previous = "";
   return text
     .split(/(\s+|[()/])/) // keep the separators, so spacing and brackets survive
-    .map((part) => (isAbbreviation(part) ? part : part.toLowerCase()))
+    .map((part) => {
+      const keep = isAbbreviation(part, previous);
+      if (part.trim()) previous = part;
+      return keep ? part : part.toLowerCase();
+    })
     .join("");
 }
 
-function isAbbreviation(word: string): boolean {
-  return /[A-Z]/.test(word) && word === word.toUpperCase();
+/** The words a lone capital letter can follow and still be a vitamin, not "A" or "O". */
+const VITAMIN_WORDS = new Set(["vitamina", "vitamin", "vitamine"]);
+
+/**
+ * Written entirely in capitals — with one exception that matters: a single
+ * capital letter is an abbreviation only after "vitamina" (the E of vitamina
+ * E). On its own it is the article "A", "O" or the verb "É", which used to
+ * survive the lowercase and open sentences with a capital.
+ */
+function isAbbreviation(word: string, previous = ""): boolean {
+  if (!/[A-Z]/.test(word) || word !== word.toUpperCase()) return false;
+  if (word.replace(/[^\p{L}]/gu, "").length === 1) return VITAMIN_WORDS.has(previous.toLowerCase());
+  return true;
 }
 
 /**
@@ -53,11 +69,14 @@ const KEEPS_ITS_CAPITAL = new Set(["Theobroma", "Avena", "NaHCO₃"]);
  * brackets and slashes as punctuation, where a name splits on them.
  */
 export function brandSentence(text: string): string {
+  let previous = "";
   return text
     .split(/(\s+)/) // keep the separators, so spacing survives
     .map((part) => {
       const word = part.replace(/^[("'«¿¡]+/, "").replace(/[.,;:)»"'!?…]+$/, "");
-      if (isAbbreviation(word) || KEEPS_ITS_CAPITAL.has(word)) return part;
+      const keep = isAbbreviation(word, previous) || KEEPS_ITS_CAPITAL.has(word);
+      if (word) previous = word;
+      if (keep) return part;
       return part.replace(/\p{L}/u, (letter) => letter.toLowerCase()); // the first letter, past any bracket
     })
     .join("");

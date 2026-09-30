@@ -47,6 +47,12 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   const s = dict.ingredients.sections;
 
   const copy = getIngredientCopy(slug, locale, ingredient);
+  // the Latin name stays Latin, but the plant part in brackets is ordinary
+  // Portuguese in the database ("folhas e ramos") and read wrong on the en/fr pages
+  const scientificName = (ingredient.scientific_name ?? "")
+    .replace("(folhas e ramos)", locale === "en" ? "(leaves and twigs)" : locale === "fr" ? "(feuilles et rameaux)" : "(folhas e ramos)")
+    .replace("(soja)", locale === "en" ? "(soy)" : "(soja)")
+    .replace("(sementes)", locale === "en" ? "(seeds)" : locale === "fr" ? "(graines)" : "(sementes)");
   const categoryLabel = getIngredientCategoryName(ingredient.category, locale, ingredient.category);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
@@ -55,7 +61,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   // of a second id — so every one of these sections was pointing at headings
   // that do not exist and had no name at all for a screen reader.
   const sections: { id: string; title: string; text: string | null }[] = [
-    { id: "sec-nome-cientifico", title: s.scientificName, text: ingredient.scientific_name },
+    { id: "sec-nome-cientifico", title: s.scientificName, text: ingredient.scientific_name ? scientificName : null },
     { id: "sec-origem", title: s.origin, text: copy.origin },
     { id: "sec-propriedades", title: s.properties, text: copy.properties },
     { id: "sec-aplicacoes", title: s.applications, text: copy.applications },
@@ -75,7 +81,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
         <Label tone="violet">{categoryLabel}</Label>
         {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
         <h1 className="mt-3 text-h1 text-forest">{copy.name}</h1>
-        {ingredient.scientific_name ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{ingredient.scientific_name}</p> : null}
+        {ingredient.scientific_name ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
       </header>
 
       <div className="mt-12 grid gap-10 md:grid-cols-12">
