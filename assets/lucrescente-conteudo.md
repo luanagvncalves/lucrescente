@@ -125,7 +125,7 @@ A manteiga de karité e o óleo de coco dão uma base cremosa e confortável, en
 Ingredientes principais: Manteiga de Karité, Óleo de Coco, Óleo Essencial de Lavanda 40/42, Óleo Essencial de Palmarosa, Amido de Milho, Bicarbonato de Sódio
 
 **Desodorizante Tea-tree/Erva-príncipe**
-O óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, enquanto a erva-príncipe acrescenta um aroma fresco e cítrico. Como todos os nossos desodorizantes, não é antitranspirante e não tem alumínio nem álcool — o desodorizante é aplicado muito perto do corpo, por isso preferimos que respeite a pele em vez de bloquear a transpiração. Também aceitamos embalagens antigas para reutilizar, com desconto, e podemos ajustar a fórmula à tua pele.
+O óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, enquanto a erva-príncipe acrescenta um aroma fresco e cítrico. Como todos os nossos desodorizantes, não é antitranspirante e não tem alumínio nem álcool — o desodorizante é aplicado muito perto do corpo, por isso preferimos que respeite a pele em vez de bloquear a transpiração. Podemos ajustar a fórmula à tua pele.
 Ingredientes principais: Manteiga de Karité, Óleo de Coco, Óleo Essencial de Tea Tree, Óleo Essencial de Erva-Príncipe, Amido de Milho, Bicarbonato de Sódio
 
 **Champô Oleosos**
