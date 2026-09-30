@@ -362,7 +362,7 @@ export const pt = {
           },
           {
             q: "de que são feitas as vossas velas?",
-            a: "de cera de soja, que é vegetal e derrete devagar e por igual: duram mais tempo, sem desperdício de cera, e não levam derivados de petróleo nem fragrâncias sintéticas. o aroma vem só de óleos essenciais. quase toda a decoração é natural (flores e folhas secas, conchas, pedrinhas), e há elementos vegetais que somos nós a prensar e a preparar.",
+            a: "de cera de soja, que é vegetal. arde mais devagar e uniformemente (sem criar túneis) e nunca alcança temperaturas tão elevadas quanto a parafina das velas de supermercado, por isso dura mais tempo e não desperdiça cera. não liberta fuligem e não contém qualquer componente tóxico ou sintético. o aroma vem dos óleos vegetais e nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas e pedrinhas, muitas delas prensadas e preparadas por nós.",
           },
         ],
       },
