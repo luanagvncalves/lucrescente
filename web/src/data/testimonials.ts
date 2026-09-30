@@ -141,7 +141,7 @@ const collected: Testimonial[] = [
       "comprei um champô sólido para o couro cabeludo sensível que adorei, tinha imensa dermatite e desde que o uso não voltei a ter.",
     quoteLang: "pt",
     translations: {
-      en: "I bought a solid shampoo for sensitive scalp that I loved — I had a lot of dermatitis and since using it I haven't had it again.",
+      en: "I bought a solid shampoo for sensitive scalp that I loved, I had a lot of dermatitis and since using it I haven't had it again.",
       fr: "j'ai acheté un shampoing solide pour cuir chevelu sensible que j'ai adoré, j'avais beaucoup de dermatite et depuis que je l'utilise je n'en ai plus eu.",
     },
     product: "champô sólido para cabelos secos",
@@ -174,11 +174,11 @@ const collected: Testimonial[] = [
   {
     id: "roll-on-relax-presente",
     quote:
-      "Eu comprei convosco um roll-on terapêutico relax, e queria comprar outro — é para uma pessoa muito querida minha que tem muitos problemas com ansiedade e stress, experimentou o meu e adorou.",
+      "Eu comprei convosco um roll-on terapêutico relax, e queria comprar outro, é para uma pessoa muito querida minha que tem muitos problemas com ansiedade e stress, experimentou o meu e adorou.",
     quoteLang: "pt",
     translations: {
-      en: "I bought a therapeutic relax roll-on from you, and I'd like to buy another one — it's for someone very dear to me who has a lot of problems with anxiety and stress. She tried mine and loved it.",
-      fr: "J'ai acheté chez vous un roll-on thérapeutique relax, et j'aimerais en racheter un autre — c'est pour quelqu'un de très cher à moi qui a beaucoup de soucis d'anxiété et de stress. Elle a essayé le mien et a adoré.",
+      en: "I bought a therapeutic relax roll-on from you, and I'd like to buy another one, it's for someone very dear to me who has a lot of problems with anxiety and stress. She tried mine and loved it.",
+      fr: "J'ai acheté chez vous un roll-on thérapeutique relax, et j'aimerais en racheter un autre, c'est pour quelqu'un de très cher à moi qui a beaucoup de soucis d'anxiété et de stress. Elle a essayé le mien et a adoré.",
     },
     product: "roll-on relax",
     stars: 5,
@@ -262,8 +262,8 @@ const collected: Testimonial[] = [
     translations: { en: "I loved both deodorants.", fr: "J'ai adoré les deux déodorants." },
     product: "desodorizante lavanda/palmarosa e desodorizante tea-tree/erva-príncipe",
     productTranslations: {
-      en: "lavender/palmarosa and lemon verbena/tea tree deodorants",
-      fr: "déodorants lavande/palmarosa et verveine citronnée/tea tree",
+      en: "lavender/palmarosa and lemongrass/tea tree deodorants",
+      fr: "déodorants lavande/palmarosa et citronnelle/tea tree",
     },
     stars: 5,
   },
@@ -272,7 +272,7 @@ const collected: Testimonial[] = [
     quote: "Já vi a encomenda, adorei tudo, fiquei deslumbrada com tudo e o meu filho ficou encantado com as velas, trabalho excelente.",
     quoteLang: "pt",
     translations: {
-      en: "I've seen the order, I loved everything, I was amazed by it all, and my son was delighted with the candles — excellent work.",
+      en: "I've seen the order, I loved everything, I was amazed by it all, and my son was delighted with the candles, excellent work.",
       fr: "J'ai vu la commande, j'ai tout adoré, j'étais éblouie par tout et mon fils a été enchanté par les bougies, excellent travail.",
     },
     product: "velas",

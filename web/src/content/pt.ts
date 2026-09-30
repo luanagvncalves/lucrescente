@@ -315,7 +315,7 @@ export const pt = {
             a: "não, e fazemos questão de o dizer. não levam alumínio nem álcool, por isso não bloqueiam a transpiração nem entopem os poros: controlam as bactérias e os maus cheiros de forma suave, e deixam a pele fazer aquilo que ela já sabe fazer.",
           },
           {
-            q: "tenho pele sensível. há alguma coisa a que deva estar atente?",
+            q: "tenho pele sensível. há alguma coisa a que deva prestar atenção?",
             a: "vários produtos levam óleos essenciais, que podem irritar ou causar reação alérgica em peles mais sensíveis, e os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita as axilas, sobretudo depois de uma depilação recente. assinalamos isto em cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa zona pequena da pele e fala connosco: podemos adaptar a fórmula.",
           },
           {

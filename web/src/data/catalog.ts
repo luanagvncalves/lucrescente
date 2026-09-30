@@ -76,7 +76,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 0,
     why_it_works:
-      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável, enquanto que o bicarbonato de sódio neutraliza os odores e o amido de milho absorve a humidade. para além disto, o óleo de lavanda 40/42 acalma a pele (evitando irritações) e o de palmarosa ajuda no controlo das bactérias e microorganismos que causam os maus cheiros.",
+      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável, enquanto o bicarbonato de sódio neutraliza os odores e o amido de milho absorve a humidade. para além disto, o óleo de lavanda 40/42 acalma a pele (evitando irritações) e o de palmarosa ajuda no controlo das bactérias e microorganismos que causam os maus cheiros.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
