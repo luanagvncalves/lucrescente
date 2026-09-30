@@ -124,7 +124,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
-      "este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
+      "para cabelos oleosos ou com tendência a oleoso, em cabelo liso, encaracolado, pintado ou alisado. este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -201,7 +201,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 3,
     why_it_works:
-      "o sci proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
+      "pensado para pele delicada, sensível ou atópica e para crianças, em cabelo liso, encaracolado, pintado ou alisado. o sci proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -240,7 +240,7 @@ export const products: ProductSeed[] = [
     category_slug: "amaciadores",
     sort_order: 0,
     why_it_works:
-      "o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
+      "para todos os tipos de cabelo: seco, oleoso, normal, liso ou encaracolado. o btms e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. a manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. a vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "alcool-cetilico",
@@ -527,7 +527,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 0,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -545,7 +545,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 1,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -563,7 +563,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 2,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -581,7 +581,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 3,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -598,7 +598,7 @@ export const products: ProductSeed[] = [
     category_slug: "batons",
     sort_order: 4,
     why_it_works:
-      "a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -618,7 +618,7 @@ export const products: ProductSeed[] = [
     category_slug: "inaladores",
     sort_order: 0,
     why_it_works:
-      "a combinação de hortelã-pimenta, eucalipto radiata e ravintsara cria um aroma fresco e penetrante, associado a uma sensação de respiração desimpedida. a lavanda 40/42 e a camomila romana equilibram a mistura com notas mais suaves e reconfortantes.",
+      "para levar na mala ou no bolso e usar sempre que precisares: inspira os óleos essenciais diretamente do inalador. a combinação de hortelã-pimenta, eucalipto radiata e ravintsara cria um aroma fresco e penetrante, associado a uma sensação de respiração desimpedida. a lavanda 40/42 e a camomila romana equilibram a mistura com notas mais suaves e reconfortantes.",
     ingredient_slugs: [
       "oleo-essencial-de-hortela-pimenta",
       "oleo-essencial-de-lavanda-4042-blend",

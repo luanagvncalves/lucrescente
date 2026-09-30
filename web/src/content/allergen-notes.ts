@@ -57,8 +57,19 @@ const INGREDIENT_NOTES: Record<string, Record<ProductLocale, string>> = {
   },
 };
 
-export function getAllergenNote(ingredientSlugs: string[], locale: ProductLocale): string | null {
+/** Cautions that belong to one product rather than to an ingredient. */
+const PRODUCT_NOTES: Record<string, Record<ProductLocale, string>> = {
+  "vela-colorida": {
+    pt: "os corantes desta vela são seguros, mas não a aconselhamos para massagens nem para a pele, porque pode ressecá-la.",
+    en: "the colourants in this candle are safe, but we don't recommend it for massage or for use on the skin, because it can dry it out.",
+    fr: "les colorants de cette bougie sont sûrs, mais nous ne la conseillons pas pour les massages ni pour la peau, car elle peut la dessécher.",
+  },
+};
+
+export function getAllergenNote(ingredientSlugs: string[], locale: ProductLocale, productSlug?: string): string | null {
   const notes: string[] = [];
+  const productNote = productSlug ? PRODUCT_NOTES[productSlug]?.[locale] : undefined;
+  if (productNote) notes.push(productNote);
   if (ingredientSlugs.some((s) => s.startsWith("oleo-essencial-de-"))) {
     notes.push(GENERIC_ESSENTIAL_OIL_NOTE[locale]);
   }

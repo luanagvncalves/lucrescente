@@ -60,7 +60,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // keep the Portuguese story when a translation is missing, rather than dropping the section
   const whyItWorks = copy.whyItWorks ?? product.why_it_works;
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
-  const allergenNote = getAllergenNote(product.ingredients.map((i) => i.slug), locale);
+  const allergenNote = getAllergenNote(product.ingredients.map((i) => i.slug), locale, product.slug);
   const hairNote = getShampooNote(product.slug, locale);
 
   // "cria o teu conjunto": same category first, then the rest of the catalogue.
