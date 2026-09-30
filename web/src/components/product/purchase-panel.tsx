@@ -8,7 +8,9 @@ import { AnchorButton, Button } from "@/components/ui/button";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
-import { doseUnitPriceCents, sanitiseDose, DOSE_MAX_LENGTH } from "@/lib/dose-price";
+
+/** The longest answer to "quantos ambientadores" we keep. */
+const HOW_MANY_MAX_LENGTH = 40;
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
@@ -21,24 +23,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const firstAvailable = variants.find((v) => variantAvailability(v).kind === "available") ?? variants[0];
   const [selected, setSelected] = useState<Variant>(firstAvailable);
   const [qty, setQty] = useState(1);
-  const [ownContainer, setOwnContainer] = useState(false);
-  const [dose, setDose] = useState("");
   const [howMany, setHowMany] = useState("");
   const avail = variantAvailability(selected);
   const localizedName = getProductCopy(product.slug, locale, { name: product.name }).name;
-
-  /**
-   * Some products sell "embalagem própria" as a real variant, with its own
-   * price — on the bath salts it is "por encomenda" rather than the glass jar's
-   * 8,00 €. Those products were ALSO getting the hardcoded button below, which
-   * drew a second pill with exactly the same words and could not carry the
-   * variant's price. The variant wins: it is the one that can be bought.
-   *
-   * Compared against the Portuguese label because variant labels are stored in
-   * Portuguese; `t.products.ownContainerLabel` is whatever language is on screen.
-   */
-  const ownContainerLabelPt = getDictionary("pt").products.ownContainerLabel;
-  const hasOwnContainerVariant = variants.some((v) => v.label === ownContainerLabelPt);
 
   /**
    * A product sold in one format can still have a size worth printing — the
@@ -48,11 +35,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
    */
   const soleLabel = variants.length === 1 ? getVariantLabel(variants[0].label, locale) : null;
 
-  const isOwnPackaging = selected.label === ownContainerLabelPt;
-
   /**
    * The air freshener has one format, so a "formato" picker had nothing to
-   * offer beyond the own-container toggle. What varies is how many the
+   * offer. What varies is how many the
    * customer wants, so this product gets a free-text "quantidade" field
    * instead of the format picker below.
    */
@@ -71,24 +56,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
   const orderLabel = [
     isAirFreshener ? null : selected.label,
     addOn || null,
-    ownContainer ? t.products.ownContainerLabel : null,
-    isOwnPackaging && dose ? `dose: ${dose}` : null,
     isAirFreshener && howMany ? `quantidade: ${howMany}` : null,
   ].filter(Boolean).join(" · ") || null;
   const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
-
-  /*
-    The price for a custom dose, worked out by the SAME function the server
-    uses, over the same database price — see lib/dose-price.ts. This panel used
-    to carry its own copy of the sum, so it showed a number that `validateCart`
-    then re-priced away; the customer decided on one figure and was charged
-    another. Now the figure on screen is the one that will be charged, because
-    both come from doseUnitPriceCents.
-  */
-  const cleanDose = isOwnPackaging ? sanitiseDose(dose) : null;
-  const calculatedPrice = avail.kind === "available"
-    ? doseUnitPriceCents(avail.price_cents as number, cleanDose)
-    : 0;
 
   function add() {
     if (avail.kind !== "available") return;
@@ -97,12 +67,10 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       productSlug: product.slug,
       productName: localizedName,
       variantLabel: orderLabel,
-      unitPriceCents: calculatedPrice,
+      unitPriceCents: avail.price_cents,
       quantity: qty,
       maxStock: avail.stock,
       addOn: addOn || null,
-      ownContainer,
-      dose: cleanDose,
       image: product.images[0] ? { path: product.images[0].path, alt: product.images[0].alt } : null,
       isCandle: product.is_candle,
     });
@@ -112,7 +80,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
 
   return (
     <div className="card-brand p-6 sm:p-8">
-      {!isAirFreshener && (variants.length > 1 || !product.is_solid || soleLabel) ? (
+      {!isAirFreshener && (variants.length > 1 || soleLabel) ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.variant}</legend>
           <div className="flex flex-wrap gap-2">
@@ -157,18 +125,6 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                     {soleLabel}
                   </span>
                 ) : null}
-            {!product.is_solid && !product.is_deodorant && !hasOwnContainerVariant ? (
-              <button
-                type="button"
-                aria-pressed={ownContainer}
-                onClick={() => setOwnContainer((o) => !o)}
-                className={`inline-flex h-11 items-center gap-2 rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors ${
-                  ownContainer ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
-                }`}
-              >
-                {t.products.ownContainerLabel}
-              </button>
-            ) : null}
           </div>
         </fieldset>
       ) : null}
@@ -201,25 +157,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           <input
             type="text"
             placeholder="quantos ambientadores queres?"
-            maxLength={DOSE_MAX_LENGTH}
+            maxLength={HOW_MANY_MAX_LENGTH}
             value={howMany}
             onChange={(e) => setHowMany(e.target.value)}
-            className="w-full rounded-2xl border border-moss/40 px-4 py-3 text-[0.95rem] placeholder-moss/50 focus:border-forest focus:outline-none"
-          />
-        </fieldset>
-      ) : null}
-
-      {isOwnPackaging ? (
-        <fieldset className="mb-6">
-          <legend className="label-brand mb-3 text-moss">dose da embalagem</legend>
-          <input
-            type="text"
-            placeholder="ex: 500g, 1L, etc"
-            // the same ceiling the server trims to, so nobody types a dose that
-            // silently loses its tail on the way to the order
-            maxLength={DOSE_MAX_LENGTH}
-            value={dose}
-            onChange={(e) => setDose(e.target.value)}
             className="w-full rounded-2xl border border-moss/40 px-4 py-3 text-[0.95rem] placeholder-moss/50 focus:border-forest focus:outline-none"
           />
         </fieldset>
@@ -252,7 +192,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       ) : (
         <div className="space-y-5">
           <div className="flex items-baseline justify-between">
-            <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(calculatedPrice)}</p>
+            <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(avail.price_cents)}</p>
             {avail.stock <= 3 ? <span className="label-brand text-clay">{t.products.stockLeft(avail.stock)}</span> : null}
           </div>
           <div className="flex flex-col gap-3">

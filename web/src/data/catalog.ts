@@ -24,7 +24,7 @@ export type ProductSeed = {
   why_it_works: string | null; // verbatim "porque funciona" text, or null when not supplied
   ingredient_slugs: string[]; // links into /ingredientes/[slug]
   is_solid: boolean; // solid / water-free products (maturation note)
-  is_candle: boolean; // candles can be made in the customer's own containers
+  is_candle: boolean;
   is_deodorant: boolean;
   /**
    * Archived products stay in this file (and in the database, so past orders
@@ -91,7 +91,6 @@ export const products: ProductSeed[] = [
     variants: [
       { sku: "deo-lav-60", label: "60ml", price_cents: 600, stock: 3 },
       { sku: "deo-lav-150", label: "150ml", price_cents: 1500, stock: 0 },
-      { sku: "deo-lav-proprio", label: "embalagem própria", price_cents: 1000, stock: 100 },
     ],
   },
   {
@@ -100,7 +99,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 1,
     why_it_works:
-      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. podemos adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -409,7 +408,7 @@ export const products: ProductSeed[] = [
     category_slug: "velas",
     sort_order: 4,
     why_it_works:
-      "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). cada uma é feita depois de falares connosco, por isso pede com alguma antecedência. e se tiveres um frasco, uma caneca ou uma taça que gostasses de usar, basta entregares-nos o recipiente.",
+      "podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, casamentos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). cada uma é feita depois de falares connosco, por isso pede com alguma antecedência.",
     ingredient_slugs: ["cera-de-soja"],
     is_solid: false,
     is_candle: true,
@@ -516,17 +515,7 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
-    // "embalagem própria" MUST stay a variant, even though the panel also has a
-    // hardcoded bring-your-own-container button with the same label. The button
-    // carries no price, so with the variant gone, choosing it left the glass jar
-    // selected and charged 8,00 € for a container the customer was bringing, and
-    // the dose field — keyed on the selected variant's label — never appeared.
-    // The duplicate pill that prompted this is handled the other way round, by the
-    // panel's hasOwnContainerVariant guard hiding the button when this row exists.
     variants: [
-      // Priced per 100 units, the way doseUnitPriceCents reads it and the way the
-      // deodorant's own-container row already works: 5,00 € buys a 100 ml jar.
-      { sku: "sais-relaxante-proprio", label: "embalagem própria", price_cents: 500, stock: 100 },
       { sku: "sais-relaxante-frasco", label: "frasco de vidro", price_cents: 800, stock: 5 },
     ],
   },

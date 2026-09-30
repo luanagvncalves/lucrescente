@@ -7,7 +7,6 @@ import { validateCart, type CheckoutItemInput } from "@/lib/checkout";
 import { packItems, type CompactItem } from "@/lib/checkout-metadata";
 import { ALLOWED_COUNTRIES, SHIPPING_TIERS, shippingLabel } from "@/config/shipping";
 import { getProductCopy } from "@/content/product-locales";
-import { getDictionary } from "@/lib/i18n";
 import { getAddOnLabel } from "@/content/product-addons";
 import { getVariantLabel } from "@/content/variant-locales";
 import { supabaseAdmin } from "@/lib/supabase";
@@ -51,16 +50,10 @@ export async function POST(req: Request) {
     // packing list. It was checked against the product's own list in
     // `validateCart`, so by here it is one of ours or it is null.
     const addOn = l.addOn ? getAddOnLabel(l.productSlug, l.addOn, locale) : null;
-    // The container and the dose were composed into a browser-side label that
-    // `validateCart` then threw away, so neither reached Stripe, the order or
-    // the person filling the container. They are rebuilt here from the
-    // server's own sanitised values.
-    const ownContainer = l.ownContainer ? getDictionary(locale).products.ownContainerLabel : null;
-    const dose = l.dose ? `${getDictionary(locale).products.doseLabel}: ${l.dose}` : null;
     return {
       ...l,
       displayName: getProductCopy(l.productSlug, locale, { name: l.productName }).name,
-      displayVariant: [variant, addOn, ownContainer, dose].filter(Boolean).join(" · ") || null,
+      displayVariant: [variant, addOn].filter(Boolean).join(" · ") || null,
     };
   });
 

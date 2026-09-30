@@ -13,7 +13,6 @@ export type VariantLocale = "pt" | "en" | "fr";
 const copy: Record<string, Partial<Record<VariantLocale, string>>> = {
   "boião": { en: "jar", fr: "pot" },
   "frasco de vidro": { en: "glass jar", fr: "flacon en verre" },
-  "embalagem própria": { en: "your own container", fr: "votre propre contenant" },
   // the optional oils on the coloured lip balms, which ride in the compound
   // label as their own segment — see content/product-addons.ts, where the same
   // wording is defined for the purchase panel and the Stripe line item

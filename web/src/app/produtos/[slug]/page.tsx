@@ -172,7 +172,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
             {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
             {product.is_candle ? (
               <p className="mt-6 rounded-2xl bg-lavender/30 px-5 py-4 text-[0.92rem] leading-relaxed measure">
-                {t.products.candleNote}
                 <CandleMessageLink slug={product.slug} locale={locale} />
               </p>
             ) : null}

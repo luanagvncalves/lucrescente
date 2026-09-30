@@ -47,7 +47,6 @@ export function CartDrawer() {
     }
   }
 
-  const hasCandle = cart.lines.some((l) => l.isCandle);
 
   return (
     <>
@@ -158,10 +157,6 @@ export function CartDrawer() {
                   </ul>
 
                   <div className="space-y-4 border-t border-moss/15 px-6 py-6">
-                    <p className="rounded-2xl bg-lavender/30 px-4 py-3 text-[0.88rem] leading-snug text-ink">
-                      {t.cart.reuseNote}
-                      {hasCandle ? <> {t.products.candleNote}</> : null}
-                    </p>
                     <div className="flex items-baseline justify-between">
                       <span className="font-ui text-[0.95rem] text-ink/80">{t.cart.subtotal}</span>
                       <span className="font-display text-[1.6rem] text-forest">{formatPrice(cart.subtotalCents)}</span>

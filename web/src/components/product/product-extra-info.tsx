@@ -25,13 +25,6 @@ import { faqHref, type FaqAnchor } from "@/content/faq-anchors";
 /** Only solid products save the water, so only they make the claim. */
 const WATER_SAVING_CATEGORIES = ["champos", "amaciadores", "sabonetes"];
 
-/**
- * A lipstick tube and an inhaler are not packaging we take back — and the soaps
- * and the solid shampoos leave the workshop with no packaging at all, wrapped in
- * reused paper, so a box promising a reusable one had nothing behind it.
- */
-const REUSABLE_EXCLUDED_CATEGORIES = ["batons", "inaladores", "sabonetes", "champos"];
-
 const BOX =
   "inline-flex h-11 items-center rounded-full border border-sage bg-sage px-4 font-ui text-[0.92rem] font-medium text-white transition-colors hover:border-forest hover:bg-forest";
 
@@ -55,9 +48,6 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
 
   if (WATER_SAVING_CATEGORIES.includes(product.category.slug)) {
     claims.push({ label: t.productInfo.waterSavingLabel, anchor: "porque-solidos" });
-  }
-  if (!REUSABLE_EXCLUDED_CATEGORIES.includes(product.category.slug)) {
-    claims.push({ label: t.productInfo.reusableLabel, anchor: "devolver-embalagem" });
   }
   if (isSkinSafe(product.slug, product.category.slug)) {
     // one answer for every product now: the shampoos' own question, about

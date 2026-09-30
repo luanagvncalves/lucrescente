@@ -12,8 +12,7 @@ import { markShipped } from "./actions";
  * Both matter — this page shows customers' names, addresses and emails.
  *
  * Variant labels are printed exactly as stored, never re-translated. The label
- * holds the customer's actual choices — the format, their own container, the
- * dose they typed, which oil they picked — in the language they bought in, and
+ * holds the customer's actual choices — the format, which oil they picked — in the language they bought in, and
  * that is what has to reach the person packing the parcel.
  */
 export const metadata: Metadata = { title: "encomendas", robots: { index: false, follow: false } };

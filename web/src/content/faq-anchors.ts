@@ -21,7 +21,6 @@ const QUESTIONS = {
   "desodorizantes-antitranspirantes": "os vossos desodorizantes são antitranspirantes?",
   "usar-na-pele": "que produtos posso usar diretamente na pele?",
   "produto-personalizado": "posso pedir um produto feito à minha medida?",
-  "devolver-embalagem": "posso devolver a embalagem?",
   "porque-solidos": "porque é que os produtos são sólidos?",
 } as const;
 

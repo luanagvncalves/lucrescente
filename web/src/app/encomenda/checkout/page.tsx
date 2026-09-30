@@ -38,8 +38,6 @@ function Checkout() {
             sku: l.sku,
             quantity: l.quantity,
             addOn: l.addOn ?? null,
-            ownContainer: l.ownContainer === true,
-            dose: l.dose ?? null,
           })),
           // so Stripe's own page, and the return trip, keep the visitor's language
           locale,

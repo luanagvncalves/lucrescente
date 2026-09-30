@@ -119,8 +119,6 @@ export const pt = {
       "as velas de supermercado são quase sempre de parafina, que é um resto da refinação do petróleo. ao arder, a parafina liberta fuligem (aquelas marcas pretas no frasco e no teto) e compostos que ficam no ar que se respira dentro de casa, ainda por cima com fragrâncias sintéticas por cima. as nossas são de cera de soja, que é vegetal: arde mais devagar e a uma temperatura mais baixa, não deixa fuligem e não traz derivados de petróleo. por arder devagar, a vela dura bastante mais tempo do que uma de parafina do mesmo tamanho, e a cera aproveita-se até ao fim. o aroma vem só de óleos essenciais, nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas, pedrinhas, muitas delas prensadas e preparadas por nós.",
     hairTypeNote: "para que tipo de cabelo",
     // the optional flavour oil on the coloured lip balms
-    // the customer's own container, and how much to put in it
-    doseLabel: "dose",
     flavourLabel: "sabor",
     flavourNone: "sem sabor",
     deodorantFact: "aplica uma camada fina em pele limpa e seca: com o calor do corpo espalha-se melhor.",
@@ -149,9 +147,6 @@ export const pt = {
     variant: "formato", // ui
     stockLeft: (n: number) => (n === 1 ? "só resta 1 unidade" : `restam ${n} unidades`), // ui
     orderMessage: (name: string) => `olá! gostava de encomendar: ${name}`, // ui
-    ownContainerLabel: "embalagem própria", // ui — bring-your-own-container option in the size choice
-    candleNote:
-      "e se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças: só precisas de nos entregar os recipientes.",
     backToCatalog: "← voltar aos produtos", // ui
     relatedTitle: "cria o teu conjunto", // ui
     relatedPrev: "produtos anteriores", // ui
@@ -177,9 +172,6 @@ export const pt = {
     waterSavingLabel: "menos água",
     waterSavingText:
       "não usamos água no fabrico deste produto. os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limpe, e como não necessitam de embalagens, também poupamos a água usada no fabrico de plástico.",
-    reusableLabel: "embalagem reutilizável",
-    reusableText:
-      "todas as nossas embalagens são reutilizáveis. se tiveres uma embalagem antiga nossa ou de outra marca, entrega-nos e aproveita do nosso desconto de reutilização na tua próxima encomenda!",
     paperWrappedText:
       "embrulhamos todos os produtos em papel reutilizado, porque priorizamos a sustentabilidade e a produção consciente face ao consumo desnecessário.",
     skinSafeLabel: "seguros para a pele",
@@ -249,10 +241,11 @@ export const pt = {
    * sustentabilidade" was folded in here and its page removed: the water that
    * making plastic would have taken under "porque é que os produtos são
    * sólidos?", and all of "de que são feitas as vossas velas?" bar the
-   * containers. Do not trim them as duplicates — nothing else on the site
-   * carries them. The hand-sewn-wraps sentence that used to sit under "posso
-   * devolver a embalagem?" was removed for good, everywhere, at the brand's
-   * request — do not reintroduce it.
+   * anything else. Do not trim them as duplicates — nothing else on the site
+   * carries them. The hand-sewn-wraps sentence was removed for good, everywhere,
+   * at the brand's request — do not reintroduce it. Nor the offer to take back
+   * packaging or to fill the customer's own containers: the brand only sells
+   * products in its own new packaging and accepts no other, used or not.
    *
    * The questions the product pages link to are listed by their Portuguese
    * wording in content/faq-anchors.ts. Rewording one there and not here breaks
@@ -353,16 +346,8 @@ export const pt = {
         ],
       },
       {
-        title: "embalagens e sustentabilidade",
+        title: "sustentabilidade",
         items: [
-          {
-            q: "posso devolver a embalagem?",
-            a: "podes, e agradecemos. todas as nossas embalagens são reutilizáveis: traz-nos uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela) e reutilizamo-la no teu próximo produto, com um desconto de reutilização.",
-          },
-          {
-            q: "podem fazer as velas nos meus próprios recipientes?",
-            a: "podemos. se preferires, fazemos as tuas velas nos teus frascos, canecas ou taças: basta entregares-nos os recipientes.",
-          },
           {
             q: "porque é que os produtos são sólidos?",
             a: "porque não usamos água no fabrico, e porque um produto sólido dispensa embalagem (o que poupa também a água que se gastaria a fazer esse plástico). no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso também gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
@@ -384,7 +369,6 @@ export const pt = {
     browse: "ver produtos", // ui
     subtotal: "subtotal", // ui
     shippingNote: "os portes são calculados no passo seguinte, consoante o destino.", // ui
-    reuseNote: "se quiseres reutilizar as tuas embalagens, escreve-nos: combinamos contigo.",
     checkout: "finalizar encomenda", // ui
     checkingOut: "a preparar o pagamento…", // ui
     remove: "remover", // ui
