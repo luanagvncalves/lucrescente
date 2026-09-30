@@ -33,6 +33,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 - Os champôs sólidos podem ser usados no corpo (bons para pele atópica). O "Champô Secos" (aveia + argila branca) é procurado para eczema e comichão. O "Champô Oleosos" leva hidrolato de hortelã-pimenta e urtiga e cavalinha moídas à mão
 - Os sabonetes usam aloé vera biológico colhido fresco em casa. Ingredientes biológicos assinalados com * nas descrições
 - Embalagens: só fazemos produtos em embalagens nossas. Não aceitamos embalagens de outras pessoas nem embalagens nossas já usadas.
+- Óleos: "óleo essencial" só para os essenciais verdadeiros (os que dão o aroma: lavanda, canela, hortelã-pimenta, eucalipto…); "óleo vegetal" para os óleos de base (coco, amêndoas doces, argão, rícino, neem, abacate, baunilha macerada). Nunca trocar um pelo outro. No site são duas categorias separadas
 - Velas de cera de soja, sem derivados de petróleo nem fragrâncias sintéticas, decoradas com flores prensadas
 - Sem preços, sem carrinho, sem checkout, sem login, sem avaliações
 - Nunca inventar produtos, ingredientes, testemunhos, prémios ou alegações de saúde. Nunca usar fotos de banco de imagens
@@ -84,7 +85,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 Os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. Na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. E como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.
 
 **as nossas velas**
-As velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. Decoramos muitas com pétalas e flores secas, prensadas e preparadas por nós.
+A parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos que ficam no ar e que danificam os nossos pulmões. As velas de cera de soja ardem mais devagar e uniformemente (sem criar túneis) e nunca alcançam temperaturas tão elevadas quanto as de parafina. Também não libertam fuligem, e não contêm qualquer tipo de componente tóxico ou sintético! O aroma vem de óleos essenciais e nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas e pedrinhas.
 
 **feito à mão, em pequenas quantidades**
 Os produtos lucrescente são inteiramente fabricados a partir de ingredientes naturais, de forma artesanal, em pouca quantidade de cada vez — para garantir a qualidade das matérias-primas e o cuidado no fabrico. Alguns produtos podem ser repostos facilmente a cada dia; outros, como os champôs, os amaciadores e os sabonetes, precisam de mais repouso e maturação. Se algum destes produtos mais 'lentos' esgotar, aceitamos encomendas e fazemos envios nacionais e internacionais — e também podemos preparar quantidades maiores sempre que precisares.
@@ -145,8 +146,8 @@ O SCI proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajud
 Ingredientes principais: Tensioativo SCI, Ácido Esteárico, Argila Branca, Farinha de Aveia, Farinha de Coco, Óleo de Coco, Manteiga de Karité, Hidrolato de Camomila Romana, D-Pantenol (Provitamina B5), Conservante Cosgard
 
 **Amaciador**
-O BTMS e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. A manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura. A vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.
-Ingredientes principais: Cera Emulsionante BTMS, Álcool Cetílico, Manteiga de Karité, Óleo Vegetal de Amêndoas Doces, Óleo Vegetal de Argão, Óleo Essencial de Lavanda 40/42, Vitamina E, Conservante Cosgard
+O BTMS e o álcool cetílico condicionam e desembaraçam o cabelo, deixando-o mais macio e fácil de pentear. A manteiga de karité e os óleos de amêndoas doces e argão nutrem o comprimento e ajudam a reduzir a sensação de secura, e o óleo de abacate acrescenta hidratação extra. A vitamina E protege a fase oleosa da oxidação, enquanto a lavanda acrescenta um aroma suave.
+Ingredientes principais: Cera Emulsionante BTMS, Álcool Cetílico, Manteiga de Karité, Óleo Vegetal de Amêndoas Doces, Óleo Vegetal de Argão, Óleo Essencial de Lavanda 40/42, Vitamina E, Conservante Cosgard, Óleo de Rícino, Óleo de Abacate
 
 **Máscara 150ml**
 O BTMS condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. A água dá leveza à fórmula; o alecrim QT cineol e o limão acrescentam um aroma fresco e revigorante. O Cosgard ajuda a proteger a fórmula à base de água.
@@ -178,14 +179,14 @@ Ingredientes principais: Óleo Essencial de Hortelã-Pimenta, Óleo Essencial de
 
 ---
 
-## Ingredientes — 60 ingredientes em 8 categorias (por esta ordem)
+## Ingredientes — 63 ingredientes em 8 categorias (por esta ordem)
 - Página: etiqueta "de origem vegetal e mineral", título "os ingredientes que usamos, um a um", subtítulo "cada um tem a sua história e o seu propósito. escolhe um e vem descobrir de onde vem e para que serve 🌿"
 - Cada ficha tem 4 secções: Nome Científico · Origem · Propriedades · Aplicações em Lucrescente (texto completo no ficheiro `lovable-ingredientes-pt.md`)
-- Óleos Vegetais: Óleo de Baunilha Macerado · Óleo de Coco · Óleo de Neem · Óleo de Rícino · Óleo Vegetal de Amêndoas Doces · Óleo Vegetal de Argão
-- Óleos Essenciais: Alecrim · Alecrim QT Cineol · Bergamota · Camomila Romana · Erva-Príncipe · Erva-príncipe (Citratus) · Eucalipto Radiata · Gerânio Rosa · Hortelã-Pimenta · Laranja Doce · Lavanda · Lavanda 40/42 (blend) · Limão · Palmarosa · Petitgrain · Ravintsara · Tea Tree · Ylang-Ylang · Gengibre · Canela · Patchouli · Ho Wood
+- Óleos Vegetais: Óleo de Abacate · Óleo de Amêndoas Doces · Óleo de Argão · Óleo de Baunilha Macerado · Óleo de Coco · Óleo de Neem · Óleo de Rícino
+- Óleos Essenciais: Alecrim · Alecrim QT Cineol · Bergamota · Camomila Romana · Canela · Cânfora · Citronela · Erva-Príncipe · Erva-príncipe (Citratus) · Eucalipto Radiata · Gengibre · Gerânio Rosa · Ho Wood · Hortelã-Pimenta · Laranja Doce · Lavanda · Lavanda 40/42 (blend) · Limão · Palmarosa · Patchouli · Petitgrain · Ravintsara · Tea Tree · Ylang-Ylang
 - Manteigas: Manteiga de Cacau · Manteiga de Karité
-- Hidrolatos: Hidrolato de Alecrim · Hidrolato de Camomila Romana · Hidrolato de Hortelã-Pimenta · Hidrolato de Lavanda
-- Ceras e Emulsionantes: Ácido Esteárico · Álcool Cetílico · Cera Autoemulsionante OliveM · Cera de Abelha Amarela · Cera de Soja · Cera Emulsionante BTMS
-- Argilas: Argila Branca · Argila Verde Superfina
-- Ativos: Coenzima Q10 · Conservante Cosgard · D-Pantenol (Provitamina B5) · Tensioativo SCI · Vitamina E · Vitamina E (Tocopherol 70%)
-- Outros Ingredientes: Aloé Vera · Amido de Milho · Bicarbonato de Sódio · Cacau Natural · Cavalinha em Pó · Farinha de Aveia · Farinha de Coco · Glicerina Vegetal · Hibisco (Flor Moída) · Sal de Epsom · Sementes de Papoila · Urtiga Verde
+- Hidrolatos: Hidrolato de Camomila Romana · Hidrolato de Hortelã-Pimenta · Hidrolato de Lavanda
+- Ceras e Emulsionantes: Ácido Esteárico · Álcool Cetílico · Cera de Abelha Amarela · Cera de Soja · Cera Emulsionante BTMS
+- Argilas: Argila Branca
+- Ativos: Conservante Cosgard · D-Pantenol (Provitamina B5) · Tensioativo SCI · Vitamina E
+- Outros Ingredientes: Água Destilada · Álcool 96% · Aloé Vera · Amido de Milho · Bicarbonato de Sódio · Cavalinha em Pó · Farinha de Aveia · Farinha de Coco · Flores de Camomila · Flores de Lavanda · Flores de Rosa · Glicerina Vegetal · Hibisco (Flor Moída) · Óxido de Ferro · Sal Marinho Integral · Sementes de Papoila · Urtiga Verde
