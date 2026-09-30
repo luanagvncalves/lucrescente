@@ -251,6 +251,7 @@ export const products: ProductSeed[] = [
       "vitamina-e",
       "conservante-cosgard",
       "oleo-de-ricino",
+      "oleo-de-abacate",
     ],
     is_solid: true,
     is_candle: false,

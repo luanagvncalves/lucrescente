@@ -4,6 +4,9 @@ import { Reveal } from "@/components/ui/reveal";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
 import type { ProductLocale } from "@/content/product-locales";
 
+/** The oil categories read as a name on their own, so the tile does not repeat the category. */
+const OIL_CATEGORIES = ["Óleos Vegetais", "Óleos Essenciais"];
+
 /**
  * The eight ingredients teased on the home page. It used to show four behind a
  * "ver mais" toggle; the whole set is short enough to stand on the page, and
@@ -21,7 +24,7 @@ export function IngredientTeaserGrid({ items, locale = "pt" }: { items: Ingredie
             href={`/ingredientes/${i.slug}${locale === "pt" ? "" : `?idioma=${locale}`}`}
             className="card-brand block h-full p-5 transition-transform duration-200 hover:-translate-y-0.5"
           >
-            {i.category !== "Óleos Vegetais" ? <p className="label-brand text-violet">{getIngredientCategoryName(i.category, locale, i.category)}</p> : null}
+            {!OIL_CATEGORIES.includes(i.category) ? <p className="label-brand text-violet">{getIngredientCategoryName(i.category, locale, i.category)}</p> : null}
             {(() => {
               const copy = getIngredientCopy(i.slug, locale, {
                 name: i.name,
@@ -32,7 +35,7 @@ export function IngredientTeaserGrid({ items, locale = "pt" }: { items: Ingredie
               return (
                 <>
                   {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
-                  <p className={`font-display text-[1.3rem] leading-tight text-forest ${i.category !== "Óleos Vegetais" ? "mt-2" : ""}`}>
+                  <p className={`font-display text-[1.3rem] leading-tight text-forest ${!OIL_CATEGORIES.includes(i.category) ? "mt-2" : ""}`}>
                     {copy.name}
                   </p>
                   {i.scientific_name ? <p className="mt-1 text-[0.85rem] italic text-ink/70">{i.scientific_name}</p> : null}
