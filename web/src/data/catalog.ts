@@ -350,8 +350,8 @@ export const products: ProductSeed[] = [
     // them, so it lives in the dictionary (products.candleCase) and is shown to
     // every candle rather than repeated five times here
     why_it_works:
-      "cá por casa trocámos os sprays repletos de químicos por estas velas de citronela, simples e eficazes. os mosquitos não gostam do cheiro da citronela, por isso ajuda a afastar melgas, moscas e outros mosquitos. a lavanda e a palmarosa suavizam-no com uma nota floral, para um ambiente agradável e sem visitas indesejadas. continua a ser uma vela segura para a pele, como as outras. se quiseres outra combinação de aromas, os óleos essenciais podem ser personalizados: fala connosco.",
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-citronela", "oleo-essencial-de-lavanda", "oleo-essencial-de-palmarosa"],
+      "cá por casa trocámos os sprays repletos de químicos por estas velas de citronela, simples e eficazes. os mosquitos não gostam do cheiro da citronela, por isso ajuda a afastar melgas, moscas e outros mosquitos. a lavanda e o eucalipto criam um contraste entre tranquilidade e frescura, para um ambiente agradável e sem visitas indesejadas. continua a ser uma vela segura para a pele, como as outras. se quiseres outra combinação de aromas, os óleos essenciais podem ser personalizados, por exemplo com palmarosa: fala connosco.",
+    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-citronela", "oleo-essencial-de-lavanda", "oleo-essencial-de-eucalipto-radiata"],
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
