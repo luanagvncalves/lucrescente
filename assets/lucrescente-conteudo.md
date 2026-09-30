@@ -32,7 +32,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 - Champôs, amaciadores e sabonetes são sólidos e feitos sem água; precisam de tempo de maturação, por isso podem esgotar
 - Os champôs sólidos podem ser usados no corpo (bons para pele atópica). O "Champô Secos" (aveia + argila branca) é procurado para eczema e comichão. O "Champô Oleosos" leva hidrolato de hortelã-pimenta e urtiga e cavalinha moídas à mão
 - Os sabonetes usam aloé vera biológico colhido fresco em casa. Ingredientes biológicos assinalados com * nas descrições
-- Embalagens reutilizáveis: quem trouxer uma embalagem antiga (desodorizante, máscara capilar, vela) tem desconto de reutilização. As velas podem ser feitas nos frascos ou canecas do cliente
+- Embalagens: só fazemos produtos em embalagens nossas. Não aceitamos embalagens de outras pessoas nem embalagens nossas já usadas.
 - Velas de cera de soja, sem derivados de petróleo nem fragrâncias sintéticas, decoradas com flores prensadas
 - Sem preços, sem carrinho, sem checkout, sem login, sem avaliações
 - Nunca inventar produtos, ingredientes, testemunhos, prémios ou alegações de saúde. Nunca usar fotos de banco de imagens
@@ -64,7 +64,7 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 - Texto newsletter: Novos produtos, ingredientes e pequenas histórias, diretamente na tua caixa de entrada.
 - Campo newsletter: o teu email · botão: subscrever
 - Rodapé: lucrescente — feito à mão, com amor 🌱
-- Texto curto "sobre nós" (menu/rodapé): Tudo é feito à mão. Priorizamos a reutilização, por isso as nossas embalagens são feitas com objetos reaproveitados. Adaptamos cada produto a cada pessoa e podes trazer um recipiente que já tenhas em casa para fazermos o teu produto lá dentro.
+- Texto curto "sobre nós" (menu/rodapé): Tudo é feito à mão. Priorizamos a reutilização, por isso as nossas embalagens são feitas com objetos reaproveitados. Adaptamos cada produto a cada pessoa.
 
 ## Sobre nós — copy
 - Etiqueta: a nossa história
@@ -83,11 +83,8 @@ Casual, caloroso, pessoal, na primeira pessoa do plural ("nós", "cá em casa").
 **poupamos água**
 Os nossos champôs, amaciadores e sabonetes são sólidos — não usamos água no fabrico. Na tua higiene diária, os produtos sólidos deixam muito menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso não precisas de gastar tanta água para te sentires limp@. E como os produtos sólidos não usam embalagens, também poupamos a água usada no fabrico de plástico.
 
-**embalagens e embrulhos reutilizados**
-Todas as nossas embalagens são reutilizáveis. Se tiveres uma embalagem antiga (de um desodorizante, de uma máscara capilar, de uma vela), traz-nos e reutilizamo-la no teu próximo produto, com um desconto de reutilização. Mais reutilização, menos desperdício.
-
 **as nossas velas**
-As velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. Decoramos muitas com pétalas e flores secas, prensadas e preparadas por nós. E se preferires, podemos fazer as tuas velas nos teus próprios frascos, canecas ou taças — só precisas de nos entregar os recipientes.
+As velas lucrescente são feitas com cera vegetal de soja, que derrete lenta e uniformemente — por isso duram mais tempo, sem desperdício de cera, e não têm derivados de petróleo nem fragrâncias sintéticas. Decoramos muitas com pétalas e flores secas, prensadas e preparadas por nós.
 
 **feito à mão, em pequenas quantidades**
 Os produtos lucrescente são inteiramente fabricados a partir de ingredientes naturais, de forma artesanal, em pouca quantidade de cada vez — para garantir a qualidade das matérias-primas e o cuidado no fabrico. Alguns produtos podem ser repostos facilmente a cada dia; outros, como os champôs, os amaciadores e os sabonetes, precisam de mais repouso e maturação. Se algum destes produtos mais 'lentos' esgotar, aceitamos encomendas e fazemos envios nacionais e internacionais — e também podemos preparar quantidades maiores sempre que precisares.
@@ -124,7 +121,7 @@ Em dias de período, o corpo precisa de mais cuidados — e como a saúde começ
 Os produtos que não aparecem aqui ainda não têm texto.
 
 **Desodorizante Lavanda/Palmarosa**
-A manteiga de karité e o óleo de coco dão uma base cremosa e confortável, enquanto o amido de milho ajuda a absorver a humidade. O bicarbonato de sódio ajuda a neutralizar odores e os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Se tiveres uma embalagem antiga, podemos reutilizá-la (com desconto) e adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.
+A manteiga de karité e o óleo de coco dão uma base cremosa e confortável, enquanto o amido de milho ajuda a absorver a humidade. O bicarbonato de sódio ajuda a neutralizar odores e os óleos essenciais de lavanda 40/42 e palmarosa acrescentam um aroma floral suave. Não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. Podemos adaptar a fórmula às tuas necessidades — mais suave, mais forte, ou com outro aroma.
 Ingredientes principais: Manteiga de Karité, Óleo de Coco, Óleo Essencial de Lavanda 40/42, Óleo Essencial de Palmarosa, Amido de Milho, Bicarbonato de Sódio
 
 **Desodorizante Tea-tree/Erva-príncipe**
