@@ -6,10 +6,10 @@ import { ALLOWED_COUNTRIES, SHIPPING_TIERS, tierForCountry } from "../src/config
 import { productAvailability, variantAvailability, type Variant } from "../src/lib/types";
 
 const expectedVariants: Record<string, [number | null, number]> = {
-  "deo-lav-60": [550, 3],
-  "deo-lav-150": [800, 0],
-  "deo-tt-60": [550, 4],
-  "deo-tt-150": [800, 0],
+  "deo-lav-60": [600, 3],
+  "deo-lav-150": [1500, 0],
+  "deo-tt-60": [600, 4],
+  "deo-tt-150": [1500, 0],
   "champo-oleosos": [1200, 4],
   "champo-secos": [1200, 5],
   "champo-normais": [1200, 0],
@@ -17,16 +17,17 @@ const expectedVariants: Record<string, [number | null, number]> = {
   "champo-queda": [1200, 2],
   amaciador: [1500, 5],
   "mascara-150": [600, 4],
-  "sabonete-corpo-aveia": [800, 1],
   "sabonete-40g": [400, 3],
-  "sabonete-grande": [600, 0],
-  "vela-citronela": [null, 2],
+  "sabonete-de-corpo": [700, 0],
   "vela-massagem": [null, 1],
+  "vela-decorada": [null, 1],
+  "vela-colorida": [null, 1],
+  "vela-com-mensagem": [null, 1],
   "rollon-relax": [850, 6],
   "rollon-cabeca": [850, 6],
   "rollon-sinusite": [850, 5],
   "spray-relaxante": [800, 3],
-  "sais-relaxante": [null, 2],
+  "sais-relaxante-frasco": [800, 5],
   "batom-tijolo-boiao": [450, 2],
   "batom-tijolo-stick": [450, 2],
   "batom-herpes-boiao": [450, 0],
@@ -41,12 +42,12 @@ const expectedVariants: Record<string, [number | null, number]> = {
   ambientador: [120, 0],
 };
 
-test("catalogue models the supplied inventory as 26 products and 33 variants", () => {
-  assert.equal(products.length, 26);
-  assert.equal(products.flatMap((p) => p.variants).length, 33);
+test("catalogue models the supplied inventory as 28 products and 34 variants", () => {
+  assert.equal(products.length, 28);
+  assert.equal(products.flatMap((p) => p.variants).length, 34);
   assert.deepEqual(
     categories.map((c) => c.name),
-    ["ambientadores", "batons", "champôs", "cuidado capilar", "desodorizantes", "inaladores", "roll-on", "sabonetes", "sais de banho", "sprays", "velas"],
+    ["amaciadores", "ambientadores", "batons", "champôs", "desodorizantes", "inaladores", "máscaras capilares", "roll-on", "sabonetes", "sais de banho", "sprays", "velas"],
   );
 });
 
@@ -55,9 +56,9 @@ test("every canonical SKU has the exact supplied EUR price and launch stock", ()
   assert.deepEqual(actual, expectedVariants);
 });
 
-test("only the two candles and bath salts are on request", () => {
+test("only the four candles are on request", () => {
   const noPrice = products.flatMap((p) => p.variants).filter((v) => v.price_cents === null).map((v) => v.sku).sort();
-  assert.deepEqual(noPrice, ["sais-relaxante", "vela-citronela", "vela-massagem"]);
+  assert.deepEqual(noPrice, ["vela-colorida", "vela-com-mensagem", "vela-decorada", "vela-massagem"]);
 });
 
 test("availability derives on-request, sold-out and available states without faking stock", () => {
@@ -68,24 +69,25 @@ test("availability derives on-request, sold-out and available states without fak
   assert.deepEqual(productAvailability({ variants: [variant(550, 3), variant(800, 0)] }), { kind: "available", price_cents: 550, stock: 3 });
 });
 
-test("ingredient encyclopedia contains exactly 60 source-complete entries in 8 categories", () => {
-  assert.equal(ingredients.length, 60);
-  assert.equal(new Set(ingredients.map((i) => i.slug)).size, 60);
+test("ingredient encyclopedia contains 63 entries in 8 categories", () => {
+  assert.equal(ingredients.length, 63);
+  assert.equal(new Set(ingredients.map((i) => i.slug)).size, 63);
   assert.equal(new Set(ingredients.map((i) => i.category)).size, 8);
-  assert.equal(ingredients.filter((i) => i.scientific_name?.trim()).length, 39);
+  assert.equal(ingredients.filter((i) => i.scientific_name?.trim()).length, 44);
   for (const ingredient of ingredients) {
     assert.ok(ingredient.name.trim());
     assert.ok(ingredient.origin.trim());
     assert.ok(ingredient.properties.trim());
-    assert.ok(ingredient.applications.trim());
+    // `applications` may be empty: it only lists products we actually make
   }
 });
 
 test("shipping configuration has one unique tier per country", () => {
-  assert.deepEqual(SHIPPING_TIERS.map((t) => t.amount_cents), [450, 1200, 2200]);
+  assert.deepEqual(SHIPPING_TIERS.map((t) => t.amount_cents), [350, 950, 1250, 3500]);
   assert.equal(ALLOWED_COUNTRIES.length, new Set(ALLOWED_COUNTRIES).size);
   assert.equal(tierForCountry("pt")?.id, "pt");
   assert.equal(tierForCountry("IE")?.id, "eu");
+  assert.equal(tierForCountry("ES")?.id, "eu");
   assert.equal(tierForCountry("US")?.id, "world");
   assert.equal(tierForCountry("XX"), null);
 });

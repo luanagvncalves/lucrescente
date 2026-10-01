@@ -82,6 +82,18 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "white solid shampoo bars on floral fabric",
     fr: "pains de shampoing solide blancs sur un tissu floral",
   },
+  "dois boiões de desodorizante em creme amarelado, um aberto e outro fechado com etiqueta lucrescente, ao lado da tampa branca, sobre tecido floral": {
+    en: "two jars of yellowish cream deodorant, one open and one closed with a lucrescente label, beside the white lid, on floral fabric",
+    fr: "deux pots de déodorant en crème jaunâtre, l'un ouvert et l'autre fermé avec une étiquette lucrescente, à côté du couvercle blanc, sur un tissu floral",
+  },
+  "dois boiões de desodorizante em creme amarelado e uma tampa branca sobre tecido floral rosa e azul": {
+    en: "two jars of yellowish cream deodorant and a white lid on pink and blue floral fabric",
+    fr: "deux pots de déodorant en crème jaunâtre et un couvercle blanc sur un tissu floral rose et bleu",
+  },
+  "boiões brancos de máscara capilar com etiqueta lucrescente, um aberto, ao lado de uma tampa, sobre tecido floral rosa": {
+    en: "white jars of hair mask with a lucrescente label, one open, beside a lid, on pink floral fabric",
+    fr: "pots blancs de masque capillaire avec une étiquette lucrescente, l'un ouvert, à côté d'un couvercle, sur un tissu floral rose",
+  },
   "quatro champôs sólidos redondos de cor verde-acinzentada, com textura granulada, sobre tecido floral rosa": {
     en: "four round grey-green solid shampoo bars with a grainy texture, on pink floral fabric",
     fr: "quatre pains de shampoing solide ronds vert-gris à la texture granuleuse, sur un tissu floral rose",
