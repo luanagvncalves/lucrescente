@@ -102,7 +102,7 @@ export function CartDrawer() {
                   <ul className="flex-1 space-y-5 overflow-y-auto px-6 py-6">
                     {cart.lines.map((l) => (
                       <li key={lineKey(l)} className="flex gap-4">
-                        <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="relative h-24 w-20 shrink-0 overflow-hidden rounded-2xl bg-ivory">
+                        <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="relative aspect-[3/4] w-20 shrink-0 self-start overflow-hidden rounded-2xl bg-ivory">
                           {l.image ? (
                             <Image src={l.image.path} alt={getImageAlt(l.image.alt, locale)} fill sizes="80px" className="object-cover" />
                           ) : (

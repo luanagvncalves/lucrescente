@@ -73,7 +73,7 @@ export function RelatedCarousel({ items, locale = "pt" }: { items: Product[]; lo
               >
                 <ProductImage
                   image={p.images[0] ?? null}
-                  ratio="square"
+                  ratio="portrait"
                   rounded={false}
                   sizes="250px"
                   fallbackLabel={copy.name}
