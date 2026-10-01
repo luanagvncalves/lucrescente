@@ -357,6 +357,7 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
+    is_active: false, // archived: no photographs yet
     variants: one("vela-massagem", null, 1),
   },
   {

@@ -276,18 +276,12 @@ podes escolher o recipiente da tua vela, os seus óleos essenciais e o estilo de
 - por encomenda
 - Ingredientes principais: Cera de Soja (mais os óleos essenciais escolhidos na caixa de aroma)
 
-**vela massagem**
-- por encomenda
-- Ingredientes principais: Cera de Soja (mais os óleos essenciais escolhidos na caixa de aroma)
-esta vela também é para a pele. a cera de soja não alcança temperaturas tão elevadas como a parafina das velas de supermercado, e é isso que permite deitar a cera derretida diretamente na pele para uma massagem, sem queimar. a soja é hidratante, por isso a pele fica macia e sem aquela película pegajosa que as outras deixam.
-
 As velas (todas por encomenda) têm também um texto comum (título "porque funcionam"): a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos; as velas de cera de soja ardem mais devagar e uniformemente, sem criar túneis, e nunca alcançam temperaturas tão elevadas; não libertam fuligem nem têm componentes tóxicos ou sintéticos; o aroma vem de óleos essenciais e a decoração é natural.
 
-Produtos que existem no código mas estão desativados e não aparecem no site: a vela de citronela (retirada; já não existe), o batom laranja e o batom hortelã-pimenta (agora são só uma escolha de óleo nos dois batons hidratantes), champô sólido para queda de cabelo (em estudo), o antigo registo "sabonete 40g" (substituído pelo sabonete de rosto) e o batom herpes.
+Produtos que existem no código mas estão desativados e não aparecem no site: a vela de citronela (retirada; já não existe), a vela de massagem (arquivada, sem fotos), o batom laranja e o batom hortelã-pimenta (agora são só uma escolha de óleo nos dois batons hidratantes), champô sólido para queda de cabelo (em estudo), o antigo registo "sabonete 40g" (substituído pelo sabonete de rosto) e o batom herpes.
 
 ### Caixa de aroma (ambientador e velas)
-- No ambientador e em todas as velas (colorida, com mensagem, decorada e massagem) a cliente escolhe até 2 óleos essenciais, ou uma das escolhas mais populares (mostradas com uma ★, por baixo da lista de óleos): canela + laranja doce · palmarosa + lavanda · eucalipto + limão
-- Na vela de massagem não há canela (canela fica de fora)
+- No ambientador e em todas as velas (colorida, com mensagem e decorada) a cliente escolhe até 2 óleos essenciais, ou uma das escolhas mais populares (mostradas com uma ★, por baixo da lista de óleos): canela + laranja doce · palmarosa + lavanda · eucalipto + limão
 - Óleos disponíveis (a citronela é só um óleo à escolha; já não existe vela de citronela): alecrim, bergamota, camomila romana, canela, citronela, erva-príncipe, eucalipto, gengibre, gerânio rosa, ho wood, hortelã-pimenta, laranja doce, lavanda, limão, palmarosa, patchouli, petitgrain, ravintsara, tea tree, ylang-ylang
 - Quando a cliente escolhe a canela aparece um aviso: a canela é dos óleos essenciais mais agressivos para a pele; não usar a cera derretida em massagens nem diretamente na pele
 
