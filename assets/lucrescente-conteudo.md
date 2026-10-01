@@ -26,11 +26,10 @@ Este ficheiro resume o que o site diz hoje. A fonte de verdade é o código (`we
 2. Produtos (catálogo por categoria) e página de cada produto
 3. Ingredientes (lista por categoria) e ficha de cada ingrediente
 4. Sobre nós
-5. Feiras e mercados
-6. Perguntas frequentes (já inclui o que era "cuidados & sustentabilidade")
-7. Devoluções
-8. Feedbacks (comentários de clientes)
-9. Carrinho, confirmação de encomenda e pagamento
+5. Perguntas frequentes (já inclui o que era "cuidados & sustentabilidade")
+6. Devoluções
+7. Feedbacks (comentários de clientes)
+8. Carrinho, confirmação de encomenda e pagamento
 Idiomas: português (principal), inglês e francês, todos traduzidos.
 
 ## Tom de voz
@@ -94,10 +93,6 @@ Os nossos preferidos do momento: champô sólido para cabelos secos · desodoriz
 - luanaName: luana
 - luanaText: estou no terceiro ano da licenciatura em artes plásticas e trago para a marca o cuidado estético, a criatividade e a sensibilidade. penso na forma como cada produto é apresentado, descrito e integrado nos pequenos rituais de cuidado do dia a dia.
 - close: entre nós, a ciência encontra a expressão e cada produto ganha uma história própria.
-
-## Feiras e mercados
-- para além da loja online, também nos podes encontrar em feiras e mercados locais: a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.
-- em breve, mais informações sobre os próximos eventos e feiras onde nos podes encontrar!
 
 ## Perguntas frequentes
 - título: o que nos perguntam mais

@@ -33,7 +33,6 @@ export const pt = {
     products: "produtos",
     ingredients: "ingredientes",
     about: "sobre nós",
-    fairs: "feiras e mercados",
     feedback: "feedbacks",
     cart: "carrinho", // ui
     openMenu: "abrir menu", // ui
@@ -162,13 +161,6 @@ export const pt = {
     scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
     scentHarsh:
       "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
-  },
-  fairs: {
-    title: "feiras e mercados",
-    intro:
-      "para além da loja online, também nos podes encontrar em feiras e mercados locais: a mostrar os produtos ao vivo, a conhecer quem os vai usar e, às vezes, a fazer peças personalizadas na hora. segue o nosso instagram para saberes onde vamos estar a seguir.",
-    comingSoon: "em breve, mais informações sobre os próximos eventos e feiras onde nos podes encontrar!",
-    metaDescription: "encontra-nos em feiras e mercados locais",
   },
   productInfo: {
     // deodorant feature chips

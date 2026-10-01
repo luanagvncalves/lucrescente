@@ -246,6 +246,10 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "four pink candles in star-shaped glass holders, with glitter",
     fr: "quatre bougies roses dans des verres en forme d'étoile, avec des paillettes",
   },
+  "duas mulheres a sorrir dentro de uma tenda branca, com uma mesa rosa de produtos lucrescente e girassóis": {
+    en: "two smiling women inside a white tent, with a pink table of lucrescente products and sunflowers",
+    fr: "deux femmes souriantes sous une tente blanche, avec une table rose de produits lucrescente et des tournesols",
+  },
   "três velas em forma de estrela amarelas em vidro transparente": {
     en: "three yellow star-shaped candles in clear glass",
     fr: "trois bougies jaunes en forme d'étoile dans du verre transparent",
@@ -347,9 +351,9 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "an assortment of lucrescente products: amber glass bottles, deodorant in a white jar, soaps and a wooden stick, on pink and blue floral fabric",
     fr: "un assortiment de produits lucrescente : flacons en verre ambré, déodorant en pot blanc, savons et bâtonnet en bois, sur un tissu floral rose et bleu",
   },
-  "duas mulheres em trajes de época atrás de uma banca de feira com produtos lucrescente sobre toalha laranja": {
-    en: "two women in period dress behind a market stall of lucrescente products on an orange cloth",
-    fr: "deux femmes en costume d'époque derrière un stand de marché garni de produits lucrescente sur une nappe orange",
+  "duas mulheres a sorrir numa selfie, numa floresta": {
+    en: "two women smiling in a selfie, in a forest",
+    fr: "deux femmes souriantes en selfie, dans une forêt",
   },
   "vela de cera de soja feita dentro de uma caneca de cerâmica reutilizada, com flores secas, sobre tecido floral": {
     en: "soy wax candle made inside a reused ceramic mug, with dried flowers, on floral fabric",

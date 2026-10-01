@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { getDictionary, t } from "@/lib/i18n";
 import type { ProductLocale } from "@/content/product-locales";
-import { getImageAlt } from "@/content/image-alt-locales";
+import { ProductGallery } from "@/components/product/product-gallery";
 import { editorial } from "@/data/editorial";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
@@ -34,9 +33,14 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       <div className="mt-14 grid items-start gap-10 md:grid-cols-12">
         <Reveal className="md:col-span-7">
           {photo ? (
-            <div className="frame-brand relative aspect-[4/5] bg-paper md:aspect-[5/6]">
-              <Image src={photo.path} alt={getImageAlt(photo.alt, locale)} fill priority sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
-            </div>
+            <ProductGallery
+              images={[
+                { path: photo.path, alt: photo.alt, is_primary: true, sort_order: 0 },
+                { path: "/images/editorial/sobre-2.jpg", alt: "duas mulheres a sorrir dentro de uma tenda branca, com uma mesa rosa de produtos lucrescente e girassóis", is_primary: false, sort_order: 1 },
+              ]}
+              name={d.about.title}
+              locale={locale}
+            />
           ) : null}
         </Reveal>
         <div className="space-y-12 md:col-span-5 md:pt-6">

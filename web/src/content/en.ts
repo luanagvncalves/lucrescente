@@ -9,15 +9,8 @@ export const en: Dictionary = {
     description: "portuguese natural hygiene and beauty brand, handmade at home in small batches.",
   },
   nav: {
-    home: "home", products: "products", ingredients: "ingredients", about: "about us", fairs: "fairs and markets", feedback: "feedback",
+    home: "home", products: "products", ingredients: "ingredients", about: "about us", feedback: "feedback",
     cart: "cart", openMenu: "open menu", closeMenu: "close menu", skipToContent: "skip to content", homeLink: "lucrescente, home page",
-  },
-  fairs: {
-    title: "fairs and markets",
-    intro:
-      "besides the online shop, you can also find us at local fairs and markets: showing the products in person, meeting the people who'll use them, and sometimes making custom pieces on the spot. follow our instagram to find out where we'll be next.",
-    comingSoon: "more information about the next events and fairs where you can find us is coming soon!",
-    metaDescription: "find us at local fairs and markets",
   },
   productInfo: {
     notAntiperspirant: "not an antiperspirant",

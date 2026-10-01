@@ -27,7 +27,6 @@ export function Header() {
     { href: "/produtos", label: t.nav.products },
     { href: "/ingredientes", label: t.nav.ingredients },
     { href: "/sobre", label: t.nav.about },
-    { href: "/feiras-e-mercados", label: t.nav.fairs },
     { href: "/perguntas-frequentes", label: t.faq.label },
   ];
 
