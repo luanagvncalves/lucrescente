@@ -4,6 +4,7 @@ import { categories, products } from "../src/data/catalog";
 import ingredients from "../src/data/ingredients.json";
 import { ALLOWED_COUNTRIES, SHIPPING_TIERS, tierForCountry } from "../src/config/shipping";
 import { productAvailability, variantAvailability, type Variant } from "../src/lib/types";
+import { brandSentence } from "../src/lib/brand-case";
 
 const expectedVariants: Record<string, [number | null, number]> = {
   "deo-lav-60": [600, 3],
@@ -41,6 +42,10 @@ const expectedVariants: Record<string, [number | null, number]> = {
   inalador: [450, 6],
   ambientador: [120, 0],
 };
+
+test("brand sentence preserves BTMS, SCI, Q10 and B5", () => {
+  assert.equal(brandSentence("BTMS, SCI, coenzima Q10, B5."), "BTMS, SCI, coenzima Q10, B5.");
+});
 
 test("catalogue models the supplied inventory as 28 products and 34 variants", () => {
   assert.equal(products.length, 28);

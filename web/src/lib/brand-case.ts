@@ -32,6 +32,7 @@ export function brandCase(text: string): string {
 
 /** The words a lone capital letter can follow and still be a vitamin, not "A" or "O". */
 const VITAMIN_WORDS = new Set(["vitamina", "vitamin", "vitamine"]);
+const ABBREVIATIONS_WITH_DIGITS = new Set(["Q10", "B5"]);
 
 /**
  * Written entirely in capitals — with one exception that matters: a single
@@ -41,6 +42,7 @@ const VITAMIN_WORDS = new Set(["vitamina", "vitamin", "vitamine"]);
  */
 function isAbbreviation(word: string, previous = ""): boolean {
   if (!/[A-Z]/.test(word) || word !== word.toUpperCase()) return false;
+  if (ABBREVIATIONS_WITH_DIGITS.has(word)) return true;
   if (word.replace(/[^\p{L}]/gu, "").length === 1) return VITAMIN_WORDS.has(previous.toLowerCase());
   return true;
 }
