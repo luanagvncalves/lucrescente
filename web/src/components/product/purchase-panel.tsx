@@ -166,6 +166,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           <legend className="label-brand mb-1 text-moss">{t.products.scentLabel}</legend>
           <p className="mb-3 text-[0.88rem] text-ink/70">{fixedScents.length ? t.products.scentHintFixed : t.products.scentHint}</p>
 
+          <div className="flex flex-col">
           <div className="flex flex-wrap gap-2">
             {fixedScents.map((name) => (
               <span
@@ -197,7 +198,11 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
               );
             })}
           </div>
-          <p className="mb-2 mt-5 font-ui text-[0.95rem] font-medium text-forest">{t.products.scentCombosLabel} <span aria-hidden="true" className="text-clay">★</span></p>
+          <div className="order-first mb-5 sm:order-none sm:mb-0 sm:mt-5">
+          <p className="mb-2 font-ui text-[0.95rem] font-medium text-forest">
+            {t.products.scentCombosLabel}
+            <span aria-hidden="true" className="ml-2 align-middle text-[0.8em] text-clay">★</span>
+          </p>
           <div className="mb-4 flex flex-wrap gap-2">
             {combosFor(product.slug).map((combo) => {
               const active = combo.length === scents.length && combo.every((c) => scents.includes(c));
@@ -212,9 +217,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                   }`}
                 >
                   {combo.map((c) => SCENTS.find((x) => x.value === c)?.label[locale] ?? c).join(" + ")}
+                  <span aria-hidden="true" className={`ml-2 text-[0.8em] ${active ? "text-white" : "text-clay"}`}>★</span>
                 </button>
               );
             })}
+          </div>
+          </div>
           </div>
           {scents.length >= MAX_SCENTS ? <p className="mt-3 text-[0.85rem] text-ink/70">{t.products.scentMaxReached}</p> : null}
           {scents.includes(HARSH_SCENT) ? (
