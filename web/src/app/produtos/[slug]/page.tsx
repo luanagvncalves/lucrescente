@@ -159,7 +159,13 @@ export default async function ProductPage({ params, searchParams }: Params) {
               <section aria-labelledby="porque">
                 {/* a candle is not answering "does this work" but "why this
                     rather than the one in the supermarket" */}
-                {whyItWorks ? <p className="text-body-lg measure">{whyItWorks}</p> : null}
+                {whyItWorks
+                  ? whyItWorks.split("\n\n").map((para, i) => (
+                      <p key={i} className={i ? "mt-5 text-body-lg measure" : "text-body-lg measure"}>
+                        {para}
+                      </p>
+                    ))
+                  : null}
                 <Label className={whyItWorks ? "mt-8" : ""}>{t.products.candleCaseLabel}</Label>
                 <p id="porque" className="mt-5 text-body-lg measure">
                   {t.products.candleCase}

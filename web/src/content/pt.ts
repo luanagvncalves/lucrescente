@@ -114,7 +114,7 @@ export const pt = {
     whyItWorks: "porque funciona",
     // the candles answer a different question from every other product: not
     // "porque funciona" but "porquê estas e não as do supermercado"
-    candleCaseLabel: "porque não são velas de supermercado",
+    candleCaseLabel: "porque funcionam",
     candleCase:
       "a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos que ficam no ar e que danificam os nossos pulmões. as velas de cera de soja ardem mais devagar e uniformemente (sem criar túneis) e nunca alcançam temperaturas tão elevadas quanto as de parafina. também não libertam fuligem, e não contêm qualquer tipo de componente tóxico ou sintético! o aroma vem de óleos essenciais e nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas e pedrinhas.",
     hairTypeNote: "para que tipo de cabelo",
