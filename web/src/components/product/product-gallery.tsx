@@ -10,7 +10,6 @@ import type { ProductImage as Img } from "@/lib/types";
 export function ProductGallery({ images, name, locale = "pt" }: { images: Img[]; name: string; locale?: ProductLocale }) {
   const t = getDictionary(locale);
   const [index, setIndex] = useState(0);
-  const current = images[index];
 
   const goToPrevious = () => setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   const goToNext = () => setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -27,7 +26,25 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
         a 3:4 photograph fills it edge to edge with nothing cropped away.
       */}
       <div className="frame-brand relative aspect-[3/4] w-full max-w-[60vh] bg-paper group">
-        <Image key={current.path} src={current.path} alt={getImageAlt(current.alt, locale)} fill priority={index === 0} sizes="(min-width: 768px) 58vw, 100vw" className="object-cover" />
+        {/*
+          Every photograph is on the page from the start, stacked, and the slide
+          only changes which one is visible. Mounting the next one on click left
+          the frame blank (the paper colour) until it had downloaded — on a slow
+          connection that was two white photographs in a row.
+        */}
+        {images.map((img, i) => (
+          <Image
+            key={img.path}
+            src={img.path}
+            alt={getImageAlt(img.alt, locale)}
+            fill
+            priority={i === 0}
+            loading="eager"
+            aria-hidden={i !== index}
+            sizes="(min-width: 768px) 58vw, 100vw"
+            className={`object-cover object-center transition-opacity duration-200 ${i === index ? "opacity-100" : "pointer-events-none opacity-0"}`}
+          />
+        ))}
 
         {images.length > 1 && (
           <>
