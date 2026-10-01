@@ -5,6 +5,7 @@ import { Suspense, useState } from "react";
 import { useLocale } from "@/lib/use-locale";
 import { useCart, lineKey } from "@/lib/cart-store";
 import { getVariantLabel } from "@/content/variant-locales";
+import { getProductCopy } from "@/content/product-locales";
 import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
@@ -103,7 +104,7 @@ function Checkout() {
               {cart.lines.map((l) => (
                 <li key={lineKey(l)} className="flex justify-between gap-4">
                   <span>
-                    {l.quantity} × {l.productName}
+                    {l.quantity} × {getProductCopy(l.productSlug, locale, { name: l.productName }).name}
                     {l.variantLabel ? ` (${getVariantLabel(l.variantLabel, locale)})` : ""}
                     {labelHasPopularScent(l.variantLabel) ? <span aria-hidden="true" className="ml-1 text-[0.8em] text-clay">★</span> : null}
                   </span>

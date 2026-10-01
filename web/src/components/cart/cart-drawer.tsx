@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocale } from "@/lib/use-locale";
 import { getImageAlt } from "@/content/image-alt-locales";
+import { getProductCopy } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { isPopularScent } from "@/content/scent-choices";
 import { useCart, lineKey } from "@/lib/cart-store";
@@ -115,7 +116,7 @@ export function CartDrawer() {
                           <div className="flex items-start justify-between gap-3">
                             <div>
                               <Link href={`/produtos/${l.productSlug}${query}`} onClick={cart.close} className="font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
-                                {l.productName}
+                                {getProductCopy(l.productSlug, locale, { name: l.productName }).name}
                               </Link>
                               {l.variantLabel ? <p className="text-[0.85rem] text-ink/70">{getVariantLabel(l.variantLabel, locale)}{isPopularScent(l.addOn) ? <span aria-hidden="true" className="ml-2 text-[0.8em] text-clay">★</span> : null}</p> : null}
                             </div>

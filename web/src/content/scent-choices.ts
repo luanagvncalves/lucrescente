@@ -59,7 +59,7 @@ export const SCENTS: Scent[] = [
   { value: "camomila romana", label: { pt: "camomila romana", en: "roman chamomile", fr: "camomille romaine" }, ingredient: "oleo-essencial-de-camomila-romana" },
   { value: "canela", label: { pt: "canela", en: "cinnamon", fr: "cannelle" }, ingredient: "oleo-essencial-de-canela" },
   { value: "citronela", label: { pt: "citronela", en: "citronella", fr: "citronnelle" }, ingredient: "oleo-essencial-de-citronela" },
-  { value: "erva-príncipe", label: { pt: "erva-príncipe", en: "lemongrass", fr: "lemongrass" }, ingredient: "oleo-essencial-de-erva-principe" },
+  { value: "erva-príncipe", label: { pt: "erva-príncipe", en: "lemongrass", fr: "citronnelle" }, ingredient: "oleo-essencial-de-erva-principe" },
   { value: "eucalipto", label: { pt: "eucalipto", en: "eucalyptus", fr: "eucalyptus" }, ingredient: "oleo-essencial-de-eucalipto-radiata" },
   { value: "gengibre", label: { pt: "gengibre", en: "ginger", fr: "gingembre" }, ingredient: "oleo-essencial-de-gengibre" },
   { value: "gerânio rosa", label: { pt: "gerânio rosa", en: "rose geranium", fr: "géranium rosat" }, ingredient: "oleo-essencial-de-geranio-rosa" },

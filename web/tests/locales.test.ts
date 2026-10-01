@@ -51,4 +51,5 @@ test("the scent choice, the oil add-ons and the quantity in a cart label are tra
   assert.equal(getVariantLabel("aroma: canela + laranja doce", "en"), "scent: cinnamon + sweet orange");
   assert.equal(getVariantLabel("+ óleo essencial de laranja doce", "fr"), "+ huile essentielle d'orange douce");
   assert.equal(getVariantLabel("boião · quantidade: 3", "fr"), "pot · quantité : 3");
+  assert.equal(getVariantLabel("aroma: erva-príncipe", "fr"), "parfum: citronnelle");
 });
