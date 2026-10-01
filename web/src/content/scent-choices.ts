@@ -84,6 +84,13 @@ export const SCENT_COMBOS: string[][] = [
   ["eucalipto", "limão"],
 ];
 
+/** True when a cart value ("aroma: a + b") is one of the popular pairs. */
+export function isPopularScent(value: string | null | undefined): boolean {
+  if (!value?.startsWith("aroma: ")) return false;
+  const names = value.slice("aroma: ".length).split(" + ");
+  return SCENT_COMBOS.some((c) => c.length === names.length && c.every((n) => names.includes(n)));
+}
+
 /** Cinnamon is the one oil on the list that is rough on skin, and gets a warning when chosen. */
 export const HARSH_SCENT = "canela";
 

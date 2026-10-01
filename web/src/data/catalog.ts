@@ -357,7 +357,8 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: true,
     is_deodorant: false,
-    variants: one("vela-citronela", null, 2),
+    is_active: false, // archived: citronella candle taken off the site
+    variants: [],
   },
   {
     slug: "vela-massagem",
