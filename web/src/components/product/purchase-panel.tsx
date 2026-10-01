@@ -68,7 +68,9 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
     addOn || null,
     isAirFreshener && howMany ? `quantidade: ${howMany}` : null,
   ].filter(Boolean).join(" · ") || null;
-  const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""}`))}`;
+  // the cart keeps the Portuguese label; what the customer reads and sends is in their language
+  const shownLabel = getVariantLabel(orderLabel, locale);
+  const whatsapp = `${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(`${localizedName}${shownLabel ? ` (${shownLabel})` : ""}`))}`;
 
   function add() {
     if (avail.kind !== "available") return;
@@ -84,7 +86,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       image: product.images[0] ? { path: product.images[0].path, alt: product.images[0].alt } : null,
       isCandle: product.is_candle,
     });
-    cart.notify(`${localizedName}${orderLabel ? ` (${orderLabel})` : ""} · ${t.products.added}`);
+    cart.notify(`${localizedName}${shownLabel ? ` (${shownLabel})` : ""} · ${t.products.added}`);
     cart.open();
   }
 
@@ -237,7 +239,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           <legend className="label-brand mb-3 text-moss">{t.products.quantity}</legend>
           <input
             type="text"
-            placeholder="quantos ambientadores queres?"
+            placeholder={t.products.quantityPlaceholder}
             maxLength={HOW_MANY_MAX_LENGTH}
             value={howMany}
             onChange={(e) => setHowMany(e.target.value)}

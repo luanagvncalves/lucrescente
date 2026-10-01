@@ -136,7 +136,7 @@
   "scientific_name": "Eucalyptus radiata.",
   "origin": "Extraído por destilação das folhas de eucalipto, árvore originária da Austrália.",
   "properties": "Aroma fresco e penetrante, tradicionalmente associado a uma sensação de respiração desobstruída e a ambientes revigorantes, sendo uma variedade de eucalipto considerada mais suave do que outras.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e na vela de citronela. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite e no inalador. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 12
  },
  {
@@ -156,7 +156,7 @@
   "scientific_name": "Mentha piperita.",
   "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
   "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e no batom de hortelã-pimenta, onde dá uma sensação fresca e refrescante. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e, se quiseres, nos batons hidratantes, onde dá uma sensação fresca e refrescante. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 14
  },
  {
@@ -166,7 +166,7 @@
   "scientific_name": "Citrus sinensis.",
   "origin": "Extraído da casca da laranja doce, um dos óleos essenciais cítricos mais usados em cosmética natural.",
   "properties": "Aroma cítrico doce e alegre, associado a uma sensação de bem-estar e frequentemente usado para equilibrar aromas mais intensos noutras misturas.",
-  "applications": "Usado como nota aromática no roll-on de relaxamento e no batom de laranja, para um cheirinho alegre que agrada quase toda a gente. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado como nota aromática no roll-on de relaxamento e, se quiseres, nos batons hidratantes, para um cheirinho alegre que agrada quase toda a gente. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 15
  },
  {
@@ -176,7 +176,7 @@
   "scientific_name": "Lavandula angustifolia.",
   "origin": "Extraído por destilação das flores de lavanda, um dos óleos essenciais mais versáteis e conhecidos.",
   "properties": "Aroma floral e herbáceo, tradicionalmente associado a um efeito calmante, anti-inflamatório e cicatrizante, sendo um dos óleos essenciais mais estudados e um dos poucos considerados relativamente seguros para uso mais frequente, sempre diluído.",
-  "applications": "Usado nos sabonetes, na vela de citronela, nos roll-ons de relaxamento e de dores de cabeça, no spray relaxante e nos sais de banho, um dos aromas mais pedidos pelos nossos clientes. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado nos sabonetes, nos roll-ons de relaxamento e de dores de cabeça, no spray relaxante e nos sais de banho, um dos aromas mais pedidos pelos nossos clientes. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 16
  },
  {
@@ -576,7 +576,7 @@
   "scientific_name": null,
   "origin": "Pigmento mineral, o mesmo que dá a cor às argilas e aos barros: o que usamos é de origem mineral e de grau cosmético, aprovado para uso em produtos de maquilhagem.",
   "properties": "Dá cor sem corantes sintéticos e sem aroma próprio, mantendo-se estável ao longo do tempo e à luz. Consoante a dose, vai do bege quente ao tom de tijolo, e não altera a textura nem a nutrição do bálsamo.",
-  "applications": "É o que dá a cor ao nosso batom tijolo: o único dos nossos batons que leva pigmento.",
+  "applications": "É o que dá a cor ao nosso batom hidratante com cor: o único dos nossos batons que leva pigmento.",
   "sort_order": 62
  },
  {

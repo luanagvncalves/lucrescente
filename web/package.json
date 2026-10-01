@@ -13,7 +13,7 @@
     "images": "tsx scripts/prepare-images.ts",
     "images:optimize": "tsx scripts/optimize-images.ts",
     "typecheck": "tsc --noEmit",
-    "test": "tsx --test tests/catalog.test.ts"
+    "test": "tsx --test tests/catalog.test.ts tests/locales.test.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

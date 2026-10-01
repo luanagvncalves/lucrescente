@@ -112,7 +112,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
   return (
     <article className="container-brand pt-8 md:pt-12">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <nav aria-label="caminho" className="text-[0.85rem] text-ink/70">
+      <nav aria-label={t.nav.breadcrumb} className="text-[0.85rem] text-ink/70">
         <Link href={`/produtos${query}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
           {t.nav.products}
         </Link>

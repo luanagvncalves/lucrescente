@@ -60,7 +60,7 @@ export function Header() {
           and the whole site scrolled sideways on a tablet. The breakpoint moved
           when "perguntas frequentes" became the fifth link.
         */}
-        <nav aria-label="principal" className="hidden items-center gap-5 lg:flex xl:gap-8">
+        <nav aria-label={t.nav.mainNav} className="hidden items-center gap-5 lg:flex xl:gap-8">
           {links.map((l) => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/");
             return (
@@ -127,7 +127,7 @@ export function Header() {
             transition={{ duration: 0.22 }}
             className="fixed inset-x-0 bottom-0 top-[72px] z-40 flex flex-col bg-forest text-ivory lg:hidden on-dark"
           >
-            <nav aria-label="principal (móvel)" className="container-brand flex flex-1 flex-col justify-center gap-2">
+            <nav aria-label={t.nav.mainNavMobile} className="container-brand flex flex-1 flex-col justify-center gap-2">
               {[{ href: "/", label: t.nav.home }, ...links].map((l, i) => (
                 <motion.div
                   key={l.href}

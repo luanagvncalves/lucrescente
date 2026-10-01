@@ -69,7 +69,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
 
   return (
     <article className="container-brand pt-8 md:pt-12">
-      <nav aria-label="caminho" className="text-[0.85rem] text-ink/70">
+      <nav aria-label={dict.nav.breadcrumb} className="text-[0.85rem] text-ink/70">
         <Link href={`/ingredientes${query}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
           {dict.nav.ingredients}
         </Link>

@@ -64,7 +64,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           <Suspense fallback={null}>
             <CartDrawer />
           </Suspense>
-          <Toaster />
+          <Suspense fallback={null}>
+            <Toaster />
+          </Suspense>
           <LocaleRuntime />
         </CartProvider>
       </body>

@@ -1,4 +1,9 @@
+import { getScentLabel } from "./scent-choices";
+import { translateAddOn } from "./product-addons";
+
 export type VariantLocale = "pt" | "en" | "fr";
+
+const QUANTITY_PREFIX: Record<VariantLocale, string> = { pt: "quantidade: ", en: "quantity: ", fr: "quantité : " };
 
 /**
  * Variant labels ("boião", "frasco de vidro", …) live in Supabase in Portuguese
@@ -13,11 +18,6 @@ export type VariantLocale = "pt" | "en" | "fr";
 const copy: Record<string, Partial<Record<VariantLocale, string>>> = {
   "boião": { en: "jar", fr: "pot" },
   "frasco de vidro": { en: "glass jar", fr: "flacon en verre" },
-  // the optional oils on the coloured lip balms, which ride in the compound
-  // label as their own segment — see content/product-addons.ts, where the same
-  // wording is defined for the purchase panel and the Stripe line item
-  "+ óleo de laranja doce": { en: "+ sweet orange oil", fr: "+ huile d'orange douce" },
-  "+ óleo de hortelã-pimenta": { en: "+ peppermint oil", fr: "+ huile de menthe poivrée" },
 };
 
 /**
@@ -33,6 +33,21 @@ export function getVariantLabel(label: string | null, locale: VariantLocale): st
   if (locale === "pt") return label;
   return label
     .split(" · ")
-    .map((part) => copy[part.trim()]?.[locale] ?? part)
+    .map((part) => translatePart(part, locale))
     .join(" · ");
+}
+
+/**
+ * One " · " segment of a label. Besides the plain variants above, a segment can be
+ * the scent choice ("aroma: canela + laranja doce"), an oil add-on on the lip
+ * balms ("+ óleo essencial de laranja doce") or the air freshener's quantity
+ * ("quantidade: 3") — all stored in Portuguese in the cart and on the order.
+ */
+function translatePart(part: string, locale: VariantLocale): string {
+  const clean = part.trim();
+  const plain = copy[clean]?.[locale];
+  if (plain) return plain;
+  if (clean.startsWith("aroma: ")) return getScentLabel(clean, locale);
+  if (clean.startsWith("quantidade: ")) return QUANTITY_PREFIX[locale] + clean.slice("quantidade: ".length);
+  return translateAddOn(clean, locale) ?? part;
 }

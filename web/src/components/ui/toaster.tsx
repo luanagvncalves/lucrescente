@@ -2,11 +2,13 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useCart } from "@/lib/cart-store";
+import { useLocale } from "@/lib/use-locale";
 import { Crescent } from "./motifs";
 
 /** Calm toasts (bottom-left). Fed by useCart().notify. */
 export function Toaster() {
   const { toasts, dismissToast } = useCart();
+  const { t: dict } = useLocale();
   return (
     <div aria-live="polite" aria-atomic="false" className="pointer-events-none fixed bottom-4 left-4 z-[70] flex w-[min(92vw,22rem)] flex-col gap-2">
       <AnimatePresence>
@@ -27,7 +29,7 @@ export function Toaster() {
               type="button"
               onClick={() => dismissToast(t.id)}
               className="-mr-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full opacity-70 hover:opacity-100"
-              aria-label="fechar aviso"
+              aria-label={dict.nav.dismissNotice}
             >
               ×
             </button>

@@ -78,6 +78,15 @@ export function sanitiseAddOn(slug: string, value: unknown): string | null {
   return getAddOns(slug).find((a) => a.value === value)?.value ?? null;
 }
 
+/** The label of an add-on value in any product's list, for the cart and the order emails, where only the value is to hand. */
+export function translateAddOn(value: string, locale: ProductLocale): string | null {
+  for (const list of Object.values(ADD_ONS)) {
+    const found = list.find((a) => a.value === value);
+    if (found) return found.label[locale];
+  }
+  return null;
+}
+
 /** For display only — falls through unchanged if it is not one we know. */
 export function getAddOnLabel(slug: string, value: string, locale: ProductLocale): string {
   if (isScentProduct(slug)) return getScentLabel(value, locale);
