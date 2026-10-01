@@ -17,7 +17,12 @@ const nextConfig: NextConfig = {
     outside; a visitor arriving at the old one lands on the answers instead.
   */
   async redirects() {
-    return [{ source: "/cuidados", destination: "/perguntas-frequentes", permanent: true }];
+    return [
+      { source: "/cuidados", destination: "/perguntas-frequentes", permanent: true },
+      // the two lip balms were renamed; the old addresses may be bookmarked or linked from outside
+      { source: "/produtos/batom-tijolo", destination: "/produtos/batom-hidratante-com-cor", permanent: true },
+      { source: "/produtos/batom-natural", destination: "/produtos/batom-hidratante-sem-cor", permanent: true },
+    ];
   },
 };
 

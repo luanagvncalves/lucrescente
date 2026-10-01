@@ -121,6 +121,7 @@ export const pt = {
     // the optional flavour oil on the coloured lip balms
     flavourLabel: "óleo essencial",
     flavourNone: "sem óleo",
+    flavourHint: "laranja doce: aroma doce e cítrico. hortelã-pimenta: sensação fresca nos lábios.",
     deodorantFact: "aplica uma camada fina em pele limpa e seca: com o calor do corpo espalha-se melhor.",
     solidNote: "produto sólido, sem água na fórmula. guarda-o num sítio seco entre utilizações para durar mais tempo.",
     recommendedFor: "aconselhado para",

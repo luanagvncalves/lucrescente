@@ -509,7 +509,7 @@ export const products: ProductSeed[] = [
 
   // ---------------- batons (boião / stick) ----------------
   {
-    slug: "batom-tijolo",
+    slug: "batom-hidratante-com-cor",
     name: "batom hidratante com cor",
     category_slug: "batons",
     sort_order: 0,
@@ -564,7 +564,7 @@ export const products: ProductSeed[] = [
     variants: balm("batom-laranja", 3, 1, 450),
   },
   {
-    slug: "batom-natural",
+    slug: "batom-hidratante-sem-cor",
     name: "batom hidratante sem cor",
     category_slug: "batons",
     sort_order: 1,

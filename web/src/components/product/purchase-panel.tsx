@@ -158,6 +158,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
               );
             })}
           </div>
+          <p className="mt-3 text-[0.85rem] text-ink/70">{t.products.flavourHint}</p>
         </fieldset>
       ) : null}
 

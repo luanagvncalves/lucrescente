@@ -86,6 +86,14 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "four round grey-green solid shampoo bars with a grainy texture, on pink floral fabric",
     fr: "quatre pains de shampoing solide ronds vert-gris à la texture granuleuse, sur un tissu floral rose",
   },
+  "champôs sólidos verde-acinzentados sobre tecido floral rosa, um deles de lado a mostrar a face verde e rugosa": {
+    en: "grey-green solid shampoo bars on pink floral fabric, one turned on its side to show its rough green face",
+    fr: "pains de shampoing solide vert-gris sur un tissu floral rose, l'un posé de côté montrant sa face verte et rugueuse",
+  },
+  "quatro champôs sólidos verde-acinzentados sobre tecido floral rosa e azul, um com a face verde e rugosa à vista": {
+    en: "four grey-green solid shampoo bars on pink and blue floral fabric, one with its rough green face showing",
+    fr: "quatre pains de shampoing solide vert-gris sur un tissu floral rose et bleu, l'un laissant voir sa face verte et rugueuse",
+  },
   "champôs sólidos verde-acinzentados empilhados sobre tecido floral": {
     en: "grey-green solid shampoo bars stacked on floral fabric",
     fr: "pains de shampoing solide vert-gris empilés sur un tissu floral",

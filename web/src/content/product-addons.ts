@@ -22,7 +22,7 @@ import { getScentLabel, isScentProduct, sanitiseScent } from "./scent-choices";
 export type AddOn = { value: string; label: Record<ProductLocale, string> };
 
 const ADD_ONS: Record<string, AddOn[]> = {
-  "batom-tijolo": [
+  "batom-hidratante-com-cor": [
     {
       value: "+ óleo essencial de laranja doce",
       label: {
@@ -40,7 +40,7 @@ const ADD_ONS: Record<string, AddOn[]> = {
       },
     },
   ],
-  "batom-natural": [
+  "batom-hidratante-sem-cor": [
     {
       value: "+ óleo essencial de laranja doce",
       label: {
