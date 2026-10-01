@@ -157,7 +157,7 @@ export const pt = {
     // the scent picker on the air freshener and the made-to-order candles
     scentLabel: "aroma",
     scentHint: "escolhe até 2 óleos essenciais.",
-    scentCombosLabel: "combinações que já fazemos",
+    scentCombosLabel: "as escolhas mais populares",
     scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
     scentHarsh:
       "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",

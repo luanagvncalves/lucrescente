@@ -166,26 +166,6 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
           <legend className="label-brand mb-1 text-moss">{t.products.scentLabel}</legend>
           <p className="mb-3 text-[0.88rem] text-ink/70">{fixedScents.length ? t.products.scentHintFixed : t.products.scentHint}</p>
 
-          <p className="mb-2 text-[0.85rem] text-ink/70">{t.products.scentCombosLabel}</p>
-          <div className="mb-4 flex flex-wrap gap-2">
-            {combosFor(product.slug).map((combo) => {
-              const active = combo.length === scents.length && combo.every((c) => scents.includes(c));
-              return (
-                <button
-                  key={combo.join("+")}
-                  type="button"
-                  aria-pressed={active}
-                  onClick={() => setScents(active ? [] : combo)}
-                  className={`inline-flex h-11 items-center rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors ${
-                    active ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
-                  }`}
-                >
-                  {combo.map((c) => SCENTS.find((x) => x.value === c)?.label[locale] ?? c).join(" + ")}
-                </button>
-              );
-            })}
-          </div>
-
           <div className="flex flex-wrap gap-2">
             {fixedScents.map((name) => (
               <span
@@ -214,6 +194,25 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                   />
                   {scent.label[locale]}
                 </label>
+              );
+            })}
+          </div>
+          <p className="mb-2 mt-5 font-ui text-[0.95rem] font-medium text-forest">{t.products.scentCombosLabel} <span aria-hidden="true" className="text-clay">★</span></p>
+          <div className="mb-4 flex flex-wrap gap-2">
+            {combosFor(product.slug).map((combo) => {
+              const active = combo.length === scents.length && combo.every((c) => scents.includes(c));
+              return (
+                <button
+                  key={combo.join("+")}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => setScents(active ? [] : combo)}
+                  className={`inline-flex h-11 items-center rounded-full border px-4 font-ui text-[0.92rem] font-medium transition-colors ${
+                    active ? "border-forest bg-forest text-white" : "border-moss/40 text-forest hover:border-forest"
+                  }`}
+                >
+                  {combo.map((c) => SCENTS.find((x) => x.value === c)?.label[locale] ?? c).join(" + ")}
+                </button>
               );
             })}
           </div>
