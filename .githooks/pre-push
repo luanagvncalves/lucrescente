@@ -1,0 +1,3 @@
+#!/bin/sh
+# runs the catalogue tests before anything is pushed; a failing test stops the push
+cd "$(git rev-parse --show-toplevel)/web" && npm test --silent || { echo "tests failed: push stopped"; exit 1; }
