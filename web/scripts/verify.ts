@@ -25,7 +25,7 @@ async function main() {
     .limit(3);
   console.log("last orders", JSON.stringify(orders, null, 1));
 
-  const skus = ["champo-secos", "vela-citronela", "sabonete-grande"];
+  const skus = ["champo-secos", "sabonete-grande"];
   const before = (await db.from("product_variants").select("sku, stock, price_cents").in("sku", skus)).data;
   console.log("stock", before);
 

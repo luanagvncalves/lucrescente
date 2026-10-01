@@ -164,7 +164,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       {hasScentPicker ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-1 text-moss">{t.products.scentLabel}</legend>
-          <p className="mb-3 text-[0.88rem] text-ink/70">{fixedScents.length ? t.products.scentHintFixed : t.products.scentHint}</p>
+          <p className="mb-3 text-[0.88rem] text-ink/70">{t.products.scentHint}</p>
 
           <div className="flex flex-wrap gap-2">
             {fixedScents.map((name) => (

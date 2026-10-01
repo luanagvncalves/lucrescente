@@ -344,23 +344,6 @@ export const products: ProductSeed[] = [
 
   // ---------------- velas (no price supplied: "por encomenda") ----------------
   {
-    slug: "vela-citronela",
-    name: "vela citronela",
-    category_slug: "velas",
-    sort_order: 0,
-    // the case for these candles over a supermarket one is the same for all of
-    // them, so it lives in the dictionary (products.candleCase) and is shown to
-    // every candle rather than repeated five times here
-    why_it_works:
-      "cá por casa trocámos os sprays repletos de químicos por estas velas de citronela, simples e eficazes. os mosquitos não gostam do cheiro da citronela, por isso ajuda a afastar melgas, moscas e outros mosquitos. a lavanda e o eucalipto criam um contraste entre tranquilidade e frescura, para um ambiente agradável e sem visitas indesejadas. continua a ser uma vela segura para a pele, como as outras. se quiseres outra combinação de aromas, podes personalizar os óleos essenciais na caixa de aroma: a citronela fica sempre, e juntas-lhe os que preferires.",
-    ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
-    is_solid: false,
-    is_candle: true,
-    is_deodorant: false,
-    is_active: false, // archived: citronella candle taken off the site
-    variants: [],
-  },
-  {
     slug: "vela-massagem",
     name: "vela massagem",
     category_slug: "velas",

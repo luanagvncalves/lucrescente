@@ -162,7 +162,6 @@ export const pt = {
     scentMaxReached: "já escolheste 2 óleos: tira um para trocar.",
     scentHarsh:
       "a canela é dos óleos essenciais mais agressivos para a pele. se a escolheres, não uses a cera derretida em massagens nem diretamente na pele.",
-    scentHintFixed: "a citronela está sempre incluída. podes juntar até 2 óleos essenciais.",
   },
   fairs: {
     title: "feiras e mercados",
