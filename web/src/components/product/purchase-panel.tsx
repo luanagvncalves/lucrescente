@@ -216,7 +216,6 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                   }`}
                 >
                   {combo.map((c) => SCENTS.find((x) => x.value === c)?.label[locale] ?? c).join(" + ")}
-                  <span aria-hidden="true" className={`ml-2 text-[0.8em] ${active ? "text-white" : "text-clay"}`}>★</span>
                 </button>
               );
             })}

@@ -170,6 +170,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
                 <p id="porque" className="mt-5 text-body-lg measure">
                   {t.products.candleCase}
                 </p>
+                {product.slug !== "vela-com-mensagem" ? <p className="mt-5 text-body-lg measure">{t.products.candleOrder}</p> : null}
               </section>
             ) : whyItWorks ? (
               <section aria-labelledby="porque">

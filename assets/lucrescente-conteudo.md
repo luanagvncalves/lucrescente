@@ -295,9 +295,11 @@ esta vela também é para a pele. a cera de soja não alcança temperaturas tão
 **vela com mensagem**
 - por encomenda
 - Ingredientes principais: Cera de Soja (mais os óleos essenciais escolhidos na caixa de aroma)
-podemos escrever a tua mensagem na vela: um nome, uma data, uma dedicatória, uma frase que só vocês entendem. já fizemos velas para aniversários, dia da mãe e dia do pai, batizados e convites a madrinhas e padrinhos, dia dos namorados, agradecimentos, despedidas e passagens de ano. dizes-nos o que queres que fique escrito e fazemos a vela à volta dessa mensagem (funciona com qualquer uma das nossas velas). também podes escolher o formato, o óleo essencial e o estilo de decoração que preferires. cada uma é feita depois de falares connosco, por isso pede com alguma antecedência.
+oferece uma vela com uma mensagem personalizada: já fizemos velas para aniversários, para o dia da mãe e o dia do pai, batizados e convites a madrinhas e padrinhos, dia dos namorados, agradecimentos, despedidas e passagens de ano.
 
-As velas (todas por encomenda) têm também um texto comum: a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos; as velas de cera de soja ardem mais devagar e uniformemente, sem criar túneis, e nunca alcançam temperaturas tão elevadas; não libertam fuligem nem têm componentes tóxicos ou sintéticos; o aroma vem de óleos essenciais e a decoração é natural.
+podes escolher o recipiente da tua vela, os seus óleos essenciais e o estilo de decoração que preferires. basta mandar-nos mensagem para encomendar!
+
+As velas (todas por encomenda) têm também um texto comum (título "porque funcionam"): a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos; as velas de cera de soja ardem mais devagar e uniformemente, sem criar túneis, e nunca alcançam temperaturas tão elevadas; não libertam fuligem nem têm componentes tóxicos ou sintéticos; o aroma vem de óleos essenciais e a decoração é natural.
 
 Produtos que existem no código mas estão desativados e não aparecem no site: champô sólido para queda de cabelo (em estudo), o antigo registo "sabonete 40g" (substituído pelo sabonete de rosto) e o batom herpes.
 
