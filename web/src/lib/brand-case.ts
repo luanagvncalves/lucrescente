@@ -75,7 +75,9 @@ export function brandSentence(text: string): string {
     .map((part) => {
       const word = part.replace(/^[("'«¿¡]+/, "").replace(/[.,;:)»"'!?…]+$/, "");
       const keep = isAbbreviation(word, previous) || KEEPS_ITS_CAPITAL.has(word);
-      if (word) previous = word;
+      // a run of spaces is not a word: it used to land in `previous`, so the E of
+      // "vitamina E" never saw "vitamina" before it and was lowercased
+      if (part.trim() && word) previous = word;
       if (keep) return part;
       return part.replace(/\p{L}/u, (letter) => letter.toLowerCase()); // the first letter, past any bracket
     })
