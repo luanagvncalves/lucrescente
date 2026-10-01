@@ -222,6 +222,30 @@ const alt: Record<string, { en: string; fr: string }> = {
     en: "a hand holding a citronella candle in a glass with a black label",
     fr: "une main tenant une bougie à la citronnelle dans un verre avec une étiquette noire",
   },
+  "vela vermelha com brilhos dourados, um coração de cera branco e flores secas laranja e brancas": {
+    en: "red candle with gold glitter, a white wax heart and orange and white dried flowers",
+    fr: "bougie rouge avec des paillettes dorées, un cœur de cire blanc et des fleurs séchées orange et blanches",
+  },
+  "vela laranja com «obrigada» escrito à mão, um coração desenhado e botões de rosa secos": {
+    en: "orange candle with «obrigada» written by hand, a drawn heart and dried rosebuds",
+    fr: "bougie orange avec « obrigada » écrit à la main, un cœur dessiné et des boutons de rose séchés",
+  },
+  "vela laranja com uma flor de cera rosa e duas conchas": {
+    en: "orange candle with a pink wax flower and two shells",
+    fr: "bougie orange avec une fleur de cire rose et deux coquillages",
+  },
+  "vela laranja com conchas, pedrinhas douradas e duas margaridas secas": {
+    en: "orange candle with shells, gold pebbles and two dried daisies",
+    fr: "bougie orange avec des coquillages, des petits cailloux dorés et deux marguerites séchées",
+  },
+  "vela rosa com um coração de cera branco e flores secas vermelhas e brancas": {
+    en: "pink candle with a white wax heart and red and white dried flowers",
+    fr: "bougie rose avec un cœur de cire blanc et des fleurs séchées rouges et blanches",
+  },
+  "quatro velas cor-de-rosa em copos de vidro em forma de estrela, com brilhos": {
+    en: "four pink candles in star-shaped glass holders, with glitter",
+    fr: "quatre bougies roses dans des verres en forme d'étoile, avec des paillettes",
+  },
   "três velas em forma de estrela amarelas em vidro transparente": {
     en: "three yellow star-shaped candles in clear glass",
     fr: "trois bougies jaunes en forme d'étoile dans du verre transparent",
