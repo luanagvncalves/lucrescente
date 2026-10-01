@@ -156,25 +156,17 @@ funciona de duas maneiras, conforme o que preferires. derretido (num queimador o
 
 ### batons
 
-**batom tijolo**
+**batom hidratante com cor**
 - boião: 4,50 € · stick: 4,50 €
 - Ingredientes principais: Cera de Abelha Amarela, Manteiga de Cacau, Óleo de Amêndoas Doces, Óxido de Ferro
-bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor.
+bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.
+- Escolha do óleo essencial no painel de compra: sem óleo · laranja doce · hortelã-pimenta (o preço não muda; o óleo é juntado ao preparar a encomenda)
 
-**batom laranja**
-- boião: 4,50 € · stick: 4,50 €
-- Ingredientes principais: Cera de Abelha Amarela, Manteiga de Cacau, Óleo de Amêndoas Doces, Óleo Essencial de Laranja Doce
-bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de laranja doce acrescenta um aroma cítrico, doce e luminoso.
-
-**batom natural**
+**batom hidratante sem cor**
 - boião: 4,50 € · stick: 4,50 €
 - Ingredientes principais: Cera de Abelha Amarela, Manteiga de Cacau, Óleo de Amêndoas Doces
-bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.
-
-**batom hortelã-pimenta**
-- boião: 4,50 € · stick: 4,50 €
-- Ingredientes principais: Cera de Abelha Amarela, Manteiga de Cacau, Óleo de Amêndoas Doces, Óleo Essencial de Hortelã-Pimenta
-bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, enquanto o óleo essencial de hortelã-pimenta acrescenta uma sensação fresca e refrescante.
+bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.
+- Escolha do óleo essencial no painel de compra: sem óleo · laranja doce · hortelã-pimenta (o preço não muda; o óleo é juntado ao preparar a encomenda)
 
 ### champôs
 
@@ -291,7 +283,7 @@ esta vela também é para a pele. a cera de soja não alcança temperaturas tão
 
 As velas (todas por encomenda) têm também um texto comum (título "porque funcionam"): a parafina é um resto da refinação do petróleo que, ao arder, liberta fuligem e compostos tóxicos; as velas de cera de soja ardem mais devagar e uniformemente, sem criar túneis, e nunca alcançam temperaturas tão elevadas; não libertam fuligem nem têm componentes tóxicos ou sintéticos; o aroma vem de óleos essenciais e a decoração é natural.
 
-Produtos que existem no código mas estão desativados e não aparecem no site: a vela de citronela (retirada; já não existe), champô sólido para queda de cabelo (em estudo), o antigo registo "sabonete 40g" (substituído pelo sabonete de rosto) e o batom herpes.
+Produtos que existem no código mas estão desativados e não aparecem no site: a vela de citronela (retirada; já não existe), o batom laranja e o batom hortelã-pimenta (agora são só uma escolha de óleo nos dois batons hidratantes), champô sólido para queda de cabelo (em estudo), o antigo registo "sabonete 40g" (substituído pelo sabonete de rosto) e o batom herpes.
 
 ### Caixa de aroma (ambientador e velas)
 - No ambientador e em todas as velas (colorida, com mensagem, decorada e massagem) a cliente escolhe até 2 óleos essenciais, ou uma das escolhas mais populares (mostradas com uma ★, por baixo da lista de óleos): canela + laranja doce · palmarosa + lavanda · eucalipto + limão

@@ -510,11 +510,11 @@ export const products: ProductSeed[] = [
   // ---------------- batons (boião / stick) ----------------
   {
     slug: "batom-tijolo",
-    name: "batom tijolo",
+    name: "batom hidratante com cor",
     category_slug: "batons",
     sort_order: 0,
     why_it_works:
-      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -560,15 +560,16 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
+    is_active: false, // archived: now an oil choice on the two moisturising balms
     variants: balm("batom-laranja", 3, 1, 450),
   },
   {
     slug: "batom-natural",
-    name: "batom natural",
+    name: "batom hidratante sem cor",
     category_slug: "batons",
-    sort_order: 3,
+    sort_order: 1,
     why_it_works:
-      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a criar uma camada protetora nos lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -595,6 +596,7 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
+    is_active: false, // archived: now an oil choice on the two moisturising balms
     variants: balm("batom-h-pimenta", 3, 2, 450),
   },
 

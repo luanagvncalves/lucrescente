@@ -119,8 +119,8 @@ export const pt = {
     candleOrder: "basta mandar-nos mensagem para encomendar!",
     hairTypeNote: "para que tipo de cabelo",
     // the optional flavour oil on the coloured lip balms
-    flavourLabel: "sabor",
-    flavourNone: "sem sabor",
+    flavourLabel: "óleo essencial",
+    flavourNone: "sem óleo",
     deodorantFact: "aplica uma camada fina em pele limpa e seca: com o calor do corpo espalha-se melhor.",
     solidNote: "produto sólido, sem água na fórmula. guarda-o num sítio seco entre utilizações para durar mais tempo.",
     recommendedFor: "aconselhado para",

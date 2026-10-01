@@ -5,7 +5,7 @@ import { getScentLabel, isScentProduct, sanitiseScent } from "./scent-choices";
  * Optional extras a customer can ask for on a product, chosen in the purchase
  * panel and made up when the order is packed.
  *
- * These are NOT variants. The coloured lip balm is made to order from one stock
+ * These are NOT variants. The lip balms are made to order from one stock
  * of balms, with a few drops of the chosen oil stirred in, so there is no
  * separate SKU to sell and no separate stock to keep — which is exactly why the
  * choice has to be carried to the order by hand: `validateCart` re-reads every
@@ -24,19 +24,37 @@ export type AddOn = { value: string; label: Record<ProductLocale, string> };
 const ADD_ONS: Record<string, AddOn[]> = {
   "batom-tijolo": [
     {
-      value: "+ óleo de laranja doce",
+      value: "+ óleo essencial de laranja doce",
       label: {
-        pt: "+ óleo de laranja doce",
-        en: "+ sweet orange oil",
-        fr: "+ huile d'orange douce",
+        pt: "+ óleo essencial de laranja doce",
+        en: "+ sweet orange essential oil",
+        fr: "+ huile essentielle d'orange douce",
       },
     },
     {
-      value: "+ óleo de hortelã-pimenta",
+      value: "+ óleo essencial de hortelã-pimenta",
       label: {
-        pt: "+ óleo de hortelã-pimenta",
-        en: "+ peppermint oil",
-        fr: "+ huile de menthe poivrée",
+        pt: "+ óleo essencial de hortelã-pimenta",
+        en: "+ peppermint essential oil",
+        fr: "+ huile essentielle de menthe poivrée",
+      },
+    },
+  ],
+  "batom-natural": [
+    {
+      value: "+ óleo essencial de laranja doce",
+      label: {
+        pt: "+ óleo essencial de laranja doce",
+        en: "+ sweet orange essential oil",
+        fr: "+ huile essentielle d'orange douce",
+      },
+    },
+    {
+      value: "+ óleo essencial de hortelã-pimenta",
+      label: {
+        pt: "+ óleo essencial de hortelã-pimenta",
+        en: "+ peppermint essential oil",
+        fr: "+ huile essentielle de menthe poivrée",
       },
     },
   ],

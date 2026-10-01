@@ -44,7 +44,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
    */
   const isAirFreshener = product.slug === "ambientador";
   /*
-    The optional oil on the coloured lip balms. It is not a variant: the balms
+    The optional oil on the lip balms. It is not a variant: the balms
     are made to order out of one stock, with a few drops stirred in, so there
     is no second sku and no second stock. Empty string is "sem sabor".
 
