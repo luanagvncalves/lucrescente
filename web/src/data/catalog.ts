@@ -347,7 +347,7 @@ export const products: ProductSeed[] = [
     slug: "vela-massagem",
     name: "vela massagem",
     category_slug: "velas",
-    sort_order: 1,
+    sort_order: 3,
     // The one candle with something of its own to say: it goes on the skin.
     // The shared case for a soy candle over a supermarket one still shows below
     // it, from the dictionary (products.candleCase).
@@ -378,7 +378,7 @@ export const products: ProductSeed[] = [
     slug: "vela-colorida",
     name: "vela colorida",
     category_slug: "velas",
-    sort_order: 3,
+    sort_order: 0,
     // the case for these candles over a supermarket one is the same for all of
     // them, so it lives in the dictionary (products.candleCase) and is shown to
     // every candle rather than repeated five times here
@@ -393,7 +393,7 @@ export const products: ProductSeed[] = [
     slug: "vela-com-mensagem",
     name: "vela com mensagem",
     category_slug: "velas",
-    sort_order: 4,
+    sort_order: 1,
     why_it_works:
       "oferece uma vela com uma mensagem personalizada: já fizemos velas para aniversários, para o dia da mãe e o dia do pai, batizados e convites a madrinhas e padrinhos, dia dos namorados, agradecimentos, despedidas e passagens de ano.\n\npodes escolher o recipiente da tua vela, os seus óleos essenciais e o estilo de decoração que preferires. basta mandar-nos mensagem para encomendar!",
     ingredient_slugs: ["cera-de-soja", "oleo-essencial-de-alecrim", "oleo-essencial-de-bergamota", "oleo-essencial-de-camomila-romana", "oleo-essencial-de-canela", "oleo-essencial-de-citronela", "oleo-essencial-de-erva-principe", "oleo-essencial-de-erva-principe-citratus", "oleo-essencial-de-eucalipto-radiata", "oleo-essencial-de-gengibre", "oleo-essencial-de-geranio-rosa", "oleo-essencial-de-ho-wood", "oleo-essencial-de-hortela-pimenta", "oleo-essencial-de-laranja-doce", "oleo-essencial-de-lavanda", "oleo-essencial-de-limao", "oleo-essencial-de-palmarosa", "oleo-essencial-de-patchouli", "oleo-essencial-de-petitgrain", "oleo-essencial-de-ravintsara", "oleo-essencial-de-tea-tree", "oleo-essencial-de-ylang-ylang"],
