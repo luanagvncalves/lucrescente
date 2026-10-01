@@ -74,7 +74,7 @@ export function IngredientIndex({ items, locale }: { items: IngredientListItem[]
   );
 
   const groups = categories
-    .map((c) => ({ ...c, items: visible.filter((i) => i.category === c.category) }))
+    .map((c) => ({ ...c, items: visible.filter((i) => i.category === c.category).sort((a, b) => a.name.localeCompare(b.name, locale)) }))
     .filter((g) => g.items.length);
 
   const href = (slug: string) => (locale === "pt" ? `/ingredientes/${slug}` : `/ingredientes/${slug}?idioma=${locale}`);
