@@ -5,6 +5,7 @@ import { Suspense, useState } from "react";
 import { useLocale } from "@/lib/use-locale";
 import { useCart, lineKey } from "@/lib/cart-store";
 import { getVariantLabel } from "@/content/variant-locales";
+import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import { Button } from "@/components/ui/button";
 import { Crescent, Pause } from "@/components/ui/motifs";
@@ -104,6 +105,7 @@ function Checkout() {
                   <span>
                     {l.quantity} × {l.productName}
                     {l.variantLabel ? ` (${getVariantLabel(l.variantLabel, locale)})` : ""}
+                    {labelHasPopularScent(l.variantLabel) ? <span aria-hidden="true" className="ml-1 text-[0.8em] text-clay">★</span> : null}
                   </span>
                   <span className="font-medium">{formatPrice(l.unitPriceCents * l.quantity)}</span>
                 </li>

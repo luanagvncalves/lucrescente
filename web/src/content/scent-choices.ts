@@ -26,10 +26,10 @@ export type Scent = {
 export const MAX_SCENTS = 2;
 
 /** An oil that is always in the product and cannot be taken out: the citronella candle is a citronella candle. */
-export const FIXED_SCENTS: Record<string, string[]> = { "vela-citronela": ["citronela"] };
+export const FIXED_SCENTS: Record<string, string[]> = {};
 
 /** What the picker starts on: the citronella candle's usual recipe, with lavender and eucalyptus. */
-export const DEFAULT_SCENTS: Record<string, string[]> = { "vela-citronela": ["lavanda", "eucalipto"] };
+export const DEFAULT_SCENTS: Record<string, string[]> = {};
 
 /** Oils a product does not offer. Cinnamon is rough on skin, so the massage candle leaves it out. */
 export const EXCLUDED_SCENTS: Record<string, string[]> = { "vela-massagem": ["canela"] };
@@ -47,7 +47,6 @@ export function combosFor(slug: string): string[][] {
 /** The products that offer the picker. */
 const SCENT_PRODUCTS = new Set([
   "ambientador",
-  "vela-citronela",
   "vela-decorada",
   "vela-colorida",
   "vela-com-mensagem",
@@ -129,4 +128,17 @@ export function getScentLabel(value: string, locale: ProductLocale): string {
   const names = clean.slice("aroma: ".length).split(SEPARATOR);
   const label = names.map((n) => SCENTS.find((s) => s.value === n)?.label[locale] ?? n);
   return `${PREFIX[locale]}: ${label.join(SEPARATOR)}`;
+}
+
+/**
+ * True when an order-line label ("aroma: canela + laranja doce", in any of the
+ * three languages, possibly with other parts joined by " · ") holds a popular pair.
+ */
+export function labelHasPopularScent(label: string | null | undefined): boolean {
+  if (!label) return false;
+  const segment = label.split(" · ").find((s) => /^(aroma|scent|parfum): /.test(s));
+  if (!segment) return false;
+  const names = segment.slice(segment.indexOf(": ") + 2).split(" + ");
+  const values = names.map((n) => SCENTS.find((s) => Object.values(s.label).includes(n))?.value ?? n);
+  return isPopularScent(scentValue(values));
 }

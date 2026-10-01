@@ -16,6 +16,7 @@
  */
 import { orderEmailCopy } from "@/content/order-email-locales";
 import { getVariantLabel } from "@/content/variant-locales";
+import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import type { Locale } from "@/lib/i18n";
 
@@ -50,7 +51,7 @@ function body(o: OrderConfirmation): string {
 
   const lines = o.items.map((i) => {
     const label = getVariantLabel(i.variant_label, o.locale);
-    return `  ${i.quantity} × ${i.product_name}${label ? ` · ${label}` : ""}`;
+    return `  ${i.quantity} × ${i.product_name}${label ? ` · ${label}` : ""}${labelHasPopularScent(i.variant_label) ? " ★" : ""}`;
   });
 
   const address = a

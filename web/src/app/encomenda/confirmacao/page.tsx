@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
 import { getOrderBySession } from "@/lib/orders";
 import { getVariantLabel } from "@/content/variant-locales";
+import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
 import { buttonClass } from "@/components/ui/button";
@@ -65,6 +66,7 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
                         this changes nothing for them. Orders placed before that
                         stored Portuguese, and this catches those. */}
                     {i.variant_label ? ` (${getVariantLabel(i.variant_label, locale)})` : ""}
+                    {labelHasPopularScent(i.variant_label) ? <span aria-hidden="true" className="ml-1 text-[0.8em] text-clay">★</span> : null}
                   </span>
                   <span className="font-medium">{formatPrice(i.total_cents)}</span>
                 </li>
