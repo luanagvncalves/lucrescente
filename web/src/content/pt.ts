@@ -178,6 +178,7 @@ export const pt = {
       "os nossos champôs sólidos também podem ser usados no corpo, sem preocupações: pelos ingredientes naturais e por não terem químicos, podes desfrutar de um champô multifuncional todos os dias!",
     // per-product contact form
     contactTitle: "fala connosco sobre este produto",
+    contactButton: "fala connosco",
     contactSuccess: "✓ mensagem enviada com sucesso! agradecemos o contacto.",
     contactError:
       "não conseguimos enviar a tua mensagem. tenta outra vez, ou escreve-nos diretamente para",

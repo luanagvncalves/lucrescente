@@ -17,7 +17,6 @@ import { ProductImage } from "@/components/ui/product-image";
 import { PurchasePanel } from "@/components/product/purchase-panel";
 import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
-import { ProductContact } from "@/components/product/product-contact";
 import { ProductExtraInfo } from "@/components/product/product-extra-info";
 import { alphabetical } from "@/lib/alphabetical";
 
@@ -262,7 +261,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
       <RelatedCarousel items={related} locale={locale} />
 
-      <ProductContact productName={copy.name} locale={locale} />
     </article>
   );
 }

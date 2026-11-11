@@ -9,9 +9,11 @@ import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
 import { DEFAULT_SCENTS, FIXED_SCENTS, HARSH_SCENT, MAX_SCENTS, SCENTS, combosFor, isScentProduct, scentValue, scentsFor } from "@/content/scent-choices";
+import { ProductContact } from "./product-contact";
 
 /** The longest answer to "quantos ambientadores" we keep. */
 const HOW_MANY_MAX_LENGTH = 40;
+const ACTION_CLASS = "h-[52px] w-full min-w-0 whitespace-normal break-words !px-3 text-center !text-[0.9rem] leading-tight";
 
 /**
  * Purchase panel: variant selector, quantity, add to cart.
@@ -251,9 +253,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       {avail.kind === "on-request" ? (
         <div className="space-y-4">
           <p className="font-display text-[1.75rem] leading-none text-clay">{t.products.onRequest}</p>
-          <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className="w-full sm:w-auto">
-            {t.products.talkToUs}
-          </AnchorButton>
+          <div className="grid grid-cols-2 gap-3" data-product-actions>
+            <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className={ACTION_CLASS}>
+              {t.products.talkToUs}
+            </AnchorButton>
+            <ProductContact productName={localizedName} locale={locale} className={ACTION_CLASS} />
+          </div>
         </div>
       ) : avail.kind === "sold-out" ? (
         /*
@@ -268,9 +273,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
             <span className="sr-only">{t.products.price}: </span>
             {formatPrice(avail.price_cents)}
           </p>
-          <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className="w-full sm:w-auto">
-            {t.products.talkToUs}
-          </AnchorButton>
+          <div className="grid grid-cols-2 gap-3" data-product-actions>
+            <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className={ACTION_CLASS}>
+              {t.products.talkToUs}
+            </AnchorButton>
+            <ProductContact productName={localizedName} locale={locale} className={ACTION_CLASS} />
+          </div>
         </div>
       ) : (
         <div className="space-y-5">
@@ -296,9 +304,12 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                 +
               </button>
             </div>
-            <Button size="lg" className="h-auto min-h-[52px] w-full min-w-0 whitespace-normal break-words px-4 py-3 text-center text-[0.9rem] leading-tight sm:text-base" onClick={add}>
-              {t.products.addToCart}
-            </Button>
+            <div className="grid grid-cols-2 gap-3" data-product-actions>
+              <Button size="lg" className={ACTION_CLASS} onClick={add}>
+                {t.products.addToCart}
+              </Button>
+              <ProductContact productName={localizedName} locale={locale} className={ACTION_CLASS} />
+            </div>
           </div>
         </div>
       )}

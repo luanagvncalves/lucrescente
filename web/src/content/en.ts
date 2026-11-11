@@ -26,6 +26,7 @@ export const en: Dictionary = {
     skinSafeText:
       "our solid shampoos can be used on the body too, with no worries: thanks to their natural ingredients and the absence of harsh chemicals, you can enjoy a multi-purpose shampoo every day!",
     contactTitle: "talk to us about this product",
+    contactButton: "contact us",
     contactSuccess: "✓ message sent! thank you for getting in touch.",
     contactError: "we could not send your message. please try again, or email us directly at",
     contactName: "name",
