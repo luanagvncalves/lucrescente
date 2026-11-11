@@ -36,7 +36,7 @@
   "scientific_name": "Prunus dulcis.",
   "origin": "Extraído das amêndoas doces, fruto de uma árvore cultivada sobretudo na bacia do Mediterrâneo.",
   "properties": "Textura leve e rapidamente absorvida, rico em vitamina E e ácidos gordos essenciais (oleico e linoleico), que ajudam a nutrir e amaciar a pele sem deixar sensação gordurosa. Muito usado como óleo de massagem pela sua boa deslizabilidade.",
-  "applications": "Usado como óleo base nos nossos roll-ons e nos batons, e também no amaciador, onde nutre e suaviza.",
+  "applications": "Usado como óleo base nos nossos roll-ons e nos bálsamos labiais, e também no amaciador, onde nutre e suaviza.",
   "sort_order": 4
  },
  {
@@ -116,7 +116,7 @@
   "scientific_name": "Eucalyptus radiata.",
   "origin": "Extraído por destilação das folhas de eucalipto, árvore originária da Austrália.",
   "properties": "Aroma fresco e penetrante, tradicionalmente associado a uma sensação de respiração desobstruída e a ambientes revigorantes, sendo uma variedade de eucalipto considerada mais suave do que outras.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite e no inalador. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado nos roll-ons para dores de cabeça e respiratórios e no inalador. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 12
  },
  {
@@ -136,7 +136,7 @@
   "scientific_name": "Mentha piperita.",
   "origin": "Extraído por destilação das folhas de hortelã-pimenta.",
   "properties": "Aroma intenso e refrescante, com uma sensação de frescor imediata na pele quando devidamente diluído e aplicado, graças ao mentol presente na planta.",
-  "applications": "Usado nos roll-ons para dores de cabeça e para sinusite, no inalador e, se quiseres, nos batons hidratantes, onde dá uma sensação fresca e refrescante. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado nos roll-ons para dores de cabeça e respiratórios, no inalador e, se quiseres, nos bálsamos labiais, onde dá uma sensação fresca e refrescante. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 14
  },
  {
@@ -146,7 +146,7 @@
   "scientific_name": "Citrus sinensis.",
   "origin": "Extraído da casca da laranja doce, um dos óleos essenciais cítricos mais usados em cosmética natural.",
   "properties": "Aroma cítrico doce e alegre, associado a uma sensação de bem-estar e frequentemente usado para equilibrar aromas mais intensos noutras misturas.",
-  "applications": "Usado como nota aromática no roll-on de relaxamento e, se quiseres, nos batons hidratantes, para um cheirinho alegre que agrada quase toda a gente. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado como nota aromática no roll-on de relaxamento e, se quiseres, nos bálsamos labiais, para um cheirinho alegre que agrada quase toda a gente. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 15
  },
  {
@@ -216,7 +216,7 @@
   "scientific_name": "Melaleuca alternifolia.",
   "origin": "Extraído por destilação das folhas da árvore-do-chá, nativa da Austrália, onde é tradicionalmente usada pelos povos aborígenes.",
   "properties": "Aroma fresco e ligeiramente medicinal; um dos óleos essenciais mais estudados em cosmética natural, sendo tradicionalmente associado a peles com tendência oleosa ou a imperfeições, ajudando a transmitir uma sensação de limpeza.",
-  "applications": "Usado em pequenas quantidades no desodorizante de tea-tree/erva-príncipe e no roll-on para sinusite, para uma sensação extra de limpeza. Também o podes escolher como aroma nos ambientadores e nas velas.",
+  "applications": "Usado em pequenas quantidades no desodorizante de tea-tree/erva-príncipe e no roll-on respiratório, para uma sensação extra de limpeza. Também o podes escolher como aroma nos ambientadores e nas velas.",
   "sort_order": 22
  },
  {
@@ -276,7 +276,7 @@
   "scientific_name": "Theobroma cacao.",
   "origin": "Extraída das sementes do cacaueiro, árvore tropical cultivada sobretudo na América Central e do Sul e na África Ocidental.",
   "properties": "Sólida e quebradiça à temperatura ambiente, rica em antioxidantes naturais (polifenóis) que ajudam a proteger a própria gordura da oxidação. Forma uma barreira protetora na pele, ajuda a reter humidade e é tradicionalmente associada à manutenção da elasticidade em zonas sujeitas a maior distensão.",
-  "applications": "Usada nos nossos batons, onde nutre e suaviza os lábios.",
+  "applications": "Usada nos nossos bálsamos labiais, onde nutre e suaviza os lábios.",
   "sort_order": 28
  },
  {
@@ -346,7 +346,7 @@
   "scientific_name": null,
   "origin": "Produzida pelas abelhas para construir os favos da colmeia; a variante amarela retém a cor e o aroma natural do mel e do pólen.",
   "properties": "Confere estrutura e textura sólida a bálsamos e velas, além de ajudar a formar uma barreira protetora e ligeiramente oclusiva na pele, reduzindo a perda de água. Tem propriedades emolientes suaves e contribui para a estabilidade e o prazo de validade das fórmulas em que entra, ao criar uma textura mais resistente ao calor.",
-  "applications": "Usada nos nossos batons, para lhes dar estrutura e ajudar a proteger os lábios.",
+  "applications": "Usada nos nossos bálsamos labiais, para lhes dar estrutura e ajudar a proteger os lábios.",
   "sort_order": 37
  },
  {
@@ -556,7 +556,7 @@
   "scientific_name": "Cinnamomum camphora.",
   "origin": "Extraído por destilação da madeira da canforeira, uma árvore originária do Leste Asiático, da mesma espécie que dá o ravintsara.",
   "properties": "Aroma intenso, penetrante e muito fresco, com a sensação de arrefecimento característica que se sente logo na pele. Tradicionalmente usado em bálsamos aplicados no peito, nas têmporas e na nuca, pela sensação de respiração desimpedida e de alívio que acompanha o aroma.",
-  "applications": "Usado nos nossos roll-on para a dor de cabeça e para a sinusite, sempre diluído em óleo de amêndoas doces, onde dá a nota fresca e penetrante da mistura.",
+  "applications": "Usado nos nossos roll-on para a dor de cabeça e respiratórios, sempre diluído em óleo de amêndoas doces, onde dá a nota fresca e penetrante da mistura.",
   "sort_order": 61
  },
  {
@@ -566,7 +566,7 @@
   "scientific_name": null,
   "origin": "Pigmento mineral, o mesmo que dá a cor às argilas e aos barros: o que usamos é de origem mineral e de grau cosmético, aprovado para uso em produtos de maquilhagem.",
   "properties": "Dá cor sem corantes sintéticos e sem aroma próprio, mantendo-se estável ao longo do tempo e à luz. Consoante a dose, vai do bege quente ao tom de tijolo, e não altera a textura nem a nutrição do bálsamo.",
-  "applications": "É o que dá a cor ao nosso batom hidratante com cor: o único dos nossos batons que leva pigmento.",
+  "applications": "É o que dá a cor ao nosso bálsamo labial com cor: o único dos nossos bálsamos labiais que leva pigmento.",
   "sort_order": 62
  },
  {

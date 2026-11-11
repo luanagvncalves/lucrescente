@@ -40,7 +40,7 @@ export type ProductSeed = {
 export const categories: CategorySeed[] = [
   { slug: "amaciadores", name: "amaciadores", sort_order: 0 },
   { slug: "ambientadores", name: "ambientadores", sort_order: 1 },
-  { slug: "batons", name: "batons", sort_order: 2 },
+  { slug: "batons", name: "bálsamos labiais", sort_order: 2 },
   { slug: "champos", name: "champôs", sort_order: 3 },
   { slug: "desodorizantes", name: "desodorizantes", sort_order: 4 },
   { slug: "inaladores", name: "inaladores", sort_order: 5 },
@@ -446,7 +446,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "roll-on-sinusite",
-    name: "roll-on para sinusite",
+    name: "roll-on respiratório",
     category_slug: "roll-on",
     sort_order: 2,
     why_it_works:
@@ -511,11 +511,11 @@ export const products: ProductSeed[] = [
   // ---------------- batons (boião / stick) ----------------
   {
     slug: "batom-hidratante-com-cor",
-    name: "batom hidratante com cor",
+    name: "bálsamo labial com cor",
     category_slug: "batons",
     sort_order: 0,
     why_it_works:
-      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos batons que leva cor. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.",
+      "bálsamo para usar todos os dias. a cera de abelha dá consistência ao bálsamo e ajuda a proteger os lábios. a manteiga de cacau e o óleo de amêndoas doces nutrem e suavizam, deixando os lábios confortáveis sem uma sensação pesada. a cor de tijolo vem do óxido de ferro, um pigmento mineral: é o único dos nossos bálsamos labiais que leva cor. podes juntar um óleo essencial à tua escolha, laranja doce ou hortelã-pimenta, ou ficar sem óleo.",
     ingredient_slugs: [
       "cera-de-abelha-amarela",
       "manteiga-de-cacau",
@@ -566,7 +566,7 @@ export const products: ProductSeed[] = [
   },
   {
     slug: "batom-hidratante-sem-cor",
-    name: "batom hidratante sem cor",
+    name: "bálsamo labial sem cor",
     category_slug: "batons",
     sort_order: 1,
     why_it_works:

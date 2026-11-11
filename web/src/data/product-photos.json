@@ -1,0 +1,22 @@
+{
+  "champo-oleosos": [
+    { "path": "/images/products/champo-oleosos/oleosos-1.jpg", "alt": "quatro champôs sólidos redondos de cor verde-acinzentada, com textura granulada, sobre tecido floral rosa" },
+    { "path": "/images/products/champo-oleosos/oleosos-2.jpg", "alt": "champôs sólidos verde-acinzentados sobre tecido floral rosa, um deles de lado a mostrar a face verde e rugosa" },
+    { "path": "/images/products/champo-oleosos/oleosos-3.jpg", "alt": "quatro champôs sólidos verde-acinzentados sobre tecido floral rosa e azul, um com a face verde e rugosa à vista" },
+    { "path": "/images/products/champo-oleosos/oleosos-4.jpg", "alt": "champôs sólidos verde-acinzentados empilhados sobre tecido floral" }
+  ],
+  "mascara-150ml": [
+    { "path": "/images/products/mascara-150ml/mascara-1.jpg", "alt": "boiões brancos de máscara capilar com etiqueta lucrescente, um aberto, ao lado de uma tampa, sobre tecido floral rosa" },
+    { "path": "/images/products/mascara-150ml/mascara-2.jpg", "alt": "boiões brancos de máscara capilar com etiqueta azul lucrescente, um deles aberto a mostrar o creme, sobre tecido floral" },
+    { "path": "/images/products/mascara-150ml/mascara-3.jpg", "alt": "boião de máscara capilar com tampa dourada ao lado de um bálsamo labial em stick e de uma vela acesa em copo de vidro" }
+  ],
+  "desodorizante-lavanda-palmarosa": [
+    { "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-1.jpg", "alt": "dois boiões de desodorizante em creme amarelado, um aberto e outro fechado com etiqueta lucrescente, ao lado da tampa branca, sobre tecido floral" },
+    { "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-2.jpg", "alt": "dois boiões de desodorizante em creme amarelado e uma tampa branca sobre tecido floral rosa e azul" }
+  ],
+  "desodorizante-tea-tree-erva-principe": [
+    { "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-1.jpg", "alt": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral" },
+    { "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-2.jpg", "alt": "boião de vidro âmbar fechado de desodorizante em creme, com etiqueta lucrescente, pousado em tecido floral" },
+    { "path": "/images/products/desodorizante-tea-tree-erva-principe/2.jpg", "alt": "conjunto de produtos lucrescente sobre tecido floral: boião branco de desodorizante em creme, sais de banho, sabonete com sementes de papoila, inalador e bálsamo labial" }
+  ]
+}

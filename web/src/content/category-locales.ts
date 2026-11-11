@@ -11,7 +11,7 @@ const names: Record<string, Partial<Record<ProductLocale, string>>> = {
   "roll-on": { pt: "roll-ons", en: "roll-ons", fr: "roll-ons" },
   sprays: { en: "sprays", fr: "sprays" },
   "sais-de-banho": { en: "bath salts", fr: "sels de bain" },
-  batons: { en: "lip balms", fr: "baumes à lèvres" },
+  batons: { pt: "bálsamos labiais", en: "lip balms", fr: "baumes à lèvres" },
   inaladores: { en: "inhalers", fr: "inhalateurs" },
   ambientadores: { en: "air fresheners", fr: "fondants" },
 };

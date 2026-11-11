@@ -200,7 +200,7 @@ export const pt = {
       scientificName: "nome científico",
       origin: "origem",
       properties: "propriedades",
-      applications: "aplicações em lucrescente",
+      applications: "aplicações na lucrescente",
     },
     backToIndex: "← voltar aos ingredientes", // ui
     productsUsing: "produtos com este ingrediente", // ui
@@ -316,7 +316,7 @@ export const pt = {
           },
           {
             q: "que produtos posso usar diretamente na pele?",
-            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os batons, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, porque não levam químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica), e a cera de soja das velas é hidratante, por isso também pode ir à pele. escolhemos os ingredientes a pensar nisso, mas a pele é tua e és tu quem a conhece melhor: se for sensível, experimenta primeiro numa zona pequena.",
+            a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os bálsamos labiais, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, porque não levam químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica), e a cera de soja das velas é hidratante, por isso também pode ir à pele. escolhemos os ingredientes a pensar nisso, mas a pele é tua e és tu quem a conhece melhor: se for sensível, experimenta primeiro numa zona pequena.",
           },
         ],
       },

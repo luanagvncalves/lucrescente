@@ -10,6 +10,9 @@ import { getProductCopy } from "../src/content/product-locales";
 import { getIngredientCopy } from "../src/content/ingredient-locales";
 import { pt } from "../src/content/pt";
 import { linkedQuestions } from "../src/content/faq-anchors";
+import curatedPhotos from "../src/data/product-photos.json";
+import { existsSync } from "node:fs";
+import { fileURLToPath } from "node:url";
 
 const expectedVariants: Record<string, [number | null, number]> = {
   "deo-lav-60": [600, 3],
@@ -57,7 +60,7 @@ test("catalogue models the supplied inventory as 28 products and 34 variants", (
   assert.equal(products.flatMap((p) => p.variants).length, 34);
   assert.deepEqual(
     categories.map((c) => c.name),
-    ["amaciadores", "ambientadores", "batons", "champôs", "desodorizantes", "inaladores", "máscaras capilares", "roll-on", "sabonetes", "sais de banho", "sprays", "velas"],
+    ["amaciadores", "ambientadores", "bálsamos labiais", "champôs", "desodorizantes", "inaladores", "máscaras capilares", "roll-on", "sabonetes", "sais de banho", "sprays", "velas"],
   );
 });
 
@@ -129,5 +132,22 @@ test("catalogue refresh restores the massage candle and keeps FAQ links valid", 
       assert.ok(copy.name && copy.origin && copy.properties && copy.applications);
       if (locale !== "pt") assert.notEqual(copy.name, oil.name.toLowerCase());
     }
+  }
+});
+
+test("restored galleries reference real files and display names also update old carts", () => {
+  assert.equal(curatedPhotos["champo-oleosos"].length, 4);
+  assert.equal(curatedPhotos["mascara-150ml"].length, 3);
+  for (const photos of Object.values(curatedPhotos)) {
+    for (const photo of photos) assert.ok(existsSync(fileURLToPath(new URL(`../public${photo.path}`, import.meta.url))), photo.path);
+  }
+  assert.equal(pt.ingredients.sections.applications, "aplicações na lucrescente");
+  for (const [slug, name] of Object.entries({
+    "roll-on-sinusite": "roll-on respiratório",
+    "batom-hidratante-com-cor": "bálsamo labial com cor",
+    "batom-hidratante-sem-cor": "bálsamo labial sem cor",
+  })) {
+    assert.equal(products.find((p) => p.slug === slug)?.name, name);
+    assert.equal(getProductCopy(slug, "pt", { name: "old cart name" }).name, name);
   }
 });

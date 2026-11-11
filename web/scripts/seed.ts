@@ -10,6 +10,7 @@ import { createClient } from "@supabase/supabase-js";
 import { categories, products } from "../src/data/catalog";
 import ingredients from "../src/data/ingredients.json";
 import photoMap from "../src/data/photo-map.json";
+import curatedPhotos from "../src/data/product-photos.json";
 
 config({ path: ".env.local" });
 
@@ -94,12 +95,13 @@ async function main() {
     // images (replace set)
     await db.from("product_images").delete().eq("product_id", prod.id);
     const entry = photos.products[p.slug];
-    if (entry?.hero) {
-      const ordered = [entry.hero, ...entry.gallery.filter((g) => g !== entry.hero)];
-      const rows = ordered.map((path, i) => ({
+    const curated = (curatedPhotos as Record<string, { path: string; alt: string }[]>)[p.slug];
+    if (curated || entry?.hero) {
+      const ordered = curated ?? [entry.hero!, ...entry.gallery.filter((g) => g !== entry.hero)].map((path, i) => ({ path: `/images/products/${p.slug}/${i}.jpg`, alt: entry.alt[path] ?? p.name }));
+      const rows = ordered.map((image, i) => ({
         product_id: prod.id,
-        path: `/images/products/${p.slug}/${i}.jpg`,
-        alt: entry.alt[path] ?? p.name,
+        path: image.path,
+        alt: image.alt,
         is_primary: i === 0,
         sort_order: i,
       }));
