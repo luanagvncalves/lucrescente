@@ -406,5 +406,7 @@ const alt: Record<string, { en: string; fr: string }> = {
 export function getImageAlt(portuguese: string | null | undefined, locale: ProductLocale): string {
   if (!portuguese) return "";
   if (locale === "pt") return portuguese;
+  const decorated = portuguese.match(/^vela decorada artesanal da lucrescente, fotografia (\d+)$/);
+  if (decorated) return locale === "en" ? `handcrafted decorated lucrescente candle, photograph ${decorated[1]}` : `bougie décorée artisanale lucrescente, photographie ${decorated[1]}`;
   return alt[portuguese.trim()]?.[locale] ?? portuguese;
 }

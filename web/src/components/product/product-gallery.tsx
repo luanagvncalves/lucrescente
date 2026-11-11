@@ -10,10 +10,18 @@ import type { ProductImage as Img } from "@/lib/types";
 export function ProductGallery({ images, name, locale = "pt" }: { images: Img[]; name: string; locale?: ProductLocale }) {
   const t = getDictionary(locale);
   const [index, setIndex] = useState(0);
+  const [requestedIndex, setRequestedIndex] = useState(0);
+  const loaded = useRef(new Set<string>());
   const touchStartX = useRef<number | null>(null);
+  const largeGallery = images.length > 16;
 
-  const goToPrevious = () => setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
-  const goToNext = () => setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  function selectImage(next: number) {
+    setRequestedIndex(next);
+    if (!largeGallery || loaded.current.has(images[next].path)) setIndex(next);
+  }
+
+  const goToPrevious = () => selectImage(requestedIndex === 0 ? images.length - 1 : requestedIndex - 1);
+  const goToNext = () => selectImage(requestedIndex === images.length - 1 ? 0 : requestedIndex + 1);
 
   return (
     <div>
@@ -42,12 +50,11 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
         }}
       >
         {/*
-          Every photograph is on the page from the start, stacked, and the slide
-          only changes which one is visible. Mounting the next one on click left
-          the frame blank (the paper colour) until it had downloaded — on a slow
-          connection that was two white photographs in a row.
+          Small galleries preload all photos. Large galleries keep the current
+          photo visible until a requested photo is ready, and preload neighbours
+          instead of downloading dozens of full-size images on first load.
         */}
-        {images.map((img, i) => (
+        {images.map((img, i) => !largeGallery || [0, index, requestedIndex, (requestedIndex + 1) % images.length, (requestedIndex + images.length - 1) % images.length].includes(i) ? (
           <Image
             key={img.path}
             src={img.path}
@@ -55,11 +62,15 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
             fill
             priority={i === 0}
             loading="eager"
+            onLoad={() => {
+              loaded.current.add(img.path);
+              if (i === requestedIndex) setIndex(i);
+            }}
             aria-hidden={i !== index}
             sizes="(min-width: 768px) 58vw, 100vw"
             className={`object-cover object-center transition-opacity duration-200 ${i === index ? "opacity-100" : "pointer-events-none opacity-0"}`}
           />
-        ))}
+        ) : null)}
 
         {images.length > 1 && (
           <>
@@ -98,7 +109,7 @@ export function ProductGallery({ images, name, locale = "pt" }: { images: Img[];
           <li key={img.path} className="shrink-0">
             <button
               type="button"
-              onClick={() => setIndex(i)}
+              onClick={() => selectImage(i)}
               aria-pressed={i === index}
               aria-label={getImageAlt(img.alt, locale)}
               className={`relative h-20 w-16 overflow-hidden rounded-xl border-2 transition-colors ${i === index ? "border-forest" : "border-transparent hover:border-moss/50"}`}

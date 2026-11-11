@@ -132,7 +132,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
             full content width, and the whole page with it. */}
         <div className="min-w-0 md:w-[min(58%,60vh)] md:shrink-0">
           {product.images.length > 1 ? (
-            <ProductGallery images={product.images} name={copy.name} locale={locale} />
+            <ProductGallery key={product.slug} images={product.images} name={copy.name} locale={locale} />
           ) : (
             // the same 60vh width ceiling the gallery uses, so a single
             // photograph is held to 80vh too without the ratio being bent

@@ -1,22 +1,288 @@
 {
   "champo-oleosos": [
-    { "path": "/images/products/champo-oleosos/oleosos-1.jpg", "alt": "quatro champôs sólidos redondos de cor verde-acinzentada, com textura granulada, sobre tecido floral rosa" },
-    { "path": "/images/products/champo-oleosos/oleosos-2.jpg", "alt": "champôs sólidos verde-acinzentados sobre tecido floral rosa, um deles de lado a mostrar a face verde e rugosa" },
-    { "path": "/images/products/champo-oleosos/oleosos-3.jpg", "alt": "quatro champôs sólidos verde-acinzentados sobre tecido floral rosa e azul, um com a face verde e rugosa à vista" },
-    { "path": "/images/products/champo-oleosos/oleosos-4.jpg", "alt": "champôs sólidos verde-acinzentados empilhados sobre tecido floral" }
+    {
+      "path": "/images/products/champo-oleosos/oleosos-1.jpg",
+      "alt": "quatro champôs sólidos redondos de cor verde-acinzentada, com textura granulada, sobre tecido floral rosa"
+    },
+    {
+      "path": "/images/products/champo-oleosos/oleosos-2.jpg",
+      "alt": "champôs sólidos verde-acinzentados sobre tecido floral rosa, um deles de lado a mostrar a face verde e rugosa"
+    },
+    {
+      "path": "/images/products/champo-oleosos/oleosos-3.jpg",
+      "alt": "quatro champôs sólidos verde-acinzentados sobre tecido floral rosa e azul, um com a face verde e rugosa à vista"
+    },
+    {
+      "path": "/images/products/champo-oleosos/oleosos-4.jpg",
+      "alt": "champôs sólidos verde-acinzentados empilhados sobre tecido floral"
+    }
   ],
   "mascara-150ml": [
-    { "path": "/images/products/mascara-150ml/mascara-1.jpg", "alt": "boiões brancos de máscara capilar com etiqueta lucrescente, um aberto, ao lado de uma tampa, sobre tecido floral rosa" },
-    { "path": "/images/products/mascara-150ml/mascara-2.jpg", "alt": "boiões brancos de máscara capilar com etiqueta azul lucrescente, um deles aberto a mostrar o creme, sobre tecido floral" },
-    { "path": "/images/products/mascara-150ml/mascara-3.jpg", "alt": "boião de máscara capilar com tampa dourada ao lado de um bálsamo labial em stick e de uma vela acesa em copo de vidro" }
+    {
+      "path": "/images/products/mascara-150ml/mascara-1.jpg",
+      "alt": "boiões brancos de máscara capilar com etiqueta lucrescente, um aberto, ao lado de uma tampa, sobre tecido floral rosa"
+    },
+    {
+      "path": "/images/products/mascara-150ml/mascara-2.jpg",
+      "alt": "boiões brancos de máscara capilar com etiqueta azul lucrescente, um deles aberto a mostrar o creme, sobre tecido floral"
+    },
+    {
+      "path": "/images/products/mascara-150ml/mascara-3.jpg",
+      "alt": "boião de máscara capilar com tampa dourada ao lado de um bálsamo labial em stick e de uma vela acesa em copo de vidro"
+    }
   ],
   "desodorizante-lavanda-palmarosa": [
-    { "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-1.jpg", "alt": "dois boiões de desodorizante em creme amarelado, um aberto e outro fechado com etiqueta lucrescente, ao lado da tampa branca, sobre tecido floral" },
-    { "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-2.jpg", "alt": "dois boiões de desodorizante em creme amarelado e uma tampa branca sobre tecido floral rosa e azul" }
+    {
+      "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-1.jpg",
+      "alt": "dois boiões de desodorizante em creme amarelado, um aberto e outro fechado com etiqueta lucrescente, ao lado da tampa branca, sobre tecido floral"
+    },
+    {
+      "path": "/images/products/desodorizante-lavanda-palmarosa/desodorizante-2.jpg",
+      "alt": "dois boiões de desodorizante em creme amarelado e uma tampa branca sobre tecido floral rosa e azul"
+    }
   ],
   "desodorizante-tea-tree-erva-principe": [
-    { "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-1.jpg", "alt": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral" },
-    { "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-2.jpg", "alt": "boião de vidro âmbar fechado de desodorizante em creme, com etiqueta lucrescente, pousado em tecido floral" },
-    { "path": "/images/products/desodorizante-tea-tree-erva-principe/2.jpg", "alt": "conjunto de produtos lucrescente sobre tecido floral: boião branco de desodorizante em creme, sais de banho, sabonete com sementes de papoila, inalador e bálsamo labial" }
+    {
+      "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-1.jpg",
+      "alt": "boião de vidro âmbar aberto com desodorizante em creme branco, tampa prateada com etiqueta lucrescente, sobre tecido floral"
+    },
+    {
+      "path": "/images/products/desodorizante-tea-tree-erva-principe/teatree-2.jpg",
+      "alt": "boião de vidro âmbar fechado de desodorizante em creme, com etiqueta lucrescente, pousado em tecido floral"
+    },
+    {
+      "path": "/images/products/desodorizante-tea-tree-erva-principe/2.jpg",
+      "alt": "conjunto de produtos lucrescente sobre tecido floral: boião branco de desodorizante em creme, sais de banho, sabonete com sementes de papoila, inalador e bálsamo labial"
+    }
+  ],
+  "vela-decorada": [
+    {
+      "path": "/images/products/vela-decorada/decorada-245b6a3193ab.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 6"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-cce8170d4d2a.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 29"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-68845a21d8e4.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 8"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-5c415cc177cb.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 25"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-7eeadb24d262.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 19"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-c2e0a6e12ead.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 1"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-821ac4d5336a.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 48"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-817f244d020e.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 16"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-4b8a0aaf672c.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 46"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-20ec4ccc6a1e.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 13"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-6dc6f1c15edc.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 52"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-9222feae26a7.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 32"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-5e7612aba709.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 9"
+    },
+    {
+      "path": "/images/products/vela-decorada/1.jpg",
+      "alt": "vela artesanal em copo de vidro com laço amarelo e flores secas amarelas"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-5f3745e994d6.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 23"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-37210e1cd077.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 17"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-a1a5e99bcc32.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 45"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-442008aae2c1.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 36"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-16f734b3ab1d.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 40"
+    },
+    {
+      "path": "/images/products/vela-decorada/2.jpg",
+      "alt": "vela artesanal em copo de vidro com laço amarelo e flores secas coloridas"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-b0c5d34a7de8.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 49"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-1c349e752328.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 21"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-61ce1d7d49e2.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 31"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-4563e9184d67.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 7"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-cf24acadb7bb.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 22"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-32e70b45ecfc.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 42"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-93fb1e24eddd.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 5"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-1cb1561fa34f.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 41"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-033a3b199210.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 15"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-ed4055adbbc4.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 20"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-a72ac3c5e02d.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 37"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-298bf8fb83dc.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 43"
+    },
+    {
+      "path": "/images/products/vela-decorada/3.jpg",
+      "alt": "vela artesanal em copo de vidro com laço amarelo e flores secas"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-169dfe359ae5.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 53"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-fed610de5def.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 38"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-f683c6d0cdea.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 47"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-1252ea88f2ae.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 51"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-423d3fe82b07.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 44"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-7b1eb0846dc2.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 39"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-c82c9f766897.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 33"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-1f4cf7f4e187.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 2"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-c881a7602886.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 50"
+    },
+    {
+      "path": "/images/products/vela-decorada/0.jpg",
+      "alt": "vela artesanal em copo de vidro com laço amarelo e flores secas brancas"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-2507a922e5fc.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 34"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-64ff6b0321d5.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 28"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-124554c5eb8b.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 10"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-9bfc49428d82.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 24"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-04ddddfeef0b.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 3"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-d479e2443843.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 14"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-0aead520ed9f.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 27"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-f8fe790b9463.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 26"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-7764847a9a1d.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 12"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-911728053818.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 18"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-28c53a533cce.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 11"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-f323241c418b.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 35"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-ef9d60c6c228.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 30"
+    },
+    {
+      "path": "/images/products/vela-decorada/decorada-247a75910ff5.jpg",
+      "alt": "vela decorada artesanal da lucrescente, fotografia 4"
+    }
   ]
 }

@@ -13,6 +13,7 @@ import { linkedQuestions } from "../src/content/faq-anchors";
 import curatedPhotos from "../src/data/product-photos.json";
 import { existsSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { getImageAlt } from "../src/content/image-alt-locales";
 
 const expectedVariants: Record<string, [number | null, number]> = {
   "deo-lav-60": [600, 3],
@@ -138,6 +139,11 @@ test("catalogue refresh restores the massage candle and keeps FAQ links valid", 
 test("restored galleries reference real files and display names also update old carts", () => {
   assert.equal(curatedPhotos["champo-oleosos"].length, 4);
   assert.equal(curatedPhotos["mascara-150ml"].length, 3);
+  assert.equal(curatedPhotos["vela-decorada"].length, 57);
+  assert.equal(new Set(curatedPhotos["vela-decorada"].map((image) => image.path)).size, 57);
+  assert.equal(curatedPhotos["vela-decorada"].filter((image) => image.path.includes("/decorada-")).length, 53);
+  assert.equal(getImageAlt("vela decorada artesanal da lucrescente, fotografia 53", "en"), "handcrafted decorated lucrescente candle, photograph 53");
+  assert.equal(getImageAlt("vela decorada artesanal da lucrescente, fotografia 53", "fr"), "bougie décorée artisanale lucrescente, photographie 53");
   for (const photos of Object.values(curatedPhotos)) {
     for (const photo of photos) assert.ok(existsSync(fileURLToPath(new URL(`../public${photo.path}`, import.meta.url))), photo.path);
   }
