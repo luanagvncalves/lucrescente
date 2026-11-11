@@ -400,6 +400,16 @@
   "sort_order": 40
  },
  {
+  "slug": "argila-verde",
+  "name": "Argila Verde",
+  "category": "Argilas",
+  "scientific_name": null,
+  "origin": "Argila mineral de origem natural, com uma tonalidade esverdeada característica.",
+  "properties": "Ajuda a absorver o excesso de oleosidade e a remover impurezas, contribuindo para uma sensação de limpeza e equilíbrio.",
+  "applications": "Usada no champô sólido para cabelos oleosos, onde ajuda a absorver o excesso de oleosidade do couro cabeludo.",
+  "sort_order": 40
+ },
+ {
   "slug": "conservante-cosgard",
   "name": "Conservante Cosgard",
   "category": "Ativos",

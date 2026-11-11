@@ -70,7 +70,7 @@ export function HomeHero({
               The ceiling is what that longest line — twenty-six characters —
               can be without spilling past the container.
             */
-            className="max-w-none whitespace-normal font-display text-[clamp(3.2rem,7vw,7rem)] leading-[0.98] tracking-[-0.04em] lowercase text-ivory md:whitespace-pre-line"
+            className="max-w-none whitespace-normal font-display text-[clamp(3.2rem,6.4vw,5.8rem)] leading-[0.98] tracking-[-0.04em] lowercase text-ivory md:whitespace-pre-line"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}

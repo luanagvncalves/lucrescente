@@ -13,7 +13,7 @@ const names: Record<string, Partial<Record<ProductLocale, string>>> = {
   "sais-de-banho": { en: "bath salts", fr: "sels de bain" },
   batons: { en: "lip balms", fr: "baumes à lèvres" },
   inaladores: { en: "inhalers", fr: "inhalateurs" },
-  ambientadores: { en: "air fresheners", fr: "parfums d'ambiance" },
+  ambientadores: { en: "air fresheners", fr: "fondants" },
 };
 
 export function getCategoryName(slug: string, locale: ProductLocale, fallback: string): string {

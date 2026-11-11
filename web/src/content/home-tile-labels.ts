@@ -11,7 +11,7 @@ const labels: Record<string, Record<ProductLocale, string>> = {
   amaciador: { pt: "amaciadores", en: "conditioners", fr: "après-shampoings" },
   "mascara-150ml": { pt: "máscaras capilares", en: "hair masks", fr: "masques capillaires" },
   inalador: { pt: "inaladores", en: "inhalers", fr: "inhalateurs" },
-  ambientador: { pt: "ambientadores", en: "air fresheners", fr: "parfums d'ambiance" },
+  ambientador: { pt: "ambientadores", en: "air fresheners", fr: "fondants" },
 };
 
 export function getHomeTileLabel(slug: string, locale: ProductLocale, fallback: string): string {

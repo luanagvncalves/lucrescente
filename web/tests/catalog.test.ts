@@ -74,9 +74,9 @@ test("availability derives on-request, sold-out and available states without fak
   assert.deepEqual(productAvailability({ variants: [variant(550, 3), variant(800, 0)] }), { kind: "available", price_cents: 550, stock: 3 });
 });
 
-test("ingredient encyclopedia contains 63 entries in 8 categories", () => {
-  assert.equal(ingredients.length, 63);
-  assert.equal(new Set(ingredients.map((i) => i.slug)).size, 63);
+test("ingredient encyclopedia contains 64 entries in 8 categories", () => {
+  assert.equal(ingredients.length, 64);
+  assert.equal(new Set(ingredients.map((i) => i.slug)).size, 64);
   assert.equal(new Set(ingredients.map((i) => i.category)).size, 8);
   assert.equal(ingredients.filter((i) => i.scientific_name?.trim()).length, 44);
   for (const ingredient of ingredients) {

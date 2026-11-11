@@ -124,11 +124,11 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
-      "para cabelos oleosos ou com tendência a oleoso, em cabelo liso, encaracolado, pintado ou alisado. este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila branca e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
+      "para cabelos oleosos ou com tendência a oleoso, em cabelo liso, encaracolado, pintado ou alisado. este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila verde e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
-      "argila-branca",
+      "argila-verde",
       "farinha-de-aveia",
       "farinha-de-coco",
       "oleo-de-coco",
