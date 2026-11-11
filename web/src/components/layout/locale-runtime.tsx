@@ -37,7 +37,8 @@ export function LocaleRuntime() {
 const LINE_TARGETS = [
   "h1:not(.sr-only)", "h2:not(.sr-only)", "h3:not(.sr-only)",
   "h4:not(.sr-only)", "h5:not(.sr-only)", "h6:not(.sr-only)",
-  "p.label-brand", "[data-fit-line]",
+  "p.label-brand", "legend.label-brand", "[data-fit-line]",
+  "main summary.font-display", "main .tile-scrim > .font-display",
   "main header > p.text-body-lg", "main h1 + p.text-body-lg",
   "main .flex.flex-col.gap-4 > p.text-body-lg",
   "#ingredientes + p.text-body-lg",
@@ -107,7 +108,11 @@ function useSingleLineText() {
         else element.style.removeProperty("font-size");
         const style = getComputedStyle(element);
         const base = parseFloat(style.fontSize);
-        const available = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 1;
+        let available = element.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight) - 1;
+        if (element.matches("summary")) {
+          const icon = element.querySelector<HTMLElement>('[aria-hidden="true"]');
+          available -= (icon?.getBoundingClientRect().width ?? 0) + (parseFloat(style.columnGap) || 0);
+        }
         if (available <= 0 || !Number.isFinite(base)) return;
         if (style.textTransform === "lowercase") text = text.toLocaleLowerCase(document.documentElement.lang);
         else if (style.textTransform === "uppercase") text = text.toLocaleUpperCase(document.documentElement.lang);
