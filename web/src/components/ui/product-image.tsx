@@ -10,6 +10,7 @@ type Props = {
   ratio?: "portrait" | "square" | "wide";
   sizes?: string;
   priority?: boolean;
+  loading?: "eager" | "lazy";
   className?: string;
   /** Text for the honest placeholder (visible), e.g. product name. */
   fallbackLabel?: string;
@@ -24,7 +25,7 @@ const ratios = { portrait: "aspect-[3/4]", square: "aspect-square", wide: "aspec
  * Real photo with next/image, or an honest solid-color frame with the crescent motif
  * when a product has no photograph in the supplied set.
  */
-export function ProductImage({ image, ratio = "portrait", sizes = "(min-width: 1024px) 33vw, 100vw", priority, className = "", fallbackLabel, rounded = true, locale = "pt" }: Props) {
+export function ProductImage({ image, ratio = "portrait", sizes = "(min-width: 1024px) 33vw, 100vw", priority, loading, className = "", fallbackLabel, rounded = true, locale = "pt" }: Props) {
   const shape = `${ratios[ratio]} ${rounded ? "rounded-[20px]" : ""} overflow-hidden`;
   const noPhoto = getDictionary(locale).products.noPhoto;
   if (!image) {
@@ -43,7 +44,7 @@ export function ProductImage({ image, ratio = "portrait", sizes = "(min-width: 1
   }
   return (
     <div className={`relative bg-paper ${shape} ${className}`}>
-      <Image src={image.path} alt={getImageAlt(image.alt, locale)} fill sizes={sizes} priority={priority} className="object-cover" />
+      <Image src={image.path} alt={getImageAlt(image.alt, locale)} fill sizes={sizes} priority={priority} loading={priority ? undefined : loading} className="object-cover" />
     </div>
   );
 }

@@ -30,8 +30,8 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         </header>
       </Reveal>
 
-      <div className="mt-14 grid items-start gap-10 md:grid-cols-12">
-        <Reveal className="md:col-span-7">
+      <div className="mt-14 grid items-start gap-6 md:grid-cols-[minmax(0,min(50%,60vh))_minmax(0,1fr)] md:gap-8" data-about-layout>
+        <Reveal>
           {photo ? (
             <ProductGallery
               images={[
@@ -43,7 +43,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
             />
           ) : null}
         </Reveal>
-        <div className="space-y-12 md:col-span-5 md:pt-6">
+        <div className="space-y-12 md:pt-3">
           <Reveal delay={0.12}>
             <section aria-labelledby="lucie">
               <h2 id="lucie" className="text-h2 text-forest lowercase">

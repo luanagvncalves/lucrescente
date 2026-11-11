@@ -216,7 +216,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
       {/* story teaser: story split 7/5 */}
       <section className="bg-ivory" aria-labelledby="historia">
         <div className="container-brand section-gap !pt-12">
-          <div className="grid items-center gap-10 md:grid-cols-12">
+          <div className="grid items-center gap-6 md:grid-cols-12 md:gap-8">
             <Reveal className="md:col-span-7">
               {editorial.sobre ? (
                 <div className="frame-brand relative aspect-[5/4] bg-paper">
