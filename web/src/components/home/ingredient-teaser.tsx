@@ -1,7 +1,8 @@
 import Link from "next/link";
 import type { Ingredient } from "@/lib/types";
 import { Reveal } from "@/components/ui/reveal";
-import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
+import { getIngredientCategoryName, getIngredientCopy, getIngredientName } from "@/content/ingredient-locales";
+import { alphabetical } from "@/lib/alphabetical";
 import type { ProductLocale } from "@/content/product-locales";
 
 /** The oil categories read as a name on their own, so the tile does not repeat the category. */
@@ -16,7 +17,7 @@ const OIL_CATEGORIES = ["Óleos Vegetais", "Óleos Essenciais"];
 export function IngredientTeaserGrid({ items, locale = "pt" }: { items: Ingredient[]; locale?: ProductLocale }) {
   return (
     <ul className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
-      {items.map((i, index) => (
+      {alphabetical(items, (i) => getIngredientName(i.slug, locale, i.name), locale).map((i, index) => (
         // the delay restarts at the top of each row of four, so the second row
         // arrives in the same rhythm as the first
         <Reveal as="li" key={i.slug} delay={(index % 4) * 0.08}>

@@ -19,6 +19,7 @@ import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductContact } from "@/components/product/product-contact";
 import { ProductExtraInfo } from "@/components/product/product-extra-info";
+import { alphabetical } from "@/lib/alphabetical";
 
 export const revalidate = 60;
 
@@ -63,25 +64,15 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // the air freshener and the made-to-order candles take whichever oils the customer picks,
   // so the oils are chosen in the purchase panel rather than listed here
   const scentProduct = isScentProduct(product.slug);
-  const shownIngredients = scentProduct ? product.ingredients.filter((i) => !SCENT_INGREDIENT_SLUGS.has(i.slug)) : product.ingredients;
+  const shownIngredients = alphabetical(scentProduct ? product.ingredients.filter((i) => !SCENT_INGREDIENT_SLUGS.has(i.slug)) : product.ingredients, (i) => getIngredientName(i.slug, locale, i.name), locale);
   // with a scent picker the cautions are not listed oil by oil (the product holds whichever oils
   // are chosen); the one about cinnamon appears in the picker itself, when it is chosen
   const allergenNote = getAllergenNote(scentProduct ? [] : product.ingredients.map((i) => i.slug), locale, product.slug);
   const hairNote = getShampooNote(product.slug, locale);
 
-  // "cria o teu conjunto": same category first, then the rest of the catalogue.
+  // Keep the carousel in the same translated alphabetical order as the catalogue.
   const all = await getProducts();
-  const related = all
-    .filter((p) => p.slug !== product.slug)
-    .sort((a, b) => {
-      const sameA = a.category.slug === product.category.slug ? 0 : 1;
-      const sameB = b.category.slug === product.category.slug ? 0 : 1;
-      // it is a carousel of photographs, so the ones without a photo go last
-      const photoA = a.images.length ? 0 : 1;
-      const photoB = b.images.length ? 0 : 1;
-      return sameA - sameB || photoA - photoB || a.sort_order - b.sort_order;
-    })
-    .slice(0, 12);
+  const related = alphabetical(all.filter((p) => p.slug !== product.slug), (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale).slice(0, 12);
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
   // Product schema with real prices only. On-request products get no offer.

@@ -9,6 +9,7 @@ import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
 import { ProductCard } from "@/components/product/product-card";
+import { alphabetical } from "@/lib/alphabetical";
 
 export const revalidate = 300;
 
@@ -43,7 +44,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   const dict = getDictionary(locale);
   const ingredient = await getIngredientBySlug(slug);
   if (!ingredient) notFound();
-  const products = await getProductsForIngredient(slug);
+  const products = alphabetical(await getProductsForIngredient(slug), (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale);
   const s = dict.ingredients.sections;
 
   const copy = getIngredientCopy(slug, locale, ingredient);

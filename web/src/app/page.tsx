@@ -18,6 +18,7 @@ import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { getCategoryName } from "@/content/category-locales";
 import { getImageAlt } from "@/content/image-alt-locales";
 import { getHomeTileLabel } from "@/content/home-tile-labels";
+import { alphabetical } from "@/lib/alphabetical";
 
 export const revalidate = 60;
 
@@ -98,7 +99,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   };
   const categoryGroups = Object.entries(categoryGroupTiles).map(([label, tiles]) => ({
     label,
-    tiles: tiles.filter((tile): tile is Tile => Boolean(tile)),
+    tiles: alphabetical(tiles.filter((tile): tile is Tile => Boolean(tile)), (tile) => tile.name, locale),
   }));
 
   return (
@@ -136,7 +137,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
             </div>
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {featured.map((p, i) => (
+            {alphabetical(featured, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale).map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.06}>
                 <ProductCard product={p} locale={locale} />
               </Reveal>

@@ -18,6 +18,7 @@ import type { Category, Ingredient, Product } from "./types";
  */
 const CATALOG_TTL = 60;
 const INGREDIENT_TTL = 600;
+const HIDDEN_INGREDIENTS = new Set(["oleo-de-neem", "oleo-de-baunilha-macerado"]);
 
 const PRODUCT_SELECT = `
   id, slug, name, sort_order, why_it_works, is_solid, is_candle, is_deodorant,
@@ -55,7 +56,7 @@ function normalize(r: Row): Product {
     category: r.category,
     variants: [...r.variants].sort((a, b) => a.sort_order - b.sort_order),
     images: [...r.images].sort((a, b) => a.sort_order - b.sort_order),
-    ingredients: [...r.product_ingredients].sort((a, b) => a.sort_order - b.sort_order).map((x) => x.ingredient),
+    ingredients: [...r.product_ingredients].sort((a, b) => a.sort_order - b.sort_order).map((x) => x.ingredient).filter((i) => !HIDDEN_INGREDIENTS.has(i.slug)),
   };
 }
 
@@ -114,7 +115,7 @@ export const getIngredients = cache(
     async (): Promise<Ingredient[]> => {
       const { data, error } = await supabasePublic.from("ingredients").select("*").order("sort_order");
       if (error) throw error;
-      return data;
+      return data.filter((i: Ingredient) => !HIDDEN_INGREDIENTS.has(i.slug));
     },
     ["ingredients"],
     { revalidate: INGREDIENT_TTL, tags: ["ingredients"] },
@@ -124,6 +125,7 @@ export const getIngredients = cache(
 export const getIngredientBySlug = cache(
   unstable_cache(
     async (slug: string): Promise<Ingredient | null> => {
+      if (HIDDEN_INGREDIENTS.has(slug)) return null;
       const { data, error } = await supabasePublic.from("ingredients").select("*").eq("slug", slug).maybeSingle();
       if (error) throw error;
       return data;

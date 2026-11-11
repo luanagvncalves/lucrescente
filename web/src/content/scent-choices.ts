@@ -73,6 +73,8 @@ export const SCENTS: Scent[] = [
   { value: "petitgrain", label: { pt: "petitgrain", en: "petitgrain", fr: "petitgrain" }, ingredient: "oleo-essencial-de-petitgrain" },
   { value: "ravintsara", label: { pt: "ravintsara", en: "ravintsara", fr: "ravintsara" }, ingredient: "oleo-essencial-de-ravintsara" },
   { value: "tea tree", label: { pt: "tea tree", en: "tea tree", fr: "tea tree" }, ingredient: "oleo-essencial-de-tea-tree" },
+  { value: "tangerina", label: { pt: "tangerina", en: "tangerine", fr: "mandarine" }, ingredient: "oleo-essencial-de-tangerina" },
+  { value: "toranja", label: { pt: "toranja", en: "grapefruit", fr: "pamplemousse" }, ingredient: "oleo-essencial-de-toranja" },
   { value: "ylang-ylang", label: { pt: "ylang-ylang", en: "ylang-ylang", fr: "ylang-ylang" }, ingredient: "oleo-essencial-de-ylang-ylang" },
 ];
 

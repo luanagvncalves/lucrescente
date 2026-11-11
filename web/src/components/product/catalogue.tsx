@@ -5,7 +5,8 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { getDictionary } from "@/lib/i18n";
 import type { Category, Product } from "@/lib/types";
 import { getCategoryName } from "@/content/category-locales";
-import type { ProductLocale } from "@/content/product-locales";
+import { getProductCopy, type ProductLocale } from "@/content/product-locales";
+import { alphabetical } from "@/lib/alphabetical";
 import { ProductCard } from "./product-card";
 import { Modal } from "@/components/ui/modal";
 import { Crescent } from "@/components/ui/motifs";
@@ -46,23 +47,12 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
     router.replace(next.size ? `${pathname}?${next}` : pathname, { scroll: false });
   }
 
-  // `sort_order` is the brand's own order, alphabetical by the Portuguese name.
-  // Sorting by the *translated* name instead put the filters — and therefore the
-  // products under them — in a different order in each language, so the English
-  // page was laid out differently from the Portuguese one for no reason a
-  // visitor could see.
-  const sorted = useMemo(() => [...categories].sort((a, b) => a.sort_order - b.sort_order), [categories]);
+  const sorted = useMemo(() => alphabetical(categories, (c) => getCategoryName(c.slug, locale, c.name), locale), [categories, locale]);
 
-  // One flat grid: grouping by category left seven single-product rows mostly empty.
-  // Products stay ordered by category so related items still sit together.
   const visible = useMemo(() => {
-    const order = new Map(sorted.map((c, i) => [c.slug, i]));
     const list = active ? products.filter((p) => p.category.slug === active) : [...products];
-    return list.sort(
-      (a, b) =>
-        (order.get(a.category.slug) ?? 0) - (order.get(b.category.slug) ?? 0) || a.sort_order - b.sort_order,
-    );
-  }, [active, products, sorted]);
+    return alphabetical(list, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale);
+  }, [active, products, locale]);
 
   const options = useMemo(
     () => [

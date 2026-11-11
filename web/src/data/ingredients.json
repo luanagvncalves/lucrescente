@@ -1,15 +1,5 @@
 [
  {
-  "slug": "oleo-de-baunilha-macerado",
-  "name": "Óleo de Baunilha Macerado",
-  "category": "Óleos Vegetais",
-  "scientific_name": "Vanilla planifolia.",
-  "origin": "Obtido pela maceração de vagens de baunilha num óleo vegetal base, processo tradicional que transfere lentamente o aroma e alguns compostos da baunilha para o óleo ao longo de semanas.",
-  "properties": "Aroma doce e envolvente, associado a uma sensação de conforto; o óleo base contribui com propriedades emolientes que ajudam a nutrir e suavizar a pele.",
-  "applications": "",
-  "sort_order": 0
- },
- {
   "slug": "oleo-de-coco",
   "name": "Óleo de Coco",
   "category": "Óleos Vegetais",
@@ -18,16 +8,6 @@
   "properties": "Rico em ácidos gordos saturados (sobretudo ácido láurico), funde à temperatura da pele e forma uma película protetora que ajuda a reter a hidratação e a reduzir a perda de água transepidérmica. Textura leve e absorção relativamente rápida em comparação com outras manteigas vegetais. Muito usado também em cuidados capilares, onde ajuda a reduzir a perda de proteína da fibra capilar.",
   "applications": "Um dos óleos base mais usados por cá: entra nos desodorizantes, nos champôs sólidos e na máscara capilar, onde ajuda a nutrir e a amaciar.",
   "sort_order": 1
- },
- {
-  "slug": "oleo-de-neem",
-  "name": "Óleo de Neem",
-  "category": "Óleos Vegetais",
-  "scientific_name": "Azadirachta indica.",
-  "origin": "Extraído das sementes da árvore de neem, nativa do subcontinente indiano, onde é usada há séculos em remédios tradicionais.",
-  "properties": "Óleo denso de aroma marcante, tradicionalmente valorizado em cuidados do couro cabeludo e da pele, especialmente em fórmulas pensadas para peles ou couros cabeludos com tendência a desequilíbrios. Usado sempre em pequenas percentagens devido à sua concentração.",
-  "applications": "",
-  "sort_order": 2
  },
  {
   "slug": "oleo-de-ricino",
@@ -551,7 +531,7 @@
  },
  {
   "slug": "urtiga-verde",
-  "name": "Urtiga Verde",
+  "name": "Urtiga Verde em Pó",
   "category": "Outros Ingredientes",
   "scientific_name": "Urtica dioica.",
   "origin": "Planta selvagem comum em toda a Europa, tradicionalmente usada em infusões e em cuidados capilares.",
@@ -638,5 +618,25 @@
   "properties": "Sem minerais nem resíduos, mantém a fórmula limpa e estável durante mais tempo do que a água comum, e não deixa marcas nas superfícies onde o spray assenta.",
   "applications": "Usada como fase aquosa do nosso spray relaxante, a acompanhar o álcool e os óleos essenciais.",
   "sort_order": 67
+ },
+ {
+  "slug": "oleo-essencial-de-tangerina",
+  "name": "Óleo Essencial de Tangerina",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus reticulata Blanco.",
+  "origin": "Obtido por expressão a frio da casca da tangerina, onde se concentram os compostos aromáticos do fruto.",
+  "properties": "Aroma cítrico, doce e frutado, que dá suavidade às composições aromáticas. Combina bem com notas florais e amadeiradas, para um perfume acolhedor e equilibrado.",
+  "applications": "Podes escolhê-lo como aroma nos ambientadores e nas velas.",
+  "sort_order": 68
+ },
+ {
+  "slug": "oleo-essencial-de-toranja",
+  "name": "Óleo Essencial de Toranja",
+  "category": "Óleos Essenciais",
+  "scientific_name": "Citrus × paradisi.",
+  "origin": "Obtido por expressão a frio da casca da toranja, um citrino de aroma fresco e ligeiramente amargo.",
+  "properties": "Aroma cítrico, fresco e frutado, com uma nota levemente amarga característica da toranja. Acrescenta uma nota de saída luminosa às composições, combinando bem com outros citrinos e notas herbais.",
+  "applications": "Podes escolhê-lo como aroma nos ambientadores e nas velas.",
+  "sort_order": 69
  }
 ]

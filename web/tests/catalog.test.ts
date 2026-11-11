@@ -5,6 +5,11 @@ import ingredients from "../src/data/ingredients.json";
 import { ALLOWED_COUNTRIES, SHIPPING_TIERS, tierForCountry } from "../src/config/shipping";
 import { productAvailability, variantAvailability, type Variant } from "../src/lib/types";
 import { brandSentence } from "../src/lib/brand-case";
+import { alphabetical } from "../src/lib/alphabetical";
+import { getProductCopy } from "../src/content/product-locales";
+import { getIngredientCopy } from "../src/content/ingredient-locales";
+import { pt } from "../src/content/pt";
+import { linkedQuestions } from "../src/content/faq-anchors";
 
 const expectedVariants: Record<string, [number | null, number]> = {
   "deo-lav-60": [600, 3],
@@ -95,4 +100,34 @@ test("shipping configuration has one unique tier per country", () => {
   assert.equal(tierForCountry("ES")?.id, "eu");
   assert.equal(tierForCountry("US")?.id, "world");
   assert.equal(tierForCountry("XX"), null);
+});
+
+test("display order follows the translated names and leaves the source order intact", () => {
+  const pair = products.filter((p) => ["amaciador", "ambientador"].includes(p.slug));
+  const original = pair.map((p) => p.slug);
+  const sorted = (locale: "pt" | "en") => alphabetical(pair, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale).map((p) => p.slug);
+  assert.deepEqual(sorted("pt"), ["amaciador", "ambientador"]);
+  assert.deepEqual(sorted("en"), ["ambientador", "amaciador"]);
+  assert.deepEqual(pair.map((p) => p.slug), original);
+  const oils = ingredients.filter((i) => ["oleo-essencial-de-tangerina", "oleo-essencial-de-toranja"].includes(i.slug));
+  const oilOrder = (locale: "pt" | "en") => alphabetical(oils, (i) => getIngredientCopy(i.slug, locale, i).name, locale).map((i) => i.slug);
+  assert.deepEqual(oilOrder("pt"), ["oleo-essencial-de-tangerina", "oleo-essencial-de-toranja"]);
+  assert.deepEqual(oilOrder("en"), ["oleo-essencial-de-toranja", "oleo-essencial-de-tangerina"]);
+});
+
+test("catalogue refresh restores the massage candle and keeps FAQ links valid", () => {
+  assert.equal(products.find((p) => p.slug === "vela-massagem")?.is_active, true);
+  assert.equal(ingredients.some((i) => ["oleo-de-neem", "oleo-de-baunilha-macerado"].includes(i.slug)), false);
+  assert.equal(ingredients.find((i) => i.slug === "urtiga-verde")?.name, "Urtiga Verde em Pó");
+  const questions: string[] = pt.faq.groups.flatMap((g) => g.items.map((i) => i.q));
+  assert.ok(!questions.includes("qual dos champôs sólidos é para mim?"));
+  for (const question of Object.values(linkedQuestions)) assert.ok(questions.includes(question), question);
+  for (const slug of ["oleo-essencial-de-tangerina", "oleo-essencial-de-toranja"]) {
+    const oil = ingredients.find((i) => i.slug === slug)!;
+    for (const locale of ["pt", "en", "fr"] as const) {
+      const copy = getIngredientCopy(slug, locale, oil);
+      assert.ok(copy.name && copy.origin && copy.properties && copy.applications);
+      if (locale !== "pt") assert.notEqual(copy.name, oil.name.toLowerCase());
+    }
+  }
 });

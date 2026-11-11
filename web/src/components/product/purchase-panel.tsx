@@ -178,7 +178,7 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
                 {SCENTS.find((x) => x.value === name)?.label[locale] ?? name}
               </span>
             ))}
-            {scentsFor(product.slug).map((scent) => {
+            {scentsFor(product.slug).sort((a, b) => a.label[locale].localeCompare(b.label[locale], locale)).map((scent) => {
               const active = scents.includes(scent.value);
               const full = !active && scents.length >= MAX_SCENTS;
               return (
