@@ -32,10 +32,10 @@ export function LocaleRuntime() {
   return <style>{LINE_STYLES}</style>;
 }
 
-// Fit the full sentence to its container, including the hero while it types.
-// Paragraphs are excluded: only headings, labels and page/section subtitles fit.
+// Keep the hero and product names at their designed font size and allow wrapping.
+// Other headings, labels and page/section subtitles still fit on one line.
 const LINE_TARGETS = [
-  "h1:not(.sr-only)", "h2:not(.sr-only)", "h3:not(.sr-only)",
+  "h1:not(.sr-only):not([data-wrap-heading])", "h2:not(.sr-only)", "h3:not(.sr-only):not([data-wrap-heading])",
   "h4:not(.sr-only)", "h5:not(.sr-only)", "h6:not(.sr-only)",
   "p.label-brand", "legend.label-brand", "[data-fit-line]",
   "main summary.font-display", "main .tile-scrim > .font-display",
