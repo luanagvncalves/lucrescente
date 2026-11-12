@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import type Stripe from "stripe";
-import { stripe, stripeEnabled } from "@/lib/stripe";
+import { stripe, stripeEnabled, isPaidCheckoutSession } from "@/lib/stripe";
 import { finalizeOrder, type OrderLineInput } from "@/lib/orders";
 import { unpackItems } from "@/lib/checkout-metadata";
 import { getVariantsBySkus } from "@/lib/catalog";
@@ -71,10 +71,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid signature" }, { status: 400 });
   }
 
-  if (event.type !== "checkout.session.completed") return NextResponse.json({ received: true });
+  if (event.type !== "checkout.session.completed" && event.type !== "checkout.session.async_payment_succeeded") return NextResponse.json({ received: true });
 
   const session = event.data.object;
-  if (session.payment_status !== "paid") return NextResponse.json({ received: true, skipped: "unpaid" });
+  if (!isPaidCheckoutSession(session)) return NextResponse.json({ received: true, skipped: "unpaid" });
 
   // Held outside the try so the alert below can name what was bought, even when
   // it is finalizing — not reading — that failed.
@@ -90,7 +90,7 @@ export async function POST(req: Request) {
     // and the variant on each product, so nothing has to survive the 500-char
     // metadata cap. Metadata is only the fallback, and carries no names — see
     // lib/checkout-metadata.ts for why.
-    items = await itemsFromLineItems(full);
+    if (!isPaidCheckoutSession(full)) return NextResponse.json({ received: true, skipped: "unpaid" }); items = await itemsFromLineItems(full);
     if (items.length === 0) throw new Error(`no items could be read for session ${full.id}`);
     const rate = full.shipping_cost?.shipping_rate;
     const shippingOption = rate && typeof rate !== "string" ? rate.display_name : null;
