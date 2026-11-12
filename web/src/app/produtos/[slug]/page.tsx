@@ -8,7 +8,6 @@ import { getCategoryName } from "@/content/category-locales";
 import { getIngredientName } from "@/content/ingredient-locales";
 import { getAllergenNote } from "@/content/allergen-notes";
 import { SCENT_INGREDIENT_SLUGS, isScentProduct } from "@/content/scent-choices";
-import { getShampooNote } from "@/content/shampoo-notes";
 import { productAvailability } from "@/lib/types";
 import { brandSentence } from "@/lib/brand-case";
 import { Label } from "@/components/ui/typography";
@@ -67,7 +66,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
   // with a scent picker the cautions are not listed oil by oil (the product holds whichever oils
   // are chosen); the one about cinnamon appears in the picker itself, when it is chosen
   const allergenNote = getAllergenNote(scentProduct ? [] : product.ingredients.map((i) => i.slug), locale, product.slug);
-  const hairNote = getShampooNote(product.slug, locale);
 
   // Keep the carousel in the same translated alphabetical order as the catalogue.
   const all = await getProducts();
@@ -224,26 +222,6 @@ export default async function ProductPage({ params, searchParams }: Params) {
               </p>
             ) : null}
           </section>
-
-          {/* which hair and scalp each solid shampoo suits — also written and
-              translated long ago, and likewise never shown */}
-          {hairNote ? (
-            <section className="mt-8" aria-labelledby="tipo-de-cabelo">
-              <Label>{t.products.hairTypeNote}</Label>
-              <div id="tipo-de-cabelo" className="mt-4 space-y-3 text-[0.92rem]">
-                <div>
-                  <span className="font-ui font-medium text-forest">{t.products.recommendedFor}: </span>
-                  <span className="text-ink/85">{hairNote.good.join(", ")}</span>
-                </div>
-                {hairNote.bad.length ? (
-                  <div>
-                    <span className="font-ui font-medium text-clay">{t.products.notRecommendedFor}: </span>
-                    <span className="text-ink/85">{hairNote.bad.join(", ")}</span>
-                  </div>
-                ) : null}
-              </div>
-            </section>
-          ) : null}
 
           {/* the extra claims sit straight under the ingredients, above the price */}
           <ProductExtraInfo product={product} locale={locale} />
