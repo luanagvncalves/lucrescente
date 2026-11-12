@@ -47,7 +47,6 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   const inciText = identity?.inci || ({ pt: "designação por confirmar", en: "name to be confirmed", fr: "dénomination à confirmer" }[locale]);
   const sections: { id: string; title: string; text: string | null }[] = [
     { id: "sec-propriedades", title: s.properties, text: copy.properties },
-    { id: "sec-aplicacoes", title: s.applications, text: copy.applications },
   ];
   return (
     <article className="container-brand pt-8 md:pt-12">
@@ -60,8 +59,8 @@ export default async function IngredientPage({ params, searchParams }: Params) {
         <h1 className="mt-3 text-h2 text-forest">{copy.name}</h1>
         {scientificName ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
       </header>
-      <div className="mt-8 grid divide-forest/20 md:grid-cols-3 md:divide-x">
-        <section aria-label={s.origin + " / INCI"} className="py-5 md:pr-6">
+      <div className="mt-8 grid divide-forest/20 md:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] md:divide-x">
+        <section aria-label={s.origin + " / INCI"} className="min-w-0 py-5 md:pr-6">
           <div aria-labelledby="sec-origem">
             <h2 id="sec-origem" className="text-h3 text-forest lowercase">{s.origin}</h2>
             <p className="mt-2 text-[1rem] leading-relaxed text-ink/85">{originText}</p>
@@ -72,7 +71,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
           </div>
         </section>
         {sections.filter((sec) => sec.text).map((sec) => (
-          <section key={sec.id} aria-labelledby={sec.id} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+          <section key={sec.id} aria-labelledby={sec.id} className="min-w-0 py-5 md:px-6 md:first:pl-0 md:last:pr-0">
             <h2 id={sec.id} className="text-h3 text-forest lowercase">{sec.title}</h2>
             <p className="mt-3 text-[1rem] leading-relaxed text-ink/85">{sec.text}</p>
           </section>
