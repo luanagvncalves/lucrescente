@@ -4,11 +4,12 @@ import { notFound } from "next/navigation";
 import { getDictionary } from "@/lib/i18n";
 import { getIngredientBySlug, getIngredients, getProductsForIngredient } from "@/lib/catalog";
 import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredient-locales";
-import { brandCase, brandSentence } from "@/lib/brand-case";
+import { brandCase } from "@/lib/brand-case";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
 import { ProductImage } from "@/components/ui/product-image";
 import { alphabetical } from "@/lib/alphabetical";
+import { ingredientIdentity } from "@/content/ingredient-identity";
 
 export const revalidate = 300;
 type Params = { params: Promise<{ slug: string }>; searchParams: Promise<{ idioma?: string }> };
@@ -21,7 +22,7 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const i = await getIngredientBySlug(slug);
   if (!i) return {};
   const name = brandCase(i.name);
-  const origin = brandSentence(i.origin ?? "");
+  const origin = ingredientIdentity[slug]?.origin.pt ?? "país de produção por confirmar";
   return { title: name, description: origin, alternates: { canonical: `/ingredientes/${i.slug}` }, openGraph: { title: `${name} · lucrescente`, description: origin } };
 }
 export default async function IngredientPage({ params, searchParams }: Params) {
@@ -41,8 +42,10 @@ export default async function IngredientPage({ params, searchParams }: Params) {
     .trim().replace(/[.]+$/, "");
   const categoryLabel = getIngredientCategoryName(ingredient.category, locale, ingredient.category);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
+  const identity = ingredientIdentity[slug];
+  const originText = identity?.origin[locale] ?? ({ pt: "país de produção por confirmar", en: "country of production to be confirmed", fr: "pays de production à confirmer" }[locale]);
+  const inciText = identity?.inci || ({ pt: "designação por confirmar", en: "name to be confirmed", fr: "dénomination à confirmer" }[locale]);
   const sections: { id: string; title: string; text: string | null }[] = [
-    { id: "sec-origem", title: s.origin, text: copy.origin },
     { id: "sec-propriedades", title: s.properties, text: copy.properties },
     { id: "sec-aplicacoes", title: s.applications, text: copy.applications },
   ];
@@ -58,6 +61,16 @@ export default async function IngredientPage({ params, searchParams }: Params) {
         {scientificName ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
       </header>
       <div className="mt-8 grid divide-y divide-forest/20 border-y border-forest/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+        <section aria-label={s.origin + " / INCI"} className="py-5 md:pr-6">
+          <div aria-labelledby="sec-origem">
+            <h2 id="sec-origem" className="text-h3 text-forest lowercase">{s.origin}</h2>
+            <p className="mt-2 text-[1rem] leading-relaxed text-ink/85">{originText}</p>
+          </div>
+          <div aria-labelledby="sec-inci" className="mt-5">
+            <h2 id="sec-inci" className="text-h3 text-forest">INCI</h2>
+            <p className="mt-2 break-words text-[1rem] leading-relaxed text-ink/85">{inciText}</p>
+          </div>
+        </section>
         {sections.filter((sec) => sec.text).map((sec) => (
           <section key={sec.id} aria-labelledby={sec.id} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
             <h2 id={sec.id} className="text-h3 text-forest lowercase">{sec.title}</h2>
