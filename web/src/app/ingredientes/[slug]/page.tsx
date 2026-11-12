@@ -7,36 +7,23 @@ import { getIngredientCategoryName, getIngredientCopy } from "@/content/ingredie
 import { brandCase, brandSentence } from "@/lib/brand-case";
 import { getProductCopy, type ProductLocale } from "@/content/product-locales";
 import { Label } from "@/components/ui/typography";
-import { Pause } from "@/components/ui/motifs";
-import { ProductCard } from "@/components/product/product-card";
+import { ProductImage } from "@/components/ui/product-image";
 import { alphabetical } from "@/lib/alphabetical";
 
 export const revalidate = 300;
-
 type Params = { params: Promise<{ slug: string }>; searchParams: Promise<{ idioma?: string }> };
-
 export async function generateStaticParams() {
   const list = await getIngredients();
   return list.map((i) => ({ slug: i.slug }));
 }
-
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
   const { slug } = await params;
   const i = await getIngredientBySlug(slug);
   if (!i) return {};
-  // The database stores these title-cased ("Óleo de Coco"). A tab title and a
-  // search result are the one place CSS cannot put them into the brand's
-  // lowercase, so it has to happen here.
   const name = brandCase(i.name);
   const origin = brandSentence(i.origin ?? "");
-  return {
-    title: name,
-    description: origin,
-    alternates: { canonical: `/ingredientes/${i.slug}` },
-    openGraph: { title: `${name} · lucrescente`, description: origin },
-  };
+  return { title: name, description: origin, alternates: { canonical: `/ingredientes/${i.slug}` }, openGraph: { title: `${name} · lucrescente`, description: origin } };
 }
-
 export default async function IngredientPage({ params, searchParams }: Params) {
   const { slug } = await params;
   const { idioma } = await searchParams;
@@ -46,101 +33,60 @@ export default async function IngredientPage({ params, searchParams }: Params) {
   if (!ingredient) notFound();
   const products = alphabetical(await getProductsForIngredient(slug), (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale);
   const s = dict.ingredients.sections;
-
   const copy = getIngredientCopy(slug, locale, ingredient);
-  // the Latin name stays Latin, but the plant part in brackets is ordinary
-  // Portuguese in the database ("folhas e ramos") and read wrong on the en/fr pages
   const scientificName = (ingredient.scientific_name ?? "")
     .replace("(folhas e ramos)", locale === "en" ? "(leaves and twigs)" : locale === "fr" ? "(feuilles et rameaux)" : "(folhas e ramos)")
     .replace("(soja)", locale === "en" ? "(soy)" : "(soja)")
-    .replace("(sementes)", locale === "en" ? "(seeds)" : locale === "fr" ? "(graines)" : "(sementes)");
+    .replace("(sementes)", locale === "en" ? "(seeds)" : locale === "fr" ? "(graines)" : "(sementes)")
+    .trim().replace(/.+$/, "");
   const categoryLabel = getIngredientCategoryName(ingredient.category, locale, ingredient.category);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
-
-  // `id` is fixed, not built from the title: the titles are translated and
-  // several contain a space, and `aria-labelledby` reads a space as the start
-  // of a second id — so every one of these sections was pointing at headings
-  // that do not exist and had no name at all for a screen reader.
   const sections: { id: string; title: string; text: string | null }[] = [
-    { id: "sec-nome-cientifico", title: s.scientificName, text: ingredient.scientific_name ? scientificName : null },
     { id: "sec-origem", title: s.origin, text: copy.origin },
     { id: "sec-propriedades", title: s.properties, text: copy.properties },
     { id: "sec-aplicacoes", title: s.applications, text: copy.applications },
   ];
-
   return (
     <article className="container-brand pt-8 md:pt-12">
       <nav aria-label={dict.nav.breadcrumb} className="text-[0.85rem] text-ink/70">
-        <Link href={`/ingredientes${query}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">
-          {dict.nav.ingredients}
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="lowercase">{categoryLabel}</span>
+        <Link href={`/ingredientes${query}`} className="inline-flex min-h-11 items-center hover:underline underline-offset-4">{dict.nav.ingredients}</Link>
+        <span className="mx-2">/</span><span className="lowercase">{categoryLabel}</span>
       </nav>
-
-      <header className="mt-6 max-w-3xl">
+      <header className="mt-4">
         <Label tone="violet">{categoryLabel}</Label>
-        {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
-        <h1 className="mt-3 text-h1 text-forest">{copy.name}</h1>
-        {ingredient.scientific_name ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
+        <h1 className="mt-3 text-h2 text-forest">{copy.name}</h1>
+        {scientificName ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
       </header>
-
-      <div className="mt-12 grid gap-10 md:grid-cols-12">
-        <div className="space-y-10 md:col-span-7">
-          {sections
-            .filter((sec) => sec.text)
-            .map((sec) => (
-              <section key={sec.id} aria-labelledby={sec.id}>
-                <h2 id={sec.id} className="text-h3 text-forest lowercase">
-                  {sec.title}
-                </h2>
-                <p className="mt-3 text-body-lg measure">{sec.text}</p>
-              </section>
-            ))}
-        </div>
-        <aside className="md:col-span-4 md:col-start-9">
-          <div className="card-brand p-6">
-            <p className="label-brand text-moss">{dict.ingredients.productsUsing}</p>
-            {products.length ? (
-              <ul className="mt-4 space-y-2">
-                {products.map((p) => (
-                  <li key={p.slug}>
-                    {/* the same localised name the cards below use — this list was reading the
-                        Portuguese name straight from the database, so it stayed in Portuguese
-                        while the rest of the page was translated */}
-                    <Link href={`/produtos/${p.slug}${query}`} className="inline-flex min-h-11 items-center font-display text-[1.2rem] leading-tight text-forest lowercase hover:underline underline-offset-4">
-                      {getProductCopy(p.slug, locale, { name: p.name }).name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <p className="mt-4 text-[0.92rem] text-ink/70">{dict.ingredients.noProducts}</p>
-            )}
-          </div>
-          <Link href={`/ingredientes${query}`} className="mt-6 inline-flex min-h-11 items-center font-ui text-[0.92rem] font-medium text-moss hover:underline underline-offset-4">
-            {dict.ingredients.backToIndex}
-          </Link>
-        </aside>
-      </div>
-
-      {products.length ? (
-        <>
-          <Pause className="my-16" />
-          <section aria-labelledby="usados">
-            <h2 id="usados" className="text-h2 text-forest lowercase">
-              {dict.products.usedInTitle}
-            </h2>
-            <ul className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {products.slice(0, 8).map((p) => (
-                <li key={p.slug}>
-                  <ProductCard product={p} locale={locale} />
-                </li>
-              ))}
-            </ul>
+      <div className="mt-8 grid divide-y divide-forest/20 border-y border-forest/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+        {sections.filter((sec) => sec.text).map((sec) => (
+          <section key={sec.id} aria-labelledby={sec.id} className="py-5 md:px-6 md:first:pl-0 md:last:pr-0">
+            <h2 id={sec.id} className="text-h3 text-forest lowercase">{sec.title}</h2>
+            <p className="mt-3 text-[1rem] leading-relaxed text-ink/85">{sec.text}</p>
           </section>
-        </>
+        ))}
+      </div>
+      {products.length ? (
+        <section aria-labelledby="usados" className="mt-8">
+          <h2 id="usados" className="text-h3 text-forest lowercase">{dict.products.usedInTitle}</h2>
+          <ul className="mt-5 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+            {products.map((product) => {
+              const name = getProductCopy(product.slug, locale, { name: product.name }).name;
+              return (
+                <li key={product.slug} className="max-w-[260px]">
+                  <Link href={`/produtos/${product.slug}${query}`} className="group block focus-visible:outline-offset-4">
+                    <ProductImage image={product.images[0]} ratio="square" fallbackLabel={name} locale={locale} sizes="(min-width: 1280px) 20vw, (min-width: 640px) 33vw, 50vw" />
+                    <div className="mt-3 flex items-start justify-between gap-3 text-forest">
+                      <h3 className="font-display text-[1.25rem] leading-tight lowercase group-hover:underline underline-offset-4">{name}</h3>
+                      <span aria-hidden="true" className="text-moss">→</span>
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
       ) : null}
+      <Link href={`/ingredientes${query}`} className="mt-6 inline-flex min-h-11 items-center font-ui text-[0.92rem] font-medium text-moss hover:underline underline-offset-4">{dict.ingredients.backToIndex}</Link>
     </article>
   );
 }
