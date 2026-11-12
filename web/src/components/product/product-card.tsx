@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
 import { formatPrice, productAvailability, type Product } from "@/lib/types";
@@ -27,8 +28,8 @@ export function ProductCard({
   const t = getDictionary(locale);
   const avail = productAvailability(product);
   const image = product.images[0] ?? null;
-  // fall back to the Portuguese copy when a translation for this product is missing,
-  // so the card keeps its story instead of collapsing to name + price.
+  // Only use another photograph of this product, never a repeated cover.
+  const alternate = product.images.find((photo) => photo.path !== image?.path);
   const copy = getProductCopy(product.slug, locale, { name: product.name, whyItWorks: product.why_it_works ?? undefined });
   const story = storyLine(copy.whyItWorks ?? product.why_it_works);
   const categoryName = getCategoryName(product.category.slug, locale, product.category.name);
@@ -49,6 +50,16 @@ export function ProductCard({
           locale={locale}
           className="transition-transform duration-500 ease-[var(--ease-calm)] group-hover:scale-[1.02]"
         />
+        {alternate ? (
+          <Image
+            src={alternate.path}
+            alt=""
+            aria-hidden="true"
+            fill
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="product-card-alternate pointer-events-none object-cover opacity-0 transition-opacity duration-500 motion-reduce:transition-none"
+          />
+        ) : null}
         {avail.kind === "sold-out" ? (
           <span className="absolute left-4 top-4 rounded-full bg-paper/95 px-3 py-1.5 label-brand text-clay">{t.products.soldOutTag}</span>
         ) : null}
