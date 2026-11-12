@@ -38,7 +38,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
     .replace("(folhas e ramos)", locale === "en" ? "(leaves and twigs)" : locale === "fr" ? "(feuilles et rameaux)" : "(folhas e ramos)")
     .replace("(soja)", locale === "en" ? "(soy)" : "(soja)")
     .replace("(sementes)", locale === "en" ? "(seeds)" : locale === "fr" ? "(graines)" : "(sementes)")
-    .trim().replace(/.+$/, "");
+    .trim().replace(/[.]+$/, "");
   const categoryLabel = getIngredientCategoryName(ingredient.category, locale, ingredient.category);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
   const sections: { id: string; title: string; text: string | null }[] = [
