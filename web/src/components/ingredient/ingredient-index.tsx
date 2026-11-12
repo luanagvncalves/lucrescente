@@ -124,7 +124,7 @@ export function IngredientIndex({ items, locale }: { items: IngredientListItem[]
                   <Link href={href(i.slug)} className="card-brand group flex h-full flex-col p-6 transition-[transform,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
                     <p className="label-brand text-violet">{i.categoryLabel}</p>
                     {/* no `lowercase` here: the name arrives brand-cased, which keeps the E of vitamina E */}
-                    <h3 className="mt-3 font-display text-[1.4rem] leading-tight text-forest">{i.name}</h3>
+                    <h3 data-wrap-heading className="mt-3 font-display text-[1.4rem] leading-tight text-forest whitespace-normal break-words">{i.name}</h3>
                     {i.scientific_name ? <p className="mt-1 text-[0.88rem] italic text-ink/70">{i.scientific_name.trim().replace(/[.]+$/, "")}</p> : null}
                     <p className="mt-4 line-clamp-3 text-[0.9rem] leading-relaxed text-ink/80">{i.origin}</p>
                     <span className="mt-auto pt-4 font-ui text-[0.88rem] font-medium text-moss">{t.home.cardLink}</span>
