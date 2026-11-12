@@ -364,3 +364,39 @@ section#contacto .frame-brand { border-radius: 0; border: 0; }
     opacity: 1 !important;
   }
 }
+
+
+/* Let the photography lead; retain the original soft hero controls. */
+section:has(h1[data-wrap-heading]) > .container-brand > div {
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+section:has(h1[data-wrap-heading]) a {
+  border-radius: var(--radius-control);
+}
+section[aria-labelledby="destaques"] h2 {
+  display: block;
+  padding: 0;
+  background: transparent;
+  color: var(--forest);
+}
+section[aria-labelledby="destaques"] h2 span { color: var(--clay); }
+/* Hide only card descriptions, keeping the category, name, price and link.
+   Full descriptions remain on the linked product detail pages. */
+a.card-brand[href^="/produtos/"] > div:last-child > p:not(.label-brand) {
+  display: none;
+}
+a.card-brand[href^="/produtos/"] > div:first-child > div {
+  aspect-ratio: 7 / 10;
+}
+a.card-brand[href^="/produtos/"] > div:last-child {
+  padding: 1.25rem;
+}
+@media (min-width: 1024px) {
+  section[aria-labelledby="destaques"] > .container-brand {
+    max-width: 88rem;
+    padding-inline: 3rem;
+  }
+  section[aria-labelledby="destaques"] .grid { gap: 1.25rem; }
+}
