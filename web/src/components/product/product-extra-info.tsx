@@ -43,7 +43,7 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
   // every product can be adapted to what someone needs, not only the deodorants
   claims.push({ label: t.productInfo.customisable, anchor: "produto-personalizado" });
 
-  if (isSkinSafe(product.slug, product.category.slug)) {
+  if (product.category.slug !== "champos" && isSkinSafe(product.slug, product.category.slug)) {
     // one answer for every product now: the shampoos' own question, about
     // doubling as a body wash, was folded into it
     claims.push({ label: locale === "pt" ? "seguro para a pele" : t.productInfo.skinSafeLabel, anchor: "usar-na-pele" });
