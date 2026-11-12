@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 
 /* ------------------------------------------------------------------
@@ -203,3 +204,163 @@ h3,
 }
 
 /* sr-only helper lives in tailwind already (sr-only) */
+
+
+/* Editorial homepage: full-bleed photography and rectangular highlights.
+   Scoped to existing homepage landmarks; catalogue and checkout stay intact. */
+body:has(h1[data-wrap-heading]) > header > div:first-of-type {
+  background: rgb(34 57 37 / 78%);
+  border-color: rgb(244 240 232 / 25%);
+  transition: background-color 350ms ease, border-color 350ms ease;
+}
+body:has(h1[data-wrap-heading]) > header > div:first-of-type :is(a, button, a > span) {
+  color: var(--ivory);
+  transition: color 350ms ease, background-color 350ms ease;
+}
+body:has(h1[data-wrap-heading]) > header:is(:hover, :focus-within, :has(button[aria-expanded="true"])) > div:first-of-type {
+  background: var(--ivory);
+  border-color: rgb(72 103 77 / 18%);
+}
+body:has(h1[data-wrap-heading]) > header:is(:hover, :focus-within, :has(button[aria-expanded="true"])) > div:first-of-type :is(a, button, a > span) {
+  color: var(--forest);
+}
+/* A translucent fallback stays legible in browsers without scroll timelines. */
+@supports (animation-timeline: scroll()) {
+  body:has(h1[data-wrap-heading]) > header > div:first-of-type {
+    animation: editorial-header linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0px 560px;
+  }
+  body:has(h1[data-wrap-heading]) > header:is(:hover, :focus-within, :has(button[aria-expanded="true"])) > div:first-of-type {
+    animation: none;
+  }
+}
+@keyframes editorial-header {
+  from { background-color: rgb(34 57 37 / 25%); }
+  to { background-color: rgb(34 57 37 / 96%); }
+}
+section:has(h1[data-wrap-heading]) {
+  height: 100svh;
+  min-height: 640px;
+}
+section:has(h1[data-wrap-heading]) > div:first-child {
+  animation: editorial-drift 18s ease-in-out infinite alternate;
+}
+@keyframes editorial-drift {
+  from { transform: scale(1); }
+  to { transform: scale(1.045) translateX(-0.5%); }
+}
+section:has(h1[data-wrap-heading]) > .container-brand {
+  padding-bottom: clamp(2rem, 6vh, 5rem);
+}
+section:has(h1[data-wrap-heading]) > .container-brand > div {
+  max-width: 64rem;
+  padding: clamp(1.25rem, 3vw, 2.5rem);
+  background: rgb(34 57 37 / 58%);
+  border-left: 3px solid var(--lavender);
+}
+section:has(h1[data-wrap-heading]) h1 {
+  font-size: clamp(2.55rem, 6.1vw, 6rem);
+}
+section:has(h1[data-wrap-heading]) a {
+  border-radius: 0;
+  min-height: 48px;
+}
+section:has(h1[data-wrap-heading]) a:hover {
+  background: var(--lavender);
+  color: var(--forest);
+  border-color: var(--lavender);
+}
+section[aria-labelledby="destaques"] h2 {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: var(--forest);
+  color: var(--ivory);
+}
+section[aria-labelledby="destaques"] h2 span { color: var(--lavender); }
+section[aria-labelledby="categorias"] .aspect-square {
+  border-radius: 0;
+  aspect-ratio: 4 / 5;
+}
+section[aria-labelledby="categorias"] .tile-scrim {
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 1.25rem;
+  background: linear-gradient(transparent 35%, rgb(34 57 37 / 70%));
+}
+section[aria-labelledby="categorias"] .tile-scrim span {
+  padding: 0.55rem 1rem;
+  background: var(--ivory);
+  color: var(--forest);
+  text-shadow: none;
+  text-align: left;
+}
+section[aria-labelledby="historia"] .frame-brand {
+  border-radius: 0;
+  border: 0;
+}
+section[aria-labelledby="historia"] .grid > div:last-child {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  background: var(--forest);
+  color: var(--ivory);
+}
+section[aria-labelledby="historia"] .grid > div:last-child :is(h2, p, a) {
+  color: var(--ivory);
+}
+section[aria-labelledby="historia"] .grid > div:last-child a {
+  border-color: var(--lavender);
+}
+section[aria-labelledby="ingredientes"] {
+  padding: clamp(1.25rem, 5vw, 5rem);
+  background: var(--moss) url('/images/editorial/cuidados-solidos.jpg') center / cover;
+}
+section[aria-labelledby="ingredientes"] > .container-brand {
+  padding: clamp(1.5rem, 4vw, 4rem);
+  background: rgb(244 240 232 / 96%);
+}
+section[aria-labelledby="ingredientes"] h2 { white-space: normal; }
+section#contacto {
+  padding: clamp(1.25rem, 5vw, 5rem);
+  background: var(--moss) url('/images/editorial/cuidados-velas.jpg') center / cover;
+}
+section#contacto > .container-brand {
+  padding: clamp(1.5rem, 4vw, 4rem);
+  background: var(--paper);
+}
+section#contacto .frame-brand { border-radius: 0; border: 0; }
+@media (min-width: 1024px) {
+  section[aria-labelledby="historia"] .grid { gap: 0; }
+  section[aria-labelledby="historia"] .grid > div:last-child {
+    margin-left: -3rem;
+    position: relative;
+    z-index: 1;
+  }
+}
+@media (max-width: 639px) {
+  section:has(h1[data-wrap-heading]) {
+    height: auto;
+    min-height: max(680px, 100svh);
+  }
+  section:has(h1[data-wrap-heading]) > .container-brand {
+    min-height: max(680px, 100svh);
+    padding-top: 120px;
+  }
+  section:has(h1[data-wrap-heading]) h1 { white-space: normal; }
+  section:has(h1[data-wrap-heading]) a { width: 100%; justify-content: center; }
+  section[aria-labelledby="destaques"] h2 { padding: 1rem; }
+  section[aria-labelledby="categorias"] .tile-scrim { padding: 0.5rem; }
+  section[aria-labelledby="categorias"] .tile-scrim span {
+    padding: 0.5rem;
+    font-size: 1.15rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  section:has(h1[data-wrap-heading]) > div:first-child,
+  body:has(h1[data-wrap-heading]) > header > div:first-of-type {
+    animation: none;
+  }
+  section:has(h1[data-wrap-heading]) > div:first-child img {
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
