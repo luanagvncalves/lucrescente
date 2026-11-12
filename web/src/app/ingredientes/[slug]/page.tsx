@@ -60,7 +60,7 @@ export default async function IngredientPage({ params, searchParams }: Params) {
         <h1 className="mt-3 text-h2 text-forest">{copy.name}</h1>
         {scientificName ? <p className="mt-3 font-display text-[1.5rem] italic text-clay">{scientificName}</p> : null}
       </header>
-      <div className="mt-8 grid divide-y divide-forest/20 border-y border-forest/20 md:grid-cols-3 md:divide-x md:divide-y-0">
+      <div className="mt-8 grid divide-forest/20 md:grid-cols-3 md:divide-x">
         <section aria-label={s.origin + " / INCI"} className="py-5 md:pr-6">
           <div aria-labelledby="sec-origem">
             <h2 id="sec-origem" className="text-h3 text-forest lowercase">{s.origin}</h2>
