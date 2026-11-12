@@ -22,17 +22,14 @@ import { faqHref, type FaqAnchor } from "@/content/faq-anchors";
  * measures 6.79:1, well past the 4.5:1 that text this size needs.
  */
 
-/** Only solid products save the water, so only they make the claim. */
-const WATER_SAVING_CATEGORIES = ["champos", "amaciadores", "sabonetes"];
-
 const BOX =
-  "inline-flex h-11 items-center rounded-full border border-sage bg-sage px-4 font-ui text-[0.92rem] font-medium text-white transition-colors hover:border-forest hover:bg-forest";
+  "inline-flex min-h-11 items-center rounded-full border border-sage bg-sage px-4 py-2 font-ui text-[0.92rem] font-medium text-white transition-colors hover:border-forest hover:bg-forest";
 
 export function ProductExtraInfo({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
   const t = getDictionary(locale);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
-  const claims: { label: string; anchor: FaqAnchor }[] = [];
+  const claims: { label: string; anchor?: FaqAnchor }[] = [];
 
   if (product.is_deodorant) {
     // all three are answered by the same question, which is the one that says
@@ -46,13 +43,27 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
   // every product can be adapted to what someone needs, not only the deodorants
   claims.push({ label: t.productInfo.customisable, anchor: "produto-personalizado" });
 
-  if (WATER_SAVING_CATEGORIES.includes(product.category.slug)) {
-    claims.push({ label: t.productInfo.waterSavingLabel, anchor: "porque-solidos" });
-  }
   if (isSkinSafe(product.slug, product.category.slug)) {
     // one answer for every product now: the shampoos' own question, about
     // doubling as a body wash, was folded into it
-    claims.push({ label: t.productInfo.skinSafeLabel, anchor: "usar-na-pele" });
+    claims.push({ label: locale === "pt" ? "seguro para a pele" : t.productInfo.skinSafeLabel, anchor: "usar-na-pele" });
+  }
+
+  if (product.category.slug === "champos") {
+    const shampooLabels = {
+      pt: ["não aconselhado para cabelos descolorados", "seguro para cabelos com tratamento"],
+      en: ["not recommended for bleached hair", "safe for treated hair"],
+      fr: ["déconseillé aux cheveux décolorés", "convient aux cheveux traités"],
+    };
+    claims.push(...shampooLabels[locale].map((label) => ({ label })));
+    if (product.slug === "champo-neutro-para-criancas") {
+      const neutralLabels = {
+        pt: ["seguro para bebés e crianças", "seguro para pele/couro cabeludo sensíveis"],
+        en: ["safe for babies and children", "safe for sensitive skin/scalp"],
+        fr: ["convient aux bébés et aux enfants", "convient aux peaux/cuirs chevelus sensibles"],
+      };
+      claims.push(...neutralLabels[locale].map((label) => ({ label })));
+    }
   }
 
   if (!claims.length) return null;
@@ -61,9 +72,13 @@ export function ProductExtraInfo({ product, locale = "pt" }: { product: Product;
     <ul className="mt-6 flex flex-wrap gap-2">
       {claims.map((claim) => (
         <li key={claim.label}>
-          <Link href={faqHref(claim.anchor, query)} className={BOX}>
-            {claim.label}
-          </Link>
+          {claim.anchor ? (
+            <Link href={faqHref(claim.anchor, query)} className={BOX}>
+              {claim.label}
+            </Link>
+          ) : (
+            <span className={BOX}>{claim.label}</span>
+          )}
         </li>
       ))}
     </ul>
