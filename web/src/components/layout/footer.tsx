@@ -23,7 +23,7 @@ export function Footer() {
             <span className="font-display text-[2rem] leading-none">lucrescente</span>
           </div>
           <p className="mt-6 max-w-[48ch] text-[0.95rem] leading-relaxed text-ivory/85">{t.home.shortAbout}</p>
-          <p className="mt-6 text-[0.9rem] text-ivory/70">{t.footer.shipping}</p>
+          
 
           {/*
             Under the description of the brand rather than beside the contacts,
