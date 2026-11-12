@@ -311,7 +311,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                     contact buttons stayed Portuguese on the English and French
                     homepage while the heading above them translated */}
                 <ContactLinks labels="home" locale={locale} />
-                <p className="mt-6 text-[0.9rem] text-ink/70">{t.footer.shipping}</p>
+                
               </Reveal>
             </div>
           </div>

@@ -1,3 +1,4 @@
+import { stripe, stripeEnabled, isPaidCheckoutSession } from "@/lib/stripe";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
@@ -21,16 +22,16 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
   const locale = idioma === "en" || idioma === "fr" ? idioma : "pt";
   const t = getDictionary(locale);
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
-  const order = session_id ? await getOrderBySession(session_id) : null;
+  let paymentVerified = false; if (stripeEnabled && session_id?.startsWith("cs_")) { try { paymentVerified = isPaidCheckoutSession(await stripe().checkout.sessions.retrieve(session_id)); } catch { console.error("[confirmation] payment could not be verified"); } } const recorded = paymentVerified && session_id ? await getOrderBySession(session_id) : null; const order = recorded && (recorded.status === "paid" || recorded.status === "fulfilled") ? recorded : null;
 
   if (!order) {
     return (
       <div className="container-brand section-gap">
         <div className="mx-auto max-w-xl text-center">
           <Crescent size={36} tone="var(--lavender)" className="mx-auto" />
-          <h1 className="mt-6 text-h2 text-forest lowercase">{t.order.processing}</h1>
+          <h1 className="mt-6 text-h2 text-forest lowercase">{paymentVerified ? t.order.processing : ({ pt: "o pagamento ainda não está confirmado.", en: "payment has not been confirmed.", fr: "le paiement n’est pas encore confirmé." }[locale])}</h1>
           <p className="mt-4 text-ink/80">{t.order.notFound}</p>
-          <meta httpEquiv="refresh" content="4" />
+          {paymentVerified ? <meta httpEquiv="refresh" content="4" /> : null}
           <Link href={`/${query}`} className={buttonClass("secondary", "md", "mt-8")}>
             {t.order.backHome}
           </Link>

@@ -489,3 +489,11 @@ section#contacto .frame-brand {
 
 section[aria-labelledby="destaques"] a.card-brand > div:last-child > div > span:last-child { font-size: 0; }
 section[aria-labelledby="destaques"] a.card-brand > div:last-child > div > span:last-child::after { content: "→"; font-size: 1.5rem; }
+
+
+/* More contrast between paper and nude; soft square order photograph. */
+:root { --ivory: #e4d5c3; }
+section#contacto .frame-brand {
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-card);
+}
