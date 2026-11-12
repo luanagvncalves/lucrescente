@@ -1,16 +1,26 @@
 import Stripe from "stripe";
 
-/**
- * Stripe client. When STRIPE_SECRET_KEY is empty and CHECKOUT_MOCK=true, the checkout
- * route uses a local mock (see /api/checkout and /checkout/mock) so the full order flow
- * can be exercised before the client hands over test keys.
- */
-export const stripeEnabled = Boolean(process.env.STRIPE_SECRET_KEY);
-export const mockEnabled = !stripeEnabled && process.env.CHECKOUT_MOCK === "true";
+const secretKey = process.env.STRIPE_SECRET_KEY?.trim() ?? "";
+/** Hosted production must never accept test keys or simulated payments. */
+export const productionCheckout = process.env.VERCEL_ENV === "production" ||
+  (process.env.NODE_ENV === "production" && process.env.VERCEL_ENV !== "preview");
+export const stripeEnabled = /^(sk|rk)_(live|test)_/.test(secretKey) &&
+  (!productionCheckout || /^(sk|rk)_live_/.test(secretKey));
+export const mockEnabled = !secretKey && process.env.CHECKOUT_MOCK === "true" &&
+  process.env.NODE_ENV !== "production" && !process.env.VERCEL_ENV && !process.env.VERCEL;
 
 let client: Stripe | null = null;
 export function stripe(): Stripe {
-  if (!process.env.STRIPE_SECRET_KEY) throw new Error("STRIPE_SECRET_KEY missing");
-  if (!client) client = new Stripe(process.env.STRIPE_SECRET_KEY);
+  if (!stripeEnabled) throw new Error("Stripe payments are not configured for this environment");
+  if (!client) client = new Stripe(secretKey);
   return client;
+}
+
+/** Call only with a session retrieved from Stripe or a verified webhook. */
+export function isPaidCheckoutSession(session: Pick<Stripe.Checkout.Session,
+  "mode" | "status" | "payment_status" | "payment_intent" | "livemode"
+>): boolean {
+  return session.mode === "payment" && session.status === "complete" &&
+    session.payment_status === "paid" && Boolean(session.payment_intent) &&
+    (!productionCheckout || session.livemode === true);
 }
