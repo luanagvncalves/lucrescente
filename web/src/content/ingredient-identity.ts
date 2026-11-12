@@ -397,12 +397,13 @@ export const ingredientIdentity: Record<string, IngredientIdentity> = {
   "cera-emulsionante-btms": {
     "inci": "Behentrimonium Methosulfate, Cetearyl Alcohol",
     "origin": {
-      "pt": "país de produção por confirmar",
-      "en": "country of production to be confirmed",
-      "fr": "pays de production à confirmer"
+      "pt": "parcialmente sintética",
+      "en": "partly synthetic",
+      "fr": "partiellement synthétique"
     },
     "sources": [
-      "https://plena-natura.pt/product/btms-cera-emulsionante/"
+      "https://plena-natura.pt/product/btms-cera-emulsionante/",
+      "https://www.aroma-zone.com/en/product/cosmetic-ingredient-btms-emulsifier"
     ]
   },
   "argila-branca": {
@@ -441,24 +442,26 @@ export const ingredientIdentity: Record<string, IngredientIdentity> = {
   "d-pantenol-provitamina-b5": {
     "inci": "Panthenol",
     "origin": {
-      "pt": "país de produção por confirmar",
-      "en": "country of production to be confirmed",
-      "fr": "pays de production à confirmer"
+      "pt": "sintética",
+      "en": "synthetic",
+      "fr": "synthétique"
     },
     "sources": [
-      "https://plena-natura.pt/product/d-pantenol-liquido/"
+      "https://plena-natura.pt/product/d-pantenol-liquido/",
+      "https://download.basf.com/p1/EN_StaticDocuments_6173/en/Technical_Information"
     ]
   },
   "tensioativo-sci": {
     "inci": "Sodium Cocoyl Isethionate",
     "origin": {
-      "pt": "país de produção por confirmar",
-      "en": "country of production to be confirmed",
-      "fr": "pays de production à confirmer"
+      "pt": "parcialmente sintética",
+      "en": "partly synthetic",
+      "fr": "partiellement synthétique"
     },
     "sources": [
       "https://plena-natura.pt/product/tensioactivo-sci-85-gf-granulado-fino/",
-      "https://plena-natura.pt/product/tensioactivo-sci-80-p-em-po/"
+      "https://plena-natura.pt/product/tensioactivo-sci-80-p-em-po/",
+      "https://www.ellementalpro.com/download/M-1384_TDS_S.pdf"
     ]
   },
   "vitamina-e": {
@@ -576,7 +579,7 @@ export const ingredientIdentity: Record<string, IngredientIdentity> = {
     "sources": []
   },
   "oleo-essencial-de-citronela": {
-    "inci": "Cymbopogon Nardus Oil",
+    "inci": "",
     "origin": {
       "pt": "país de produção por confirmar",
       "en": "country of production to be confirmed",
