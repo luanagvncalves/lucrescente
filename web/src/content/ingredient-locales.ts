@@ -290,6 +290,75 @@ export function getIngredientCategoryName(category: string, locale: ProductLocal
   return brandCase(categoryNames[category]?.[locale] ?? fallback);
 }
 
+/** Applications checked against the live product ingredient lists and scent/add-on options on 2026-11-12. */
+const applicationCorrections: Record<string, Record<ProductLocale, string>> = {
+  "argila-branca": {
+    "pt": "usada nos champôs sólidos para cabelos secos, para cabelos normais e neutro/para crianças, onde ajuda a limpar suavemente.",
+    "en": "used in our solid shampoos for dry hair, normal hair and the neutral/children’s formula, where it helps cleanse gently.",
+    "fr": "utilisée dans nos shampoings solides pour cheveux secs, pour cheveux normaux et neutre/pour enfants, où elle contribue à un nettoyage doux."
+  },
+  "oleo-essencial-de-lavanda-4042-blend": {
+    "pt": "usado no amaciador, no desodorizante de lavanda/palmarosa, no champô sólido para cabelos secos e no inalador, para dar o seu aroma floral.",
+    "en": "used in our conditioner, lavender/palmarosa deodorant, solid shampoo for dry hair and inhaler, for its floral scent.",
+    "fr": "utilisée dans notre après-shampoing, notre déodorant lavande/palmarosa, notre shampoing solide pour cheveux secs et notre inhalateur, pour son parfum floral."
+  },
+  "conservante-cosgard": {
+    "pt": "usado em pequenas quantidades no amaciador e na máscara capilar, onde ajuda a proteger as fórmulas contra o desenvolvimento de bactérias, bolores e leveduras.",
+    "en": "used in small amounts in our conditioner and hair mask, where it helps protect the formulas against the growth of bacteria, mould and yeast.",
+    "fr": "utilisé en petites quantités dans notre après-shampoing et notre masque capillaire, où il aide à protéger les formules contre le développement de bactéries, de moisissures et de levures."
+  },
+  "cera-de-soja": {
+    "pt": "usada como base dos nossos ambientadores sólidos e das velas coloridas, decoradas, com mensagem e de massagem. nos ambientadores e nas velas, recebe os aromas escolhidos para cada produto.",
+    "en": "used as the base of our solid air fresheners and coloured, decorated, message and massage candles. in these products it carries the scents selected for each one.",
+    "fr": "utilisée comme base de nos parfums d’ambiance solides et de nos bougies colorées, décorées, à message et de massage. elle accueille les parfums choisis pour chaque produit."
+  },
+  "urtiga-verde": {
+    "pt": "usada em pó no champô sólido para cabelos oleosos, juntamente com a cavalinha.",
+    "en": "used as a powder in our solid shampoo for oily hair, alongside horsetail.",
+    "fr": "utilisée en poudre dans notre shampoing solide pour cheveux gras, avec la prêle."
+  },
+  "oleo-essencial-de-alecrim": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-geranio-rosa": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-gengibre": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-patchouli": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-ho-wood": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-citronela": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas. é adicionado de acordo com o aroma que escolheres.",
+    "en": "you can choose it as a scent for our air fresheners and candles. it is added according to your scent selection.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies. il est ajouté selon le parfum que tu choisis."
+  },
+  "oleo-essencial-de-erva-principe-citratus": {
+    "pt": "disponível como aroma de erva-príncipe à escolha nos ambientadores e nas velas.",
+    "en": "available as the lemongrass scent option for our air fresheners and candles.",
+    "fr": "disponible comme parfum citronnelle au choix pour nos parfums d’ambiance et nos bougies."
+  },
+  "oleo-essencial-de-canela": {
+    "pt": "podes escolhê-lo como aroma nos ambientadores e nas velas coloridas, decoradas e com mensagem. não é uma opção para a vela de massagem.",
+    "en": "you can choose it as a scent for our air fresheners and coloured, decorated and message candles. it is not an option for the massage candle.",
+    "fr": "tu peux le choisir pour parfumer nos parfums d’ambiance et nos bougies colorées, décorées et à message. ce n’est pas une option pour la bougie de massage."
+  }
+};
+
 export function getIngredientCopy(slug: string, locale: ProductLocale, fallback: IngredientCopy): IngredientCopy {
   const entry = copy[slug]?.[locale] ?? fallback;
   return {
@@ -298,7 +367,7 @@ export function getIngredientCopy(slug: string, locale: ProductLocale, fallback:
     // brand writes them in lowercase.
     origin: brandSentence(entry.origin ?? ""),
     properties: brandSentence(entry.properties ?? ""),
-    applications: brandSentence(entry.applications ?? ""),
+    applications: brandSentence(applicationCorrections[slug]?.[locale] ?? entry.applications ?? ""),
   };
 }
 
