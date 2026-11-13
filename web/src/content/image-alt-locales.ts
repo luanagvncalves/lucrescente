@@ -20,6 +20,10 @@ const alt: Record<string, { en: string; fr: string }> = {
     fr: "un panier en paille contenant un savon emballé, un pot et une pochette à savon au crochet, sur un tissu floral rose et bleu",
   },
   // amaciadores
+  "três amaciadores sólidos ovais de cor creme sobre tecido floral rosa e azul": {
+    en: "three oval cream-coloured solid conditioners on pink and blue floral fabric",
+    fr: "trois après-shampoings solides ovales de couleur crème sur un tissu floral rose et bleu",
+  },
   "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul": {
     en: "three round cream-coloured solid conditioners with a raised floral pattern, on pink and blue floral fabric",
     fr: "trois après-shampoings solides ronds de couleur crème au motif floral en relief, sur un tissu floral rose et bleu",

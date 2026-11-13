@@ -55,7 +55,8 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
     translated wording.
   */
   const addOns = getAddOns(product.slug);
-  const [pickedAddOn, setAddOn] = useState("");
+  const isConditioner = product.slug === "amaciador";
+  const [pickedAddOn, setAddOn] = useState(isConditioner ? "mandala" : "");
   /*
     The air freshener and the made-to-order candles take up to two essential
     oils, chosen here. Held as the canonical Portuguese names, like the add-on,
@@ -143,7 +144,19 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
         </fieldset>
       ) : null}
 
-      {addOns.length ? (
+      {isConditioner ? (
+        <div className="mb-6">
+          <label htmlFor="conditioner-shape" className="label-brand mb-3 block text-moss">{t.products.variant}</label>
+          <select
+            id="conditioner-shape"
+            value={pickedAddOn}
+            onChange={(event) => setAddOn(event.target.value)}
+            className="h-12 w-full rounded-2xl border border-moss/40 bg-paper px-4 font-ui text-[0.95rem] text-forest focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+          >
+            {addOns.map((option) => <option key={option.value} value={option.value}>{option.label[locale]}</option>)}
+          </select>
+        </div>
+      ) : addOns.length ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.flavourLabel}</legend>
           <div className="flex flex-wrap gap-2">

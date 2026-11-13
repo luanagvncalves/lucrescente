@@ -284,5 +284,23 @@
       "path": "/images/products/vela-decorada/decorada-247a75910ff5.jpg",
       "alt": "vela decorada artesanal da lucrescente, fotografia 4"
     }
+  ],
+  "amaciador": [
+    {
+      "path": "/images/products/amaciador/0.jpg",
+      "alt": "três amaciadores sólidos redondos de cor creme com relevo floral, sobre tecido floral rosa e azul"
+    },
+    {
+      "path": "/images/products/amaciador/1.jpg",
+      "alt": "grande plano de amaciadores sólidos cor de creme com relevo de flores"
+    },
+    {
+      "path": "/images/products/amaciador/2.jpg",
+      "alt": "três amaciadores sólidos em forma de coração, cor de creme, sobre tecido floral"
+    },
+    {
+      "path": "/images/products/amaciador/oval-20230926.jpg",
+      "alt": "três amaciadores sólidos ovais de cor creme sobre tecido floral rosa e azul"
+    }
   ]
 }

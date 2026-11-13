@@ -22,6 +22,11 @@ import { getScentLabel, isScentProduct, sanitiseScent } from "./scent-choices";
 export type AddOn = { value: string; label: Record<ProductLocale, string> };
 
 const ADD_ONS: Record<string, AddOn[]> = {
+  amaciador: [
+    { value: "mandala", label: { pt: "mandala", en: "mandala", fr: "mandala" } },
+    { value: "coração", label: { pt: "coração", en: "heart", fr: "cœur" } },
+    { value: "oval", label: { pt: "oval", en: "oval", fr: "ovale" } },
+  ],
   "batom-hidratante-com-cor": [
     {
       value: "+ óleo essencial de laranja doce",
