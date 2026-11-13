@@ -301,31 +301,32 @@ export const pt = {
           // Removed the initial shampoo-choice question.
           {
             q: "posso usar um champô sólido se pinto ou aliso o cabelo?",
-            a: "podes, sem problema. os nossos champôs sólidos são adequados e adaptados para uso em cabelos pintados e/ou alisados: como não têm sais na sua composição, a sua fórmula não interage com os elementos químicos usados nos tratamentos. contudo, não os aconselhamos em cabelo descolorado, porque não têm efeito anti-amarelamento.",
+            a: "podes, sem problema. os nossos champôs sólidos são adequados e adaptados para uso em cabelos com madeixas, totalmente pintados e em cabelos alisados. como não têm parabenos, corantes artificiais, sais nem sulfatos na sua composição, a sua fórmula não interage com os elementos químicos usados nas colorações e nos alisamentos. contudo, em cabelos descolorados, não aconselhamos, porque não têm efeito anti amarelamento.",
           },
           {
-            q: "como guardo os produtos sólidos?",
-            a: "deves guardá-los num sítio seco, de forma a não permanecerem em contacto com a água. assim, eles podem secar convenientemente entre utilizações e durar mais tempo porque não se desperdiça produto.\n\npara te ajudar a melhor conservar os teus produtos sólidos, temos disponíveis bolsas feitas em croché (100% algodão) para os poderes pendurar tanto no duche como na banheira!",
+            q: "como guardo os meus produtos sólidos lucrescente?",
+            a: "aconselhamos a guardá-los num sítio seco, de forma a não permanecerem em contacto com a água. assim, eles podem secar convenientemente entre utilizações e também durar mais tempo porque não se desperdiça produto. para te ajudar a melhor conservar os teus produtos sólidos, temos disponíveis as bolsas feitas em croché (100% algodão hipoalergénico, parceria com a grazie canela) para os poderes pendurar tanto no duche como na banheira.",
           },
           {
             q: "os vossos desodorizantes são antitranspirantes?",
-            a: "não, e fazemos questão de o dizer. não levam alumínio nem álcool, por isso não bloqueiam a transpiração nem entopem os poros: controlam as bactérias e os maus cheiros de forma suave, e deixam a pele fazer aquilo que ela já sabe fazer.",
+            a: "não, e fazemos questão de o dizer. não levam alumínio nem álcool, por isso não bloqueiam a transpiração nem entopem os poros: controlam sim a proliferação das bactérias e dos microrganismos causadores dos maus cheiros, de forma suave e natural, deixando a pele respirar. lembra-te que o desodorizante é um produto aplicado diariamente e muito próximo das nossas mamas!",
           },
           {
-            q: "tenho pele sensível. há alguma coisa a que deva prestar atenção?",
-            a: "vários produtos levam óleos essenciais, que podem irritar ou causar reação alérgica em peles mais sensíveis, e os desodorizantes levam bicarbonato de sódio, que nalgumas peles irrita as axilas, sobretudo depois de uma depilação recente. assinalamos isto em cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa zona pequena da pele e fala connosco: podemos adaptar a fórmula.",
+            q: "tenho a pele e/ou o couro cabeludo muito sensíveis e reativos. há alguma coisa a que deva prestar atenção?",
+            a: "vários produtos levam óleos essenciais, que podem irritar ou causar reação alérgica em peles mais sensíveis, e os desodorizantes (em particular) levam bicarbonato de sódio, que nalgumas peles pode irritar ligeiramente as axilas, sobretudo depois de uma depilação recente. assinalamos isto em cada produto, por baixo dos ingredientes. na dúvida, experimenta primeiro numa zona pequena da pele e fala connosco: podemos adaptar a fórmula às tuas necessidades e ao teu corpo.",
           },
           {
             q: "que produtos posso usar diretamente na pele?",
             a: "quase todos: as velas (menos as coloridas, que levam pigmento), os champôs, os ambientadores, os bálsamos labiais, os desodorizantes, os roll-ons, os sabonetes e o spray relaxante. os champôs sólidos servem também de sabonete, porque não levam químicos agressivos (o de cabelos secos tem sido usado por quem tem pele atópica), e a cera de soja das velas é hidratante, por isso também pode ir à pele. escolhemos os ingredientes a pensar nisso, mas a pele é tua e és tu quem a conhece melhor: se for sensível, experimenta primeiro numa zona pequena.",
           },
+          {"q":"posso usar os produtos lucrescente na minha criança?","a":"podes usar o champô sólido para crianças, porque foi formulado com ingredientes neutros e delicados que respeitam o ph da pele mais sensível. como não têm óleos essenciais na sua composição, podes utilizar o champô tanto no cabelo como na pele da tua criança. o hidrolato de camomila romana torna este champô indicado para bebés.\n\nantes de usar outro produto lucrescente, aconselhamos a consultar a ficha informativa onde indicamos a idade mínima aconselhada. se for a primeira vez que utilizas o produto, aconselhamos também a testar, em primeiro lugar, numa pequena área da pele. contacta-nos se tiveres alguma dúvida."},
         ],
       },
       {
         title: "encomendas e envios",
         items: [
           {
-            q: "fazem envios para fora de Portugal?",
+            q: "fazem envios para fora de portugal?",
             a: "fazemos! enviamos para todo o país e para o estrangeiro. o custo depende do destino, e vês o valor certo no final da compra, antes de confirmares.",
           },
           {
@@ -347,11 +348,11 @@ export const pt = {
         items: [
           {
             q: "porque é que os produtos são sólidos?",
-            a: "porque cá por casa não usamos água no fabrico, e um produto sólido dispensa embalagem (o que poupa também a água que se gastaria a fazer esse plástico). no dia a dia deixam menos resíduo e soltam-se mais facilmente do cabelo e da pele, por isso gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
+            a: "principalmente e muito importante: para poupar o maior bem essencial, a água. não usamos água no fabrico (com a única exceção da máscara capilar) e um produto sólido não necessita de embalagem, poupando água também que se gasta na produção de plástico. os produtos sólidos lucrescente deixam menos resíduos e soltam-se mais facilmente do cabelo e da pele, por isso gastas menos água a enxaguar. e para viajar são muito mais práticos: sem embalagem e sem limites de líquidos na cabine.",
           },
           {
             q: "de que são feitas as vossas velas?",
-            a: "de cera de soja, que é vegetal. arde mais devagar e uniformemente (sem criar túneis) e nunca alcança temperaturas tão elevadas quanto a parafina das velas de supermercado, por isso dura mais tempo e não desperdiça cera. não liberta fuligem e não contém qualquer componente tóxico ou sintético. o aroma vem de óleos essenciais e nunca de fragrâncias sintéticas, e a decoração é natural: flores e folhas secas, conchas e pedrinhas, muitas delas prensadas e preparadas por nós.",
+            a: "de cera de soja, que é vegetal. arde mais devagar e uniformemente (sem criar túneis) e nunca alcança temperaturas tão elevadas quanto a parafina das velas de supermercado, por isso dura mais tempo e não desperdiça cera. não liberta fuligem e não contém qualquer componente tóxico ou sintético. o aroma é criado pelos óleos essenciais e nunca de fragrâncias sintéticas (proteges os teus pulmões) e a decoração é natural: flores e folhas secas (muitas delas prensadas e preparadas por nós), conchas e pedrinhas, purpurinas e brilhantes biodegradáveis…",
           },
         ],
       },
