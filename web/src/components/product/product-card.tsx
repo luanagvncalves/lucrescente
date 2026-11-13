@@ -66,7 +66,7 @@ export function ProductCard({
       </div>
       <div className="flex flex-1 flex-col gap-2 p-6">
         <p className="label-brand text-moss">{categoryName}</p>
-        <h3 data-wrap-heading className="min-h-[2.5em] font-display text-[1.45rem] leading-tight text-forest lowercase">{copy.name}</h3>
+        <h3 data-wrap-heading className="font-display text-[1.45rem] leading-tight text-forest lowercase">{copy.name}</h3>
         {showStory && story ? <p className="text-[0.92rem] leading-relaxed text-ink/80">{story}</p> : null}
         <div className="mt-auto flex items-center justify-between pt-3">
           {avail.kind === "on-request" ? (

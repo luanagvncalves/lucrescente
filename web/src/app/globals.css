@@ -514,3 +514,55 @@ section#contacto .frame-brand {
 @media (prefers-reduced-motion: reduce) {
   .order-spiral { animation: none; }
 }
+
+/* Interior pages: white canvas, nude cards. */
+body:not(:has(main > [data-home-hero])) {
+  background: #fff;
+  --paper: var(--ivory);
+}
+body:not(:has(main > [data-home-hero])) > header > div:first-of-type {
+  background-color: rgb(255 255 255 / 92%);
+}
+
+/* Blend each homepage colour field into the following section. */
+body:has(main > [data-home-hero]) main > section {
+  position: relative;
+  isolation: isolate;
+  --section-fade-to: var(--ivory);
+}
+body:has(main > [data-home-hero]) main > section::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: clamp(40px, 7vw, 112px);
+  background: linear-gradient(to bottom, transparent, var(--section-fade-to));
+  pointer-events: none;
+  z-index: 2;
+}
+body:has(main > [data-home-hero]) main > [data-home-hero] {
+  --section-fade-to: var(--paper);
+}
+body:has(main > [data-home-hero]) main > section[aria-labelledby="categorias"] {
+  --section-fade-to: var(--paper);
+}
+body:has(main > [data-home-hero]) main > section[aria-labelledby="historia"] {
+  --section-fade-to: var(--moss);
+}
+body:has(main > [data-home-hero]) main > section[aria-labelledby="ingredientes"] {
+  --section-fade-to: color-mix(in srgb, var(--lavender) 50%, var(--ivory));
+}
+body:has(main > [data-home-hero]) main > section[aria-labelledby="ingredientes"]::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: clamp(40px, 7vw, 112px);
+  background: linear-gradient(to bottom, var(--moss), transparent);
+  pointer-events: none;
+  z-index: -1;
+}
+body:has(main > [data-home-hero]) main > section#contacto {
+  --section-fade-to: var(--forest);
+}
+body:has(main > [data-home-hero]) > footer {
+  margin-top: 0;
+}

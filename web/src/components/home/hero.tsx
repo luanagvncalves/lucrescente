@@ -37,7 +37,7 @@ export function HomeHero({
   }, []);
 
   return (
-    <section className="relative -mt-[72px] h-[100vh] min-h-[680px] overflow-hidden bg-forest">
+    <section data-home-hero className="relative -mt-[72px] h-[100vh] min-h-[680px] overflow-hidden bg-forest">
       {hero ? (
         <div className="absolute inset-0 overflow-hidden">
           <Image
