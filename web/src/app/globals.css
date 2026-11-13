@@ -28,7 +28,7 @@
   --radius-card: 20px;
   --radius-control: 999px;
   --shadow-soft: 0 18px 50px rgb(34 57 37 / 0.1);
-  --content-max: 104rem;
+  --content-max: 80rem;
 }
 
 @theme inline {
@@ -138,7 +138,7 @@ h3,
     padding-inline: 2rem; /* 32px tablet */
   }
   @media (min-width: 1280px) {
-    padding-inline: 2rem; /* 32px desktop */
+    padding-inline: 4rem; /* 64px desktop */
   }
 }
 
@@ -395,8 +395,8 @@ a.card-brand[href^="/produtos/"] > div:last-child {
 }
 @media (min-width: 1024px) {
   section[aria-labelledby="destaques"] > .container-brand {
-    max-width: var(--content-max);
-    padding-inline: 2rem;
+    max-width: 88rem;
+    padding-inline: 3rem;
   }
   section[aria-labelledby="destaques"] .grid { gap: 1.25rem; }
 }
@@ -468,7 +468,7 @@ section#contacto {
 }
 section#contacto > .container-brand {
   padding-block: 0;
-  padding-inline: clamp(1.25rem, 3vw, 2rem);
+  padding-inline: clamp(1.25rem, 5vw, 4rem);
   background: transparent;
 }
 section#contacto .grid > div:first-child { order: 2; }

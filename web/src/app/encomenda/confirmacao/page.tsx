@@ -51,7 +51,7 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
     <div className="container-brand py-10 md:py-14">
       <ClearCartOnMount />
       <OrderWelcome title={t.order.title} label={t.order.viewSummary} />
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-3xl">
         <Label>{t.order.message}</Label>
         <h1 id="order-summary-title" tabIndex={-1} className="mt-3 text-h1 text-forest lowercase">{t.order.summary}</h1>
         <p className="mt-6 text-body-lg measure">
