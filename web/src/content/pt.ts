@@ -305,7 +305,7 @@ export const pt = {
           },
           {
             q: "como guardo os produtos sólidos?",
-            a: "num sítio seco entre utilizações. não levam água na fórmula, e mantê-los longe da água quando não os estás a usar é o que mais os faz durar.",
+            a: "deves guardá-los num sítio seco, de forma a não permanecerem em contacto com a água. assim, eles podem secar convenientemente entre utilizações e durar mais tempo porque não se desperdiça produto.\n\npara te ajudar a melhor conservar os teus produtos sólidos, temos disponíveis bolsas feitas em croché (100% algodão) para os poderes pendurar tanto no duche como na banheira!",
           },
           {
             q: "os vossos desodorizantes são antitranspirantes?",

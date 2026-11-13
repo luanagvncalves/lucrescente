@@ -83,7 +83,9 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
                         </svg>
                       </span>
                     </summary>
-                    <p className="measure pb-5 text-body-lg">{item.a}</p>
+                    <div className="measure space-y-4 pb-5 text-body-lg">
+                      {item.a.split("\n\n").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                    </div>
                   </details>
                 </Reveal>
               ))}
