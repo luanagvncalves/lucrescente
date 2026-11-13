@@ -301,7 +301,7 @@ export const pt = {
           // Removed the initial shampoo-choice question.
           {
             q: "posso usar um champô sólido se pinto ou aliso o cabelo?",
-            a: "podes, sim! todos os nossos champôs sólidos dão-se bem com cabelo pintado e com cabelo alisado. em cabelo descolorado não os aconselhamos, porque não têm efeito anti-amarelamento.",
+            a: "podes, sem problema. os nossos champôs sólidos são adequados e adaptados para uso em cabelos pintados e/ou alisados: como não têm sais na sua composição, a sua fórmula não interage com os elementos químicos usados nos tratamentos. contudo, não os aconselhamos em cabelo descolorado, porque não têm efeito anti-amarelamento.",
           },
           {
             q: "como guardo os produtos sólidos?",

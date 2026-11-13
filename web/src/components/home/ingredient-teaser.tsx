@@ -11,7 +11,7 @@ const OIL_CATEGORIES = ["Óleos Vegetais", "Óleos Essenciais"];
 /**
  * The eight ingredients teased on the home page. It used to show four behind a
  * "ver mais" toggle; the whole set is short enough to stand on the page, and
- * the link above the grid is what carries a visitor to the rest. With nothing
+ * the link below the grid is what carries a visitor to the rest. With nothing
  * to expand, the component needs no client state — it renders on the server.
  */
 export function IngredientTeaserGrid({ items, locale = "pt" }: { items: Ingredient[]; locale?: ProductLocale }) {

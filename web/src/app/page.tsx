@@ -45,7 +45,19 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
   ]);
   const hero = editorial["home-hero"];
   const categoryImages = editorial.categories;
-  const ingredientTeaser = ingredients.filter((i) => ["Óleos Vegetais", "Óleos Essenciais", "Manteigas", "Hidrolatos", "Argilas"].includes(i.category)).slice(0, 8);
+  // Give each ingredient family a place before repeating a category.
+  const ingredientTeaser: typeof ingredients = [];
+  const shownCategories = new Set<string>();
+  for (const ingredient of ingredients) {
+    if (shownCategories.has(ingredient.category)) continue;
+    ingredientTeaser.push(ingredient);
+    shownCategories.add(ingredient.category);
+    if (ingredientTeaser.length === 8) break;
+  }
+  for (const ingredient of ingredients) {
+    if (ingredientTeaser.length === 8) break;
+    if (!ingredientTeaser.includes(ingredient)) ingredientTeaser.push(ingredient);
+  }
 
   type Tile = { key: string; href: string; imageSrc: string | null; imageAlt: string; name: string; count: number };
 
@@ -133,7 +145,6 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                   ★
                 </span>
               </h2>
-              <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
             </div>
           </Reveal>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -143,6 +154,9 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               </Reveal>
             ))}
           </div>
+          <Reveal className="mt-8 flex justify-end">
+            <TextLink href={`/produtos${query}`}>{t.home.featuredMoreLink}</TextLink>
+          </Reveal>
         </div>
       </section>
 
@@ -256,10 +270,12 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
                 </H2>
                 <p className="mt-4 text-body-lg measure">{t.home.ingredientsSubtitle}</p>
               </div>
-              <TextLink href={`/ingredientes${query}`}>{t.home.ingredientsLink}</TextLink>
             </div>
           </Reveal>
           <IngredientTeaserGrid items={ingredientTeaser} locale={locale} />
+          <Reveal className="mt-8 flex justify-end">
+            <TextLink href={`/ingredientes${query}`}>{t.home.ingredientsLink}</TextLink>
+          </Reveal>
         </div>
       </section>
 
