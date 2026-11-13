@@ -497,3 +497,16 @@ section#contacto .frame-brand {
   aspect-ratio: 1 / 1;
   border-radius: var(--radius-card);
 }
+
+@keyframes order-spiral-turn {
+  to { transform: rotate(360deg); }
+}
+
+.order-spiral {
+  animation: order-spiral-turn 18s linear infinite;
+  transform-origin: center;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .order-spiral { animation: none; }
+}

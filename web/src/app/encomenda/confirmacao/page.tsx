@@ -3,12 +3,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getDictionary } from "@/lib/i18n";
 import { getOrderBySession } from "@/lib/orders";
+import { getProducts } from "@/lib/catalog";
+import { ProductImage } from "@/components/ui/product-image";
 import { getVariantLabel } from "@/content/variant-locales";
 import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
 import { buttonClass } from "@/components/ui/button";
-import { Crescent, Pause } from "@/components/ui/motifs";
+import { Crescent, Spiral } from "@/components/ui/motifs";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { ClearCartOnMount } from "@/components/cart/clear-cart";
 
@@ -41,6 +43,8 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
   }
 
   const addr = order.shipping_address;
+  // Photos are optional: a catalogue outage must not hide a paid order.
+  const products = await getProducts().catch(() => []);
 
   return (
     <div className="container-brand section-gap">
@@ -48,10 +52,15 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
       <div className="mx-auto max-w-3xl">
         <Label>{t.order.message}</Label>
         <h1 className="mt-3 text-h1 text-forest lowercase">{t.order.title}</h1>
-        <p className="mt-6 text-body-lg measure">{t.order.detail}</p>
-        {order.email ? <p className="mt-2 text-ink/70">{t.order.emailNote(order.email)}</p> : null}
+        <p className="mt-6 text-body-lg measure">
+          {t.order.detail}{" "}
+          {order.email ? <>{t.order.emailNote(order.email)}{" "}</> : null}
+          {t.order.help}
+        </p>
 
-        <Pause className="my-12" />
+        <div className="my-10 flex justify-center text-clay/70" aria-hidden="true">
+          <Spiral size={48} strokeWidth={1.3} className="order-spiral" />
+        </div>
 
         <div className="grid gap-8 md:grid-cols-5">
           <section className="card-brand p-6 md:col-span-3" aria-labelledby="resumo">
@@ -59,9 +68,15 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
               {t.order.summary}
             </h2>
             <ul className="mt-5 space-y-3 text-[0.95rem]">
-              {order.items.map((i) => (
-                <li key={i.sku} className="flex justify-between gap-4">
-                  <span>
+              {order.items.map((i, index) => {
+                const product = products.find((p) => p.variants.some((v) => v.sku === i.sku));
+                const photo = product?.images.find((image) => image.is_primary) ?? product?.images[0];
+                return (
+                <li key={`${i.sku}-${index}`} className="flex items-center gap-4">
+                  <div className="w-20 shrink-0 sm:w-24">
+                    <ProductImage image={photo} ratio="square" sizes="96px" fallbackLabel={i.product_name} locale={locale} />
+                  </div>
+                  <span className="min-w-0 flex-1">
                     {i.quantity} × {i.product_name}
                     {/* Orders placed now store the label already translated, so
                         this changes nothing for them. Orders placed before that
@@ -69,9 +84,10 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
                     {i.variant_label ? ` (${getVariantLabel(i.variant_label, locale)})` : ""}
                     {labelHasPopularScent(i.variant_label) ? <span aria-hidden="true" className="ml-1 text-[0.8em] text-clay">★</span> : null}
                   </span>
-                  <span className="font-medium">{formatPrice(i.total_cents)}</span>
+                  <span className="shrink-0 font-medium">{formatPrice(i.total_cents)}</span>
                 </li>
-              ))}
+                );
+              })}
             </ul>
             <dl className="mt-5 space-y-2 border-t border-moss/15 pt-5 text-[0.95rem]">
               <div className="flex justify-between">
@@ -113,6 +129,12 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
               </div>
             ) : null}
           </aside>
+        </div>
+
+        <div className="mt-10">
+          <Link href={`/${query}`} className={buttonClass("primary", "lg")}>
+            {t.order.backHome}
+          </Link>
         </div>
 
         <section className="mt-14">

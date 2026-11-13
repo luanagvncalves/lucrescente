@@ -407,10 +407,11 @@ export const pt = {
     backToCart: "voltar ao carrinho", // ui
   },
   order: {
-    title: "obrigada. recebemos a tua encomenda.", // ui
+    title: "recebemos a tua encomenda, obrigada!", // ui
     message: "preparamos cada pedido com cuidado",
     detail:
-      "vamos preparar tudo cá em casa e enviamos assim que estiver pronto. se tiveres alguma dúvida, fala connosco.", // ui
+      "vamos preparar o teu pedido e enviamo-lo assim que estiver pronto.", // ui
+    help: "se tiveres alguma dúvida, envia-nos mensagem ♡", // ui
     summary: "resumo da encomenda", // ui
     reference: "referência", // ui
     shippingTo: "envio para", // ui
@@ -419,7 +420,7 @@ export const pt = {
     notFound: "não encontrámos esta encomenda. se acabaste de pagar, aguarda um momento e atualiza a página.", // ui
     processing: "estamos a confirmar o pagamento. isto pode demorar alguns segundos.", // ui
     backHome: "voltar à página inicial", // ui
-    emailNote: (email: string) => `registámos o teu contacto: ${email}. falamos contigo por aqui sobre a tua encomenda.`, // ui
+    emailNote: (email: string) => `registámos o teu contacto: ${email}, e falamos contigo através dele sobre a tua encomenda.`, // ui
   },
   errors: {
     notFoundTitle: "não encontrámos esta página.", // ui
