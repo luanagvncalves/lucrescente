@@ -100,7 +100,7 @@ export const pt = {
     returnsSummary: "produto errado ou danificado? tens 14 dias para nos dizer, e o envio de volta é por nossa conta.", // ui
     returnsLink: "ler a política de devoluções →", // ui
   },
-  products: {
+  products: { searchPlaceholder: "procurar produtos", noResults: "não encontrámos produtos com esse nome.",
     label: "feitos à mão, um a um",
     title: "os nossos produtos",
     allCategories: "todos", // ui
@@ -406,7 +406,7 @@ export const pt = {
     total: "total", // ui
     backToCart: "voltar ao carrinho", // ui
   },
-  order: {
+  order: { viewSummary: "ver resumo da encomenda",
     title: "recebemos a tua encomenda, obrigada!", // ui
     message: "preparamos cada pedido com cuidado",
     detail:

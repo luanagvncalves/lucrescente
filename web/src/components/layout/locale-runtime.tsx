@@ -32,16 +32,12 @@ export function LocaleRuntime() {
   return <style>{LINE_STYLES}</style>;
 }
 
-// Keep the hero and product names at their designed font size and allow wrapping.
-// Other headings, labels and page/section subtitles still fit on one line.
+// Fit only homepage titles and the main headings of catalogue/about pages.
+// Body copy, order confirmations, card titles and labels keep their type scale.
 const LINE_TARGETS = [
-  "h1:not(.sr-only):not([data-wrap-heading])", "h2:not(.sr-only):not([data-wrap-heading])", "h3:not(.sr-only):not([data-wrap-heading])",
-  "h4:not(.sr-only)", "h5:not(.sr-only)", "h6:not(.sr-only)",
-  "p.label-brand", "legend.label-brand", "[data-fit-line]",
-  "main summary.font-display", "main .tile-scrim > .font-display",
-  "main header > p.text-body-lg", "main h1 + p.text-body-lg",
-  "main .flex.flex-col.gap-4 > p.text-body-lg",
-  "#ingredientes + p.text-body-lg",
+  "main > section h2:not([data-wrap-heading]):not(.sr-only)",
+  "main .section-title",
+  "[data-fit-line]",
 ].join(", ");
 
 const LINE_STYLES = LINE_TARGETS + ` {

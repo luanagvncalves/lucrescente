@@ -47,7 +47,7 @@ export default async function FeedbacksPage({ searchParams }: { searchParams: Pr
       <Reveal>
         <header className="max-w-3xl">
           <Label>{t.home.testimonialsLabel}</Label>
-          <h1 className="mt-4 text-h1 text-forest lowercase">{t.home.testimonialsTitle}</h1>
+          <h1 data-fit-line className="mt-4 text-h1 text-forest lowercase">{t.home.testimonialsTitle}</h1>
           <p className="mt-6 text-body-lg measure">{t.home.testimonialsSubtitle}</p>
         </header>
       </Reveal>

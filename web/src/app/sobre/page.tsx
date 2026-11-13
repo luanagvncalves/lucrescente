@@ -25,7 +25,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
       <Reveal>
         <header className="max-w-3xl">
           <Label>{d.about.label}</Label>
-          <h1 className="mt-4 text-h1 text-forest lowercase">{d.about.title}</h1>
+          <h1 data-fit-line className="mt-4 text-h1 text-forest lowercase">{d.about.title}</h1>
           <p className="mt-6 text-body-lg measure">{d.about.intro}</p>
         </header>
       </Reveal>

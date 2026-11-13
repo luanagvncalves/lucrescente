@@ -21,6 +21,7 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
   const locale: ProductLocale = idioma === "en" || idioma === "fr" ? idioma : "pt";
   const t = getDictionary(locale);
   const [cancelled, setCancelled] = useState(params.get("checkout") === "cancelado");
+  const [query, setQuery] = useState("");
   const gridRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -51,8 +52,11 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
 
   const visible = useMemo(() => {
     const list = active ? products.filter((p) => p.category.slug === active) : [...products];
-    return alphabetical(list, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale);
-  }, [active, products, locale]);
+    const normalise = (text: string) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLocaleLowerCase(locale);
+    const search = normalise(query.trim());
+    const matches = list.filter((p) => !search || normalise(`${getProductCopy(p.slug, locale, { name: p.name }).name} ${getCategoryName(p.category.slug, locale, p.category.name)}`).includes(search));
+    return alphabetical(matches, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale);
+  }, [active, products, locale, query]);
 
   const options = useMemo(
     () => [
@@ -64,11 +68,9 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
 
   return (
     <>
-      {/* The negative margin has to undo exactly the gutter `container-brand`
-          is using, and that gutter steps to 4rem at 1280 — xl, not lg. With
-          `lg` the bar overshot by 32px a side between 1024 and 1279, which put
-          the chips off the page grid and gave the page a sideways scroll. */}
-      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8 xl:-mx-16 xl:px-16">
+      {/* Match the shared page gutters at every breakpoint. */}
+      <div className="sticky top-[72px] z-30 -mx-5 mt-10 bg-ivory/95 px-5 py-3 backdrop-blur-sm md:-mx-8 md:px-8">
+        <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
         <FilterBar
           ariaLabel={t.products.filterLabel}
           options={options}
@@ -76,13 +78,18 @@ export function Catalogue({ categories, products }: { categories: Category[]; pr
           onSelect={select}
           labels={{ previous: t.products.scrollLeft, next: t.products.scrollRight }}
         />
+          <label className="relative block lg:w-72 lg:shrink-0">
+            <span className="sr-only">{t.products.searchPlaceholder}</span>
+            <input type="search" value={query} onChange={(event) => setQuery(event.target.value)} placeholder={t.products.searchPlaceholder} className="h-11 w-full rounded-full border border-moss/40 bg-paper px-5 font-ui text-[0.92rem] text-ink placeholder:text-ink/50 focus-visible:border-forest focus-visible:outline-none" />
+          </label>
+        </div>
       </div>
 
       <div ref={gridRef} className="mt-10" aria-live="polite">
         {visible.length === 0 ? (
           <div className="card-brand flex items-center gap-4 p-6 text-ink/80">
             <Crescent size={18} tone="var(--violet)" />
-            <p>{t.products.emptyCategory}</p>
+            <p>{query.trim() ? t.products.noResults : t.products.emptyCategory}</p>
           </div>
         ) : (
           <>

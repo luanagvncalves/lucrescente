@@ -10,7 +10,8 @@ import { labelHasPopularScent } from "@/content/scent-choices";
 import { formatPrice } from "@/lib/types";
 import { Label } from "@/components/ui/typography";
 import { buttonClass } from "@/components/ui/button";
-import { Crescent, Spiral } from "@/components/ui/motifs";
+import { Crescent } from "@/components/ui/motifs";
+import { OrderWelcome } from "@/components/cart/order-welcome";
 import { ContactLinks } from "@/components/contact/contact-links";
 import { ClearCartOnMount } from "@/components/cart/clear-cart";
 
@@ -47,22 +48,19 @@ export default async function Confirmation({ searchParams }: { searchParams: Pro
   const products = await getProducts().catch(() => []);
 
   return (
-    <div className="container-brand section-gap">
+    <div className="container-brand py-10 md:py-14">
       <ClearCartOnMount />
-      <div className="mx-auto max-w-3xl">
+      <OrderWelcome title={t.order.title} label={t.order.viewSummary} />
+      <div className="mx-auto max-w-6xl">
         <Label>{t.order.message}</Label>
-        <h1 className="mt-3 text-h1 text-forest lowercase">{t.order.title}</h1>
+        <h1 id="order-summary-title" tabIndex={-1} className="mt-3 text-h1 text-forest lowercase">{t.order.summary}</h1>
         <p className="mt-6 text-body-lg measure">
           {t.order.detail}{" "}
           {order.email ? <>{t.order.emailNote(order.email)}{" "}</> : null}
           {t.order.help}
         </p>
 
-        <div className="my-10 flex justify-center text-clay/70" aria-hidden="true">
-          <Spiral size={48} strokeWidth={1.3} className="order-spiral" />
-        </div>
-
-        <div className="grid gap-8 md:grid-cols-5">
+        <div className="mt-8 grid gap-8 md:grid-cols-5">
           <section className="card-brand p-6 md:col-span-3" aria-labelledby="resumo">
             <h2 id="resumo" className="font-display text-[1.5rem] text-forest lowercase">
               {t.order.summary}

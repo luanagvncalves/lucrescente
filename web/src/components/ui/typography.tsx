@@ -63,7 +63,7 @@ export function SectionHeader({
   return (
     <div className={`flex flex-col gap-4 ${align === "center" ? "items-center text-center" : ""}`}>
       {label ? <Label tone={tone}>{label}</Label> : null}
-      <As id={titleId} className={titleClassName}>
+      <As id={titleId} className={`${titleClassName} section-title`}>
         {title}
       </As>
       {subtitle ? <p className="text-body-lg text-ink/90 measure">{subtitle}</p> : null}

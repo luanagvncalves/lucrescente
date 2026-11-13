@@ -15,7 +15,7 @@ export function Footer() {
   const query = locale === "pt" ? "" : `?idioma=${locale}`;
 
   return (
-    <footer className="mt-24 bg-forest text-ivory on-dark">
+    <footer className="mt-8 bg-forest text-ivory on-dark">
       <div className="container-brand grid gap-12 py-16 md:grid-cols-12 md:py-20">
         <div className="md:col-span-5">
           <div className="flex items-center gap-3">

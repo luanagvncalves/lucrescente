@@ -43,7 +43,7 @@ export default async function FaqPage({ searchParams }: { searchParams: Promise<
       <Reveal>
         <header className="max-w-3xl">
           <Label>{t.faq.label}</Label>
-          <h1 className="mt-4 text-h1 text-forest lowercase">{t.faq.title}</h1>
+          <h1 data-fit-line className="mt-4 text-h1 text-forest lowercase">{t.faq.title}</h1>
           <p className="mt-6 text-body-lg measure">{t.faq.intro}</p>
         </header>
       </Reveal>
