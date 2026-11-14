@@ -115,7 +115,8 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
       {/*
         The photograph keeps its 3:4 proportions and 80vh height ceiling.
-        Details sit beside it; the purchase panel uses both columns below.
+        The purchase panel follows the gallery in the same column, so a long
+        description never leaves a blank band underneath a shorter photograph.
         On mobile the order remains photograph, purchase controls, details.
       */}
       <div className="mt-6 grid items-start gap-6 md:grid-cols-[minmax(0,min(48%,60vh))_minmax(0,1fr)] md:gap-x-10 lg:gap-x-14">
@@ -131,11 +132,9 @@ export default async function ProductPage({ params, searchParams }: Params) {
             <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-w-[60vh]" />
           )}
 
-        </div>
-
-        {/* Use the available page width instead of a tall, photo-width card. */}
-        <div className="purchase-layout min-w-0 md:col-span-2 md:row-start-2">
-          <PurchasePanel product={product} locale={locale} />
+          <div className="purchase-layout mt-6 min-w-0 max-w-[60vh]">
+            <PurchasePanel product={product} locale={locale} />
+          </div>
         </div>
 
         {/* Product details, ingredients and description beside the gallery. */}
