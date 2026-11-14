@@ -529,6 +529,37 @@ body:has(main > [data-home-hero]) > footer {
 }
 
 /* Purchase cards adapt to their own available width, including tablet views. */
+.adaptive-product-layout {
+  display: grid;
+  align-items: start;
+  gap: 1.5rem;
+}
+.adaptive-product-layout .purchase-layout {
+  max-width: 60vh;
+  margin-top: 1.5rem;
+}
+@media (min-width: 768px) {
+  .adaptive-product-layout {
+    grid-template-columns: minmax(0, min(48%, 60vh)) minmax(0, 1fr);
+    column-gap: 2.5rem;
+  }
+  .adaptive-product-layout .product-details {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .adaptive-product-layout[data-purchase-layout="wide"] .product-gallery-column {
+    display: contents;
+  }
+  .adaptive-product-layout[data-purchase-layout="wide"] .purchase-layout {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    max-width: none;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .adaptive-product-layout { column-gap: 3.5rem; }
+}
 .purchase-layout {
   container: purchase / inline-size;
 }

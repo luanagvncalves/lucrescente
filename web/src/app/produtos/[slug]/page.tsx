@@ -14,6 +14,7 @@ import { Label } from "@/components/ui/typography";
 import { Pause } from "@/components/ui/motifs";
 import { ProductImage } from "@/components/ui/product-image";
 import { PurchasePanel } from "@/components/product/purchase-panel";
+import { AdaptiveProductLayout } from "@/components/product/adaptive-product-layout";
 import { RelatedCarousel } from "@/components/product/related-carousel";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductExtraInfo } from "@/components/product/product-extra-info";
@@ -115,15 +116,16 @@ export default async function ProductPage({ params, searchParams }: Params) {
 
       {/*
         The photograph keeps its 3:4 proportions and 80vh height ceiling.
-        The purchase panel follows the gallery in the same column, so a long
-        description never leaves a blank band underneath a shorter photograph.
+        Compare a photo-width purchase card with a full-width card using the
+        rendered content, so each product uses the space that actually fits.
         On mobile the order remains photograph, purchase controls, details.
       */}
-      <div className="mt-6 grid items-start gap-6 md:grid-cols-[minmax(0,min(48%,60vh))_minmax(0,1fr)] md:gap-x-10 lg:gap-x-14">
+      <AdaptiveProductLayout>
         {/* `min-w-0` because a grid item defaults to min-width:auto: the
             gallery's scrolling thumbnail strip stretched this column to its
             full content width, and the whole page with it. */}
-        <div className="min-w-0">
+        <div className="product-gallery-column min-w-0">
+          <div data-product-gallery>
           {product.images.length > 1 ? (
             <ProductGallery key={product.slug} images={product.images} name={copy.name} locale={locale} />
           ) : (
@@ -132,13 +134,14 @@ export default async function ProductPage({ params, searchParams }: Params) {
             <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-w-[60vh]" />
           )}
 
-          <div className="purchase-layout mt-6 min-w-0 max-w-[60vh]">
+          </div>
+          <div className="purchase-layout min-w-0">
             <PurchasePanel product={product} locale={locale} />
           </div>
         </div>
 
         {/* Product details, ingredients and description beside the gallery. */}
-        <div className="min-w-0 md:col-start-2 md:row-start-1">
+        <div className="product-details min-w-0" data-product-details>
           <Label>{categoryName}</Label>
           <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
 
@@ -211,7 +214,7 @@ export default async function ProductPage({ params, searchParams }: Params) {
             {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
           </div>
         </div>
-      </div>
+      </AdaptiveProductLayout>
 
       {/* the spiral now marks the end of the product itself, before the
           carousel of everything else, rather than splitting the photograph
