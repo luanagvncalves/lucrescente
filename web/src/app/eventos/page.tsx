@@ -1,10 +1,43 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import type { Metadata } from "next";
+
 export const metadata: Metadata = { title: "eventos", alternates: { canonical: "/eventos" } };
-const photos = ["20250526_164056","20250526_164106","20250526_164453","20250526_164609","20250526_164747"];
-export default async function EventsPage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
- const { idioma } = await searchParams;
- const title = idioma === "en" ? "events" : idioma === "fr" ? "événements" : "eventos";
- const intro = idioma === "en" ? "lucrescente moments and creations." : idioma === "fr" ? "moments et créations lucrescente." : "momentos e criações lucrescente.";
- return <article className="container-brand py-10 md:py-16"><header className="max-w-3xl"><h1 className="text-h1 text-forest lowercase">{title}</h1><p className="mt-4 text-body-lg">{intro}</p></header><div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">{photos.map((photo,index)=><figure key={photo} className="frame-brand overflow-hidden"><Image src={`/images/eventos/${photo}.jpg`} alt={`lucrescente · ${title} · ${index+1}`} width={1200} height={1600} sizes="(min-width:1024px) 33vw, (min-width:640px) 50vw, 100vw" className="h-auto w-full" priority={index===0}/></figure>)}</div></article>;
+const confirmationPhotos = ["20250526_164056", "20250526_164106", "20250526_164453", "20250526_164609", "20250526_164747"];
+const content = {
+  pt: { title: "eventos", intro: "encomendas maiores para aniversários, batizados, crismas e lembranças. criamos os teus presentes e detalhes para celebrar em conjunto.", confirmation: "velas para um crisma", gift: "prenda de grupo", detail: "clica numa fotografia para a veres maior.", confirmationAlt: "velas em frascos de vidro com laços violeta, personalizadas para um crisma", giftAlt: "velas decoradas com flores secas, conchas e laços de várias cores, preparadas para uma prenda de grupo" },
+  en: { title: "events", intro: "larger orders for birthdays, baptisms, confirmations and keepsakes. gifts and details made to celebrate together.", confirmation: "candles for a confirmation", gift: "group gift", detail: "click a photograph to view it larger.", confirmationAlt: "personalised confirmation candles in glass jars with violet ribbons", giftAlt: "candles decorated with dried flowers, shells and colourful ribbons, prepared as a group gift" },
+  fr: { title: "événements", intro: "commandes en quantité pour anniversaires, baptêmes, confirmations et souvenirs. des cadeaux et des détails pour célébrer ensemble.", confirmation: "bougies pour une confirmation", gift: "cadeau de groupe", detail: "clique sur une photographie pour l’agrandir.", confirmationAlt: "bougies personnalisées pour une confirmation, en pots de verre avec rubans violets", giftAlt: "bougies décorées de fleurs séchées, coquillages et rubans colorés, préparées pour un cadeau de groupe" },
+};
+
+function EventPhoto({ photo, alt, priority = false }: { photo: string; alt: string; priority?: boolean }) {
+  const src = `/images/eventos/${photo}.jpg`;
+  return <a href={src} target="_blank" rel="noopener noreferrer" className="frame-brand block aspect-[3/4] overflow-hidden bg-paper transition-opacity hover:opacity-85 focus-visible:outline-offset-4">
+    <Image src={src} alt={alt} width={240} height={320} sizes="(min-width:1024px) 180px, (min-width:640px) 200px, 45vw" className="h-full w-full object-contain" priority={priority} />
+  </a>;
 }
+
+export default async function EventsPage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
+  const { idioma } = await searchParams;
+  const locale = idioma === "en" || idioma === "fr" ? idioma : "pt";
+  const copy = content[locale];
+  return <article className="container-brand py-10 md:py-12">
+    <header className="max-w-3xl">
+      <h1 className="text-h1 text-forest lowercase">{copy.title}</h1>
+      <p className="mt-4 text-body-lg">{copy.intro}</p>
+      <p className="mt-3 text-sm text-ink/70">{copy.detail}</p>
+    </header>
+    <section aria-labelledby="crisma" className="mt-8">
+      <h2 id="crisma" className="text-h2 text-forest lowercase">{copy.confirmation}</h2>
+      <div className="mt-4 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {confirmationPhotos.map((photo, index) => <EventPhoto key={photo} photo={photo} alt={`${copy.confirmationAlt} · ${index + 1}`} priority={index === 0} />)}
+      </div>
+    </section>
+    <section aria-labelledby="prenda-grupo" className="mt-8">
+      <h2 id="prenda-grupo" className="text-h2 text-forest lowercase">{copy.gift}</h2>
+      <div className="mt-4 w-1/2 max-w-[170px]">
+        <EventPhoto photo="20251220_150635" alt={copy.giftAlt} />
+      </div>
+    </section>
+  </article>;
+}
+

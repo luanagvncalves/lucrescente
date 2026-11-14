@@ -46,6 +46,7 @@ export function getProductCopy(slug: string, locale: ProductLocale, fallback: Pr
   const entry = copy[slug]?.[locale] ?? fallback;
   // Existing carts may still carry the old Portuguese display names.
   const currentNames: Record<string, string> = {
+    "sais-de-banho-relaxante": "sais de banho relaxantes",
     "roll-on-sinusite": "roll-on respiratório",
     "batom-hidratante-com-cor": "bálsamo labial com cor",
     "batom-hidratante-sem-cor": "bálsamo labial sem cor",
