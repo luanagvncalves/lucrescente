@@ -527,3 +527,66 @@ body:not(:has(main > [data-home-hero])) > header > div:first-of-type {
 body:has(main > [data-home-hero]) > footer {
   margin-top: 0;
 }
+
+/* Purchase cards adapt to their own available width, including tablet views. */
+.purchase-layout {
+  container: purchase / inline-size;
+}
+.product-purchase-panel {
+  display: grid;
+  align-items: start;
+  gap: 1.5rem;
+}
+.product-purchase-panel > :not(.purchase-footer) {
+  min-width: 0;
+  margin-bottom: 0;
+}
+.product-purchase-panel fieldset label {
+  height: auto;
+  min-height: 2.75rem;
+  padding-block: 0.5rem;
+  line-height: 1.35;
+}
+.purchase-footer {
+  grid-column: 1 / -1;
+  min-width: 0;
+}
+[data-product-actions] > * {
+  min-width: 0;
+}
+@container purchase (min-width: 42rem) {
+  .product-purchase-panel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .purchase-footer {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .purchase-footer > * {
+    margin-block: 0;
+  }
+  .purchase-controls {
+    flex-direction: row;
+    align-items: center;
+  }
+  .purchase-controls > [data-product-actions] {
+    flex: 1;
+  }
+  .freshener-oils {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .freshener-purchase-panel > [data-product-actions] {
+    max-width: 32rem;
+    margin-left: auto;
+  }
+}
+@container purchase (min-width: 58rem) {
+  .freshener-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .freshener-groups > section:only-child {
+    grid-column: 1 / -1;
+  }
+}

@@ -100,7 +100,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
   }
 
   return (
-    <div className="card-brand p-6 sm:p-8">
+    <div className="card-brand product-purchase-panel p-5 sm:p-6">
       {!isAirFreshener && (variants.length > 1 || soleLabel) ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.variant}</legend>
@@ -270,7 +270,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
       ) : null}
 
       {avail.kind === "on-request" ? (
-        <div className="space-y-4">
+        <div className="purchase-footer space-y-4">
           <p className="font-display text-[1.75rem] leading-none text-clay">{t.products.onRequest}</p>
           <div className="grid grid-cols-2 gap-3" data-product-actions>
             <AnchorButton href={whatsapp} target="_blank" rel="noreferrer" size="lg" className={ACTION_CLASS}>
@@ -287,7 +287,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
           stays, and a "fala connosco" WhatsApp link sits under it, same as
           the on-request state above.
         */
-        <div className="space-y-4">
+        <div className="purchase-footer space-y-4">
           <p className="font-display text-[1.75rem] leading-none text-ink/50 line-through decoration-1">
             <span className="sr-only">{t.products.price}: </span>
             {formatPrice(avail.price_cents)}
@@ -300,12 +300,12 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
           </div>
         </div>
       ) : (
-        <div className="space-y-5">
-          <div className="flex items-baseline justify-between">
+        <div className="purchase-footer space-y-5">
+          <div className="flex items-baseline justify-between gap-4">
             <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(avail.price_cents)}</p>
             {avail.stock <= 3 ? <span className="label-brand text-clay">{t.products.stockLeft(avail.stock)}</span> : null}
           </div>
-          <div className="flex flex-col gap-3">
+          <div className="purchase-controls flex flex-col gap-3">
             <div className="inline-flex h-[52px] items-center self-start rounded-full border border-moss/40" role="group" aria-label={t.products.quantity}>
               <button type="button" className="flex h-12 w-12 items-center justify-center rounded-full text-forest hover:bg-forest/5" aria-label={t.cart.decrease} onClick={() => setQty((q) => Math.max(1, q - 1))}>
                 −

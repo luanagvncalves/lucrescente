@@ -38,9 +38,9 @@ export function AirFreshenerPanel({ product, locale = "pt" }: { product: Product
   }
   cart.notify(`${name} · ${t.products.added}`);cart.open();
  }
- return <div className="card-brand p-6 sm:p-8" data-freshener-builder>
+ return <div className="card-brand freshener-purchase-panel p-5 sm:p-6" data-freshener-builder>
   <p className="mb-5 text-[0.9rem] leading-relaxed text-ink/75">{c.hint}</p>
-  <div className="space-y-3">
+  <div className="freshener-groups grid items-start gap-3">
    {groups.map((g,index)=><section key={g.id} aria-label={`${c.group} ${index+1}`} className="rounded-2xl border border-moss/30 bg-paper/45 p-4">
     <div className="flex items-start gap-2">
      <button type="button" aria-expanded={activeId===g.id} aria-controls={`freshener-group-${g.id}`} onClick={()=>setActiveId(activeId===g.id?null:g.id)} className="min-h-11 min-w-0 flex-1 text-left text-forest">
@@ -55,7 +55,7 @@ export function AirFreshenerPanel({ product, locale = "pt" }: { product: Product
       <div><label htmlFor={`shape-${g.id}`} className="label-brand mb-2 block text-moss">{t.products.variant}</label><BrandSelect id={`shape-${g.id}`} value={g.shape} onChange={e=>update(g.id,{shape:e.target.value as FreshenerShape})}>{FRESHENER_SHAPES.map(s=><option key={s.value} value={s.value}>{s.label[locale]}</option>)}</BrandSelect></div>
       <div><label htmlFor={`qty-${g.id}`} className="label-brand mb-2 block text-moss">{t.products.quantity}</label><input id={`qty-${g.id}`} type="number" min={1} max={50} value={g.quantity} onChange={e=>update(g.id,{quantity:Math.max(1,Math.min(50,Number(e.target.value)||1))})} className="h-12 w-full rounded-2xl border border-moss/40 bg-paper px-3 text-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-violet" /></div>
      </div>
-     <div className="mt-4 space-y-3">{([0,1] as const).map(i=><div key={i}><label htmlFor={`oil-${g.id}-${i}`} className="label-brand mb-2 block text-moss">{c.oil} {i+1}</label><BrandSelect id={`oil-${g.id}-${i}`} value={g.oils[i]} onChange={e=>{const selected:[string,string]=[...g.oils];selected[i]=e.target.value;update(g.id,{oils:selected});}}><option value="">{c.none}</option>{oils.map(s=><option key={s.value} value={s.value} disabled={g.oils[1-i]===s.value}>{s.label[locale]}</option>)}</BrandSelect></div>)}</div>
+     <div className="freshener-oils mt-4 grid gap-3">{([0,1] as const).map(i=><div key={i}><label htmlFor={`oil-${g.id}-${i}`} className="label-brand mb-2 block text-moss">{c.oil} {i+1}</label><BrandSelect id={`oil-${g.id}-${i}`} value={g.oils[i]} onChange={e=>{const selected:[string,string]=[...g.oils];selected[i]=e.target.value;update(g.id,{oils:selected});}}><option value="">{c.none}</option>{oils.map(s=><option key={s.value} value={s.value} disabled={g.oils[1-i]===s.value}>{s.label[locale]}</option>)}</BrandSelect></div>)}</div>
      <p className="label-brand mb-2 mt-4 text-moss">{c.popular}</p>
      <div className="flex flex-wrap gap-2">{combosFor(product.slug).map(combo=><button key={combo.join('+')} type="button" aria-pressed={combo.every(o=>g.oils.includes(o))} onClick={()=>update(g.id,{oils:[combo[0],combo[1]]})} className="min-h-9 rounded-full border border-moss/35 px-3 py-2 text-left text-[0.8rem] text-forest transition-colors hover:bg-forest/5 aria-pressed:border-forest aria-pressed:bg-forest aria-pressed:text-white">{combo.map(o=>oils.find(s=>s.value===o)?.label[locale]).join(' + ')}</button>)}</div>
      {g.oils.includes(HARSH_SCENT)?<p className="mt-3 text-[0.82rem] leading-relaxed text-ink/75">{t.products.scentHarsh}</p>:null}

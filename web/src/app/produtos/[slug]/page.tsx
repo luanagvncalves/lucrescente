@@ -114,20 +114,15 @@ export default async function ProductPage({ params, searchParams }: Params) {
       </nav>
 
       {/*
-        Two columns, and the left one is only as wide as the photograph really
-        is. It used to be a fixed 7 of 12, which is fine while the frame fills
-        its track — but the frame is 3:4 and may not exceed 80vh, so on a wide,
-        short window it stops short of the column's edge and left a band of
-        empty page between the photograph and the words beside it. Sizing the
-        column at min(58%, 60vh) — 60vh being the width a 3:4 frame has when it
-        is 80vh tall — means the column ends where the picture ends, whichever
-        of the two limits is doing the work.
+        The photograph keeps its 3:4 proportions and 80vh height ceiling.
+        Details sit beside it; the purchase panel uses both columns below.
+        On mobile the order remains photograph, purchase controls, details.
       */}
-      <div className="mt-6 flex flex-col gap-10 md:flex-row md:items-start lg:gap-14">
-        {/* `min-w-0` because a flex item defaults to min-width:auto: the
+      <div className="mt-6 grid items-start gap-6 md:grid-cols-[minmax(0,min(48%,60vh))_minmax(0,1fr)] md:gap-x-10 lg:gap-x-14">
+        {/* `min-w-0` because a grid item defaults to min-width:auto: the
             gallery's scrolling thumbnail strip stretched this column to its
             full content width, and the whole page with it. */}
-        <div className="min-w-0 md:w-[min(58%,60vh)] md:shrink-0">
+        <div className="min-w-0">
           {product.images.length > 1 ? (
             <ProductGallery key={product.slug} images={product.images} name={copy.name} locale={locale} />
           ) : (
@@ -136,14 +131,15 @@ export default async function ProductPage({ params, searchParams }: Params) {
             <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-w-[60vh]" />
           )}
 
-          {/* Purchase controls sit directly below the gallery. */}
-          <div className="mt-8">
-            <PurchasePanel product={product} locale={locale} />
-          </div>
+        </div>
+
+        {/* Use the available page width instead of a tall, photo-width card. */}
+        <div className="purchase-layout min-w-0 md:col-span-2 md:row-start-2">
+          <PurchasePanel product={product} locale={locale} />
         </div>
 
         {/* Product details, ingredients and description beside the gallery. */}
-        <div className="min-w-0 md:flex-1">
+        <div className="min-w-0 md:col-start-2 md:row-start-1">
           <Label>{categoryName}</Label>
           <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
 
