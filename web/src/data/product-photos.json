@@ -302,5 +302,19 @@
       "path": "/images/products/amaciador/oval-20230926.jpg",
       "alt": "três amaciadores sólidos ovais de cor creme sobre tecido floral rosa e azul"
     }
+  ],
+  "ambientador": [
+    {
+      "path": "/images/products/ambientador/20241101_105223.jpg",
+      "alt": "ambientadores de cera branca em três formatos: flores, círculos e corações, sobre tecido floral rosa e azul"
+    },
+    {
+      "path": "/images/products/ambientador/20241101_105242.jpg",
+      "alt": "ambientadores de cera branca em forma de flor com pequenos fragmentos de plantas, sobre tecido floral rosa e azul"
+    },
+    {
+      "path": "/images/products/ambientador/formatos-20241101.jpg",
+      "alt": "ambientadores de cera de cor creme em forma de flor, coração e círculo, sobre tecido floral rosa e azul"
+    }
   ]
 }

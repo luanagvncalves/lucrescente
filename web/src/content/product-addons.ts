@@ -1,3 +1,4 @@
+import { sanitiseFreshenerOption, freshenerOptionLabel } from "./freshener-options";
 import type { ProductLocale } from "./product-locales";
 import { getScentLabel, isScentProduct, sanitiseScent } from "./scent-choices";
 
@@ -78,6 +79,7 @@ export function getAddOns(slug: string): AddOn[] {
  * and the line is simply packed without an extra.
  */
 export function sanitiseAddOn(slug: string, value: unknown): string | null {
+  if (slug === "ambientador") return sanitiseFreshenerOption(value);
   if (isScentProduct(slug)) return sanitiseScent(value, slug);
   if (typeof value !== "string") return null;
   return getAddOns(slug).find((a) => a.value === value)?.value ?? null;
@@ -94,6 +96,7 @@ export function translateAddOn(value: string, locale: ProductLocale): string | n
 
 /** For display only — falls through unchanged if it is not one we know. */
 export function getAddOnLabel(slug: string, value: string, locale: ProductLocale): string {
+  if (slug === "ambientador") return freshenerOptionLabel(value, locale);
   if (isScentProduct(slug)) return getScentLabel(value, locale);
   return getAddOns(slug).find((a) => a.value === value)?.label[locale] ?? value;
 }

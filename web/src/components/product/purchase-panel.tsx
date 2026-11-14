@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { getDictionary } from "@/lib/i18n";
@@ -10,6 +10,8 @@ import { getVariantLabel } from "@/content/variant-locales";
 import { getAddOns } from "@/content/product-addons";
 import { DEFAULT_SCENTS, FIXED_SCENTS, HARSH_SCENT, MAX_SCENTS, SCENTS, combosFor, isScentProduct, scentValue, scentsFor } from "@/content/scent-choices";
 import { ProductContact } from "./product-contact";
+import { BrandSelect } from "@/components/ui/brand-select";
+import { AirFreshenerPanel } from "./air-freshener-panel";
 
 /** The longest answer to "quantos ambientadores" we keep. */
 const HOW_MANY_MAX_LENGTH = 40;
@@ -19,7 +21,11 @@ const ACTION_CLASS = "h-[52px] w-full min-w-0 whitespace-normal break-words !px-
  * Purchase panel: variant selector, quantity, add to cart.
  * States: on-request (no price) → "por encomenda" + WhatsApp; sold-out → crossed-out price + WhatsApp; available → add.
  */
-export function PurchasePanel({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
+export function PurchasePanel(props: { product: Product; locale?: ProductLocale }) {
+  return props.product.slug === "ambientador" ? <AirFreshenerPanel {...props} /> : <StandardPurchasePanel {...props} />;
+}
+
+function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; locale?: ProductLocale }) {
   const t = getDictionary(locale);
   const cart = useCart();
   const variants = product.variants;
@@ -147,14 +153,14 @@ export function PurchasePanel({ product, locale = "pt" }: { product: Product; lo
       {isConditioner ? (
         <div className="mb-6">
           <label htmlFor="conditioner-shape" className="label-brand mb-3 block text-moss">{t.products.variant}</label>
-          <select
+          <BrandSelect
             id="conditioner-shape"
             value={pickedAddOn}
             onChange={(event) => setAddOn(event.target.value)}
-            className="h-12 w-full rounded-2xl border border-moss/40 bg-paper px-4 font-ui text-[0.95rem] text-forest focus:border-forest focus:outline-none focus-visible:ring-2 focus-visible:ring-violet"
+
           >
             {addOns.map((option) => <option key={option.value} value={option.value}>{option.label[locale]}</option>)}
-          </select>
+          </BrandSelect>
         </div>
       ) : addOns.length ? (
         <fieldset className="mb-6">

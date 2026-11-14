@@ -5,7 +5,7 @@ import { getDictionary } from "@/lib/i18n";
 import type { ProductLocale } from "@/content/product-locales";
 import { Button } from "@/components/ui/button";
 
-export function ProductContact({ productName, locale = "pt", className = "" }: { productName: string; locale?: ProductLocale; className?: string }) {
+export function ProductContact({ productName, orderDetails, locale = "pt", className = "" }: { productName: string; orderDetails?: string; locale?: ProductLocale; className?: string }) {
   const t = getDictionary(locale);
   const dialog = useRef<HTMLDialogElement>(null);
   const id = useId();
@@ -36,6 +36,7 @@ export function ProductContact({ productName, locale = "pt", className = "" }: {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...formData,
+          message: [orderDetails, formData.message].filter(Boolean).join("\n\n"),
           productName,
         }),
       });
@@ -79,6 +80,7 @@ export function ProductContact({ productName, locale = "pt", className = "" }: {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
+              {orderDetails ? <p className="whitespace-pre-line rounded-2xl bg-forest/5 p-4 text-sm leading-relaxed">{orderDetails}</p> : null}
               {failed ? (
                 <div role="alert" className="rounded-lg bg-red-50 border border-red-200 p-4">
                   <p className="text-red-800 text-sm">

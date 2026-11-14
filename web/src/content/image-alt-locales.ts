@@ -38,6 +38,10 @@ const alt: Record<string, { en: string; fr: string }> = {
   },
 
   // ambientadores
+  "ambientadores de cera de cor creme em forma de flor, coração e círculo, sobre tecido floral rosa e azul": {
+    en: "cream-coloured wax air fresheners shaped as flowers, hearts and circles, on pink and blue floral fabric",
+    fr: "parfums d'ambiance en cire couleur crème en forme de fleurs, de cœurs et de cercles, sur un tissu floral rose et bleu",
+  },
   "três caixas de metal em forma de coração (vermelha, prateada e dourada) com ambientadores de cera branca, flores secas e botões de rosa, sobre tecido floral": {
     en: "three heart-shaped metal tins (red, silver and gold) holding white wax air fresheners, dried flowers and rosebuds, on floral fabric",
     fr: "trois boîtes métalliques en forme de cœur (rouge, argentée et dorée) contenant des parfums d'ambiance en cire blanche, des fleurs séchées et des boutons de rose, sur un tissu floral",

@@ -1,3 +1,4 @@
+import { freshenerShapeLabel } from "./freshener-options";
 import { getScentLabel } from "./scent-choices";
 import { translateAddOn } from "./product-addons";
 
@@ -45,6 +46,8 @@ export function getVariantLabel(label: string | null, locale: VariantLocale): st
  */
 function translatePart(part: string, locale: VariantLocale): string {
   const clean = part.trim();
+  const shape = freshenerShapeLabel(clean, locale);
+  if (shape) return shape;
   const plain = copy[clean]?.[locale];
   if (plain) return plain;
   if (clean.startsWith("aroma: ")) return getScentLabel(clean, locale);
