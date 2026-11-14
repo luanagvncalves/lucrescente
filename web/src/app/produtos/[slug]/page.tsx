@@ -136,54 +136,13 @@ export default async function ProductPage({ params, searchParams }: Params) {
             <ProductImage image={product.images[0] ?? null} ratio="portrait" priority sizes="(min-width: 768px) 58vw, 100vw" fallbackLabel={copy.name} locale={locale} className="frame-brand max-w-[60vh]" />
           )}
 
-          {/*
-            Why the product works, directly under the photograph it belongs to.
-            It used to sit past the spiral, a full screen further down, which
-            put the brand's case for a product somewhere most people never
-            scrolled to.
-          */}
+          {/* Purchase controls sit directly below the gallery. */}
           <div className="mt-8">
-            {product.is_candle ? (
-              <section aria-labelledby="porque">
-                {/* a candle is not answering "does this work" but "why this
-                    rather than the one in the supermarket" */}
-                {whyItWorks
-                  ? whyItWorks.split("\n\n").map((para, i) => (
-                      <p key={i} className={i ? "mt-5 text-body-lg measure" : "text-body-lg measure"}>
-                        {para}
-                      </p>
-                    ))
-                  : null}
-                <Label className={whyItWorks ? "mt-8" : ""}>{t.products.candleCaseLabel}</Label>
-                <p id="porque" className="mt-5 text-body-lg measure">
-                  {t.products.candleCase}
-                </p>
-                {product.slug !== "vela-com-mensagem" ? <p className="mt-5 text-body-lg measure">{t.products.candleOrder}</p> : null}
-              </section>
-            ) : whyItWorks ? (
-              <section aria-labelledby="porque">
-                <Label>{t.products.whyItWorks}</Label>
-                <p id="porque" className="mt-5 text-body-lg measure">
-                  {whyItWorks}
-                </p>
-              </section>
-            ) : null}
-
-            {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
-            {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
+            <PurchasePanel product={product} locale={locale} />
           </div>
         </div>
 
-        {/*
-          5 cols beside the photographs: what the product is made of, and then
-          how to buy it.
-
-          The ingredients come first, above the price and the format picker,
-          because they are what someone is deciding on — the brand's whole case
-          for a product is its ingredient list, and it used to sit far below the
-          fold, next to "porque funciona". Everything explaining the product
-          rather than choosing it now lives under the photographs instead.
-        */}
+        {/* Product details, ingredients and description beside the gallery. */}
         <div className="min-w-0 md:flex-1">
           <Label>{categoryName}</Label>
           <h1 className="mt-3 text-h1 text-forest lowercase">{copy.name}</h1>
@@ -227,7 +186,34 @@ export default async function ProductPage({ params, searchParams }: Params) {
           <ProductExtraInfo product={product} locale={locale} />
 
           <div className="mt-8">
-            <PurchasePanel product={product} locale={locale} />
+            {product.is_candle ? (
+              <section aria-labelledby="porque">
+                {/* a candle is not answering "does this work" but "why this
+                    rather than the one in the supermarket" */}
+                {whyItWorks
+                  ? whyItWorks.split("\n\n").map((para, i) => (
+                      <p key={i} className={i ? "mt-5 text-body-lg measure" : "text-body-lg measure"}>
+                        {para}
+                      </p>
+                    ))
+                  : null}
+                <Label className={whyItWorks ? "mt-8" : ""}>{t.products.candleCaseLabel}</Label>
+                <p id="porque" className="mt-5 text-body-lg measure">
+                  {t.products.candleCase}
+                </p>
+                {product.slug !== "vela-com-mensagem" ? <p className="mt-5 text-body-lg measure">{t.products.candleOrder}</p> : null}
+              </section>
+            ) : whyItWorks ? (
+              <section aria-labelledby="porque">
+                <Label>{t.products.whyItWorks}</Label>
+                <p id="porque" className="mt-5 text-body-lg measure">
+                  {whyItWorks}
+                </p>
+              </section>
+            ) : null}
+
+            {product.is_deodorant ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.deodorantFact}</p> : null}
+            {product.is_solid ? <p className="mt-5 text-[0.95rem] text-ink/80 measure">{t.products.solidNote}</p> : null}
           </div>
         </div>
       </div>
