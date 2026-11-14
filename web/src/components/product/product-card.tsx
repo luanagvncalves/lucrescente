@@ -73,7 +73,7 @@ export function ProductCard({
             <span className="font-ui text-[0.95rem] font-medium text-clay">{t.products.onRequest}</span>
           ) : (
             <span className={`font-ui text-[1rem] font-medium ${avail.kind === "sold-out" ? "text-ink/50" : "text-forest"}`}>
-              {product.variants.filter((v) => v.price_cents !== null).length > 1 && new Set(product.variants.map((v) => v.price_cents)).size > 1 ? t.products.priceFrom : ""}
+              {product.slug === "mascara-150ml" || product.variants.filter((v) => v.price_cents !== null).length > 1 && new Set(product.variants.map((v) => v.price_cents)).size > 1 ? t.products.priceFrom : ""}
               {formatPrice(avail.price_cents)}
             </span>
           )}

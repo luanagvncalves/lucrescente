@@ -1,10 +1,10 @@
 [
  {
   "slug": "oleo-de-coco",
-  "name": "Óleo de Coco",
+  "name": "Óleo de Côco",
   "category": "Óleos Vegetais",
   "scientific_name": "Cocos nucifera.",
-  "origin": "Extraído da polpa do coco, fruto de uma palmeira tropical cultivada em regiões costeiras de todo o mundo, incluindo o Sudeste Asiático e partes da América do Sul.",
+  "origin": "Extraído da polpa do côco, fruto de uma palmeira tropical cultivada em regiões costeiras de todo o mundo, incluindo o Sudeste Asiático e partes da América do Sul.",
   "properties": "Rico em ácidos gordos saturados (sobretudo ácido láurico), funde à temperatura da pele e forma uma película protetora que ajuda a reter a hidratação e a reduzir a perda de água transepidérmica. Textura leve e absorção relativamente rápida em comparação com outras manteigas vegetais. Muito usado também em cuidados capilares, onde ajuda a reduzir a perda de proteína da fibra capilar.",
   "applications": "Um dos óleos base mais usados por cá: entra nos desodorizantes, nos champôs sólidos e na máscara capilar, onde ajuda a nutrir e a amaciar.",
   "sort_order": 1
@@ -334,7 +334,7 @@
   "name": "Álcool Cetílico",
   "category": "Ceras e Emulsionantes",
   "scientific_name": null,
-  "origin": "Álcool gordo de origem vegetal (não confundir com álcool etílico), derivado tipicamente do óleo de coco ou de palma.",
+  "origin": "Álcool gordo de origem vegetal (não confundir com álcool etílico), derivado tipicamente do óleo de côco ou de palma.",
   "properties": "Espessante e emoliente suave, ajuda a estabilizar emulsões e deixa a pele com sensação macia e aveludada, sem o efeito secante do álcool etílico (na verdade, tem o efeito oposto, contribuindo para a sensação de hidratação do produto final).",
   "applications": "Usado no amaciador, para dar corpo e estabilidade à fórmula.",
   "sort_order": 35
@@ -414,7 +414,7 @@
   "name": "Tensioativo SCI",
   "category": "Ativos",
   "scientific_name": null,
-  "origin": "sodium cocoyl isethionate: tensioativo suave derivado do óleo de coco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
+  "origin": "sodium cocoyl isethionate: tensioativo suave derivado do óleo de côco, muito usado em cosmética natural como alternativa a tensioativos mais agressivos como o sodium lauryl sulfate.",
   "properties": "Produz espuma cremosa e densa, e limpa a pele e o cabelo sem ser tão agressivo para a barreira cutânea como outros tensioativos comuns, reduzindo a sensação de secura ou tensão após a lavagem.",
   "applications": "Usado como base limpante nos champôs sólidos, onde é o principal responsável por limpar sem agredir o couro cabeludo.",
   "sort_order": 45
@@ -481,10 +481,10 @@
  },
  {
   "slug": "farinha-de-coco",
-  "name": "Farinha de Coco",
+  "name": "Farinha de Côco",
   "category": "Outros Ingredientes",
   "scientific_name": null,
-  "origin": "Subproduto da produção de leite de coco, obtido a partir da polpa seca e moída.",
+  "origin": "Subproduto da produção de leite de côco, obtido a partir da polpa seca e moída.",
   "properties": "Textura fina e ligeiramente granulada, ajuda a absorver o excesso de oleosidade e proporciona uma esfoliação suave, adequada a uso regular sem ser demasiado agressiva para a pele.",
   "applications": "Usada nos champôs sólidos, onde ajuda a dar corpo à fórmula e a limpar suavemente.",
   "sort_order": 54
@@ -494,7 +494,7 @@
   "name": "Glicerina Vegetal",
   "category": "Outros Ingredientes",
   "scientific_name": null,
-  "origin": "Obtida a partir de óleos vegetais (como coco ou palma), é um subproduto natural da produção de sabão.",
+  "origin": "Obtida a partir de óleos vegetais (como côco ou palma), é um subproduto natural da produção de sabão.",
   "properties": "Humectante: atrai água do ambiente e ajuda a retê-la na camada mais superficial da pele, o que a torna um dos ingredientes hidratantes mais usados em cosmética natural. Ajuda também a suavizar a textura de sabonetes e cremes, e é geralmente muito bem tolerada, mesmo por peles sensíveis.",
   "applications": "Presente nos nossos sabonetes sólidos, como agente hidratante que ajuda a suavizar a textura final do produto.",
   "sort_order": 55

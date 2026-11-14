@@ -101,7 +101,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
 
   return (
     <div className="card-brand product-purchase-panel p-5 sm:p-6">
-      {!isAirFreshener && (variants.length > 1 || soleLabel) ? (
+      {!isAirFreshener && product.slug !== "sabonete-de-rosto" && (variants.length > 1 || soleLabel) ? (
         <fieldset className="mb-6">
           <legend className="label-brand mb-3 text-moss">{t.products.variant}</legend>
           <div className="flex flex-wrap gap-2">
@@ -302,7 +302,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
       ) : (
         <div className="purchase-footer space-y-5">
           <div className="flex items-baseline justify-between gap-4">
-            <p className="font-display text-[2rem] leading-none text-forest">{formatPrice(avail.price_cents)}</p>
+            <p className="font-display text-[2rem] leading-none text-forest">{product.slug === "mascara-150ml" ? t.products.priceFrom : ""}{formatPrice(avail.price_cents)}</p>
             {avail.stock <= 3 ? <span className="label-brand text-clay">{t.products.stockLeft(avail.stock)}</span> : null}
           </div>
           <div className="purchase-controls flex flex-col gap-3">

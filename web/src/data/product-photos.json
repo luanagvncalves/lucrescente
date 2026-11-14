@@ -23,10 +23,6 @@
       "alt": "boiões brancos de máscara capilar com etiqueta lucrescente, um aberto, ao lado de uma tampa, sobre tecido floral rosa"
     },
     {
-      "path": "/images/products/mascara-150ml/mascara-2.jpg",
-      "alt": "boiões brancos de máscara capilar com etiqueta azul lucrescente, um deles aberto a mostrar o creme, sobre tecido floral"
-    },
-    {
       "path": "/images/products/mascara-150ml/mascara-3.jpg",
       "alt": "boião de máscara capilar com tampa dourada ao lado de um bálsamo labial em stick e de uma vela acesa em copo de vidro"
     }
@@ -315,6 +311,24 @@
     {
       "path": "/images/products/ambientador/formatos-20241101.jpg",
       "alt": "ambientadores de cera de cor creme em forma de flor, coração e círculo, sobre tecido floral rosa e azul"
+    }
+  ],
+  "roll-on-cabeca": [
+    {
+      "path": "/images/products/roll-on-sinusite/0.jpg",
+      "alt": "roll-ons de vidro âmbar com etiqueta verde lucrescente, sobre tecido floral"
+    }
+  ],
+  "roll-on-sinusite": [
+    {
+      "path": "/images/products/roll-on-relaxamento/0.jpg",
+      "alt": "roll-ons de vidro âmbar com etiqueta roxa lucrescente, sobre tecido floral"
+    }
+  ],
+  "roll-on-relaxamento": [
+    {
+      "path": "/images/products/roll-on-cabeca/0.jpg",
+      "alt": "roll-ons de vidro âmbar com etiqueta violeta lucrescente, sobre tecido floral"
     }
   ]
 }

@@ -38,8 +38,8 @@ const expectedVariants: Record<string, [number | null, number]> = {
   "rollon-sinusite": [850, 5],
   "spray-relaxante": [800, 3],
   "sais-relaxante-frasco": [800, 5],
-  "batom-tijolo-boiao": [450, 2],
-  "batom-tijolo-stick": [450, 2],
+  "batom-tijolo-boiao": [500, 2],
+  "batom-tijolo-stick": [500, 2],
   "batom-herpes-boiao": [450, 0],
   "batom-herpes-stick": [450, 1],
   "batom-laranja-boiao": [450, 3],
@@ -138,7 +138,7 @@ test("catalogue refresh restores the massage candle and keeps FAQ links valid", 
 
 test("restored galleries reference real files and display names also update old carts", () => {
   assert.equal(curatedPhotos["champo-oleosos"].length, 4);
-  assert.equal(curatedPhotos["mascara-150ml"].length, 3);
+  assert.equal(curatedPhotos["mascara-150ml"].length, 2);
   assert.equal(curatedPhotos["vela-decorada"].length, 57);
   assert.equal(new Set(curatedPhotos["vela-decorada"].map((image) => image.path)).size, 57);
   assert.equal(curatedPhotos["vela-decorada"].filter((image) => image.path.includes("/decorada-")).length, 53);

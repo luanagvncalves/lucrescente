@@ -70,7 +70,7 @@ export function getAllergenNote(ingredientSlugs: string[], locale: ProductLocale
   const notes: string[] = [];
   const productNote = productSlug ? PRODUCT_NOTES[productSlug]?.[locale] : undefined;
   if (productNote) notes.push(productNote);
-  if (ingredientSlugs.some((s) => s.startsWith("oleo-essencial-de-"))) {
+  if (productSlug !== "inalador" && ingredientSlugs.some((s) => s.startsWith("oleo-essencial-de-"))) {
     notes.push(GENERIC_ESSENTIAL_OIL_NOTE[locale]);
   }
   for (const slug of ingredientSlugs) {

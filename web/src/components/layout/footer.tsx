@@ -57,6 +57,7 @@ export function Footer() {
               ["/produtos", t.nav.products],
               ["/ingredientes", t.nav.ingredients],
               ["/sobre", t.nav.about],
+              ["/eventos", locale === "en" ? "events" : locale === "fr" ? "?v?nements" : "eventos"],
               ["/perguntas-frequentes", t.faq.label],
             ].map(([href, label]) => (
               <li key={href}>

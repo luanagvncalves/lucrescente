@@ -27,6 +27,7 @@ export function Header() {
     { href: "/produtos", label: t.nav.products },
     { href: "/ingredientes", label: t.nav.ingredients },
     { href: "/sobre", label: t.nav.about },
+    { href: "/eventos", label: locale === "en" ? "events" : locale === "fr" ? "événements" : "eventos" },
     { href: "/perguntas-frequentes", label: t.faq.label },
   ];
 
@@ -60,7 +61,7 @@ export function Header() {
           and the whole site scrolled sideways on a tablet. The breakpoint moved
           when "perguntas frequentes" became the fifth link.
         */}
-        <nav aria-label={t.nav.mainNav} className="hidden items-center gap-5 lg:flex xl:gap-8">
+        <nav aria-label={t.nav.mainNav} className="hidden items-center gap-3 lg:flex xl:gap-6">
           {links.map((l) => {
             const active = pathname === l.href || pathname.startsWith(l.href + "/");
             return (

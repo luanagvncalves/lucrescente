@@ -76,7 +76,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 0,
     why_it_works:
-      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. os óleos essenciais de lavanda 40/42 e de palmarosa acrescentam um aroma floral suave, e a palmarosa ajuda a controlar as bactérias responsáveis pelos maus cheiros. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. podemos adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de côco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. os óleos essenciais de lavanda 40/42 e de palmarosa acrescentam um aroma floral suave, e a palmarosa ajuda a controlar as bactérias responsáveis pelos maus cheiros. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. podemos adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -99,7 +99,7 @@ export const products: ProductSeed[] = [
     category_slug: "desodorizantes",
     sort_order: 1,
     why_it_works:
-      "a manteiga de karité e o óleo de coco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. podemos adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
+      "a manteiga de karité e o óleo de côco dão uma base cremosa e confortável. o bicarbonato de sódio ajuda a neutralizar os odores e o amido de milho ajuda a absorver a humidade. o óleo essencial de tea tree ajuda a controlar naturalmente as bactérias responsáveis pelos maus cheiros, e a erva-príncipe acrescenta um aroma fresco e cítrico. não é um desodorizante antitranspirante: não contém alumínio nem álcool, respeitando o funcionamento natural da pele em vez de bloquear a transpiração ou obstruir os poros. podemos adaptar a fórmula às tuas necessidades: mais suave, mais forte, ou com outro aroma.",
     ingredient_slugs: [
       "manteiga-de-karite",
       "oleo-de-coco",
@@ -124,7 +124,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 0,
     why_it_works:
-      "para cabelos oleosos ou com tendência a oleoso, em cabelo liso, encaracolado, pintado ou alisado. este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila verde e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de coco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
+      "para cabelos oleosos ou com tendência a oleoso, em cabelo liso, encaracolado, pintado ou alisado. este champô não leva água na sua composição: o líquido que vês é hidrolato de hortelã-pimenta, que ajuda a dar uma sensação de frescura e limpeza ao couro cabeludo. o sci limpa suavemente enquanto a argila verde e as farinhas ajudam a purificar e equilibrar. juntamos ainda urtiga e cavalinha, ervas secas trituradas por nós, tradicionalmente associadas ao fortalecimento do cabelo. os óleos de côco e argão, o ácido esteárico e o d-pantenol deixam o cabelo nutrido e macio, sem pesar, e a erva-príncipe acrescenta uma sensação fresca e revigorante.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -151,7 +151,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 1,
     why_it_works:
-      "este é um dos champôs que mais nos procuram as pessoas com couro cabeludo sensível, e tem ajudado a controlar alguns casos de eczema. a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais e as farinhas ajudam a limpar suavemente, enquanto o óleo de coco, a manteiga de karité e a provitamina b5 (d-pantenol) nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 trazem um aroma suave e reconfortante. podes usá-lo em cabelo liso, encaracolado, pintado ou alisado. e como os nossos champôs sólidos não levam químicos agressivos, também podes usá-lo no corpo, como sabonete (este em particular tem sido usado por quem tem pele atópica).",
+      "este é um dos champôs que mais nos procuram as pessoas com couro cabeludo sensível, e tem ajudado a controlar alguns casos de eczema. a aveia e a argila branca da fórmula ajudam a acalmar a comichão, a irritação e a escamação da pele e do couro cabeludo. o sci limpa sem retirar em excesso os óleos naturais e as farinhas ajudam a limpar suavemente, enquanto o óleo de côco, a manteiga de karité e a provitamina b5 (d-pantenol) nutrem e ajudam a manter a hidratação do cabelo seco. o hidrolato de lavanda e o óleo essencial de lavanda 40/42 trazem um aroma suave e reconfortante. podes usá-lo em cabelo liso, encaracolado, pintado ou alisado. e como os nossos champôs sólidos não levam químicos agressivos, também podes usá-lo no corpo, como sabonete (este em particular tem sido usado por quem tem pele atópica).",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -176,7 +176,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 2,
     why_it_works:
-      "a fórmula combina uma limpeza suave do sci com a ação equilibrante da argila branca, das farinhas e do hidrolato de lavanda. o óleo de coco, o óleo de argão e o d-pantenol ajudam a manter o cabelo normal macio e hidratado, enquanto o ácido esteárico dá corpo à barra sem tornar a lavagem agressiva.",
+      "a fórmula combina uma limpeza suave do sci com a ação equilibrante da argila branca, das farinhas e do hidrolato de lavanda. o óleo de côco, o óleo de argão e o d-pantenol ajudam a manter o cabelo normal macio e hidratado, enquanto o ácido esteárico dá corpo à barra sem tornar a lavagem agressiva.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -201,7 +201,7 @@ export const products: ProductSeed[] = [
     category_slug: "champos",
     sort_order: 3,
     why_it_works:
-      "pensado para pele delicada, sensível ou atópica e para crianças, em cabelo liso, encaracolado, pintado ou alisado. o sci proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. o óleo de coco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
+      "pensado para pele delicada, sensível ou atópica e para crianças, em cabelo liso, encaracolado, pintado ou alisado. o sci proporciona uma limpeza suave, enquanto a argila branca e as farinhas ajudam a limpar sem agredir. o óleo de côco, a manteiga de karité e o d-pantenol deixam o cabelo macio e confortável, e o hidrolato de camomila romana acrescenta um toque calmante à fórmula. o ácido esteárico dá consistência à barra.",
     ingredient_slugs: [
       "tensioativo-sci",
       "acido-estearico",
@@ -264,7 +264,7 @@ export const products: ProductSeed[] = [
     category_slug: "mascaras-capilares",
     sort_order: 1,
     why_it_works:
-      "hidratante e nutritiva, para usar uma vez por semana. o btms condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de coco deixa os fios mais macios. a água dá leveza à fórmula; o alecrim qt cineol e o limão acrescentam um aroma fresco e revigorante. o cosgard ajuda a proteger a fórmula à base de água. se precisares de outra quantidade, fala connosco.",
+      "hidratante e nutritiva, para usar uma vez por semana. o btms condiciona e ajuda a desembaraçar o cabelo, enquanto o óleo de côco deixa os fios mais macios. a água dá leveza à fórmula; o alecrim qt cineol e o limão acrescentam um aroma fresco e revigorante. o cosgard ajuda a proteger a fórmula à base de água. se precisares de outra quantidade, fala connosco.",
     ingredient_slugs: [
       "cera-emulsionante-btms",
       "oleo-de-coco",
@@ -488,7 +488,7 @@ export const products: ProductSeed[] = [
   // ---------------- sais de banho (no price supplied) ----------------
   {
     slug: "sais-de-banho-relaxante",
-    name: "sais de banho relaxante",
+    name: "sais de banho relaxantes",
     category_slug: "sais-de-banho",
     sort_order: 0,
     why_it_works:
@@ -525,7 +525,7 @@ export const products: ProductSeed[] = [
     is_solid: false,
     is_candle: false,
     is_deodorant: false,
-    variants: balm("batom-tijolo", 2, 2, 450),
+    variants: balm("batom-tijolo", 2, 2, 500),
   },
   {
     slug: "batom-herpes",
