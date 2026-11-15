@@ -88,7 +88,7 @@ export function GroupedPurchasePanel({ product, locale = "pt" }: { product: Prod
     </div>
     {exceedsStock ? <p role="alert" className="mb-4 text-sm text-clay">{c.limit}</p> : null}
     <div className="grid grid-cols-2 gap-3" data-product-actions>
-      {available ? <Button size="lg" className={actionClass} onClick={add} disabled={exceedsStock}>{t.products.addToCart}</Button> : <AnchorButton href={`${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(name)+"\n"+summary)}`} target="_blank" rel="noreferrer" size="lg" className={actionClass}>{t.products.talkToUs}</AnchorButton>}
+      {available ? <Button size="lg" className={actionClass} onClick={add} disabled={!cart.hydrated || exceedsStock}>{t.products.addToCart}</Button> : <AnchorButton href={`${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(name)+"\n"+summary)}`} target="_blank" rel="noreferrer" size="lg" className={actionClass}>{t.products.talkToUs}</AnchorButton>}
       <ProductContact productName={name} orderDetails={summary} locale={locale} className={actionClass} />
     </div>
   </div>;

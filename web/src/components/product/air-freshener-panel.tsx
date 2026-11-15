@@ -66,7 +66,7 @@ export function AirFreshenerPanel({ product, locale = "pt" }: { product: Product
   <div className="my-5 border-t border-moss/25 pt-4" aria-live="polite"><div className="flex items-baseline justify-between gap-3"><span className="text-sm text-moss">{c.total} · {total} {c.units}</span>{variant.price_cents!==null?<span className="font-display text-[1.7rem] text-forest">{formatPrice(variant.price_cents*total)}</span>:null}</div></div>
   {avail.kind!=="available"?<p className="mb-4 text-[0.88rem] leading-relaxed text-ink/75">{c.request}</p>:total>avail.stock?<p role="alert" className="mb-4 text-sm text-clay">{c.limit}</p>:null}
   <div className="grid grid-cols-2 gap-3" data-product-actions>
-   {avail.kind==="available"?<Button size="lg" className={actionClass} disabled={total>avail.stock} onClick={add}>{t.products.addToCart}</Button>:<AnchorButton href={`${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(name)+"\n"+summary)}`} target="_blank" rel="noreferrer" size="lg" className={actionClass}>{t.products.talkToUs}</AnchorButton>}
+   {avail.kind==="available"?<Button size="lg" className={actionClass} disabled={!cart.hydrated || total>avail.stock} onClick={add}>{t.products.addToCart}</Button>:<AnchorButton href={`${t.brand.whatsapp}?text=${encodeURIComponent(t.products.orderMessage(name)+"\n"+summary)}`} target="_blank" rel="noreferrer" size="lg" className={actionClass}>{t.products.talkToUs}</AnchorButton>}
    <ProductContact productName={name} orderDetails={summary} locale={locale} className={actionClass} />
   </div>
  </div>;

@@ -325,7 +325,7 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
               </button>
             </div>
             <div className="grid grid-cols-2 gap-3" data-product-actions>
-              <Button size="lg" className={ACTION_CLASS} onClick={add}>
+              <Button size="lg" className={ACTION_CLASS} onClick={add} disabled={!cart.hydrated}>
                 {t.products.addToCart}
               </Button>
               <ProductContact productName={localizedName} locale={locale} className={ACTION_CLASS} />
