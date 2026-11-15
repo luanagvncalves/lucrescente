@@ -12,6 +12,7 @@ import { DEFAULT_SCENTS, FIXED_SCENTS, HARSH_SCENT, MAX_SCENTS, SCENTS, combosFo
 import { ProductContact } from "./product-contact";
 import { BrandSelect } from "@/components/ui/brand-select";
 import { AirFreshenerPanel } from "./air-freshener-panel";
+import { GroupedPurchasePanel } from "./grouped-purchase-panel";
 
 /** The longest answer to "quantos ambientadores" we keep. */
 const HOW_MANY_MAX_LENGTH = 40;
@@ -22,6 +23,7 @@ const ACTION_CLASS = "h-[52px] w-full min-w-0 whitespace-normal break-words !px-
  * States: on-request (no price) → "por encomenda" + WhatsApp; sold-out → crossed-out price + WhatsApp; available → add.
  */
 export function PurchasePanel(props: { product: Product; locale?: ProductLocale }) {
+  if (props.product.is_candle || props.product.slug.startsWith("batom-")) return <GroupedPurchasePanel {...props} />;
   return props.product.slug === "ambientador" ? <AirFreshenerPanel {...props} /> : <StandardPurchasePanel {...props} />;
 }
 

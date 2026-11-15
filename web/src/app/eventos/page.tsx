@@ -1,4 +1,4 @@
-﻿import Image from "next/image";
+﻿import { EventGallery } from "@/components/ui/event-gallery";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "eventos", alternates: { canonical: "/eventos" } };
@@ -9,13 +9,6 @@ const content = {
   en: { title: "events", intro: "larger orders for birthdays, baptisms, confirmations and keepsakes. gifts and details made to celebrate together.", confirmation: "candles for a confirmation", gift: "group gift", detail: "click a photograph to view it larger.", confirmationAlt: "personalised confirmation candles in glass jars with violet ribbons", giftAlt: "candles decorated with dried flowers, shells and colourful ribbons, prepared as a group gift" },
   fr: { title: "événements", intro: "commandes en quantité pour anniversaires, baptêmes, confirmations et souvenirs. des cadeaux et des détails pour célébrer ensemble.", confirmation: "bougies pour une confirmation", gift: "cadeau de groupe", detail: "clique sur une photographie pour l’agrandir.", confirmationAlt: "bougies personnalisées pour une confirmation, en pots de verre avec rubans violets", giftAlt: "bougies décorées de fleurs séchées, coquillages et rubans colorés, préparées pour un cadeau de groupe" },
 };
-
-function EventPhoto({ photo, alt, priority = false }: { photo: string; alt: string; priority?: boolean }) {
-  const src = `/images/eventos/${photo}.jpg`;
-  return <a href={src} target="_blank" rel="noopener noreferrer" className="frame-brand block aspect-[3/4] overflow-hidden bg-paper transition-opacity hover:opacity-85 focus-visible:outline-offset-4">
-    <Image src={src} alt={alt} width={240} height={320} sizes="(min-width:1024px) 180px, (min-width:640px) 200px, 45vw" className="h-full w-full object-contain" priority={priority} />
-  </a>;
-}
 
 export default async function EventsPage({ searchParams }: { searchParams: Promise<{ idioma?: string }> }) {
   const { idioma } = await searchParams;
@@ -29,15 +22,11 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
     </header>
     <section aria-labelledby="crisma" className="mt-8">
       <h2 id="crisma" className="text-h2 text-forest lowercase">{copy.confirmation}</h2>
-      <div className="mt-4 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        {confirmationPhotos.map((photo, index) => <EventPhoto key={photo} photo={photo} alt={`${copy.confirmationAlt} · ${index + 1}`} priority={index === 0} />)}
-      </div>
+      <EventGallery photos={confirmationPhotos} alt={copy.confirmationAlt} locale={locale} />
     </section>
     <section aria-labelledby="prenda-grupo" className="mt-8">
       <h2 id="prenda-grupo" className="text-h2 text-forest lowercase">{copy.gift}</h2>
-      <div className="mt-4 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-        {giftPhotos.map((photo, index) => <EventPhoto key={photo} photo={photo} alt={`${copy.giftAlt} - ${index + 1}`} />)}
-      </div>
+      <EventGallery photos={giftPhotos} alt={copy.giftAlt} locale={locale} />
     </section>
   </article>;
 }

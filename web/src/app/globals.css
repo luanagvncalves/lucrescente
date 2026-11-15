@@ -623,7 +623,7 @@ body:has(main > [data-home-hero]) > footer {
 }
 
 @media (max-width: 639px) {
-  .favorites-grid .card-brand > div:last-child { padding: 1rem; }
-  .favorites-grid h3 { font-size: 1.2rem; overflow-wrap: anywhere; }
+  section[aria-labelledby="destaques"] .favorites-grid a.card-brand > div:last-child { display: flex; flex-direction: column; align-items: stretch; padding: 0.75rem; gap: 0.5rem; }
+  section[aria-labelledby="destaques"] .favorites-grid a.card-brand h3 { font-size: clamp(0.95rem, 4vw, 1.2rem); overflow-wrap: normal; word-break: normal; hyphens: none; }
   .favorites-grid .card-brand > div:last-child > div:last-child { flex-wrap: wrap; gap: 0.5rem; }
 }

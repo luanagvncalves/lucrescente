@@ -330,5 +330,31 @@
       "path": "/images/products/roll-on-cabeca/0.jpg",
       "alt": "roll-ons de vidro âmbar com etiqueta violeta lucrescente, sobre tecido floral"
     }
+  ],
+  "vela-colorida": [
+    {
+      "path": "/images/products/vela-colorida/6.jpg",
+      "alt": "vela rosa com um coração de cera branco e flores secas vermelhas e brancas"
+    },
+    {
+      "path": "/images/products/vela-colorida/1.jpg",
+      "alt": "quatro velas cor-de-rosa em copos de vidro em forma de estrela, com brilhos"
+    },
+    {
+      "path": "/images/products/vela-colorida/2.jpg",
+      "alt": "três velas em forma de estrela amarelas em vidro transparente"
+    },
+    {
+      "path": "/images/products/vela-colorida/3.jpg",
+      "alt": "vela laranja com «obrigada» escrito à mão, um coração desenhado e botões de rosa secos"
+    },
+    {
+      "path": "/images/products/vela-colorida/4.jpg",
+      "alt": "vela laranja com uma flor de cera rosa e duas conchas"
+    },
+    {
+      "path": "/images/products/vela-colorida/5.jpg",
+      "alt": "vela laranja com conchas, pedrinhas douradas e duas margaridas secas"
+    }
   ]
 }
