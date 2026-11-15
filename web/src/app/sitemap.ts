@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getIngredients, getProducts } from "@/lib/catalog";
+import { eventOrders } from "@/data/events";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
@@ -10,6 +11,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${base}/ingredientes`, priority: 0.9 },
     { url: `${base}/sobre`, priority: 0.6 },
     { url: `${base}/eventos`, priority: 0.6 },
+    ...eventOrders.map(event => ({ url: `${base}/eventos/${event.slug}`, priority: 0.6 })),
     { url: `${base}/perguntas-frequentes`, priority: 0.7 },
     { url: `${base}/devolucoes`, priority: 0.5 },
     ...products.map((p) => ({ url: `${base}/produtos/${p.slug}`, priority: 0.8 })),

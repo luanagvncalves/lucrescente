@@ -98,7 +98,6 @@ function StandardPurchasePanel({ product, locale = "pt" }: { product: Product; l
       isCandle: product.is_candle,
     });
     cart.notify(`${localizedName}${shownLabel ? ` (${shownLabel})` : ""} · ${t.products.added}`);
-    cart.open();
   }
 
   return (

@@ -11,9 +11,12 @@ try {
   assert.equal(await page.locator('.favorites-grid').evaluate(el=>el.getBoundingClientRect().right<=innerWidth),true);
   await page.locator('.favorites-grid').screenshot({path:`../verification/favorites-fixed-${width}.png`});
   await page.goto(`${base}/eventos`,{waitUntil:'networkidle'});
-  const original=page.url();await page.locator('section[aria-labelledby="prenda-grupo"] button').first().click();
+  assert.equal(await page.locator('[data-event-cards] a').count(),2);
+  await page.locator('[data-event-cards] a[href*="prenda-de-grupo"]').click();
+  await page.locator('[data-event-gallery]').waitFor();
+  const original=page.url();await page.locator('[data-event-gallery] > div').first().locator('button').first().click();
   const dialog=page.locator('dialog[open]');await dialog.waitFor();assert.equal(page.url(),original);
-  await page.getByRole('button',{name:'próxima fotografia',exact:true}).click();assert.equal(await dialog.locator('p').innerText(),'2 / 5');
+  await dialog.getByRole('button',{name:'próxima fotografia',exact:true}).click();assert.equal(await dialog.locator('p').innerText(),'2 / 5');
   await page.keyboard.press('ArrowLeft');assert.equal(await dialog.locator('p').innerText(),'1 / 5');
   const color=await dialog.evaluate(el=>getComputedStyle(el).backgroundColor);assert(color.includes('0.5')||color.includes('50%'),color);
   await dialog.locator('img').evaluate(img=>img.complete ? Promise.resolve() : new Promise(resolve=>{img.onload=resolve;img.onerror=resolve}));await page.screenshot({path:`../verification/events-lightbox-${width}.png`});await page.keyboard.press('Escape');assert.equal(await page.locator('dialog[open]').count(),0);
@@ -34,7 +37,7 @@ try {
   await balm.getByRole('button',{name:'adicionar outro grupo'}).click();await balm.getByRole('combobox').last().selectOption({index:2});
   assert((await balm.getByLabel('seleção atual').innerText()).includes('2 ×'));
   const add=balm.getByRole('button',{name:'adicionar ao carrinho',exact:true});
-  if(await add.count()) {await add.click();const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('lucrescente.cart.v1')));const lines=Array.isArray(stored)?stored:stored.lines;assert.equal(lines.reduce((sum,l)=>sum+l.quantity,0),3);assert.equal(lines.length,2);assert.notEqual(lines[0].addOn,lines[1].addOn);}
+  if(await add.count()) {await add.click();assert.equal(await page.locator('[aria-modal="true"]').count(),0);assert.equal(page.url(),`${base}/produtos/batom-hidratante-sem-cor`);const stored=await page.evaluate(()=>JSON.parse(localStorage.getItem('lucrescente.cart.v1')));const lines=Array.isArray(stored)?stored:stored.lines;assert.equal(lines.reduce((sum,l)=>sum+l.quantity,0),3);assert.equal(lines.length,2);assert.notEqual(lines[0].addOn,lines[1].addOn);}
   await page.close();console.log(`Verified ${width}px: favorites, lightbox, 5 candles with distinct oils, 3 balms and cover`);
  }
 } finally {await browser.close();}

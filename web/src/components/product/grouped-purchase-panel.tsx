@@ -51,7 +51,7 @@ export function GroupedPurchasePanel({ product, locale = "pt" }: { product: Prod
       const v = variant(g);
       cart.add({ sku: v.sku, productSlug: product.slug, productName: name, variantLabel: label(g) || null, unitPriceCents: v.price_cents!, quantity: g.quantity, maxStock: v.stock, addOn: option(g) || null, image: product.images[0] ?? null, isCandle: product.is_candle });
     }
-    cart.notify(`${name} · ${t.products.added}`); cart.open();
+    cart.notify(`${name} · ${t.products.added}`);
   }
   return <div className="card-brand product-purchase-panel p-5 sm:p-6" data-grouped-purchase>
     <p className="mb-5 text-[0.9rem] leading-relaxed text-ink/75">{c.hint}</p>

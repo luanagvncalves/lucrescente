@@ -36,7 +36,7 @@ export function AirFreshenerPanel({ product, locale = "pt" }: { product: Product
    const option=freshenerOption(group.shape,group.oils.filter(Boolean));
    cart.add({sku:variant.sku,productSlug:product.slug,productName:name,variantLabel:option,unitPriceCents:avail.price_cents,quantity:group.quantity,maxStock:avail.stock,addOn:option,image:product.images[0]??null,isCandle:false});
   }
-  cart.notify(`${name} · ${t.products.added}`);cart.open();
+  cart.notify(`${name} · ${t.products.added}`);
  }
  return <div className="card-brand freshener-purchase-panel p-5 sm:p-6" data-freshener-builder>
   <p className="mb-5 text-[0.9rem] leading-relaxed text-ink/75">{c.hint}</p>
