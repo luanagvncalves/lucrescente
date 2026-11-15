@@ -621,3 +621,9 @@ body:has(main > [data-home-hero]) > footer {
     grid-column: 1 / -1;
   }
 }
+
+@media (max-width: 639px) {
+  .favorites-grid .card-brand > div:last-child { padding: 1rem; }
+  .favorites-grid h3 { font-size: 1.2rem; overflow-wrap: anywhere; }
+  .favorites-grid .card-brand > div:last-child > div:last-child { flex-wrap: wrap; gap: 0.5rem; }
+}

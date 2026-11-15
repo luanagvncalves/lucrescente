@@ -147,7 +147,7 @@ export default async function HomePage({ searchParams }: { searchParams: Promise
               </h2>
             </div>
           </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="favorites-grid mt-10 grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
             {alphabetical(featured, (p) => getProductCopy(p.slug, locale, { name: p.name }).name, locale).map((p, i) => (
               <Reveal key={p.slug} delay={i * 0.06}>
                 <ProductCard product={p} locale={locale} />

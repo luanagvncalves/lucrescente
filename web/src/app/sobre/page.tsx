@@ -5,7 +5,7 @@ import type { ProductLocale } from "@/content/product-locales";
 import { ProductGallery } from "@/components/product/product-gallery";
 import { editorial } from "@/data/editorial";
 import { Label } from "@/components/ui/typography";
-import { Pause } from "@/components/ui/motifs";
+import { Pause, Spiral } from "@/components/ui/motifs";
 import { Reveal } from "@/components/ui/reveal";
 
 export const metadata: Metadata = {
@@ -100,9 +100,7 @@ export default async function AboutPage({ searchParams }: { searchParams: Promis
         <section className="mx-auto max-w-2xl text-center">
           <p className="font-display text-[clamp(1.6rem,3vw,2.4rem)] leading-tight text-forest">{d.about.close}</p>
           {/* a curl of growth to close the story on — decorative only */}
-          <p aria-hidden="true" className="mt-7 text-[2.4rem] leading-none text-clay/80">
-            ಄
-          </p>
+          <Spiral size={38} strokeWidth={1.3} className="mx-auto mt-7 text-clay/80" />
           <Link href={`/${query}`} className="mt-6 inline-flex min-h-11 items-center font-ui font-medium text-moss hover:underline underline-offset-4">
             {d.about.backLink}
           </Link>

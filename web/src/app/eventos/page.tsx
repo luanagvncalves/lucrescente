@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "eventos", alternates: { canonical: "/eventos" } };
 const confirmationPhotos = ["20250526_164056", "20250526_164106", "20250526_164453", "20250526_164609", "20250526_164747"];
+const giftPhotos = ["20251220_145853", "20251220_150227", "20251220_150615", "20251220_150624", "20251220_150635"];
 const content = {
   pt: { title: "eventos", intro: "encomendas maiores para aniversários, batizados, crismas e lembranças. criamos os teus presentes e detalhes para celebrar em conjunto.", confirmation: "velas para um crisma", gift: "prenda de grupo", detail: "clica numa fotografia para a veres maior.", confirmationAlt: "velas em frascos de vidro com laços violeta, personalizadas para um crisma", giftAlt: "velas decoradas com flores secas, conchas e laços de várias cores, preparadas para uma prenda de grupo" },
   en: { title: "events", intro: "larger orders for birthdays, baptisms, confirmations and keepsakes. gifts and details made to celebrate together.", confirmation: "candles for a confirmation", gift: "group gift", detail: "click a photograph to view it larger.", confirmationAlt: "personalised confirmation candles in glass jars with violet ribbons", giftAlt: "candles decorated with dried flowers, shells and colourful ribbons, prepared as a group gift" },
@@ -34,8 +35,8 @@ export default async function EventsPage({ searchParams }: { searchParams: Promi
     </section>
     <section aria-labelledby="prenda-grupo" className="mt-8">
       <h2 id="prenda-grupo" className="text-h2 text-forest lowercase">{copy.gift}</h2>
-      <div className="mt-4 w-1/2 max-w-[170px]">
-        <EventPhoto photo="20251220_150635" alt={copy.giftAlt} />
+      <div className="mt-4 grid max-w-4xl grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
+        {giftPhotos.map((photo, index) => <EventPhoto key={photo} photo={photo} alt={`${copy.giftAlt} - ${index + 1}`} />)}
       </div>
     </section>
   </article>;

@@ -49,6 +49,7 @@ export function ContactLinks({ tone = "light", layout = "pills", labels = "short
       icon: <SmsIcon />,
       items: [
         { person: "lucie", display: t.brand.luciePhonePTDisplay, href: lucieSms },
+        { person: "lucie (CH)", display: t.brand.luciePhoneCHDisplay, href: t.brand.luciePhoneCHTel.replace("tel:", "sms:") },
         { person: "luana", display: t.brand.phoneDisplay, href: t.brand.sms },
       ],
     },
@@ -58,6 +59,7 @@ export function ContactLinks({ tone = "light", layout = "pills", labels = "short
       icon: <WhatsappIcon />,
       items: [
         { person: "lucie", display: t.brand.luciePhonePTDisplay, href: lucieWhatsapp, external: true },
+        { person: "lucie (CH)", display: t.brand.luciePhoneCHDisplay, href: `https://wa.me/${t.brand.luciePhoneCHTel.replace("tel:+", "")}`, external: true },
         { person: "luana", display: t.brand.phoneDisplay, href: t.brand.whatsapp, external: true },
       ],
     },

@@ -119,8 +119,8 @@ test("display order follows the translated names and leaves the source order int
   assert.deepEqual(oilOrder("en"), ["oleo-essencial-de-toranja", "oleo-essencial-de-tangerina"]);
 });
 
-test("catalogue refresh restores the massage candle and keeps FAQ links valid", () => {
-  assert.equal(products.find((p) => p.slug === "vela-massagem")?.is_active, true);
+test("catalogue retains the hidden massage candle and keeps FAQ links valid", () => {
+  assert.equal(products.find((p) => p.slug === "vela-massagem")?.is_active, false);
   assert.equal(ingredients.some((i) => ["oleo-de-neem", "oleo-de-baunilha-macerado"].includes(i.slug)), false);
   assert.equal(ingredients.find((i) => i.slug === "urtiga-verde")?.name, "Urtiga Verde em Pó");
   const questions: string[] = pt.faq.groups.flatMap((g) => g.items.map((i) => i.q));
